@@ -275,14 +275,14 @@ const KneeScoreEmbed = () => {
             </div>
 
             {/* CTA to Personalised Test Recommendations */}
-            <div className="bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 rounded-2xl border border-primary/20 p-8 text-center">
-              <div className="flex items-center justify-center gap-2 mb-3">
+            <div className="bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 rounded-2xl border border-primary/20 p-4 sm:p-8 text-center">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-3">
                 <Stethoscope className="w-6 h-6 text-primary" />
-                <h3 className="text-xl font-serif text-foreground">
+                <h3 className="text-lg sm:text-xl font-serif text-foreground text-center">
                   Want personalised test recommendations?
                 </h3>
               </div>
-              <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
+              <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 max-w-lg mx-auto">
                 Based on your score and health profile, get a tailored package of imaging, blood tests, and procedures.
               </p>
               <Button 
@@ -292,12 +292,12 @@ const KneeScoreEmbed = () => {
                     block: 'start' 
                   });
                 }}
-                className="gap-3 px-8 py-6 text-base font-medium shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] animate-[subtle-pulse_4s_ease-in-out_infinite]"
+                className="w-full sm:w-auto gap-2 sm:gap-3 px-4 sm:px-8 py-4 sm:py-6 text-sm sm:text-base font-medium shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] animate-[subtle-pulse_4s_ease-in-out_infinite]"
                 size="lg"
               >
-                <Stethoscope className="w-5 h-5" />
-                Recommend tests personalised to me
-                <ArrowRight className="w-5 h-5" />
+                <Stethoscope className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                <span className="whitespace-nowrap">Recommend tests personalised to me</span>
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
               </Button>
             </div>
 
