@@ -2,175 +2,165 @@ import { AlertTriangle, ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface BandRecommendation {
-  headline: string;
-  actions: string[];
-  redFlags?: string[];
+  title: string;
+  bullets: string[];
+  note?: string;
 }
 
 type Category = "knee" | "sleep" | "index";
+type BandKey = "red" | "amber" | "lgreen" | "green";
 
-const kneeRecommendations: Record<string, BandRecommendation> = {
-  critical: {
-    headline: "Prioritise Professional Support",
-    actions: [
-      "Schedule an appointment with your GP or physiotherapist",
-      "Rest and avoid activities that worsen symptoms",
-      "Apply ice for 15-20 minutes several times daily",
-      "Consider anti-inflammatory support (consult your doctor)",
-      "Keep a symptom diary to share with your healthcare provider",
-      "Explore gentle, low-impact movement when comfortable",
-    ],
-    redFlags: [
-      "Sudden severe pain or inability to bear weight",
-      "Significant swelling that doesn't improve",
-      "Knee locking or giving way repeatedly",
-      "Signs of infection (redness, warmth, fever)",
-    ],
+const library: Record<BandKey, Record<Category, BandRecommendation>> = {
+  red: {
+    knee: {
+      title: "High priority support (0–24)",
+      bullets: [
+        "Reduce load and avoid flare triggers (pivoting, deep flexion, long hills).",
+        "Address pain/swelling promptly: compression, elevation, short activity breaks.",
+        "Arrange clinical assessment to determine diagnosis and stability.",
+        "Consider imaging if symptoms are persistent or there is trauma/locking/instability.",
+        "Start guided rehab focusing on swelling control, ROM, and early strength."
+      ],
+      note: "Red flags: hot swollen joint, fever, inability to weight bear, true locking, calf swelling, numbness — seek urgent assessment."
+    },
+    sleep: {
+      title: "Sleep is limiting recovery (0–24)",
+      bullets: [
+        "Prioritise consistent sleep/wake timing for 7 days.",
+        "Reduce late caffeine/alcohol; protect a wind-down routine.",
+        "Target the lowest contributor (latency, restfulness, timing) first.",
+        "Consider pain control strategies that support sleep (positioning, timing of rehab).",
+        "If snoring/apnoea symptoms, consider formal sleep assessment."
+      ],
+      note: "If severe insomnia or daytime sleepiness affecting safety (driving), seek medical advice."
+    },
+    index: {
+      title: "Recovery profile needs urgent optimisation (0–24)",
+      bullets: [
+        "Treat this as a reset phase: reduce load, improve sleep timing, and stabilise symptoms.",
+        "Identify the lowest knee domain and lowest sleep contributor and target both.",
+        "Consider a clinician review to align diagnosis + plan.",
+        "Structured rehab is recommended; imaging may be appropriate depending on symptoms.",
+        "Re-score in 7–14 days after interventions."
+      ],
+      note: "If symptoms are rapidly worsening or there are red flags, seek urgent assessment."
+    }
   },
-  low: {
-    headline: "Take Action to Improve Comfort",
-    actions: [
-      "Consult a physiotherapist for a personalised exercise plan",
-      "Start gentle strengthening exercises (quad sets, leg raises)",
-      "Incorporate daily low-impact movement (swimming, cycling)",
-      "Focus on maintaining a healthy weight to reduce joint stress",
-      "Consider supportive nutrition for joint health",
-    ],
+  amber: {
+    knee: {
+      title: "Needs improvement (25–49)",
+      bullets: [
+        "Focus on your lowest domain first (often stairs, stiffness, pain).",
+        "Use progressive strengthening (quads/hip/calf) 2–3x/week.",
+        "Avoid sudden load spikes; build step-count and hills gradually.",
+        "If swelling persists, review training volume and consider assessment.",
+        "Re-score weekly to track response."
+      ]
+    },
+    sleep: {
+      title: "Sleep improvement zone (25–49)",
+      bullets: [
+        "Optimise timing: same wake time, morning light exposure.",
+        "Reduce screens/bright light 60 minutes pre-bed.",
+        "If latency is low, try earlier wind-down and reduce late exercise.",
+        "If restfulness is low, review stress, late meals, alcohol timing.",
+        "Re-score after 7 nights of consistent routine."
+      ]
+    },
+    index: {
+      title: "Good potential with targeted changes (25–49)",
+      bullets: [
+        "Target 1 knee domain + 1 sleep contributor for the next 2 weeks.",
+        "Increase strength and stability work; reduce flare triggers.",
+        "Aim for consistent sleep timing and recovery rituals.",
+        "Consider clinician input if instability/swelling persists.",
+        "Re-score weekly; expect steady improvement."
+      ]
+    }
   },
-  moderate: {
-    headline: "Maintain & Strengthen Your Progress",
-    actions: [
-      "Continue regular low-impact exercise routines",
-      "Add balance and stability exercises to your routine",
-      "Stretch daily, focusing on quads, hamstrings, and calves",
-      "Support joint health with targeted nutrition",
-      "Monitor for any changes and adjust activities accordingly",
-    ],
+  lgreen: {
+    knee: {
+      title: "On track (50–74)",
+      bullets: [
+        "Maintain progressive strengthening and mobility work.",
+        "Gradually reintroduce higher demand tasks (stairs, kneeling) as tolerated.",
+        "Use symptom-guided pacing: avoid >2/10 pain increase next day.",
+        "Consider a technique review for running/cutting if relevant.",
+        "Re-score every 2–4 weeks."
+      ]
+    },
+    sleep: {
+      title: "Solid sleep foundation (50–74)",
+      bullets: [
+        "Keep timing consistent; protect a wind-down routine.",
+        "Improve the weakest contributor (often REM/deep or restfulness).",
+        "Optimise bedroom environment (cool, dark, quiet).",
+        "Keep caffeine earlier in the day; avoid late heavy meals.",
+        "Re-score monthly."
+      ]
+    },
+    index: {
+      title: "Good recovery profile (50–74)",
+      bullets: [
+        "Keep building strength + stability and protect sleep consistency.",
+        "Address your lowest knee domain to move toward green range.",
+        "Use recovery spacing between high-load days.",
+        "Re-score every 2–4 weeks."
+      ]
+    }
   },
-  good: {
-    headline: "Keep Up the Great Work",
-    actions: [
-      "Maintain your current exercise and activity levels",
-      "Include variety in your workouts to prevent overuse",
-      "Stay hydrated and nourish your joints with quality nutrition",
-      "Warm up properly before physical activities",
-      "Listen to your body and rest when needed",
-    ],
-  },
+  green: {
+    knee: {
+      title: "Excellent / optimal (75–100)",
+      bullets: [
+        "Maintain your routine: strength, mobility, and load management.",
+        "Add prehab: single-leg strength, balance, controlled deceleration.",
+        "Avoid sudden spikes in training volume; build progressively.",
+        "Re-score every 4–8 weeks or after changes in training."
+      ]
+    },
+    sleep: {
+      title: "Excellent / optimal (75–100)",
+      bullets: [
+        "Keep timing steady and protect your routine.",
+        "Use recovery days strategically around intense training.",
+        "Maintain light exposure and consistent wake time.",
+        "Re-score every 4–8 weeks."
+      ]
+    },
+    index: {
+      title: "Optimal recovery profile (75–100)",
+      bullets: [
+        "Stay consistent; focus on prevention.",
+        "Maintain strength and sleep habits through busy periods.",
+        "Re-score after travel, schedule disruption, or training changes."
+      ]
+    }
+  }
 };
 
-const sleepRecommendations: Record<string, BandRecommendation> = {
-  critical: {
-    headline: "Prioritise Sleep Health Support",
-    actions: [
-      "Consult a healthcare provider about sleep concerns",
-      "Establish a consistent bedtime and wake time",
-      "Create a dark, quiet, and cool sleep environment",
-      "Avoid screens for 1 hour before bed",
-      "Limit caffeine and alcohol, especially in the evening",
-      "Consider a sleep diary to identify patterns",
-    ],
-    redFlags: [
-      "Chronic insomnia lasting more than 3 months",
-      "Gasping, choking, or pauses in breathing during sleep",
-      "Excessive daytime sleepiness affecting safety",
-      "Unexplained leg movements or restlessness at night",
-    ],
-  },
-  low: {
-    headline: "Improve Your Sleep Habits",
-    actions: [
-      "Set a consistent sleep schedule (even on weekends)",
-      "Develop a relaxing pre-bed routine",
-      "Limit naps to 20-30 minutes before 3pm",
-      "Exercise regularly, but not close to bedtime",
-      "Consider magnesium or calming supplements (consult your doctor)",
-    ],
-  },
-  moderate: {
-    headline: "Optimise Your Sleep Quality",
-    actions: [
-      "Fine-tune your sleep environment (temperature, lighting)",
-      "Practice relaxation techniques before bed",
-      "Limit heavy meals close to bedtime",
-      "Consider sleep-supporting nutrition",
-      "Track your sleep to identify improvement areas",
-    ],
-  },
-  good: {
-    headline: "Maintain Your Excellent Sleep",
-    actions: [
-      "Continue your healthy sleep routine",
-      "Stay consistent with bedtime and wake times",
-      "Keep your sleep environment optimal",
-      "Manage stress proactively",
-      "Listen to your body's sleep signals",
-    ],
-  },
+const getBandKey = (score: number): BandKey => {
+  if (score <= 24) return "red";
+  if (score <= 49) return "amber";
+  if (score <= 74) return "lgreen";
+  return "green";
 };
 
-const indexRecommendations: Record<string, BandRecommendation> = {
-  critical: {
-    headline: "Comprehensive Wellness Support Needed",
-    actions: [
-      "Consult healthcare providers for both joint and sleep concerns",
-      "Address the most pressing symptoms first",
-      "Consider how knee discomfort may be affecting your sleep",
-      "Establish foundational healthy habits gradually",
-      "Keep a combined symptom and sleep diary",
-      "Explore gentle movement that supports both areas",
-    ],
-    redFlags: [
-      "Symptoms significantly impacting daily function",
-      "Worsening pain or sleep over time",
-      "Difficulty managing work or relationships due to symptoms",
-      "Signs of depression or anxiety related to health concerns",
-    ],
-  },
-  low: {
-    headline: "Build Your Wellness Foundation",
-    actions: [
-      "Create a balanced routine addressing both sleep and movement",
-      "Start with small, sustainable lifestyle changes",
-      "Consider how joint health and sleep quality interact",
-      "Focus on anti-inflammatory nutrition",
-      "Seek professional guidance for a holistic plan",
-    ],
-  },
-  moderate: {
-    headline: "Strengthen Your Overall Wellness",
-    actions: [
-      "Continue building healthy habits in both areas",
-      "Balance rest and activity for optimal recovery",
-      "Support your body with targeted nutrition",
-      "Monitor progress and adjust as needed",
-      "Celebrate improvements in both knee comfort and sleep",
-    ],
-  },
-  good: {
-    headline: "Excellent Holistic Health",
-    actions: [
-      "Maintain your balanced approach to wellness",
-      "Continue prioritising both joint health and sleep quality",
-      "Stay proactive with preventive care",
-      "Share your successful strategies with others",
-      "Keep listening to your body's needs",
-    ],
-  },
+const getBandName = (score: number): string => {
+  if (score <= 24) return "Red (0–24)";
+  if (score <= 49) return "Amber (25–49)";
+  if (score <= 74) return "Light Green (50–74)";
+  return "Green (75–100)";
 };
 
-const getBandKey = (score: number): string => {
-  if (score >= 75) return "good";
-  if (score >= 50) return "moderate";
-  if (score >= 25) return "low";
-  return "critical";
-};
-
-const getBandStyle = (score: number) => {
-  if (score >= 75) return { border: "border-green-200", bg: "bg-green-50", accent: "text-green-700" };
-  if (score >= 50) return { border: "border-lime-200", bg: "bg-lime-50", accent: "text-lime-700" };
-  if (score >= 25) return { border: "border-amber-200", bg: "bg-amber-50", accent: "text-amber-700" };
-  return { border: "border-red-200", bg: "bg-red-50", accent: "text-red-700" };
+const getBandStyle = (bandKey: BandKey) => {
+  const styles = {
+    red: { border: "border-red-200", bg: "bg-red-50", accent: "text-red-700", accentHex: "#b91c1c" },
+    amber: { border: "border-amber-200", bg: "bg-amber-50", accent: "text-amber-700", accentHex: "#b45309" },
+    lgreen: { border: "border-lime-200", bg: "bg-lime-50", accent: "text-lime-700", accentHex: "#3f6212" },
+    green: { border: "border-green-200", bg: "bg-green-50", accent: "text-green-700", accentHex: "#15803d" },
+  };
+  return styles[bandKey];
 };
 
 interface RecommendedActionsProps {
@@ -183,55 +173,45 @@ interface RecommendedActionsProps {
 const RecommendedActions = ({ 
   score, 
   ctaUrl = "/product", 
-  ctaText = "Book Next Step",
+  ctaText = "Book next step",
   category = "knee"
 }: RecommendedActionsProps) => {
   const bandKey = getBandKey(score);
-  
-  const recommendationsMap = {
-    knee: kneeRecommendations,
-    sleep: sleepRecommendations,
-    index: indexRecommendations,
-  };
-  
-  const recommendation = recommendationsMap[category][bandKey];
-  const style = getBandStyle(score);
+  const recommendation = library[bandKey][category];
+  const style = getBandStyle(bandKey);
 
   return (
-    <div className={`text-left rounded-xl border ${style.border} ${style.bg} p-6 mb-8`}>
-      <h3 className={`text-lg font-semibold ${style.accent} mb-4`}>
-        {recommendation.headline}
-      </h3>
+    <div className={`text-left rounded-xl border ${style.border} ${style.bg} p-6 mb-6`}>
+      <h4 className={`text-base font-semibold ${style.accent} mb-4 m-0`}>
+        {recommendation.title}
+      </h4>
       
-      <ul className="space-y-3 mb-6">
-        {recommendation.actions.map((action, index) => (
+      <ul className="space-y-2 mb-4 pl-0 list-none">
+        {recommendation.bullets.map((bullet, index) => (
           <li key={index} className="flex items-start gap-3">
-            <CheckCircle className={`w-5 h-5 ${style.accent} flex-shrink-0 mt-0.5`} />
-            <span className="text-sm text-foreground">{action}</span>
+            <CheckCircle className={`w-4 h-4 ${style.accent} flex-shrink-0 mt-0.5`} />
+            <span className="text-sm text-foreground leading-snug">{bullet}</span>
           </li>
         ))}
       </ul>
 
-      {recommendation.redFlags && (
-        <div className="bg-red-100 border border-red-300 rounded-lg p-4 mb-6">
-          <div className="flex items-center gap-2 mb-2">
-            <AlertTriangle className="w-5 h-5 text-red-600" />
-            <span className="font-semibold text-red-700 text-sm">Seek Immediate Care If:</span>
+      {recommendation.note && (
+        <div className="bg-red-100 border border-red-300 rounded-lg p-4 mb-4">
+          <div className="flex items-start gap-2">
+            <AlertTriangle className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
+            <span className="text-sm text-red-700">{recommendation.note}</span>
           </div>
-          <ul className="space-y-1.5 ml-7">
-            {recommendation.redFlags.map((flag, index) => (
-              <li key={index} className="text-sm text-red-700">• {flag}</li>
-            ))}
-          </ul>
         </div>
       )}
 
-      <Button asChild className="w-full sm:w-auto">
-        <a href={ctaUrl}>
-          {ctaText}
-          <ArrowRight className="w-4 h-4 ml-2" />
-        </a>
-      </Button>
+      <div className="flex flex-wrap gap-3 mt-4">
+        <Button asChild size="sm">
+          <a href={ctaUrl}>
+            {ctaText}
+            <ArrowRight className="w-4 h-4 ml-2" />
+          </a>
+        </Button>
+      </div>
     </div>
   );
 };
