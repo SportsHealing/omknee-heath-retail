@@ -24,7 +24,7 @@ const CTASection = () => {
               className="px-10 py-6 text-sm font-sans font-medium tracking-wide"
               asChild
             >
-              <a href="#assessment">Take Free Assessment</a>
+              <a href="/assessment">Take Free Assessment</a>
             </Button>
             <Button 
               variant="ghost"
