@@ -37,9 +37,9 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#philosophy" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/#philosophy" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
               Our Philosophy
-            </a>
+            </Link>
             <Link to="/science" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
               The Science
             </Link>
@@ -76,13 +76,13 @@ const Header = () => {
         {mobileMenuOpen && (
           <div className="md:hidden py-6 border-t border-border/50 animate-fade-up">
             <nav className="flex flex-col gap-4">
-              <a 
-                href="#philosophy" 
+              <Link 
+                to="/#philosophy" 
                 className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Our Philosophy
-              </a>
+              </Link>
               <Link 
                 to="/science" 
                 className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
