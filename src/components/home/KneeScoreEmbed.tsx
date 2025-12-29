@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield } from "lucide-react";
+import { ArrowRight, Shield, Loader2 } from "lucide-react";
 
 /**
  * SHOPIFY SECTION: Knee Score Widget Embed
@@ -13,6 +14,8 @@ import { ArrowRight, Shield } from "lucide-react";
  */
 
 const KneeScoreEmbed = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <section className="py-16 md:py-20 bg-om-cream/30">
       <div className="container mx-auto px-6">
@@ -36,6 +39,13 @@ const KneeScoreEmbed = () => {
           <div className="bg-background rounded-2xl border border-border shadow-elegant overflow-hidden">
             {/* Iframe Embed */}
             <div className="relative w-full" style={{ minHeight: '600px' }}>
+              {/* Loading Spinner */}
+              {isLoading && (
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-background z-10">
+                  <Loader2 className="w-8 h-8 text-primary animate-spin mb-4" />
+                  <p className="text-sm text-muted-foreground">Loading assessment...</p>
+                </div>
+              )}
               <iframe
                 src="https://score.omkneehealth.com"
                 title="OmKneeHealth Knee Score Assessment"
@@ -43,6 +53,7 @@ const KneeScoreEmbed = () => {
                 style={{ height: '600px', minHeight: '600px' }}
                 loading="lazy"
                 allow="clipboard-write"
+                onLoad={() => setIsLoading(false)}
               />
             </div>
           </div>
