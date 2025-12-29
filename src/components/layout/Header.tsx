@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, ShoppingBag } from "lucide-react";
 import { useState } from "react";
+import logoDarkGreen from "@/assets/logo-dark-green.png";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -10,15 +11,17 @@ const Header = () => {
       <div className="container px-6">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
-            <span className="font-serif text-xl md:text-2xl font-medium text-foreground">
-              OmKnee<span className="text-primary">Health</span>
-            </span>
+          <a href="/" className="flex items-center">
+            <img 
+              src={logoDarkGreen} 
+              alt="OmKneeHealth London" 
+              className="h-10 md:h-12 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <a href="/product" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
               Shop
             </a>
             <a href="#" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -40,8 +43,8 @@ const Header = () => {
                 0
               </span>
             </Button>
-            <Button className="hidden md:inline-flex">
-              Shop Now
+            <Button className="hidden md:inline-flex" asChild>
+              <a href="/product">Shop Now</a>
             </Button>
             <Button 
               variant="ghost" 
@@ -58,7 +61,7 @@ const Header = () => {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
             <nav className="flex flex-col gap-4">
-              <a href="#" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a href="/product" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Shop
               </a>
               <a href="#" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -70,8 +73,8 @@ const Header = () => {
               <a href="#" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
                 About
               </a>
-              <Button className="w-full mt-2">
-                Shop Now
+              <Button className="w-full mt-2" asChild>
+                <a href="/product">Shop Now</a>
               </Button>
             </nav>
           </div>
