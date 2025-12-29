@@ -44,7 +44,7 @@ const Header = () => {
               The Science
             </Link>
             <Link to="/assessment" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Knee Assessment
+              Full Knee Assessment
             </Link>
             <Link to="/product" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
               Our Formula
@@ -59,7 +59,7 @@ const Header = () => {
               className="hidden md:inline-flex text-sm font-medium border-primary/20 hover:bg-primary hover:text-primary-foreground hover:border-primary"
               asChild
             >
-              <Link to="/assessment">Take Knee Assessment</Link>
+              <Link to="/assessment">Take Full Assessment</Link>
             </Button>
             <Button 
               variant="ghost" 
@@ -95,7 +95,7 @@ const Header = () => {
                 className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Knee Assessment
+                Full Knee Assessment
               </Link>
               <Link 
                 to="/product" 
@@ -109,7 +109,7 @@ const Header = () => {
                 size="sm"
                 asChild
               >
-                <Link to="/assessment">Take Knee Assessment</Link>
+                <Link to="/assessment">Take Full Assessment</Link>
               </Button>
             </nav>
           </div>
