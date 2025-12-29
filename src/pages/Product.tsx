@@ -1,30 +1,24 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ProductHero from "@/components/product/ProductHero";
-import ProductBenefits from "@/components/product/ProductBenefits";
+import ProductPhilosophy from "@/components/product/ProductPhilosophy";
 import ProductIngredients from "@/components/product/ProductIngredients";
+import ProductSafety from "@/components/product/ProductSafety";
 import ProductHowToUse from "@/components/product/ProductHowToUse";
-import ProductSuitability from "@/components/product/ProductSuitability";
 import ProductFAQ from "@/components/product/ProductFAQ";
-import ProductReassurance from "@/components/product/ProductReassurance";
+import ProductCTA from "@/components/product/ProductCTA";
 
 /**
- * SHOPIFY PRODUCT PAGE STRUCTURE
+ * PRODUCT PAGE: Joint + Movement Support
  * 
- * This page is designed to be translated into a Shopify product template.
- * 
- * SECTION ORDER:
- * 1. Product Hero (Shopify Theme Section - product form)
- * 2. Product Benefits (Custom HTML Section)
- * 3. Product Ingredients (Custom HTML Section)  
- * 4. How to Use (Custom HTML Section)
- * 5. Who It's For / Suitability (Custom HTML Section)
- * 6. FAQs (Custom HTML Section or Shopify FAQ App)
- * 7. Reassurance & Final CTA (Custom HTML Section)
- * 
- * SHOPIFY PRODUCT DESCRIPTION:
- * The content from ProductHero's description should go in the 
- * Shopify product description field for SEO purposes.
+ * Structure (Evidence-Based Authority Model):
+ * 1. Hero - Product introduction with clinical positioning
+ * 2. Philosophy - Supplements as part of broader strategy
+ * 3. Ingredients - Ingredient-by-ingredient with mechanism + evidence
+ * 4. Safety - Manufacturing, testing, contraindications
+ * 5. How to Use - Clinical usage guidance
+ * 6. FAQ - Honest answers, no marketing claims
+ * 7. CTA - Gentle close with appropriate disclaimers
  */
 
 const Product = () => {
@@ -32,13 +26,26 @@ const Product = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
+        {/* Section 1: Product Hero - Clinical positioning */}
         <ProductHero />
-        <ProductBenefits />
+        
+        {/* Section 2: Philosophy - Part of broader strategy */}
+        <ProductPhilosophy />
+        
+        {/* Section 3: Ingredients - Evidence-based breakdown */}
         <ProductIngredients />
+        
+        {/* Section 4: Safety & Quality */}
+        <ProductSafety />
+        
+        {/* Section 5: How to Use */}
         <ProductHowToUse />
-        <ProductSuitability />
+        
+        {/* Section 6: FAQ - Honest answers */}
         <ProductFAQ />
-        <ProductReassurance />
+        
+        {/* Section 7: Final CTA */}
+        <ProductCTA />
       </main>
       <Footer />
     </div>

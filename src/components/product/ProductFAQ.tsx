@@ -1,3 +1,8 @@
+/**
+ * Product FAQ - Evidence-Based Answers
+ * Honest, clinical responses
+ */
+
 import {
   Accordion,
   AccordionContent,
@@ -7,86 +12,86 @@ import {
 
 const faqs = [
   {
-    question: "How long before I might notice any effects?",
-    answer: "Joint supplements are designed for long-term support rather than immediate effects. Many people choose to use them consistently for 8-12 weeks as part of their routine. Individual experiences vary, and this supplement is designed to support — not replace — a healthy lifestyle."
+    question: "What can I realistically expect from this supplement?",
+    answer: "We want to set honest expectations. This formula provides nutritional support for joint health—it supplies nutrients that play roles in maintaining normal cartilage, connective tissue, and muscle function. It is not a treatment for any medical condition. Individual responses vary, and supplements work best as part of a comprehensive approach including movement, nutrition, and appropriate rest. Many people choose to assess after 8-12 weeks of consistent use."
   },
   {
-    question: "Can I take this alongside other supplements or medications?",
-    answer: "While our ingredients are generally well-tolerated, we always recommend consulting with your healthcare provider before combining supplements, especially if you're taking any medications. This is particularly important if you take blood thinners or diabetes medication."
+    question: "Why did you choose these specific ingredients and doses?",
+    answer: "Each ingredient was selected based on scientific literature and clinical reasoning. Glucosamine and chondroitin are included at doses commonly used in research. Vitamin D addresses a widespread deficiency relevant to musculoskeletal health. Turmeric provides antioxidant support, paired with piperine to address its naturally poor absorption. Manganese and copper support normal connective tissue formation—an EFSA-approved claim. We avoided 'kitchen sink' formulations that include everything; instead, we focused on ingredients with clear rationales."
   },
   {
-    question: "Is this product suitable for vegetarians?",
-    answer: "Our current formulation contains glucosamine derived from shellfish, so it is not suitable for vegetarians or those with shellfish allergies. We're always exploring ways to expand our range to meet different dietary needs."
-  },
-  {
-    question: "What makes this different from other joint supplements?",
-    answer: "Our formula is developed with input from clinical professionals who specialise in musculoskeletal health. We focus on evidence-informed ingredient selection, meaningful dosages, and transparent communication about what supplements can and cannot do."
-  },
-  {
-    question: "Is this a subscription? Can I cancel anytime?",
-    answer: "We offer both one-time purchases and a flexible subscription option. Subscribers save 15% and can pause, skip, or cancel at any time with no commitment. You're always in control."
-  },
-  {
-    question: "Where is this product made?",
-    answer: "Our supplements are manufactured in the UK in facilities that meet strict quality and safety standards. Every batch is tested to ensure it meets our specifications."
+    question: "Is there research supporting these ingredients?",
+    answer: "Yes, but we believe in nuance. Glucosamine and chondroitin have been extensively studied, with some trials showing positive results and others showing no significant difference from placebo. The research landscape is mixed, and we don't claim otherwise. Vitamin D, manganese, and copper have EFSA-approved health claims for their roles in muscle function, bone health, and connective tissue. Curcumin has documented antioxidant properties. We present what the evidence shows—not more, not less."
   },
   {
     question: "Will this cure my joint pain?",
-    answer: "We want to be completely transparent: this is a food supplement, not a medicine. It is not designed to diagnose, treat, cure, or prevent any disease. If you're experiencing joint pain, we encourage you to consult with a healthcare professional for proper evaluation."
+    answer: "No. This is a food supplement, not a medicine. It cannot diagnose, treat, cure, or prevent any disease. If you're experiencing joint pain, we strongly recommend consulting a healthcare professional for proper evaluation. Pain is a symptom that deserves clinical attention. This supplement may be used alongside—not instead of—appropriate medical care."
+  },
+  {
+    question: "Can I take this with my current medications?",
+    answer: "We recommend consulting your healthcare provider or pharmacist before combining this supplement with any medication. This is particularly important if you take blood-thinning medications (glucosamine may affect blood clotting), diabetes medications (glucosamine may affect glucose metabolism), or if you're on multiple medications. Your healthcare provider can advise based on your specific situation."
+  },
+  {
+    question: "Why is glucosamine derived from shellfish?",
+    answer: "Marine-derived glucosamine sulphate is the form most commonly used in research and provides the sulphate component that may be relevant to its effects. We acknowledge this makes our product unsuitable for those with shellfish allergies. We're transparent about this limitation on our packaging and website. Vegetarian alternatives exist but use different forms of glucosamine with different research profiles."
+  },
+  {
+    question: "How is this different from cheaper supplements?",
+    answer: "We can't speak to every product, but we can explain our approach: clinician-led formulation, doses informed by research, third-party testing for every batch, no proprietary blends, UK GMP-certified manufacturing, and transparent communication about what supplements can and cannot do. Whether that's worth the price difference is a decision we leave to you. We don't claim our formula is 'the best'—we claim it's thoughtfully made and honestly represented."
+  },
+  {
+    question: "What if it doesn't work for me?",
+    answer: "That's a real possibility. Individual responses to supplements vary, and we don't promise results. If you try our product and don't feel it's right for you, we offer returns on unopened products within 30 days. We'd rather have an honest relationship than a dissatisfied customer. If you're experiencing significant joint issues, a supplement is unlikely to be the solution—please seek appropriate clinical evaluation."
   }
 ];
 
 const ProductFAQ = () => {
   return (
-    <section className="py-16 md:py-20 bg-om-cream/30">
+    <section className="py-20 md:py-28 bg-secondary">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
+          {/* Section header */}
           <div className="text-center mb-12">
+            <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary mb-4">
+              Questions & Answers
+            </p>
             <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-4">
-              Common Questions
+              Honest Answers to Common Questions
             </h2>
-            <p className="text-muted-foreground">
-              Honest answers to help you make an informed decision.
+            <div className="w-12 h-px bg-primary/30 mx-auto mb-6" />
+            <p className="font-sans text-muted-foreground">
+              We believe you deserve straightforward information, not marketing spin.
             </p>
           </div>
 
+          {/* FAQ accordion */}
           <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, index) => (
               <AccordionItem 
                 key={index} 
                 value={`faq-${index}`}
-                className="bg-background rounded-xl border border-border px-6 data-[state=open]:shadow-elegant"
+                className="bg-background rounded-lg border border-border px-6 data-[state=open]:shadow-soft"
               >
-                <AccordionTrigger className="text-left font-medium text-foreground hover:no-underline py-5">
+                <AccordionTrigger className="text-left font-sans text-sm font-medium text-foreground hover:no-underline py-5">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
+                <AccordionContent className="font-sans text-sm text-muted-foreground leading-relaxed pb-5">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
 
+          {/* Contact */}
           <div className="mt-10 text-center">
-            <p className="text-muted-foreground">
-              Have another question?{" "}
-              <a href="/contact" className="text-om-forest hover:underline font-medium">
-                Get in touch
+            <p className="font-sans text-sm text-muted-foreground">
+              Have a question we haven't answered?{" "}
+              <a href="/contact" className="text-primary hover:underline font-medium">
+                Contact our team
               </a>
             </p>
           </div>
         </div>
-      </div>
-
-      {/* Shopify Implementation Note */}
-      <div className="hidden">
-        {/* 
-          SHOPIFY SECTION: product-faq
-          TYPE: Custom HTML Section OR Shopify FAQ App
-          
-          Can use Shopify's native FAQ blocks or a custom 
-          accordion section. Good for SEO with FAQ schema.
-        */}
       </div>
     </section>
   );

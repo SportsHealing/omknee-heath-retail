@@ -1,107 +1,110 @@
+/**
+ * Product Hero - Clinical Authority Approach
+ * Evidence-based, no marketing hype
+ */
+
 import { Button } from "@/components/ui/button";
-import { Shield, Truck, Award } from "lucide-react";
+import { Shield, FlaskConical, Building2 } from "lucide-react";
 
 const ProductHero = () => {
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-background">
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Product Image Placeholder */}
-          <div className="relative">
-            <div className="aspect-square bg-gradient-to-br from-om-sage/20 to-om-cream rounded-2xl flex items-center justify-center border border-om-sage/20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          {/* Product Image */}
+          <div className="relative order-2 lg:order-1">
+            <div className="aspect-square bg-secondary rounded-lg flex items-center justify-center">
               <div className="text-center p-8">
-                <div className="w-32 h-48 mx-auto bg-om-forest/10 rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-om-forest/50 text-sm">Product Image</span>
+                <div className="w-40 h-56 mx-auto bg-primary/5 rounded-lg mb-4 flex items-center justify-center border border-primary/10">
+                  <span className="text-muted-foreground text-sm">Product Image</span>
                 </div>
-                <p className="text-muted-foreground text-sm">60 Capsules • 30 Day Supply</p>
+                <p className="font-sans text-sm text-muted-foreground">60 Capsules • 30 Day Supply</p>
               </div>
             </div>
-            {/* Trust badges */}
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex gap-3">
-              <div className="bg-background shadow-elegant rounded-full px-4 py-2 flex items-center gap-2 border border-border">
-                <Shield className="w-4 h-4 text-om-forest" />
-                <span className="text-xs font-medium">Clinician-Led</span>
+            
+            {/* Quality badges */}
+            <div className="mt-6 grid grid-cols-3 gap-3">
+              <div className="bg-trust-badge rounded-lg p-3 text-center">
+                <Shield className="w-4 h-4 text-primary mx-auto mb-1.5" />
+                <p className="font-sans text-xs text-primary font-medium">Clinician-Led</p>
               </div>
-              <div className="bg-background shadow-elegant rounded-full px-4 py-2 flex items-center gap-2 border border-border">
-                <Award className="w-4 h-4 text-om-forest" />
-                <span className="text-xs font-medium">Evidence-Based</span>
+              <div className="bg-trust-badge rounded-lg p-3 text-center">
+                <FlaskConical className="w-4 h-4 text-primary mx-auto mb-1.5" />
+                <p className="font-sans text-xs text-primary font-medium">Third-Party Tested</p>
+              </div>
+              <div className="bg-trust-badge rounded-lg p-3 text-center">
+                <Building2 className="w-4 h-4 text-primary mx-auto mb-1.5" />
+                <p className="font-sans text-xs text-primary font-medium">UK Manufactured</p>
               </div>
             </div>
           </div>
 
           {/* Product Info */}
-          <div className="space-y-6">
+          <div className="space-y-6 order-1 lg:order-2">
             <div>
-              <p className="text-om-sage font-medium tracking-wide uppercase text-sm mb-2">
-                Joint Support Supplement
-              </p>
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-medium tracking-wide bg-primary/10 text-primary mb-4">
+                Our Formula
+              </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-foreground leading-tight mb-4">
-                OmKneeHealth Joint Complex
+                Joint + Movement Support
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                A thoughtfully formulated blend of glucosamine, chondroitin, turmeric and piperine 
-                — designed to support your joint health journey with evidence-informed ingredients.
+              <div className="w-12 h-px bg-primary/30 mb-6" />
+              <p className="font-sans text-muted-foreground leading-relaxed">
+                A carefully formulated combination of glucosamine, chondroitin, vitamin D, 
+                turmeric with piperine, and essential minerals. Each ingredient selected 
+                based on scientific literature and clinical reasoning—not marketing trends.
               </p>
             </div>
 
-            {/* Who it's for */}
-            <div className="bg-om-cream/50 rounded-xl p-5 border border-om-sage/20">
-              <p className="font-medium text-foreground mb-2">Designed for those who:</p>
-              <ul className="space-y-2 text-muted-foreground">
+            {/* What this formula provides */}
+            <div className="bg-secondary rounded-lg p-6">
+              <p className="font-sans text-sm font-medium text-foreground mb-4">
+                This formula provides nutritional support for:
+              </p>
+              <ul className="space-y-2 font-sans text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
-                  <span className="text-om-forest mt-1">•</span>
-                  Want to support their knee and joint comfort
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <span>Maintenance of normal cartilage and connective tissue</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-om-forest mt-1">•</span>
-                  Are looking for evidence-based nutritional support
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <span>Normal muscle function and bone health</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-om-forest mt-1">•</span>
-                  Value quality, clinician-guided formulations
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <span>Antioxidant activity to help protect cells from oxidative stress</span>
                 </li>
               </ul>
             </div>
 
-            {/* Price & CTA - Placeholder for Shopify product form */}
+            {/* Price & CTA */}
             <div className="space-y-4 pt-2">
               <div className="flex items-baseline gap-3">
-                <span className="text-3xl font-serif text-foreground">£39.99</span>
-                <span className="text-muted-foreground">/ 30 day supply</span>
+                <span className="text-2xl font-serif text-foreground">£39.99</span>
+                <span className="text-sm text-muted-foreground">/ 30 day supply</span>
               </div>
               
-              <Button size="lg" className="w-full md:w-auto px-12 text-base">
-                Add to Cart
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button size="lg" className="px-8 text-sm font-sans font-medium">
+                  Add to Cart
+                </Button>
+                <Button variant="outline" size="lg" className="px-8 text-sm font-sans font-medium border-primary/20">
+                  Subscribe & Save 15%
+                </Button>
+              </div>
               
-              <p className="text-sm text-muted-foreground">
-                Subscribe & save 15% — flexible, cancel anytime
+              <p className="font-sans text-xs text-muted-foreground">
+                Free UK delivery on orders over £30 • Flexible subscription, cancel anytime
               </p>
             </div>
 
-            {/* Shipping info */}
-            <div className="flex items-center gap-2 text-sm text-muted-foreground pt-2">
-              <Truck className="w-4 h-4" />
-              <span>Free UK delivery on orders over £30</span>
-            </div>
+            {/* Regulatory note */}
+            <p className="font-sans text-xs text-muted-foreground border-t border-border pt-4">
+              This product is a food supplement. Not intended to diagnose, treat, cure, or 
+              prevent any disease. Consult your healthcare provider before use.
+            </p>
           </div>
         </div>
-      </div>
-
-      {/* Shopify Implementation Note */}
-      <div className="hidden">
-        {/* 
-          SHOPIFY SECTION: product-hero
-          TYPE: Shopify Theme Section (product template)
-          
-          This section replaces the default product form.
-          Price, variants, and Add to Cart button should use Shopify's 
-          native product form functionality.
-          
-          Button microcopy:
-          - Primary CTA: "Add to Cart"
-          - Secondary: "Subscribe & Save 15%"
-        */}
       </div>
     </section>
   );
