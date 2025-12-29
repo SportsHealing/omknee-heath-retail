@@ -1,0 +1,181 @@
+{% comment %}
+  Jotform Prefill Map Example
+  ===========================
+  Reference snippet showing how to configure jotform_prefill_map_json
+  for the Knee Assessment UI section.
+  
+  HOW TO USE:
+  1. Open your Jotform form in the Jotform Form Builder
+  2. For each field, find the prefill parameter key (usually visible in field settings or URL builder)
+  3. Replace the example "qXX_fieldName" values below with your actual Jotform keys
+  4. Copy the JSON and paste it into the "Prefill Map JSON" setting in Theme Editor
+  
+  TO FIND YOUR JOTFORM FIELD KEYS:
+  - In Jotform, go to Settings → Thank You Page → Redirect to URL
+  - Use the "Add Form Fields" dropdown to see prefill parameter names
+  - Or check the field's "Unique Name" in Form Builder → Field Settings
+{% endcomment %}
+
+<style>
+.jfp-example {
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco, 'Courier New', monospace;
+  font-size: 12px;
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 24px;
+  border-radius: 8px;
+  overflow-x: auto;
+  line-height: 1.6;
+  max-width: 100%;
+}
+.jfp-example .comment { color: #6a9955; }
+.jfp-example .key { color: #9cdcfe; }
+.jfp-example .string { color: #ce9178; }
+.jfp-example .bracket { color: #ffd700; }
+.jfp-header { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin-bottom: 16px; }
+.jfp-header h3 { font-size: 18px; font-weight: 600; margin: 0 0 8px; color: #1a1a1a; }
+.jfp-header p { font-size: 14px; color: #64748b; margin: 0; }
+.jfp-note { background: #fffbeb; border: 1px solid #fcd34d; border-radius: 8px; padding: 12px 16px; margin-top: 16px; font-size: 13px; color: #92400e; }
+.jfp-note strong { color: #78350f; }
+.jfp-table { width: 100%; border-collapse: collapse; margin-top: 24px; font-size: 13px; }
+.jfp-table th, .jfp-table td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+.jfp-table th { background: #f8fafc; font-weight: 600; color: #475569; }
+.jfp-table td:first-child { font-family: ui-monospace, monospace; color: #0369a1; }
+.jfp-table td:nth-child(2) { font-family: ui-monospace, monospace; color: #166534; }
+</style>
+
+<div class="jfp-wrapper">
+  <div class="jfp-header">
+    <h3>Jotform Prefill Map - Example Configuration</h3>
+    <p>Copy the JSON below and replace the <code>qXX_</code> keys with your actual Jotform field prefill keys.</p>
+  </div>
+
+  <pre class="jfp-example"><span class="bracket">{</span>
+  <span class="comment">// ===== PERSONAL DETAILS =====</span>
+  <span class="key">"first_name"</span>: <span class="string">"q3_firstName"</span>,
+  <span class="key">"last_name"</span>: <span class="string">"q4_lastName"</span>,
+  <span class="key">"dob"</span>: <span class="string">"q5_dob"</span>,
+  <span class="key">"email"</span>: <span class="string">"q6_email"</span>,
+  <span class="key">"mobile"</span>: <span class="string">"q7_mobile"</span>,
+  <span class="key">"postcode"</span>: <span class="string">"q8_postcode"</span>,
+
+  <span class="comment">// ===== CONSENT =====</span>
+  <span class="key">"consent_clinical"</span>: <span class="string">"q9_consentClinical"</span>,
+  <span class="key">"consent_marketing"</span>: <span class="string">"q10_consentMarketing"</span>,
+
+  <span class="comment">// ===== SYMPTOM DOMAINS (0-10 or 0-5 scales) =====</span>
+  <span class="key">"pain"</span>: <span class="string">"q11_pain"</span>,
+  <span class="key">"sleep"</span>: <span class="string">"q12_sleep"</span>,
+  <span class="key">"swelling"</span>: <span class="string">"q13_swelling"</span>,
+  <span class="key">"instability"</span>: <span class="string">"q14_instability"</span>,
+  <span class="key">"stiffness"</span>: <span class="string">"q15_stiffness"</span>,
+  <span class="key">"stairs"</span>: <span class="string">"q16_stairs"</span>,
+  <span class="key">"function"</span>: <span class="string">"q17_function"</span>,
+
+  <span class="comment">// ===== PRIOR KNEE HISTORY =====</span>
+  <span class="key">"prior_problem"</span>: <span class="string">"q18_priorProblem"</span>,
+  <span class="key">"prior_description"</span>: <span class="string">"q19_priorDescription"</span>,
+  <span class="key">"treatments"</span>: <span class="string">"q20_treatments"</span>,
+  <span class="key">"injection_type"</span>: <span class="string">"q21_injectionType"</span>,
+  <span class="key">"surgery_type"</span>: <span class="string">"q22_surgeryType"</span>,
+  <span class="key">"treat_helped"</span>: <span class="string">"q23_treatHelped"</span>,
+  <span class="key">"treat_duration"</span>: <span class="string">"q24_treatDuration"</span>,
+  <span class="key">"treat_stopped"</span>: <span class="string">"q25_treatStopped"</span>,
+
+  <span class="comment">// ===== MEDICAL HISTORY =====</span>
+  <span class="key">"pmh"</span>: <span class="string">"q26_pmh"</span>,
+  <span class="key">"pmh_other_text"</span>: <span class="string">"q27_pmhOtherText"</span>,
+  <span class="key">"trauma_yesno"</span>: <span class="string">"q28_traumaYesno"</span>,
+  <span class="key">"trauma_details"</span>: <span class="string">"q29_traumaDetails"</span>,
+  <span class="key">"past_surgery_any"</span>: <span class="string">"q30_pastSurgeryAny"</span>,
+  <span class="key">"fh_bone_joint"</span>: <span class="string">"q31_fhBoneJoint"</span>,
+  <span class="key">"fh_childhood_knee"</span>: <span class="string">"q32_fhChildhoodKnee"</span>,
+  <span class="key">"fh_details"</span>: <span class="string">"q33_fhDetails"</span>,
+
+  <span class="comment">// ===== MEDICATIONS & ALLERGIES =====</span>
+  <span class="key">"allergies"</span>: <span class="string">"q34_allergies"</span>,
+  <span class="key">"meds_list"</span>: <span class="string">"q35_medsList"</span>,
+  <span class="key">"meds_flags"</span>: <span class="string">"q36_medsFlags"</span>,
+
+  <span class="comment">// ===== LIFESTYLE =====</span>
+  <span class="key">"smoker"</span>: <span class="string">"q37_smoker"</span>,
+  <span class="key">"alcohol_yesno"</span>: <span class="string">"q38_alcoholYesno"</span>,
+  <span class="key">"alcohol_units"</span>: <span class="string">"q39_alcoholUnits"</span>,
+  <span class="key">"other_info"</span>: <span class="string">"q40_otherInfo"</span>,
+
+  <span class="comment">// ===== GOALS & REFERRAL =====</span>
+  <span class="key">"expectations"</span>: <span class="string">"q41_expectations"</span>,
+  <span class="key">"ref_source"</span>: <span class="string">"q42_refSource"</span>,
+
+  <span class="comment">// ===== UTM TRACKING =====</span>
+  <span class="key">"utm_source"</span>: <span class="string">"q43_utmSource"</span>,
+  <span class="key">"utm_medium"</span>: <span class="string">"q44_utmMedium"</span>,
+  <span class="key">"utm_campaign"</span>: <span class="string">"q45_utmCampaign"</span>
+<span class="bracket">}</span></pre>
+
+  <div class="jfp-note">
+    <strong>Important:</strong> The <code>qXX_fieldName</code> values above are examples only. 
+    You must replace them with your actual Jotform field prefill parameter keys. 
+    Remove the comment lines before pasting into Theme Editor (JSON does not support comments).
+  </div>
+
+  <h4 style="margin-top: 24px; font-size: 14px; font-weight: 600; color: #1a1a1a;">Quick Reference Table</h4>
+  <table class="jfp-table">
+    <thead>
+      <tr>
+        <th>Our Field Key</th>
+        <th>Example Jotform Key</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>first_name</td><td>q3_firstName</td><td>Patient first name</td></tr>
+      <tr><td>last_name</td><td>q4_lastName</td><td>Patient last name</td></tr>
+      <tr><td>dob</td><td>q5_dob</td><td>Date of birth (YYYY-MM-DD)</td></tr>
+      <tr><td>email</td><td>q6_email</td><td>Email address</td></tr>
+      <tr><td>mobile</td><td>q7_mobile</td><td>Mobile phone number</td></tr>
+      <tr><td>postcode</td><td>q8_postcode</td><td>UK postcode</td></tr>
+      <tr><td>consent_clinical</td><td>q9_consentClinical</td><td>Clinical processing consent (Yes/No)</td></tr>
+      <tr><td>consent_marketing</td><td>q10_consentMarketing</td><td>Marketing consent (Yes/No)</td></tr>
+      <tr><td>pain</td><td>q11_pain</td><td>Pain level (0-10)</td></tr>
+      <tr><td>sleep</td><td>q12_sleep</td><td>Sleep disturbance (0-10)</td></tr>
+      <tr><td>swelling</td><td>q13_swelling</td><td>Swelling severity (0-5)</td></tr>
+      <tr><td>instability</td><td>q14_instability</td><td>Instability/giving way (0-5)</td></tr>
+      <tr><td>stiffness</td><td>q15_stiffness</td><td>Stiffness level (0-5)</td></tr>
+      <tr><td>stairs</td><td>q16_stairs</td><td>Difficulty with stairs (0-5)</td></tr>
+      <tr><td>function</td><td>q17_function</td><td>Overall function (0-10)</td></tr>
+      <tr><td>prior_problem</td><td>q18_priorProblem</td><td>Previous knee problem (Yes/No)</td></tr>
+      <tr><td>prior_description</td><td>q19_priorDescription</td><td>Description of prior problem</td></tr>
+      <tr><td>treatments</td><td>q20_treatments</td><td>Treatments tried (multi-select)</td></tr>
+      <tr><td>injection_type</td><td>q21_injectionType</td><td>Type of injection received</td></tr>
+      <tr><td>surgery_type</td><td>q22_surgeryType</td><td>Type of surgery received</td></tr>
+      <tr><td>treat_helped</td><td>q23_treatHelped</td><td>Did treatment help (Yes/No/Partially)</td></tr>
+      <tr><td>treat_duration</td><td>q24_treatDuration</td><td>Duration of treatment benefit</td></tr>
+      <tr><td>treat_stopped</td><td>q25_treatStopped</td><td>Reason treatment stopped</td></tr>
+      <tr><td>pmh</td><td>q26_pmh</td><td>Past medical history (multi-select)</td></tr>
+      <tr><td>pmh_other_text</td><td>q27_pmhOtherText</td><td>Other PMH details</td></tr>
+      <tr><td>trauma_yesno</td><td>q28_traumaYesno</td><td>Significant trauma (Yes/No)</td></tr>
+      <tr><td>trauma_details</td><td>q29_traumaDetails</td><td>Trauma description</td></tr>
+      <tr><td>past_surgery_any</td><td>q30_pastSurgeryAny</td><td>Any past surgery (Yes/No)</td></tr>
+      <tr><td>fh_bone_joint</td><td>q31_fhBoneJoint</td><td>Family history bone/joint (Yes/No/Unknown)</td></tr>
+      <tr><td>fh_childhood_knee</td><td>q32_fhChildhoodKnee</td><td>Childhood knee issues in family</td></tr>
+      <tr><td>fh_details</td><td>q33_fhDetails</td><td>Family history details</td></tr>
+      <tr><td>allergies</td><td>q34_allergies</td><td>Known allergies</td></tr>
+      <tr><td>meds_list</td><td>q35_medsList</td><td>Current medications list</td></tr>
+      <tr><td>meds_flags</td><td>q36_medsFlags</td><td>Medication flags (multi-select)</td></tr>
+      <tr><td>smoker</td><td>q37_smoker</td><td>Smoking status (Never/Former/Current)</td></tr>
+      <tr><td>alcohol_yesno</td><td>q38_alcoholYesno</td><td>Alcohol consumption (Yes/No)</td></tr>
+      <tr><td>alcohol_units</td><td>q39_alcoholUnits</td><td>Alcohol units per week</td></tr>
+      <tr><td>other_info</td><td>q40_otherInfo</td><td>Additional information</td></tr>
+      <tr><td>expectations</td><td>q41_expectations</td><td>Patient goals/expectations</td></tr>
+      <tr><td>ref_source</td><td>q42_refSource</td><td>Referral source</td></tr>
+      <tr><td>utm_source</td><td>q43_utmSource</td><td>UTM source parameter</td></tr>
+      <tr><td>utm_medium</td><td>q44_utmMedium</td><td>UTM medium parameter</td></tr>
+      <tr><td>utm_campaign</td><td>q45_utmCampaign</td><td>UTM campaign parameter</td></tr>
+    </tbody>
+  </table>
+
+  <h4 style="margin-top: 24px; font-size: 14px; font-weight: 600; color: #1a1a1a;">Clean JSON (Copy-Paste Ready)</h4>
+  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px;">Remove comments and replace with your real Jotform keys:</p>
+  <pre class="jfp-example" style="font-size: 11px;">{"first_name":"q3_firstName","last_name":"q4_lastName","dob":"q5_dob","email":"q6_email","mobile":"q7_mobile","postcode":"q8_postcode","consent_clinical":"q9_consentClinical","consent_marketing":"q10_consentMarketing","pain":"q11_pain","sleep":"q12_sleep","swelling":"q13_swelling","instability":"q14_instability","stiffness":"q15_stiffness","stairs":"q16_stairs","function":"q17_function","prior_problem":"q18_priorProblem","prior_description":"q19_priorDescription","treatments":"q20_treatments","injection_type":"q21_injectionType","surgery_type":"q22_surgeryType","treat_helped":"q23_treatHelped","treat_duration":"q24_treatDuration","treat_stopped":"q25_treatStopped","pmh":"q26_pmh","pmh_other_text":"q27_pmhOtherText","trauma_yesno":"q28_traumaYesno","trauma_details":"q29_traumaDetails","past_surgery_any":"q30_pastSurgeryAny","fh_bone_joint":"q31_fhBoneJoint","fh_childhood_knee":"q32_fhChildhoodKnee","fh_details":"q33_fhDetails","allergies":"q34_allergies","meds_list":"q35_medsList","meds_flags":"q36_medsFlags","smoker":"q37_smoker","alcohol_yesno":"q38_alcoholYesno","alcohol_units":"q39_alcoholUnits","other_info":"q40_otherInfo","expectations":"q41_expectations","ref_source":"q42_refSource","utm_source":"q43_utmSource","utm_medium":"q44_utmMedium","utm_campaign":"q45_utmCampaign"}</pre>
+</div>
