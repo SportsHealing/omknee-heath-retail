@@ -275,35 +275,30 @@ const KneeScoreEmbed = () => {
             </div>
 
             {/* CTA to Personalised Test Recommendations */}
-            <div className="relative bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-2xl border border-primary/20 p-6 text-center overflow-hidden">
-              {/* Animated background glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0 animate-pulse opacity-50" />
-              
-              <div className="relative z-10">
-                <div className="flex items-center justify-center gap-2 mb-3">
-                  <Stethoscope className="w-5 h-5 text-primary animate-pulse" />
-                  <h3 className="text-lg font-serif text-foreground">
-                    Want personalised test recommendations?
-                  </h3>
-                </div>
-                <p className="text-sm text-muted-foreground mb-4 max-w-md mx-auto">
-                  Based on your score and health profile, get a tailored package of imaging, blood tests, and procedures.
-                </p>
-                <Button 
-                  onClick={() => {
-                    document.getElementById('personalised-recommendations')?.scrollIntoView({ 
-                      behavior: 'smooth', 
-                      block: 'start' 
-                    });
-                  }}
-                  className="gap-2 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:scale-105 animate-[pulse_3s_ease-in-out_infinite]"
-                  size="lg"
-                >
-                  <Stethoscope className="w-4 h-4" />
-                  Recommend tests personalised to me
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
+            <div className="bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 rounded-2xl border border-primary/20 p-8 text-center">
+              <div className="flex items-center justify-center gap-2 mb-3">
+                <Stethoscope className="w-6 h-6 text-primary" />
+                <h3 className="text-xl font-serif text-foreground">
+                  Want personalised test recommendations?
+                </h3>
               </div>
+              <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
+                Based on your score and health profile, get a tailored package of imaging, blood tests, and procedures.
+              </p>
+              <Button 
+                onClick={() => {
+                  document.getElementById('personalised-recommendations')?.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                  });
+                }}
+                className="gap-3 px-8 py-6 text-base font-medium shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] animate-[subtle-pulse_4s_ease-in-out_infinite]"
+                size="lg"
+              >
+                <Stethoscope className="w-5 h-5" />
+                Recommend tests personalised to me
+                <ArrowRight className="w-5 h-5" />
+              </Button>
             </div>
 
             {/* Active Recommendations Panel */}
