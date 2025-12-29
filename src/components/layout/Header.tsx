@@ -27,7 +27,7 @@ const Header = () => {
             <a href="#" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
               Our Approach
             </a>
-            <a href="#" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <a href="/science" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
               Science
             </a>
             <a href="#" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -67,7 +67,7 @@ const Header = () => {
               <a href="#" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Our Approach
               </a>
-              <a href="#" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a href="/science" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Science
               </a>
               <a href="#" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
