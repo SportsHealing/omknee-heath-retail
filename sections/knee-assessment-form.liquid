@@ -24,7 +24,7 @@
 {% endcomment %}
 
 {%- liquid
-  assign form_id = section.settings.jotform_id | default: 'PLACEHOLDER_FORM_ID'
+  assign form_id = section.settings.jotform_form_id | default: settings.jotform_form_id | default: 'PLACEHOLDER_FORM_ID'
   assign section_id = section.id | default: 'knee-assessment'
 -%}
 
@@ -501,7 +501,7 @@
     },
     {
       "type": "text",
-      "id": "jotform_id",
+      "id": "jotform_form_id",
       "label": "Jotform Form ID",
       "info": "Enter your Jotform form ID (e.g., 241234567890123). Find this in your Jotform URL.",
       "default": "PLACEHOLDER_FORM_ID"
