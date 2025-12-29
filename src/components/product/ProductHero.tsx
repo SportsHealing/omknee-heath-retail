@@ -5,6 +5,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Shield, FlaskConical, Building2 } from "lucide-react";
+import productImage from "@/assets/product-pouches.png";
 
 const ProductHero = () => {
   return (
@@ -13,14 +14,14 @@ const ProductHero = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Product Image */}
           <div className="relative order-2 lg:order-1">
-            <div className="aspect-square bg-secondary rounded-lg flex items-center justify-center">
-              <div className="text-center p-8">
-                <div className="w-40 h-56 mx-auto bg-primary/5 rounded-lg mb-4 flex items-center justify-center border border-primary/10">
-                  <span className="text-muted-foreground text-sm">Product Image</span>
-                </div>
-                <p className="font-sans text-sm text-muted-foreground">30 Daily Pouches • 30 Day Supply</p>
-              </div>
+            <div className="aspect-square bg-secondary rounded-lg flex items-center justify-center overflow-hidden">
+              <img 
+                src={productImage} 
+                alt="OmKneeHealth Knee Joint Supplement - 30 daily pouches" 
+                className="w-full h-full object-contain p-4"
+              />
             </div>
+            <p className="text-center mt-4 font-sans text-sm text-muted-foreground">30 Daily Pouches • 30 Day Supply</p>
             
             {/* Quality badges */}
             <div className="mt-6 grid grid-cols-3 gap-3">
