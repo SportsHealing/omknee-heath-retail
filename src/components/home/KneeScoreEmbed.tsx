@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, RotateCcw, Clock, Zap } from "lucide-react";
+import { ArrowRight, Shield, RotateCcw, Clock, Zap, Stethoscope } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import RAGGauge from "./RAGGauge";
 import RecommendedActions from "./RecommendedActions";
@@ -274,6 +274,32 @@ const KneeScoreEmbed = () => {
               ))}
             </div>
 
+            {/* CTA to Personalised Test Recommendations */}
+            <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-2xl border border-primary/20 p-6 text-center">
+              <div className="flex items-center justify-center gap-2 mb-3">
+                <Stethoscope className="w-5 h-5 text-primary" />
+                <h3 className="text-lg font-serif text-foreground">
+                  Want personalised test recommendations?
+                </h3>
+              </div>
+              <p className="text-sm text-muted-foreground mb-4 max-w-md mx-auto">
+                Based on your score and health profile, get a tailored package of imaging, blood tests, and procedures.
+              </p>
+              <Button 
+                onClick={() => {
+                  document.getElementById('personalised-recommendations')?.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                  });
+                }}
+                className="gap-2"
+              >
+                <Stethoscope className="w-4 h-4" />
+                Recommend tests personalised to me
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </div>
+
             {/* Active Recommendations Panel */}
             <div className="bg-background rounded-2xl border border-border shadow-elegant p-8">
               <h3 className="text-xl font-serif text-foreground mb-6 text-center">
@@ -322,7 +348,10 @@ const KneeScoreEmbed = () => {
             </div>
 
             {/* Personalised Test Recommendations */}
-            <div className="bg-background rounded-2xl border border-border shadow-elegant p-8 mt-8">
+            <div 
+              id="personalised-recommendations" 
+              className="bg-background rounded-2xl border border-border shadow-elegant p-8 mt-8 scroll-mt-24"
+            >
               <h3 className="text-xl font-serif text-foreground mb-6 text-center">
                 Personalised Test Recommendations
               </h3>
