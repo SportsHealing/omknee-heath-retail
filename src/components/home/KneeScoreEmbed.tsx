@@ -35,28 +35,15 @@ const KneeScoreEmbed = () => {
           {/* Embed Container */}
           <div className="bg-background rounded-2xl border border-border shadow-elegant overflow-hidden">
             {/* Iframe Embed */}
-            <div className="relative w-full" style={{ minHeight: '500px' }}>
+            <div className="relative w-full" style={{ minHeight: '600px' }}>
               <iframe
                 src="https://score.omkneehealth.com"
                 title="OmKneeHealth Knee Score Assessment"
-                className="w-full h-full absolute inset-0 border-0"
-                style={{ minHeight: '500px' }}
+                className="w-full border-0"
+                style={{ height: '600px', minHeight: '600px' }}
                 loading="lazy"
                 allow="clipboard-write"
               />
-              
-              {/* Fallback for when iframe doesn't load - shown as placeholder in dev */}
-              <div className="flex items-center justify-center h-full min-h-[500px] bg-om-cream/20 p-8 text-center">
-                <div>
-                  <div className="w-16 h-16 rounded-full bg-om-sage/20 flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">📋</span>
-                  </div>
-                  <p className="text-foreground font-medium mb-2">Knee Score Assessment</p>
-                  <p className="text-muted-foreground text-sm max-w-xs">
-                    The assessment tool will load here from score.omkneehealth.com
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
 
