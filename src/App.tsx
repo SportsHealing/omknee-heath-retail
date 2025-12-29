@@ -8,6 +8,7 @@ import Product from "./pages/Product";
 import Science from "./pages/Science";
 import Assessment from "./pages/Assessment";
 import NotFound from "./pages/NotFound";
+import ScrollToHash from "./components/ScrollToHash";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToHash />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/product" element={<Product />} />
