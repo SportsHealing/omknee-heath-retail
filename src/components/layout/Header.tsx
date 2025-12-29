@@ -15,7 +15,7 @@ const Header = () => {
             <img 
               src={logoDarkGreen} 
               alt="OmKneeHealth London" 
-              className="h-10 md:h-12 w-auto"
+              className="h-32 md:h-36 w-auto"
             />
           </a>
 
