@@ -1,0 +1,241 @@
+{% comment %}
+  Knee Assessment Compliance Component
+  =====================================
+  Include above the knee assessment form to provide GDPR compliance info.
+  
+  Usage:
+  {% render 'knee-assessment-compliance', section_id: section.id %}
+{% endcomment %}
+
+{%- assign comp_id = section_id | default: 'kac' -%}
+
+<style>
+  .kac-compliance {
+    max-width: 720px;
+    margin: 0 auto 32px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .kac-data-panel {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+  }
+
+  .kac-data-panel__title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .kac-data-panel__title svg {
+    width: 20px;
+    height: 20px;
+    color: #166534;
+  }
+
+  .kac-data-panel__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .kac-data-panel__list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: 0.9375rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  .kac-data-panel__list li:not(:last-child) {
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .kac-data-panel__list svg {
+    width: 16px;
+    height: 16px;
+    color: #166534;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .kac-privacy-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.875rem;
+    color: #166534;
+    text-decoration: underline;
+    margin-top: 12px;
+  }
+
+  .kac-privacy-link:hover {
+    color: #14532d;
+  }
+
+  .kac-privacy-link svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .kac-gate {
+    background: #fff;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+  }
+
+  .kac-gate label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 0.9375rem;
+    color: #1a1a1a;
+  }
+
+  .kac-gate input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    accent-color: #166534;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .kac-gate.checked {
+    border-color: #166534;
+    background: #f0fdf4;
+  }
+
+  .kac-urgent-footer {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-top: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .kac-urgent-footer svg {
+    width: 20px;
+    height: 20px;
+    color: #dc2626;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .kac-urgent-footer p {
+    font-size: 0.875rem;
+    color: #991b1b;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .kac-urgent-footer strong {
+    font-weight: 600;
+  }
+</style>
+
+<div class="kac-compliance" id="kac-{{ comp_id }}">
+  
+  <!-- Your Data Panel -->
+  <div class="kac-data-panel">
+    <h3 class="kac-data-panel__title">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+      </svg>
+      Your Data
+    </h3>
+    <ul class="kac-data-panel__list">
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+        </svg>
+        <span>We use your answers to guide clinical next steps and recommendations</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+        </svg>
+        <span>You can request access to or deletion of your data at any time</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+        </svg>
+        <span>Marketing contact is opt-in only</span>
+      </li>
+    </ul>
+    <a href="/policies/privacy-policy" class="kac-privacy-link" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+      </svg>
+      Read our Privacy Policy
+    </a>
+  </div>
+
+  <!-- Privacy Notice Gate -->
+  <div class="kac-gate" id="kac-gate-{{ comp_id }}">
+    <label>
+      <input type="checkbox" id="kac-privacy-read-{{ comp_id }}" required>
+      <span>I have read the <a href="/policies/privacy-policy" target="_blank">privacy notice</a> and understand how my data will be used.</span>
+    </label>
+  </div>
+
+  <!-- Urgent Care Footer -->
+  <div class="kac-urgent-footer">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+    </svg>
+    <p><strong>Important:</strong> If your knee is acutely swollen, hot, or you cannot weight-bear, seek urgent care immediately.</p>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  const compId = '{{ comp_id }}';
+  const checkbox = document.getElementById('kac-privacy-read-' + compId);
+  const gate = document.getElementById('kac-gate-' + compId);
+  
+  // Find the start/continue button in the assessment form
+  function getStartButton() {
+    // Look for the next button in the assessment UI
+    const nextBtn = document.querySelector('[id^="kauNext-"]');
+    const submitBtn = document.querySelector('[id^="kauSubmit-"]');
+    return nextBtn || submitBtn;
+  }
+  
+  function updateButtonState() {
+    const btn = getStartButton();
+    if (btn) {
+      btn.disabled = !checkbox.checked;
+    }
+    gate.classList.toggle('checked', checkbox.checked);
+  }
+  
+  checkbox.addEventListener('change', updateButtonState);
+  
+  // Initialize on load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(updateButtonState, 100);
+    });
+  } else {
+    setTimeout(updateButtonState, 100);
+  }
+})();
+</script>
