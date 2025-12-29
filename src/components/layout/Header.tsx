@@ -58,7 +58,7 @@ const Header = () => {
               className="hidden md:inline-flex text-sm font-medium border-primary/20 hover:bg-primary hover:text-primary-foreground hover:border-primary"
               asChild
             >
-              <a href="#assessment">Take Assessment</a>
+              <a href="/#assessment">Take Knee Assessment</a>
             </Button>
             <Button 
               variant="ghost" 
@@ -108,7 +108,7 @@ const Header = () => {
                 size="sm"
                 asChild
               >
-                <a href="#assessment">Take Assessment</a>
+                <a href="/#assessment">Take Knee Assessment</a>
               </Button>
             </nav>
           </div>
