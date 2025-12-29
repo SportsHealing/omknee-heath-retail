@@ -7,7 +7,9 @@ interface BandRecommendation {
   redFlags?: string[];
 }
 
-const recommendations: Record<string, BandRecommendation> = {
+type Category = "knee" | "sleep" | "index";
+
+const kneeRecommendations: Record<string, BandRecommendation> = {
   critical: {
     headline: "Prioritise Professional Support",
     actions: [
@@ -57,6 +59,106 @@ const recommendations: Record<string, BandRecommendation> = {
   },
 };
 
+const sleepRecommendations: Record<string, BandRecommendation> = {
+  critical: {
+    headline: "Prioritise Sleep Health Support",
+    actions: [
+      "Consult a healthcare provider about sleep concerns",
+      "Establish a consistent bedtime and wake time",
+      "Create a dark, quiet, and cool sleep environment",
+      "Avoid screens for 1 hour before bed",
+      "Limit caffeine and alcohol, especially in the evening",
+      "Consider a sleep diary to identify patterns",
+    ],
+    redFlags: [
+      "Chronic insomnia lasting more than 3 months",
+      "Gasping, choking, or pauses in breathing during sleep",
+      "Excessive daytime sleepiness affecting safety",
+      "Unexplained leg movements or restlessness at night",
+    ],
+  },
+  low: {
+    headline: "Improve Your Sleep Habits",
+    actions: [
+      "Set a consistent sleep schedule (even on weekends)",
+      "Develop a relaxing pre-bed routine",
+      "Limit naps to 20-30 minutes before 3pm",
+      "Exercise regularly, but not close to bedtime",
+      "Consider magnesium or calming supplements (consult your doctor)",
+    ],
+  },
+  moderate: {
+    headline: "Optimise Your Sleep Quality",
+    actions: [
+      "Fine-tune your sleep environment (temperature, lighting)",
+      "Practice relaxation techniques before bed",
+      "Limit heavy meals close to bedtime",
+      "Consider sleep-supporting nutrition",
+      "Track your sleep to identify improvement areas",
+    ],
+  },
+  good: {
+    headline: "Maintain Your Excellent Sleep",
+    actions: [
+      "Continue your healthy sleep routine",
+      "Stay consistent with bedtime and wake times",
+      "Keep your sleep environment optimal",
+      "Manage stress proactively",
+      "Listen to your body's sleep signals",
+    ],
+  },
+};
+
+const indexRecommendations: Record<string, BandRecommendation> = {
+  critical: {
+    headline: "Comprehensive Wellness Support Needed",
+    actions: [
+      "Consult healthcare providers for both joint and sleep concerns",
+      "Address the most pressing symptoms first",
+      "Consider how knee discomfort may be affecting your sleep",
+      "Establish foundational healthy habits gradually",
+      "Keep a combined symptom and sleep diary",
+      "Explore gentle movement that supports both areas",
+    ],
+    redFlags: [
+      "Symptoms significantly impacting daily function",
+      "Worsening pain or sleep over time",
+      "Difficulty managing work or relationships due to symptoms",
+      "Signs of depression or anxiety related to health concerns",
+    ],
+  },
+  low: {
+    headline: "Build Your Wellness Foundation",
+    actions: [
+      "Create a balanced routine addressing both sleep and movement",
+      "Start with small, sustainable lifestyle changes",
+      "Consider how joint health and sleep quality interact",
+      "Focus on anti-inflammatory nutrition",
+      "Seek professional guidance for a holistic plan",
+    ],
+  },
+  moderate: {
+    headline: "Strengthen Your Overall Wellness",
+    actions: [
+      "Continue building healthy habits in both areas",
+      "Balance rest and activity for optimal recovery",
+      "Support your body with targeted nutrition",
+      "Monitor progress and adjust as needed",
+      "Celebrate improvements in both knee comfort and sleep",
+    ],
+  },
+  good: {
+    headline: "Excellent Holistic Health",
+    actions: [
+      "Maintain your balanced approach to wellness",
+      "Continue prioritising both joint health and sleep quality",
+      "Stay proactive with preventive care",
+      "Share your successful strategies with others",
+      "Keep listening to your body's needs",
+    ],
+  },
+};
+
 const getBandKey = (score: number): string => {
   if (score >= 75) return "good";
   if (score >= 50) return "moderate";
@@ -75,15 +177,24 @@ interface RecommendedActionsProps {
   score: number;
   ctaUrl?: string;
   ctaText?: string;
+  category?: Category;
 }
 
 const RecommendedActions = ({ 
   score, 
   ctaUrl = "/product", 
-  ctaText = "Book Next Step" 
+  ctaText = "Book Next Step",
+  category = "knee"
 }: RecommendedActionsProps) => {
   const bandKey = getBandKey(score);
-  const recommendation = recommendations[bandKey];
+  
+  const recommendationsMap = {
+    knee: kneeRecommendations,
+    sleep: sleepRecommendations,
+    index: indexRecommendations,
+  };
+  
+  const recommendation = recommendationsMap[category][bandKey];
   const style = getBandStyle(score);
 
   return (
