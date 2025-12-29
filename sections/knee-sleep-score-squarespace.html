@@ -1,33 +1,29 @@
-{% comment %}
+<!--
   OmKneeHealth Knee + Sleep Score Calculator
-  Shopify Online Store 2.0 Section
+  Squarespace Version - Plain HTML/CSS/JS
   
-  A patient-reported knee and sleep health score with transparent domain 
-  contributors and a combined index (0–100).
+  USAGE:
+  1. In Squarespace, add a "Code Block" to your page
+  2. Paste this entire code block
+  3. Save and publish
   
-  Features:
-  - 7 knee domains with mixed native scales, normalized to 0-100
-  - 7 sleep contributors (0-100 scale)
-  - Partial completion support with normalized weights
-  - Copy results functionality
-  - Optional Shopify/Klaviyo event hooks (commented)
-{% endcomment %}
+  BRAND VARIANTS:
+  Change data-brand attribute on the wrapper to switch themes:
+  - "omkneehealth" (default: green accents)
+  - "sportshealing" (sky/blue accents)
+  - "mykneescan" (purple accents)
+  - "chinmaygupte" (dark/navy accents)
+-->
 
-<section 
-  id="omk-score-section-{{ section.id }}" 
-  class="omk-score-section"
-  data-section-id="{{ section.id }}"
-  data-brand="{{ section.settings.brand_theme | default: 'omkneehealth' }}"
-  data-min-knee-domains="{{ section.settings.min_knee_domains }}"
-  data-show-weights="{{ section.settings.show_weights }}"
->
+<div id="omk-score-section-page" class="omk-score-section" data-brand="omkneehealth">
   <div class="omk-score-container">
-    {%- comment -%} Header {%- endcomment -%}
+    
+    <!-- Header -->
     <header class="omk-score-header">
       <div class="omk-score-logo">
-        <span class="omk-logo-text">OmKneeHealth</span>
+        <span class="omk-logo-text">Knee + Sleep Score</span>
       </div>
-      <h2 class="omk-score-title">{{ section.settings.heading }}</h2>
+      <h2 class="omk-score-title">Proprietary Knee + Sleep Score</h2>
       <p class="omk-score-subtitle">
         A patient-reported knee and sleep health score with transparent domain contributors and a combined index (0–100).
       </p>
@@ -36,21 +32,21 @@
       </p>
     </header>
 
-    {%- comment -%} Start/Reset Buttons {%- endcomment -%}
+    <!-- Start/Reset Buttons -->
     <div class="omk-score-actions-top">
-      <button type="button" class="omk-btn omk-btn-primary" id="omk-start-btn-{{ section.id }}">
+      <button type="button" class="omk-btn omk-btn-primary" id="omk-start-btn-page">
         Start Assessment
       </button>
-      <button type="button" class="omk-btn omk-btn-secondary" id="omk-reset-btn-{{ section.id }}">
+      <button type="button" class="omk-btn omk-btn-secondary" id="omk-reset-btn-page">
         Reset
       </button>
     </div>
 
-    {%- comment -%} Main Grid {%- endcomment -%}
+    <!-- Main Grid -->
     <div class="omk-score-grid">
       
-      {%- comment -%} Knee Score Panel {%- endcomment -%}
-      <div class="omk-score-panel" id="omk-knee-panel-{{ section.id }}">
+      <!-- Knee Score Panel -->
+      <div class="omk-score-panel" id="omk-knee-panel-page">
         <div class="omk-panel-header">
           <h3 class="omk-panel-title">Proprietary Knee Score</h3>
           <span class="omk-panel-meta">7 domains • weighted • 0–100</span>
@@ -69,8 +65,8 @@
                 <th class="omk-col-right">Weighted (0–100)</th>
               </tr>
             </thead>
-            <tbody id="omk-knee-rows-{{ section.id }}">
-              {%- comment -%} Rows populated by JS {%- endcomment -%}
+            <tbody id="omk-knee-rows-page">
+              <!-- Rows populated by JS -->
             </tbody>
           </table>
         </div>
@@ -78,20 +74,20 @@
         <div class="omk-result-box">
           <div class="omk-result-scores">
             <span class="omk-result-label">Pro Knee</span>
-            <span class="omk-result-value" id="omk-knee-total-{{ section.id }}">—</span>
-            <span class="omk-result-band" id="omk-knee-band-{{ section.id }}">—</span>
+            <span class="omk-result-value" id="omk-knee-total-page">—</span>
+            <span class="omk-result-band" id="omk-knee-band-page">—</span>
           </div>
           <div class="omk-result-meaning">
             <span class="omk-meaning-label">What it means</span>
-            <p class="omk-meaning-text" id="omk-knee-meaning-{{ section.id }}">
+            <p class="omk-meaning-text" id="omk-knee-meaning-page">
               Fill in the domains to see your score band and next steps.
             </p>
           </div>
         </div>
       </div>
 
-      {%- comment -%} Sleep Score Panel {%- endcomment -%}
-      <div class="omk-score-panel" id="omk-sleep-panel-{{ section.id }}">
+      <!-- Sleep Score Panel -->
+      <div class="omk-score-panel" id="omk-sleep-panel-page">
         <div class="omk-panel-header">
           <h3 class="omk-panel-title">Sleep Score</h3>
           <span class="omk-panel-meta">7 contributors • weighted • 0–100</span>
@@ -110,8 +106,8 @@
                 <th class="omk-col-right">Weighted</th>
               </tr>
             </thead>
-            <tbody id="omk-sleep-rows-{{ section.id }}">
-              {%- comment -%} Rows populated by JS {%- endcomment -%}
+            <tbody id="omk-sleep-rows-page">
+              <!-- Rows populated by JS -->
             </tbody>
           </table>
         </div>
@@ -119,20 +115,20 @@
         <div class="omk-result-box">
           <div class="omk-result-scores">
             <span class="omk-result-label">Sleep</span>
-            <span class="omk-result-value" id="omk-sleep-total-{{ section.id }}">—</span>
-            <span class="omk-result-band" id="omk-sleep-band-{{ section.id }}">—</span>
+            <span class="omk-result-value" id="omk-sleep-total-page">—</span>
+            <span class="omk-result-band" id="omk-sleep-band-page">—</span>
           </div>
           <div class="omk-result-meaning">
             <span class="omk-meaning-label">What it means</span>
-            <p class="omk-meaning-text" id="omk-sleep-meaning-{{ section.id }}">
+            <p class="omk-meaning-text" id="omk-sleep-meaning-page">
               Fill in the contributors to see your band and next steps.
             </p>
           </div>
         </div>
       </div>
 
-      {%- comment -%} Combined Index Panel {%- endcomment -%}
-      <div class="omk-score-panel omk-index-panel" id="omk-index-panel-{{ section.id }}">
+      <!-- Combined Index Panel -->
+      <div class="omk-score-panel omk-index-panel" id="omk-index-panel-page">
         <div class="omk-panel-header">
           <h3 class="omk-panel-title">Knee + Sleep Health Index</h3>
           <span class="omk-panel-meta">0–100 • combined index</span>
@@ -141,26 +137,21 @@
         <div class="omk-result-box omk-result-box-index">
           <div class="omk-result-scores omk-result-scores-large">
             <span class="omk-result-label">Index</span>
-            <span class="omk-result-value omk-result-value-large" id="omk-index-total-{{ section.id }}">—</span>
-            <span class="omk-result-band" id="omk-index-band-{{ section.id }}">—</span>
+            <span class="omk-result-value omk-result-value-large" id="omk-index-total-page">—</span>
+            <span class="omk-result-band" id="omk-index-band-page">—</span>
           </div>
           <div class="omk-result-meaning">
             <span class="omk-meaning-label">Next steps</span>
-            <p class="omk-meaning-text" id="omk-index-meaning-{{ section.id }}">
+            <p class="omk-meaning-text" id="omk-index-meaning-page">
               Your Index is the average of Pro Knee and Sleep. It's a decision-support snapshot, not a diagnosis.
             </p>
           </div>
 
           <div class="omk-cta-actions">
-            {%- if section.settings.cta_url != blank -%}
-              <a href="{{ section.settings.cta_url }}" class="omk-btn omk-btn-primary omk-btn-cta" id="omk-cta-btn-{{ section.id }}">
-                {{ section.settings.cta_text }}
-              </a>
-            {%- endif -%}
-            <button type="button" class="omk-btn omk-btn-secondary" id="omk-copy-btn-{{ section.id }}">
+            <button type="button" class="omk-btn omk-btn-secondary" id="omk-copy-btn-page">
               Copy results
             </button>
-            <button type="button" class="omk-btn omk-btn-tertiary" id="omk-print-btn-{{ section.id }}">
+            <button type="button" class="omk-btn omk-btn-tertiary" id="omk-print-btn-page">
               Print
             </button>
           </div>
@@ -185,11 +176,11 @@
 
     </div>
   </div>
-</section>
+</div>
 
 <style>
   /* ========================================
-     OmKneeHealth Knee + Sleep Score Styles
+     Knee + Sleep Score Styles
      Brand-switchable via data-brand attribute
      ======================================== */
   
@@ -366,10 +357,6 @@
   .omk-btn-tertiary:hover {
     color: var(--omk-primary);
     background: var(--omk-bg-soft);
-  }
-
-  .omk-btn-cta {
-    padding: 0.875rem 2rem;
   }
 
   /* Grid */
@@ -683,16 +670,13 @@
 
 <script>
 (function() {
-  const sectionId = '{{ section.id }}';
-  const section = document.getElementById('omk-score-section-' + sectionId);
+  var sectionId = 'page';
+  var section = document.getElementById('omk-score-section-' + sectionId);
   if (!section) return;
-
-  const minKneeDomains = parseInt(section.dataset.minKneeDomains, 10) || 5;
-  const showWeights = section.dataset.showWeights === 'true';
 
   // ========= DOMAINS =========
   // Knee: RAW inputs are mixed-scale; each is normalised to 0–100 using (raw/max)*100.
-  const kneeDomains = [
+  var kneeDomains = [
     { key: 'pain',     label: 'Pain',                        max: 10 },
     { key: 'sleep',    label: 'Disturbed sleep',             max: 10 },
     { key: 'swell',    label: 'Swelling',                    max: 5  },
@@ -703,21 +687,21 @@
   ];
 
   // Sleep: values are already 0–100.
-  const sleepDomains = [
+  var sleepDomains = [
     { key: 'total',   label: 'Total sleep',      max: 100 },
-    { key: 'eff',     label: 'Efficiency',       max: 100 },
+    { key: 'eff',     label: 'Sleep efficiency', max: 100 },
     { key: 'rest',    label: 'Restfulness',      max: 100 },
     { key: 'rem',     label: 'REM sleep',        max: 100 },
     { key: 'deep',    label: 'Deep sleep',       max: 100 },
-    { key: 'latency', label: 'Latency',          max: 100 },
-    { key: 'timing',  label: 'Timing',           max: 100 }
+    { key: 'latency', label: 'Sleep latency',    max: 100 },
+    { key: 'timing',  label: 'Sleep timing',     max: 100 }
   ];
 
-  const defaultWeight = 1;
+  var defaultWeight = 1;
 
   // Element references
-  const kneeTbody = document.getElementById('omk-knee-rows-' + sectionId);
-  const sleepTbody = document.getElementById('omk-sleep-rows-' + sectionId);
+  var kneeTbody = document.getElementById('omk-knee-rows-' + sectionId);
+  var sleepTbody = document.getElementById('omk-sleep-rows-' + sectionId);
 
   // Utilities
   function clamp(n, min, max) {
@@ -734,7 +718,7 @@
   }
 
   function meaningFor(type, score) {
-    const b = bandFor(score).name;
+    var b = bandFor(score).name;
     if (score === null) return 'Enter values to see guidance.';
 
     if (type === 'knee') {
@@ -759,14 +743,14 @@
   }
 
   function rowTemplate(domain, group) {
-    const tr = document.createElement('tr');
+    var tr = document.createElement('tr');
 
-    const tdLabel = document.createElement('td');
+    var tdLabel = document.createElement('td');
     tdLabel.textContent = domain.label;
 
-    const tdVal = document.createElement('td');
+    var tdVal = document.createElement('td');
     tdVal.className = 'omk-col-right';
-    const val = document.createElement('input');
+    var val = document.createElement('input');
     val.type = 'number';
     val.step = '1';
     val.inputMode = 'numeric';
@@ -779,9 +763,9 @@
     val.placeholder = '0–' + domain.max;
     tdVal.appendChild(val);
 
-    const tdW = document.createElement('td');
+    var tdW = document.createElement('td');
     tdW.className = 'omk-col-right omk-weight-col';
-    const w = document.createElement('input');
+    var w = document.createElement('input');
     w.type = 'number';
     w.min = '0';
     w.max = '10';
@@ -795,7 +779,7 @@
     w.setAttribute('aria-label', domain.label + ' weight');
     tdW.appendChild(w);
 
-    const tdWeighted = document.createElement('td');
+    var tdWeighted = document.createElement('td');
     tdWeighted.className = 'omk-col-right';
     tdWeighted.id = 'omk-weighted-' + sectionId + '-' + group + '-' + domain.key;
     tdWeighted.textContent = '—';
@@ -850,16 +834,12 @@
       return null;
     }
 
-    // For knee: check minimum domains requirement
-    if (group === 'knee' && answered.length < minKneeDomains) {
-      domains.forEach(function(d) {
-        var el = document.getElementById('omk-weighted-' + sectionId + '-' + group + '-' + d.key);
-        if (el) el.textContent = (values[d.key] !== null) ? '...' : '—';
-      });
-      return null;
-    }
-
+    // Calculate weight sum for answered domains only
     var wSum = answered.reduce(function(s, d) { return s + (Number(weights[d.key]) || 0); }, 0);
+    
+    // CRITICAL: If all weights are 0, fallback to equal weights
+    var useEqualWeights = (wSum === 0);
+    
     var total = 0;
 
     domains.forEach(function(d) {
@@ -872,7 +852,15 @@
 
       var raw = clamp(Number(values[d.key]), 0, d.max);
       var normalised = (raw / d.max) * 100;
-      var wNorm = (wSum > 0) ? ((Number(weights[d.key]) || 0) / wSum) : (1 / answered.length);
+      
+      // Normalise weight across answered domains, or use equal weights if all zero
+      var wNorm;
+      if (useEqualWeights) {
+        wNorm = 1 / answered.length;
+      } else {
+        wNorm = (Number(weights[d.key]) || 0) / wSum;
+      }
+      
       var weighted = normalised * wNorm;
 
       if (el) el.textContent = weighted.toFixed(1);
@@ -892,6 +880,8 @@
   function render() {
     var knee = computeWeighted('knee');
     var sleep = computeWeighted('sleep');
+    
+    // Index: only show when BOTH have at least one answered value
     var index = (knee === null || sleep === null) ? null : Math.round((knee + sleep) / 2);
 
     // Knee
@@ -908,35 +898,6 @@
     document.getElementById('omk-index-total-' + sectionId).textContent = (index === null) ? '—' : String(index);
     setBand(document.getElementById('omk-index-band-' + sectionId), bandFor(index));
     document.getElementById('omk-index-meaning-' + sectionId).textContent = meaningFor('index', index);
-
-    // ========= OPTIONAL: Shopify/Klaviyo Event Hooks =========
-    // Uncomment and customize as needed:
-    
-    // if (knee !== null && sleep !== null && index !== null) {
-    //   // Shopify Analytics
-    //   if (window.Shopify && window.Shopify.analytics) {
-    //     window.Shopify.analytics.publish('omknee_score_calculated', {
-    //       knee_score: knee,
-    //       sleep_score: sleep,
-    //       combined_index: index,
-    //       knee_band: bandFor(knee).name,
-    //       sleep_band: bandFor(sleep).name,
-    //       index_band: bandFor(index).name
-    //     });
-    //   }
-    //
-    //   // Klaviyo Event
-    //   if (window._learnq) {
-    //     window._learnq.push(['track', 'Knee Sleep Score Calculated', {
-    //       KneeScore: knee,
-    //       SleepScore: sleep,
-    //       CombinedIndex: index,
-    //       KneeBand: bandFor(knee).name,
-    //       SleepBand: bandFor(sleep).name,
-    //       IndexBand: bandFor(index).name
-    //     }]);
-    //   }
-    // }
   }
 
   function resetAll() {
@@ -973,7 +934,8 @@
     }).join('\n');
 
     var txt =
-'OmKneeHealth Knee + Sleep Score\n' +
+'Knee + Sleep Score Results\n' +
+'==========================\n' +
 'Pro Knee: ' + (knee !== null ? knee : '—') + ' (' + kneeBand + ')\n' +
 'Sleep: ' + (sleep !== null ? sleep : '—') + ' (' + sleepBand + ')\n' +
 'Index: ' + (index !== null ? index : '—') + ' (' + idxBand + ')\n\n' +
@@ -989,38 +951,32 @@
           setTimeout(function() { btn.textContent = oldText; }, 1500);
         }
       }).catch(function() {
-        alert('Copy failed — please select and copy manually.');
+        fallbackCopy(txt);
       });
     } else {
-      // Fallback for older browsers
-      var textarea = document.createElement('textarea');
-      textarea.value = txt;
-      textarea.style.position = 'fixed';
-      textarea.style.opacity = '0';
-      document.body.appendChild(textarea);
-      textarea.select();
-      try {
-        document.execCommand('copy');
-        var btn = document.getElementById('omk-copy-btn-' + sectionId);
-        if (btn) {
-          var oldText = btn.textContent;
-          btn.textContent = 'Copied!';
-          setTimeout(function() { btn.textContent = oldText; }, 1500);
-        }
-      } catch (e) {
-        alert('Copy failed — please select and copy manually.');
-      }
-      document.body.removeChild(textarea);
+      fallbackCopy(txt);
     }
+  }
 
-    // ========= OPTIONAL: Track copy event =========
-    // if (window._learnq) {
-    //   window._learnq.push(['track', 'Knee Sleep Score Copied', {
-    //     KneeScore: knee,
-    //     SleepScore: sleep,
-    //     CombinedIndex: index
-    //   }]);
-    // }
+  function fallbackCopy(txt) {
+    var textarea = document.createElement('textarea');
+    textarea.value = txt;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+      document.execCommand('copy');
+      var btn = document.getElementById('omk-copy-btn-' + sectionId);
+      if (btn) {
+        var oldText = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(function() { btn.textContent = oldText; }, 1500);
+      }
+    } catch (e) {
+      alert('Copy failed — please select and copy manually.');
+    }
+    document.body.removeChild(textarea);
   }
 
   function startScroll() {
@@ -1057,66 +1013,24 @@
 })();
 </script>
 
-{% schema %}
-{
-  "name": "Knee + Sleep Score",
-  "tag": "section",
-  "class": "omk-knee-sleep-score-section",
-  "limit": 1,
-  "settings": [
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Knee + Sleep Score"
-    },
-    {
-      "type": "select",
-      "id": "brand_theme",
-      "label": "Brand Theme",
-      "options": [
-        { "value": "omkneehealth", "label": "OmKneeHealth (Green)" },
-        { "value": "sportshealing", "label": "Sportshealing (Blue)" },
-        { "value": "mykneescan", "label": "MyKneeScan (Purple)" },
-        { "value": "chinmaygupte", "label": "ChinmayGupte (Navy)" }
-      ],
-      "default": "omkneehealth",
-      "info": "Select the brand color theme"
-    },
-    {
-      "type": "text",
-      "id": "cta_text",
-      "label": "CTA Button Text",
-      "default": "Book your consultation"
-    },
-    {
-      "type": "url",
-      "id": "cta_url",
-      "label": "CTA Button URL"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_weights",
-      "label": "Show weight inputs",
-      "default": false,
-      "info": "Allow users to adjust domain weights"
-    },
-    {
-      "type": "range",
-      "id": "min_knee_domains",
-      "label": "Minimum knee domains required",
-      "min": 1,
-      "max": 7,
-      "step": 1,
-      "default": 1,
-      "info": "Minimum answered knee domains before showing total score (1 = partial completion supported)"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Knee + Sleep Score",
-      "category": "Health Assessment"
-    }
-  ]
-}
-{% endschema %}
+<!--
+  CUSTOMISATION NOTES:
+  
+  1. BRAND VARIANTS:
+     Change data-brand attribute on the wrapper div:
+     - "omkneehealth" (default: green)
+     - "sportshealing" (blue)
+     - "mykneescan" (purple)
+     - "chinmaygupte" (navy)
+  
+  2. SHOW WEIGHTS:
+     Add data-show-weights="true" to show weight input columns
+  
+  3. NO EXTERNAL DEPENDENCIES:
+     This is 100% vanilla HTML/CSS/JS
+     No cookies, localStorage, or analytics
+  
+  4. GDPR COMPLIANCE:
+     All calculations are client-side only
+     No data transmitted unless integrated with a form
+-->
