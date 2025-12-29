@@ -45,12 +45,12 @@ const ingredients = [
     whyIncluded: "Without piperine, our turmeric extract would be largely wasted. This is evidence-based formulation: not just adding ingredients, but ensuring they actually work. The 10mg dose is consistent with research protocols."
   },
   {
-    name: "Manganese",
-    amount: "2mg (100% NRV)",
-    category: "Essential Trace Mineral",
-    mechanism: "Manganese is a cofactor for enzymes involved in the synthesis of glycosaminoglycans and proteoglycans—the molecules that form the structural matrix of cartilage and other connective tissues. It's essential for the normal formation of connective tissue.",
-    evidence: "EFSA-approved claim: manganese contributes to the normal formation of connective tissue. Also approved for contribution to maintenance of normal bones and protection of cells from oxidative stress.",
-    whyIncluded: "Supports the body's natural processes for building and maintaining the connective tissue framework that includes cartilage, tendons, and ligaments. Included at 100% of the Nutrient Reference Value."
+    name: "Magnesium",
+    amount: "200mg (53% NRV)",
+    category: "Essential Mineral",
+    mechanism: "Magnesium is involved in over 300 enzymatic reactions in the body, including protein synthesis and muscle function. It plays a crucial role in muscle relaxation and contraction, nerve transmission, and helps maintain normal muscle function—essential for the muscles that support and move knee joints.",
+    evidence: "EFSA-approved claims: magnesium contributes to normal muscle function, maintenance of normal bones, normal protein synthesis, and reduction of tiredness and fatigue. Many adults have suboptimal magnesium intake due to modern dietary patterns.",
+    whyIncluded: "Supports healthy muscle function around the knee joint. Muscles that contract and relax properly provide better joint stability and movement. Included at a meaningful dose that contributes significantly to daily requirements without risking excessive intake."
   },
   {
     name: "Copper",
