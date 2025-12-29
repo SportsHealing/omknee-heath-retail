@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, RotateCcw, Clock, Zap, Stethoscope } from "lucide-react";
+import { ArrowRight, Shield, RotateCcw, Clock, Zap, Stethoscope, Download } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import RAGGauge from "./RAGGauge";
 import RecommendedActions from "./RecommendedActions";
 import { KneeRecommendations } from "@/components/assessment/KneeRecommendations";
+import { generateQuickScorePdf } from "@/lib/generateAssessmentPdf";
 
 interface Question {
   id: string;
@@ -340,7 +341,23 @@ const KneeScoreEmbed = () => {
               </div>
 
               {/* Actions */}
-              <div className="flex justify-center">
+              <div className="flex flex-col sm:flex-row justify-center gap-3">
+                <Button 
+                  onClick={() => {
+                    generateQuickScorePdf({
+                      type: "quick",
+                      kneeScore,
+                      sleepScore: assessmentMode === "full" ? sleepScore : undefined,
+                      indexScore: assessmentMode === "full" ? indexScore : undefined,
+                      answers,
+                      date: new Date().toLocaleDateString("en-GB"),
+                    });
+                  }}
+                  className="gap-2"
+                >
+                  <Download className="w-4 h-4" />
+                  Download PDF Report
+                </Button>
                 <Button variant="outline" onClick={resetAssessment}>
                   <RotateCcw className="w-4 h-4 mr-2" />
                   Start Over
