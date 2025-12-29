@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 
 const ProductCTA = () => {
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section id="shop-supplements" className="py-20 md:py-28 bg-background scroll-mt-20">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-4">

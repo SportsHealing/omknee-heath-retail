@@ -10,7 +10,8 @@ import {
   Heart,
   Activity,
   Pill,
-  Stethoscope
+  Stethoscope,
+  BookOpen
 } from "lucide-react";
 
 // ========== RECOMMENDATION ENGINE ==========
@@ -566,13 +567,13 @@ export const KneeRecommendations = ({ kneeScore, sleepScore, useIndexScore = tru
       {/* CTAs */}
       <div className="grid md:grid-cols-3 gap-3">
         <Button asChild className="w-full">
-          <a href="/product">
+          <a href="/product#shop-supplements">
             <ShoppingCart className="w-4 h-4 mr-2" />
             Shop Joint Support
           </a>
         </Button>
         <Button asChild variant="outline" className="w-full">
-          <a href="https://mykneescan.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://mykneescan.com" target="_blank" rel="noopener noreferrer" id="book-imaging-cta">
             <ImageIcon className="w-4 h-4 mr-2" />
             Book Imaging
           </a>
@@ -583,6 +584,18 @@ export const KneeRecommendations = ({ kneeScore, sleepScore, useIndexScore = tru
             Book Clinician
           </a>
         </Button>
+      </div>
+
+      {/* Additional Navigation */}
+      <div className="flex flex-wrap justify-center gap-3 text-sm">
+        <a href="/science#evidence-science" className="text-primary hover:underline flex items-center gap-1">
+          <BookOpen className="w-4 h-4" />
+          View Evidence & Science
+        </a>
+        <span className="text-muted-foreground">•</span>
+        <a href="/product#product-faq" className="text-primary hover:underline">
+          Read FAQs
+        </a>
       </div>
 
       {/* Disclaimer */}
