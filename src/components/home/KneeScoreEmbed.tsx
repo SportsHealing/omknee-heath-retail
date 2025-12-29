@@ -1,26 +1,166 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Loader2 } from "lucide-react";
+import { ArrowRight, Shield, RotateCcw } from "lucide-react";
+import { Progress } from "@/components/ui/progress";
 
-/**
- * SHOPIFY SECTION: Knee Score Widget Embed
- * TYPE: Custom HTML Section
- * 
- * This section embeds the external Knee Score assessment tool.
- * The widget is hosted at score.omkneehealth.com
- * 
- * For Shopify implementation, use the HTML version provided
- * in the comments below or in the separate HTML file.
- */
+interface Question {
+  id: string;
+  text: string;
+  category: string;
+}
+
+const questions: Question[] = [
+  { id: "pain", text: "How often do you experience knee pain?", category: "Pain" },
+  { id: "stiffness", text: "How stiff do your knees feel in the morning?", category: "Stiffness" },
+  { id: "mobility", text: "How easy is it to walk up and down stairs?", category: "Mobility" },
+  { id: "stability", text: "How stable do your knees feel during daily activities?", category: "Stability" },
+  { id: "swelling", text: "How often do you notice swelling in your knees?", category: "Swelling" },
+  { id: "activity", text: "How much does knee discomfort limit your physical activities?", category: "Activity" },
+  { id: "sleep", text: "How often does knee discomfort affect your sleep?", category: "Sleep" },
+];
+
+const options = [
+  { value: 5, label: "Never / Not at all" },
+  { value: 4, label: "Rarely / Mildly" },
+  { value: 3, label: "Sometimes / Moderately" },
+  { value: 2, label: "Often / Significantly" },
+  { value: 1, label: "Always / Severely" },
+];
+
+const getScoreBand = (score: number) => {
+  if (score >= 80) return { label: "Excellent", color: "text-green-600", bg: "bg-green-100" };
+  if (score >= 60) return { label: "Good", color: "text-emerald-600", bg: "bg-emerald-100" };
+  if (score >= 40) return { label: "Fair", color: "text-amber-600", bg: "bg-amber-100" };
+  if (score >= 20) return { label: "Needs Attention", color: "text-orange-600", bg: "bg-orange-100" };
+  return { label: "Seek Support", color: "text-red-600", bg: "bg-red-100" };
+};
 
 const KneeScoreEmbed = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [currentStep, setCurrentStep] = useState(0);
+  const [answers, setAnswers] = useState<Record<string, number>>({});
+  const [showResults, setShowResults] = useState(false);
+
+  const handleAnswer = (questionId: string, value: number) => {
+    setAnswers(prev => ({ ...prev, [questionId]: value }));
+    
+    if (currentStep < questions.length - 1) {
+      setTimeout(() => setCurrentStep(prev => prev + 1), 300);
+    } else {
+      setTimeout(() => setShowResults(true), 300);
+    }
+  };
+
+  const calculateScore = () => {
+    const total = Object.values(answers).reduce((sum, val) => sum + val, 0);
+    const maxScore = questions.length * 5;
+    return Math.round((total / maxScore) * 100);
+  };
+
+  const resetAssessment = () => {
+    setCurrentStep(0);
+    setAnswers({});
+    setShowResults(false);
+  };
+
+  const progress = ((currentStep + (showResults ? 1 : 0)) / questions.length) * 100;
+
+  if (showResults) {
+    const score = calculateScore();
+    const band = getScoreBand(score);
+
+    return (
+      <section className="py-16 md:py-20 bg-om-cream/30">
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-background rounded-2xl border border-border shadow-elegant p-8 md:p-12 text-center">
+              <p className="text-om-sage font-medium tracking-wide uppercase text-sm mb-3">
+                Your Results
+              </p>
+              <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-8">
+                Knee Health Score
+              </h2>
+
+              {/* Score Display */}
+              <div className="mb-8">
+                <div className="relative inline-flex items-center justify-center w-40 h-40 mb-4">
+                  <svg className="w-40 h-40 transform -rotate-90">
+                    <circle
+                      cx="80"
+                      cy="80"
+                      r="70"
+                      stroke="currentColor"
+                      strokeWidth="8"
+                      fill="none"
+                      className="text-muted/20"
+                    />
+                    <circle
+                      cx="80"
+                      cy="80"
+                      r="70"
+                      stroke="currentColor"
+                      strokeWidth="8"
+                      fill="none"
+                      strokeDasharray={440}
+                      strokeDashoffset={440 - (440 * score) / 100}
+                      className="text-primary transition-all duration-1000"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                  <span className="absolute text-4xl font-bold text-foreground">{score}</span>
+                </div>
+                <div className={`inline-block px-4 py-2 rounded-full ${band.bg}`}>
+                  <span className={`font-medium ${band.color}`}>{band.label}</span>
+                </div>
+              </div>
+
+              {/* Score Breakdown */}
+              <div className="text-left space-y-3 mb-8 p-6 bg-muted/30 rounded-xl">
+                <p className="text-sm font-medium text-foreground mb-4">Your Responses:</p>
+                {questions.map((q) => (
+                  <div key={q.id} className="flex justify-between items-center text-sm">
+                    <span className="text-muted-foreground">{q.category}</span>
+                    <span className="font-medium text-foreground">
+                      {options.find(o => o.value === answers[q.id])?.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Privacy Note */}
+              <div className="flex items-center justify-center gap-2 mb-6">
+                <Shield className="w-4 h-4 text-om-forest" />
+                <p className="text-sm text-muted-foreground">
+                  Your responses are private and not stored.
+                </p>
+              </div>
+
+              {/* Actions */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button variant="outline" onClick={resetAssessment}>
+                  <RotateCcw className="w-4 h-4 mr-2" />
+                  Retake Assessment
+                </Button>
+                <Button asChild>
+                  <a href="/product">
+                    Explore Joint Support
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  const currentQuestion = questions[currentStep];
 
   return (
     <section className="py-16 md:py-20 bg-om-cream/30">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto">
-          {/* Header Copy */}
+        <div className="max-w-2xl mx-auto">
+          {/* Header */}
           <div className="text-center mb-10">
             <p className="text-om-sage font-medium tracking-wide uppercase text-sm mb-3">
               Free Assessment Tool
@@ -28,62 +168,63 @@ const KneeScoreEmbed = () => {
             <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-4">
               Understand Your Knee Health
             </h2>
-            <p className="text-muted-foreground leading-relaxed max-w-xl mx-auto">
-              Take a few moments to reflect on your current knee comfort and mobility. 
-              This simple questionnaire helps you think about your joint health — it's 
-              not a diagnosis, just a starting point for your wellness journey.
+            <p className="text-muted-foreground leading-relaxed">
+              Answer a few simple questions to reflect on your current knee comfort and mobility.
             </p>
           </div>
 
-          {/* Embed Container */}
-          <div className="bg-background rounded-2xl border border-border shadow-elegant overflow-hidden">
-            {/* Iframe Embed */}
-            <div className="relative w-full" style={{ minHeight: '600px' }}>
-              {/* Loading Spinner */}
-              {isLoading && (
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-background z-10">
-                  <Loader2 className="w-8 h-8 text-primary animate-spin mb-4" />
-                  <p className="text-sm text-muted-foreground">Loading assessment...</p>
-                </div>
-              )}
-              <iframe
-                src="https://score.omkneehealth.com"
-                title="OmKneeHealth Knee Score Assessment"
-                className="w-full border-0"
-                style={{ height: '600px', minHeight: '600px' }}
-                loading="lazy"
-                allow="clipboard-write"
-                onLoad={() => setIsLoading(false)}
-              />
+          {/* Progress */}
+          <div className="mb-8">
+            <div className="flex justify-between text-sm text-muted-foreground mb-2">
+              <span>Question {currentStep + 1} of {questions.length}</span>
+              <span>{Math.round(progress)}% complete</span>
             </div>
+            <Progress value={progress} className="h-2" />
+          </div>
+
+          {/* Question Card */}
+          <div className="bg-background rounded-2xl border border-border shadow-elegant p-8 md:p-10">
+            <p className="text-xs font-medium text-om-sage uppercase tracking-wide mb-2">
+              {currentQuestion.category}
+            </p>
+            <h3 className="text-xl md:text-2xl font-serif text-foreground mb-8">
+              {currentQuestion.text}
+            </h3>
+
+            {/* Options */}
+            <div className="space-y-3">
+              {options.map((option) => (
+                <button
+                  key={option.value}
+                  onClick={() => handleAnswer(currentQuestion.id, option.value)}
+                  className={`w-full p-4 text-left rounded-xl border transition-all duration-200 hover:border-primary hover:bg-primary/5 ${
+                    answers[currentQuestion.id] === option.value
+                      ? "border-primary bg-primary/10"
+                      : "border-border bg-background"
+                  }`}
+                >
+                  <span className="text-foreground">{option.label}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Navigation */}
+            {currentStep > 0 && (
+              <button
+                onClick={() => setCurrentStep(prev => prev - 1)}
+                className="mt-6 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                ← Previous question
+              </button>
+            )}
           </div>
 
           {/* Privacy Note */}
-          <div className="flex items-center justify-center gap-2 mt-6 mb-8">
+          <div className="flex items-center justify-center gap-2 mt-6">
             <Shield className="w-4 h-4 text-om-forest" />
             <p className="text-sm text-muted-foreground">
-              Your responses are private and not stored unless you choose to save them.
+              Your responses are private and not stored.
             </p>
-          </div>
-
-          {/* CTA Section */}
-          <div className="text-center">
-            <p className="text-muted-foreground mb-6">
-              Interested in supporting your joint health journey?
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="outline" size="lg" className="px-8" asChild>
-                <a href="/science">
-                  Learn About Joint Health
-                </a>
-              </Button>
-              <Button size="lg" className="px-8" asChild>
-                <a href="/product">
-                  Explore Joint Support
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </a>
-              </Button>
-            </div>
           </div>
         </div>
       </div>
@@ -92,20 +233,3 @@ const KneeScoreEmbed = () => {
 };
 
 export default KneeScoreEmbed;
-
-/**
- * =====================================================
- * SHOPIFY CUSTOM HTML VERSION
- * =====================================================
- * 
- * Copy the HTML below into a Shopify Custom HTML section.
- * This is the embed-safe, GDPR-compliant version.
- * 
- * To use:
- * 1. Go to Shopify Admin > Online Store > Themes
- * 2. Click Customize on your theme
- * 3. Add a "Custom HTML" or "Custom Liquid" section
- * 4. Paste the HTML code
- * 
- * See: src/shopify/knee-score-embed.html for the full code
- */
