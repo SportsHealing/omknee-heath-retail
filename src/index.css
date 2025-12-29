@@ -1,55 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* OmKneeHealth Premium Design System
+/* OmKneeHealth Clinical Authority Design System
+   Inspired by Healf - Calm, Clinical, Premium
    All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* OmKneeHealth Premium Palette */
-    --background: 45 20% 98%;
-    --foreground: 200 15% 20%;
+    /* Clinical Authority Palette */
+    --background: 0 0% 100%;
+    --foreground: 220 20% 15%;
     
     --card: 0 0% 100%;
-    --card-foreground: 200 15% 20%;
+    --card-foreground: 220 20% 15%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 200 15% 20%;
+    --popover-foreground: 220 20% 15%;
     
-    /* Sage green - calm, healing */
-    --primary: 160 25% 35%;
+    /* Deep forest green - medical authority */
+    --primary: 165 35% 22%;
     --primary-foreground: 0 0% 100%;
     
-    /* Warm sand */
-    --secondary: 35 30% 92%;
-    --secondary-foreground: 200 15% 25%;
+    /* Soft clinical off-white */
+    --secondary: 60 20% 97%;
+    --secondary-foreground: 220 20% 20%;
     
-    /* Soft terracotta accent */
-    --accent: 25 45% 55%;
+    /* Muted gold - subtle premium accent */
+    --accent: 38 35% 55%;
     --accent-foreground: 0 0% 100%;
     
-    --muted: 45 15% 93%;
-    --muted-foreground: 200 10% 45%;
+    --muted: 60 10% 96%;
+    --muted-foreground: 220 10% 45%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 35 20% 88%;
-    --input: 35 20% 88%;
-    --ring: 160 25% 35%;
+    --border: 60 10% 90%;
+    --input: 60 10% 90%;
+    --ring: 165 35% 22%;
     
-    --radius: 0.75rem;
+    --radius: 0.5rem;
     
-    /* Custom tokens */
-    --cream: 45 30% 96%;
-    --sage: 160 25% 35%;
-    --sage-light: 160 20% 90%;
-    --warm-gray: 35 10% 40%;
-    --terracotta: 25 45% 55%;
+    /* Custom clinical tokens */
+    --cream: 60 25% 98%;
+    --sage: 165 35% 22%;
+    --sage-light: 165 20% 95%;
+    --warm-gray: 30 5% 45%;
+    --terracotta: 25 30% 50%;
+    --clinical-green: 165 35% 22%;
+    --clinical-light: 165 15% 97%;
+    --trust-badge: 165 25% 90%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -62,39 +66,42 @@
   }
 
   .dark {
-    --background: 200 15% 10%;
-    --foreground: 45 20% 95%;
+    --background: 220 15% 8%;
+    --foreground: 60 15% 95%;
     
-    --card: 200 12% 14%;
-    --card-foreground: 45 20% 95%;
+    --card: 220 12% 12%;
+    --card-foreground: 60 15% 95%;
     
-    --popover: 200 12% 14%;
-    --popover-foreground: 45 20% 95%;
+    --popover: 220 12% 12%;
+    --popover-foreground: 60 15% 95%;
     
-    --primary: 160 30% 50%;
-    --primary-foreground: 200 15% 10%;
+    --primary: 165 40% 45%;
+    --primary-foreground: 220 15% 8%;
     
-    --secondary: 200 10% 20%;
-    --secondary-foreground: 45 20% 90%;
+    --secondary: 220 10% 18%;
+    --secondary-foreground: 60 15% 90%;
     
-    --accent: 25 40% 50%;
+    --accent: 38 35% 50%;
     --accent-foreground: 0 0% 100%;
     
-    --muted: 200 10% 18%;
-    --muted-foreground: 45 15% 60%;
+    --muted: 220 10% 16%;
+    --muted-foreground: 60 10% 60%;
     
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 200 10% 22%;
-    --input: 200 10% 22%;
-    --ring: 160 30% 50%;
+    --border: 220 10% 20%;
+    --input: 220 10% 20%;
+    --ring: 165 40% 45%;
 
-    --cream: 200 10% 15%;
-    --sage: 160 30% 50%;
-    --sage-light: 160 15% 20%;
-    --warm-gray: 35 10% 60%;
-    --terracotta: 25 40% 50%;
+    --cream: 220 10% 12%;
+    --sage: 165 40% 45%;
+    --sage-light: 165 15% 18%;
+    --warm-gray: 30 5% 60%;
+    --terracotta: 25 30% 50%;
+    --clinical-green: 165 40% 45%;
+    --clinical-light: 220 10% 14%;
+    --trust-badge: 165 20% 20%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -114,12 +121,13 @@
   
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.01em;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', serif;
-    @apply font-medium tracking-tight;
+    font-family: 'EB Garamond', Georgia, serif;
+    @apply font-normal tracking-tight;
   }
 }
 
@@ -128,11 +136,11 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Premium animations */
+/* Clinical premium animations */
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -140,21 +148,59 @@ html {
   }
 }
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gentle-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
 .animate-fade-up {
-  animation: fade-up 0.8s ease-out forwards;
+  animation: fade-up 0.6s ease-out forwards;
 }
 
 .animate-fade-up-delay-1 {
-  animation: fade-up 0.8s ease-out 0.1s forwards;
+  animation: fade-up 0.6s ease-out 0.1s forwards;
   opacity: 0;
 }
 
 .animate-fade-up-delay-2 {
-  animation: fade-up 0.8s ease-out 0.2s forwards;
+  animation: fade-up 0.6s ease-out 0.2s forwards;
   opacity: 0;
 }
 
 .animate-fade-up-delay-3 {
-  animation: fade-up 0.8s ease-out 0.3s forwards;
+  animation: fade-up 0.6s ease-out 0.3s forwards;
   opacity: 0;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-gentle-pulse {
+  animation: gentle-pulse 3s ease-in-out infinite;
+}
+
+/* Clinical divider */
+.clinical-divider {
+  @apply w-12 h-px bg-primary/30 mx-auto;
+}
+
+/* Trust badge styling */
+.trust-badge {
+  @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium tracking-wide;
+  background: hsl(var(--trust-badge));
+  color: hsl(var(--primary));
 }

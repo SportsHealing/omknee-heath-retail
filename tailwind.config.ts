@@ -14,13 +14,13 @@ export default {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1200px",
       },
     },
     extend: {
       fontFamily: {
-        serif: ["Cormorant Garamond", "Georgia", "serif"],
-        sans: ["Outfit", "system-ui", "sans-serif"],
+        serif: ["EB Garamond", "Georgia", "serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -71,6 +71,9 @@ export default {
         "sage-light": "hsl(var(--sage-light))",
         "warm-gray": "hsl(var(--warm-gray))",
         terracotta: "hsl(var(--terracotta))",
+        "clinical-green": "hsl(var(--clinical-green))",
+        "clinical-light": "hsl(var(--clinical-light))",
+        "trust-badge": "hsl(var(--trust-badge))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -78,9 +81,9 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-        soft: "0 4px 20px -4px hsl(200 15% 20% / 0.08)",
-        card: "0 8px 32px -8px hsl(200 15% 20% / 0.1)",
-        elevated: "0 16px 48px -12px hsl(200 15% 20% / 0.12)",
+        soft: "0 2px 12px -2px hsl(220 20% 15% / 0.06)",
+        card: "0 4px 24px -4px hsl(220 20% 15% / 0.08)",
+        elevated: "0 8px 32px -8px hsl(220 20% 15% / 0.1)",
       },
       keyframes: {
         "accordion-down": {

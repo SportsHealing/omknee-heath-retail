@@ -1,80 +1,114 @@
 import { Button } from "@/components/ui/button";
-import { Menu, ShoppingBag } from "lucide-react";
-import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
 import logoDarkGreen from "@/assets/logo-dark-green.png";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled 
+          ? "bg-background/95 backdrop-blur-sm border-b border-border/50" 
+          : "bg-transparent"
+      }`}
+    >
       <div className="container px-6">
-        <div className="flex items-center justify-between h-40 lg:h-44">
+        <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <a href="/" className="flex items-center">
             <img 
               src={logoDarkGreen} 
-              alt="OmKneeHealth London" 
-              className="h-96 md:h-[432px] w-auto"
+              alt="OmKneeHealth" 
+              className="h-10 md:h-12 w-auto"
             />
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-10">
-            <a href="/product" className="font-sans text-xl text-muted-foreground hover:text-foreground transition-colors">
-              Shop
+          <nav className="hidden md:flex items-center gap-8">
+            <a href="#philosophy" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Our Philosophy
             </a>
-            <a href="#" className="font-sans text-xl text-muted-foreground hover:text-foreground transition-colors">
-              Our Approach
+            <a href="/science" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
+              The Science
             </a>
-            <a href="/science" className="font-sans text-xl text-muted-foreground hover:text-foreground transition-colors">
-              Science
+            <a href="#assessment" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Knee Assessment
             </a>
-            <a href="#" className="font-sans text-xl text-muted-foreground hover:text-foreground transition-colors">
-              About
+            <a href="/product" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Our Formula
             </a>
           </nav>
 
           {/* Right side */}
-          <div className="flex items-center gap-6">
-            <Button variant="ghost" size="icon" className="relative h-12 w-12">
-              <ShoppingBag className="w-8 h-8" />
-              <span className="absolute -top-1 -right-1 w-6 h-6 bg-primary text-primary-foreground text-sm rounded-full flex items-center justify-center">
-                0
-              </span>
-            </Button>
-            <Button className="hidden md:inline-flex text-lg px-6 py-3 h-auto" asChild>
-              <a href="/product">Shop Now</a>
+          <div className="flex items-center gap-4">
+            <Button 
+              variant="outline" 
+              size="sm"
+              className="hidden md:inline-flex text-sm font-medium border-primary/20 hover:bg-primary hover:text-primary-foreground hover:border-primary"
+              asChild
+            >
+              <a href="#assessment">Take Assessment</a>
             </Button>
             <Button 
               variant="ghost" 
               size="icon" 
-              className="md:hidden h-12 w-12"
+              className="md:hidden h-10 w-10"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              <Menu className="w-8 h-8" />
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
           </div>
         </div>
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="md:hidden py-6 border-t border-border/50 animate-fade-up">
             <nav className="flex flex-col gap-4">
-              <a href="/product" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Shop
+              <a 
+                href="#philosophy" 
+                className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Our Philosophy
               </a>
-              <a href="#" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Our Approach
+              <a 
+                href="/science" 
+                className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                The Science
               </a>
-              <a href="/science" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Science
+              <a 
+                href="#assessment" 
+                className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Knee Assessment
               </a>
-              <a href="#" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
-                About
+              <a 
+                href="/product" 
+                className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Our Formula
               </a>
-              <Button className="w-full mt-2" asChild>
-                <a href="/product">Shop Now</a>
+              <Button 
+                className="w-full mt-4" 
+                size="sm"
+                asChild
+              >
+                <a href="#assessment">Take Assessment</a>
               </Button>
             </nav>
           </div>
