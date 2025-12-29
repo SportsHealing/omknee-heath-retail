@@ -4,6 +4,7 @@ import HeroSection from "@/components/home/HeroSection";
 import ValueProposition from "@/components/home/ValueProposition";
 import WhyKneeHealth from "@/components/home/WhyKneeHealth";
 import ScienceSection from "@/components/home/ScienceSection";
+import KneeScoreEmbed from "@/components/home/KneeScoreEmbed";
 import ProductIntro from "@/components/home/ProductIntro";
 import TrustSection from "@/components/home/TrustSection";
 import CTASection from "@/components/home/CTASection";
@@ -25,13 +26,16 @@ const Index = () => {
         {/* Section 4: Evidence & Science Positioning */}
         <ScienceSection />
         
-        {/* Section 5: Signature Product Introduction */}
+        {/* Section 5: Knee Score Assessment Tool */}
+        <KneeScoreEmbed />
+        
+        {/* Section 6: Signature Product Introduction */}
         <ProductIntro />
         
-        {/* Section 6: Trust & Credibility */}
+        {/* Section 7: Trust & Credibility */}
         <TrustSection />
         
-        {/* Section 7: Gentle Call-to-Action */}
+        {/* Section 8: Gentle Call-to-Action */}
         <CTASection />
       </main>
       <Footer />
