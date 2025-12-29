@@ -22,9 +22,11 @@ import {
   Heart,
   Target,
   ClipboardCheck,
-  Send
+  Send,
+  Download
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { generateFullAssessmentPdf } from "@/lib/generateAssessmentPdf";
 
 // Types
 interface FormData {
@@ -375,6 +377,39 @@ const FullKneeAssessment = ({
   };
 
   if (isSubmitted) {
+    const handleDownloadPdf = () => {
+      const score = calculateScore();
+      const band = getScoreBand(score);
+      
+      generateFullAssessmentPdf({
+        type: "full",
+        firstName: formData.first_name,
+        lastName: formData.last_name,
+        email: formData.email,
+        dob: formData.dob,
+        symptomScore: score,
+        scoreBand: band.label,
+        symptoms: {
+          pain: formData.pain,
+          sleep: formData.sleep,
+          swelling: formData.swelling,
+          instability: formData.instability,
+          stiffness: formData.stiffness,
+          stairs: formData.stairs,
+          function: formData.function,
+        },
+        priorProblem: formData.prior_problem,
+        treatments: formData.treatments,
+        pmh: formData.pmh,
+        allergies: formData.allergies,
+        medications: formData.meds_list,
+        smoker: formData.smoker,
+        alcohol: formData.alcohol_yesno === "Yes" ? `Yes (${formData.alcohol_units} units/week)` : formData.alcohol_yesno,
+        expectations: formData.expectations,
+        date: new Date().toLocaleDateString("en-GB"),
+      });
+    };
+
     return (
       <div className="text-center py-16">
         <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-green-100 flex items-center justify-center">
@@ -382,12 +417,18 @@ const FullKneeAssessment = ({
         </div>
         <h2 className="text-2xl font-serif text-foreground mb-3">Assessment Submitted</h2>
         <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-          Thank you for completing the Full Knee Assessment. We'll review your responses and be in touch with personalised recommendations.
+          Thank you for completing the Full Knee Assessment. We will review your responses and be in touch with personalised recommendations.
         </p>
-        <Button onClick={onBack} variant="outline">
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Assessments
-        </Button>
+        <div className="flex flex-col sm:flex-row justify-center gap-3">
+          <Button onClick={handleDownloadPdf} className="gap-2">
+            <Download className="w-4 h-4" />
+            Download PDF Report
+          </Button>
+          <Button onClick={onBack} variant="outline">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Assessments
+          </Button>
+        </div>
       </div>
     );
   }
