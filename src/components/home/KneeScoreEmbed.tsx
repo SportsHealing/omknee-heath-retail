@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, RotateCcw } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import RAGGauge from "./RAGGauge";
+import RecommendedActions from "./RecommendedActions";
+
 interface Question {
   id: string;
   text: string;
@@ -85,18 +87,29 @@ const KneeScoreEmbed = () => {
                 <RAGGauge score={score} label="Knee Health Score" size={220} />
               </div>
 
+              {/* Recommended Actions */}
+              <RecommendedActions 
+                score={score} 
+                ctaUrl="/product" 
+                ctaText="Explore Joint Support"
+              />
+
               {/* Score Breakdown */}
-              <div className="text-left space-y-3 mb-8 p-6 bg-muted/30 rounded-xl">
-                <p className="text-sm font-medium text-foreground mb-4">Your Responses:</p>
-                {questions.map((q) => (
-                  <div key={q.id} className="flex justify-between items-center text-sm">
-                    <span className="text-muted-foreground">{q.category}</span>
-                    <span className="font-medium text-foreground">
-                      {options.find(o => o.value === answers[q.id])?.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <details className="text-left mb-8 p-6 bg-muted/30 rounded-xl">
+                <summary className="text-sm font-medium text-foreground cursor-pointer">
+                  View Your Responses
+                </summary>
+                <div className="space-y-3 mt-4">
+                  {questions.map((q) => (
+                    <div key={q.id} className="flex justify-between items-center text-sm">
+                      <span className="text-muted-foreground">{q.category}</span>
+                      <span className="font-medium text-foreground">
+                        {options.find(o => o.value === answers[q.id])?.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </details>
 
               {/* Privacy Note */}
               <div className="flex items-center justify-center gap-2 mb-6">
@@ -107,16 +120,10 @@ const KneeScoreEmbed = () => {
               </div>
 
               {/* Actions */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex justify-center">
                 <Button variant="outline" onClick={resetAssessment}>
                   <RotateCcw className="w-4 h-4 mr-2" />
                   Retake Assessment
-                </Button>
-                <Button asChild>
-                  <a href="/product">
-                    Explore Joint Support
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </a>
                 </Button>
               </div>
             </div>
