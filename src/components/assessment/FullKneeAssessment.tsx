@@ -153,11 +153,83 @@ const PMH_CONDITIONS = ["Diabetes", "Heart disease", "High blood pressure", "Rhe
 const MEDS_FLAGS = ["Blood thinners", "Steroids", "Immunosuppressants", "None"];
 const REF_SOURCES = ["Google", "Social media", "Friend/family", "Healthcare provider", "Advertisement", "Other"];
 
+// Jotform Configuration
+// Replace JOTFORM_FORM_ID with your actual Jotform form ID
+const JOTFORM_FORM_ID = "PLACEHOLDER_FORM_ID";
+
+// Jotform prefill map - maps our field keys to Jotform question parameter names
+// You'll need to update these with your actual Jotform field IDs
+// Example: "first_name" -> "q3_firstName" means our first_name maps to Jotform's q3_firstName
+const JOTFORM_PREFILL_MAP: Record<string, string> = {
+  // Patient Details
+  first_name: "q3_firstName",
+  last_name: "q4_lastName", 
+  dob: "q5_dob",
+  email: "q6_email",
+  mobile: "q7_mobile",
+  postcode: "q8_postcode",
+  // Symptoms
+  pain: "q10_pain",
+  sleep: "q11_sleep",
+  swelling: "q12_swelling",
+  instability: "q13_instability",
+  stiffness: "q14_stiffness",
+  stairs: "q15_stairs",
+  function: "q16_function",
+  // Prior Knee + Treatment
+  prior_problem: "q20_priorProblem",
+  prior_description: "q21_priorDescription",
+  treatments: "q22_treatments",
+  injection_type: "q23_injectionType",
+  surgery_type: "q24_surgeryType",
+  treat_helped: "q25_treatHelped",
+  treat_duration: "q26_treatDuration",
+  treat_stopped: "q27_treatStopped",
+  // PMH
+  pmh: "q30_pmh",
+  pmh_other_text: "q31_pmhOther",
+  trauma_yesno: "q32_trauma",
+  trauma_details: "q33_traumaDetails",
+  past_surgery_any: "q34_pastSurgery",
+  fh_bone_joint: "q35_fhBoneJoint",
+  fh_childhood_knee: "q36_fhChildhood",
+  fh_details: "q37_fhDetails",
+  // Meds/Allergies
+  allergies: "q40_allergies",
+  meds_list: "q41_medsList",
+  meds_flags: "q42_medsFlags",
+  // Lifestyle
+  smoker: "q50_smoker",
+  alcohol_yesno: "q51_alcohol",
+  alcohol_units: "q52_alcoholUnits",
+  other_info: "q53_otherInfo",
+  // Expectations
+  expectations: "q60_expectations",
+  ref_source: "q61_refSource",
+  utm_source: "q62_utmSource",
+  utm_medium: "q63_utmMedium",
+  utm_campaign: "q64_utmCampaign",
+  // Consent
+  consent_clinical: "q70_consentClinical",
+  consent_marketing: "q71_consentMarketing",
+};
+
+// Redirect URL after Jotform submission (configure in Jotform settings too)
+const REDIRECT_URL = "/pages/next-steps-knee";
+
 interface FullKneeAssessmentProps {
   onBack?: () => void;
+  jotformFormId?: string;
+  jotformPrefillMap?: Record<string, string>;
+  redirectUrl?: string;
 }
 
-const FullKneeAssessment = ({ onBack }: FullKneeAssessmentProps) => {
+const FullKneeAssessment = ({ 
+  onBack,
+  jotformFormId = JOTFORM_FORM_ID,
+  jotformPrefillMap = JOTFORM_PREFILL_MAP,
+  redirectUrl = REDIRECT_URL
+}: FullKneeAssessmentProps) => {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -249,19 +321,57 @@ const FullKneeAssessment = ({ onBack }: FullKneeAssessmentProps) => {
     return { label: "Red", color: "text-red-600", bg: "bg-red-50", border: "border-red-200" };
   };
 
+  // Build Jotform prefill URL
+  const buildJotformUrl = (): string => {
+    const baseUrl = `https://form.jotform.com/${jotformFormId}`;
+    const params = new URLSearchParams();
+
+    // Map all form fields to Jotform parameters
+    Object.entries(formData).forEach(([key, value]) => {
+      const jotformKey = jotformPrefillMap[key];
+      if (!jotformKey) return;
+
+      if (Array.isArray(value)) {
+        // Join array values with comma for multi-select fields
+        if (value.length > 0) {
+          params.set(jotformKey, value.join(","));
+        }
+      } else if (typeof value === "boolean") {
+        params.set(jotformKey, value ? "Yes" : "No");
+      } else if (value !== "" && value !== 0) {
+        params.set(jotformKey, String(value));
+      } else if (typeof value === "number") {
+        params.set(jotformKey, String(value));
+      }
+    });
+
+    const queryString = params.toString();
+    return queryString ? `${baseUrl}?${queryString}` : baseUrl;
+  };
+
   const handleSubmit = async () => {
     if (!validateStep(9)) return;
     
     setIsSubmitting(true);
     
-    // Simulate submission delay
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    // Build the Jotform prefill URL
+    const jotformUrl = buildJotformUrl();
     
-    // In production, this would submit to Jotform or your backend
-    console.log("Form submitted:", formData);
+    // Log for debugging (remove in production)
+    console.log("Redirecting to Jotform:", jotformUrl);
     
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    // Small delay for UX feedback
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
+    // Redirect to Jotform with prefilled data
+    if (jotformFormId && jotformFormId !== "PLACEHOLDER_FORM_ID") {
+      window.location.href = jotformUrl;
+    } else {
+      // If no form ID configured, show success state (for development)
+      console.warn("Jotform Form ID not configured. Set JOTFORM_FORM_ID to enable redirect.");
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+    }
   };
 
   if (isSubmitted) {
