@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, RotateCcw } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
-
+import RAGGauge from "./RAGGauge";
 interface Question {
   id: string;
   text: string;
@@ -80,37 +80,9 @@ const KneeScoreEmbed = () => {
                 Knee Health Score
               </h2>
 
-              {/* Score Display */}
-              <div className="mb-8">
-                <div className="relative inline-flex items-center justify-center w-40 h-40 mb-4">
-                  <svg className="w-40 h-40 transform -rotate-90">
-                    <circle
-                      cx="80"
-                      cy="80"
-                      r="70"
-                      stroke="currentColor"
-                      strokeWidth="8"
-                      fill="none"
-                      className="text-muted/20"
-                    />
-                    <circle
-                      cx="80"
-                      cy="80"
-                      r="70"
-                      stroke="currentColor"
-                      strokeWidth="8"
-                      fill="none"
-                      strokeDasharray={440}
-                      strokeDashoffset={440 - (440 * score) / 100}
-                      className="text-primary transition-all duration-1000"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                  <span className="absolute text-4xl font-bold text-foreground">{score}</span>
-                </div>
-                <div className={`inline-block px-4 py-2 rounded-full ${band.bg}`}>
-                  <span className={`font-medium ${band.color}`}>{band.label}</span>
-                </div>
+              {/* RAG Gauge Display */}
+              <div className="mb-8 flex justify-center">
+                <RAGGauge score={score} label="Knee Health Score" size={220} />
               </div>
 
               {/* Score Breakdown */}
