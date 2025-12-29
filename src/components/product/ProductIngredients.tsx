@@ -3,64 +3,62 @@
  * Ingredient-by-ingredient rationale with mechanism of action
  */
 
-import { ExternalLink } from "lucide-react";
-
 const ingredients = [
   {
     name: "Vitamin D3",
     amount: "25μg (1000 IU)",
     category: "Vitamin",
-    mechanism: "Vitamin D supports calcium absorption and is essential for maintaining normal muscle function and bone health. It plays a role in the regulation of calcium and phosphorus metabolism.",
-    evidence: "EFSA-approved claims for contribution to normal muscle function and maintenance of normal bones. Deficiency is common in the UK, particularly during winter months.",
-    whyIncluded: "Many adults with joint concerns have suboptimal vitamin D levels. Adequate vitamin D supports the musculoskeletal system as a whole, not just the joints in isolation."
+    mechanism: "Vitamin D is essential for calcium absorption and phosphorus metabolism. It binds to receptors in muscle cells and bone tissue, supporting their normal function. In the context of joint health, vitamin D supports the musculoskeletal system as an integrated whole—healthy muscles provide better support for joints.",
+    evidence: "EFSA-approved claims: contributes to normal muscle function and maintenance of normal bones. UK national surveys consistently show high rates of vitamin D insufficiency, particularly during autumn and winter months when sun exposure is limited.",
+    whyIncluded: "Many adults with joint concerns have suboptimal vitamin D status. At 1000 IU (100% NRV), this dose addresses common deficiency without exceeding safe upper limits. We include D3 (cholecalciferol), the form most efficiently utilised by the body."
   },
   {
-    name: "Glucosamine Sulphate",
+    name: "Glucosamine Sulphate 2KCl",
     amount: "1500mg",
     category: "Amino Sugar",
-    mechanism: "Glucosamine is a naturally occurring compound found in cartilage—the tissue that cushions joints. It serves as a building block for glycosaminoglycans, which are key structural components of cartilage matrix.",
-    evidence: "One of the most extensively studied compounds in joint health research. Studies have examined its potential role in supporting cartilage structure, though results have been mixed across different populations.",
-    whyIncluded: "We use the sulphate form at 1500mg daily—the dose most commonly used in research. Derived from marine sources, providing the sulphate component that may support cartilage maintenance."
+    mechanism: "Glucosamine is a naturally occurring compound found in healthy cartilage—specifically in the fluid around joints. It serves as a building block for glycosaminoglycans and proteoglycans, which form the structural matrix of cartilage. The sulphate form provides sulphur, an essential element for cartilage matrix synthesis.",
+    evidence: "One of the most extensively studied joint health compounds. The GAIT trial, GUIDE study, and multiple European trials have examined glucosamine at this dose. Results are mixed across populations—some trials show positive outcomes for joint comfort, others show no significant difference from placebo. We present this honestly.",
+    whyIncluded: "We use glucosamine sulphate 2KCl at 1500mg daily—the exact dose used in most clinical research. Marine-derived to provide both the amino sugar and sulphate components. This is the form with the most research behind it, for better or worse."
   },
   {
     name: "Chondroitin Sulphate",
     amount: "400mg",
     category: "Glycosaminoglycan",
-    mechanism: "Chondroitin is a major component of cartilage that helps it retain water, contributing to its cushioning properties. It works structurally alongside glucosamine in cartilage tissue.",
-    evidence: "Often studied in combination with glucosamine. The GAIT trial and other research have examined this combination, with varying results depending on study population and outcome measures.",
-    whyIncluded: "Included at a meaningful dose to complement glucosamine. The combination reflects how these compounds naturally occur together in cartilage tissue."
+    mechanism: "Chondroitin is a major structural component of cartilage, contributing to its ability to retain water and provide cushioning. It attracts water into the proteoglycan matrix, maintaining the gel-like consistency that allows cartilage to resist compression. It works in tandem with glucosamine in the cartilage structure.",
+    evidence: "Often studied alongside glucosamine. The combination reflects how these compounds naturally occur together in cartilage tissue. Research outcomes are similarly mixed to glucosamine—some positive trials, some neutral. EFSA has not approved specific health claims for chondroitin.",
+    whyIncluded: "Included at 400mg to complement glucosamine. The glucosamine-chondroitin combination is the most researched pairing in joint health supplementation. We include both because they're structural partners in actual cartilage."
   },
   {
-    name: "Turmeric Extract",
-    amount: "200mg (95% curcuminoids)",
+    name: "Turmeric Root Extract",
+    amount: "200mg (standardised to 95% curcuminoids)",
     category: "Botanical Extract",
-    mechanism: "Curcumin, the active compound in turmeric, has documented antioxidant properties. Antioxidants help protect cells from oxidative stress caused by free radicals.",
-    evidence: "Extensive research exists on curcumin's antioxidant activity. However, curcumin has poor bioavailability on its own, which is why we include piperine.",
-    whyIncluded: "Selected for its well-documented antioxidant properties. We use a standardised extract to ensure consistent curcuminoid content."
+    mechanism: "Curcumin, the primary active compound in turmeric, is a potent antioxidant. It neutralises free radicals directly and stimulates the body's own antioxidant enzymes. Antioxidants help protect cells from oxidative stress—the cellular damage caused by an imbalance of free radicals and antioxidant defences.",
+    evidence: "Extensive research demonstrates curcumin's antioxidant activity. However, curcumin has notoriously poor bioavailability—most is metabolised before reaching the bloodstream. This is why we pair it with piperine (see below).",
+    whyIncluded: "Selected for well-documented antioxidant properties, not unsubstantiated claims. We use a standardised extract (95% curcuminoids) to ensure consistent potency. The 200mg dose provides meaningful curcuminoid content when enhanced by piperine."
   },
   {
-    name: "Piperine",
+    name: "Piperine (from Black Pepper Extract)",
     amount: "10mg",
     category: "Bioavailability Enhancer",
-    mechanism: "Piperine, derived from black pepper, inhibits certain enzymes in the digestive tract that would otherwise rapidly metabolise curcumin. This allows more curcumin to enter the bloodstream.",
-    evidence: "Research has shown that piperine can increase curcumin bioavailability by up to 2000%. This is one of the most well-established nutrient absorption interactions.",
-    whyIncluded: "Without piperine, most curcumin would be metabolised before absorption. This addition represents evidence-based formulation—not adding ingredients, but ensuring they work effectively."
+    mechanism: "Piperine inhibits glucuronidation—an enzyme process in the intestine and liver that rapidly metabolises and eliminates curcumin. By blocking this pathway, piperine allows more curcumin to enter the bloodstream intact and remain active for longer.",
+    evidence: "Research published in Planta Medica demonstrated that piperine increases curcumin bioavailability by approximately 2000%. This is one of the most well-established nutrient absorption interactions in the scientific literature.",
+    whyIncluded: "Without piperine, our turmeric extract would be largely wasted. This is evidence-based formulation: not just adding ingredients, but ensuring they actually work. The 10mg dose is consistent with research protocols."
   },
   {
     name: "Manganese",
-    amount: "2mg",
-    category: "Essential Mineral",
-    mechanism: "Manganese is a cofactor for enzymes involved in the formation of connective tissue. It contributes to the normal formation of connective tissue and the maintenance of normal bones.",
-    evidence: "EFSA-approved claims for contribution to normal connective tissue formation and maintenance of normal bones.",
-    whyIncluded: "Supports the body's natural processes for maintaining connective tissue—the structural framework that includes cartilage, tendons, and ligaments."
+    amount: "2mg (100% NRV)",
+    category: "Essential Trace Mineral",
+    mechanism: "Manganese is a cofactor for enzymes involved in the synthesis of glycosaminoglycans and proteoglycans—the molecules that form the structural matrix of cartilage and other connective tissues. It's essential for the normal formation of connective tissue.",
+    evidence: "EFSA-approved claim: manganese contributes to the normal formation of connective tissue. Also approved for contribution to maintenance of normal bones and protection of cells from oxidative stress.",
+    whyIncluded: "Supports the body's natural processes for building and maintaining the connective tissue framework that includes cartilage, tendons, and ligaments. Included at 100% of the Nutrient Reference Value."
   },
   {
     name: "Copper",
-    amount: "1mg",
-    category: "Essential Mineral",
-    mechanism: "Copper is essential for the cross-linking of collagen and elastin, contributing to the maintenance of normal connective tissues.",
-    evidence: "EFSA-approved claim for contribution to maintenance of normal connective tissues.",
-    whyIncluded: "Collagen is a crucial protein in joint structures. Copper supports the normal maintenance of the connective tissues that form the structural basis of joints."
+    amount: "1mg (100% NRV)",
+    category: "Essential Trace Mineral",
+    mechanism: "Copper is essential for lysyl oxidase, the enzyme responsible for cross-linking collagen and elastin fibres. This cross-linking provides tensile strength and structural integrity to connective tissues. Without adequate copper, collagen cannot mature properly.",
+    evidence: "EFSA-approved claim: copper contributes to maintenance of normal connective tissues. Cross-linking is essential for the mechanical properties of cartilage and other joint structures.",
+    whyIncluded: "Collagen is the primary structural protein in joint tissues. Copper ensures that the collagen your body produces is properly formed and functional. Included at 100% of the Nutrient Reference Value."
   }
 ];
 
@@ -75,12 +73,12 @@ const ProductIngredients = () => {
               Evidence-Based Formulation
             </p>
             <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-4">
-              Ingredient-by-Ingredient Rationale
+              What's Inside—And Why
             </h2>
             <div className="w-12 h-px bg-primary/30 mx-auto mb-6" />
             <p className="font-sans text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Every ingredient is included for a specific reason, at a dose informed by 
-              scientific literature. Here's exactly what's in our formula and why.
+              Every ingredient is included for a specific, defensible reason. 
+              Here's the complete breakdown—mechanism, evidence, and our rationale.
             </p>
           </div>
 
@@ -110,7 +108,7 @@ const ProductIngredients = () => {
                 <div className="space-y-4">
                   <div>
                     <p className="font-sans text-xs tracking-wide uppercase text-muted-foreground mb-2">
-                      How it works
+                      Mechanism of Action
                     </p>
                     <p className="font-sans text-sm text-foreground leading-relaxed">
                       {ingredient.mechanism}
@@ -119,7 +117,7 @@ const ProductIngredients = () => {
 
                   <div>
                     <p className="font-sans text-xs tracking-wide uppercase text-muted-foreground mb-2">
-                      What the evidence shows
+                      What the Evidence Shows
                     </p>
                     <p className="font-sans text-sm text-muted-foreground leading-relaxed">
                       {ingredient.evidence}
@@ -128,7 +126,7 @@ const ProductIngredients = () => {
 
                   <div className="bg-background rounded-md p-4 border-l-2 border-primary/30">
                     <p className="font-sans text-xs tracking-wide uppercase text-muted-foreground mb-1">
-                      Why we include it
+                      Why We Include It
                     </p>
                     <p className="font-sans text-sm text-foreground leading-relaxed">
                       {ingredient.whyIncluded}
@@ -142,12 +140,12 @@ const ProductIngredients = () => {
           {/* Transparency note */}
           <div className="mt-12 text-center">
             <div className="inline-flex items-center gap-2 text-sm text-primary font-medium">
-              <span>Full nutritional panel available on product packaging</span>
+              <span>Full nutritional panel on every bottle</span>
             </div>
             <p className="mt-4 font-sans text-xs text-muted-foreground max-w-2xl mx-auto">
-              We don't use proprietary blends. Every ingredient amount is disclosed. 
-              If you have questions about our formulation, our team includes qualified 
-              professionals who can discuss the scientific rationale.
+              No proprietary blends. Every ingredient amount is disclosed. 
+              Our clinical team is available to discuss the scientific rationale 
+              behind our formulation decisions.
             </p>
           </div>
         </div>

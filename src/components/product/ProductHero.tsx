@@ -1,6 +1,6 @@
 /**
- * Product Hero - Clinical Authority Approach
- * Evidence-based, no marketing hype
+ * Product Hero - Joint + Movement Support Capsules
+ * Clinical positioning with clear value proposition
  */
 
 import { Button } from "@/components/ui/button";
@@ -43,16 +43,16 @@ const ProductHero = () => {
           <div className="space-y-6 order-1 lg:order-2">
             <div>
               <span className="inline-block px-3 py-1 rounded-full text-xs font-medium tracking-wide bg-primary/10 text-primary mb-4">
-                Our Formula
+                Our Signature Formula
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-foreground leading-tight mb-4">
                 Joint + Movement Support
               </h1>
               <div className="w-12 h-px bg-primary/30 mb-6" />
               <p className="font-sans text-muted-foreground leading-relaxed">
-                A carefully formulated combination of glucosamine, chondroitin, vitamin D, 
-                turmeric with piperine, and essential minerals. Each ingredient selected 
-                based on scientific literature and clinical reasoning—not marketing trends.
+                A clinician-designed capsule formula combining glucosamine, chondroitin, 
+                vitamin D, turmeric with piperine, and essential minerals. Each ingredient 
+                included at research-informed doses with transparent rationale—not marketing trends.
               </p>
             </div>
 
@@ -64,7 +64,7 @@ const ProductHero = () => {
               <ul className="space-y-2 font-sans text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span>Maintenance of normal cartilage and connective tissue</span>
+                  <span>Maintenance of normal cartilage structure and function</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
@@ -72,7 +72,11 @@ const ProductHero = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span>Antioxidant activity to help protect cells from oxidative stress</span>
+                  <span>Normal formation of connective tissue</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <span>Protection of cells from oxidative stress</span>
                 </li>
               </ul>
             </div>
