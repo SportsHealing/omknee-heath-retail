@@ -1,5 +1,5 @@
 /**
- * Product Hero - Joint + Movement Support Capsules
+ * Product Hero - Joint + Movement Support Powder
  * Clinical positioning with clear value proposition
  */
 
@@ -18,7 +18,7 @@ const ProductHero = () => {
                 <div className="w-40 h-56 mx-auto bg-primary/5 rounded-lg mb-4 flex items-center justify-center border border-primary/10">
                   <span className="text-muted-foreground text-sm">Product Image</span>
                 </div>
-                <p className="font-sans text-sm text-muted-foreground">60 Capsules • 30 Day Supply</p>
+                <p className="font-sans text-sm text-muted-foreground">30 Daily Pouches • 30 Day Supply</p>
               </div>
             </div>
             
@@ -50,9 +50,10 @@ const ProductHero = () => {
               </h1>
               <div className="w-12 h-px bg-primary/30 mb-6" />
               <p className="font-sans text-muted-foreground leading-relaxed">
-                A clinician-designed capsule formula combining glucosamine, chondroitin, 
-                vitamin D, turmeric with piperine, and essential minerals. Each ingredient 
-                included at research-informed doses with transparent rationale—not marketing trends.
+                A clinician-designed powder formula combining hydrolysed collagen peptides, 
+                glucosamine, chondroitin, hyaluronic acid, curcumin, boswellia, and essential 
+                vitamins and minerals. Each daily pouch delivers research-informed doses with 
+                transparent rationale—not marketing trends.
               </p>
             </div>
 
@@ -64,7 +65,7 @@ const ProductHero = () => {
               <ul className="space-y-2 font-sans text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span>Maintenance of normal cartilage structure and function</span>
+                  <span>Normal collagen formation for cartilage, bones, and skin</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
@@ -84,7 +85,7 @@ const ProductHero = () => {
             {/* Price & CTA */}
             <div className="space-y-4 pt-2">
               <div className="flex items-baseline gap-3">
-                <span className="text-2xl font-serif text-foreground">£39.99</span>
+                <span className="text-2xl font-serif text-foreground">£49.99</span>
                 <span className="text-sm text-muted-foreground">/ 30 day supply</span>
               </div>
               
