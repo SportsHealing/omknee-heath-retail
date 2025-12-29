@@ -5,6 +5,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ClipboardCheck, TrendingUp, FileText } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const features = [
   {
@@ -66,8 +67,9 @@ const AssessmentSection = () => {
             <Button 
               size="lg"
               className="px-10 py-6 text-sm font-sans font-medium tracking-wide"
+              asChild
             >
-              Start Your Free Assessment
+              <Link to="/assessment">Start Your Free Assessment</Link>
             </Button>
             <p className="mt-4 font-sans text-xs text-muted-foreground">
               Takes approximately 5 minutes • Completely confidential
