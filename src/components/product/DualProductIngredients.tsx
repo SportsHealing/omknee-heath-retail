@@ -19,49 +19,49 @@ const collagenIngredients: Ingredient[] = [
     name: "Hydrolysed Collagen Peptides",
     amount: "8,000mg",
     category: "Structural Protein",
-    mechanism: "Hydrolysed collagen consists of small peptides that are readily absorbed. These peptides provide the amino acids glycine, proline, and hydroxyproline—key building blocks for the body's own collagen synthesis in cartilage, tendons, and connective tissue.",
-    evidence: "Multiple clinical studies have examined collagen peptide supplementation for joint health. Research suggests hydrolysed forms have superior bioavailability compared to whole collagen.",
-    whyIncluded: "We use a high-dose (8g) hydrolysed marine collagen for optimal absorption. This provides the structural amino acids that support the body's natural cartilage and connective tissue maintenance."
+    mechanism: "Hydrolysed collagen consists of small peptides designed for absorption. These peptides provide the amino acids glycine, proline, and hydroxyproline—building blocks used in the body's collagen synthesis processes.",
+    evidence: "Multiple studies have examined collagen peptide supplementation. Research suggests hydrolysed forms have better bioavailability compared to whole collagen. Note: Collagen peptides do not have EFSA-authorised health claims.",
+    whyIncluded: "We use high-dose (8g) hydrolysed marine collagen for bioavailability. This provides amino acids that contribute to the body's natural processes."
   },
   {
     name: "Vitamin C",
     amount: "80mg",
     category: "Essential Vitamin",
-    mechanism: "Vitamin C is essential for collagen synthesis—it acts as a cofactor for the enzymes that hydroxylate proline and lysine, steps required for stable collagen formation. Without adequate vitamin C, the body cannot properly produce collagen.",
-    evidence: "EFSA-approved claim for contribution to normal collagen formation for the normal function of cartilage. This is one of the most well-established nutrient-function relationships.",
-    whyIncluded: "Included at 100% NRV to ensure the collagen peptides can be effectively utilised by the body. The combination of collagen + vitamin C is synergistic and evidence-based."
+    mechanism: "Vitamin C is a cofactor for the enzymes involved in collagen synthesis, contributing to the normal formation of collagen.",
+    evidence: "EFSA-authorised claim: Vitamin C contributes to normal collagen formation for the normal function of cartilage. This is one of the most well-established nutrient-function relationships.",
+    whyIncluded: "Included at 100% NRV to support normal collagen formation. The combination with collagen peptides reflects evidence-based formulation principles."
   },
   {
     name: "Hyaluronic Acid",
     amount: "100mg",
     category: "Glycosaminoglycan",
-    mechanism: "Hyaluronic acid is a key component of synovial fluid—the lubricating fluid within joints. It has exceptional water-binding capacity, contributing to the viscosity and cushioning properties of joint fluid.",
-    evidence: "Research has examined oral hyaluronic acid supplementation for joint comfort. Studies suggest it may support synovial fluid composition, though mechanisms are still being investigated.",
-    whyIncluded: "Complements the structural support of collagen by addressing joint lubrication. Included at a meaningful dose based on clinical research protocols."
+    mechanism: "Hyaluronic acid is a component of synovial fluid within joints. It has water-binding capacity, contributing to the viscosity properties of joint fluid.",
+    evidence: "Research has examined oral hyaluronic acid supplementation. Note: Hyaluronic acid does not have EFSA-authorised health claims.",
+    whyIncluded: "Included at a dose consistent with published research protocols."
   },
   {
     name: "MSM (Methylsulfonylmethane)",
     amount: "1,000mg",
     category: "Organic Sulphur",
-    mechanism: "MSM provides bioavailable sulphur, which is required for the synthesis of collagen and other connective tissue proteins. Sulphur-containing amino acids are essential structural components of cartilage.",
-    evidence: "Clinical studies have examined MSM for joint health support, often in combination with glucosamine. Sulphur is a necessary component for proteoglycan synthesis.",
-    whyIncluded: "Supports the structural matrix of cartilage by providing sulphur for proteoglycan and collagen synthesis. Works synergistically with the collagen peptides."
+    mechanism: "MSM provides bioavailable sulphur, which is used in the synthesis of collagen and other structural proteins. Sulphur-containing amino acids are components of cartilage.",
+    evidence: "Studies have examined MSM, often in combination with glucosamine. Note: MSM does not have EFSA-authorised health claims.",
+    whyIncluded: "Provides sulphur for the body's structural protein synthesis processes."
   },
   {
     name: "Manganese",
     amount: "2mg",
     category: "Essential Mineral",
-    mechanism: "Manganese is a cofactor for enzymes involved in the formation of connective tissue, including cartilage. It contributes to the normal formation of connective tissue.",
-    evidence: "EFSA-approved claim for contribution to normal connective tissue formation. Essential for proper glycosaminoglycan synthesis.",
-    whyIncluded: "Supports the body's natural processes for maintaining connective tissue—the structural framework that includes cartilage."
+    mechanism: "Manganese is a cofactor for enzymes involved in the formation of connective tissue.",
+    evidence: "EFSA-authorised claim: Manganese contributes to the normal formation of connective tissue.",
+    whyIncluded: "Supports the body's normal connective tissue formation processes."
   },
   {
     name: "Copper",
     amount: "1mg",
     category: "Essential Mineral",
-    mechanism: "Copper is essential for the cross-linking of collagen and elastin through lysyl oxidase activity, contributing to the structural integrity of connective tissues.",
-    evidence: "EFSA-approved claim for contribution to maintenance of normal connective tissues. Critical for collagen maturation.",
-    whyIncluded: "Ensures proper collagen cross-linking, supporting the strength and stability of the collagen matrix in joints."
+    mechanism: "Copper contributes to the maintenance of normal connective tissues through its role in collagen cross-linking.",
+    evidence: "EFSA-authorised claim: Copper contributes to maintenance of normal connective tissues.",
+    whyIncluded: "Supports normal connective tissue maintenance."
   }
 ];
 
@@ -70,65 +70,65 @@ const veganIngredients: Ingredient[] = [
     name: "Vitamin C",
     amount: "160mg",
     category: "Essential Vitamin",
-    mechanism: "Vitamin C is essential for collagen synthesis in the body—acting as a cofactor for enzymes that enable stable collagen formation. It also provides antioxidant protection for cells.",
-    evidence: "EFSA-approved claims for contribution to normal collagen formation for cartilage function and protection of cells from oxidative stress.",
-    whyIncluded: "Higher dose (200% NRV) to maximally support the body's own collagen production. Critical for a vegan formula where external collagen isn't provided."
+    mechanism: "Vitamin C is a cofactor for enzymes that enable collagen formation in the body. It also contributes to the protection of cells from oxidative stress.",
+    evidence: "EFSA-authorised claims: Vitamin C contributes to normal collagen formation for the normal function of cartilage and protection of cells from oxidative stress.",
+    whyIncluded: "Higher dose (200% NRV) to support the body's normal collagen formation. Important in a vegan formula where external collagen isn't provided."
   },
   {
     name: "MSM (Methylsulfonylmethane)",
     amount: "1,500mg",
     category: "Organic Sulphur",
-    mechanism: "MSM provides bioavailable sulphur for the synthesis of collagen, proteoglycans, and other connective tissue components. This is particularly important in a collagen-free formula.",
-    evidence: "Clinical studies have examined MSM for joint health support. Provides the sulphur-containing building blocks needed for the body's own structural protein synthesis.",
-    whyIncluded: "The primary structural support in this vegan formula. Higher dose than our collagen powder to compensate for the absence of external collagen peptides."
+    mechanism: "MSM provides bioavailable sulphur for the synthesis of collagen, proteoglycans, and other structural proteins in the body.",
+    evidence: "Studies have examined MSM supplementation. Provides sulphur-containing building blocks. Note: MSM does not have EFSA-authorised health claims.",
+    whyIncluded: "Higher dose than our collagen powder to provide sulphur for the body's structural protein synthesis."
   },
   {
     name: "Turmeric Extract",
     amount: "400mg (95% curcuminoids)",
     category: "Botanical Extract",
-    mechanism: "Curcumin, the active compound in turmeric, has well-documented antioxidant properties. It helps protect cells from oxidative stress caused by free radicals.",
-    evidence: "Extensive research on curcumin's antioxidant activity. Included at a higher dose in this formula for enhanced antioxidant support.",
-    whyIncluded: "Provides plant-based antioxidant protection. Standardised to 95% curcuminoids for consistent potency."
+    mechanism: "Curcumin, the active compound in turmeric, has antioxidant properties that may help protect cells from oxidative stress.",
+    evidence: "Extensive research on curcumin's antioxidant activity. Included at a higher dose in this formula. Note: Curcumin/turmeric does not have EFSA-authorised health claims.",
+    whyIncluded: "Provides plant-based antioxidant properties. Standardised to 95% curcuminoids for consistent potency."
   },
   {
     name: "Piperine",
     amount: "10mg",
     category: "Bioavailability Enhancer",
-    mechanism: "Piperine from black pepper inhibits enzymes that would otherwise rapidly metabolise curcumin, significantly increasing its absorption and bioavailability.",
+    mechanism: "Piperine from black pepper inhibits enzymes that would otherwise rapidly metabolise curcumin, significantly increasing its absorption.",
     evidence: "Research shows piperine can increase curcumin bioavailability by up to 2000%. One of the most well-established nutrient absorption interactions.",
-    whyIncluded: "Ensures the turmeric extract is effectively absorbed. Evidence-based formulation—not just adding ingredients, but ensuring they work."
+    whyIncluded: "Ensures the turmeric extract is effectively absorbed. Evidence-based formulation principle."
   },
   {
     name: "Vitamin D3 (Vegan)",
     amount: "25μg (1000 IU)",
     category: "Vitamin",
-    mechanism: "Vitamin D supports calcium absorption and is essential for maintaining normal muscle function and bone health. Our D3 is derived from lichen—a plant source.",
-    evidence: "EFSA-approved claims for muscle function and bone health. Lichen-derived D3 is bioequivalent to animal-derived forms.",
-    whyIncluded: "Vegan-friendly D3 from lichen. Supports the musculoskeletal system as a whole, addressing the common deficiency seen in UK adults."
+    mechanism: "Vitamin D contributes to normal muscle function and the maintenance of normal bones. Our D3 is derived from lichen—a plant source.",
+    evidence: "EFSA-authorised claims: Vitamin D contributes to normal muscle function and maintenance of normal bones. Lichen-derived D3 is bioequivalent to animal-derived forms.",
+    whyIncluded: "Vegan-friendly D3 from lichen. Supports normal muscle function and bone maintenance, addressing the common insufficiency seen in UK adults."
   },
   {
     name: "Manganese",
     amount: "4mg",
     category: "Essential Mineral",
-    mechanism: "Manganese is a cofactor for enzymes involved in connective tissue formation. Higher dose in this formula to support endogenous collagen synthesis.",
-    evidence: "EFSA-approved claim for contribution to normal connective tissue formation and maintenance of normal bones.",
-    whyIncluded: "Increased dose to support the body's own cartilage and connective tissue maintenance processes."
+    mechanism: "Manganese is a cofactor for enzymes involved in connective tissue formation. Higher dose in this formula.",
+    evidence: "EFSA-authorised claims: Manganese contributes to normal connective tissue formation and maintenance of normal bones.",
+    whyIncluded: "Increased dose to support the body's normal connective tissue formation processes."
   },
   {
     name: "Copper",
     amount: "1mg",
     category: "Essential Mineral",
-    mechanism: "Copper enables proper cross-linking of collagen and elastin through lysyl oxidase, essential for connective tissue structural integrity.",
-    evidence: "EFSA-approved claim for maintenance of normal connective tissues.",
-    whyIncluded: "Supports the structural quality of the body's own collagen production—critical when external collagen isn't provided."
+    mechanism: "Copper contributes to maintenance of normal connective tissues through its role in collagen cross-linking.",
+    evidence: "EFSA-authorised claim: Copper contributes to maintenance of normal connective tissues.",
+    whyIncluded: "Supports normal connective tissue maintenance."
   },
   {
     name: "Zinc",
     amount: "10mg",
     category: "Essential Mineral",
-    mechanism: "Zinc is required for protein synthesis and cell division, supporting the body's ability to maintain and repair tissues including cartilage.",
-    evidence: "EFSA-approved claims for normal protein synthesis and maintenance of normal bones.",
-    whyIncluded: "Additional mineral support for tissue maintenance, particularly relevant for plant-based diets where zinc absorption may be reduced."
+    mechanism: "Zinc contributes to normal protein synthesis and the maintenance of normal bones.",
+    evidence: "EFSA-authorised claims: Zinc contributes to normal protein synthesis and maintenance of normal bones.",
+    whyIncluded: "Supports normal protein synthesis. Particularly relevant for plant-based diets where zinc absorption may be reduced."
   }
 ];
 
