@@ -138,7 +138,7 @@ const KneeScoreEmbed = () => {
                   <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-4">
                     {tab.label} Dial
                   </p>
-                  <RAGGauge score={tab.score} label={tab.label} size={160} />
+                  <RAGGauge score={tab.score} label={tab.label} size="sm" />
                 </button>
               ))}
             </div>
