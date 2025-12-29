@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, forwardRef } from "react";
 import { Button } from "@/components/ui/button";
 import { 
   ChevronDown, 
@@ -263,7 +263,8 @@ interface CollapsibleSectionProps {
   defaultOpen?: boolean;
 }
 
-const CollapsibleSection = ({ title, icon, items, defaultOpen = true }: CollapsibleSectionProps) => {
+const CollapsibleSection = forwardRef<HTMLDivElement, CollapsibleSectionProps>(
+  ({ title, icon, items, defaultOpen = true }, ref) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   if (items.length === 0) return null;
@@ -299,7 +300,9 @@ const CollapsibleSection = ({ title, icon, items, defaultOpen = true }: Collapsi
       )}
     </div>
   );
-};
+});
+
+CollapsibleSection.displayName = "CollapsibleSection";
 
 const bandStyles: Record<BandKey, { bg: string; border: string; text: string }> = {
   red: { bg: "bg-red-50", border: "border-red-200", text: "text-red-700" },
