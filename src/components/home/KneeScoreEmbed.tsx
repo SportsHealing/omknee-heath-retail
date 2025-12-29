@@ -4,6 +4,7 @@ import { ArrowRight, Shield, RotateCcw, Clock, Zap } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import RAGGauge from "./RAGGauge";
 import RecommendedActions from "./RecommendedActions";
+import { KneeRecommendations } from "@/components/assessment/KneeRecommendations";
 
 interface Question {
   id: string;
@@ -318,6 +319,21 @@ const KneeScoreEmbed = () => {
                   Start Over
                 </Button>
               </div>
+            </div>
+
+            {/* Personalised Test Recommendations */}
+            <div className="bg-background rounded-2xl border border-border shadow-elegant p-8 mt-8">
+              <h3 className="text-xl font-serif text-foreground mb-6 text-center">
+                Personalised Test Recommendations
+              </h3>
+              <p className="text-sm text-muted-foreground text-center mb-6">
+                Get a tailored package of imaging, blood tests, and procedures based on your score and health profile.
+              </p>
+              <KneeRecommendations 
+                kneeScore={kneeScore} 
+                sleepScore={assessmentMode === "full" ? sleepScore : undefined}
+                useIndexScore={assessmentMode === "full"}
+              />
             </div>
           </div>
         </div>
