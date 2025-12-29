@@ -34,16 +34,20 @@ const notSuitableFor = [
     description: "This is a food supplement, not a medicine. It cannot treat, cure, or prevent any disease."
   },
   {
-    title: "People with shellfish allergies",
-    description: "Our glucosamine is derived from marine shellfish. We cannot offer a shellfish-free capsule version."
+    title: "People with fish, shellfish, or collagen allergies",
+    description: "Contains collagen from marine or bovine sources and may contain shellfish-derived glucosamine depending on variant. Check label for specific allergens."
   },
   {
     title: "Those seeking a replacement for medical care",
     description: "If you have significant joint pain or a diagnosed condition, please consult a healthcare professional."
   },
   {
-    title: "Anyone on blood-thinning medication without medical advice",
-    description: "Glucosamine may affect blood clotting. Consult your doctor before use."
+    title: "Those taking warfarin or vitamin K antagonists without medical advice",
+    description: "This product contains Vitamin K2. Consult your doctor before use if you are on anticoagulant therapy."
+  },
+  {
+    title: "Anyone on blood-thinning or diabetes medication without medical advice",
+    description: "Some ingredients may interact with medications. Consult your doctor before use."
   },
   {
     title: "Pregnant or breastfeeding women without medical guidance",

@@ -29,7 +29,7 @@ const qualityPoints = [
   {
     icon: Shield,
     title: "Allergen Awareness",
-    description: "Contains shellfish-derived glucosamine. We clearly disclose all allergens and potential sensitivities."
+    description: "Contains collagen (marine or bovine), may contain shellfish-derived glucosamine. All allergens clearly declared on each variant's label."
   },
   {
     icon: Leaf,
@@ -95,11 +95,15 @@ const ProductSafety = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary/50 mt-2 flex-shrink-0" />
-                    <span>Take blood-thinning medications (warfarin, aspirin)</span>
+                    <span>Take warfarin or other vitamin K antagonists (contains Vitamin K2)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary/50 mt-2 flex-shrink-0" />
-                    <span>Have diabetes or are on glucose-lowering medication</span>
+                    <span>Take blood-thinning or diabetes medications</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary/50 mt-2 flex-shrink-0" />
+                    <span>Take any prescription medications (piperine may affect drug metabolism)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary/50 mt-2 flex-shrink-0" />
@@ -114,7 +118,11 @@ const ProductSafety = () => {
                 <ul className="space-y-2 font-sans text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-destructive/50 mt-2 flex-shrink-0" />
-                    <span>Those with shellfish allergy (glucosamine source)</span>
+                    <span>Those with fish or shellfish allergy (check variant label)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-destructive/50 mt-2 flex-shrink-0" />
+                    <span>Those with bovine/beef allergy (check variant label)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-destructive/50 mt-2 flex-shrink-0" />

@@ -26,10 +26,10 @@ const ProductCTA = () => {
               Joint + Movement Support
             </p>
             <p className="font-sans text-sm text-muted-foreground mb-4">
-              60 Capsules • 30 Day Supply
+              30 Daily Pouches • 30 Day Supply
             </p>
             <p className="font-serif text-2xl text-foreground mb-6">
-              £39.99
+              £49.99
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button size="lg" className="px-8 text-sm font-sans font-medium gap-2">

@@ -13,15 +13,15 @@ import {
 const faqs = [
   {
     question: "What can I realistically expect from this supplement?",
-    answer: "We want to set honest expectations. This formula provides nutritional support for joint health—it supplies nutrients that play roles in maintaining normal cartilage, connective tissue, and muscle function. It is not a treatment for any medical condition. Individual responses vary, and supplements work best as part of a comprehensive approach including movement, nutrition, and appropriate rest. Many people choose to assess after 8-12 weeks of consistent use."
+    answer: "We want to set honest expectations. This formula provides nutritional support for joint health—it supplies nutrients that contribute to the maintenance of normal cartilage, connective tissue, bones, and muscle function (EFSA-authorised claims). It is not a treatment for any medical condition. Individual responses vary, and supplements work best as part of a comprehensive approach including movement, nutrition, and appropriate rest. Many people choose to assess after 8-12 weeks of consistent use."
   },
   {
     question: "Why did you choose these specific ingredients and doses?",
-    answer: "Each ingredient was selected based on scientific literature and clinical reasoning. Glucosamine and chondroitin are included at doses commonly used in research. Vitamin D addresses a widespread deficiency relevant to musculoskeletal health. Turmeric provides antioxidant support, paired with piperine to address its naturally poor absorption. Manganese and copper support normal connective tissue formation—an EFSA-approved claim. We avoided 'kitchen sink' formulations that include everything; instead, we focused on ingredients with clear rationales."
+    answer: "Each ingredient was selected based on scientific literature and clinical reasoning. We include 10g hydrolysed collagen peptides, glucosamine and chondroitin at research-informed doses, hyaluronic acid for joint support, and curcumin paired with piperine to address its naturally poor absorption. Vitamin C contributes to normal collagen formation (EFSA claim). Vitamin D and K2 support normal bone health. Magnesium supports normal muscle function. Copper and manganese contribute to normal connective tissue formation. We focused on ingredients with clear, evidence-based rationales."
   },
   {
-    question: "Is there research supporting these ingredients?",
-    answer: "Yes, but we believe in nuance. Glucosamine and chondroitin have been extensively studied, with some trials showing positive results and others showing no significant difference from placebo. The research landscape is mixed, and we don't claim otherwise. Vitamin D, manganese, and copper have EFSA-approved health claims for their roles in muscle function, bone health, and connective tissue. Curcumin has documented antioxidant properties. We present what the evidence shows—not more, not less."
+    question: "What health claims are authorised for these ingredients?",
+    answer: "We only make claims authorised by EFSA (European Food Safety Authority). These include: Vitamin C contributes to normal collagen formation for the normal function of cartilage and bones. Vitamin D contributes to the maintenance of normal bones and muscle function. Vitamin K contributes to the maintenance of normal bones. Manganese and copper contribute to normal connective tissue formation. Magnesium contributes to normal muscle function. Zinc contributes to normal protein synthesis. Glucosamine, chondroitin, collagen, hyaluronic acid, curcumin, and boswellia do not have authorised EFSA health claims."
   },
   {
     question: "Will this cure my joint pain?",
@@ -29,19 +29,19 @@ const faqs = [
   },
   {
     question: "Can I take this with my current medications?",
-    answer: "We recommend consulting your healthcare provider or pharmacist before combining this supplement with any medication. This is particularly important if you take blood-thinning medications (glucosamine may affect blood clotting), diabetes medications (glucosamine may affect glucose metabolism), or if you're on multiple medications. Your healthcare provider can advise based on your specific situation."
+    answer: "We recommend consulting your healthcare provider or pharmacist before combining this supplement with any medication. This is particularly important if you take warfarin or other vitamin K antagonists (this product contains Vitamin K2), blood-thinning medications, diabetes medications, or if you're on multiple medications. The black pepper extract (piperine) may affect the metabolism of certain medicines. Your healthcare provider can advise based on your specific situation."
   },
   {
-    question: "Why is glucosamine derived from shellfish?",
-    answer: "Marine-derived glucosamine sulphate is the form most commonly used in research and provides the sulphate component that may be relevant to its effects. We acknowledge this makes our product unsuitable for those with shellfish allergies. We're transparent about this limitation on our packaging and website. Vegetarian alternatives exist but use different forms of glucosamine with different research profiles."
+    question: "What allergens does this product contain?",
+    answer: "Depending on the variant, this product contains collagen from marine (fish) or bovine sources. Glucosamine may be derived from shellfish or vegan fermentation—check the label for your specific variant. We clearly declare all allergens on the packaging. If you have allergies to fish, shellfish, or any other ingredients, please check the label carefully before use."
   },
   {
     question: "How is this different from cheaper supplements?",
-    answer: "We can't speak to every product, but we can explain our approach: clinician-led formulation, doses informed by research, third-party testing for every batch, no proprietary blends, UK GMP-certified manufacturing, and transparent communication about what supplements can and cannot do. Whether that's worth the price difference is a decision we leave to you. We don't claim our formula is 'the best'—we claim it's thoughtfully made and honestly represented."
+    answer: "We can't speak to every product, but we can explain our approach: clinician-led formulation, doses informed by research, third-party testing for every batch, no proprietary blends, UK GMP-certified manufacturing, and transparent communication about what supplements can and cannot do. We only make EFSA-authorised health claims. Whether that's worth the price difference is a decision we leave to you."
   },
   {
     question: "What if it doesn't work for me?",
-    answer: "That's a real possibility. Individual responses to supplements vary, and we don't promise results. If you try our product and don't feel it's right for you, we offer returns on unopened products within 30 days. We'd rather have an honest relationship than a dissatisfied customer. If you're experiencing significant joint issues, a supplement is unlikely to be the solution—please seek appropriate clinical evaluation."
+    answer: "That's a real possibility. Individual responses to supplements vary, and we don't promise specific results. If you try our product and don't feel it's right for you, we offer returns on unopened products within 30 days. We'd rather have an honest relationship than a dissatisfied customer. If you're experiencing significant joint issues, a supplement is unlikely to be the solution—please seek appropriate clinical evaluation."
   }
 ];
 
