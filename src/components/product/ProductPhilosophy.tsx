@@ -14,12 +14,12 @@ const pillars = [
   {
     icon: Apple,
     title: "Nutrition",
-    description: "A balanced diet rich in anti-inflammatory foods supports overall joint health. Omega-3s, vegetables, and adequate protein matter."
+    description: "A balanced diet supports overall health. Adequate protein, vitamins, and minerals from food provide the foundation for musculoskeletal wellbeing."
   },
   {
     icon: Moon,
     title: "Recovery",
-    description: "Adequate sleep and rest allow tissues to repair and recover. Chronic stress and poor sleep can affect joint comfort."
+    description: "Adequate sleep and rest allow tissues to recover. Quality rest is an essential component of overall wellbeing."
   },
   {
     icon: Pill,
