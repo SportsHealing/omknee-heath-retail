@@ -1,0 +1,1893 @@
+{% comment %}
+  Knee Assessment UI - Quiz-Style Section
+  ========================================
+  Collects knee health data in-browser only (no PHI storage on Shopify).
+  Submits directly to Jotform via prefilled URL or API POST.
+  
+  Setup:
+  1. Add to sections/knee-assessment-ui.liquid
+  2. Create page template with this section
+  3. Configure Jotform Form ID and field mappings in Theme Editor
+{% endcomment %}
+
+{%- liquid
+  assign section_id = section.id | default: 'kau'
+  assign form_id = section.settings.jotform_form_id | default: 'PLACEHOLDER_FORM_ID'
+-%}
+
+<style>
+  /* ===== SCOPED STYLES ===== */
+  #kau-{{ section_id }} {
+    --kau-primary: {{ section.settings.primary_color | default: '#166534' }};
+    --kau-primary-light: {{ section.settings.primary_light | default: '#dcfce7' }};
+    --kau-danger: #dc2626;
+    --kau-danger-light: #fef2f2;
+    --kau-amber: #d97706;
+    --kau-amber-light: #fffbeb;
+    --kau-green: #16a34a;
+    --kau-green-light: #f0fdf4;
+    --kau-optimal: #0284c7;
+    --kau-optimal-light: #e0f2fe;
+    --kau-text: #1a1a1a;
+    --kau-text-muted: #64748b;
+    --kau-bg: #ffffff;
+    --kau-bg-alt: #f8fafc;
+    --kau-border: #e2e8f0;
+    --kau-radius: 12px;
+    --kau-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--kau-text);
+    background: var(--kau-bg);
+  }
+
+  #kau-{{ section_id }} * { box-sizing: border-box; }
+
+  .kau-container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+  }
+
+  /* Hero */
+  .kau-hero {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .kau-hero__title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: var(--kau-text);
+  }
+
+  .kau-hero__subtitle {
+    font-size: 1rem;
+    color: var(--kau-text-muted);
+    margin: 0;
+  }
+
+  /* Progress */
+  .kau-progress {
+    margin-bottom: 32px;
+  }
+
+  .kau-progress__bar {
+    height: 8px;
+    background: var(--kau-border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .kau-progress__fill {
+    height: 100%;
+    background: var(--kau-primary);
+    transition: width 0.3s ease;
+    border-radius: 4px;
+  }
+
+  .kau-progress__text {
+    font-size: 0.875rem;
+    color: var(--kau-text-muted);
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  /* Sections */
+  .kau-section {
+    display: none;
+    animation: kauFadeIn 0.3s ease;
+  }
+
+  .kau-section.active { display: block; }
+
+  @keyframes kauFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .kau-section__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 8px;
+    color: var(--kau-text);
+  }
+
+  .kau-section__desc {
+    font-size: 0.9375rem;
+    color: var(--kau-text-muted);
+    margin: 0 0 24px;
+  }
+
+  /* Form Elements */
+  .kau-field {
+    margin-bottom: 20px;
+  }
+
+  .kau-field.hidden { display: none; }
+
+  .kau-label {
+    display: block;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--kau-text);
+    margin-bottom: 8px;
+  }
+
+  .kau-label--required::after {
+    content: ' *';
+    color: var(--kau-danger);
+  }
+
+  .kau-input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: 1px solid var(--kau-border);
+    border-radius: var(--kau-radius);
+    background: var(--kau-bg);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .kau-input:focus {
+    outline: none;
+    border-color: var(--kau-primary);
+    box-shadow: 0 0 0 3px var(--kau-primary-light);
+  }
+
+  .kau-input.error {
+    border-color: var(--kau-danger);
+  }
+
+  .kau-error-msg {
+    font-size: 0.8125rem;
+    color: var(--kau-danger);
+    margin-top: 4px;
+  }
+
+  /* Slider */
+  .kau-slider-wrap {
+    padding: 8px 0;
+  }
+
+  .kau-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: var(--kau-border);
+    border-radius: 4px;
+    outline: none;
+  }
+
+  .kau-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    background: var(--kau-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--kau-shadow);
+  }
+
+  .kau-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: var(--kau-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+  }
+
+  .kau-slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--kau-text-muted);
+    margin-top: 4px;
+  }
+
+  .kau-slider-value {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--kau-primary);
+    margin-top: 8px;
+  }
+
+  /* Radio/Checkbox Groups */
+  .kau-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .kau-option {
+    position: relative;
+  }
+
+  .kau-option input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .kau-option__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: var(--kau-bg-alt);
+    border: 2px solid var(--kau-border);
+    border-radius: var(--kau-radius);
+    font-size: 0.9375rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .kau-option input:checked + .kau-option__label {
+    background: var(--kau-primary-light);
+    border-color: var(--kau-primary);
+    color: var(--kau-primary);
+  }
+
+  .kau-option input:focus + .kau-option__label {
+    box-shadow: 0 0 0 3px var(--kau-primary-light);
+  }
+
+  /* Checkbox Grid */
+  .kau-checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+  }
+
+  .kau-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+    background: var(--kau-bg-alt);
+    border: 1px solid var(--kau-border);
+    border-radius: var(--kau-radius);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .kau-checkbox:hover {
+    border-color: var(--kau-primary);
+  }
+
+  .kau-checkbox input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: var(--kau-primary);
+    flex-shrink: 0;
+  }
+
+  .kau-checkbox span {
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  /* Textarea */
+  .kau-textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: 1px solid var(--kau-border);
+    border-radius: var(--kau-radius);
+    resize: vertical;
+    font-family: inherit;
+  }
+
+  .kau-textarea:focus {
+    outline: none;
+    border-color: var(--kau-primary);
+    box-shadow: 0 0 0 3px var(--kau-primary-light);
+  }
+
+  /* Score Preview */
+  .kau-score-preview {
+    background: var(--kau-bg-alt);
+    border: 2px solid var(--kau-border);
+    border-radius: var(--kau-radius);
+    padding: 24px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .kau-score-preview__title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--kau-text-muted);
+    margin: 0 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .kau-score-preview__value {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .kau-score-preview__band {
+    display: inline-block;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .kau-score-preview.band-red {
+    border-color: var(--kau-danger);
+  }
+  .kau-score-preview.band-red .kau-score-preview__value { color: var(--kau-danger); }
+  .kau-score-preview.band-red .kau-score-preview__band { background: var(--kau-danger-light); color: var(--kau-danger); }
+
+  .kau-score-preview.band-amber {
+    border-color: var(--kau-amber);
+  }
+  .kau-score-preview.band-amber .kau-score-preview__value { color: var(--kau-amber); }
+  .kau-score-preview.band-amber .kau-score-preview__band { background: var(--kau-amber-light); color: var(--kau-amber); }
+
+  .kau-score-preview.band-green {
+    border-color: var(--kau-green);
+  }
+  .kau-score-preview.band-green .kau-score-preview__value { color: var(--kau-green); }
+  .kau-score-preview.band-green .kau-score-preview__band { background: var(--kau-green-light); color: var(--kau-green); }
+
+  .kau-score-preview.band-optimal {
+    border-color: var(--kau-optimal);
+  }
+  .kau-score-preview.band-optimal .kau-score-preview__value { color: var(--kau-optimal); }
+  .kau-score-preview.band-optimal .kau-score-preview__band { background: var(--kau-optimal-light); color: var(--kau-optimal); }
+
+  /* Navigation Buttons */
+  .kau-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .kau-btn {
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--kau-radius);
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+  }
+
+  .kau-btn--secondary {
+    background: var(--kau-bg-alt);
+    color: var(--kau-text);
+    border: 1px solid var(--kau-border);
+  }
+
+  .kau-btn--secondary:hover {
+    background: var(--kau-border);
+  }
+
+  .kau-btn--primary {
+    background: var(--kau-primary);
+    color: #fff;
+    flex: 1;
+    max-width: 200px;
+    margin-left: auto;
+  }
+
+  .kau-btn--primary:hover {
+    opacity: 0.9;
+  }
+
+  .kau-btn--primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .kau-btn--submit {
+    width: 100%;
+    max-width: none;
+    padding: 16px 32px;
+    font-size: 1.125rem;
+  }
+
+  /* Consent */
+  .kau-consent {
+    background: var(--kau-bg-alt);
+    border: 1px solid var(--kau-border);
+    border-radius: var(--kau-radius);
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .kau-consent__title {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .kau-consent__title.required::after {
+    content: 'Required';
+    font-size: 0.75rem;
+    background: var(--kau-danger-light);
+    color: var(--kau-danger);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .kau-consent__title.optional::after {
+    content: 'Optional';
+    font-size: 0.75rem;
+    background: var(--kau-bg-alt);
+    color: var(--kau-text-muted);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--kau-border);
+  }
+
+  .kau-consent label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+  }
+
+  .kau-consent input {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    accent-color: var(--kau-primary);
+    flex-shrink: 0;
+  }
+
+  .kau-consent p {
+    font-size: 0.875rem;
+    color: var(--kau-text-muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Inline Fields */
+  .kau-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media (max-width: 480px) {
+    .kau-row { grid-template-columns: 1fr; }
+  }
+
+  /* Privacy Notice */
+  .kau-privacy {
+    font-size: 0.8125rem;
+    color: var(--kau-text-muted);
+    text-align: center;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--kau-border);
+  }
+
+  .kau-privacy a {
+    color: var(--kau-primary);
+    text-decoration: underline;
+  }
+
+  /* Loading State */
+  .kau-loading {
+    display: none;
+    text-align: center;
+    padding: 40px;
+  }
+
+  .kau-loading.active { display: block; }
+
+  .kau-spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid var(--kau-border);
+    border-top-color: var(--kau-primary);
+    border-radius: 50%;
+    animation: kauSpin 0.8s linear infinite;
+    margin: 0 auto 16px;
+  }
+
+  @keyframes kauSpin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Field Info */
+  .kau-hint {
+    font-size: 0.8125rem;
+    color: var(--kau-text-muted);
+    margin-top: 4px;
+  }
+</style>
+
+<section id="kau-{{ section_id }}" class="kau-section-wrap" aria-label="Knee Assessment Questionnaire">
+  <div class="kau-container">
+    
+    <!-- Hero -->
+    <header class="kau-hero">
+      <h1 class="kau-hero__title">{{ section.settings.heading | default: 'Knee Health Assessment' }}</h1>
+      <p class="kau-hero__subtitle">{{ section.settings.subheading | default: 'Complete this questionnaire to receive personalised recommendations.' }}</p>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="kau-progress">
+      <div class="kau-progress__bar">
+        <div class="kau-progress__fill" id="kauProgress-{{ section_id }}" style="width: 0%"></div>
+      </div>
+      <p class="kau-progress__text"><span id="kauStep-{{ section_id }}">1</span> of <span id="kauTotalSteps-{{ section_id }}">6</span></p>
+    </div>
+
+    <form id="kauForm-{{ section_id }}" novalidate>
+      
+      <!-- ===== SECTION 1: Personal Details ===== -->
+      <div class="kau-section active" data-section="1">
+        <h2 class="kau-section__title">Your Details</h2>
+        <p class="kau-section__desc">We need some basic information to personalise your assessment.</p>
+
+        <div class="kau-row">
+          <div class="kau-field">
+            <label class="kau-label kau-label--required" for="kau_first_name">First Name</label>
+            <input type="text" id="kau_first_name" name="first_name" class="kau-input" required maxlength="50" autocomplete="given-name">
+          </div>
+          <div class="kau-field">
+            <label class="kau-label kau-label--required" for="kau_last_name">Last Name</label>
+            <input type="text" id="kau_last_name" name="last_name" class="kau-input" required maxlength="50" autocomplete="family-name">
+          </div>
+        </div>
+
+        <div class="kau-field">
+          <label class="kau-label kau-label--required" for="kau_dob">Date of Birth</label>
+          <input type="date" id="kau_dob" name="dob" class="kau-input" required>
+        </div>
+
+        <div class="kau-field">
+          <label class="kau-label kau-label--required" for="kau_email">Email Address</label>
+          <input type="email" id="kau_email" name="email" class="kau-input" required maxlength="100" autocomplete="email">
+        </div>
+
+        <div class="kau-row">
+          <div class="kau-field">
+            <label class="kau-label" for="kau_mobile">Mobile Number</label>
+            <input type="tel" id="kau_mobile" name="mobile" class="kau-input" maxlength="20" autocomplete="tel">
+          </div>
+          <div class="kau-field">
+            <label class="kau-label" for="kau_postcode">Postcode</label>
+            <input type="text" id="kau_postcode" name="postcode" class="kau-input" maxlength="10" autocomplete="postal-code">
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SECTION 2: Knee Symptom Domains (Scoring) ===== -->
+      <div class="kau-section" data-section="2">
+        <h2 class="kau-section__title">Your Knee Symptoms</h2>
+        <p class="kau-section__desc">Rate each symptom based on your experience over the past 7 days.</p>
+
+        <!-- Pain (0-10) -->
+        <div class="kau-field">
+          <label class="kau-label kau-label--required">Knee Pain Level</label>
+          <div class="kau-slider-wrap">
+            <input type="range" id="kau_pain" name="pain" class="kau-slider" min="0" max="10" value="0" data-domain="pain">
+            <div class="kau-slider-labels">
+              <span>0 - No pain</span>
+              <span>10 - Severe pain</span>
+            </div>
+            <div class="kau-slider-value" id="kau_pain_val">0</div>
+          </div>
+        </div>
+
+        <!-- Sleep Disturbance (0-10) -->
+        <div class="kau-field">
+          <label class="kau-label kau-label--required">Sleep Disturbance from Knee</label>
+          <div class="kau-slider-wrap">
+            <input type="range" id="kau_sleep" name="sleep" class="kau-slider" min="0" max="10" value="0" data-domain="sleep">
+            <div class="kau-slider-labels">
+              <span>0 - No disturbance</span>
+              <span>10 - Severe disturbance</span>
+            </div>
+            <div class="kau-slider-value" id="kau_sleep_val">0</div>
+          </div>
+        </div>
+
+        <!-- Swelling (0-5) -->
+        <div class="kau-field">
+          <label class="kau-label kau-label--required">Swelling</label>
+          <div class="kau-slider-wrap">
+            <input type="range" id="kau_swelling" name="swelling" class="kau-slider" min="0" max="5" value="0" data-domain="swelling">
+            <div class="kau-slider-labels">
+              <span>0 - None</span>
+              <span>5 - Severe</span>
+            </div>
+            <div class="kau-slider-value" id="kau_swelling_val">0</div>
+          </div>
+        </div>
+
+        <!-- Instability (0-5) -->
+        <div class="kau-field">
+          <label class="kau-label kau-label--required">Instability / Giving Way</label>
+          <div class="kau-slider-wrap">
+            <input type="range" id="kau_instability" name="instability" class="kau-slider" min="0" max="5" value="0" data-domain="instability">
+            <div class="kau-slider-labels">
+              <span>0 - Stable</span>
+              <span>5 - Very unstable</span>
+            </div>
+            <div class="kau-slider-value" id="kau_instability_val">0</div>
+          </div>
+        </div>
+
+        <!-- Stiffness (0-5) -->
+        <div class="kau-field">
+          <label class="kau-label kau-label--required">Stiffness / Restriction</label>
+          <div class="kau-slider-wrap">
+            <input type="range" id="kau_stiffness" name="stiffness" class="kau-slider" min="0" max="5" value="0" data-domain="stiffness">
+            <div class="kau-slider-labels">
+              <span>0 - No stiffness</span>
+              <span>5 - Very stiff</span>
+            </div>
+            <div class="kau-slider-value" id="kau_stiffness_val">0</div>
+          </div>
+        </div>
+
+        <!-- Stairs (0-5) -->
+        <div class="kau-field">
+          <label class="kau-label kau-label--required">Difficulty with Stairs</label>
+          <div class="kau-slider-wrap">
+            <input type="range" id="kau_stairs" name="stairs" class="kau-slider" min="0" max="5" value="0" data-domain="stairs">
+            <div class="kau-slider-labels">
+              <span>0 - No difficulty</span>
+              <span>5 - Unable</span>
+            </div>
+            <div class="kau-slider-value" id="kau_stairs_val">0</div>
+          </div>
+        </div>
+
+        <!-- Function (0-10) -->
+        <div class="kau-field">
+          <label class="kau-label kau-label--required">Overall Function / Mobility</label>
+          <div class="kau-slider-wrap">
+            <input type="range" id="kau_function" name="function" class="kau-slider" min="0" max="10" value="0" data-domain="function">
+            <div class="kau-slider-labels">
+              <span>0 - Normal</span>
+              <span>10 - Severely limited</span>
+            </div>
+            <div class="kau-slider-value" id="kau_function_val">0</div>
+          </div>
+        </div>
+
+        <!-- Live Score Preview -->
+        <div class="kau-score-preview band-optimal" id="kauScorePreview-{{ section_id }}">
+          <p class="kau-score-preview__title">Your Knee Score (Preview)</p>
+          <div class="kau-score-preview__value" id="kauScoreValue-{{ section_id }}">100</div>
+          <span class="kau-score-preview__band" id="kauScoreBand-{{ section_id }}">Optimal</span>
+          <p class="kau-hint" style="margin-top: 12px;">Higher score = better knee health. Final score calculated on submission.</p>
+        </div>
+      </div>
+
+      <!-- ===== SECTION 3: Prior Problems & Treatments ===== -->
+      <div class="kau-section" data-section="3">
+        <h2 class="kau-section__title">Previous Knee Problems</h2>
+        <p class="kau-section__desc">Tell us about any previous issues with your knee.</p>
+
+        <!-- Prior Problem -->
+        <div class="kau-field">
+          <label class="kau-label kau-label--required">Have you had a previous knee problem?</label>
+          <div class="kau-options">
+            <label class="kau-option">
+              <input type="radio" name="prior_problem" value="Yes" required>
+              <span class="kau-option__label">Yes</span>
+            </label>
+            <label class="kau-option">
+              <input type="radio" name="prior_problem" value="No">
+              <span class="kau-option__label">No</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Prior Description (conditional) -->
+        <div class="kau-field hidden" id="kau_prior_desc_wrap">
+          <label class="kau-label" for="kau_prior_description">Please describe the problem</label>
+          <textarea id="kau_prior_description" name="prior_description" class="kau-textarea" maxlength="500" placeholder="e.g., ACL tear in 2018, osteoarthritis diagnosis..."></textarea>
+        </div>
+
+        <!-- Treatments -->
+        <div class="kau-field">
+          <label class="kau-label">What treatments have you tried? (Select all that apply)</label>
+          <div class="kau-checkbox-grid">
+            <label class="kau-checkbox">
+              <input type="checkbox" name="treatments" value="Physiotherapy">
+              <span>Physiotherapy</span>
+            </label>
+            <label class="kau-checkbox">
+              <input type="checkbox" name="treatments" value="Medication">
+              <span>Medication</span>
+            </label>
+            <label class="kau-checkbox">
+              <input type="checkbox" name="treatments" value="Injections">
+              <span>Injections</span>
+            </label>
+            <label class="kau-checkbox">
+              <input type="checkbox" name="treatments" value="Surgery">
+              <span>Surgery</span>
+            </label>
+            <label class="kau-checkbox">
+              <input type="checkbox" name="treatments" value="Supplements">
+              <span>Supplements</span>
+            </label>
+            <label class="kau-checkbox">
+              <input type="checkbox" name="treatments" value="None">
+              <span>None</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Injection Type (conditional) -->
+        <div class="kau-field hidden" id="kau_injection_wrap">
+          <label class="kau-label" for="kau_injection_type">What type of injection?</label>
+          <select id="kau_injection_type" name="injection_type" class="kau-input">
+            <option value="">Select...</option>
+            <option value="Steroid">Steroid (Cortisone)</option>
+            <option value="Hyaluronic acid">Hyaluronic acid</option>
+            <option value="PRP">PRP (Platelet-rich plasma)</option>
+            <option value="Stem cell">Stem cell</option>
+            <option value="Other">Other / Don't know</option>
+          </select>
+        </div>
+
+        <!-- Surgery Type (conditional) -->
+        <div class="kau-field hidden" id="kau_surgery_wrap">
+          <label class="kau-label" for="kau_surgery_type">What type of surgery?</label>
+          <select id="kau_surgery_type" name="surgery_type" class="kau-input">
+            <option value="">Select...</option>
+            <option value="Arthroscopy">Arthroscopy</option>
+            <option value="ACL reconstruction">ACL reconstruction</option>
+            <option value="Meniscectomy">Meniscectomy</option>
+            <option value="Partial replacement">Partial knee replacement</option>
+            <option value="Total replacement">Total knee replacement</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <!-- Treatment Helped -->
+        <div class="kau-field">
+          <label class="kau-label">Did any treatment help?</label>
+          <div class="kau-options">
+            <label class="kau-option">
+              <input type="radio" name="treat_helped" value="Yes">
+              <span class="kau-option__label">Yes</span>
+            </label>
+            <label class="kau-option">
+              <input type="radio" name="treat_helped" value="No">
+              <span class="kau-option__label">No</span>
+            </label>
+            <label class="kau-option">
+              <input type="radio" name="treat_helped" value="Partially">
+              <span class="kau-option__label">Partially</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Treatment Duration (conditional) -->
+        <div class="kau-field hidden" id="kau_treat_duration_wrap">
+          <label class="kau-label" for="kau_treat_duration">How long did the benefit last?</label>
+          <select id="kau_treat_duration" name="treat_duration" class="kau-input">
+            <option value="">Select...</option>
+            <option value="Days">A few days</option>
+            <option value="Weeks">A few weeks</option>
+            <option value="Months">A few months</option>
+            <option value="6+ months">6+ months</option>
+            <option value="Still helping">Still helping</option>
+          </select>
+        </div>
+
+        <!-- Why Stopped -->
+        <div class="kau-field">
+          <label class="kau-label" for="kau_treat_stopped">Why did you stop treatment (if applicable)?</label>
+          <input type="text" id="kau_treat_stopped" name="treat_stopped" class="kau-input" maxlength="200" placeholder="e.g., Cost, side effects, didn't work...">
+        </div>
+      </div>
+
+      <!-- ===== SECTION 4: Medical History ===== -->
+      <div class="kau-section" data-section="4">
+        <h2 class="kau-section__title">Medical History</h2>
+        <p class="kau-section__desc">Help us understand your overall health.</p>
+
+        <!-- PMH -->
+        <div class="kau-field">
+          <label class="kau-label">Do you have any of these conditions? (Select all that apply)</label>
+          <div class="kau-checkbox-grid">
+            <label class="kau-checkbox">
+              <input type="checkbox" name="pmh" value="Diabetes">
+              <span>Diabetes</span>
+            </label>
+            <label class="kau-checkbox">
+              <input type="checkbox" name="pmh" value="Heart disease">
+              <span>Heart disease</span>
+            </label>
+            <label class="kau-checkbox">
+              <input type="checkbox" name="pmh" value="High blood pressure">
+              <span>High blood pressure</span>
+            </label>
+            <label class="kau-checkbox">
+              <input type="checkbox" name="pmh" value="Rheumatoid arthritis">
+              <span>Rheumatoid arthritis</span>
+            </label>
+            <label class="kau-checkbox">
+              <input type="checkbox" name="pmh" value="Gout">
+              <span>Gout</span>
+            </label>
+            <label class="kau-checkbox">
+              <input type="checkbox" name="pmh" value="Osteoporosis">
+              <span>Osteoporosis</span>
+            </label>
+            <label class="kau-checkbox">
+              <input type="checkbox" name="pmh" value="Other">
+              <span>Other</span>
+            </label>
+            <label class="kau-checkbox">
+              <input type="checkbox" name="pmh" value="None">
+              <span>None of these</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- PMH Other (conditional) -->
+        <div class="kau-field hidden" id="kau_pmh_other_wrap">
+          <label class="kau-label" for="kau_pmh_other_text">Please specify other condition(s)</label>
+          <input type="text" id="kau_pmh_other_text" name="pmh_other_text" class="kau-input" maxlength="200">
+        </div>
+
+        <!-- Trauma -->
+        <div class="kau-field">
+          <label class="kau-label">Have you had a significant injury or trauma to your knee?</label>
+          <div class="kau-options">
+            <label class="kau-option">
+              <input type="radio" name="trauma_yesno" value="Yes">
+              <span class="kau-option__label">Yes</span>
+            </label>
+            <label class="kau-option">
+              <input type="radio" name="trauma_yesno" value="No">
+              <span class="kau-option__label">No</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Trauma Details (conditional) -->
+        <div class="kau-field hidden" id="kau_trauma_wrap">
+          <label class="kau-label" for="kau_trauma_details">Please describe the injury</label>
+          <textarea id="kau_trauma_details" name="trauma_details" class="kau-textarea" maxlength="300" placeholder="e.g., Sports injury in 2020, fell from ladder..."></textarea>
+        </div>
+
+        <!-- Past Surgery -->
+        <div class="kau-field">
+          <label class="kau-label">Have you had any surgery (not just knee)?</label>
+          <div class="kau-options">
+            <label class="kau-option">
+              <input type="radio" name="past_surgery_any" value="Yes">
+              <span class="kau-option__label">Yes</span>
+            </label>
+            <label class="kau-option">
+              <input type="radio" name="past_surgery_any" value="No">
+              <span class="kau-option__label">No</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Family History -->
+        <div class="kau-field">
+          <label class="kau-label">Family history of bone/joint problems?</label>
+          <div class="kau-options">
+            <label class="kau-option">
+              <input type="radio" name="fh_bone_joint" value="Yes">
+              <span class="kau-option__label">Yes</span>
+            </label>
+            <label class="kau-option">
+              <input type="radio" name="fh_bone_joint" value="No">
+              <span class="kau-option__label">No</span>
+            </label>
+            <label class="kau-option">
+              <input type="radio" name="fh_bone_joint" value="Unknown">
+              <span class="kau-option__label">Don't know</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Childhood Knee Issues -->
+        <div class="kau-field">
+          <label class="kau-label">Any childhood knee issues in your family?</label>
+          <div class="kau-options">
+            <label class="kau-option">
+              <input type="radio" name="fh_childhood_knee" value="Yes">
+              <span class="kau-option__label">Yes</span>
+            </label>
+            <label class="kau-option">
+              <input type="radio" name="fh_childhood_knee" value="No">
+              <span class="kau-option__label">No</span>
+            </label>
+            <label class="kau-option">
+              <input type="radio" name="fh_childhood_knee" value="Unknown">
+              <span class="kau-option__label">Don't know</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- FH Details (conditional) -->
+        <div class="kau-field hidden" id="kau_fh_details_wrap">
+          <label class="kau-label" for="kau_fh_details">Please provide details</label>
+          <textarea id="kau_fh_details" name="fh_details" class="kau-textarea" maxlength="300" placeholder="e.g., Mother has osteoarthritis..."></textarea>
+        </div>
+      </div>
+
+      <!-- ===== SECTION 5: Medications & Lifestyle ===== -->
+      <div class="kau-section" data-section="5">
+        <h2 class="kau-section__title">Medications & Lifestyle</h2>
+        <p class="kau-section__desc">A few more questions to complete your profile.</p>
+
+        <!-- Allergies -->
+        <div class="kau-field">
+          <label class="kau-label" for="kau_allergies">Any allergies?</label>
+          <input type="text" id="kau_allergies" name="allergies" class="kau-input" maxlength="200" placeholder="e.g., Penicillin, ibuprofen, shellfish...">
+        </div>
+
+        <!-- Medications -->
+        <div class="kau-field">
+          <label class="kau-label" for="kau_meds_list">Current medications</label>
+          <textarea id="kau_meds_list" name="meds_list" class="kau-textarea" maxlength="500" placeholder="List any medications you're currently taking..."></textarea>
+        </div>
+
+        <!-- Medication Flags -->
+        <div class="kau-field">
+          <label class="kau-label">Are you taking any of these? (Select all that apply)</label>
+          <div class="kau-checkbox-grid">
+            <label class="kau-checkbox">
+              <input type="checkbox" name="meds_flags" value="Blood thinners">
+              <span>Blood thinners</span>
+            </label>
+            <label class="kau-checkbox">
+              <input type="checkbox" name="meds_flags" value="Steroids">
+              <span>Steroids</span>
+            </label>
+            <label class="kau-checkbox">
+              <input type="checkbox" name="meds_flags" value="Immunosuppressants">
+              <span>Immunosuppressants</span>
+            </label>
+            <label class="kau-checkbox">
+              <input type="checkbox" name="meds_flags" value="None">
+              <span>None of these</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Smoking -->
+        <div class="kau-field">
+          <label class="kau-label">Do you smoke?</label>
+          <div class="kau-options">
+            <label class="kau-option">
+              <input type="radio" name="smoker" value="Never">
+              <span class="kau-option__label">Never</span>
+            </label>
+            <label class="kau-option">
+              <input type="radio" name="smoker" value="Former">
+              <span class="kau-option__label">Former</span>
+            </label>
+            <label class="kau-option">
+              <input type="radio" name="smoker" value="Current">
+              <span class="kau-option__label">Current</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Alcohol -->
+        <div class="kau-field">
+          <label class="kau-label">Do you drink alcohol?</label>
+          <div class="kau-options">
+            <label class="kau-option">
+              <input type="radio" name="alcohol_yesno" value="Yes">
+              <span class="kau-option__label">Yes</span>
+            </label>
+            <label class="kau-option">
+              <input type="radio" name="alcohol_yesno" value="No">
+              <span class="kau-option__label">No</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Alcohol Units (conditional) -->
+        <div class="kau-field hidden" id="kau_alcohol_wrap">
+          <label class="kau-label" for="kau_alcohol_units">Approximately how many units per week?</label>
+          <select id="kau_alcohol_units" name="alcohol_units" class="kau-input">
+            <option value="">Select...</option>
+            <option value="1-7">1-7 units</option>
+            <option value="8-14">8-14 units</option>
+            <option value="15-21">15-21 units</option>
+            <option value="22+">22+ units</option>
+          </select>
+          <p class="kau-hint">1 unit = 1 small glass of wine or half a pint of beer</p>
+        </div>
+
+        <!-- Other Info -->
+        <div class="kau-field">
+          <label class="kau-label" for="kau_other_info">Anything else we should know?</label>
+          <textarea id="kau_other_info" name="other_info" class="kau-textarea" maxlength="500" placeholder="Any other health information relevant to your knee..."></textarea>
+        </div>
+      </div>
+
+      <!-- ===== SECTION 6: Final & Consent ===== -->
+      <div class="kau-section" data-section="6">
+        <h2 class="kau-section__title">Almost Done</h2>
+        <p class="kau-section__desc">Just a few final questions and your consent.</p>
+
+        <!-- Expectations -->
+        <div class="kau-field">
+          <label class="kau-label" for="kau_expectations">What are your goals for your knee health?</label>
+          <textarea id="kau_expectations" name="expectations" class="kau-textarea" maxlength="500" placeholder="e.g., Return to running, reduce daily pain, avoid surgery..."></textarea>
+        </div>
+
+        <!-- Referral Source -->
+        <div class="kau-field">
+          <label class="kau-label" for="kau_ref_source">How did you hear about us?</label>
+          <select id="kau_ref_source" name="ref_source" class="kau-input">
+            <option value="">Select...</option>
+            <option value="Google">Google search</option>
+            <option value="Social media">Social media</option>
+            <option value="Friend/family">Friend or family</option>
+            <option value="Healthcare provider">Healthcare provider</option>
+            <option value="Advertisement">Advertisement</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <!-- Hidden UTM fields -->
+        <input type="hidden" id="kau_utm_source" name="utm_source">
+        <input type="hidden" id="kau_utm_medium" name="utm_medium">
+        <input type="hidden" id="kau_utm_campaign" name="utm_campaign">
+
+        <!-- Final Score Preview -->
+        <div class="kau-score-preview band-optimal" id="kauFinalScore-{{ section_id }}">
+          <p class="kau-score-preview__title">Your Knee Score</p>
+          <div class="kau-score-preview__value" id="kauFinalScoreValue-{{ section_id }}">100</div>
+          <span class="kau-score-preview__band" id="kauFinalScoreBand-{{ section_id }}">Optimal</span>
+        </div>
+
+        <!-- Consent: Clinical (Required) -->
+        <div class="kau-consent">
+          <div class="kau-consent__title required">Clinical Processing Consent</div>
+          <label>
+            <input type="checkbox" id="kau_consent_clinical" name="consent_clinical" value="Yes" required>
+            <p>I consent to my health information being processed to provide personalised knee health recommendations. I understand this is not medical advice and does not replace professional consultation.</p>
+          </label>
+        </div>
+
+        <!-- Consent: Marketing (Optional) -->
+        <div class="kau-consent">
+          <div class="kau-consent__title optional">Marketing Communications</div>
+          <label>
+            <input type="checkbox" id="kau_consent_marketing" name="consent_marketing" value="Yes">
+            <p>I would like to receive occasional emails about joint health tips, product updates, and special offers. You can unsubscribe at any time.</p>
+          </label>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="kau-btn kau-btn--primary kau-btn--submit" id="kauSubmit-{{ section_id }}">
+          Submit Assessment
+        </button>
+
+        <p class="kau-privacy">
+          Your data is submitted directly to our secure form provider (Jotform, UK/EU data residency) and is never stored on this website. 
+          <a href="/pages/privacy-policy" target="_blank">Privacy Policy</a>
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div class="kau-nav" id="kauNav-{{ section_id }}">
+        <button type="button" class="kau-btn kau-btn--secondary" id="kauPrev-{{ section_id }}" style="display: none;">Back</button>
+        <button type="button" class="kau-btn kau-btn--primary" id="kauNext-{{ section_id }}">Continue</button>
+      </div>
+    </form>
+
+    <!-- Loading State -->
+    <div class="kau-loading" id="kauLoading-{{ section_id }}">
+      <div class="kau-spinner"></div>
+      <p>Submitting your assessment...</p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function() {
+  const sectionId = '{{ section_id }}';
+  const formId = '{{ form_id }}';
+  const jotformBaseUrl = '{{ section.settings.jotform_base_url | default: "https://submit.jotform.com/submit" }}';
+  
+  // Field mapping: local name -> Jotform field ID (configure in theme settings)
+  const fieldMap = {
+    first_name: '{{ section.settings.field_first_name | default: "3" }}',
+    last_name: '{{ section.settings.field_last_name | default: "4" }}',
+    dob: '{{ section.settings.field_dob | default: "5" }}',
+    email: '{{ section.settings.field_email | default: "6" }}',
+    mobile: '{{ section.settings.field_mobile | default: "7" }}',
+    postcode: '{{ section.settings.field_postcode | default: "8" }}',
+    consent_clinical: '{{ section.settings.field_consent_clinical | default: "9" }}',
+    consent_marketing: '{{ section.settings.field_consent_marketing | default: "10" }}',
+    pain: '{{ section.settings.field_pain | default: "11" }}',
+    sleep: '{{ section.settings.field_sleep | default: "12" }}',
+    swelling: '{{ section.settings.field_swelling | default: "13" }}',
+    instability: '{{ section.settings.field_instability | default: "14" }}',
+    stiffness: '{{ section.settings.field_stiffness | default: "15" }}',
+    stairs: '{{ section.settings.field_stairs | default: "16" }}',
+    function: '{{ section.settings.field_function | default: "17" }}',
+    prior_problem: '{{ section.settings.field_prior_problem | default: "18" }}',
+    prior_description: '{{ section.settings.field_prior_description | default: "19" }}',
+    treatments: '{{ section.settings.field_treatments | default: "20" }}',
+    injection_type: '{{ section.settings.field_injection_type | default: "21" }}',
+    surgery_type: '{{ section.settings.field_surgery_type | default: "22" }}',
+    treat_helped: '{{ section.settings.field_treat_helped | default: "23" }}',
+    treat_duration: '{{ section.settings.field_treat_duration | default: "24" }}',
+    treat_stopped: '{{ section.settings.field_treat_stopped | default: "25" }}',
+    pmh: '{{ section.settings.field_pmh | default: "26" }}',
+    pmh_other_text: '{{ section.settings.field_pmh_other_text | default: "27" }}',
+    trauma_yesno: '{{ section.settings.field_trauma_yesno | default: "28" }}',
+    trauma_details: '{{ section.settings.field_trauma_details | default: "29" }}',
+    past_surgery_any: '{{ section.settings.field_past_surgery_any | default: "30" }}',
+    fh_bone_joint: '{{ section.settings.field_fh_bone_joint | default: "31" }}',
+    fh_childhood_knee: '{{ section.settings.field_fh_childhood_knee | default: "32" }}',
+    fh_details: '{{ section.settings.field_fh_details | default: "33" }}',
+    allergies: '{{ section.settings.field_allergies | default: "34" }}',
+    meds_list: '{{ section.settings.field_meds_list | default: "35" }}',
+    meds_flags: '{{ section.settings.field_meds_flags | default: "36" }}',
+    smoker: '{{ section.settings.field_smoker | default: "37" }}',
+    alcohol_yesno: '{{ section.settings.field_alcohol_yesno | default: "38" }}',
+    alcohol_units: '{{ section.settings.field_alcohol_units | default: "39" }}',
+    other_info: '{{ section.settings.field_other_info | default: "40" }}',
+    expectations: '{{ section.settings.field_expectations | default: "41" }}',
+    ref_source: '{{ section.settings.field_ref_source | default: "42" }}',
+    utm_source: '{{ section.settings.field_utm_source | default: "43" }}',
+    utm_medium: '{{ section.settings.field_utm_medium | default: "44" }}',
+    utm_campaign: '{{ section.settings.field_utm_campaign | default: "45" }}',
+    knee_score: '{{ section.settings.field_knee_score | default: "46" }}',
+    knee_band: '{{ section.settings.field_knee_band | default: "47" }}'
+  };
+
+  // DOM Elements
+  const form = document.getElementById('kauForm-' + sectionId);
+  const sections = form.querySelectorAll('.kau-section');
+  const progressBar = document.getElementById('kauProgress-' + sectionId);
+  const stepText = document.getElementById('kauStep-' + sectionId);
+  const totalStepsText = document.getElementById('kauTotalSteps-' + sectionId);
+  const prevBtn = document.getElementById('kauPrev-' + sectionId);
+  const nextBtn = document.getElementById('kauNext-' + sectionId);
+  const nav = document.getElementById('kauNav-' + sectionId);
+  const loading = document.getElementById('kauLoading-' + sectionId);
+  const submitBtn = document.getElementById('kauSubmit-' + sectionId);
+  
+  let currentSection = 1;
+  const totalSections = sections.length;
+  
+  totalStepsText.textContent = totalSections;
+  
+  // Initialize UTM params
+  function initUTM() {
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('kau_utm_source').value = params.get('utm_source') || '';
+    document.getElementById('kau_utm_medium').value = params.get('utm_medium') || '';
+    document.getElementById('kau_utm_campaign').value = params.get('utm_campaign') || '';
+  }
+  
+  // Update progress
+  function updateProgress() {
+    const pct = (currentSection / totalSections) * 100;
+    progressBar.style.width = pct + '%';
+    stepText.textContent = currentSection;
+    
+    // Update button visibility
+    prevBtn.style.display = currentSection > 1 ? 'block' : 'none';
+    
+    // Hide nav on last section (submit button is in the section)
+    if (currentSection === totalSections) {
+      nav.style.display = 'none';
+    } else {
+      nav.style.display = 'flex';
+    }
+  }
+  
+  // Show section
+  function showSection(num) {
+    sections.forEach((s, i) => {
+      s.classList.toggle('active', i + 1 === num);
+    });
+    currentSection = num;
+    updateProgress();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
+  // Validate current section
+  function validateSection(num) {
+    const section = sections[num - 1];
+    const requiredInputs = section.querySelectorAll('[required]');
+    let valid = true;
+    
+    requiredInputs.forEach(input => {
+      // Remove previous error
+      input.classList.remove('error');
+      const existingErr = input.parentNode.querySelector('.kau-error-msg');
+      if (existingErr) existingErr.remove();
+      
+      let isValid = true;
+      
+      if (input.type === 'radio') {
+        const name = input.name;
+        const checked = section.querySelector('input[name="' + name + '"]:checked');
+        if (!checked) isValid = false;
+      } else if (input.type === 'checkbox') {
+        if (!input.checked) isValid = false;
+      } else {
+        if (!input.value.trim()) isValid = false;
+        // Email validation
+        if (input.type === 'email' && input.value) {
+          const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRe.test(input.value)) isValid = false;
+        }
+      }
+      
+      if (!isValid) {
+        valid = false;
+        input.classList.add('error');
+        const err = document.createElement('p');
+        err.className = 'kau-error-msg';
+        err.textContent = 'This field is required';
+        input.parentNode.appendChild(err);
+      }
+    });
+    
+    return valid;
+  }
+  
+  // Calculate knee score
+  function calculateScore() {
+    const pain = parseInt(document.getElementById('kau_pain').value) || 0;
+    const sleep = parseInt(document.getElementById('kau_sleep').value) || 0;
+    const swelling = parseInt(document.getElementById('kau_swelling').value) || 0;
+    const instability = parseInt(document.getElementById('kau_instability').value) || 0;
+    const stiffness = parseInt(document.getElementById('kau_stiffness').value) || 0;
+    const stairs = parseInt(document.getElementById('kau_stairs').value) || 0;
+    const func = parseInt(document.getElementById('kau_function').value) || 0;
+    
+    // Normalize to 0-100 (inverted - higher is better)
+    const painNorm = (1 - pain / 10) * 100;
+    const sleepNorm = (1 - sleep / 10) * 100;
+    const swellingNorm = (1 - swelling / 5) * 100;
+    const instabilityNorm = (1 - instability / 5) * 100;
+    const stiffnessNorm = (1 - stiffness / 5) * 100;
+    const stairsNorm = (1 - stairs / 5) * 100;
+    const funcNorm = (1 - func / 10) * 100;
+    
+    // Equal weighting
+    const score = Math.round((painNorm + sleepNorm + swellingNorm + instabilityNorm + stiffnessNorm + stairsNorm + funcNorm) / 7);
+    
+    // Determine band
+    let band, bandClass;
+    if (score >= 85) {
+      band = 'Optimal';
+      bandClass = 'band-optimal';
+    } else if (score >= 70) {
+      band = 'Good';
+      bandClass = 'band-green';
+    } else if (score >= 60) {
+      band = 'Fair';
+      bandClass = 'band-amber';
+    } else {
+      band = 'Pay Attention';
+      bandClass = 'band-red';
+    }
+    
+    return { score, band, bandClass };
+  }
+  
+  // Update score display
+  function updateScoreDisplay() {
+    const { score, band, bandClass } = calculateScore();
+    
+    // Update preview in section 2
+    const preview = document.getElementById('kauScorePreview-' + sectionId);
+    const previewValue = document.getElementById('kauScoreValue-' + sectionId);
+    const previewBand = document.getElementById('kauScoreBand-' + sectionId);
+    
+    preview.className = 'kau-score-preview ' + bandClass;
+    previewValue.textContent = score;
+    previewBand.textContent = band;
+    
+    // Update final score in section 6
+    const final = document.getElementById('kauFinalScore-' + sectionId);
+    const finalValue = document.getElementById('kauFinalScoreValue-' + sectionId);
+    const finalBand = document.getElementById('kauFinalScoreBand-' + sectionId);
+    
+    final.className = 'kau-score-preview ' + bandClass;
+    finalValue.textContent = score;
+    finalBand.textContent = band;
+  }
+  
+  // Slider value display
+  document.querySelectorAll('.kau-slider').forEach(slider => {
+    const valDisplay = document.getElementById(slider.id + '_val');
+    if (valDisplay) {
+      slider.addEventListener('input', function() {
+        valDisplay.textContent = this.value;
+        updateScoreDisplay();
+      });
+    }
+  });
+  
+  // Progressive disclosure handlers
+  function setupConditionalFields() {
+    // Prior description
+    document.querySelectorAll('input[name="prior_problem"]').forEach(r => {
+      r.addEventListener('change', function() {
+        document.getElementById('kau_prior_desc_wrap').classList.toggle('hidden', this.value !== 'Yes');
+      });
+    });
+    
+    // Treatments - Injections/Surgery
+    document.querySelectorAll('input[name="treatments"]').forEach(cb => {
+      cb.addEventListener('change', function() {
+        const treatments = Array.from(document.querySelectorAll('input[name="treatments"]:checked')).map(c => c.value);
+        document.getElementById('kau_injection_wrap').classList.toggle('hidden', !treatments.includes('Injections'));
+        document.getElementById('kau_surgery_wrap').classList.toggle('hidden', !treatments.includes('Surgery'));
+      });
+    });
+    
+    // Treat duration
+    document.querySelectorAll('input[name="treat_helped"]').forEach(r => {
+      r.addEventListener('change', function() {
+        document.getElementById('kau_treat_duration_wrap').classList.toggle('hidden', this.value !== 'Yes');
+      });
+    });
+    
+    // PMH Other
+    document.querySelectorAll('input[name="pmh"]').forEach(cb => {
+      cb.addEventListener('change', function() {
+        const pmh = Array.from(document.querySelectorAll('input[name="pmh"]:checked')).map(c => c.value);
+        document.getElementById('kau_pmh_other_wrap').classList.toggle('hidden', !pmh.includes('Other'));
+      });
+    });
+    
+    // Trauma details
+    document.querySelectorAll('input[name="trauma_yesno"]').forEach(r => {
+      r.addEventListener('change', function() {
+        document.getElementById('kau_trauma_wrap').classList.toggle('hidden', this.value !== 'Yes');
+      });
+    });
+    
+    // Family history details
+    function updateFHDetails() {
+      const fhBone = document.querySelector('input[name="fh_bone_joint"]:checked');
+      const fhChild = document.querySelector('input[name="fh_childhood_knee"]:checked');
+      const showFH = (fhBone && fhBone.value === 'Yes') || (fhChild && fhChild.value === 'Yes');
+      document.getElementById('kau_fh_details_wrap').classList.toggle('hidden', !showFH);
+    }
+    document.querySelectorAll('input[name="fh_bone_joint"], input[name="fh_childhood_knee"]').forEach(r => {
+      r.addEventListener('change', updateFHDetails);
+    });
+    
+    // Alcohol units
+    document.querySelectorAll('input[name="alcohol_yesno"]').forEach(r => {
+      r.addEventListener('change', function() {
+        document.getElementById('kau_alcohol_wrap').classList.toggle('hidden', this.value !== 'Yes');
+      });
+    });
+  }
+  
+  // Collect form data
+  function collectFormData() {
+    const data = {};
+    const formData = new FormData(form);
+    
+    for (const [key, value] of formData.entries()) {
+      if (data[key]) {
+        // Handle multiple values (checkboxes)
+        if (Array.isArray(data[key])) {
+          data[key].push(value);
+        } else {
+          data[key] = [data[key], value];
+        }
+      } else {
+        data[key] = value;
+      }
+    }
+    
+    // Add calculated score
+    const { score, band } = calculateScore();
+    data.knee_score = score;
+    data.knee_band = band;
+    
+    return data;
+  }
+  
+  // Build Jotform prefill URL
+  function buildJotformUrl(data) {
+    const baseUrl = 'https://form.jotform.com/' + formId;
+    const params = new URLSearchParams();
+    
+    for (const [localKey, value] of Object.entries(data)) {
+      const jotformId = fieldMap[localKey];
+      if (jotformId && value) {
+        if (Array.isArray(value)) {
+          // For checkboxes, Jotform uses q{id}[]
+          value.forEach(v => params.append('q' + jotformId + '[]', v));
+        } else {
+          params.append('q' + jotformId, value);
+        }
+      }
+    }
+    
+    return baseUrl + '?' + params.toString();
+  }
+  
+  // Submit handler
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    if (!validateSection(currentSection)) return;
+    
+    // Show loading
+    form.style.display = 'none';
+    loading.classList.add('active');
+    
+    // Collect data
+    const data = collectFormData();
+    
+    // Option 1: Redirect to prefilled Jotform
+    const jotformUrl = buildJotformUrl(data);
+    window.location.href = jotformUrl;
+    
+    // Option 2: POST to Jotform API (uncomment if needed)
+    /*
+    const submitData = new FormData();
+    submitData.append('formID', formId);
+    for (const [localKey, value] of Object.entries(data)) {
+      const jotformId = fieldMap[localKey];
+      if (jotformId && value) {
+        if (Array.isArray(value)) {
+          value.forEach(v => submitData.append('q' + jotformId + '[]', v));
+        } else {
+          submitData.append('q' + jotformId, value);
+        }
+      }
+    }
+    
+    fetch(jotformBaseUrl + '/' + formId, {
+      method: 'POST',
+      body: submitData
+    })
+    .then(response => {
+      if (response.ok) {
+        window.location.href = '/pages/assessment-complete';
+      } else {
+        throw new Error('Submission failed');
+      }
+    })
+    .catch(err => {
+      loading.classList.remove('active');
+      form.style.display = 'block';
+      alert('There was an error submitting your assessment. Please try again.');
+    });
+    */
+  });
+  
+  // Navigation handlers
+  nextBtn.addEventListener('click', function() {
+    if (validateSection(currentSection) && currentSection < totalSections) {
+      showSection(currentSection + 1);
+    }
+  });
+  
+  prevBtn.addEventListener('click', function() {
+    if (currentSection > 1) {
+      showSection(currentSection - 1);
+    }
+  });
+  
+  // Initialize
+  initUTM();
+  setupConditionalFields();
+  updateProgress();
+  updateScoreDisplay();
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Knee Assessment UI",
+  "tag": "section",
+  "class": "knee-assessment-ui-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Knee Health Assessment"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Complete this questionnaire to receive personalised recommendations."
+    },
+    {
+      "type": "header",
+      "content": "Jotform Settings"
+    },
+    {
+      "type": "text",
+      "id": "jotform_form_id",
+      "label": "Jotform Form ID",
+      "info": "Your Jotform form ID (e.g., 241234567890123)"
+    },
+    {
+      "type": "text",
+      "id": "jotform_base_url",
+      "label": "Jotform Submit URL",
+      "default": "https://submit.jotform.com/submit",
+      "info": "Usually https://submit.jotform.com/submit or your EU endpoint"
+    },
+    {
+      "type": "header",
+      "content": "Jotform Field IDs - Personal"
+    },
+    {
+      "type": "text",
+      "id": "field_first_name",
+      "label": "First Name Field ID",
+      "default": "3"
+    },
+    {
+      "type": "text",
+      "id": "field_last_name",
+      "label": "Last Name Field ID",
+      "default": "4"
+    },
+    {
+      "type": "text",
+      "id": "field_dob",
+      "label": "DOB Field ID",
+      "default": "5"
+    },
+    {
+      "type": "text",
+      "id": "field_email",
+      "label": "Email Field ID",
+      "default": "6"
+    },
+    {
+      "type": "text",
+      "id": "field_mobile",
+      "label": "Mobile Field ID",
+      "default": "7"
+    },
+    {
+      "type": "text",
+      "id": "field_postcode",
+      "label": "Postcode Field ID",
+      "default": "8"
+    },
+    {
+      "type": "header",
+      "content": "Jotform Field IDs - Consent"
+    },
+    {
+      "type": "text",
+      "id": "field_consent_clinical",
+      "label": "Clinical Consent Field ID",
+      "default": "9"
+    },
+    {
+      "type": "text",
+      "id": "field_consent_marketing",
+      "label": "Marketing Consent Field ID",
+      "default": "10"
+    },
+    {
+      "type": "header",
+      "content": "Jotform Field IDs - Knee Domains"
+    },
+    {
+      "type": "text",
+      "id": "field_pain",
+      "label": "Pain Field ID",
+      "default": "11"
+    },
+    {
+      "type": "text",
+      "id": "field_sleep",
+      "label": "Sleep Field ID",
+      "default": "12"
+    },
+    {
+      "type": "text",
+      "id": "field_swelling",
+      "label": "Swelling Field ID",
+      "default": "13"
+    },
+    {
+      "type": "text",
+      "id": "field_instability",
+      "label": "Instability Field ID",
+      "default": "14"
+    },
+    {
+      "type": "text",
+      "id": "field_stiffness",
+      "label": "Stiffness Field ID",
+      "default": "15"
+    },
+    {
+      "type": "text",
+      "id": "field_stairs",
+      "label": "Stairs Field ID",
+      "default": "16"
+    },
+    {
+      "type": "text",
+      "id": "field_function",
+      "label": "Function Field ID",
+      "default": "17"
+    },
+    {
+      "type": "header",
+      "content": "Jotform Field IDs - History"
+    },
+    {
+      "type": "text",
+      "id": "field_prior_problem",
+      "label": "Prior Problem Field ID",
+      "default": "18"
+    },
+    {
+      "type": "text",
+      "id": "field_prior_description",
+      "label": "Prior Description Field ID",
+      "default": "19"
+    },
+    {
+      "type": "text",
+      "id": "field_treatments",
+      "label": "Treatments Field ID",
+      "default": "20"
+    },
+    {
+      "type": "text",
+      "id": "field_injection_type",
+      "label": "Injection Type Field ID",
+      "default": "21"
+    },
+    {
+      "type": "text",
+      "id": "field_surgery_type",
+      "label": "Surgery Type Field ID",
+      "default": "22"
+    },
+    {
+      "type": "text",
+      "id": "field_treat_helped",
+      "label": "Treatment Helped Field ID",
+      "default": "23"
+    },
+    {
+      "type": "text",
+      "id": "field_treat_duration",
+      "label": "Treatment Duration Field ID",
+      "default": "24"
+    },
+    {
+      "type": "text",
+      "id": "field_treat_stopped",
+      "label": "Treatment Stopped Field ID",
+      "default": "25"
+    },
+    {
+      "type": "header",
+      "content": "Jotform Field IDs - Medical"
+    },
+    {
+      "type": "text",
+      "id": "field_pmh",
+      "label": "PMH Field ID",
+      "default": "26"
+    },
+    {
+      "type": "text",
+      "id": "field_pmh_other_text",
+      "label": "PMH Other Text Field ID",
+      "default": "27"
+    },
+    {
+      "type": "text",
+      "id": "field_trauma_yesno",
+      "label": "Trauma YesNo Field ID",
+      "default": "28"
+    },
+    {
+      "type": "text",
+      "id": "field_trauma_details",
+      "label": "Trauma Details Field ID",
+      "default": "29"
+    },
+    {
+      "type": "text",
+      "id": "field_past_surgery_any",
+      "label": "Past Surgery Field ID",
+      "default": "30"
+    },
+    {
+      "type": "text",
+      "id": "field_fh_bone_joint",
+      "label": "FH Bone/Joint Field ID",
+      "default": "31"
+    },
+    {
+      "type": "text",
+      "id": "field_fh_childhood_knee",
+      "label": "FH Childhood Knee Field ID",
+      "default": "32"
+    },
+    {
+      "type": "text",
+      "id": "field_fh_details",
+      "label": "FH Details Field ID",
+      "default": "33"
+    },
+    {
+      "type": "header",
+      "content": "Jotform Field IDs - Lifestyle"
+    },
+    {
+      "type": "text",
+      "id": "field_allergies",
+      "label": "Allergies Field ID",
+      "default": "34"
+    },
+    {
+      "type": "text",
+      "id": "field_meds_list",
+      "label": "Meds List Field ID",
+      "default": "35"
+    },
+    {
+      "type": "text",
+      "id": "field_meds_flags",
+      "label": "Meds Flags Field ID",
+      "default": "36"
+    },
+    {
+      "type": "text",
+      "id": "field_smoker",
+      "label": "Smoker Field ID",
+      "default": "37"
+    },
+    {
+      "type": "text",
+      "id": "field_alcohol_yesno",
+      "label": "Alcohol YesNo Field ID",
+      "default": "38"
+    },
+    {
+      "type": "text",
+      "id": "field_alcohol_units",
+      "label": "Alcohol Units Field ID",
+      "default": "39"
+    },
+    {
+      "type": "text",
+      "id": "field_other_info",
+      "label": "Other Info Field ID",
+      "default": "40"
+    },
+    {
+      "type": "header",
+      "content": "Jotform Field IDs - Final"
+    },
+    {
+      "type": "text",
+      "id": "field_expectations",
+      "label": "Expectations Field ID",
+      "default": "41"
+    },
+    {
+      "type": "text",
+      "id": "field_ref_source",
+      "label": "Referral Source Field ID",
+      "default": "42"
+    },
+    {
+      "type": "text",
+      "id": "field_utm_source",
+      "label": "UTM Source Field ID",
+      "default": "43"
+    },
+    {
+      "type": "text",
+      "id": "field_utm_medium",
+      "label": "UTM Medium Field ID",
+      "default": "44"
+    },
+    {
+      "type": "text",
+      "id": "field_utm_campaign",
+      "label": "UTM Campaign Field ID",
+      "default": "45"
+    },
+    {
+      "type": "text",
+      "id": "field_knee_score",
+      "label": "Knee Score Field ID",
+      "default": "46"
+    },
+    {
+      "type": "text",
+      "id": "field_knee_band",
+      "label": "Knee Band Field ID",
+      "default": "47"
+    },
+    {
+      "type": "header",
+      "content": "Branding"
+    },
+    {
+      "type": "color",
+      "id": "primary_color",
+      "label": "Primary Color",
+      "default": "#166534"
+    },
+    {
+      "type": "color",
+      "id": "primary_light",
+      "label": "Primary Light",
+      "default": "#dcfce7"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Knee Assessment UI",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
