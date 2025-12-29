@@ -94,10 +94,23 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "subtle-pulse": {
+          "0%, 100%": { 
+            opacity: "1",
+            transform: "scale(1)",
+            boxShadow: "0 4px 14px -4px hsl(165 35% 22% / 0.2)"
+          },
+          "50%": { 
+            opacity: "0.95",
+            transform: "scale(1.01)",
+            boxShadow: "0 6px 20px -4px hsl(165 35% 22% / 0.35)"
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "subtle-pulse": "subtle-pulse 4s ease-in-out infinite",
       },
     },
   },
