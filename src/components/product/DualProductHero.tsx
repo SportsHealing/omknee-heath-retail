@@ -14,28 +14,28 @@ interface DualProductHeroProps {
 const productData = {
   collagen: {
     name: "Collagen Powder",
-    tagline: "Joint Comfort Complex",
-    description: "A targeted powder formulation featuring hydrolysed collagen peptides combined with vitamin C, hyaluronic acid, and essential minerals. Designed for daily use as part of a comprehensive approach to long-term knee health.",
+    tagline: "Collagen + Vitamin C Complex",
+    description: "A powder formulation featuring hydrolysed collagen peptides combined with vitamin C, which contributes to normal collagen formation, plus essential minerals that support connective tissue maintenance. Designed for daily use as part of a balanced lifestyle.",
     icon: Sparkles,
     supply: "30 Servings • 300g",
     price: "£44.99",
     benefits: [
-      "Supports connective tissue integrity and cartilage structure",
-      "Contributes to normal collagen formation for cartilage function",
-      "Provides hyaluronic acid for joint lubrication support",
+      "Vitamin C contributes to normal collagen formation for the normal function of cartilage",
+      "Manganese and copper contribute to normal connective tissue formation",
+      "Contains hydrolysed collagen peptides at research-informed doses",
     ],
   },
   vegan: {
     name: "Vegan Powder",
-    tagline: "Plant-Based Joint Support",
-    description: "A collagen-free powder formulation combining plant-derived nutrients including vitamin C, MSM, turmeric, and essential minerals. Suitable for those following a vegan lifestyle who seek nutritional support for long-term knee health.",
+    tagline: "Plant-Based Nutrient Complex",
+    description: "A collagen-free powder formulation combining plant-derived nutrients including vitamin C, MSM, turmeric, and essential minerals. Suitable for those following a vegan lifestyle who seek nutritional support as part of a balanced approach to wellbeing.",
     icon: Leaf,
     supply: "30 Servings • 250g",
     price: "£39.99",
     benefits: [
-      "Supports joint function without animal-derived ingredients",
-      "Contributes to normal cartilage and bone maintenance",
-      "Provides antioxidant support from plant-based sources",
+      "Vitamin C contributes to normal collagen formation for cartilage function",
+      "Manganese contributes to normal connective tissue formation",
+      "Plant-based formula with no animal-derived ingredients",
     ],
   },
 };
@@ -95,10 +95,10 @@ const DualProductHero = ({ variant }: DualProductHeroProps) => {
               </p>
             </div>
 
-            {/* What this formula provides */}
+            {/* What this formula contains */}
             <div className="bg-secondary rounded-lg p-6">
               <p className="font-sans text-sm font-medium text-foreground mb-4">
-                This formula provides nutritional support for:
+                EFSA-authorised health claims for this formula:
               </p>
               <ul className="space-y-2 font-sans text-sm text-muted-foreground">
                 {product.benefits.map((benefit, index) => (

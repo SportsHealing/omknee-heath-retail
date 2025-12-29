@@ -50,34 +50,34 @@ const ProductHero = () => {
               </h1>
               <div className="w-12 h-px bg-primary/30 mb-6" />
               <p className="font-sans text-muted-foreground leading-relaxed">
-                A clinician-designed powder formula combining hydrolysed collagen peptides, 
+                A carefully formulated powder combining hydrolysed collagen peptides, 
                 glucosamine, chondroitin, hyaluronic acid, curcumin, boswellia, and essential 
                 vitamins and minerals. Each daily pouch delivers research-informed doses with 
-                transparent rationale—not marketing trends.
+                transparent rationale.
               </p>
             </div>
 
-            {/* What this formula provides */}
+            {/* EFSA-authorised claims */}
             <div className="bg-secondary rounded-lg p-6">
               <p className="font-sans text-sm font-medium text-foreground mb-4">
-                This formula provides nutritional support for:
+                EFSA-authorised health claims for ingredients in this formula:
               </p>
               <ul className="space-y-2 font-sans text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span>Normal collagen formation for cartilage, bones, and skin</span>
+                  <span>Vitamin C contributes to normal collagen formation for the normal function of cartilage, bones, and skin</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span>Normal muscle function and bone health</span>
+                  <span>Vitamin D contributes to normal muscle function and maintenance of normal bones</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span>Normal formation of connective tissue</span>
+                  <span>Manganese and copper contribute to normal connective tissue formation and maintenance</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span>Protection of cells from oxidative stress</span>
+                  <span>Vitamin C and zinc contribute to protection of cells from oxidative stress</span>
                 </li>
               </ul>
             </div>
@@ -104,10 +104,17 @@ const ProductHero = () => {
             </div>
 
             {/* Regulatory note */}
-            <p className="font-sans text-xs text-muted-foreground border-t border-border pt-4">
-              This product is a food supplement. Not intended to diagnose, treat, cure, or 
-              prevent any disease. Consult your healthcare provider before use.
-            </p>
+            <div className="border-t border-border pt-4 space-y-2">
+              <p className="font-sans text-xs text-muted-foreground">
+                Food supplement. Food supplements should not be used as a substitute for a varied 
+                and balanced diet and a healthy lifestyle.
+              </p>
+              <p className="font-sans text-xs text-muted-foreground">
+                Do not exceed the stated recommended daily dose. Keep out of reach of children. 
+                If you are pregnant, breastfeeding, taking medication, or have a medical condition, 
+                consult your healthcare provider before use.
+              </p>
+            </div>
           </div>
         </div>
       </div>
