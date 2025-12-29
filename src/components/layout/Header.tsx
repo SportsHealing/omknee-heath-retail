@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import logoDarkGreen from "@/assets/logo-dark-green.png";
 
 const Header = () => {
@@ -26,28 +27,28 @@ const Header = () => {
       <div className="container px-6">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img 
               src={logoDarkGreen} 
               alt="OmKneeHealth" 
               className="h-28 md:h-36 w-auto"
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <a href="#philosophy" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
               Our Philosophy
             </a>
-            <a href="/science" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/science" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
               The Science
-            </a>
-            <a href="/assessment" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
+            </Link>
+            <Link to="/assessment" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
               Knee Assessment
-            </a>
-            <a href="/product" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
+            </Link>
+            <Link to="/product" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
               Our Formula
-            </a>
+            </Link>
           </nav>
 
           {/* Right side */}
@@ -58,7 +59,7 @@ const Header = () => {
               className="hidden md:inline-flex text-sm font-medium border-primary/20 hover:bg-primary hover:text-primary-foreground hover:border-primary"
               asChild
             >
-              <a href="/assessment">Take Knee Assessment</a>
+              <Link to="/assessment">Take Knee Assessment</Link>
             </Button>
             <Button 
               variant="ghost" 
@@ -82,33 +83,33 @@ const Header = () => {
               >
                 Our Philosophy
               </a>
-              <a 
-                href="/science" 
+              <Link 
+                to="/science" 
                 className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 The Science
-              </a>
-              <a 
-                href="/assessment" 
+              </Link>
+              <Link 
+                to="/assessment" 
                 className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Knee Assessment
-              </a>
-              <a 
-                href="/product" 
+              </Link>
+              <Link 
+                to="/product" 
                 className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Our Formula
-              </a>
+              </Link>
               <Button 
                 className="w-full mt-4" 
                 size="sm"
                 asChild
               >
-                <a href="/assessment">Take Knee Assessment</a>
+                <Link to="/assessment">Take Knee Assessment</Link>
               </Button>
             </nav>
           </div>
