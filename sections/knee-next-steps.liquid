@@ -1,0 +1,518 @@
+{% comment %}
+  Next Steps - Knee Assessment Thank You Page
+  ============================================
+  Shown after Jotform submission redirect.
+  
+  Setup:
+  1. Add to sections/knee-next-steps.liquid
+  2. Create templates/page.next-steps-knee.json:
+     {
+       "sections": {
+         "main": { "type": "knee-next-steps" }
+       },
+       "order": ["main"]
+     }
+  3. Create page at /pages/next-steps-knee
+  4. Set Jotform redirect to: https://yourdomain.com/pages/next-steps-knee?submitted=true
+{% endcomment %}
+
+{%- assign section_id = section.id | default: 'kns' -%}
+
+<style>
+  #kns-{{ section_id }} {
+    --kns-primary: {{ section.settings.primary_color | default: '#166534' }};
+    --kns-primary-light: {{ section.settings.primary_light | default: '#dcfce7' }};
+    --kns-text: #1a1a1a;
+    --kns-text-muted: #64748b;
+    --kns-bg: #ffffff;
+    --kns-bg-alt: #f8fafc;
+    --kns-border: #e2e8f0;
+    --kns-radius: 12px;
+    --kns-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--kns-text);
+    background: var(--kns-bg);
+    min-height: 80vh;
+  }
+
+  #kns-{{ section_id }} * { box-sizing: border-box; }
+
+  .kns-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 60px 20px 80px;
+  }
+
+  @media (min-width: 768px) {
+    .kns-container {
+      padding: 80px 40px 100px;
+    }
+  }
+
+  /* Success Header */
+  .kns-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .kns-header__icon {
+    width: 80px;
+    height: 80px;
+    background: var(--kns-primary-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+  }
+
+  .kns-header__icon svg {
+    width: 40px;
+    height: 40px;
+    color: var(--kns-primary);
+  }
+
+  .kns-header__title {
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
+    font-weight: 700;
+    color: var(--kns-text);
+    margin: 0 0 12px;
+  }
+
+  .kns-header__subtitle {
+    font-size: 1.125rem;
+    color: var(--kns-text-muted);
+    margin: 0;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* What Happens Next */
+  .kns-steps {
+    background: var(--kns-bg-alt);
+    border: 1px solid var(--kns-border);
+    border-radius: var(--kns-radius);
+    padding: 32px;
+    margin-bottom: 40px;
+  }
+
+  .kns-steps__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--kns-text);
+    margin: 0 0 24px;
+    text-align: center;
+  }
+
+  .kns-steps__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: steps;
+  }
+
+  .kns-steps__item {
+    display: flex;
+    gap: 16px;
+    padding: 16px 0;
+    counter-increment: steps;
+  }
+
+  .kns-steps__item:not(:last-child) {
+    border-bottom: 1px solid var(--kns-border);
+  }
+
+  .kns-steps__number {
+    width: 32px;
+    height: 32px;
+    background: var(--kns-primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .kns-steps__content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--kns-text);
+    margin: 0 0 4px;
+  }
+
+  .kns-steps__content p {
+    font-size: 0.9375rem;
+    color: var(--kns-text-muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* CTA Buttons */
+  .kns-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .kns-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 18px 24px;
+    border-radius: var(--kns-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    text-align: center;
+  }
+
+  .kns-btn svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .kns-btn--primary {
+    background: var(--kns-primary);
+    color: #fff;
+    box-shadow: var(--kns-shadow);
+  }
+
+  .kns-btn--primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  .kns-btn--secondary {
+    background: var(--kns-bg);
+    color: var(--kns-text);
+    border: 2px solid var(--kns-border);
+  }
+
+  .kns-btn--secondary:hover {
+    border-color: var(--kns-primary);
+    color: var(--kns-primary);
+    background: var(--kns-primary-light);
+  }
+
+  .kns-btn--tertiary {
+    background: transparent;
+    color: var(--kns-primary);
+    border: 1px solid var(--kns-border);
+  }
+
+  .kns-btn--tertiary:hover {
+    background: var(--kns-bg-alt);
+  }
+
+  /* Info Note */
+  .kns-note {
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    border-radius: var(--kns-radius);
+    padding: 16px 20px;
+    margin-top: 32px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .kns-note svg {
+    width: 20px;
+    height: 20px;
+    color: #d97706;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .kns-note p {
+    font-size: 0.875rem;
+    color: #92400e;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Footer */
+  .kns-footer {
+    text-align: center;
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--kns-border);
+  }
+
+  .kns-footer p {
+    font-size: 0.875rem;
+    color: var(--kns-text-muted);
+    margin: 0 0 16px;
+  }
+
+  .kns-footer a {
+    color: var(--kns-primary);
+    text-decoration: underline;
+  }
+
+  .kns-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9375rem;
+    color: var(--kns-text-muted);
+    text-decoration: none;
+  }
+
+  .kns-back-link:hover {
+    color: var(--kns-primary);
+  }
+
+  .kns-back-link svg {
+    width: 16px;
+    height: 16px;
+  }
+</style>
+
+<section id="kns-{{ section_id }}" aria-labelledby="kns-title-{{ section_id }}">
+  <div class="kns-container">
+    
+    <!-- Success Header -->
+    <header class="kns-header">
+      <div class="kns-header__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+      <h1 id="kns-title-{{ section_id }}" class="kns-header__title">{{ section.settings.heading | default: 'Thank You for Completing Your Assessment' }}</h1>
+      <p class="kns-header__subtitle">{{ section.settings.subheading | default: 'Your responses have been securely submitted. Here is what happens next.' }}</p>
+    </header>
+
+    <!-- What Happens Next -->
+    <div class="kns-steps">
+      <h2 class="kns-steps__title">{{ section.settings.steps_title | default: 'What Happens Next' }}</h2>
+      <ol class="kns-steps__list">
+        <li class="kns-steps__item">
+          <span class="kns-steps__number">1</span>
+          <div class="kns-steps__content">
+            <h4>{{ section.settings.step1_title | default: 'We review your responses' }}</h4>
+            <p>{{ section.settings.step1_text | default: 'Our clinical team will analyse your assessment to understand your knee health profile and identify areas that may benefit from attention.' }}</p>
+          </div>
+        </li>
+        <li class="kns-steps__item">
+          <span class="kns-steps__number">2</span>
+          <div class="kns-steps__content">
+            <h4>{{ section.settings.step2_title | default: 'You receive personalised guidance' }}</h4>
+            <p>{{ section.settings.step2_text | default: 'Within 24–48 hours, you will receive an email with your knee health score, what it means, and tailored recommendations based on your individual situation.' }}</p>
+          </div>
+        </li>
+        <li class="kns-steps__item">
+          <span class="kns-steps__number">3</span>
+          <div class="kns-steps__content">
+            <h4>{{ section.settings.step3_title | default: 'Optional: Speak with a specialist' }}</h4>
+            <p>{{ section.settings.step3_text | default: 'If you would like expert guidance, you can book a consultation to discuss your results and explore next steps with a qualified clinician.' }}</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="kns-actions">
+      <a href="{{ section.settings.cta1_link | default: '#book-consultation' }}" class="kns-btn kns-btn--primary">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+        </svg>
+        {{ section.settings.cta1_text | default: 'Book a Clinician Consultation' }}
+      </a>
+      
+      <a href="{{ section.settings.cta2_link | default: '/collections/joint-health' }}" class="kns-btn kns-btn--secondary">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+        </svg>
+        {{ section.settings.cta2_text | default: 'Shop Joint Health Essentials' }}
+      </a>
+      
+      <a href="{{ section.settings.cta3_link | default: '/blogs/knee-health/reduce-knee-swelling' }}" class="kns-btn kns-btn--tertiary">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+        </svg>
+        {{ section.settings.cta3_text | default: 'Read: How to Reduce Knee Swelling' }}
+      </a>
+    </div>
+
+    <!-- Info Note -->
+    <div class="kns-note">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      </svg>
+      <p>{{ section.settings.note_text | default: 'This assessment provides general wellness guidance and is not a medical diagnosis. If you experience severe pain, acute swelling, or cannot bear weight, please seek medical attention promptly.' }}</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="kns-footer">
+      <p>Questions? Contact us at <a href="mailto:{{ section.settings.email | default: 'hello@omkneehealth.com' }}">{{ section.settings.email | default: 'hello@omkneehealth.com' }}</a></p>
+      <a href="/" class="kns-back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        Return to homepage
+      </a>
+    </footer>
+
+  </div>
+</section>
+
+{% comment %} Include analytics to track submission complete {% endcomment %}
+{% render 'knee-assessment-analytics' %}
+
+{% schema %}
+{
+  "name": "Knee Next Steps",
+  "tag": "section",
+  "class": "knee-next-steps-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Thank You for Completing Your Assessment"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Your responses have been securely submitted. Here is what happens next."
+    },
+    {
+      "type": "header",
+      "content": "Steps"
+    },
+    {
+      "type": "text",
+      "id": "steps_title",
+      "label": "Steps Section Title",
+      "default": "What Happens Next"
+    },
+    {
+      "type": "text",
+      "id": "step1_title",
+      "label": "Step 1 Title",
+      "default": "We review your responses"
+    },
+    {
+      "type": "textarea",
+      "id": "step1_text",
+      "label": "Step 1 Text",
+      "default": "Our clinical team will analyse your assessment to understand your knee health profile and identify areas that may benefit from attention."
+    },
+    {
+      "type": "text",
+      "id": "step2_title",
+      "label": "Step 2 Title",
+      "default": "You receive personalised guidance"
+    },
+    {
+      "type": "textarea",
+      "id": "step2_text",
+      "label": "Step 2 Text",
+      "default": "Within 24–48 hours, you will receive an email with your knee health score, what it means, and tailored recommendations based on your individual situation."
+    },
+    {
+      "type": "text",
+      "id": "step3_title",
+      "label": "Step 3 Title",
+      "default": "Optional: Speak with a specialist"
+    },
+    {
+      "type": "textarea",
+      "id": "step3_text",
+      "label": "Step 3 Text",
+      "default": "If you would like expert guidance, you can book a consultation to discuss your results and explore next steps with a qualified clinician."
+    },
+    {
+      "type": "header",
+      "content": "Call to Action Buttons"
+    },
+    {
+      "type": "text",
+      "id": "cta1_text",
+      "label": "CTA 1 Text",
+      "default": "Book a Clinician Consultation"
+    },
+    {
+      "type": "url",
+      "id": "cta1_link",
+      "label": "CTA 1 Link"
+    },
+    {
+      "type": "text",
+      "id": "cta2_text",
+      "label": "CTA 2 Text",
+      "default": "Shop Joint Health Essentials"
+    },
+    {
+      "type": "url",
+      "id": "cta2_link",
+      "label": "CTA 2 Link",
+      "default": "/collections/joint-health"
+    },
+    {
+      "type": "text",
+      "id": "cta3_text",
+      "label": "CTA 3 Text",
+      "default": "Read: How to Reduce Knee Swelling"
+    },
+    {
+      "type": "url",
+      "id": "cta3_link",
+      "label": "CTA 3 Link"
+    },
+    {
+      "type": "header",
+      "content": "Footer"
+    },
+    {
+      "type": "textarea",
+      "id": "note_text",
+      "label": "Disclaimer Note",
+      "default": "This assessment provides general wellness guidance and is not a medical diagnosis. If you experience severe pain, acute swelling, or cannot bear weight, please seek medical attention promptly."
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Contact Email",
+      "default": "hello@omkneehealth.com"
+    },
+    {
+      "type": "header",
+      "content": "Branding"
+    },
+    {
+      "type": "color",
+      "id": "primary_color",
+      "label": "Primary Color",
+      "default": "#166534"
+    },
+    {
+      "type": "color",
+      "id": "primary_light",
+      "label": "Primary Light",
+      "default": "#dcfce7"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Knee Next Steps",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
