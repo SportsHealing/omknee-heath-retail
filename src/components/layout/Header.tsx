@@ -42,7 +42,7 @@ const Header = () => {
             <a href="/science" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
               The Science
             </a>
-            <a href="#assessment" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <a href="/assessment" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
               Knee Assessment
             </a>
             <a href="/product" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -58,7 +58,7 @@ const Header = () => {
               className="hidden md:inline-flex text-sm font-medium border-primary/20 hover:bg-primary hover:text-primary-foreground hover:border-primary"
               asChild
             >
-              <a href="/#assessment">Take Knee Assessment</a>
+              <a href="/assessment">Take Knee Assessment</a>
             </Button>
             <Button 
               variant="ghost" 
@@ -90,7 +90,7 @@ const Header = () => {
                 The Science
               </a>
               <a 
-                href="#assessment" 
+                href="/assessment" 
                 className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -108,7 +108,7 @@ const Header = () => {
                 size="sm"
                 asChild
               >
-                <a href="/#assessment">Take Knee Assessment</a>
+                <a href="/assessment">Take Knee Assessment</a>
               </Button>
             </nav>
           </div>
