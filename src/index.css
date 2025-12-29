@@ -208,3 +208,83 @@ html {
   background: hsl(var(--trust-badge));
   color: hsl(var(--primary));
 }
+
+/* Print styles for recommendations export */
+@media print {
+  /* Hide non-essential elements */
+  header,
+  footer,
+  nav,
+  .print\\:hidden {
+    display: none !important;
+  }
+  
+  /* Show print-only elements */
+  .print\\:block {
+    display: block !important;
+  }
+  
+  /* Reset page margins */
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+  
+  /* Body reset for print */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  /* Ensure backgrounds print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Avoid page breaks inside elements */
+  .rounded-xl,
+  .border,
+  details {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  /* Ensure collapsible sections are expanded for print */
+  .kr-collapsible-content,
+  [class*="CollapsibleSection"] > div:last-child {
+    display: block !important;
+    max-height: none !important;
+  }
+  
+  /* Print-friendly colors */
+  .print\\:bg-gray-50 {
+    background-color: #f9fafb !important;
+  }
+  
+  .print\\:bg-gray-100 {
+    background-color: #f3f4f6 !important;
+  }
+  
+  .print\\:bg-gray-200 {
+    background-color: #e5e7eb !important;
+  }
+  
+  .print\\:border-gray-300 {
+    border-color: #d1d5db !important;
+  }
+  
+  .print\\:text-gray-600 {
+    color: #4b5563 !important;
+  }
+  
+  .print\\:text-gray-800 {
+    color: #1f2937 !important;
+  }
+  
+  .print\\:text-gray-900 {
+    color: #111827 !important;
+  }
+}

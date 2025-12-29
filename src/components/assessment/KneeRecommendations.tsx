@@ -1,4 +1,4 @@
-import { useState, forwardRef } from "react";
+import { useState, forwardRef, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { 
   ChevronDown, 
@@ -11,7 +11,9 @@ import {
   Activity,
   Pill,
   Stethoscope,
-  BookOpen
+  BookOpen,
+  Printer,
+  Download
 } from "lucide-react";
 
 // ========== RECOMMENDATION ENGINE ==========
@@ -270,34 +272,35 @@ const CollapsibleSection = forwardRef<HTMLDivElement, CollapsibleSectionProps>(
   if (items.length === 0) return null;
 
   return (
-    <div className="border border-border rounded-xl overflow-hidden">
+    <div className="border border-border rounded-xl overflow-hidden print:border-gray-300 print:break-inside-avoid">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-4 bg-muted/30 hover:bg-muted/50 transition-colors"
+        className="w-full flex items-center justify-between p-4 bg-muted/30 hover:bg-muted/50 transition-colors print:bg-gray-100"
       >
         <div className="flex items-center gap-3">
           {icon}
-          <span className="font-medium text-foreground">{title}</span>
-          <span className="bg-primary text-primary-foreground text-xs px-2 py-0.5 rounded-full">
+          <span className="font-medium text-foreground print:text-gray-900">{title}</span>
+          <span className="bg-primary text-primary-foreground text-xs px-2 py-0.5 rounded-full print:bg-gray-700 print:text-white">
             {items.length}
           </span>
         </div>
-        {isOpen ? (
-          <ChevronUp className="w-5 h-5 text-muted-foreground" />
-        ) : (
-          <ChevronDown className="w-5 h-5 text-muted-foreground" />
-        )}
+        <span className="print:hidden">
+          {isOpen ? (
+            <ChevronUp className="w-5 h-5 text-muted-foreground" />
+          ) : (
+            <ChevronDown className="w-5 h-5 text-muted-foreground" />
+          )}
+        </span>
       </button>
-      {isOpen && (
-        <div className="p-4 space-y-2">
-          {items.map((item, index) => (
-            <div key={index} className="flex items-start gap-2 text-sm">
-              <span className="text-primary mt-0.5">✓</span>
-              <span className="text-foreground">{item}</span>
-            </div>
-          ))}
-        </div>
-      )}
+      {/* Always show content when printing, otherwise respect isOpen state */}
+      <div className={`p-4 space-y-2 ${isOpen ? 'block' : 'hidden'} print:block`}>
+        {items.map((item, index) => (
+          <div key={index} className="flex items-start gap-2 text-sm">
+            <span className="text-primary mt-0.5 print:text-gray-700">✓</span>
+            <span className="text-foreground print:text-gray-800">{item}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 });
@@ -490,6 +493,12 @@ export const KneeRecommendations = ({ kneeScore, sleepScore, useIndexScore = tru
     setRecommendation(result);
   };
 
+  const printRef = useRef<HTMLDivElement>(null);
+
+  const handlePrint = () => {
+    window.print();
+  };
+
   if (!healthProfile || !recommendation) {
     return <HealthProfileForm onSubmit={handleProfileSubmit} />;
   }
@@ -498,20 +507,37 @@ export const KneeRecommendations = ({ kneeScore, sleepScore, useIndexScore = tru
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <div className={`rounded-xl border p-6 ${style.bg} ${style.border}`}>
-        <div className="flex flex-wrap items-center gap-3 mb-3">
-          <span className={`px-3 py-1 rounded-full text-sm font-medium ${style.bg} ${style.text} border ${style.border}`}>
-            Band: {recommendation.band}
-          </span>
-          <span className="text-sm text-muted-foreground">
-            Personalised for age {healthProfile.age}, {healthProfile.sex}
-          </span>
-        </div>
-        <h3 className="text-xl font-serif text-foreground">
-          {recommendation.title}
-        </h3>
+      {/* Print/Export Actions */}
+      <div className="flex justify-end gap-2 print:hidden">
+        <Button variant="outline" size="sm" onClick={handlePrint}>
+          <Printer className="w-4 h-4 mr-2" />
+          Print / Save PDF
+        </Button>
       </div>
+
+      {/* Printable Content */}
+      <div ref={printRef} className="print:p-4">
+        {/* Print Header - Only visible when printing */}
+        <div className="hidden print:block print:mb-6 print:border-b print:border-gray-300 print:pb-4">
+          <h1 className="text-2xl font-serif text-gray-900">OmKneeHealth</h1>
+          <p className="text-sm text-gray-600">Personalised Knee & Recovery Recommendations</p>
+          <p className="text-xs text-gray-500 mt-1">Generated: {new Date().toLocaleDateString()}</p>
+        </div>
+
+        {/* Header */}
+        <div className={`rounded-xl border p-6 ${style.bg} ${style.border} print:bg-gray-50 print:border-gray-300`}>
+          <div className="flex flex-wrap items-center gap-3 mb-3">
+            <span className={`px-3 py-1 rounded-full text-sm font-medium ${style.bg} ${style.text} border ${style.border} print:bg-gray-200 print:text-gray-800`}>
+              Band: {recommendation.band}
+            </span>
+            <span className="text-sm text-muted-foreground print:text-gray-600">
+              Personalised for age {healthProfile.age}, {healthProfile.sex}
+            </span>
+          </div>
+          <h3 className="text-xl font-serif text-foreground print:text-gray-900">
+            {recommendation.title}
+          </h3>
+        </div>
 
       {/* Test Sections */}
       <div className="space-y-3">
@@ -599,18 +625,20 @@ export const KneeRecommendations = ({ kneeScore, sleepScore, useIndexScore = tru
         <a href="/product#product-faq" className="text-primary hover:underline">
           Read FAQs
         </a>
-      </div>
+        </div>
 
-      {/* Disclaimer */}
-      <div className="text-center p-4 bg-muted/30 rounded-lg border border-border">
-        <p className="text-xs text-muted-foreground flex items-center justify-center gap-1">
-          <AlertCircle className="w-3 h-3" />
-          Educational decision-support, not diagnosis. Always consult a healthcare professional.
-        </p>
+        {/* Disclaimer - inside printable area */}
+        <div className="text-center p-4 bg-muted/30 rounded-lg border border-border print:bg-gray-100 print:border-gray-300 print:mt-6">
+          <p className="text-xs text-muted-foreground flex items-center justify-center gap-1 print:text-gray-600">
+            <AlertCircle className="w-3 h-3" />
+            Educational decision-support, not diagnosis. Always consult a healthcare professional.
+          </p>
+        </div>
       </div>
+      {/* End Printable Content */}
 
-      {/* Reset */}
-      <div className="text-center">
+      {/* Reset - hidden when printing */}
+      <div className="text-center print:hidden">
         <Button 
           variant="ghost" 
           size="sm"
