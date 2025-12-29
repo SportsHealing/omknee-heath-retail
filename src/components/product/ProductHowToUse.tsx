@@ -1,8 +1,8 @@
 /**
- * How to Use Section - Clinical Guidance
+ * How to Use Section - Clinical Guidance for Powder Format
  */
 
-import { Clock, Utensils, CalendarDays, AlertCircle } from "lucide-react";
+import { Clock, Utensils, CalendarDays, AlertCircle, Droplets } from "lucide-react";
 
 const ProductHowToUse = () => {
   return (
@@ -33,8 +33,23 @@ const ProductHowToUse = () => {
                 <div>
                   <h3 className="font-sans font-medium text-lg mb-2">Daily Dosage</h3>
                   <p className="text-primary-foreground/80 text-sm leading-relaxed">
-                    Take 2 capsules daily. This provides the full daily dose of all 
+                    Take one pouch daily. Each pouch contains the full daily dose of all 
                     active ingredients as specified on the label.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-6 border border-primary-foreground/10">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center shrink-0">
+                  <Droplets className="w-5 h-5 text-primary-foreground/80" />
+                </div>
+                <div>
+                  <h3 className="font-sans font-medium text-lg mb-2">How to Mix</h3>
+                  <p className="text-primary-foreground/80 text-sm leading-relaxed">
+                    Empty the contents of one pouch into 200-250ml of water, juice, or 
+                    your preferred beverage. Stir or shake well until fully dissolved.
                   </p>
                 </div>
               </div>
@@ -48,8 +63,8 @@ const ProductHowToUse = () => {
                 <div>
                   <h3 className="font-sans font-medium text-lg mb-2">With Food</h3>
                   <p className="text-primary-foreground/80 text-sm leading-relaxed">
-                    Best taken with a meal and water. Food may improve absorption 
-                    and reduce the likelihood of digestive discomfort.
+                    Best taken with or after a meal. Food may improve absorption of 
+                    certain ingredients and reduce the likelihood of digestive discomfort.
                   </p>
                 </div>
               </div>
@@ -71,7 +86,7 @@ const ProductHowToUse = () => {
               </div>
             </div>
 
-            <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-6 border border-primary-foreground/10">
+            <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-6 border border-primary-foreground/10 md:col-span-2">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center shrink-0">
                   <AlertCircle className="w-5 h-5 text-primary-foreground/80" />
@@ -80,7 +95,8 @@ const ProductHowToUse = () => {
                   <h3 className="font-sans font-medium text-lg mb-2">Important</h3>
                   <p className="text-primary-foreground/80 text-sm leading-relaxed">
                     Do not exceed the stated dose. This supplement does not replace 
-                    a varied, balanced diet and healthy lifestyle.
+                    a varied, balanced diet and healthy lifestyle. Store pouches in a 
+                    cool, dry place away from direct sunlight.
                   </p>
                 </div>
               </div>

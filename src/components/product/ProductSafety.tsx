@@ -49,12 +49,12 @@ const ProductSafety = () => {
               Quality & Safety
             </p>
             <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-4">
-              What Goes Into Every Bottle
+              What Goes Into Every Pouch
             </h2>
             <div className="w-12 h-px bg-primary/30 mx-auto mb-6" />
             <p className="font-sans text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               Quality isn't a marketing claim—it's a manufacturing commitment. 
-              Here's how we ensure every bottle meets our standards.
+              Here's how we ensure every pouch meets our standards.
             </p>
           </div>
 
