@@ -15,6 +15,44 @@
   assign form_id = section.settings.jotform_form_id | default: 'PLACEHOLDER_FORM_ID'
 -%}
 
+{%- capture seo_title -%}{{ section.settings.seo_title | default: 'Knee Assessment Questionnaire | OmKneeHealth' }}{%- endcapture -%}
+{%- capture seo_description -%}{{ section.settings.seo_description | default: 'Complete our clinician-designed knee assessment in 4–6 minutes to help guide next steps. UK GDPR-aligned and secure.' }}{%- endcapture -%}
+{%- capture og_title -%}{{ section.settings.og_title | default: 'Knee Assessment Questionnaire' }}{%- endcapture -%}
+{%- capture og_description -%}{{ section.settings.og_description | default: 'A secure, clinician-designed knee assessment to guide your next steps.' }}{%- endcapture -%}
+
+{% comment %} SEO Meta Tags {% endcomment %}
+{% if template.name == 'page' %}
+<title>{{ seo_title }}</title>
+<meta name="description" content="{{ seo_description }}">
+<meta property="og:title" content="{{ og_title }}">
+<meta property="og:description" content="{{ og_description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ canonical_url }}">
+{% if section.settings.og_image %}<meta property="og:image" content="{{ section.settings.og_image | image_url: width: 1200 }}">{% endif %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ og_title }}">
+<meta name="twitter:description" content="{{ og_description }}">
+<link rel="canonical" href="{{ canonical_url }}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": {{ seo_title | json }},
+  "description": {{ seo_description | json }},
+  "publisher": {
+    "@type": "Organization",
+    "name": "OmKneeHealth",
+    "url": {{ shop.url | json }}
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ canonical_url | json }}
+  }
+}
+</script>
+{% endif %}
+
 <style>
   /* ===== SCOPED STYLES ===== */
   #kau-{{ section_id }} {
@@ -1865,6 +1903,40 @@
       "id": "field_knee_band",
       "label": "Knee Band Field ID",
       "default": "47"
+    },
+    {
+      "type": "header",
+      "content": "SEO & Open Graph"
+    },
+    {
+      "type": "text",
+      "id": "seo_title",
+      "label": "SEO Title",
+      "default": "Knee Assessment Questionnaire | OmKneeHealth"
+    },
+    {
+      "type": "textarea",
+      "id": "seo_description",
+      "label": "Meta Description",
+      "default": "Complete our clinician-designed knee assessment in 4–6 minutes to help guide next steps. UK GDPR-aligned and secure."
+    },
+    {
+      "type": "text",
+      "id": "og_title",
+      "label": "OG Title",
+      "default": "Knee Assessment Questionnaire"
+    },
+    {
+      "type": "textarea",
+      "id": "og_description",
+      "label": "OG Description",
+      "default": "A secure, clinician-designed knee assessment to guide your next steps."
+    },
+    {
+      "type": "image_picker",
+      "id": "og_image",
+      "label": "Open Graph Image",
+      "info": "Recommended: 1200x630px"
     },
     {
       "type": "header",
