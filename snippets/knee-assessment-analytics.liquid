@@ -1,0 +1,221 @@
+{% comment %}
+  Knee Assessment Analytics (Non-PHI)
+  ====================================
+  Tracks assessment funnel events without sending health data.
+  
+  Events:
+  - knee_assessment_view: Page load
+  - knee_assessment_start: User clicks Start/Continue on first section
+  - knee_assessment_submit: Jotform submission complete
+  
+  Data sent (safe only):
+  - page_path, timestamp, referrer, utm_source, utm_medium, utm_campaign
+  
+  Usage:
+  Add to theme.liquid before </body> or include in knee assessment page:
+  {% render 'knee-assessment-analytics' %}
+  
+  For Jotform thank-you redirect, add ?submitted=true to your redirect URL
+{% endcomment %}
+
+<script>
+(function() {
+  'use strict';
+
+  // Only run on knee assessment pages
+  const isAssessmentPage = window.location.pathname.includes('knee-assessment') || 
+                           window.location.pathname.includes('fullknee-assessment') ||
+                           document.querySelector('[id^="kau-"]') !== null;
+  
+  if (!isAssessmentPage) return;
+
+  // ===== SAFE DATA COLLECTION (NO PHI) =====
+  function getSafeEventData() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+      page_path: window.location.pathname,
+      timestamp: new Date().toISOString(),
+      referrer: document.referrer ? new URL(document.referrer).hostname : '(direct)',
+      utm_source: params.get('utm_source') || '',
+      utm_medium: params.get('utm_medium') || '',
+      utm_campaign: params.get('utm_campaign') || ''
+    };
+  }
+
+  // ===== EVENT DISPATCH =====
+  // Supports: Google Analytics 4, dataLayer (GTM), custom callbacks
+  
+  function trackEvent(eventName, eventData) {
+    const payload = {
+      event: eventName,
+      ...eventData
+    };
+
+    // 1. Google Analytics 4 (gtag)
+    if (typeof gtag === 'function') {
+      gtag('event', eventName, eventData);
+    }
+
+    // 2. Google Tag Manager dataLayer
+    if (typeof dataLayer !== 'undefined' && Array.isArray(dataLayer)) {
+      dataLayer.push(payload);
+    }
+
+    // 3. Meta Pixel (Facebook)
+    if (typeof fbq === 'function') {
+      fbq('trackCustom', eventName, eventData);
+    }
+
+    // 4. Custom event for other integrations
+    window.dispatchEvent(new CustomEvent('kneeAssessmentAnalytics', {
+      detail: payload
+    }));
+
+    // Debug logging (remove in production)
+    {% if settings.enable_analytics_debug %}
+    console.log('[KneeAssessment Analytics]', eventName, eventData);
+    {% endif %}
+  }
+
+  // ===== EVENT: PAGE VIEW =====
+  function trackPageView() {
+    // Prevent duplicate tracking
+    if (window._kaaViewTracked) return;
+    window._kaaViewTracked = true;
+
+    trackEvent('knee_assessment_view', getSafeEventData());
+  }
+
+  // ===== EVENT: ASSESSMENT START =====
+  function trackStart() {
+    // Prevent duplicate tracking
+    if (window._kaaStartTracked) return;
+    window._kaaStartTracked = true;
+
+    trackEvent('knee_assessment_start', getSafeEventData());
+  }
+
+  // ===== EVENT: SUBMISSION COMPLETE =====
+  function trackSubmit() {
+    trackEvent('knee_assessment_submit', getSafeEventData());
+  }
+
+  // ===== INITIALIZATION =====
+  function init() {
+    // Track page view
+    trackPageView();
+
+    // Check for submission completion via URL param (Jotform redirect)
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('submitted') === 'true' || params.get('success') === 'true') {
+      trackSubmit();
+      
+      // Clean URL without reload (optional)
+      if (window.history && window.history.replaceState) {
+        params.delete('submitted');
+        params.delete('success');
+        const cleanUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
+        window.history.replaceState({}, '', cleanUrl);
+      }
+    }
+
+    // Listen for Start button click (first Continue click)
+    const observer = new MutationObserver(function() {
+      attachStartListener();
+    });
+    
+    observer.observe(document.body, { childList: true, subtree: true });
+    attachStartListener();
+
+    // Listen for form submission (backup tracking)
+    attachSubmitListener();
+  }
+
+  function attachStartListener() {
+    // Find the Continue/Next button
+    const nextBtn = document.querySelector('[id^="kauNext-"]');
+    if (nextBtn && !nextBtn._kaaTracked) {
+      nextBtn._kaaTracked = true;
+      
+      nextBtn.addEventListener('click', function handler() {
+        // Only track on first section (step 1)
+        const stepText = document.querySelector('[id^="kauStep-"]');
+        if (stepText && stepText.textContent.trim() === '1') {
+          trackStart();
+        }
+        // Remove listener after first valid click
+        if (window._kaaStartTracked) {
+          nextBtn.removeEventListener('click', handler);
+        }
+      });
+    }
+  }
+
+  function attachSubmitListener() {
+    const form = document.querySelector('[id^="kauForm-"]');
+    if (form && !form._kaaTracked) {
+      form._kaaTracked = true;
+      
+      form.addEventListener('submit', function() {
+        // Store in sessionStorage for tracking after redirect
+        try {
+          sessionStorage.setItem('kaa_pending_submit', JSON.stringify(getSafeEventData()));
+        } catch (e) {
+          // sessionStorage not available
+        }
+      });
+    }
+  }
+
+  // Check for pending submission (after Jotform redirect back)
+  function checkPendingSubmit() {
+    try {
+      const pending = sessionStorage.getItem('kaa_pending_submit');
+      if (pending) {
+        const data = JSON.parse(pending);
+        // Only fire if we're on a thank-you or confirmation context
+        if (window.location.search.includes('submitted') || 
+            window.location.search.includes('success') ||
+            window.location.search.includes('thank')) {
+          trackEvent('knee_assessment_submit', data);
+        }
+        sessionStorage.removeItem('kaa_pending_submit');
+      }
+    } catch (e) {
+      // Ignore errors
+    }
+  }
+
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      init();
+      checkPendingSubmit();
+    });
+  } else {
+    init();
+    checkPendingSubmit();
+  }
+
+  // ===== JOTFORM POSTMESSAGE LISTENER =====
+  // If Jotform is embedded (iframe), listen for submission complete
+  window.addEventListener('message', function(event) {
+    // Verify origin is Jotform
+    if (!event.origin.includes('jotform.com')) return;
+    
+    try {
+      const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+      
+      // Jotform sends 'submission-completed' or similar
+      if (data.action === 'submission-completed' || 
+          data.type === 'submission-completed' ||
+          (data.action === 'setHeight' && data.scrollHeight === 0)) {
+        trackSubmit();
+      }
+    } catch (e) {
+      // Not JSON or not relevant
+    }
+  });
+
+})();
+</script>
