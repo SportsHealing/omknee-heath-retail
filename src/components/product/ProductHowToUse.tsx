@@ -6,7 +6,7 @@ import { Clock, Utensils, CalendarDays, AlertCircle, Droplets } from "lucide-rea
 
 const ProductHowToUse = () => {
   return (
-    <section className="py-20 md:py-28 bg-primary text-primary-foreground">
+    <section id="how-to-use" className="py-20 md:py-28 bg-primary text-primary-foreground scroll-mt-20">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section header */}
