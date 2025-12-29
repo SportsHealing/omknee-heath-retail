@@ -1,54 +1,44 @@
 /**
- * SHOPIFY SECTION: Newsletter / CTA Banner
- * Location: Homepage - Gentle call-to-action (bottom)
- * Type: Shopify Theme Section (newsletter or custom HTML)
+ * CTA Section - Gentle, Non-Commercial Close
  */
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { ArrowRight } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-sage-light to-cream">
+    <section className="py-24 lg:py-32 bg-clinical-light">
       <div className="container px-6">
         <div className="max-w-2xl mx-auto text-center">
-          {/* Header */}
-          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
-            Begin Your Journey to Better Joint Comfort
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
+            Ready to Understand Your Knee Health?
           </h2>
-          <p className="font-sans text-muted-foreground text-lg mb-10 leading-relaxed">
-            Join our community for gentle guidance on supporting your joint health. 
-            No pressure, just helpful insights from our clinical team.
+          <div className="clinical-divider mb-6" />
+          <p className="font-sans text-muted-foreground leading-relaxed mb-10">
+            Start with our free assessment. No commitment required. 
+            Just a clearer picture of where you stand.
           </p>
-
-          {/* Email signup */}
-          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
-            <Input 
-              type="email" 
-              placeholder="Your email address"
-              className="h-12 bg-card border-border focus:border-primary"
-            />
-            <Button size="lg" className="h-12 px-6 gap-2">
-              Subscribe
-              <ArrowRight className="w-4 h-4" />
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              size="lg"
+              className="px-10 py-6 text-sm font-sans font-medium tracking-wide"
+              asChild
+            >
+              <a href="#assessment">Take Free Assessment</a>
+            </Button>
+            <Button 
+              variant="ghost"
+              size="lg"
+              className="px-10 py-6 text-sm font-sans font-medium tracking-wide text-muted-foreground hover:text-foreground"
+              asChild
+            >
+              <a href="/science">Explore the Science</a>
             </Button>
           </div>
 
-          <p className="font-sans text-xs text-muted-foreground">
-            We respect your inbox. Unsubscribe anytime. No spam, ever.
+          <p className="mt-8 font-sans text-xs text-muted-foreground">
+            Have questions? Our clinical team is here to help.
           </p>
-
-          {/* Alternative CTA */}
-          <div className="mt-12 pt-10 border-t border-border/50">
-            <p className="font-sans text-sm text-muted-foreground mb-4">
-              Ready to explore our products?
-            </p>
-            <Button variant="outline" size="lg" className="gap-2">
-              Shop Our Collection
-              <ArrowRight className="w-4 h-4" />
-            </Button>
-          </div>
         </div>
       </div>
     </section>

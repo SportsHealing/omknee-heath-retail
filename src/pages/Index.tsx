@@ -1,41 +1,41 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/home/HeroSection";
-import ValueProposition from "@/components/home/ValueProposition";
-import WhyKneeHealth from "@/components/home/WhyKneeHealth";
-import ScienceSection from "@/components/home/ScienceSection";
-import KneeScoreEmbed from "@/components/home/KneeScoreEmbed";
-import ProductIntro from "@/components/home/ProductIntro";
-import TrustSection from "@/components/home/TrustSection";
+import PhilosophySection from "@/components/home/PhilosophySection";
+import EducationSection from "@/components/home/EducationSection";
+import AssessmentSection from "@/components/home/AssessmentSection";
+import SignatureProductSection from "@/components/home/SignatureProductSection";
+import CuratedSection from "@/components/home/CuratedSection";
+import CredibilitySection from "@/components/home/CredibilitySection";
 import CTASection from "@/components/home/CTASection";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pt-16 lg:pt-20">
-        {/* Section 1: Above-the-fold Hero */}
+      <main>
+        {/* Section 1: Authority Hero - Establishes medical credibility within 5 seconds */}
         <HeroSection />
         
-        {/* Section 2: Core Value Proposition */}
-        <ValueProposition />
+        {/* Section 2: Philosophy - Positions as authority, not brand */}
+        <PhilosophySection />
         
-        {/* Section 3: Why Knee Health Matters */}
-        <WhyKneeHealth />
+        {/* Section 3: Education - Why knee health matters */}
+        <EducationSection />
         
-        {/* Section 4: Evidence & Science Positioning */}
-        <ScienceSection />
+        {/* Section 4: Assessment Tool - Free value-add, non-commercial */}
+        <AssessmentSection />
         
-        {/* Section 5: Knee Score Assessment Tool */}
-        <KneeScoreEmbed />
+        {/* Section 5: Signature Product - ONE formula, clearly labeled "Our Formula" */}
+        <SignatureProductSection />
         
-        {/* Section 6: Signature Product Introduction */}
-        <ProductIntro />
+        {/* Section 6: Curated Resources - Beyond our own products */}
+        <CuratedSection />
         
-        {/* Section 7: Trust & Credibility */}
-        <TrustSection />
+        {/* Section 7: Credibility - Clinical team & trust signals */}
+        <CredibilitySection />
         
-        {/* Section 8: Gentle Call-to-Action */}
+        {/* Section 8: Gentle CTA - Assessment-focused, not purchase */}
         <CTASection />
       </main>
       <Footer />
