@@ -20,7 +20,8 @@ import {
   CheckCircle2,
   Loader2,
   Download,
-  ClipboardList
+  ClipboardList,
+  Mail
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
@@ -112,6 +113,9 @@ export default function KneeTriageCalculator() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showTests, setShowTests] = useState(false);
   const [testResults, setTestResults] = useState<{ passed: boolean; results: string[] } | null>(null);
+  const [showEmailForm, setShowEmailForm] = useState(false);
+  const [emailConsent, setEmailConsent] = useState(false);
+  const [emailAddress, setEmailAddress] = useState("");
 
   // Calculate knee score from symptoms or use manual
   const getKneeScore = (): number => {
@@ -285,6 +289,22 @@ export default function KneeTriageCalculator() {
     setFormData(initialFormData);
     setResults(null);
     setStep("symptoms");
+    setShowEmailForm(false);
+    setEmailConsent(false);
+    setEmailAddress("");
+  };
+
+  const handleEmailReport = () => {
+    if (!emailConsent) {
+      toast.error("Please tick the consent checkbox first");
+      return;
+    }
+    if (!emailAddress || !emailAddress.includes("@")) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+    // Placeholder - backend not yet implemented
+    toast.info("Email report feature coming soon! Download the PDF for now.");
   };
 
   const handleRunTests = () => {
@@ -885,10 +905,57 @@ export default function KneeTriageCalculator() {
               <Download className="w-4 h-4 mr-2" />
               Download PDF
             </Button>
+            <Button 
+              variant="outline" 
+              onClick={() => setShowEmailForm(!showEmailForm)}
+            >
+              <Mail className="w-4 h-4 mr-2" />
+              Email Report
+            </Button>
             <Button onClick={handleReset}>
               Start New Assessment
             </Button>
           </div>
+
+          {/* Email Report Form */}
+          {showEmailForm && (
+            <Card className="p-4 mt-4 animate-fade-up">
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <Checkbox
+                    id="email-consent"
+                    checked={emailConsent}
+                    onCheckedChange={(checked) => setEmailConsent(checked === true)}
+                  />
+                  <Label htmlFor="email-consent" className="text-sm text-muted-foreground cursor-pointer leading-relaxed">
+                    I consent to receive my assessment report via email. My data will be processed in accordance with UK GDPR and used solely to deliver this report.
+                  </Label>
+                </div>
+                
+                {emailConsent && (
+                  <div className="space-y-3 animate-fade-up">
+                    <div className="space-y-2">
+                      <Label htmlFor="email-address" className="text-sm font-medium">
+                        Email Address
+                      </Label>
+                      <Input
+                        id="email-address"
+                        type="email"
+                        placeholder="your@email.com"
+                        value={emailAddress}
+                        onChange={(e) => setEmailAddress(e.target.value)}
+                        className="bg-background"
+                      />
+                    </div>
+                    <Button onClick={handleEmailReport} className="w-full">
+                      <Mail className="w-4 h-4 mr-2" />
+                      Send Report to Email
+                    </Button>
+                  </div>
+                )}
+              </div>
+            </Card>
+          )}
 
           {/* Test Section - Hidden by default */}
           <div className="pt-8 border-t border-border">
