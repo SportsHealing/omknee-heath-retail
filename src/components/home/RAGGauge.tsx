@@ -5,10 +5,10 @@ interface RAGGaugeProps {
 }
 
 const getScoreBand = (score: number) => {
-  if (score >= 75) return { label: "Excellent Knee Health", color: "#16a34a" };
-  if (score >= 50) return { label: "Good Knee Health", color: "#84cc16" };
-  if (score >= 25) return { label: "Fair Knee Health", color: "#f59e0b" };
-  return { label: "Poor Knee Health", color: "#dc2626" };
+  if (score >= 75) return { label: "Excellent Knee Health", color: "#16a34a" }; // green
+  if (score >= 50) return { label: "Good Knee Health", color: "#f59e0b" }; // amber
+  if (score >= 25) return { label: "Fair Knee Health", color: "#fb7185" }; // light red
+  return { label: "Poor Knee Health", color: "#dc2626" }; // red
 };
 
 const RAGGauge = ({ score, label, size = "md" }: RAGGaugeProps) => {
@@ -45,8 +45,8 @@ const RAGGauge = ({ score, label, size = "md" }: RAGGaugeProps) => {
             background: `conic-gradient(
               from 180deg at 50% 100%,
               #dc2626 0deg 43.2deg,
-              #f59e0b 43.2deg 88.2deg,
-              #84cc16 88.2deg 135deg,
+              #fb7185 43.2deg 88.2deg,
+              #f59e0b 88.2deg 135deg,
               #16a34a 135deg 180deg
             )`,
             WebkitMask: `radial-gradient(circle at 50% 100%, transparent 0 62%, #000 62%)`,
