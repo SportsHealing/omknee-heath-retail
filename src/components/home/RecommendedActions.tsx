@@ -8,12 +8,12 @@ interface BandRecommendation {
 }
 
 type Category = "knee" | "sleep" | "index";
-type BandKey = "red" | "amber" | "lgreen" | "green";
+type BandKey = "poor" | "fair" | "good" | "excellent";
 
 const library: Record<BandKey, Record<Category, BandRecommendation>> = {
-  red: {
+  poor: {
     knee: {
-      title: "High priority support (0–24)",
+      title: "High priority support (0–25)",
       bullets: [
         "Reduce load and avoid flare triggers (pivoting, deep flexion, long hills).",
         "Address pain/swelling promptly: compression, elevation, short activity breaks.",
@@ -24,7 +24,7 @@ const library: Record<BandKey, Record<Category, BandRecommendation>> = {
       note: "Red flags: hot swollen joint, fever, inability to weight bear, true locking, calf swelling, numbness — seek urgent assessment."
     },
     sleep: {
-      title: "Sleep is limiting recovery (0–24)",
+      title: "Sleep is limiting recovery (0–25)",
       bullets: [
         "Prioritise consistent sleep/wake timing for 7 days.",
         "Reduce late caffeine/alcohol; protect a wind-down routine.",
@@ -35,7 +35,7 @@ const library: Record<BandKey, Record<Category, BandRecommendation>> = {
       note: "If severe insomnia or daytime sleepiness affecting safety (driving), seek medical advice."
     },
     index: {
-      title: "Recovery profile needs urgent optimisation (0–24)",
+      title: "Recovery profile needs urgent optimisation (0–25)",
       bullets: [
         "Treat this as a reset phase: reduce load, improve sleep timing, and stabilise symptoms.",
         "Identify the lowest knee domain and lowest sleep contributor and target both.",
@@ -46,9 +46,9 @@ const library: Record<BandKey, Record<Category, BandRecommendation>> = {
       note: "If symptoms are rapidly worsening or there are red flags, seek urgent assessment."
     }
   },
-  amber: {
+  fair: {
     knee: {
-      title: "Needs improvement (25–49)",
+      title: "Needs improvement (26–50)",
       bullets: [
         "Focus on your lowest domain first (often stairs, stiffness, pain).",
         "Use progressive strengthening (quads/hip/calf) 2–3x/week.",
@@ -58,7 +58,7 @@ const library: Record<BandKey, Record<Category, BandRecommendation>> = {
       ]
     },
     sleep: {
-      title: "Sleep improvement zone (25–49)",
+      title: "Sleep improvement zone (26–50)",
       bullets: [
         "Optimise timing: same wake time, morning light exposure.",
         "Reduce screens/bright light 60 minutes pre-bed.",
@@ -68,7 +68,7 @@ const library: Record<BandKey, Record<Category, BandRecommendation>> = {
       ]
     },
     index: {
-      title: "Good potential with targeted changes (25–49)",
+      title: "Good potential with targeted changes (26–50)",
       bullets: [
         "Target 1 knee domain + 1 sleep contributor for the next 2 weeks.",
         "Increase strength and stability work; reduce flare triggers.",
@@ -78,9 +78,9 @@ const library: Record<BandKey, Record<Category, BandRecommendation>> = {
       ]
     }
   },
-  lgreen: {
+  good: {
     knee: {
-      title: "On track (50–74)",
+      title: "On track (51–75)",
       bullets: [
         "Maintain progressive strengthening and mobility work.",
         "Gradually reintroduce higher demand tasks (stairs, kneeling) as tolerated.",
@@ -90,7 +90,7 @@ const library: Record<BandKey, Record<Category, BandRecommendation>> = {
       ]
     },
     sleep: {
-      title: "Solid sleep foundation (50–74)",
+      title: "Solid sleep foundation (51–75)",
       bullets: [
         "Keep timing consistent; protect a wind-down routine.",
         "Improve the weakest contributor (often REM/deep or restfulness).",
@@ -100,7 +100,7 @@ const library: Record<BandKey, Record<Category, BandRecommendation>> = {
       ]
     },
     index: {
-      title: "Good recovery profile (50–74)",
+      title: "Good recovery profile (51–75)",
       bullets: [
         "Keep building strength + stability and protect sleep consistency.",
         "Address your lowest knee domain to move toward green range.",
@@ -109,9 +109,9 @@ const library: Record<BandKey, Record<Category, BandRecommendation>> = {
       ]
     }
   },
-  green: {
+  excellent: {
     knee: {
-      title: "Excellent / optimal (75–100)",
+      title: "Excellent / optimal (76–100)",
       bullets: [
         "Maintain your routine: strength, mobility, and load management.",
         "Add prehab: single-leg strength, balance, controlled deceleration.",
@@ -120,7 +120,7 @@ const library: Record<BandKey, Record<Category, BandRecommendation>> = {
       ]
     },
     sleep: {
-      title: "Excellent / optimal (75–100)",
+      title: "Excellent / optimal (76–100)",
       bullets: [
         "Keep timing steady and protect your routine.",
         "Use recovery days strategically around intense training.",
@@ -129,7 +129,7 @@ const library: Record<BandKey, Record<Category, BandRecommendation>> = {
       ]
     },
     index: {
-      title: "Optimal recovery profile (75–100)",
+      title: "Optimal recovery profile (76–100)",
       bullets: [
         "Stay consistent; focus on prevention.",
         "Maintain strength and sleep habits through busy periods.",
@@ -140,25 +140,25 @@ const library: Record<BandKey, Record<Category, BandRecommendation>> = {
 };
 
 const getBandKey = (score: number): BandKey => {
-  if (score <= 24) return "red";
-  if (score <= 49) return "amber";
-  if (score <= 74) return "lgreen";
-  return "green";
+  if (score <= 25) return "poor";
+  if (score <= 50) return "fair";
+  if (score <= 75) return "good";
+  return "excellent";
 };
 
 const getBandName = (score: number): string => {
-  if (score <= 24) return "Red (0–24)";
-  if (score <= 49) return "Amber (25–49)";
-  if (score <= 74) return "Light Green (50–74)";
-  return "Green (75–100)";
+  if (score <= 25) return "Poor (0–25)";
+  if (score <= 50) return "Fair (26–50)";
+  if (score <= 75) return "Good (51–75)";
+  return "Excellent (76–100)";
 };
 
 const getBandStyle = (bandKey: BandKey) => {
   const styles = {
-    red: { border: "border-red-200", bg: "bg-red-50", accent: "text-red-700", accentHex: "#b91c1c" },
-    amber: { border: "border-amber-200", bg: "bg-amber-50", accent: "text-amber-700", accentHex: "#b45309" },
-    lgreen: { border: "border-lime-200", bg: "bg-lime-50", accent: "text-lime-700", accentHex: "#3f6212" },
-    green: { border: "border-green-200", bg: "bg-green-50", accent: "text-green-700", accentHex: "#15803d" },
+    poor: { border: "border-red-300", bg: "bg-red-50", accent: "text-red-700", accentHex: "#dc2626" },
+    fair: { border: "border-rose-200", bg: "bg-rose-50", accent: "text-rose-600", accentHex: "#fb7185" },
+    good: { border: "border-amber-200", bg: "bg-amber-50", accent: "text-amber-700", accentHex: "#f59e0b" },
+    excellent: { border: "border-green-200", bg: "bg-green-50", accent: "text-green-700", accentHex: "#16a34a" },
   };
   return styles[bandKey];
 };
