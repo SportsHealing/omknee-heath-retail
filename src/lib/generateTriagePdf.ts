@@ -1,5 +1,5 @@
 import jsPDF from "jspdf";
-import type { TriageResults, TriageBand } from "./triageScoring";
+import type { TriageResults, TriageBand, KneeSymptomScores } from "./triageScoring";
 
 interface TriagePdfData {
   kneeScore: number;
@@ -7,8 +7,10 @@ interface TriagePdfData {
   swelling: number;
   bmi: number;
   smokingStatus: string;
+  alcoholIntake: string;
   diabetesStatus: string;
   priorKneeSurgery: string;
+  kneeSymptoms?: KneeSymptomScores;
   results: TriageResults;
 }
 
@@ -66,6 +68,13 @@ const smokingLabels: Record<string, string> = {
   ex_12m_plus: "Ex-smoker (stopped 12+ months)",
   ex_under_12m: "Ex-smoker (stopped <12 months)",
   current: "Current smoker",
+};
+
+const alcoholLabels: Record<string, string> = {
+  none: "None / rarely drink",
+  moderate: "Moderate (1-14 units/week)",
+  heavy: "Heavy (15-21 units/week)",
+  very_heavy: "Very heavy (22+ units/week)",
 };
 
 const diabetesLabels: Record<string, string> = {

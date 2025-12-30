@@ -7,6 +7,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Slider } from "@/components/ui/slider";
 import { Card } from "@/components/ui/card";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Switch } from "@/components/ui/switch";
 import { 
   ChevronRight, 
   ChevronLeft, 
@@ -18,18 +19,22 @@ import {
   AlertCircle,
   CheckCircle2,
   Loader2,
-  Download
+  Download,
+  ClipboardList
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 import {
   type SmokingStatus,
+  type AlcoholIntake,
   type DiabetesStatus,
   type PriorKneeSurgery,
+  type KneeSymptomScores,
   type TriageInputs,
   type TriageResults,
   calculateTriageResults,
-  testCases,
+  calculateKneeScoreFromSymptoms,
+  defaultKneeSymptoms,
   runTests,
 } from "@/lib/triageScoring";
 import TriageGauge from "./TriageGauge";
@@ -41,14 +46,20 @@ import { generateTriagePdf } from "@/lib/generateTriagePdf";
 // ============================================
 const WEBHOOK_URL = ""; // Set your Zapier/Power Automate webhook URL
 
-type Step = "knee" | "health" | "results";
+type Step = "symptoms" | "knee" | "health" | "results";
 
 interface FormData {
-  kneeScore: number;
+  // Knee score mode
+  useQuestionnaire: boolean;
+  manualKneeScore: number;
+  kneeSymptoms: KneeSymptomScores;
+  // Current symptoms
   painNRS: number;
   swelling: number;
+  // Health factors
   smokingStatus: SmokingStatus | "";
   cigarettesPerDay: number;
+  alcoholIntake: AlcoholIntake | "";
   heightCm: number;
   weightKg: number;
   bmi: number;
@@ -58,11 +69,14 @@ interface FormData {
 }
 
 const initialFormData: FormData = {
-  kneeScore: 50,
+  useQuestionnaire: true,
+  manualKneeScore: 50,
+  kneeSymptoms: { ...defaultKneeSymptoms },
   painNRS: 5,
   swelling: 2,
   smokingStatus: "",
   cigarettesPerDay: 0,
+  alcoholIntake: "",
   heightCm: 170,
   weightKg: 70,
   bmi: 24.2,
@@ -71,13 +85,40 @@ const initialFormData: FormData = {
   consentGDPR: false,
 };
 
+// Symptom question labels
+const symptomQuestions: { key: keyof KneeSymptomScores; label: string; tooltip: string }[] = [
+  { key: "pain", label: "Knee Pain", tooltip: "How often do you experience knee pain during daily activities?" },
+  { key: "swelling", label: "Swelling", tooltip: "How often does your knee swell up?" },
+  { key: "stiffness", label: "Stiffness", tooltip: "How often do you experience knee stiffness, especially in the morning?" },
+  { key: "locking", label: "Locking/Catching", tooltip: "Does your knee ever lock, catch, or get stuck?" },
+  { key: "givingWay", label: "Giving Way", tooltip: "Does your knee ever give way or feel unstable?" },
+  { key: "nightPain", label: "Night Pain", tooltip: "How often does knee pain disturb your sleep?" },
+  { key: "stairs", label: "Stairs Difficulty", tooltip: "How much difficulty do you have going up or down stairs?" },
+  { key: "walking", label: "Walking Distance", tooltip: "How much does your knee limit how far you can walk?" },
+  { key: "squatting", label: "Squatting", tooltip: "How much difficulty do you have squatting down?" },
+  { key: "kneeling", label: "Kneeling", tooltip: "How much difficulty do you have kneeling?" },
+  { key: "running", label: "Running/Jogging", tooltip: "How much difficulty do you have running or jogging?" },
+  { key: "twisting", label: "Twisting/Pivoting", tooltip: "How much difficulty with twisting or pivoting movements?" },
+  { key: "standingFromSitting", label: "Standing from Sitting", tooltip: "How much difficulty getting up from a chair?" },
+];
+
+const frequencyLabels = ["Never", "Rarely", "Sometimes", "Often", "Always"];
+
 export default function KneeTriageCalculator() {
-  const [step, setStep] = useState<Step>("knee");
+  const [step, setStep] = useState<Step>("symptoms");
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [results, setResults] = useState<TriageResults | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showTests, setShowTests] = useState(false);
   const [testResults, setTestResults] = useState<{ passed: boolean; results: string[] } | null>(null);
+
+  // Calculate knee score from symptoms or use manual
+  const getKneeScore = (): number => {
+    if (formData.useQuestionnaire) {
+      return calculateKneeScoreFromSymptoms(formData.kneeSymptoms);
+    }
+    return formData.manualKneeScore;
+  };
 
   // Calculate BMI from height and weight
   const calculateBMI = (heightCm: number, weightKg: number): number => {
@@ -102,13 +143,27 @@ export default function KneeTriageCalculator() {
     });
   };
 
+  const updateSymptom = (key: keyof KneeSymptomScores, value: number) => {
+    setFormData(prev => ({
+      ...prev,
+      kneeSymptoms: { ...prev.kneeSymptoms, [key]: value },
+    }));
+  };
+
   const validateStep = (currentStep: Step): boolean => {
+    if (currentStep === "symptoms") {
+      return true; // Questionnaire has defaults
+    }
     if (currentStep === "knee") {
       return true; // Sliders have defaults
     }
     if (currentStep === "health") {
       if (!formData.smokingStatus) {
         toast.error("Please select your smoking status");
+        return false;
+      }
+      if (!formData.alcoholIntake) {
+        toast.error("Please select your alcohol intake");
         return false;
       }
       if (!formData.diabetesStatus) {
@@ -131,19 +186,24 @@ export default function KneeTriageCalculator() {
   const handleNext = () => {
     if (!validateStep(step)) return;
 
-    if (step === "knee") {
+    if (step === "symptoms") {
+      setStep("knee");
+    } else if (step === "knee") {
       setStep("health");
     } else if (step === "health") {
       // Calculate results
+      const kneeScore = getKneeScore();
       const inputs: TriageInputs = {
-        kneeScore: formData.kneeScore,
+        kneeScore,
         painNRS: formData.painNRS,
         swelling: formData.swelling,
         smokingStatus: formData.smokingStatus as SmokingStatus,
         cigarettesPerDay: formData.smokingStatus === "current" ? formData.cigarettesPerDay : undefined,
+        alcoholIntake: formData.alcoholIntake as AlcoholIntake,
         bmi: formData.bmi,
         diabetesStatus: formData.diabetesStatus as DiabetesStatus,
         priorKneeSurgery: formData.priorKneeSurgery as PriorKneeSurgery,
+        kneeSymptoms: formData.useQuestionnaire ? formData.kneeSymptoms : undefined,
       };
       
       const calculatedResults = calculateTriageResults(inputs);
@@ -156,7 +216,9 @@ export default function KneeTriageCalculator() {
   };
 
   const handleBack = () => {
-    if (step === "health") {
+    if (step === "knee") {
+      setStep("symptoms");
+    } else if (step === "health") {
       setStep("knee");
     } else if (step === "results") {
       setStep("health");
@@ -186,18 +248,22 @@ export default function KneeTriageCalculator() {
       Swelling_0to5: inputs.swelling,
       SmokingStatus: inputs.smokingStatus,
       CigarettesPerDay: inputs.cigarettesPerDay ?? null,
+      AlcoholIntake: inputs.alcoholIntake,
       BMI: inputs.bmi,
       DiabetesStatus: inputs.diabetesStatus,
       PriorKneeSurgery: inputs.priorKneeSurgery,
       SmokingPoints: triageResults.smokingPoints,
+      AlcoholPoints: triageResults.alcoholPoints,
       BMIPoints: triageResults.bmiPoints,
       DiabetesPoints: triageResults.diabetesPoints,
       PriorSurgeryPoints: triageResults.priorSurgeryPoints,
       PainBoost: triageResults.painBoost,
       SwellingBoost: triageResults.swellingBoost,
-      RiskPoints_0to40: triageResults.riskPoints,
+      MechanicalBoost: triageResults.mechanicalBoost,
+      RiskPoints_0to48: triageResults.riskPoints,
       TriageScore_0to100: triageResults.triageScore,
       Band: triageResults.band,
+      KneeSymptoms: inputs.kneeSymptoms ?? null,
       Consent_GDPR: formData.consentGDPR,
     };
 
@@ -220,7 +286,7 @@ export default function KneeTriageCalculator() {
   const handleReset = () => {
     setFormData(initialFormData);
     setResults(null);
-    setStep("knee");
+    setStep("symptoms");
   };
 
   const handleRunTests = () => {
@@ -231,34 +297,41 @@ export default function KneeTriageCalculator() {
 
   // Render step indicator
   const StepIndicator = () => (
-    <div className="flex items-center justify-center gap-2 mb-8">
+    <div className="flex items-center justify-center gap-1 sm:gap-2 mb-8 flex-wrap">
       {[
-        { key: "knee", label: "Your Knee Today" },
+        { key: "symptoms", label: "Knee Function" },
+        { key: "knee", label: "Current Symptoms" },
         { key: "health", label: "Health Factors" },
-        { key: "results", label: "Your Results" },
-      ].map((s, index) => (
-        <div key={s.key} className="flex items-center">
-          <div className={cn(
-            "flex items-center justify-center w-8 h-8 rounded-full text-sm font-medium transition-colors",
-            step === s.key 
-              ? "bg-primary text-primary-foreground" 
-              : ["knee", "health"].indexOf(step) > index || step === "results"
-                ? "bg-primary/20 text-primary"
-                : "bg-muted text-muted-foreground"
-          )}>
-            {index + 1}
+        { key: "results", label: "Results" },
+      ].map((s, index) => {
+        const stepOrder = ["symptoms", "knee", "health", "results"];
+        const currentIndex = stepOrder.indexOf(step);
+        const thisIndex = stepOrder.indexOf(s.key);
+        
+        return (
+          <div key={s.key} className="flex items-center">
+            <div className={cn(
+              "flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full text-xs sm:text-sm font-medium transition-colors",
+              step === s.key 
+                ? "bg-primary text-primary-foreground" 
+                : thisIndex < currentIndex
+                  ? "bg-primary/20 text-primary"
+                  : "bg-muted text-muted-foreground"
+            )}>
+              {index + 1}
+            </div>
+            <span className={cn(
+              "ml-1 sm:ml-2 text-xs sm:text-sm hidden md:inline",
+              step === s.key ? "text-foreground font-medium" : "text-muted-foreground"
+            )}>
+              {s.label}
+            </span>
+            {index < 3 && (
+              <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 mx-1 sm:mx-2 text-muted-foreground" />
+            )}
           </div>
-          <span className={cn(
-            "ml-2 text-sm hidden sm:inline",
-            step === s.key ? "text-foreground font-medium" : "text-muted-foreground"
-          )}>
-            {s.label}
-          </span>
-          {index < 2 && (
-            <ChevronRight className="w-4 h-4 mx-2 text-muted-foreground" />
-          )}
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 
@@ -356,11 +429,134 @@ export default function KneeTriageCalculator() {
     </div>
   );
 
+  // Symptom slider component
+  const SymptomSlider = ({
+    symptomKey,
+    label,
+    tooltip,
+    value,
+  }: {
+    symptomKey: keyof KneeSymptomScores;
+    label: string;
+    tooltip: string;
+    value: number;
+  }) => (
+    <div className="space-y-2 py-3 border-b border-border last:border-0">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Label className="text-sm font-medium">{label}</Label>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Info className="w-3.5 h-3.5 text-muted-foreground cursor-help" />
+              </TooltipTrigger>
+              <TooltipContent className="max-w-xs">
+                <p>{tooltip}</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </div>
+        <span className={cn(
+          "text-sm font-semibold px-2 py-0.5 rounded",
+          value === 0 ? "bg-emerald-100 text-emerald-700" :
+          value === 1 ? "bg-lime-100 text-lime-700" :
+          value === 2 ? "bg-amber-100 text-amber-700" :
+          value === 3 ? "bg-orange-100 text-orange-700" :
+          "bg-red-100 text-red-700"
+        )}>
+          {frequencyLabels[value]}
+        </span>
+      </div>
+      <Slider
+        value={[value]}
+        onValueChange={(v) => updateSymptom(symptomKey, v[0])}
+        max={4}
+        step={1}
+        className="w-full"
+      />
+      <div className="flex justify-between text-xs text-muted-foreground">
+        <span>Never</span>
+        <span>Always</span>
+      </div>
+    </div>
+  );
+
   return (
     <div className="max-w-2xl mx-auto">
       <StepIndicator />
 
-      {/* Step 1: Knee Today */}
+      {/* Step 1: Knee Function Questionnaire */}
+      {step === "symptoms" && (
+        <Card className="p-6 md:p-8 animate-fade-up">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+              <ClipboardList className="w-5 h-5 text-primary" />
+            </div>
+            <div>
+              <h2 className="text-xl font-semibold text-foreground">Knee Function Assessment</h2>
+              <p className="text-sm text-muted-foreground">Rate how your knee affects daily activities</p>
+            </div>
+          </div>
+
+          {/* Toggle for questionnaire vs manual */}
+          <div className="flex items-center justify-between p-4 bg-muted/50 rounded-lg mb-6">
+            <div>
+              <Label className="text-sm font-medium">Use questionnaire</Label>
+              <p className="text-xs text-muted-foreground">Answer symptom questions to calculate your Knee Score</p>
+            </div>
+            <Switch
+              checked={formData.useQuestionnaire}
+              onCheckedChange={(checked) => updateField("useQuestionnaire", checked)}
+            />
+          </div>
+
+          {formData.useQuestionnaire ? (
+            <div className="space-y-1">
+              {symptomQuestions.map((q) => (
+                <SymptomSlider
+                  key={q.key}
+                  symptomKey={q.key}
+                  label={q.label}
+                  tooltip={q.tooltip}
+                  value={formData.kneeSymptoms[q.key]}
+                />
+              ))}
+              
+              {/* Calculated score preview */}
+              <div className="mt-6 p-4 bg-primary/5 rounded-lg text-center">
+                <div className="text-sm text-muted-foreground mb-1">Calculated Knee Score</div>
+                <div className="text-3xl font-bold text-primary">
+                  {getKneeScore()}<span className="text-lg text-muted-foreground">/100</span>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="space-y-6">
+              <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg text-sm text-amber-800">
+                <strong>Manual Override:</strong> Enter your Knee Score directly if you already have a clinical assessment score.
+              </div>
+              <SliderField
+                label="Knee Function Score"
+                value={formData.manualKneeScore}
+                max={100}
+                onChange={(v) => updateField("manualKneeScore", v)}
+                leftLabel="0 = Worst"
+                rightLabel="100 = Best"
+                tooltip="Enter your known knee function score from a clinical assessment."
+              />
+            </div>
+          )}
+
+          <div className="mt-8 flex justify-end">
+            <Button onClick={handleNext} size="lg">
+              Continue
+              <ChevronRight className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
+        </Card>
+      )}
+
+      {/* Step 2: Current Symptoms */}
       {step === "knee" && (
         <Card className="p-6 md:p-8 animate-fade-up">
           <div className="flex items-center gap-3 mb-6">
@@ -368,22 +564,12 @@ export default function KneeTriageCalculator() {
               <Activity className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <h2 className="text-xl font-semibold text-foreground">Your Knee Today</h2>
-              <p className="text-sm text-muted-foreground">Rate your current symptoms</p>
+              <h2 className="text-xl font-semibold text-foreground">Current Symptoms</h2>
+              <p className="text-sm text-muted-foreground">Rate your pain and swelling right now</p>
             </div>
           </div>
 
           <div className="space-y-8">
-            <SliderField
-              label="Knee Function Score"
-              value={formData.kneeScore}
-              max={100}
-              onChange={(v) => updateField("kneeScore", v)}
-              leftLabel="0 = Worst"
-              rightLabel="100 = Best"
-              tooltip="Rate your overall knee function from 0 (completely unable to use) to 100 (perfectly normal)."
-            />
-
             <SliderField
               label="Pain Level (NRS)"
               value={formData.painNRS}
@@ -403,9 +589,21 @@ export default function KneeTriageCalculator() {
               rightLabel="5 = Severe"
               tooltip="Rate the amount of swelling in your knee from 0 (none) to 5 (severe, very noticeable)."
             />
+
+            {/* Show knee score summary */}
+            <div className="p-4 bg-muted/50 rounded-lg">
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-muted-foreground">Your Knee Score:</span>
+                <span className="text-lg font-bold text-primary">{getKneeScore()}/100</span>
+              </div>
+            </div>
           </div>
 
-          <div className="mt-8 flex justify-end">
+          <div className="mt-8 flex justify-between">
+            <Button variant="outline" onClick={handleBack}>
+              <ChevronLeft className="w-4 h-4 mr-2" />
+              Back
+            </Button>
             <Button onClick={handleNext} size="lg">
               Continue
               <ChevronRight className="w-4 h-4 ml-2" />
@@ -414,7 +612,7 @@ export default function KneeTriageCalculator() {
         </Card>
       )}
 
-      {/* Step 2: Health Factors */}
+      {/* Step 3: Health Factors */}
       {step === "health" && (
         <Card className="p-6 md:p-8 animate-fade-up">
           <div className="flex items-center gap-3 mb-6">
@@ -456,6 +654,20 @@ export default function KneeTriageCalculator() {
                 />
               </div>
             )}
+
+            {/* Alcohol Intake */}
+            <RadioField
+              label="Alcohol Intake"
+              value={formData.alcoholIntake}
+              onChange={(v) => updateField("alcoholIntake", v as AlcoholIntake)}
+              options={[
+                { value: "none", label: "None / rarely drink" },
+                { value: "moderate", label: "Moderate (1-14 units per week)" },
+                { value: "heavy", label: "Heavy (15-21 units per week)" },
+                { value: "very_heavy", label: "Very heavy (22+ units per week)" },
+              ]}
+              tooltip="1 unit = half pint of beer, small glass of wine, or single spirit measure."
+            />
 
             {/* BMI Calculator */}
             <div className="space-y-3">
@@ -531,8 +743,8 @@ export default function KneeTriageCalculator() {
               options={[
                 { value: "none", label: "None" },
                 { value: "arthroscopy", label: "Arthroscopy / meniscectomy / debridement" },
-                { value: "ligament_reconstruction", label: "Ligament reconstruction / osteotomy / cartilage procedure / meniscal transplant" },
-                { value: "prior_replacement", label: "Prior partial/total knee replacement or multiple operations" },
+                { value: "ligament_reconstruction", label: "Ligament reconstruction / osteotomy / cartilage procedure" },
+                { value: "prior_replacement", label: "Prior knee replacement or multiple operations" },
               ]}
               tooltip="Previous knee surgeries may affect treatment recommendations."
             />
@@ -580,7 +792,7 @@ export default function KneeTriageCalculator() {
         </Card>
       )}
 
-      {/* Step 3: Results */}
+      {/* Step 4: Results */}
       {step === "results" && results && (
         <div className="space-y-6 animate-fade-up">
           {/* Gauge Card */}
@@ -592,7 +804,7 @@ export default function KneeTriageCalculator() {
             {/* Score Breakdown */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-6 border-t border-border">
               <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">{formData.kneeScore}</div>
+                <div className="text-2xl font-bold text-foreground">{getKneeScore()}</div>
                 <div className="text-xs text-muted-foreground">Knee Score</div>
               </div>
               <div className="text-center">
@@ -601,11 +813,50 @@ export default function KneeTriageCalculator() {
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-foreground">{results.riskPoints}</div>
-                <div className="text-xs text-muted-foreground">Risk Points (0-40)</div>
+                <div className="text-xs text-muted-foreground">Risk Points (0-48)</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary">{results.triageScore}</div>
                 <div className="text-xs text-muted-foreground">Triage Score</div>
+              </div>
+            </div>
+
+            {/* Detailed breakdown */}
+            <div className="mt-6 pt-4 border-t border-border">
+              <div className="text-sm font-medium text-muted-foreground mb-3">Risk Factor Breakdown</div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                <div className="bg-muted/50 rounded p-2">
+                  <div className="text-muted-foreground">Smoking</div>
+                  <div className="font-semibold">{results.smokingPoints}/8</div>
+                </div>
+                <div className="bg-muted/50 rounded p-2">
+                  <div className="text-muted-foreground">Alcohol</div>
+                  <div className="font-semibold">{results.alcoholPoints}/8</div>
+                </div>
+                <div className="bg-muted/50 rounded p-2">
+                  <div className="text-muted-foreground">BMI</div>
+                  <div className="font-semibold">{results.bmiPoints}/10</div>
+                </div>
+                <div className="bg-muted/50 rounded p-2">
+                  <div className="text-muted-foreground">Diabetes</div>
+                  <div className="font-semibold">{results.diabetesPoints}/8</div>
+                </div>
+                <div className="bg-muted/50 rounded p-2">
+                  <div className="text-muted-foreground">Prior Surgery</div>
+                  <div className="font-semibold">{results.priorSurgeryPoints}/10</div>
+                </div>
+                <div className="bg-muted/50 rounded p-2">
+                  <div className="text-muted-foreground">Pain Boost</div>
+                  <div className="font-semibold">{results.painBoost}/6</div>
+                </div>
+                <div className="bg-muted/50 rounded p-2">
+                  <div className="text-muted-foreground">Swelling Boost</div>
+                  <div className="font-semibold">{results.swellingBoost}/6</div>
+                </div>
+                <div className="bg-muted/50 rounded p-2">
+                  <div className="text-muted-foreground">Mechanical</div>
+                  <div className="font-semibold">{results.mechanicalBoost}/6</div>
+                </div>
               </div>
             </div>
           </Card>
@@ -635,13 +886,15 @@ export default function KneeTriageCalculator() {
               variant="outline" 
               onClick={() => {
                 generateTriagePdf({
-                  kneeScore: formData.kneeScore,
+                  kneeScore: getKneeScore(),
                   painNRS: formData.painNRS,
                   swelling: formData.swelling,
                   bmi: formData.bmi,
                   smokingStatus: formData.smokingStatus as string,
+                  alcoholIntake: formData.alcoholIntake as string,
                   diabetesStatus: formData.diabetesStatus as string,
                   priorKneeSurgery: formData.priorKneeSurgery as string,
+                  kneeSymptoms: formData.useQuestionnaire ? formData.kneeSymptoms : undefined,
                   results: results,
                 });
                 toast.success("PDF downloaded successfully");

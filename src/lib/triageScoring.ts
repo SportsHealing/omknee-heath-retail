@@ -7,6 +7,12 @@ export type SmokingStatus =
   | "ex_under_12m"
   | "current";
 
+export type AlcoholIntake = 
+  | "none"
+  | "moderate"    // 1-14 units/week
+  | "heavy"       // 15-21 units/week
+  | "very_heavy"; // 22+ units/week
+
 export type DiabetesStatus = 
   | "none"
   | "prediabetes"
@@ -19,31 +25,103 @@ export type PriorKneeSurgery =
   | "ligament_reconstruction"
   | "prior_replacement";
 
+// Knee symptom questionnaire answers (0-4 scale: Never=0, Rarely=1, Sometimes=2, Often=3, Always=4)
+export interface KneeSymptomScores {
+  pain: number;           // 0-4: How often do you experience knee pain?
+  swelling: number;       // 0-4: How often does your knee swell?
+  locking: number;        // 0-4: How often does your knee lock or catch?
+  givingWay: number;      // 0-4: How often does your knee give way or feel unstable?
+  stiffness: number;      // 0-4: How often do you experience knee stiffness?
+  stairs: number;         // 0-4: How much difficulty do you have with stairs?
+  walking: number;        // 0-4: How much difficulty do you have walking distances?
+  nightPain: number;      // 0-4: How often does knee pain disturb your sleep?
+  squatting: number;      // 0-4: How much difficulty do you have squatting?
+  kneeling: number;       // 0-4: How much difficulty do you have kneeling?
+  running: number;        // 0-4: How much difficulty do you have running?
+  twisting: number;       // 0-4: How much difficulty do you have with twisting/pivoting?
+  standingFromSitting: number; // 0-4: How much difficulty do you have standing from sitting?
+}
+
 export interface TriageInputs {
-  kneeScore: number; // 0-100, 100 = best
+  kneeScore: number; // 0-100, 100 = best (calculated or manual)
   painNRS: number; // 0-10
   swelling: number; // 0-5
   smokingStatus: SmokingStatus;
   cigarettesPerDay?: number;
+  alcoholIntake: AlcoholIntake;
   bmi: number;
   diabetesStatus: DiabetesStatus;
   priorKneeSurgery: PriorKneeSurgery;
+  // Optional symptom details for enhanced analysis
+  kneeSymptoms?: KneeSymptomScores;
 }
 
 export interface TriageResults {
   severity: number; // 0-100
   smokingPoints: number; // 0-8
+  alcoholPoints: number; // 0-8
   bmiPoints: number; // 0-10
   diabetesPoints: number; // 0-8
   priorSurgeryPoints: number; // 0-10
   painBoost: number; // 0-6
   swellingBoost: number; // 0-6
-  riskPoints: number; // 0-40
+  mechanicalBoost: number; // 0-6 (locking + giving way)
+  riskPoints: number; // 0-48 (updated cap)
   triageScore: number; // 0-100
   band: TriageBand;
 }
 
 export type TriageBand = "0-24" | "25-49" | "50-74" | "75-100";
+
+// ============================================
+// KNEE SCORE CALCULATION FROM QUESTIONNAIRE
+// ============================================
+
+// Calculate knee score from symptom questionnaire (0-100, 100 = best)
+// Each symptom is 0-4 (worst), so max raw score = 52 (13 questions * 4)
+// We invert and scale to 0-100 where 100 = no symptoms
+export function calculateKneeScoreFromSymptoms(symptoms: KneeSymptomScores): number {
+  const maxRawScore = 52; // 13 questions * 4 max each
+  const rawScore = 
+    symptoms.pain +
+    symptoms.swelling +
+    symptoms.locking +
+    symptoms.givingWay +
+    symptoms.stiffness +
+    symptoms.stairs +
+    symptoms.walking +
+    symptoms.nightPain +
+    symptoms.squatting +
+    symptoms.kneeling +
+    symptoms.running +
+    symptoms.twisting +
+    symptoms.standingFromSitting;
+  
+  // Invert: 0 raw = 100 knee score, 52 raw = 0 knee score
+  const kneeScore = Math.round(((maxRawScore - rawScore) / maxRawScore) * 100);
+  return Math.max(0, Math.min(100, kneeScore));
+}
+
+// Default symptom scores (all 0 = no symptoms)
+export const defaultKneeSymptoms: KneeSymptomScores = {
+  pain: 0,
+  swelling: 0,
+  locking: 0,
+  givingWay: 0,
+  stiffness: 0,
+  stairs: 0,
+  walking: 0,
+  nightPain: 0,
+  squatting: 0,
+  kneeling: 0,
+  running: 0,
+  twisting: 0,
+  standingFromSitting: 0,
+};
+
+// ============================================
+// SCORING FUNCTIONS
+// ============================================
 
 // Calculate severity from knee score
 export function calculateSeverity(kneeScore: number): number {
@@ -68,6 +146,22 @@ export function calculateSmokingPoints(
         return 8;
       }
       return 6;
+    default:
+      return 0;
+  }
+}
+
+// Calculate alcohol points (0-8 scale)
+export function calculateAlcoholPoints(intake: AlcoholIntake): number {
+  switch (intake) {
+    case "none":
+      return 0;
+    case "moderate": // 1-14 units/week
+      return 2;
+    case "heavy": // 15-21 units/week
+      return 5;
+    case "very_heavy": // 22+ units/week
+      return 8;
     default:
       return 0;
   }
@@ -132,22 +226,42 @@ export function calculateSwellingBoost(swelling: number): number {
   return boostMap[swelling] ?? 0;
 }
 
-// Calculate risk points (capped at 40)
+// Calculate mechanical symptom boost (locking + giving way)
+// Adds extra risk for mechanical symptoms that may indicate structural damage
+export function calculateMechanicalBoost(symptoms?: KneeSymptomScores): number {
+  if (!symptoms) return 0;
+  
+  // Locking: 0-4 scale, Giving way: 0-4 scale
+  // Combined max = 8, scaled to 0-6
+  const lockingScore = symptoms.locking;
+  const givingWayScore = symptoms.givingWay;
+  const combined = lockingScore + givingWayScore;
+  
+  if (combined === 0) return 0;
+  if (combined <= 2) return 2;
+  if (combined <= 4) return 4;
+  return 6; // 5-8
+}
+
+// Calculate risk points (capped at 48 to account for alcohol and mechanical boost)
 export function calculateRiskPoints(
   smokingPoints: number,
+  alcoholPoints: number,
   bmiPoints: number,
   diabetesPoints: number,
   priorSurgeryPoints: number,
   painBoost: number,
-  swellingBoost: number
+  swellingBoost: number,
+  mechanicalBoost: number
 ): number {
-  const total = smokingPoints + bmiPoints + diabetesPoints + priorSurgeryPoints + painBoost + swellingBoost;
-  return Math.min(40, total);
+  const total = smokingPoints + alcoholPoints + bmiPoints + diabetesPoints + 
+                priorSurgeryPoints + painBoost + swellingBoost + mechanicalBoost;
+  return Math.min(48, total);
 }
 
 // Calculate final triage score
 export function calculateTriageScore(severity: number, riskPoints: number): number {
-  const riskPct = (riskPoints / 40) * 100;
+  const riskPct = (riskPoints / 48) * 100; // Updated to 48 max
   return Math.round(0.70 * severity + 0.30 * riskPct);
 }
 
@@ -163,19 +277,23 @@ export function getBand(triageScore: number): TriageBand {
 export function calculateTriageResults(inputs: TriageInputs): TriageResults {
   const severity = calculateSeverity(inputs.kneeScore);
   const smokingPoints = calculateSmokingPoints(inputs.smokingStatus, inputs.cigarettesPerDay);
+  const alcoholPoints = calculateAlcoholPoints(inputs.alcoholIntake);
   const bmiPoints = calculateBMIPoints(inputs.bmi);
   const diabetesPoints = calculateDiabetesPoints(inputs.diabetesStatus);
   const priorSurgeryPoints = calculatePriorSurgeryPoints(inputs.priorKneeSurgery);
   const painBoost = calculatePainBoost(inputs.painNRS);
   const swellingBoost = calculateSwellingBoost(inputs.swelling);
+  const mechanicalBoost = calculateMechanicalBoost(inputs.kneeSymptoms);
   
   const riskPoints = calculateRiskPoints(
     smokingPoints,
+    alcoholPoints,
     bmiPoints,
     diabetesPoints,
     priorSurgeryPoints,
     painBoost,
-    swellingBoost
+    swellingBoost,
+    mechanicalBoost
   );
   
   const triageScore = calculateTriageScore(severity, riskPoints);
@@ -184,11 +302,13 @@ export function calculateTriageResults(inputs: TriageInputs): TriageResults {
   return {
     severity,
     smokingPoints,
+    alcoholPoints,
     bmiPoints,
     diabetesPoints,
     priorSurgeryPoints,
     painBoost,
     swellingBoost,
+    mechanicalBoost,
     riskPoints,
     triageScore,
     band,
@@ -214,6 +334,7 @@ export const testCases: TestCase[] = [
       painNRS: 2,
       swelling: 0,
       smokingStatus: "never",
+      alcoholIntake: "none",
       bmi: 24,
       diabetesStatus: "none",
       priorKneeSurgery: "none",
@@ -229,12 +350,19 @@ export const testCases: TestCase[] = [
       swelling: 5,
       smokingStatus: "current",
       cigarettesPerDay: 15,
+      alcoholIntake: "very_heavy",
       bmi: 38,
       diabetesStatus: "insulin_poor_control",
       priorKneeSurgery: "prior_replacement",
+      kneeSymptoms: {
+        ...defaultKneeSymptoms,
+        locking: 4,
+        givingWay: 4,
+      },
     },
-    // Severity=60, SmokingPoints=8, BMIPoints=10, DiabetesPoints=8, PriorSurgeryPoints=10, PainBoost=6, SwellingBoost=6
-    // Total risk = 8+10+8+10+6+6 = 48 -> capped at 40
+    // Severity=60, SmokingPoints=8, AlcoholPoints=8, BMIPoints=10, DiabetesPoints=8, 
+    // PriorSurgeryPoints=10, PainBoost=6, SwellingBoost=6, MechanicalBoost=6
+    // Total risk = 8+8+10+8+10+6+6+6 = 62 -> capped at 48
     // RiskPct = 100
     // TriageScore = 0.7*60 + 0.3*100 = 42 + 30 = 72
     expectedTriageScore: 72,
@@ -247,16 +375,43 @@ export const testCases: TestCase[] = [
       painNRS: 6,
       swelling: 2,
       smokingStatus: "ex_12m_plus",
+      alcoholIntake: "moderate",
       bmi: 32,
       diabetesStatus: "prediabetes",
       priorKneeSurgery: "arthroscopy",
     },
-    // Severity=35, SmokingPoints=1, BMIPoints=5, DiabetesPoints=2, PriorSurgeryPoints=5, PainBoost=3, SwellingBoost=2
-    // Total risk = 1+5+2+5+3+2 = 18
-    // RiskPct = (18/40)*100 = 45
-    // TriageScore = 0.7*35 + 0.3*45 = 24.5 + 13.5 = 38
-    expectedTriageScore: 38,
+    // Severity=35, SmokingPoints=1, AlcoholPoints=2, BMIPoints=5, DiabetesPoints=2, 
+    // PriorSurgeryPoints=5, PainBoost=3, SwellingBoost=2, MechanicalBoost=0
+    // Total risk = 1+2+5+2+5+3+2+0 = 20
+    // RiskPct = (20/48)*100 = 41.67
+    // TriageScore = 0.7*35 + 0.3*41.67 = 24.5 + 12.5 = 37
+    expectedTriageScore: 37,
     expectedBand: "25-49",
+  },
+  {
+    name: "Mechanical Symptoms Example",
+    inputs: {
+      kneeScore: 70,
+      painNRS: 5,
+      swelling: 1,
+      smokingStatus: "never",
+      alcoholIntake: "none",
+      bmi: 26,
+      diabetesStatus: "none",
+      priorKneeSurgery: "none",
+      kneeSymptoms: {
+        ...defaultKneeSymptoms,
+        locking: 3,
+        givingWay: 2,
+      },
+    },
+    // Severity=30, SmokingPoints=0, AlcoholPoints=0, BMIPoints=0, DiabetesPoints=0,
+    // PriorSurgeryPoints=0, PainBoost=0, SwellingBoost=1, MechanicalBoost=4
+    // Total risk = 0+0+0+0+0+0+1+4 = 5
+    // RiskPct = (5/48)*100 = 10.42
+    // TriageScore = 0.7*30 + 0.3*10.42 = 21 + 3.13 = 24
+    expectedTriageScore: 24,
+    expectedBand: "0-24",
   },
 ];
 
