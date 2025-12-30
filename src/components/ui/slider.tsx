@@ -2,22 +2,41 @@ import * as React from "react";
 import * as SliderPrimitive from "@radix-ui/react-slider";
 
 import { cn } from "@/lib/utils";
+import { haptics } from "@/lib/haptics";
 
 const Slider = React.forwardRef<
   React.ElementRef<typeof SliderPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
->(({ className, ...props }, ref) => (
-  <SliderPrimitive.Root
-    ref={ref}
-    className={cn("relative flex w-full touch-pan-y select-none items-center cursor-pointer", className)}
-    {...props}
-  >
-    <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden rounded-full bg-secondary cursor-pointer">
-      <SliderPrimitive.Range className="absolute h-full bg-primary" />
-    </SliderPrimitive.Track>
-    <SliderPrimitive.Thumb className="block h-6 w-6 rounded-full border-2 border-primary bg-background ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-grab active:cursor-grabbing touch-manipulation" />
-  </SliderPrimitive.Root>
-));
+>(({ className, onValueChange, ...props }, ref) => {
+  const lastValueRef = React.useRef<number | null>(null);
+
+  const handleValueChange = React.useCallback((value: number[]) => {
+    // Trigger haptic feedback when value changes significantly
+    if (lastValueRef.current !== null) {
+      const currentValue = Math.round(value[0]);
+      const lastValue = Math.round(lastValueRef.current);
+      if (currentValue !== lastValue) {
+        haptics.light();
+      }
+    }
+    lastValueRef.current = value[0];
+    onValueChange?.(value);
+  }, [onValueChange]);
+
+  return (
+    <SliderPrimitive.Root
+      ref={ref}
+      className={cn("relative flex w-full touch-pan-y select-none items-center cursor-pointer", className)}
+      onValueChange={handleValueChange}
+      {...props}
+    >
+      <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden rounded-full bg-secondary cursor-pointer">
+        <SliderPrimitive.Range className="absolute h-full bg-primary" />
+      </SliderPrimitive.Track>
+      <SliderPrimitive.Thumb className="block h-6 w-6 rounded-full border-2 border-primary bg-background ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-grab active:cursor-grabbing touch-manipulation" />
+    </SliderPrimitive.Root>
+  );
+});
 Slider.displayName = SliderPrimitive.Root.displayName;
 
 export { Slider };
