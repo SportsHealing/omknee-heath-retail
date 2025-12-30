@@ -15,37 +15,29 @@ interface TriagePdfData {
 }
 
 const bandLabels: Record<TriageBand, string> = {
-  "0-24": "Self-Management Pathway",
-  "25-49": "Guided Care Pathway",
-  "50-74": "Clinician Review Recommended",
-  "75-100": "Expedited Clinician Review",
+  "0-25": "Poor Knee Health — Expedited Review",
+  "26-50": "Fair Knee Health — Clinician Review",
+  "51-75": "Good Knee Health — Guided Care",
+  "76-100": "Excellent Knee Health — Self-Management",
 };
 
 const bandColors: Record<TriageBand, [number, number, number]> = {
-  "0-24": [34, 197, 94],    // green
-  "25-49": [245, 158, 11],  // amber
-  "50-74": [249, 115, 22],  // orange
-  "75-100": [239, 68, 68],  // red
+  "0-25": [220, 38, 38],    // dark red
+  "26-50": [251, 113, 133], // light red (rose)
+  "51-75": [245, 158, 11],  // amber
+  "76-100": [22, 163, 74],  // green
 };
 
 const recommendations: Record<TriageBand, string[]> = {
-  "0-24": [
-    "Continue self-care with education on joint protection",
-    "Gentle strengthening exercises (focus on quadriceps and hip stability)",
-    "Activity modification to reduce aggravating movements",
-    "Optional: OTC topical NSAID if appropriate for pain relief",
-    "Swelling management: ice, compression, elevation as needed",
-    "Monitor symptoms and reassess if no improvement in 2-4 weeks",
+  "0-25": [
+    "Priority clinical assessment required",
+    "Screen for red flag symptoms (hot swollen joint, fever, inability to weight bear)",
+    "Suspected DVT requires urgent evaluation",
+    "True mechanical locking needs specialist review",
+    "If any red flags present: seek urgent care or A&E",
+    "Imaging and specialist referral likely needed",
   ],
-  "25-49": [
-    "Structured physiotherapy plan with progressive strengthening",
-    "Guided exercises targeting specific deficits",
-    "If swelling/pain persists >2-4 weeks, consider imaging",
-    "X-ray if osteoarthritis pattern suspected",
-    "MRI if meniscal or ligament symptoms present",
-    "Remote clinician review available for personalised guidance",
-  ],
-  "50-74": [
+  "26-50": [
     "In-person or virtual clinician assessment recommended",
     "Imaging likely required based on clinical picture",
     "MRI if instability, locking, or ligament concerns",
@@ -53,13 +45,21 @@ const recommendations: Record<TriageBand, string[]> = {
     "Ultrasound if effusion guidance needed",
     "Consider baseline bloods if systemic inflammatory or metabolic risk",
   ],
-  "75-100": [
-    "Priority clinical assessment required",
-    "Screen for red flag symptoms (hot swollen joint, fever, inability to weight bear)",
-    "Suspected DVT requires urgent evaluation",
-    "True mechanical locking needs specialist review",
-    "If any red flags present: seek urgent care or A&E",
-    "Imaging and specialist referral likely needed",
+  "51-75": [
+    "Structured physiotherapy plan with progressive strengthening",
+    "Guided exercises targeting specific deficits",
+    "If swelling/pain persists >2-4 weeks, consider imaging",
+    "X-ray if osteoarthritis pattern suspected",
+    "MRI if meniscal or ligament symptoms present",
+    "Remote clinician review available for personalised guidance",
+  ],
+  "76-100": [
+    "Continue self-care with education on joint protection",
+    "Gentle strengthening exercises (focus on quadriceps and hip stability)",
+    "Activity modification to reduce aggravating movements",
+    "Optional: OTC topical NSAID if appropriate for pain relief",
+    "Swelling management: ice, compression, elevation as needed",
+    "Monitor symptoms and reassess if no improvement in 2-4 weeks",
   ],
 };
 
@@ -232,7 +232,7 @@ export function generateTriagePdf(data: TriagePdfData): void {
   y += 10;
 
   // Red flag warning for high-risk
-  if (data.results.band === "75-100") {
+  if (data.results.band === "0-25") {
     if (y > 240) {
       doc.addPage();
       y = 20;

@@ -7,24 +7,24 @@ interface TriageGaugeProps {
   className?: string;
 }
 
-// Higher score = better health (inverted from original)
+// Higher score = better health: 0-25 dark red, 26-50 light red, 51-75 amber, 76-100 green
 const bandColors: Record<TriageBand, { bg: string; text: string; label: string }> = {
-  "75-100": {
+  "76-100": {
     bg: "from-emerald-400 to-emerald-500",
     text: "text-emerald-600",
     label: "Excellent Knee Health",
   },
-  "50-74": {
+  "51-75": {
     bg: "from-amber-400 to-amber-500",
     text: "text-amber-600",
     label: "Good Knee Health",
   },
-  "25-49": {
+  "26-50": {
     bg: "from-rose-300 to-rose-400",
     text: "text-rose-500",
     label: "Fair Knee Health",
   },
-  "0-24": {
+  "0-25": {
     bg: "from-red-500 to-red-600",
     text: "text-red-600",
     label: "Poor Knee Health",
@@ -79,11 +79,11 @@ export default function TriageGauge({ score, band, className }: TriageGaugeProps
               strokeLinecap="round"
             />
             
-            {/* Band labels - reversed for higher=better */}
-            <text x="30" y="70" fontSize="8" fill="hsl(var(--muted-foreground))" textAnchor="middle">0-24</text>
-            <text x="70" y="35" fontSize="8" fill="hsl(var(--muted-foreground))" textAnchor="middle">25-49</text>
-            <text x="130" y="35" fontSize="8" fill="hsl(var(--muted-foreground))" textAnchor="middle">50-74</text>
-            <text x="170" y="70" fontSize="8" fill="hsl(var(--muted-foreground))" textAnchor="middle">75-100</text>
+            {/* Band labels */}
+            <text x="30" y="70" fontSize="8" fill="hsl(var(--muted-foreground))" textAnchor="middle">0-25</text>
+            <text x="70" y="35" fontSize="8" fill="hsl(var(--muted-foreground))" textAnchor="middle">26-50</text>
+            <text x="130" y="35" fontSize="8" fill="hsl(var(--muted-foreground))" textAnchor="middle">51-75</text>
+            <text x="170" y="70" fontSize="8" fill="hsl(var(--muted-foreground))" textAnchor="middle">76-100</text>
           </svg>
         </div>
         

@@ -5,10 +5,10 @@ interface RAGGaugeProps {
 }
 
 const getScoreBand = (score: number) => {
-  if (score >= 75) return { label: "Excellent Knee Health", color: "#16a34a" }; // green
-  if (score >= 50) return { label: "Good Knee Health", color: "#f59e0b" }; // amber
-  if (score >= 25) return { label: "Fair Knee Health", color: "#fb7185" }; // light red
-  return { label: "Poor Knee Health", color: "#dc2626" }; // red
+  if (score >= 76) return { label: "Excellent Knee Health", color: "#16a34a" }; // green
+  if (score >= 51) return { label: "Good Knee Health", color: "#f59e0b" }; // amber
+  if (score >= 26) return { label: "Fair Knee Health", color: "#fb7185" }; // light red
+  return { label: "Poor Knee Health", color: "#dc2626" }; // dark red (0-25)
 };
 
 const RAGGauge = ({ score, label, size = "md" }: RAGGaugeProps) => {
