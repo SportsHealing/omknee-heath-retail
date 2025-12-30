@@ -34,7 +34,7 @@ const RAGGauge = ({ score, label, size = "md" }: RAGGaugeProps) => {
         className="relative w-full"
         style={{ height: config.gaugeH, maxWidth: config.arcW + 60 }}
       >
-        {/* Arc with conic gradient */}
+        {/* Arc with conic gradient - 0 on left (red), 100 on right (green) */}
         <div
           className="absolute left-1/2 -translate-x-1/2 border border-border/20"
           style={{
@@ -51,6 +51,7 @@ const RAGGauge = ({ score, label, size = "md" }: RAGGaugeProps) => {
             )`,
             WebkitMask: `radial-gradient(circle at 50% 100%, transparent 0 62%, #000 62%)`,
             mask: `radial-gradient(circle at 50% 100%, transparent 0 62%, #000 62%)`,
+            transform: 'scaleX(-1)',
           }}
         />
         
