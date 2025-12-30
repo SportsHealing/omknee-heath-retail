@@ -249,10 +249,11 @@ const FullKneeAssessment = ({ onBack }: FullKneeAssessmentProps) => {
     return total;
   };
 
+  // Max score: pain(10) + sleep(10) + swelling(5) + instability(5) + stiffness(10) + stairs(5) + function(10) = 55
   const getScoreBand = (score: number) => {
-    if (score < 18) return { label: "Optimal", color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-200" };
-    if (score < 35) return { label: "Green", color: "text-green-600", bg: "bg-green-50", border: "border-green-200" };
-    if (score < 50) return { label: "Amber", color: "text-amber-600", bg: "bg-amber-50", border: "border-amber-200" };
+    if (score < 14) return { label: "Optimal", color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-200" };
+    if (score < 28) return { label: "Green", color: "text-green-600", bg: "bg-green-50", border: "border-green-200" };
+    if (score < 42) return { label: "Amber", color: "text-amber-600", bg: "bg-amber-50", border: "border-amber-200" };
     return { label: "Red", color: "text-red-600", bg: "bg-red-50", border: "border-red-200" };
   };
 
@@ -611,7 +612,7 @@ const FullKneeAssessment = ({ onBack }: FullKneeAssessmentProps) => {
             <SliderField label="Instability" value={formData.instability} onChange={(v) => updateField("instability", v)} min={0} max={5} leftLabel="0 - Stable" rightLabel="5 - Very unstable" />
             <SliderField label="Stiffness" value={formData.stiffness} onChange={(v) => updateField("stiffness", v)} min={0} max={10} leftLabel="0 - None" rightLabel="10 - Severe" />
             <SliderField label="Difficulty with Stairs" value={formData.stairs} onChange={(v) => updateField("stairs", v)} min={0} max={5} leftLabel="0 - Easy" rightLabel="5 - Cannot use" />
-            <SliderField label="Overall Function" value={formData.function} onChange={(v) => updateField("function", v)} min={0} max={5} leftLabel="0 - Normal" rightLabel="5 - Severely limited" />
+            <SliderField label="Overall Function" value={formData.function} onChange={(v) => updateField("function", v)} min={0} max={10} leftLabel="0 - Normal" rightLabel="10 - Severely limited" />
           </div>
         )}
 
