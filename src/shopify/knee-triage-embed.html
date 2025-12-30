@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knee Assessment Triage Calculator - SportsHealing/OmKneeHealth</title>
+  <style>
+    :root {
+      --primary: #2d5a4a;
+      --primary-light: #e8f0ed;
+      --text: #1a1a1a;
+      --text-muted: #666;
+      --border: #e0e0e0;
+      --bg: #fafaf8;
+      --white: #ffffff;
+      --green: #22c55e;
+      --amber: #f59e0b;
+      --orange: #f97316;
+      --red: #ef4444;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    
+    .header h1 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    
+    .header p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+    
+    .disclaimer {
+      background: #fef3c7;
+      border: 1px solid #f59e0b;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 24px;
+      font-size: 0.875rem;
+      color: #92400e;
+    }
+    
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+    
+    .step-indicator {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    
+    .step {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      font-weight: 600;
+      background: var(--border);
+      color: var(--text-muted);
+    }
+    
+    .step.active {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .step.completed {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+    
+    .form-group {
+      margin-bottom: 24px;
+    }
+    
+    .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 8px;
+      font-size: 0.875rem;
+    }
+    
+    .slider-container {
+      margin-top: 12px;
+    }
+    
+    .slider-value {
+      text-align: right;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    input[type="range"] {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: var(--border);
+      outline: none;
+      -webkit-appearance: none;
+    }
+    
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--primary);
+      cursor: pointer;
+    }
+    
+    .slider-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .radio-option:hover {
+      background: var(--primary-light);
+    }
+    
+    .radio-option.selected {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+    
+    .radio-option input {
+      display: none;
+    }
+    
+    .radio-circle {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .radio-option.selected .radio-circle {
+      border-color: var(--primary);
+    }
+    
+    .radio-option.selected .radio-circle::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+    
+    input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    
+    .bmi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+    }
+    
+    .bmi-grid label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    
+    .checkbox-container {
+      display: flex;
+      gap: 12px;
+      padding: 16px;
+      background: var(--bg);
+      border-radius: 8px;
+    }
+    
+    .checkbox-container input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--primary);
+    }
+    
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+    
+    .btn-primary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    .btn-outline {
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    
+    .btn-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 24px;
+    }
+    
+    /* Gauge Styles */
+    .gauge-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 0;
+    }
+    
+    .gauge {
+      position: relative;
+      width: 200px;
+      height: 100px;
+      overflow: hidden;
+    }
+    
+    .gauge svg {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .gauge-needle {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      height: 70px;
+      background: linear-gradient(to top, var(--text), var(--text-muted));
+      border-radius: 2px;
+      transform-origin: bottom center;
+      transition: transform 0.7s ease-out;
+    }
+    
+    .gauge-center {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border: 4px solid var(--text);
+      border-radius: 50%;
+      transform: translate(-50%, 50%);
+    }
+    
+    .score-display {
+      text-align: center;
+      margin-top: 16px;
+    }
+    
+    .score-number {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    
+    .score-label {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    
+    .band-badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 20px;
+      color: white;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+    
+    .band-0-24 { background: var(--green); }
+    .band-25-49 { background: var(--amber); }
+    .band-50-74 { background: var(--orange); }
+    .band-75-100 { background: var(--red); }
+    
+    .score-breakdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    
+    .score-breakdown .value {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    .score-breakdown .label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    
+    .recommendations {
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 16px;
+    }
+    
+    .rec-green { background: #dcfce7; border: 2px solid #22c55e; }
+    .rec-amber { background: #fef3c7; border: 2px solid #f59e0b; }
+    .rec-orange { background: #ffedd5; border: 2px solid #f97316; }
+    .rec-red { background: #fee2e2; border: 2px solid #ef4444; }
+    
+    .recommendations h3 {
+      font-size: 1.125rem;
+      margin-bottom: 12px;
+    }
+    
+    .recommendations ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .recommendations li {
+      padding: 4px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 0.875rem;
+    }
+    
+    .recommendations li::before {
+      content: '•';
+      position: absolute;
+      left: 8px;
+      color: var(--primary);
+    }
+    
+    .privacy-note {
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-top: 24px;
+    }
+    
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <p style="color: var(--primary); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">SportsHealing / OmKneeHealth</p>
+      <h1>Knee Assessment Triage Calculator</h1>
+      <p>Assess your knee symptoms and health factors for personalised guidance</p>
+    </div>
+    
+    <div class="disclaimer">
+      <strong>Not Medical Advice:</strong> This calculator is for educational purposes only and does not replace professional medical evaluation.
+    </div>
+    
+    <div class="step-indicator">
+      <div class="step active" id="step1-indicator">1</div>
+      <div class="step" id="step2-indicator">2</div>
+      <div class="step" id="step3-indicator">3</div>
+    </div>
+    
+    <!-- Step 1: Knee Today -->
+    <div id="step1" class="card">
+      <h2 style="margin-bottom: 16px;">Your Knee Today</h2>
+      
+      <div class="form-group">
+        <label>Knee Function Score (0-100, where 100 = best)</label>
+        <div class="slider-value" id="kneeScoreValue">50</div>
+        <div class="slider-container">
+          <input type="range" id="kneeScore" min="0" max="100" value="50">
+          <div class="slider-labels">
+            <span>0 = Worst</span>
+            <span>100 = Best</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label>Pain Level (0-10)</label>
+        <div class="slider-value" id="painValue">5</div>
+        <div class="slider-container">
+          <input type="range" id="painNRS" min="0" max="10" value="5">
+          <div class="slider-labels">
+            <span>0 = No pain</span>
+            <span>10 = Worst pain</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label>Swelling (0-5)</label>
+        <div class="slider-value" id="swellingValue">2</div>
+        <div class="slider-container">
+          <input type="range" id="swelling" min="0" max="5" value="2">
+          <div class="slider-labels">
+            <span>0 = None</span>
+            <span>5 = Severe</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="btn-row">
+        <div></div>
+        <button class="btn btn-primary" onclick="goToStep(2)">Continue →</button>
+      </div>
+    </div>
+    
+    <!-- Step 2: Health Factors -->
+    <div id="step2" class="card hidden">
+      <h2 style="margin-bottom: 16px;">Health Factors</h2>
+      
+      <div class="form-group">
+        <label>Smoking Status</label>
+        <div class="radio-group" id="smokingGroup">
+          <div class="radio-option" onclick="selectRadio('smoking', 'never')">
+            <div class="radio-circle"></div>
+            <span>Never smoked</span>
+          </div>
+          <div class="radio-option" onclick="selectRadio('smoking', 'ex_12m_plus')">
+            <div class="radio-circle"></div>
+            <span>Ex-smoker (stopped ≥12 months)</span>
+          </div>
+          <div class="radio-option" onclick="selectRadio('smoking', 'ex_under_12m')">
+            <div class="radio-circle"></div>
+            <span>Ex-smoker (stopped <12 months)</span>
+          </div>
+          <div class="radio-option" onclick="selectRadio('smoking', 'current')">
+            <div class="radio-circle"></div>
+            <span>Current smoker</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group hidden" id="cigarettesGroup">
+        <label>Cigarettes per day</label>
+        <input type="number" id="cigarettesPerDay" min="0" max="100" value="0">
+      </div>
+      
+      <div class="form-group">
+        <label>Body Mass Index (BMI)</label>
+        <div class="bmi-grid">
+          <div>
+            <label>Height (cm)</label>
+            <input type="number" id="heightCm" min="100" max="250" value="170" onchange="calculateBMI()">
+          </div>
+          <div>
+            <label>Weight (kg)</label>
+            <input type="number" id="weightKg" min="30" max="300" value="70" onchange="calculateBMI()">
+          </div>
+          <div>
+            <label>BMI</label>
+            <input type="number" id="bmi" step="0.1" value="24.2">
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label>Diabetes Status</label>
+        <div class="radio-group" id="diabetesGroup">
+          <div class="radio-option" onclick="selectRadio('diabetes', 'none')">
+            <div class="radio-circle"></div>
+            <span>No diabetes</span>
+          </div>
+          <div class="radio-option" onclick="selectRadio('diabetes', 'prediabetes')">
+            <div class="radio-circle"></div>
+            <span>Prediabetes / borderline</span>
+          </div>
+          <div class="radio-option" onclick="selectRadio('diabetes', 'type2_non_insulin')">
+            <div class="radio-circle"></div>
+            <span>Type 2 diabetes (non-insulin)</span>
+          </div>
+          <div class="radio-option" onclick="selectRadio('diabetes', 'insulin_poor_control')">
+            <div class="radio-circle"></div>
+            <span>Insulin-treated or poor control</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label>Prior Knee Surgery</label>
+        <div class="radio-group" id="surgeryGroup">
+          <div class="radio-option" onclick="selectRadio('surgery', 'none')">
+            <div class="radio-circle"></div>
+            <span>None</span>
+          </div>
+          <div class="radio-option" onclick="selectRadio('surgery', 'arthroscopy')">
+            <div class="radio-circle"></div>
+            <span>Arthroscopy / meniscectomy / debridement</span>
+          </div>
+          <div class="radio-option" onclick="selectRadio('surgery', 'ligament_reconstruction')">
+            <div class="radio-circle"></div>
+            <span>Ligament reconstruction / osteotomy / cartilage procedure</span>
+          </div>
+          <div class="radio-option" onclick="selectRadio('surgery', 'prior_replacement')">
+            <div class="radio-circle"></div>
+            <span>Prior knee replacement or multiple operations</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="checkbox-container">
+          <input type="checkbox" id="consent">
+          <div>
+            <label for="consent" style="font-weight: 400; margin-bottom: 0;">I consent to SportsHealing/OmKneeHealth storing my answers to provide personalised guidance.</label>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">See Privacy Policy. UK GDPR compliant. Request deletion anytime.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="btn-row">
+        <button class="btn btn-outline" onclick="goToStep(1)">← Back</button>
+        <button class="btn btn-primary" onclick="calculateAndShow()">Calculate Score</button>
+      </div>
+    </div>
+    
+    <!-- Step 3: Results -->
+    <div id="step3" class="card hidden">
+      <div class="gauge-container">
+        <div class="gauge">
+          <svg viewBox="0 0 200 100">
+            <path d="M 10 100 A 90 90 0 0 1 55 23" fill="none" stroke="#22c55e" stroke-width="16" stroke-linecap="round"/>
+            <path d="M 55 23 A 90 90 0 0 1 100 10" fill="none" stroke="#f59e0b" stroke-width="16"/>
+            <path d="M 100 10 A 90 90 0 0 1 145 23" fill="none" stroke="#f97316" stroke-width="16"/>
+            <path d="M 145 23 A 90 90 0 0 1 190 100" fill="none" stroke="#ef4444" stroke-width="16" stroke-linecap="round"/>
+            <text x="30" y="70" font-size="8" fill="#666" text-anchor="middle">0-24</text>
+            <text x="70" y="35" font-size="8" fill="#666" text-anchor="middle">25-49</text>
+            <text x="130" y="35" font-size="8" fill="#666" text-anchor="middle">50-74</text>
+            <text x="170" y="70" font-size="8" fill="#666" text-anchor="middle">75-100</text>
+          </svg>
+          <div class="gauge-needle" id="gaugeNeedle" style="transform: translateX(-50%) rotate(-90deg);"></div>
+          <div class="gauge-center"></div>
+        </div>
+        
+        <div class="score-display">
+          <div class="score-number" id="triageScoreDisplay">0</div>
+          <div class="score-label">Triage Score</div>
+          <div class="band-badge" id="bandBadge">Self-Management</div>
+        </div>
+      </div>
+      
+      <div class="score-breakdown">
+        <div>
+          <div class="value" id="resultKneeScore">-</div>
+          <div class="label">Knee Score</div>
+        </div>
+        <div>
+          <div class="value" id="resultSeverity">-</div>
+          <div class="label">Severity</div>
+        </div>
+        <div>
+          <div class="value" id="resultRiskPoints">-</div>
+          <div class="label">Risk Points</div>
+        </div>
+        <div>
+          <div class="value" id="resultTriageScore" style="color: var(--primary);">-</div>
+          <div class="label">Triage Score</div>
+        </div>
+      </div>
+      
+      <div class="recommendations" id="recommendations">
+        <!-- Filled by JS -->
+      </div>
+      
+      <div class="btn-row" style="justify-content: center; gap: 12px;">
+        <button class="btn btn-outline" onclick="goToStep(2)">← Edit</button>
+        <button class="btn btn-primary" onclick="resetForm()">New Assessment</button>
+      </div>
+    </div>
+    
+    <div class="privacy-note">
+      🔒 UK GDPR-aligned • Data minimisation • Your data is secure
+    </div>
+  </div>
+  
+  <script>
+    // ============================================
+    // CONFIGURATION - Set your webhook URL here
+    // ============================================
+    const WEBHOOK_URL = ''; // Your Zapier/Power Automate webhook URL
+    
+    // State
+    let formData = {
+      kneeScore: 50,
+      painNRS: 5,
+      swelling: 2,
+      smokingStatus: '',
+      cigarettesPerDay: 0,
+      bmi: 24.2,
+      diabetesStatus: '',
+      priorKneeSurgery: ''
+    };
+    
+    // Slider updates
+    document.getElementById('kneeScore').addEventListener('input', (e) => {
+      formData.kneeScore = parseInt(e.target.value);
+      document.getElementById('kneeScoreValue').textContent = e.target.value;
+    });
+    
+    document.getElementById('painNRS').addEventListener('input', (e) => {
+      formData.painNRS = parseInt(e.target.value);
+      document.getElementById('painValue').textContent = e.target.value;
+    });
+    
+    document.getElementById('swelling').addEventListener('input', (e) => {
+      formData.swelling = parseInt(e.target.value);
+      document.getElementById('swellingValue').textContent = e.target.value;
+    });
+    
+    // Radio selection
+    function selectRadio(group, value) {
+      const groupEl = document.getElementById(group + 'Group');
+      groupEl.querySelectorAll('.radio-option').forEach(opt => opt.classList.remove('selected'));
+      event.currentTarget.classList.add('selected');
+      
+      if (group === 'smoking') {
+        formData.smokingStatus = value;
+        document.getElementById('cigarettesGroup').classList.toggle('hidden', value !== 'current');
+      } else if (group === 'diabetes') {
+        formData.diabetesStatus = value;
+      } else if (group === 'surgery') {
+        formData.priorKneeSurgery = value;
+      }
+    }
+    
+    // BMI calculation
+    function calculateBMI() {
+      const height = parseFloat(document.getElementById('heightCm').value) / 100;
+      const weight = parseFloat(document.getElementById('weightKg').value);
+      if (height > 0 && weight > 0) {
+        const bmi = Math.round((weight / (height * height)) * 10) / 10;
+        document.getElementById('bmi').value = bmi;
+        formData.bmi = bmi;
+      }
+    }
+    
+    // Step navigation
+    function goToStep(step) {
+      document.getElementById('step1').classList.add('hidden');
+      document.getElementById('step2').classList.add('hidden');
+      document.getElementById('step3').classList.add('hidden');
+      document.getElementById('step' + step).classList.remove('hidden');
+      
+      // Update indicators
+      for (let i = 1; i <= 3; i++) {
+        const ind = document.getElementById('step' + i + '-indicator');
+        ind.classList.remove('active', 'completed');
+        if (i < step) ind.classList.add('completed');
+        if (i === step) ind.classList.add('active');
+      }
+    }
+    
+    // Scoring functions
+    function calculateSmokingPoints(status, cigs) {
+      if (status === 'never') return 0;
+      if (status === 'ex_12m_plus') return 1;
+      if (status === 'ex_under_12m') return 3;
+      if (status === 'current') return cigs >= 10 ? 8 : 6;
+      return 0;
+    }
+    
+    function calculateBMIPoints(bmi) {
+      if (bmi < 30) return 0;
+      if (bmi < 35) return 5;
+      return 10;
+    }
+    
+    function calculateDiabetesPoints(status) {
+      const map = { none: 0, prediabetes: 2, type2_non_insulin: 5, insulin_poor_control: 8 };
+      return map[status] || 0;
+    }
+    
+    function calculateSurgeryPoints(surgery) {
+      const map = { none: 0, arthroscopy: 5, ligament_reconstruction: 8, prior_replacement: 10 };
+      return map[surgery] || 0;
+    }
+    
+    function calculatePainBoost(pain) {
+      if (pain <= 5) return 0;
+      if (pain <= 7) return 3;
+      return 6;
+    }
+    
+    function calculateSwellingBoost(swelling) {
+      const map = { 0: 0, 1: 1, 2: 2, 3: 4, 4: 5, 5: 6 };
+      return map[swelling] || 0;
+    }
+    
+    function calculateAndShow() {
+      // Validate
+      formData.bmi = parseFloat(document.getElementById('bmi').value);
+      formData.cigarettesPerDay = parseInt(document.getElementById('cigarettesPerDay').value) || 0;
+      
+      if (!formData.smokingStatus || !formData.diabetesStatus || !formData.priorKneeSurgery) {
+        alert('Please complete all required fields');
+        return;
+      }
+      
+      if (!document.getElementById('consent').checked) {
+        alert('Please provide consent to continue');
+        return;
+      }
+      
+      // Calculate
+      const severity = 100 - formData.kneeScore;
+      const smokingPoints = calculateSmokingPoints(formData.smokingStatus, formData.cigarettesPerDay);
+      const bmiPoints = calculateBMIPoints(formData.bmi);
+      const diabetesPoints = calculateDiabetesPoints(formData.diabetesStatus);
+      const surgeryPoints = calculateSurgeryPoints(formData.priorKneeSurgery);
+      const painBoost = calculatePainBoost(formData.painNRS);
+      const swellingBoost = calculateSwellingBoost(formData.swelling);
+      
+      const riskPoints = Math.min(40, smokingPoints + bmiPoints + diabetesPoints + surgeryPoints + painBoost + swellingBoost);
+      const riskPct = (riskPoints / 40) * 100;
+      const triageScore = Math.round(0.70 * severity + 0.30 * riskPct);
+      
+      let band, bandLabel, bandClass, recClass;
+      if (triageScore <= 24) {
+        band = '0-24'; bandLabel = 'Self-Management'; bandClass = 'band-0-24'; recClass = 'rec-green';
+      } else if (triageScore <= 49) {
+        band = '25-49'; bandLabel = 'Guided Care'; bandClass = 'band-25-49'; recClass = 'rec-amber';
+      } else if (triageScore <= 74) {
+        band = '50-74'; bandLabel = 'Clinician Review'; bandClass = 'band-50-74'; recClass = 'rec-orange';
+      } else {
+        band = '75-100'; bandLabel = 'Expedited Review'; bandClass = 'band-75-100'; recClass = 'rec-red';
+      }
+      
+      // Update UI
+      document.getElementById('resultKneeScore').textContent = formData.kneeScore;
+      document.getElementById('resultSeverity').textContent = severity;
+      document.getElementById('resultRiskPoints').textContent = riskPoints;
+      document.getElementById('resultTriageScore').textContent = triageScore;
+      document.getElementById('triageScoreDisplay').textContent = triageScore;
+      
+      const badge = document.getElementById('bandBadge');
+      badge.textContent = bandLabel;
+      badge.className = 'band-badge ' + bandClass;
+      
+      // Gauge needle
+      const rotation = -90 + (triageScore / 100) * 180;
+      document.getElementById('gaugeNeedle').style.transform = `translateX(-50%) rotate(${rotation}deg)`;
+      
+      // Recommendations
+      const recs = {
+        '0-24': ['Self-care with education on joint protection', 'Gentle strengthening exercises', 'Activity modification', 'Optional OTC topical NSAID', 'Swelling management: ice, compression, elevation', 'Reassess in 2–4 weeks'],
+        '25-49': ['Structured physiotherapy plan', 'Progressive strengthening exercises', 'If symptoms persist >2–4 weeks, consider imaging', 'X-ray if osteoarthritis suspected', 'MRI if meniscal/ligament symptoms', 'Remote clinician review available'],
+        '50-74': ['Clinician assessment recommended', 'Imaging likely required', 'MRI if instability or locking', 'X-ray if OA pattern', 'Consider baseline bloods if systemic risk', 'Optional: HbA1c, lipids, vitamin D'],
+        '75-100': ['Priority clinical assessment required', 'Screen for red flags: hot swollen joint, fever', 'Inability to weight bear', 'Suspected DVT or infection', 'True mechanical locking', 'If red flags present: seek urgent care']
+      };
+      
+      const recEl = document.getElementById('recommendations');
+      recEl.className = 'recommendations ' + recClass;
+      recEl.innerHTML = `<h3>${bandLabel} Pathway</h3><ul>${recs[band].map(r => `<li>${r}</li>`).join('')}</ul>`;
+      
+      goToStep(3);
+      
+      // Submit to webhook
+      if (WEBHOOK_URL) {
+        fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          mode: 'no-cors',
+          body: JSON.stringify({
+            timestamp: new Date().toISOString(),
+            session_id: crypto.randomUUID(),
+            KneeScore_0to100: formData.kneeScore,
+            Severity_0to100: severity,
+            PainNRS_0to10: formData.painNRS,
+            Swelling_0to5: formData.swelling,
+            SmokingStatus: formData.smokingStatus,
+            CigarettesPerDay: formData.cigarettesPerDay,
+            BMI: formData.bmi,
+            DiabetesStatus: formData.diabetesStatus,
+            PriorKneeSurgery: formData.priorKneeSurgery,
+            SmokingPoints: smokingPoints,
+            BMIPoints: bmiPoints,
+            DiabetesPoints: diabetesPoints,
+            PriorSurgeryPoints: surgeryPoints,
+            PainBoost: painBoost,
+            SwellingBoost: swellingBoost,
+            RiskPoints_0to40: riskPoints,
+            TriageScore_0to100: triageScore,
+            Band: band,
+            Consent_GDPR: true
+          })
+        });
+      }
+    }
+    
+    function resetForm() {
+      formData = { kneeScore: 50, painNRS: 5, swelling: 2, smokingStatus: '', cigarettesPerDay: 0, bmi: 24.2, diabetesStatus: '', priorKneeSurgery: '' };
+      document.getElementById('kneeScore').value = 50;
+      document.getElementById('painNRS').value = 5;
+      document.getElementById('swelling').value = 2;
+      document.getElementById('kneeScoreValue').textContent = '50';
+      document.getElementById('painValue').textContent = '5';
+      document.getElementById('swellingValue').textContent = '2';
+      document.querySelectorAll('.radio-option').forEach(opt => opt.classList.remove('selected'));
+      document.getElementById('consent').checked = false;
+      goToStep(1);
+    }
+  </script>
+</body>
+</html>

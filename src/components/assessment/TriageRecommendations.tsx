@@ -1,0 +1,127 @@
+import type { TriageBand } from "@/lib/triageScoring";
+import { AlertTriangle, Activity, Stethoscope, Heart, ShieldCheck } from "lucide-react";
+
+interface TriageRecommendationsProps {
+  band: TriageBand;
+  className?: string;
+}
+
+interface Recommendation {
+  icon: React.ReactNode;
+  title: string;
+  items: string[];
+  urgency: string;
+}
+
+const recommendations: Record<TriageBand, Recommendation> = {
+  "0-24": {
+    icon: <ShieldCheck className="w-6 h-6 text-emerald-600" />,
+    title: "Self-Management Pathway",
+    urgency: "Reassess in 2–4 weeks",
+    items: [
+      "Continue self-care with education on joint protection",
+      "Gentle strengthening exercises (focus on quadriceps and hip stability)",
+      "Activity modification to reduce aggravating movements",
+      "Optional: OTC topical NSAID if appropriate for pain relief",
+      "Swelling management: ice, compression, elevation as needed",
+      "Monitor symptoms and reassess if no improvement",
+    ],
+  },
+  "25-49": {
+    icon: <Activity className="w-6 h-6 text-amber-600" />,
+    title: "Guided Care Pathway",
+    urgency: "Consider clinician review if no improvement in 2–4 weeks",
+    items: [
+      "Structured physiotherapy plan with progressive strengthening",
+      "Guided exercises targeting specific deficits",
+      "If swelling/pain persists >2–4 weeks → consider imaging",
+      "X-ray if osteoarthritis pattern suspected",
+      "MRI if meniscal or ligament symptoms present",
+      "Remote clinician review available for personalised guidance",
+    ],
+  },
+  "50-74": {
+    icon: <Stethoscope className="w-6 h-6 text-orange-600" />,
+    title: "Clinician Review Recommended",
+    urgency: "Book a clinical consultation",
+    items: [
+      "In-person or virtual clinician assessment recommended",
+      "Imaging likely required based on clinical picture",
+      "MRI if instability, locking, or ligament concerns",
+      "X-ray if osteoarthritis pattern suspected",
+      "Ultrasound if effusion guidance needed",
+      "Consider baseline bloods if systemic inflammatory or metabolic risk",
+      "Optional add-ons: HbA1c, lipid profile, vitamin D",
+    ],
+  },
+  "75-100": {
+    icon: <AlertTriangle className="w-6 h-6 text-red-600" />,
+    title: "Expedited Clinician Review",
+    urgency: "Seek prompt medical attention",
+    items: [
+      "Priority clinical assessment required",
+      "Screen for red flag symptoms:",
+      "• Hot, swollen joint with fever → possible infection",
+      "• Inability to weight bear → possible fracture or severe injury",
+      "• Suspected DVT (calf swelling, warmth, pain)",
+      "• True mechanical locking of the knee",
+      "• Major recent trauma",
+      "If any red flags present: seek urgent care or A&E",
+      "Imaging and specialist referral likely needed",
+    ],
+  },
+};
+
+export default function TriageRecommendations({ band, className }: TriageRecommendationsProps) {
+  const rec = recommendations[band];
+  
+  const bgColors: Record<TriageBand, string> = {
+    "0-24": "bg-emerald-50 border-emerald-200",
+    "25-49": "bg-amber-50 border-amber-200",
+    "50-74": "bg-orange-50 border-orange-200",
+    "75-100": "bg-red-50 border-red-200",
+  };
+  
+  return (
+    <div className={className}>
+      <div className={`rounded-xl border-2 p-6 ${bgColors[band]}`}>
+        <div className="flex items-center gap-3 mb-4">
+          {rec.icon}
+          <div>
+            <h3 className="text-lg font-semibold text-foreground">{rec.title}</h3>
+            <p className="text-sm font-medium text-muted-foreground">{rec.urgency}</p>
+          </div>
+        </div>
+        
+        <ul className="space-y-2">
+          {rec.items.map((item, index) => (
+            <li 
+              key={index} 
+              className={`text-sm text-foreground/80 ${item.startsWith("•") ? "ml-4" : "flex items-start gap-2"}`}
+            >
+              {!item.startsWith("•") && (
+                <Heart className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+              )}
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      {/* Red Flag Alert for high-risk band */}
+      {band === "75-100" && (
+        <div className="mt-4 p-4 bg-red-100 border-2 border-red-300 rounded-lg">
+          <div className="flex items-center gap-2 text-red-700 font-semibold mb-2">
+            <AlertTriangle className="w-5 h-5" />
+            Important Safety Information
+          </div>
+          <p className="text-sm text-red-700">
+            If you experience a hot, swollen joint with fever, inability to weight bear, 
+            severe pain following trauma, or signs of a blood clot (calf swelling/warmth), 
+            please seek emergency medical care immediately.
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
