@@ -15,13 +15,13 @@ const bandColors: Record<TriageBand, { bg: string; text: string; label: string }
     label: "Excellent Knee Health",
   },
   "50-74": {
-    bg: "from-lime-400 to-lime-500",
-    text: "text-lime-600",
+    bg: "from-amber-400 to-amber-500",
+    text: "text-amber-600",
     label: "Good Knee Health",
   },
   "25-49": {
-    bg: "from-orange-400 to-orange-500",
-    text: "text-orange-600",
+    bg: "from-rose-300 to-rose-400",
+    text: "text-rose-500",
     label: "Fair Knee Health",
   },
   "0-24": {
@@ -51,24 +51,24 @@ export default function TriageGauge({ score, band, className }: TriageGaugeProps
         {/* Gauge Arc Background - Left=Poor (red), Right=Excellent (green) */}
         <div className="absolute inset-0">
           <svg viewBox="0 0 200 100" className="w-full h-full">
-            {/* Background arc segments - reversed colors for higher=better */}
+            {/* Background arc segments - Poor=red, Fair=light red, Good=amber, Excellent=green */}
             <path
               d="M 10 100 A 90 90 0 0 1 55 23"
               fill="none"
-              stroke="#ef4444"
+              stroke="#dc2626"
               strokeWidth="16"
               strokeLinecap="round"
             />
             <path
               d="M 55 23 A 90 90 0 0 1 100 10"
               fill="none"
-              stroke="#f97316"
+              stroke="#fb7185"
               strokeWidth="16"
             />
             <path
               d="M 100 10 A 90 90 0 0 1 145 23"
               fill="none"
-              stroke="#84cc16"
+              stroke="#f59e0b"
               strokeWidth="16"
             />
             <path
