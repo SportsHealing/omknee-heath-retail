@@ -7,23 +7,24 @@ interface TriageGaugeProps {
   className?: string;
 }
 
+// Higher score = better health (inverted from original)
 const bandColors: Record<TriageBand, { bg: string; text: string; label: string }> = {
-  "0-24": {
+  "75-100": {
     bg: "from-emerald-400 to-emerald-500",
     text: "text-emerald-600",
     label: "Excellent Knee Health",
   },
-  "25-49": {
-    bg: "from-amber-400 to-amber-500",
-    text: "text-amber-600",
+  "50-74": {
+    bg: "from-lime-400 to-lime-500",
+    text: "text-lime-600",
     label: "Good Knee Health",
   },
-  "50-74": {
+  "25-49": {
     bg: "from-orange-400 to-orange-500",
     text: "text-orange-600",
     label: "Fair Knee Health",
   },
-  "75-100": {
+  "0-24": {
     bg: "from-red-500 to-red-600",
     text: "text-red-600",
     label: "Poor Knee Health",
@@ -47,38 +48,38 @@ export default function TriageGauge({ score, band, className }: TriageGaugeProps
     >
       {/* Gauge Container */}
       <div className="relative w-64 h-32 overflow-hidden">
-        {/* Gauge Arc Background */}
+        {/* Gauge Arc Background - Left=Poor (red), Right=Excellent (green) */}
         <div className="absolute inset-0">
           <svg viewBox="0 0 200 100" className="w-full h-full">
-            {/* Background arc segments */}
+            {/* Background arc segments - reversed colors for higher=better */}
             <path
               d="M 10 100 A 90 90 0 0 1 55 23"
               fill="none"
-              stroke="#22c55e"
+              stroke="#ef4444"
               strokeWidth="16"
               strokeLinecap="round"
             />
             <path
               d="M 55 23 A 90 90 0 0 1 100 10"
               fill="none"
-              stroke="#f59e0b"
+              stroke="#f97316"
               strokeWidth="16"
             />
             <path
               d="M 100 10 A 90 90 0 0 1 145 23"
               fill="none"
-              stroke="#f97316"
+              stroke="#84cc16"
               strokeWidth="16"
             />
             <path
               d="M 145 23 A 90 90 0 0 1 190 100"
               fill="none"
-              stroke="#ef4444"
+              stroke="#22c55e"
               strokeWidth="16"
               strokeLinecap="round"
             />
             
-            {/* Band labels */}
+            {/* Band labels - reversed for higher=better */}
             <text x="30" y="70" fontSize="8" fill="hsl(var(--muted-foreground))" textAnchor="middle">0-24</text>
             <text x="70" y="35" fontSize="8" fill="hsl(var(--muted-foreground))" textAnchor="middle">25-49</text>
             <text x="130" y="35" fontSize="8" fill="hsl(var(--muted-foreground))" textAnchor="middle">50-74</text>

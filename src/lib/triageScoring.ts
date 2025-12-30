@@ -259,18 +259,20 @@ export function calculateRiskPoints(
   return Math.min(48, total);
 }
 
-// Calculate final triage score
+// Calculate final triage score (inverted: 100 = best knee health, 0 = worst)
 export function calculateTriageScore(severity: number, riskPoints: number): number {
   const riskPct = (riskPoints / 48) * 100; // Updated to 48 max
-  return Math.round(0.70 * severity + 0.30 * riskPct);
+  const rawScore = Math.round(0.70 * severity + 0.30 * riskPct);
+  // Invert so higher = better knee health
+  return 100 - rawScore;
 }
 
-// Determine band from triage score
+// Determine band from triage score (higher score = better health)
 export function getBand(triageScore: number): TriageBand {
-  if (triageScore <= 24) return "0-24";
-  if (triageScore <= 49) return "25-49";
-  if (triageScore <= 74) return "50-74";
-  return "75-100";
+  if (triageScore >= 76) return "75-100";  // Excellent
+  if (triageScore >= 51) return "50-74";   // Good
+  if (triageScore >= 25) return "25-49";   // Fair
+  return "0-24";                           // Poor
 }
 
 // Main calculation function
@@ -328,7 +330,7 @@ export interface TestCase {
 
 export const testCases: TestCase[] = [
   {
-    name: "Low Risk Example",
+    name: "Low Risk Example (High Score = Excellent Health)",
     inputs: {
       kneeScore: 90,
       painNRS: 2,
@@ -339,11 +341,12 @@ export const testCases: TestCase[] = [
       diabetesStatus: "none",
       priorKneeSurgery: "none",
     },
-    expectedTriageScore: 7, // Severity=10, RiskPoints=0 -> 0.7*10 + 0.3*0 = 7
-    expectedBand: "0-24",
+    // Severity=10, RiskPoints=0 -> Raw=0.7*10 + 0.3*0 = 7 -> Inverted = 100-7 = 93
+    expectedTriageScore: 93,
+    expectedBand: "75-100",
   },
   {
-    name: "High Risk Example",
+    name: "High Risk Example (Low Score = Poor Health)",
     inputs: {
       kneeScore: 40,
       painNRS: 8,
@@ -360,13 +363,10 @@ export const testCases: TestCase[] = [
         givingWay: 4,
       },
     },
-    // Severity=60, SmokingPoints=8, AlcoholPoints=8, BMIPoints=10, DiabetesPoints=8, 
-    // PriorSurgeryPoints=10, PainBoost=6, SwellingBoost=6, MechanicalBoost=6
-    // Total risk = 8+8+10+8+10+6+6+6 = 62 -> capped at 48
-    // RiskPct = 100
-    // TriageScore = 0.7*60 + 0.3*100 = 42 + 30 = 72
-    expectedTriageScore: 72,
-    expectedBand: "50-74",
+    // Severity=60, Risk capped at 48 -> RiskPct=100
+    // Raw = 0.7*60 + 0.3*100 = 42+30 = 72 -> Inverted = 100-72 = 28
+    expectedTriageScore: 28,
+    expectedBand: "25-49",
   },
   {
     name: "Medium Risk Example",
@@ -380,13 +380,10 @@ export const testCases: TestCase[] = [
       diabetesStatus: "prediabetes",
       priorKneeSurgery: "arthroscopy",
     },
-    // Severity=35, SmokingPoints=1, AlcoholPoints=2, BMIPoints=5, DiabetesPoints=2, 
-    // PriorSurgeryPoints=5, PainBoost=3, SwellingBoost=2, MechanicalBoost=0
-    // Total risk = 1+2+5+2+5+3+2+0 = 20
-    // RiskPct = (20/48)*100 = 41.67
-    // TriageScore = 0.7*35 + 0.3*41.67 = 24.5 + 12.5 = 37
-    expectedTriageScore: 37,
-    expectedBand: "25-49",
+    // Severity=35, RiskPoints=20 -> RiskPct=41.67
+    // Raw = 0.7*35 + 0.3*41.67 = 24.5+12.5 = 37 -> Inverted = 100-37 = 63
+    expectedTriageScore: 63,
+    expectedBand: "50-74",
   },
   {
     name: "Mechanical Symptoms Example",
@@ -405,13 +402,10 @@ export const testCases: TestCase[] = [
         givingWay: 2,
       },
     },
-    // Severity=30, SmokingPoints=0, AlcoholPoints=0, BMIPoints=0, DiabetesPoints=0,
-    // PriorSurgeryPoints=0, PainBoost=0, SwellingBoost=1, MechanicalBoost=4
-    // Total risk = 0+0+0+0+0+0+1+4 = 5
-    // RiskPct = (5/48)*100 = 10.42
-    // TriageScore = 0.7*30 + 0.3*10.42 = 21 + 3.13 = 24
-    expectedTriageScore: 24,
-    expectedBand: "0-24",
+    // Severity=30, RiskPoints=5 -> RiskPct=10.42
+    // Raw = 0.7*30 + 0.3*10.42 = 21+3.13 = 24 -> Inverted = 100-24 = 76
+    expectedTriageScore: 76,
+    expectedBand: "75-100",
   },
 ];
 

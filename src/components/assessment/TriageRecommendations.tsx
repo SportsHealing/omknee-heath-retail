@@ -14,8 +14,10 @@ interface Recommendation {
   urgency: string;
 }
 
+// Now higher score = better health
+// 75-100 = Excellent, 50-74 = Good, 25-49 = Fair, 0-24 = Poor
 const recommendations: Record<TriageBand, Recommendation> = {
-  "0-24": {
+  "75-100": {
     icon: <ShieldCheck className="w-6 h-6 text-emerald-600" />,
     title: "Excellent Knee Health — Self-Management",
     urgency: "Reassess in 2–4 weeks",
@@ -28,8 +30,8 @@ const recommendations: Record<TriageBand, Recommendation> = {
       "Monitor symptoms and reassess if no improvement",
     ],
   },
-  "25-49": {
-    icon: <Activity className="w-6 h-6 text-amber-600" />,
+  "50-74": {
+    icon: <Activity className="w-6 h-6 text-lime-600" />,
     title: "Good Knee Health — Guided Care",
     urgency: "Consider clinician review if no improvement in 2–4 weeks",
     items: [
@@ -41,7 +43,7 @@ const recommendations: Record<TriageBand, Recommendation> = {
       "Remote clinician review available for personalised guidance",
     ],
   },
-  "50-74": {
+  "25-49": {
     icon: <Stethoscope className="w-6 h-6 text-orange-600" />,
     title: "Fair Knee Health — Clinician Review Recommended",
     urgency: "Book a clinical consultation",
@@ -55,7 +57,7 @@ const recommendations: Record<TriageBand, Recommendation> = {
       "Optional add-ons: HbA1c, lipid profile, vitamin D",
     ],
   },
-  "75-100": {
+  "0-24": {
     icon: <AlertTriangle className="w-6 h-6 text-red-600" />,
     title: "Poor Knee Health — Expedited Review Required",
     urgency: "Seek prompt medical attention",
@@ -76,17 +78,18 @@ const recommendations: Record<TriageBand, Recommendation> = {
 export default function TriageRecommendations({ band, className }: TriageRecommendationsProps) {
   const rec = recommendations[band];
   
+  // Colors now match inverted scale (higher = better)
   const bgColors: Record<TriageBand, string> = {
-    "0-24": "bg-emerald-50 border-emerald-200",
-    "25-49": "bg-amber-50 border-amber-200",
-    "50-74": "bg-orange-50 border-orange-200",
-    "75-100": "bg-red-50 border-red-200",
+    "75-100": "bg-emerald-50 border-emerald-200",
+    "50-74": "bg-lime-50 border-lime-200",
+    "25-49": "bg-orange-50 border-orange-200",
+    "0-24": "bg-red-50 border-red-200",
   };
   
-  // Determine which CTAs to show based on band
-  const showClinicianCTA = band === "25-49" || band === "50-74" || band === "75-100";
-  const showImagingCTA = band === "25-49" || band === "50-74" || band === "75-100";
-  const showBloodsCTA = band === "50-74" || band === "75-100";
+  // Determine which CTAs to show based on band (lower bands = worse health = more CTAs)
+  const showClinicianCTA = band === "0-24" || band === "25-49" || band === "50-74";
+  const showImagingCTA = band === "0-24" || band === "25-49" || band === "50-74";
+  const showBloodsCTA = band === "0-24" || band === "25-49";
   
   return (
     <div className={className}>
@@ -143,8 +146,8 @@ export default function TriageRecommendations({ band, className }: TriageRecomme
         </div>
       </div>
       
-      {/* Red Flag Alert for high-risk band */}
-      {band === "75-100" && (
+      {/* Red Flag Alert for poor knee health band (now 0-24) */}
+      {band === "0-24" && (
         <div className="mt-4 p-4 bg-red-100 border-2 border-red-300 rounded-lg">
           <div className="flex items-center gap-2 text-red-700 font-semibold mb-2">
             <AlertTriangle className="w-5 h-5" />
