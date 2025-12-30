@@ -17,7 +17,8 @@ import {
   Heart,
   AlertCircle,
   CheckCircle2,
-  Loader2
+  Loader2,
+  Download
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
@@ -33,6 +34,7 @@ import {
 } from "@/lib/triageScoring";
 import TriageGauge from "./TriageGauge";
 import TriageRecommendations from "./TriageRecommendations";
+import { generateTriagePdf } from "@/lib/generateTriagePdf";
 
 // ============================================
 // CONFIGURATION - Set your webhook URL here
@@ -628,6 +630,25 @@ export default function KneeTriageCalculator() {
             <Button variant="outline" onClick={handleBack}>
               <ChevronLeft className="w-4 h-4 mr-2" />
               Edit Responses
+            </Button>
+            <Button 
+              variant="outline" 
+              onClick={() => {
+                generateTriagePdf({
+                  kneeScore: formData.kneeScore,
+                  painNRS: formData.painNRS,
+                  swelling: formData.swelling,
+                  bmi: formData.bmi,
+                  smokingStatus: formData.smokingStatus as string,
+                  diabetesStatus: formData.diabetesStatus as string,
+                  priorKneeSurgery: formData.priorKneeSurgery as string,
+                  results: results,
+                });
+                toast.success("PDF downloaded successfully");
+              }}
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Download PDF
             </Button>
             <Button onClick={handleReset}>
               Start New Assessment
