@@ -71,7 +71,7 @@ export interface TriageResults {
   band: TriageBand;
 }
 
-export type TriageBand = "0-24" | "25-49" | "50-74" | "75-100";
+export type TriageBand = "0-25" | "26-50" | "51-75" | "76-100";
 
 // ============================================
 // KNEE SCORE CALCULATION FROM QUESTIONNAIRE
@@ -269,10 +269,10 @@ export function calculateTriageScore(severity: number, riskPoints: number): numb
 
 // Determine band from triage score (higher score = better health)
 export function getBand(triageScore: number): TriageBand {
-  if (triageScore >= 76) return "75-100";  // Excellent
-  if (triageScore >= 51) return "50-74";   // Good
-  if (triageScore >= 25) return "25-49";   // Fair
-  return "0-24";                           // Poor
+  if (triageScore >= 76) return "76-100";  // Excellent
+  if (triageScore >= 51) return "51-75";   // Good
+  if (triageScore >= 26) return "26-50";   // Fair
+  return "0-25";                           // Poor
 }
 
 // Main calculation function
@@ -343,7 +343,7 @@ export const testCases: TestCase[] = [
     },
     // Severity=10, RiskPoints=0 -> Raw=0.7*10 + 0.3*0 = 7 -> Inverted = 100-7 = 93
     expectedTriageScore: 93,
-    expectedBand: "75-100",
+    expectedBand: "76-100",
   },
   {
     name: "High Risk Example (Low Score = Poor Health)",
@@ -366,7 +366,7 @@ export const testCases: TestCase[] = [
     // Severity=60, Risk capped at 48 -> RiskPct=100
     // Raw = 0.7*60 + 0.3*100 = 42+30 = 72 -> Inverted = 100-72 = 28
     expectedTriageScore: 28,
-    expectedBand: "25-49",
+    expectedBand: "26-50",
   },
   {
     name: "Medium Risk Example",
@@ -383,7 +383,7 @@ export const testCases: TestCase[] = [
     // Severity=35, RiskPoints=20 -> RiskPct=41.67
     // Raw = 0.7*35 + 0.3*41.67 = 24.5+12.5 = 37 -> Inverted = 100-37 = 63
     expectedTriageScore: 63,
-    expectedBand: "50-74",
+    expectedBand: "51-75",
   },
   {
     name: "Mechanical Symptoms Example",
@@ -405,7 +405,7 @@ export const testCases: TestCase[] = [
     // Severity=30, RiskPoints=5 -> RiskPct=10.42
     // Raw = 0.7*30 + 0.3*10.42 = 21+3.13 = 24 -> Inverted = 100-24 = 76
     expectedTriageScore: 76,
-    expectedBand: "75-100",
+    expectedBand: "76-100",
   },
 ];
 
