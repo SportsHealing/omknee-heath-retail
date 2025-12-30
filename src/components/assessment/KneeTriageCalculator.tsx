@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Slider } from "@/components/ui/slider";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Card } from "@/components/ui/card";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Switch } from "@/components/ui/switch";
@@ -353,22 +353,18 @@ export default function KneeTriageCalculator() {
     </div>
   );
 
-  // Slider field component
-  const SliderField = ({
+  // Clickable score selector component
+  const ScoreSelector = ({
     label,
     value,
-    max,
+    options,
     onChange,
-    leftLabel,
-    rightLabel,
     tooltip,
   }: {
     label: string;
     value: number;
-    max: number;
+    options: { value: number; label: string }[];
     onChange: (value: number) => void;
-    leftLabel: string;
-    rightLabel: string;
     tooltip?: string;
   }) => (
     <div className="space-y-3">
@@ -390,17 +386,27 @@ export default function KneeTriageCalculator() {
         </div>
         <span className="text-2xl font-bold text-primary">{value}</span>
       </div>
-      <Slider
-        value={[value]}
-        onValueChange={(v) => onChange(Math.round(v[0]))}
-        max={max}
-        step={0.01}
-        className="w-full"
-      />
-      <div className="flex justify-between text-xs text-muted-foreground">
-        <span>{leftLabel}</span>
-        <span>{rightLabel}</span>
-      </div>
+      <ToggleGroup 
+        type="single" 
+        value={value.toString()} 
+        onValueChange={(v) => v && onChange(parseInt(v))}
+        className="flex flex-wrap gap-2 justify-start"
+      >
+        {options.map((option) => (
+          <ToggleGroupItem
+            key={option.value}
+            value={option.value.toString()}
+            className={cn(
+              "px-3 py-2 text-sm rounded-lg border transition-all",
+              value === option.value
+                ? "bg-primary text-primary-foreground border-primary"
+                : "bg-background border-border hover:bg-muted"
+            )}
+          >
+            {option.label}
+          </ToggleGroupItem>
+        ))}
+      </ToggleGroup>
     </div>
   );
 
@@ -447,8 +453,8 @@ export default function KneeTriageCalculator() {
     </div>
   );
 
-  // Symptom slider component - smooth slider with only scale labels
-  const SymptomSlider = ({
+  // Symptom selector component - clickable buttons
+  const SymptomSelector = ({
     symptomKey,
     label,
     tooltip,
@@ -473,17 +479,27 @@ export default function KneeTriageCalculator() {
           </Tooltip>
         </TooltipProvider>
       </div>
-      <Slider
-        value={[value]}
-        onValueChange={(v) => updateSymptom(symptomKey, Math.round(v[0]))}
-        max={4}
-        step={0.01}
-        className="w-full"
-      />
-      <div className="flex justify-between text-xs text-muted-foreground">
-        <span>Never</span>
-        <span>Always</span>
-      </div>
+      <ToggleGroup 
+        type="single" 
+        value={value.toString()} 
+        onValueChange={(v) => v && updateSymptom(symptomKey, parseInt(v))}
+        className="flex flex-wrap gap-1.5 justify-start"
+      >
+        {frequencyLabels.map((label, index) => (
+          <ToggleGroupItem
+            key={index}
+            value={index.toString()}
+            className={cn(
+              "px-2.5 py-1.5 text-xs rounded-md border transition-all",
+              value === index
+                ? "bg-primary text-primary-foreground border-primary"
+                : "bg-background border-border hover:bg-muted"
+            )}
+          >
+            {label}
+          </ToggleGroupItem>
+        ))}
+      </ToggleGroup>
     </div>
   );
 
@@ -519,7 +535,7 @@ export default function KneeTriageCalculator() {
           {formData.useQuestionnaire ? (
             <div className="space-y-1">
               {symptomQuestions.map((q) => (
-                <SymptomSlider
+                <SymptomSelector
                   key={q.key}
                   symptomKey={q.key}
                   label={q.label}
@@ -541,13 +557,18 @@ export default function KneeTriageCalculator() {
               <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg text-sm text-amber-800">
                 <strong>Manual Override:</strong> Enter your Knee Score directly if you already have a clinical assessment score.
               </div>
-              <SliderField
+              <ScoreSelector
                 label="Knee Function Score"
                 value={formData.manualKneeScore}
-                max={100}
+                options={[
+                  { value: 0, label: "0" },
+                  { value: 20, label: "20" },
+                  { value: 40, label: "40" },
+                  { value: 60, label: "60" },
+                  { value: 80, label: "80" },
+                  { value: 100, label: "100" },
+                ]}
                 onChange={(v) => updateField("manualKneeScore", v)}
-                leftLabel="0 = Worst"
-                rightLabel="100 = Best"
                 tooltip="Enter your known knee function score from a clinical assessment."
               />
             </div>
@@ -576,23 +597,33 @@ export default function KneeTriageCalculator() {
           </div>
 
           <div className="space-y-8">
-            <SliderField
+            <ScoreSelector
               label="Pain Level (NRS)"
               value={formData.painNRS}
-              max={10}
+              options={[
+                { value: 0, label: "0 - None" },
+                { value: 2, label: "2 - Mild" },
+                { value: 4, label: "4 - Moderate" },
+                { value: 6, label: "6 - Severe" },
+                { value: 8, label: "8 - Very Severe" },
+                { value: 10, label: "10 - Worst" },
+              ]}
               onChange={(v) => updateField("painNRS", v)}
-              leftLabel="0 = No pain"
-              rightLabel="10 = Worst pain"
               tooltip="Rate your current pain on a 0-10 scale, where 0 is no pain and 10 is the worst pain imaginable."
             />
 
-            <SliderField
+            <ScoreSelector
               label="Swelling"
               value={formData.swelling}
-              max={5}
+              options={[
+                { value: 0, label: "0 - None" },
+                { value: 1, label: "1 - Minimal" },
+                { value: 2, label: "2 - Mild" },
+                { value: 3, label: "3 - Moderate" },
+                { value: 4, label: "4 - Significant" },
+                { value: 5, label: "5 - Severe" },
+              ]}
               onChange={(v) => updateField("swelling", v)}
-              leftLabel="0 = None"
-              rightLabel="5 = Severe"
               tooltip="Rate the amount of swelling in your knee from 0 (none) to 5 (severe, very noticeable)."
             />
 
