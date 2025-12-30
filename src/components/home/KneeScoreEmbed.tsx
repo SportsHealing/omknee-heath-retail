@@ -14,32 +14,197 @@ interface Question {
   group: "knee" | "sleep";
 }
 
-const kneeQuestions: Question[] = [
-  { id: "pain", text: "How often do you experience knee pain?", category: "Pain", group: "knee" },
-  { id: "stiffness", text: "How stiff do your knees feel in the morning?", category: "Stiffness", group: "knee" },
-  { id: "mobility", text: "How easy is it to walk up and down stairs?", category: "Mobility", group: "knee" },
-  { id: "stability", text: "How stable do your knees feel during daily activities?", category: "Stability", group: "knee" },
-  { id: "swelling", text: "How often do you notice swelling in your knees?", category: "Swelling", group: "knee" },
-  { id: "activity", text: "How much does knee discomfort limit your physical activities?", category: "Activity", group: "knee" },
-  { id: "knee_sleep", text: "How often does knee discomfort affect your sleep?", category: "Sleep Impact", group: "knee" },
+interface QuestionWithOptions extends Question {
+  options: { value: number; label: string }[];
+}
+
+// Higher value = healthier knee (5 = best, 1 = worst)
+const kneeQuestions: QuestionWithOptions[] = [
+  { 
+    id: "pain", 
+    text: "How often do you experience knee pain?", 
+    category: "Pain", 
+    group: "knee",
+    options: [
+      { value: 5, label: "Never" },
+      { value: 4, label: "Rarely (once a month or less)" },
+      { value: 3, label: "Sometimes (weekly)" },
+      { value: 2, label: "Often (most days)" },
+      { value: 1, label: "Always (constant pain)" },
+    ]
+  },
+  { 
+    id: "stiffness", 
+    text: "How stiff do your knees feel in the morning?", 
+    category: "Stiffness", 
+    group: "knee",
+    options: [
+      { value: 5, label: "No stiffness" },
+      { value: 4, label: "Mild stiffness (less than 10 mins)" },
+      { value: 3, label: "Moderate stiffness (10-30 mins)" },
+      { value: 2, label: "Significant stiffness (30-60 mins)" },
+      { value: 1, label: "Severe stiffness (over 1 hour)" },
+    ]
+  },
+  { 
+    id: "mobility", 
+    text: "How easy is it to walk up and down stairs?", 
+    category: "Mobility", 
+    group: "knee",
+    options: [
+      { value: 5, label: "No difficulty at all" },
+      { value: 4, label: "Slight difficulty" },
+      { value: 3, label: "Moderate difficulty" },
+      { value: 2, label: "Significant difficulty" },
+      { value: 1, label: "Unable or need assistance" },
+    ]
+  },
+  { 
+    id: "stability", 
+    text: "How stable do your knees feel during daily activities?", 
+    category: "Stability", 
+    group: "knee",
+    options: [
+      { value: 5, label: "Completely stable" },
+      { value: 4, label: "Mostly stable" },
+      { value: 3, label: "Sometimes unstable" },
+      { value: 2, label: "Often unstable or giving way" },
+      { value: 1, label: "Very unstable, frequent giving way" },
+    ]
+  },
+  { 
+    id: "swelling", 
+    text: "How often do you notice swelling in your knees?", 
+    category: "Swelling", 
+    group: "knee",
+    options: [
+      { value: 5, label: "Never" },
+      { value: 4, label: "Rarely (after heavy activity)" },
+      { value: 3, label: "Sometimes (weekly)" },
+      { value: 2, label: "Often (most days)" },
+      { value: 1, label: "Always swollen" },
+    ]
+  },
+  { 
+    id: "activity", 
+    text: "How much does knee discomfort limit your physical activities?", 
+    category: "Activity", 
+    group: "knee",
+    options: [
+      { value: 5, label: "No limitation" },
+      { value: 4, label: "Slight limitation" },
+      { value: 3, label: "Moderate limitation" },
+      { value: 2, label: "Significant limitation" },
+      { value: 1, label: "Unable to do activities" },
+    ]
+  },
+  { 
+    id: "knee_sleep", 
+    text: "How often does knee discomfort affect your sleep?", 
+    category: "Sleep Impact", 
+    group: "knee",
+    options: [
+      { value: 5, label: "Never affects sleep" },
+      { value: 4, label: "Rarely (once a month)" },
+      { value: 3, label: "Sometimes (weekly)" },
+      { value: 2, label: "Often (most nights)" },
+      { value: 1, label: "Every night" },
+    ]
+  },
 ];
 
-const sleepQuestions: Question[] = [
-  { id: "sleep_quality", text: "How would you rate your overall sleep quality?", category: "Quality", group: "sleep" },
-  { id: "sleep_duration", text: "Do you get enough hours of sleep each night?", category: "Duration", group: "sleep" },
-  { id: "sleep_onset", text: "How easily do you fall asleep?", category: "Onset", group: "sleep" },
-  { id: "sleep_maintenance", text: "How often do you wake during the night?", category: "Continuity", group: "sleep" },
-  { id: "sleep_refreshed", text: "How refreshed do you feel upon waking?", category: "Recovery", group: "sleep" },
-  { id: "sleep_daytime", text: "How often do you feel tired during the day?", category: "Daytime", group: "sleep" },
-  { id: "sleep_routine", text: "How consistent is your sleep routine?", category: "Routine", group: "sleep" },
-];
-
-const options = [
-  { value: 5, label: "Never / Not at all" },
-  { value: 4, label: "Rarely / Mildly" },
-  { value: 3, label: "Sometimes / Moderately" },
-  { value: 2, label: "Often / Significantly" },
-  { value: 1, label: "Always / Severely" },
+const sleepQuestions: QuestionWithOptions[] = [
+  { 
+    id: "sleep_quality", 
+    text: "How would you rate your overall sleep quality?", 
+    category: "Quality", 
+    group: "sleep",
+    options: [
+      { value: 5, label: "Excellent" },
+      { value: 4, label: "Good" },
+      { value: 3, label: "Fair" },
+      { value: 2, label: "Poor" },
+      { value: 1, label: "Very poor" },
+    ]
+  },
+  { 
+    id: "sleep_duration", 
+    text: "Do you get enough hours of sleep each night?", 
+    category: "Duration", 
+    group: "sleep",
+    options: [
+      { value: 5, label: "Yes, always (7-9 hours)" },
+      { value: 4, label: "Usually enough" },
+      { value: 3, label: "Sometimes enough" },
+      { value: 2, label: "Rarely enough" },
+      { value: 1, label: "Never enough (under 5 hours)" },
+    ]
+  },
+  { 
+    id: "sleep_onset", 
+    text: "How easily do you fall asleep?", 
+    category: "Onset", 
+    group: "sleep",
+    options: [
+      { value: 5, label: "Very easily (under 10 mins)" },
+      { value: 4, label: "Fairly easily (10-20 mins)" },
+      { value: 3, label: "Some difficulty (20-40 mins)" },
+      { value: 2, label: "Significant difficulty (40-60 mins)" },
+      { value: 1, label: "Very difficult (over 1 hour)" },
+    ]
+  },
+  { 
+    id: "sleep_maintenance", 
+    text: "How often do you wake during the night?", 
+    category: "Continuity", 
+    group: "sleep",
+    options: [
+      { value: 5, label: "Rarely or never" },
+      { value: 4, label: "Once, fall back asleep easily" },
+      { value: 3, label: "2-3 times" },
+      { value: 2, label: "Frequently (4+ times)" },
+      { value: 1, label: "Constantly disturbed" },
+    ]
+  },
+  { 
+    id: "sleep_refreshed", 
+    text: "How refreshed do you feel upon waking?", 
+    category: "Recovery", 
+    group: "sleep",
+    options: [
+      { value: 5, label: "Fully refreshed" },
+      { value: 4, label: "Mostly refreshed" },
+      { value: 3, label: "Somewhat refreshed" },
+      { value: 2, label: "Rarely refreshed" },
+      { value: 1, label: "Never refreshed, exhausted" },
+    ]
+  },
+  { 
+    id: "sleep_daytime", 
+    text: "How often do you feel tired during the day?", 
+    category: "Daytime", 
+    group: "sleep",
+    options: [
+      { value: 5, label: "Rarely or never" },
+      { value: 4, label: "Occasionally" },
+      { value: 3, label: "Sometimes" },
+      { value: 2, label: "Often" },
+      { value: 1, label: "Always tired" },
+    ]
+  },
+  { 
+    id: "sleep_routine", 
+    text: "How consistent is your sleep routine?", 
+    category: "Routine", 
+    group: "sleep",
+    options: [
+      { value: 5, label: "Very consistent" },
+      { value: 4, label: "Mostly consistent" },
+      { value: 3, label: "Somewhat consistent" },
+      { value: 2, label: "Rarely consistent" },
+      { value: 1, label: "No routine at all" },
+    ]
+  },
 ];
 
 type AssessmentMode = "quick" | "full" | null;
@@ -325,7 +490,7 @@ const KneeScoreEmbed = () => {
                     <div key={q.id} className="flex justify-between items-center text-sm">
                       <span className="text-muted-foreground">{q.category}</span>
                       <span className="font-medium text-foreground">
-                        {options.find(o => o.value === answers[q.id])?.label || "—"}
+                        {q.options.find(o => o.value === answers[q.id])?.label || "—"}
                       </span>
                     </div>
                   ))}
@@ -449,7 +614,7 @@ const KneeScoreEmbed = () => {
 
             {/* Options */}
             <div className="space-y-3">
-              {options.map((option) => (
+              {currentQuestion.options.map((option) => (
                 <button
                   key={option.value}
                   onClick={() => handleAnswer(currentQuestion.id, option.value)}
