@@ -257,6 +257,14 @@ const FullKneeAssessment = ({ onBack }: FullKneeAssessmentProps) => {
     return { label: "Red", color: "text-red-600", bg: "bg-red-50", border: "border-red-200" };
   };
 
+  // Individual symptom RAG based on percentage of max
+  const getSymptomRAG = (value: number, max: number) => {
+    const pct = (value / max) * 100;
+    if (pct < 25) return { label: "Green", color: "bg-green-500", textColor: "text-green-600" };
+    if (pct < 60) return { label: "Amber", color: "bg-amber-500", textColor: "text-amber-600" };
+    return { label: "Red", color: "bg-red-500", textColor: "text-red-600" };
+  };
+
   const handleDownloadPdf = () => {
     const score = calculateScore();
     const band = getScoreBand(score);
@@ -339,8 +347,35 @@ const FullKneeAssessment = ({ onBack }: FullKneeAssessmentProps) => {
             {band.label} Band
           </span>
           <p className="text-sm text-muted-foreground mt-4 max-w-md mx-auto">
-            Based on your responses across 7 symptom domains: pain, sleep, swelling, instability, stiffness, stairs, and function.
+            Based on your responses across 7 symptom domains.
           </p>
+        </div>
+
+        {/* Individual Symptom Breakdown */}
+        <div className="bg-background rounded-2xl border border-border p-6 mb-8">
+          <h3 className="font-semibold text-foreground mb-4">Symptom Breakdown</h3>
+          <div className="grid gap-3">
+            {[
+              { label: "Pain", value: formData.pain, max: 10 },
+              { label: "Sleep Disturbance", value: formData.sleep, max: 10 },
+              { label: "Swelling", value: formData.swelling, max: 5 },
+              { label: "Instability", value: formData.instability, max: 5 },
+              { label: "Stiffness", value: formData.stiffness, max: 10 },
+              { label: "Stairs Difficulty", value: formData.stairs, max: 5 },
+              { label: "Overall Function", value: formData.function, max: 10 },
+            ].map((symptom) => {
+              const rag = getSymptomRAG(symptom.value, symptom.max);
+              return (
+                <div key={symptom.label} className="flex items-center justify-between py-2 border-b border-border last:border-0">
+                  <span className="text-sm text-muted-foreground">{symptom.label}</span>
+                  <div className="flex items-center gap-3">
+                    <span className="text-sm font-medium">{symptom.value}/{symptom.max}</span>
+                    <span className={cn("w-3 h-3 rounded-full", rag.color)} title={rag.label} />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         {/* Response Summary */}
@@ -606,13 +641,13 @@ const FullKneeAssessment = ({ onBack }: FullKneeAssessmentProps) => {
               <p className="text-muted-foreground text-sm">Rate each symptom based on the past 7 days.</p>
             </div>
             
-            <SliderField label="Pain Level" value={formData.pain} onChange={(v) => updateField("pain", v)} min={0} max={10} leftLabel="0 - No pain" rightLabel="10 - Severe" />
-            <SliderField label="Sleep Disturbance" value={formData.sleep} onChange={(v) => updateField("sleep", v)} min={0} max={10} leftLabel="0 - None" rightLabel="10 - Severe" />
-            <SliderField label="Swelling" value={formData.swelling} onChange={(v) => updateField("swelling", v)} min={0} max={5} leftLabel="0 - None" rightLabel="5 - Severe" />
-            <SliderField label="Instability" value={formData.instability} onChange={(v) => updateField("instability", v)} min={0} max={5} leftLabel="0 - Stable" rightLabel="5 - Very unstable" />
-            <SliderField label="Stiffness" value={formData.stiffness} onChange={(v) => updateField("stiffness", v)} min={0} max={10} leftLabel="0 - None" rightLabel="10 - Severe" />
-            <SliderField label="Difficulty with Stairs" value={formData.stairs} onChange={(v) => updateField("stairs", v)} min={0} max={5} leftLabel="0 - Easy" rightLabel="5 - Cannot use" />
-            <SliderField label="Overall Function" value={formData.function} onChange={(v) => updateField("function", v)} min={0} max={10} leftLabel="0 - Normal" rightLabel="10 - Severely limited" />
+            <SliderField label="Pain Level" value={formData.pain} onChange={(v) => updateField("pain", v)} min={0} max={10} leftLabel="0 - No pain" rightLabel="10 - Severe" getRAG={getSymptomRAG} />
+            <SliderField label="Sleep Disturbance" value={formData.sleep} onChange={(v) => updateField("sleep", v)} min={0} max={10} leftLabel="0 - None" rightLabel="10 - Severe" getRAG={getSymptomRAG} />
+            <SliderField label="Swelling" value={formData.swelling} onChange={(v) => updateField("swelling", v)} min={0} max={5} leftLabel="0 - None" rightLabel="5 - Severe" getRAG={getSymptomRAG} />
+            <SliderField label="Instability" value={formData.instability} onChange={(v) => updateField("instability", v)} min={0} max={5} leftLabel="0 - Stable" rightLabel="5 - Very unstable" getRAG={getSymptomRAG} />
+            <SliderField label="Stiffness" value={formData.stiffness} onChange={(v) => updateField("stiffness", v)} min={0} max={10} leftLabel="0 - None" rightLabel="10 - Severe" getRAG={getSymptomRAG} />
+            <SliderField label="Difficulty with Stairs" value={formData.stairs} onChange={(v) => updateField("stairs", v)} min={0} max={5} leftLabel="0 - Easy" rightLabel="5 - Cannot use" getRAG={getSymptomRAG} />
+            <SliderField label="Overall Function" value={formData.function} onChange={(v) => updateField("function", v)} min={0} max={10} leftLabel="0 - Normal" rightLabel="10 - Severely limited" getRAG={getSymptomRAG} />
           </div>
         )}
 
@@ -912,21 +947,29 @@ interface SliderFieldProps {
   max: number;
   leftLabel: string;
   rightLabel: string;
+  getRAG?: (value: number, max: number) => { label: string; color: string; textColor: string };
 }
 
-const SliderField = ({ label, value, onChange, min, max, leftLabel, rightLabel }: SliderFieldProps) => (
-  <div className="p-5 bg-muted/30 rounded-xl border border-border">
-    <div className="flex justify-between items-center mb-4">
-      <Label className="text-sm font-medium">{label}</Label>
-      <span className="text-2xl font-bold text-primary">{value}</span>
+const SliderField = ({ label, value, onChange, min, max, leftLabel, rightLabel, getRAG }: SliderFieldProps) => {
+  const rag = getRAG?.(value, max);
+  
+  return (
+    <div className="p-5 bg-muted/30 rounded-xl border border-border">
+      <div className="flex justify-between items-center mb-4">
+        <Label className="text-sm font-medium">{label}</Label>
+        <div className="flex items-center gap-2">
+          <span className="text-2xl font-bold text-primary">{value}</span>
+          {rag && <span className={cn("w-3 h-3 rounded-full", rag.color)} title={rag.label} />}
+        </div>
+      </div>
+      <Slider value={[value]} onValueChange={([v]) => onChange(v)} min={min} max={max} step={1} className="mb-2" />
+      <div className="flex justify-between text-xs text-muted-foreground">
+        <span>{leftLabel}</span>
+        <span>{rightLabel}</span>
+      </div>
     </div>
-    <Slider value={[value]} onValueChange={([v]) => onChange(v)} min={min} max={max} step={1} className="mb-2" />
-    <div className="flex justify-between text-xs text-muted-foreground">
-      <span>{leftLabel}</span>
-      <span>{rightLabel}</span>
-    </div>
-  </div>
-);
+  );
+};
 
 interface RadioGroupProps {
   label: string;
