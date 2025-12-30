@@ -372,9 +372,9 @@ export default function KneeTriageCalculator() {
       </div>
       <Slider
         value={[value]}
-        onValueChange={(v) => onChange(v[0])}
+        onValueChange={(v) => onChange(Math.round(v[0]))}
         max={max}
-        step={1}
+        step={0.01}
         className="w-full"
       />
       <div className="flex justify-between text-xs text-muted-foreground">
@@ -427,7 +427,7 @@ export default function KneeTriageCalculator() {
     </div>
   );
 
-  // Symptom slider component
+  // Symptom slider component - smooth slider with only scale labels
   const SymptomSlider = ({
     symptomKey,
     label,
@@ -440,36 +440,24 @@ export default function KneeTriageCalculator() {
     value: number;
   }) => (
     <div className="space-y-2 py-3 border-b border-border last:border-0">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Label className="text-sm font-medium">{label}</Label>
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Info className="w-3.5 h-3.5 text-muted-foreground cursor-help" />
-              </TooltipTrigger>
-              <TooltipContent className="max-w-xs">
-                <p>{tooltip}</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        </div>
-        <span className={cn(
-          "text-sm font-semibold px-2 py-0.5 rounded",
-          value === 0 ? "bg-emerald-100 text-emerald-700" :
-          value === 1 ? "bg-lime-100 text-lime-700" :
-          value === 2 ? "bg-amber-100 text-amber-700" :
-          value === 3 ? "bg-orange-100 text-orange-700" :
-          "bg-red-100 text-red-700"
-        )}>
-          {frequencyLabels[value]}
-        </span>
+      <div className="flex items-center gap-2">
+        <Label className="text-sm font-medium">{label}</Label>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Info className="w-3.5 h-3.5 text-muted-foreground cursor-help" />
+            </TooltipTrigger>
+            <TooltipContent className="max-w-xs">
+              <p>{tooltip}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </div>
       <Slider
         value={[value]}
-        onValueChange={(v) => updateSymptom(symptomKey, v[0])}
+        onValueChange={(v) => updateSymptom(symptomKey, Math.round(v[0]))}
         max={4}
-        step={1}
+        step={0.01}
         className="w-full"
       />
       <div className="flex justify-between text-xs text-muted-foreground">
