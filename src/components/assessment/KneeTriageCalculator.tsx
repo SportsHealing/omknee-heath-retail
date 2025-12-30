@@ -39,6 +39,7 @@ import {
 } from "@/lib/triageScoring";
 import TriageGauge from "./TriageGauge";
 import TriageRecommendations from "./TriageRecommendations";
+import { KneeRecommendations } from "./KneeRecommendations";
 import { generateTriagePdf } from "@/lib/generateTriagePdf";
 
 // ============================================
@@ -842,6 +843,20 @@ export default function KneeTriageCalculator() {
 
           {/* Recommendations */}
           <TriageRecommendations band={results.band} />
+
+          {/* Personalised Test Recommendations */}
+          <Card className="p-6 md:p-8">
+            <h3 className="text-xl font-serif text-foreground mb-6 text-center">
+              Personalised Test Recommendations
+            </h3>
+            <p className="text-sm text-muted-foreground text-center mb-6">
+              Get a tailored package of imaging, blood tests, and procedures based on your score and health profile.
+            </p>
+            <KneeRecommendations 
+              kneeScore={getKneeScore()} 
+              useIndexScore={false}
+            />
+          </Card>
 
           {/* Disclaimer */}
           <Card className="p-4 bg-muted/50">
