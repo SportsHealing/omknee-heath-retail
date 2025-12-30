@@ -43,7 +43,7 @@ const RAGGauge = ({ score, label, size = "md" }: RAGGaugeProps) => {
             height: config.arcH,
             borderRadius: `${config.arcW}px ${config.arcW}px 0 0`,
             background: `conic-gradient(
-              from 180deg at 50% 100%,
+              from 270deg at 50% 100%,
               #dc2626 0deg 45deg,
               #fb7185 45deg 90deg,
               #f59e0b 90deg 135deg,
@@ -51,7 +51,6 @@ const RAGGauge = ({ score, label, size = "md" }: RAGGaugeProps) => {
             )`,
             WebkitMask: `radial-gradient(circle at 50% 100%, transparent 0 62%, #000 62%)`,
             mask: `radial-gradient(circle at 50% 100%, transparent 0 62%, #000 62%)`,
-            transform: 'scaleX(-1)',
           }}
         />
         
