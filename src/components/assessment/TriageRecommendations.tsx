@@ -1,5 +1,6 @@
 import type { TriageBand } from "@/lib/triageScoring";
-import { AlertTriangle, Activity, Stethoscope, Heart, ShieldCheck } from "lucide-react";
+import { AlertTriangle, Activity, Stethoscope, Heart, ShieldCheck, ImageIcon, User, FlaskConical, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface TriageRecommendationsProps {
   band: TriageBand;
@@ -16,7 +17,7 @@ interface Recommendation {
 const recommendations: Record<TriageBand, Recommendation> = {
   "0-24": {
     icon: <ShieldCheck className="w-6 h-6 text-emerald-600" />,
-    title: "Self-Management Pathway",
+    title: "Excellent Knee Health — Self-Management",
     urgency: "Reassess in 2–4 weeks",
     items: [
       "Continue self-care with education on joint protection",
@@ -29,7 +30,7 @@ const recommendations: Record<TriageBand, Recommendation> = {
   },
   "25-49": {
     icon: <Activity className="w-6 h-6 text-amber-600" />,
-    title: "Guided Care Pathway",
+    title: "Good Knee Health — Guided Care",
     urgency: "Consider clinician review if no improvement in 2–4 weeks",
     items: [
       "Structured physiotherapy plan with progressive strengthening",
@@ -42,7 +43,7 @@ const recommendations: Record<TriageBand, Recommendation> = {
   },
   "50-74": {
     icon: <Stethoscope className="w-6 h-6 text-orange-600" />,
-    title: "Clinician Review Recommended",
+    title: "Fair Knee Health — Clinician Review Recommended",
     urgency: "Book a clinical consultation",
     items: [
       "In-person or virtual clinician assessment recommended",
@@ -56,7 +57,7 @@ const recommendations: Record<TriageBand, Recommendation> = {
   },
   "75-100": {
     icon: <AlertTriangle className="w-6 h-6 text-red-600" />,
-    title: "Expedited Clinician Review",
+    title: "Poor Knee Health — Expedited Review Required",
     urgency: "Seek prompt medical attention",
     items: [
       "Priority clinical assessment required",
@@ -82,6 +83,11 @@ export default function TriageRecommendations({ band, className }: TriageRecomme
     "75-100": "bg-red-50 border-red-200",
   };
   
+  // Determine which CTAs to show based on band
+  const showClinicianCTA = band === "25-49" || band === "50-74" || band === "75-100";
+  const showImagingCTA = band === "25-49" || band === "50-74" || band === "75-100";
+  const showBloodsCTA = band === "50-74" || band === "75-100";
+  
   return (
     <div className={className}>
       <div className={`rounded-xl border-2 p-6 ${bgColors[band]}`}>
@@ -93,7 +99,7 @@ export default function TriageRecommendations({ band, className }: TriageRecomme
           </div>
         </div>
         
-        <ul className="space-y-2">
+        <ul className="space-y-2 mb-6">
           {rec.items.map((item, index) => (
             <li 
               key={index} 
@@ -106,6 +112,35 @@ export default function TriageRecommendations({ band, className }: TriageRecomme
             </li>
           ))}
         </ul>
+
+        {/* Action CTAs based on band */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {showClinicianCTA && (
+            <Button asChild className="w-full">
+              <a href="https://sportshealing.com" target="_blank" rel="noopener noreferrer">
+                <User className="w-4 h-4 mr-2" />
+                Book Clinician Review
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
+            </Button>
+          )}
+          {showImagingCTA && (
+            <Button asChild variant="outline" className="w-full">
+              <a href="https://mykneescan.com" target="_blank" rel="noopener noreferrer">
+                <ImageIcon className="w-4 h-4 mr-2" />
+                Book Scan
+              </a>
+            </Button>
+          )}
+          {showBloodsCTA && (
+            <Button asChild variant="outline" className="w-full">
+              <a href="https://sportshealing.com/bloods" target="_blank" rel="noopener noreferrer">
+                <FlaskConical className="w-4 h-4 mr-2" />
+                Book Blood Tests
+              </a>
+            </Button>
+          )}
+        </div>
       </div>
       
       {/* Red Flag Alert for high-risk band */}
