@@ -87,24 +87,27 @@ const initialFormData: FormData = {
   consentGDPR: false,
 };
 
-// Symptom question labels
-const symptomQuestions: { key: keyof KneeSymptomScores; label: string; tooltip: string }[] = [
-  { key: "pain", label: "Knee Pain", tooltip: "How often do you experience knee pain during daily activities?" },
-  { key: "swelling", label: "Swelling", tooltip: "How often does your knee swell up?" },
-  { key: "stiffness", label: "Stiffness", tooltip: "How often do you experience knee stiffness, especially in the morning?" },
-  { key: "locking", label: "Locking/Catching", tooltip: "Does your knee ever lock, catch, or get stuck?" },
-  { key: "givingWay", label: "Giving Way", tooltip: "Does your knee ever give way or feel unstable?" },
-  { key: "nightPain", label: "Night Pain", tooltip: "How often does knee pain disturb your sleep?" },
-  { key: "stairs", label: "Stairs Difficulty", tooltip: "How much difficulty do you have going up or down stairs?" },
-  { key: "walking", label: "Walking Distance", tooltip: "How much does your knee limit how far you can walk?" },
-  { key: "squatting", label: "Squatting", tooltip: "How much difficulty do you have squatting down?" },
-  { key: "kneeling", label: "Kneeling", tooltip: "How much difficulty do you have kneeling?" },
-  { key: "running", label: "Running/Jogging", tooltip: "How much difficulty do you have running or jogging?" },
-  { key: "twisting", label: "Twisting/Pivoting", tooltip: "How much difficulty with twisting or pivoting movements?" },
-  { key: "standingFromSitting", label: "Standing from Sitting", tooltip: "How much difficulty getting up from a chair?" },
+// Symptom question labels - distance-based questions use different options
+type QuestionType = "frequency" | "difficulty" | "distance";
+const symptomQuestions: { key: keyof KneeSymptomScores; label: string; tooltip: string; type: QuestionType }[] = [
+  { key: "pain", label: "Knee Pain", tooltip: "How often do you get knee pain during daily activities?", type: "frequency" },
+  { key: "swelling", label: "Swelling", tooltip: "How often does your knee swell up?", type: "frequency" },
+  { key: "stiffness", label: "Stiffness", tooltip: "How often do you get knee stiffness, especially in the morning?", type: "frequency" },
+  { key: "locking", label: "Locking/Catching", tooltip: "How often does your knee lock, catch, or get stuck?", type: "frequency" },
+  { key: "givingWay", label: "Giving Way", tooltip: "How often does your knee give way or feel unstable?", type: "frequency" },
+  { key: "nightPain", label: "Night Pain", tooltip: "How often does knee pain disturb your sleep?", type: "frequency" },
+  { key: "stairs", label: "Stairs", tooltip: "How much difficulty do you have going up or down stairs?", type: "difficulty" },
+  { key: "walking", label: "Walking Distance", tooltip: "How far can you walk before knee problems stop you?", type: "distance" },
+  { key: "squatting", label: "Squatting", tooltip: "How much difficulty do you have squatting down?", type: "difficulty" },
+  { key: "kneeling", label: "Kneeling", tooltip: "How much difficulty do you have kneeling?", type: "difficulty" },
+  { key: "running", label: "Running/Jogging", tooltip: "How far can you run before knee problems stop you?", type: "distance" },
+  { key: "twisting", label: "Twisting/Pivoting", tooltip: "How much difficulty do you have with twisting or pivoting movements?", type: "difficulty" },
+  { key: "standingFromSitting", label: "Standing from Sitting", tooltip: "How much difficulty do you have getting up from a chair?", type: "difficulty" },
 ];
 
 const frequencyLabels = ["Never", "Rarely", "Sometimes", "Often", "Always"];
+const difficultyLabels = ["None", "Mild", "Moderate", "Severe", "Unable"];
+const distanceLabels = [">3km", "1-3km", "Up to 1km", "50-250m", "<50m"];
 
 export default function KneeTriageCalculator() {
   const [step, setStep] = useState<Step>("symptoms");
@@ -459,49 +462,59 @@ export default function KneeTriageCalculator() {
     label,
     tooltip,
     value,
+    questionType,
   }: {
     symptomKey: keyof KneeSymptomScores;
     label: string;
     tooltip: string;
     value: number;
-  }) => (
-    <div className="space-y-2 py-3 border-b border-border last:border-0">
-      <div className="flex items-center gap-2">
-        <Label className="text-sm font-medium">{label}</Label>
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Info className="w-3.5 h-3.5 text-muted-foreground cursor-help" />
-            </TooltipTrigger>
-            <TooltipContent className="max-w-xs">
-              <p>{tooltip}</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+    questionType: QuestionType;
+  }) => {
+    const labels = questionType === "distance" 
+      ? distanceLabels 
+      : questionType === "difficulty" 
+        ? difficultyLabels 
+        : frequencyLabels;
+    
+    return (
+      <div className="space-y-2 py-3 border-b border-border last:border-0">
+        <div className="flex items-center gap-2">
+          <Label className="text-sm font-medium">{label}</Label>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Info className="w-3.5 h-3.5 text-muted-foreground cursor-help" />
+              </TooltipTrigger>
+              <TooltipContent className="max-w-xs">
+                <p>{tooltip}</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </div>
+        <ToggleGroup 
+          type="single" 
+          value={value.toString()} 
+          onValueChange={(v) => v && updateSymptom(symptomKey, parseInt(v))}
+          className="flex flex-wrap gap-1.5 justify-start"
+        >
+          {labels.map((labelText, index) => (
+            <ToggleGroupItem
+              key={index}
+              value={index.toString()}
+              className={cn(
+                "px-2.5 py-1.5 text-xs rounded-md border transition-all",
+                value === index
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-background border-border hover:bg-muted"
+              )}
+            >
+              {labelText}
+            </ToggleGroupItem>
+          ))}
+        </ToggleGroup>
       </div>
-      <ToggleGroup 
-        type="single" 
-        value={value.toString()} 
-        onValueChange={(v) => v && updateSymptom(symptomKey, parseInt(v))}
-        className="flex flex-wrap gap-1.5 justify-start"
-      >
-        {frequencyLabels.map((label, index) => (
-          <ToggleGroupItem
-            key={index}
-            value={index.toString()}
-            className={cn(
-              "px-2.5 py-1.5 text-xs rounded-md border transition-all",
-              value === index
-                ? "bg-primary text-primary-foreground border-primary"
-                : "bg-background border-border hover:bg-muted"
-            )}
-          >
-            {label}
-          </ToggleGroupItem>
-        ))}
-      </ToggleGroup>
-    </div>
-  );
+    );
+  };
 
   return (
     <div className="max-w-2xl mx-auto">
@@ -541,6 +554,7 @@ export default function KneeTriageCalculator() {
                   label={q.label}
                   tooltip={q.tooltip}
                   value={formData.kneeSymptoms[q.key]}
+                  questionType={q.type}
                 />
               ))}
               
