@@ -11,22 +11,22 @@ const bandColors: Record<TriageBand, { bg: string; text: string; label: string }
   "0-24": {
     bg: "from-emerald-400 to-emerald-500",
     text: "text-emerald-600",
-    label: "Self-Management",
+    label: "Excellent Knee Health",
   },
   "25-49": {
     bg: "from-amber-400 to-amber-500",
     text: "text-amber-600",
-    label: "Guided Care",
+    label: "Good Knee Health",
   },
   "50-74": {
     bg: "from-orange-400 to-orange-500",
     text: "text-orange-600",
-    label: "Clinician Review",
+    label: "Fair Knee Health",
   },
   "75-100": {
     bg: "from-red-500 to-red-600",
     text: "text-red-600",
-    label: "Expedited Review",
+    label: "Poor Knee Health",
   },
 };
 

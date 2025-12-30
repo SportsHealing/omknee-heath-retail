@@ -174,10 +174,7 @@ export default function KneeTriageCalculator() {
         toast.error("Please select your prior knee surgery status");
         return false;
       }
-      if (!formData.consentGDPR) {
-        toast.error("Please provide consent to continue");
-        return false;
-      }
+      // Consent is optional - only needed for emailed reports
       return true;
     }
     return true;
@@ -749,25 +746,7 @@ export default function KneeTriageCalculator() {
               tooltip="Previous knee surgeries may affect treatment recommendations."
             />
 
-            {/* GDPR Consent */}
-            <div className="pt-4 border-t border-border">
-              <div className="flex items-start space-x-3">
-                <Checkbox
-                  id="consent"
-                  checked={formData.consentGDPR}
-                  onCheckedChange={(checked) => updateField("consentGDPR", checked as boolean)}
-                />
-                <div className="space-y-1">
-                  <Label htmlFor="consent" className="text-sm font-normal cursor-pointer">
-                    I consent to SportsHealing/OmKneeHealth storing my answers to provide personalised guidance.
-                  </Label>
-                  <p className="text-xs text-muted-foreground">
-                    See our <a href="/privacy" className="underline hover:text-primary">Privacy Policy</a>. 
-                    Your data is processed in accordance with UK GDPR. You can request deletion at any time.
-                  </p>
-                </div>
-              </div>
-            </div>
+            {/* Note: Consent is only required when requesting emailed report */}
           </div>
 
           <div className="mt-8 flex justify-between">
