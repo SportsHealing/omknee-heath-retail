@@ -1,0 +1,122 @@
+import { cn } from "@/lib/utils";
+import type { TriageBand } from "@/lib/triageScoring";
+
+interface TriageGaugeProps {
+  score: number;
+  band: TriageBand;
+  className?: string;
+}
+
+const bandColors: Record<TriageBand, { bg: string; text: string; label: string }> = {
+  "0-24": {
+    bg: "from-emerald-400 to-emerald-500",
+    text: "text-emerald-600",
+    label: "Self-Management",
+  },
+  "25-49": {
+    bg: "from-amber-400 to-amber-500",
+    text: "text-amber-600",
+    label: "Guided Care",
+  },
+  "50-74": {
+    bg: "from-orange-400 to-orange-500",
+    text: "text-orange-600",
+    label: "Clinician Review",
+  },
+  "75-100": {
+    bg: "from-red-500 to-red-600",
+    text: "text-red-600",
+    label: "Expedited Review",
+  },
+};
+
+export default function TriageGauge({ score, band, className }: TriageGaugeProps) {
+  const { bg, text, label } = bandColors[band];
+  
+  // Calculate needle rotation (-90deg to 90deg for 0-100)
+  const rotation = -90 + (score / 100) * 180;
+  
+  return (
+    <div 
+      className={cn("flex flex-col items-center", className)}
+      role="meter"
+      aria-valuenow={score}
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-label={`Triage Score: ${score} out of 100. Band: ${label}`}
+    >
+      {/* Gauge Container */}
+      <div className="relative w-64 h-32 overflow-hidden">
+        {/* Gauge Arc Background */}
+        <div className="absolute inset-0">
+          <svg viewBox="0 0 200 100" className="w-full h-full">
+            {/* Background arc segments */}
+            <path
+              d="M 10 100 A 90 90 0 0 1 55 23"
+              fill="none"
+              stroke="#22c55e"
+              strokeWidth="16"
+              strokeLinecap="round"
+            />
+            <path
+              d="M 55 23 A 90 90 0 0 1 100 10"
+              fill="none"
+              stroke="#f59e0b"
+              strokeWidth="16"
+            />
+            <path
+              d="M 100 10 A 90 90 0 0 1 145 23"
+              fill="none"
+              stroke="#f97316"
+              strokeWidth="16"
+            />
+            <path
+              d="M 145 23 A 90 90 0 0 1 190 100"
+              fill="none"
+              stroke="#ef4444"
+              strokeWidth="16"
+              strokeLinecap="round"
+            />
+            
+            {/* Band labels */}
+            <text x="30" y="70" fontSize="8" fill="hsl(var(--muted-foreground))" textAnchor="middle">0-24</text>
+            <text x="70" y="35" fontSize="8" fill="hsl(var(--muted-foreground))" textAnchor="middle">25-49</text>
+            <text x="130" y="35" fontSize="8" fill="hsl(var(--muted-foreground))" textAnchor="middle">50-74</text>
+            <text x="170" y="70" fontSize="8" fill="hsl(var(--muted-foreground))" textAnchor="middle">75-100</text>
+          </svg>
+        </div>
+        
+        {/* Needle */}
+        <div 
+          className="absolute bottom-0 left-1/2 origin-bottom transition-transform duration-700 ease-out"
+          style={{ 
+            transform: `translateX(-50%) rotate(${rotation}deg)`,
+            width: '4px',
+            height: '70px',
+          }}
+        >
+          <div className="w-full h-full bg-gradient-to-t from-foreground to-foreground/80 rounded-t-full" />
+        </div>
+        
+        {/* Center dot */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-6 h-6 rounded-full bg-background border-4 border-foreground" />
+      </div>
+      
+      {/* Score Display */}
+      <div className="mt-4 text-center">
+        <div className={cn("text-5xl font-bold", text)}>
+          {score}
+        </div>
+        <div className="text-sm text-muted-foreground mt-1">
+          Triage Score
+        </div>
+        <div className={cn(
+          "mt-2 px-4 py-1.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r",
+          bg
+        )}>
+          {label}
+        </div>
+      </div>
+    </div>
+  );
+}
