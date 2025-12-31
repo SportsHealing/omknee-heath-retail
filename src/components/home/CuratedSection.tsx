@@ -1,83 +1,102 @@
 /**
  * Curated Recommendations Section
- * Separates OmKneeHealth products from curated partner recommendations
- * Positions as trusted authority who recommends beyond their own products
+ * Positions OmKneeHealth as trusted authority recommending beyond their own products
  */
 
-import { ExternalLink } from "lucide-react";
+import { Activity, Apple, Wrench, ArrowRight } from "lucide-react";
 
 const curatedItems = [
   {
+    icon: Activity,
     category: "Movement",
-    title: "Low-Impact Exercise Guides",
-    description: "Clinician-approved resources for gentle, joint-friendly movement routines",
-    link: "#"
+    title: "Appropriate Exercise",
+    description: "Resources for gentle, joint-appropriate movement — because regular activity is foundational to knee health.",
+    note: "Movement matters more than supplements."
   },
   {
+    icon: Apple,
     category: "Nutrition",
-    title: "Anti-Inflammatory Eating",
-    description: "Evidence-based dietary approaches that may support joint comfort",
-    link: "#"
+    title: "Dietary Approaches",
+    description: "Evidence-informed guidance on eating patterns that may support joint health and overall wellbeing.",
+    note: "Food before supplements, always."
   },
   {
-    category: "Equipment",
-    title: "Supportive Aids",
-    description: "Quality braces, supports, and mobility aids we've vetted and trust",
-    link: "#"
+    icon: Wrench,
+    category: "Support",
+    title: "Practical Aids",
+    description: "Information on braces, supports, and aids that may help with load management and daily function.",
+    note: "Sometimes simple solutions help most."
   }
 ];
 
 const CuratedSection = () => {
   return (
-    <section className="py-24 lg:py-32 bg-secondary">
+    <section className="py-24 lg:py-32 bg-secondary/50">
       <div className="container px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-wide bg-primary/10 text-primary mb-6">
-              Curated Resources
-            </span>
+            <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary mb-4">
+              The Bigger Picture
+            </p>
             <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
               Beyond Supplements
             </h2>
-            <div className="clinical-divider mb-6" />
+            <div className="w-12 h-px bg-primary/30 mx-auto mb-6" />
             <p className="font-sans text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Joint health is holistic. We carefully curate resources and recommendations 
-              from trusted sources—not because we profit from them, but because they may 
-              genuinely help.
+              Knee health is complex and individual. Supplements play a supporting role — 
+              but movement, nutrition, and appropriate care matter more. Here are resources 
+              we believe in, regardless of whether you buy from us.
             </p>
           </div>
 
           {/* Curated items */}
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
             {curatedItems.map((item, index) => (
-              <a
+              <div
                 key={index}
-                href={item.link}
-                className="group bg-background rounded-lg p-6 shadow-soft hover:shadow-card transition-all"
+                className="bg-background rounded-lg p-6 border border-border"
               >
-                <p className="font-sans text-xs tracking-[0.15em] uppercase text-primary mb-3">
+                <div className="w-10 h-10 rounded-full bg-trust-badge flex items-center justify-center mb-4">
+                  <item.icon className="w-5 h-5 text-primary" />
+                </div>
+                <p className="font-sans text-xs tracking-[0.15em] uppercase text-primary/70 mb-2">
                   {item.category}
                 </p>
-                <h3 className="font-serif text-lg text-foreground mb-2 group-hover:text-primary transition-colors">
+                <h3 className="font-serif text-lg text-foreground mb-2">
                   {item.title}
                 </h3>
-                <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-4">
+                <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-3">
                   {item.description}
                 </p>
-                <span className="inline-flex items-center gap-1.5 font-sans text-xs text-primary font-medium">
-                  Explore
-                  <ExternalLink className="w-3 h-3" />
-                </span>
-              </a>
+                <p className="font-sans text-xs text-primary font-medium italic">
+                  {item.note}
+                </p>
+              </div>
             ))}
           </div>
 
-          {/* Disclaimer */}
-          <p className="text-center mt-12 font-sans text-xs text-muted-foreground">
-            We have no financial relationships with these resources. Recommendations are based 
-            solely on clinical assessment and quality.
-          </p>
+          {/* Science link */}
+          <div className="text-center">
+            <a 
+              href="/science#holistic-approach" 
+              className="inline-flex items-center gap-2 font-sans text-sm text-primary font-medium hover:underline"
+            >
+              Learn more about our holistic approach
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+
+          {/* Philosophy note */}
+          <div className="mt-12 bg-background rounded-lg p-6 border border-border text-center">
+            <p className="font-sans text-sm text-muted-foreground italic">
+              "We'd rather you move well and eat thoughtfully without our supplement, 
+              than take our supplement while neglecting the fundamentals."
+            </p>
+            <p className="font-sans text-xs text-muted-foreground mt-2">
+              — Chinmay & Cynthia Gupte, Founders
+            </p>
+          </div>
         </div>
       </div>
     </section>
