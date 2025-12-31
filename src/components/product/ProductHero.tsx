@@ -17,7 +17,7 @@ const ProductHero = () => {
             <div className="aspect-square bg-secondary rounded-lg flex items-center justify-center overflow-hidden">
               <img 
                 src={productImage} 
-                alt="OmKneeHealth Knee Joint Supplement - 30 daily pouches" 
+                alt="OmKneeHealth Joint + Movement Support - 30 daily pouches" 
                 className="w-full h-full object-contain p-4"
               />
             </div>
@@ -27,7 +27,7 @@ const ProductHero = () => {
             <div className="mt-6 grid grid-cols-3 gap-3">
               <div className="bg-trust-badge rounded-lg p-3 text-center">
                 <Shield className="w-4 h-4 text-primary mx-auto mb-1.5" />
-                <p className="font-sans text-xs text-primary font-medium">Clinician-Led</p>
+                <p className="font-sans text-xs text-primary font-medium">Clinician-Founded</p>
               </div>
               <div className="bg-trust-badge rounded-lg p-3 text-center">
                 <FlaskConical className="w-4 h-4 text-primary mx-auto mb-1.5" />
@@ -43,9 +43,9 @@ const ProductHero = () => {
           {/* Product Info */}
           <div className="space-y-6 order-1 lg:order-2">
             <div>
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-medium tracking-wide bg-primary/10 text-primary mb-4">
-                Our Signature Formula
-              </span>
+              <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary mb-4">
+                Our Formula
+              </p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-foreground leading-tight mb-4">
                 Joint + Movement Support
               </h1>
@@ -53,10 +53,14 @@ const ProductHero = () => {
               <p className="font-sans text-muted-foreground leading-relaxed">
                 A carefully formulated powder combining hydrolysed collagen peptides, 
                 glucosamine, chondroitin, hyaluronic acid, curcumin, boswellia, and essential 
-                vitamins and minerals. Each daily pouch delivers research-informed doses with 
-                transparent rationale.
+                vitamins and minerals — each at research-informed doses with transparent rationale.
               </p>
             </div>
+
+            {/* Strapline */}
+            <p className="font-sans text-sm text-primary font-medium italic">
+              Designed with care. Offered with restraint.
+            </p>
 
             {/* EFSA-authorised claims */}
             <div className="bg-secondary rounded-lg p-6">
@@ -87,7 +91,7 @@ const ProductHero = () => {
             <div className="space-y-4 pt-2">
               <div className="flex items-baseline gap-3">
                 <span className="text-2xl font-serif text-foreground">£49.99</span>
-                <span className="text-sm text-muted-foreground">/ 30 day supply</span>
+                <span className="text-sm text-muted-foreground font-sans">/ 30 day supply</span>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-3">
