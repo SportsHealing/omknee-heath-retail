@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     question: "Why did you choose these specific ingredients and doses?",
-    answer: "Each ingredient was selected based on scientific literature and clinical reasoning. We include 10g hydrolysed collagen peptides, glucosamine and chondroitin at research-informed doses, hyaluronic acid for joint support, and curcumin paired with piperine to address its naturally poor absorption. Vitamin C contributes to normal collagen formation (EFSA claim). Vitamin D and K2 support normal bone health. Magnesium supports normal muscle function. Copper and manganese contribute to normal connective tissue formation. We focused on ingredients with clear, evidence-based rationales."
+    answer: "Each ingredient was selected based on scientific literature and clinical reasoning. We include 10g hydrolysed collagen peptides, glucosamine and chondroitin at research-informed doses, hyaluronic acid (a component naturally found in joint fluid), and curcumin paired with piperine to address its naturally poor absorption. Vitamin C contributes to normal collagen formation (EFSA claim). Vitamin D and K2 contribute to the maintenance of normal bones. Magnesium contributes to normal muscle function. Copper and manganese contribute to normal connective tissue formation. We focused on ingredients with clear, evidence-based rationales."
   },
   {
     question: "What health claims are authorised for these ingredients?",
