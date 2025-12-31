@@ -5,12 +5,19 @@
 
 import { Button } from "@/components/ui/button";
 import { Shield, Award, Microscope } from "lucide-react";
+import heroIngredients from "@/assets/hero-ingredients.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center bg-clinical-light overflow-hidden">
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/50" />
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroIngredients})` }}
+      />
+      
+      {/* Overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/80 to-background/95" />
 
       <div className="container relative z-10 px-6 py-24 lg:py-32">
         <div className="max-w-3xl mx-auto text-center">
