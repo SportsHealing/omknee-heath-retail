@@ -8,6 +8,7 @@ import ProductSafety from "@/components/product/ProductSafety";
 import ProductHowToUse from "@/components/product/ProductHowToUse";
 import ProductFAQ from "@/components/product/ProductFAQ";
 import ProductCTA from "@/components/product/ProductCTA";
+import SEO from "@/components/SEO";
 
 /**
  * PRODUCT PAGE: Joint + Movement Support Capsules
@@ -26,6 +27,12 @@ import ProductCTA from "@/components/product/ProductCTA";
 const Product = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Joint + Movement Support"
+        description="Clinician-formulated joint supplement with hydrolysed collagen, glucosamine, chondroitin, and essential vitamins. Third-party tested, UK manufactured."
+        canonicalPath="/product"
+        ogType="product"
+      />
       <Header />
       <main>
         {/* Section 1: Product Hero - Clinical positioning */}

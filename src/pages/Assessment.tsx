@@ -5,6 +5,7 @@ import KneeScoreEmbed from "@/components/home/KneeScoreEmbed";
 import KneeTriageCalculator from "@/components/assessment/KneeTriageCalculator";
 import { Zap, Stethoscope, Shield, AlertCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import SEO from "@/components/SEO";
 
 type AssessmentTab = "scores" | "triage";
 
@@ -13,6 +14,11 @@ const Assessment = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Free Knee Assessment"
+        description="Take our free clinician-developed knee health assessment. Understand your situation with honest guidance — no sales pitch, just clarity."
+        canonicalPath="/assessment"
+      />
       <Header />
       <main className="pt-20">
         <section className="py-8 md:py-12 bg-secondary/30">
