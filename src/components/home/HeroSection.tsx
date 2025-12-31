@@ -46,10 +46,15 @@ const HeroSection = () => {
           <div className="animate-fade-up-delay-2 clinical-divider mb-6" />
 
           {/* Subheadline - calm, reassuring */}
-          <p className="animate-fade-up-delay-2 font-sans text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-10">
+          <p className="animate-fade-up-delay-2 font-sans text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-6">
             Founded by experienced healthcare professionals, OmKneeHealth brings 
             clinical insight and evidence-informed care together to support long-term 
             knee health — with clarity, restraint, and respect for how the knee truly works.
+          </p>
+
+          {/* Strapline */}
+          <p className="animate-fade-up-delay-2 font-serif text-base md:text-lg text-foreground/80 italic mb-10">
+            Designed by clinicians. Guided by evidence. Built for long-term knee health.
           </p>
 
           {/* Single, non-commercial CTA */}
