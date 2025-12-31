@@ -4,24 +4,24 @@
  */
 
 import { Button } from "@/components/ui/button";
-import { ClipboardCheck, TrendingUp, FileText } from "lucide-react";
+import { ClipboardList, Activity, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const features = [
   {
-    icon: ClipboardCheck,
-    title: "5-Minute Assessment",
-    description: "A brief, evidence-based questionnaire developed with clinical input"
+    icon: ClipboardList,
+    title: "Clinician-Developed",
+    description: "A structured questionnaire informed by clinical experience and research"
   },
   {
-    icon: TrendingUp,
-    title: "Personal Insights",
-    description: "Understand where you are and what factors may affect your joint health"
+    icon: Activity,
+    title: "Understand Your Situation",
+    description: "Gain clarity on factors that may be affecting your knee health"
   },
   {
     icon: FileText,
-    title: "Actionable Guidance",
-    description: "Receive personalized recommendations based on your responses"
+    title: "Honest Guidance",
+    description: "Receive straightforward recommendations — including when to seek professional help"
   }
 ];
 
@@ -38,10 +38,11 @@ const AssessmentSection = () => {
             <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
               Understand Your Knee Health
             </h2>
-            <div className="clinical-divider mb-6" />
+            <div className="w-12 h-px bg-primary/30 mx-auto mb-6" />
             <p className="font-sans text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               Our clinician-developed assessment helps you understand your current 
-              joint health status. No purchase required. No pressure. Just clarity.
+              situation. No purchase required. No sales pitch. Just clarity about 
+              where you are and what might help.
             </p>
           </div>
 
@@ -69,10 +70,19 @@ const AssessmentSection = () => {
               className="px-10 py-6 text-sm font-sans font-medium tracking-wide"
               asChild
             >
-              <Link to="/assessment">Start Your Free Assessment</Link>
+              <Link to="/assessment">Take the Free Assessment</Link>
             </Button>
             <p className="mt-4 font-sans text-xs text-muted-foreground">
-              Takes approximately 5 minutes • Completely confidential
+              Takes approximately 5 minutes • Completely confidential • No obligation
+            </p>
+          </div>
+
+          {/* Disclaimer */}
+          <div className="mt-12 text-center">
+            <p className="font-sans text-xs text-muted-foreground/70 max-w-xl mx-auto italic">
+              This assessment is for informational purposes only and does not constitute 
+              medical advice. If you have concerns about your knee health, please consult 
+              a qualified healthcare professional.
             </p>
           </div>
         </div>
