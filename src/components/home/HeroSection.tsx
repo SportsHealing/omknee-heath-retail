@@ -61,8 +61,15 @@ const HeroSection = () => {
             <span>Built for long-term knee health</span>
           </div>
 
-          {/* Single, non-commercial CTA */}
+          {/* CTA buttons */}
           <div className="animate-fade-up-delay-3 flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button 
+              size="lg" 
+              className="px-8 py-6 text-sm font-sans font-medium tracking-wide"
+              asChild
+            >
+              <a href="/assessment">Take the Knee Assessment</a>
+            </Button>
             <Button 
               variant="outline"
               size="lg" 
