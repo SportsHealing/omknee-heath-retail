@@ -53,7 +53,7 @@ const HeroSection = () => {
           </p>
 
           {/* Strapline */}
-          <p className="animate-fade-up-delay-2 font-serif text-base md:text-lg text-foreground/80 italic mb-10">
+          <p className="animate-fade-up-delay-2 font-sans text-sm md:text-base tracking-wide text-primary font-medium mb-10">
             Designed by clinicians. Guided by evidence. Built for long-term knee health.
           </p>
 
