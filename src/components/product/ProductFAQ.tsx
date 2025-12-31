@@ -9,6 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import FAQSchema from "@/components/FAQSchema";
 
 const faqs = [
   {
@@ -48,6 +49,7 @@ const faqs = [
 const ProductFAQ = () => {
   return (
     <section id="product-faq" className="py-20 md:py-28 bg-secondary scroll-mt-20">
+      <FAQSchema faqs={faqs} />
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
           {/* Section header */}
