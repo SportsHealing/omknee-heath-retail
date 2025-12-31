@@ -15,18 +15,20 @@ const Assessment = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-20">
-        <section className="py-8 md:py-12 bg-om-cream/30">
+        <section className="py-8 md:py-12 bg-secondary/30">
           <div className="container mx-auto px-6">
             {/* Header */}
             <div className="text-center mb-8">
-              <p className="text-om-sage font-medium tracking-wide uppercase text-sm mb-3">
-                SportsHealing / OmKneeHealth
+              <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary mb-4">
+                Free Assessment Tools
               </p>
               <h1 className="text-3xl md:text-4xl font-serif text-foreground mb-4">
-                Knee Health Assessments
+                Understand Your Knee Health
               </h1>
-              <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                Choose between quick scoring tools or our comprehensive clinical triage calculator.
+              <div className="w-12 h-px bg-primary/30 mx-auto mb-6" />
+              <p className="font-sans text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                Clinician-developed tools to help you gain clarity — not sales pitches. 
+                Choose the assessment that fits your needs.
               </p>
             </div>
 
