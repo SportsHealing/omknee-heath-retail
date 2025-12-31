@@ -32,7 +32,7 @@ const HeroSection = () => {
 
           {/* Main headline - authority positioning */}
           <h1 className="animate-fade-up-delay-1 font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.15] mb-6">
-            The Knee Health Authority
+            Knee Health, Considered Properly.
           </h1>
 
           {/* Clinical divider */}
@@ -40,9 +40,9 @@ const HeroSection = () => {
 
           {/* Subheadline - calm, reassuring */}
           <p className="animate-fade-up-delay-2 font-sans text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-10">
-            Founded by healthcare professionals dedicated to joint longevity. 
-            We combine clinical expertise with evidence-informed care to support 
-            your knee health at every stage of life.
+            Founded by experienced healthcare professionals, OmKneeHealth brings 
+            clinical insight and evidence-informed care together to support long-term 
+            knee health — with clarity, restraint, and respect for how the knee truly works.
           </p>
 
           {/* Single, non-commercial CTA */}
