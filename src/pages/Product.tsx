@@ -9,6 +9,7 @@ import ProductHowToUse from "@/components/product/ProductHowToUse";
 import ProductFAQ from "@/components/product/ProductFAQ";
 import ProductCTA from "@/components/product/ProductCTA";
 import SEO from "@/components/SEO";
+import ProductSchema from "@/components/ProductSchema";
 
 /**
  * PRODUCT PAGE: Joint + Movement Support Capsules
@@ -32,6 +33,17 @@ const Product = () => {
         description="Clinician-formulated joint supplement with hydrolysed collagen, glucosamine, chondroitin, and essential vitamins. Third-party tested, UK manufactured."
         canonicalPath="/product"
         ogType="product"
+      />
+      <ProductSchema
+        name="Joint + Movement Support"
+        description="A carefully formulated powder combining hydrolysed collagen peptides, glucosamine, chondroitin, hyaluronic acid, curcumin, boswellia, and essential vitamins and minerals — each at research-informed doses."
+        image="https://omkneehealth.com/og-image.png"
+        price="49.99"
+        currency="GBP"
+        sku="OMKNEE-JMS-30"
+        brand="OmKneeHealth"
+        availability="InStock"
+        url="https://omkneehealth.com/product"
       />
       <Header />
       <main>
