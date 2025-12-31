@@ -53,11 +53,11 @@ const HeroSection = () => {
           </p>
 
           {/* Strapline */}
-          <div className="animate-fade-up-delay-2 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base tracking-wide text-primary font-medium mb-10">
+          <div className="animate-fade-up-delay-2 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base tracking-wide text-primary font-medium italic mb-10">
             <span>Designed by clinicians</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-primary/40" aria-hidden="true" />
+            <span className="w-1.5 h-1.5 rounded-full bg-primary/40 not-italic" aria-hidden="true" />
             <span>Guided by evidence</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-primary/40" aria-hidden="true" />
+            <span className="w-1.5 h-1.5 rounded-full bg-primary/40 not-italic" aria-hidden="true" />
             <span>Built for long-term knee health</span>
           </div>
 
