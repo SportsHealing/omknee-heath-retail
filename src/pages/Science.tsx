@@ -8,6 +8,7 @@ import SupplementReality from "@/components/science/SupplementReality";
 import HolisticApproach from "@/components/science/HolisticApproach";
 import ScienceFAQ from "@/components/science/ScienceFAQ";
 import ScienceCTA from "@/components/science/ScienceCTA";
+import SEO from "@/components/SEO";
 
 /**
  * SHOPIFY PAGE: Evidence & Science Hub
@@ -24,6 +25,11 @@ import ScienceCTA from "@/components/science/ScienceCTA";
 const Science = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="The Science"
+        description="Understand the science behind knee health. Evidence-informed explanations of joint biology, ingredient research, and our honest approach to supplementation."
+        canonicalPath="/science"
+      />
       <Header />
       <main>
         <ScienceHero />

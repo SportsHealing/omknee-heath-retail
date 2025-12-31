@@ -8,10 +8,16 @@ import SignatureProductSection from "@/components/home/SignatureProductSection";
 import CuratedSection from "@/components/home/CuratedSection";
 import OurStorySection from "@/components/home/OurStorySection";
 import CTASection from "@/components/home/CTASection";
+import SEO from "@/components/SEO";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="OmKneeHealth"
+        description="Clinician-founded knee health support. Evidence-informed supplements and free assessment tools designed by healthcare professionals for long-term joint health."
+        canonicalPath="/"
+      />
       <Header />
       <main>
         {/* Section 1: Authority Hero - Establishes medical credibility within 5 seconds */}
