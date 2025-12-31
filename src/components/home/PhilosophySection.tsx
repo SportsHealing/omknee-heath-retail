@@ -3,23 +3,23 @@
  * Establishes OmKneeHealth as an authority, not a brand
  */
 
-import { Heart, BookOpen, Users } from "lucide-react";
+import { Stethoscope, FlaskConical, Activity } from "lucide-react";
 
 const pillars = [
   {
-    icon: Heart,
-    title: "Patient-First Care",
-    description: "Every recommendation begins with understanding your unique needs. We believe in listening before prescribing, and supporting before selling."
+    icon: Stethoscope,
+    title: "Clinical Thinking First",
+    description: "Our approach starts where clinical practice starts — with careful assessment, individualised consideration, and respect for complexity. No shortcuts, no one-size-fits-all."
   },
   {
-    icon: BookOpen,
-    title: "Evidence Over Claims",
-    description: "Our guidance is rooted in peer-reviewed research and clinical experience. We share what the science actually shows—nothing more, nothing less."
+    icon: FlaskConical,
+    title: "Evidence, Not Promises",
+    description: "We share what the research shows and acknowledge what remains uncertain. Honest communication matters more than compelling marketing."
   },
   {
-    icon: Users,
-    title: "Holistic Approach",
-    description: "True joint health encompasses movement, nutrition, and lifestyle. Supplements are just one piece of a comprehensive care strategy."
+    icon: Activity,
+    title: "The Whole Picture",
+    description: "Knee health involves movement, load management, recovery, and nutrition. Supplements play a supporting role — never the lead."
   }
 ];
 
@@ -33,13 +33,13 @@ const PhilosophySection = () => {
             Our Philosophy
           </p>
           <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
-            A Different Approach to Joint Health
+            Knee Health, Considered Differently
           </h2>
           <div className="clinical-divider mb-6" />
           <p className="font-sans text-muted-foreground leading-relaxed">
-            We founded OmKneeHealth because the joint supplement industry needed 
-            a voice of reason. Too many promises, not enough honesty. We're here 
-            to change that.
+            OmKneeHealth was founded by clinicians who saw a gap — not for another 
+            supplement, but for a more thoughtful, restrained, and evidence-informed 
+            approach to supporting long-term knee health.
           </p>
         </div>
 
