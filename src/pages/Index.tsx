@@ -6,7 +6,7 @@ import EducationSection from "@/components/home/EducationSection";
 import AssessmentSection from "@/components/home/AssessmentSection";
 import SignatureProductSection from "@/components/home/SignatureProductSection";
 import CuratedSection from "@/components/home/CuratedSection";
-import CredibilitySection from "@/components/home/CredibilitySection";
+import OurStorySection from "@/components/home/OurStorySection";
 import CTASection from "@/components/home/CTASection";
 
 const Index = () => {
@@ -32,8 +32,8 @@ const Index = () => {
         {/* Section 6: Curated Resources - Beyond our own products */}
         <CuratedSection />
         
-        {/* Section 7: Credibility - Clinical team & trust signals */}
-        <CredibilitySection />
+        {/* Section 7: Our Story - Founders & philosophy */}
+        <OurStorySection />
         
         {/* Section 8: Gentle CTA - Assessment-focused, not purchase */}
         <CTASection />
