@@ -5,14 +5,14 @@
  */
 
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
+import { Check, ArrowRight, BookOpen } from "lucide-react";
 import productPouches from "@/assets/product-pouches.png";
 
 const productFeatures = [
-  "Clinician-formulated with evidence-backed ingredients",
+  "Clinician-formulated with research-informed ingredient selection",
   "Third-party tested for purity and potency",
   "Manufactured in GMP-certified UK facility",
-  "Transparent dosing—no proprietary blends"
+  "Transparent dosing — no proprietary blends, every amount declared"
 ];
 
 const SignatureProductSection = () => {
@@ -22,16 +22,17 @@ const SignatureProductSection = () => {
         <div className="max-w-5xl mx-auto">
           {/* Section label */}
           <div className="text-center mb-12">
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-wide bg-primary-foreground/10 text-primary-foreground/90 mb-6">
+            <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary-foreground/60 mb-4">
               Our Formula
-            </span>
+            </p>
             <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-4">
-              Joint Care Complex
+              Joint + Movement Support
             </h2>
             <div className="w-12 h-px bg-primary-foreground/30 mx-auto mb-6" />
             <p className="font-sans text-primary-foreground/80 leading-relaxed max-w-2xl mx-auto">
               When we couldn't find a joint supplement that met our clinical standards, 
-              we developed our own. One formula. No gimmicks. Just thoughtful formulation.
+              we developed our own. One formula. No gimmicks. Just thoughtful, 
+              evidence-informed formulation.
             </p>
           </div>
 
@@ -41,16 +42,19 @@ const SignatureProductSection = () => {
             <div className="aspect-square bg-primary-foreground/5 rounded-lg flex items-center justify-center order-2 lg:order-1 p-8">
               <img 
                 src={productPouches} 
-                alt="OmKneeHealth Joint Care Complex pouches"
+                alt="OmKneeHealth Joint + Movement Support pouches"
                 className="w-full h-full object-contain"
               />
             </div>
 
             {/* Product details */}
             <div className="order-1 lg:order-2">
-              <h3 className="font-serif text-2xl mb-6">
+              <h3 className="font-serif text-2xl mb-2">
                 What Makes It Different
               </h3>
+              <p className="font-sans text-sm text-primary-foreground/60 mb-6 italic">
+                Designed with care. Offered with restraint.
+              </p>
               
               <ul className="space-y-4 mb-8">
                 {productFeatures.map((feature, index) => (
@@ -72,7 +76,10 @@ const SignatureProductSection = () => {
                   className="px-8 py-6 text-sm font-sans font-medium tracking-wide"
                   asChild
                 >
-                  <a href="/product">View Full Details</a>
+                  <a href="/product">
+                    View Full Details
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
                 </Button>
                 <Button 
                   variant="ghost"
@@ -80,9 +87,18 @@ const SignatureProductSection = () => {
                   className="px-8 py-6 text-sm font-sans font-medium tracking-wide text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
                   asChild
                 >
-                  <a href="/science">See the Research</a>
+                  <a href="/science#evidence-science">
+                    <BookOpen className="w-4 h-4 mr-2" />
+                    See the Evidence
+                  </a>
                 </Button>
               </div>
+
+              {/* Honest note */}
+              <p className="mt-6 font-sans text-xs text-primary-foreground/50">
+                Remember: supplements support — they don't replace — movement, 
+                nutrition, and appropriate care.
+              </p>
             </div>
           </div>
         </div>
