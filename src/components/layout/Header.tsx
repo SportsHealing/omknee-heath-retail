@@ -40,11 +40,14 @@ const Header = () => {
             <Link to="/#philosophy" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
               Our Philosophy
             </Link>
+            <Link to="/#our-story" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Our Story
+            </Link>
             <Link to="/science" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
               The Science
             </Link>
             <Link to="/assessment" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Full Knee Assessment
+              Knee Assessment
             </Link>
             <Link to="/product" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
               Our Formula
@@ -84,6 +87,13 @@ const Header = () => {
                 Our Philosophy
               </Link>
               <Link 
+                to="/#our-story" 
+                className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Our Story
+              </Link>
+              <Link 
                 to="/science" 
                 className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
@@ -95,7 +105,7 @@ const Header = () => {
                 className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Full Knee Assessment
+                Knee Assessment
               </Link>
               <Link 
                 to="/product" 
