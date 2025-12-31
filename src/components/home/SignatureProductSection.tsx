@@ -6,6 +6,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import productPouches from "@/assets/product-pouches.png";
 
 const productFeatures = [
   "Clinician-formulated with evidence-backed ingredients",
@@ -36,16 +37,13 @@ const SignatureProductSection = () => {
 
           {/* Product card */}
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Product image placeholder */}
-            <div className="aspect-square bg-primary-foreground/5 rounded-lg flex items-center justify-center order-2 lg:order-1">
-              <div className="text-center p-8">
-                <p className="font-sans text-sm text-primary-foreground/60 mb-2">
-                  Product Image
-                </p>
-                <p className="font-serif text-2xl text-primary-foreground/80">
-                  Joint Care Complex
-                </p>
-              </div>
+            {/* Product image */}
+            <div className="aspect-square bg-primary-foreground/5 rounded-lg flex items-center justify-center order-2 lg:order-1 p-8">
+              <img 
+                src={productPouches} 
+                alt="OmKneeHealth Joint Care Complex pouches"
+                className="w-full h-full object-contain"
+              />
             </div>
 
             {/* Product details */}
