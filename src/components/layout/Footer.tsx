@@ -91,7 +91,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="/privacy-policy" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   Privacy Policy
                 </a>
               </li>

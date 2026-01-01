@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Product from "./pages/Product";
 import Science from "./pages/Science";
 import Assessment from "./pages/Assessment";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 import ScrollToHash from "./components/ScrollToHash";
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/product" element={<Product />} />
           <Route path="/science" element={<Science />} />
           <Route path="/assessment" element={<Assessment />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
