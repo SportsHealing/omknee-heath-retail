@@ -1,12 +1,48 @@
-import { Instagram, Facebook, Linkedin } from "lucide-react";
+import { useState } from "react";
+import { Instagram, Facebook, Linkedin, Send, CheckCircle } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 import logoWhite from "@/assets/logo-white.png";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const { toast } = useToast();
+
   const socialLinks = [
     { name: "Instagram", icon: Instagram, href: "https://instagram.com/omkneehealth" },
     { name: "Facebook", icon: Facebook, href: "https://facebook.com/omkneehealth" },
     { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/company/omkneehealth" },
   ];
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    // Simulate subscription
+    await new Promise((resolve) => setTimeout(resolve, 800));
+    
+    setIsSubmitting(false);
+    setIsSubscribed(true);
+    setEmail("");
+    
+    toast({
+      title: "You're subscribed!",
+      description: "Thank you for joining our newsletter.",
+    });
+  };
 
   return (
     <footer className="bg-primary text-primary-foreground py-16">
@@ -132,6 +168,51 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
+          </div>
+        </div>
+
+        {/* Newsletter */}
+        <div className="py-8 border-t border-primary-foreground/10">
+          <div className="max-w-md mx-auto text-center">
+            <h4 className="font-serif text-lg text-primary-foreground mb-2">
+              Stay informed
+            </h4>
+            <p className="font-sans text-sm text-primary-foreground/60 mb-4">
+              Get evidence-based insights on joint health delivered to your inbox.
+            </p>
+            
+            {isSubscribed ? (
+              <div className="flex items-center justify-center gap-2 text-primary-foreground/80">
+                <CheckCircle className="w-5 h-5" />
+                <span className="font-sans text-sm">Thanks for subscribing!</span>
+              </div>
+            ) : (
+              <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-primary-foreground/40"
+                />
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  variant="secondary"
+                  className="px-4"
+                >
+                  {isSubmitting ? (
+                    "..."
+                  ) : (
+                    <Send className="w-4 h-4" />
+                  )}
+                </Button>
+              </form>
+            )}
+            
+            <p className="font-sans text-xs text-primary-foreground/40 mt-3">
+              No spam. Unsubscribe anytime.
+            </p>
           </div>
         </div>
 
