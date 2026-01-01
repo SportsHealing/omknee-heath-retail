@@ -4,6 +4,7 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Cookie, X, Settings, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface CookiePreferences {
   essential: boolean;
@@ -25,16 +26,18 @@ const COOKIE_PREFERENCES_KEY = "omkneehealth_cookie_preferences";
 const CookieConsent = () => {
   const [showBanner, setShowBanner] = useState(false);
   const [showCustomise, setShowCustomise] = useState(false);
+  const [hasConsented, setHasConsented] = useState(false);
   const [preferences, setPreferences] = useState<CookiePreferences>(defaultPreferences);
 
   useEffect(() => {
     // Check if user has already consented
-    const hasConsented = localStorage.getItem(COOKIE_CONSENT_KEY);
-    if (!hasConsented) {
+    const consentGiven = localStorage.getItem(COOKIE_CONSENT_KEY);
+    if (!consentGiven) {
       // Small delay to prevent flash on page load
       const timer = setTimeout(() => setShowBanner(true), 500);
       return () => clearTimeout(timer);
     } else {
+      setHasConsented(true);
       // Load saved preferences
       const savedPreferences = localStorage.getItem(COOKIE_PREFERENCES_KEY);
       if (savedPreferences) {
@@ -49,6 +52,7 @@ const CookieConsent = () => {
     setPreferences(prefs);
     setShowBanner(false);
     setShowCustomise(false);
+    setHasConsented(true);
   };
 
   const handleAcceptAll = () => {
@@ -73,9 +77,42 @@ const CookieConsent = () => {
     setPreferences(prev => ({ ...prev, [key]: value }));
   };
 
-  if (!showBanner) return null;
+  const openPreferencesModal = () => {
+    setShowCustomise(true);
+  };
+
+  // Floating settings button (shows after consent)
+  const FloatingSettingsButton = () => {
+    if (!hasConsented || showBanner || showCustomise) return null;
+
+    return (
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <button
+              onClick={openPreferencesModal}
+              className="fixed bottom-4 left-4 z-50 w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 border border-border shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-105"
+              aria-label="Cookie Settings"
+            >
+              <Cookie className="w-5 h-5 text-primary" />
+            </button>
+          </TooltipTrigger>
+          <TooltipContent side="right">
+            <p>Cookie Settings</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    );
+  };
+
+  // If no banner and no modal, just show the floating button
+  if (!showBanner && !showCustomise) {
+    return <FloatingSettingsButton />;
+  }
 
   return (
+    <>
+      <FloatingSettingsButton />
     <div className="fixed inset-0 z-[100] pointer-events-none">
       {/* Backdrop for customise modal */}
       {showCustomise && (
@@ -269,6 +306,7 @@ const CookieConsent = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
