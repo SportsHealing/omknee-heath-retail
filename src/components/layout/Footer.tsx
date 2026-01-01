@@ -100,6 +100,11 @@ const Footer = () => {
                   Terms & Conditions
                 </a>
               </li>
+              <li>
+                <a href="/returns-policy" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  Returns Policy
+                </a>
+              </li>
             </ul>
           </div>
         </div>
