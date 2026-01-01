@@ -1,6 +1,13 @@
+import { Instagram, Facebook, Linkedin } from "lucide-react";
 import logoWhite from "@/assets/logo-white.png";
 
 const Footer = () => {
+  const socialLinks = [
+    { name: "Instagram", icon: Instagram, href: "https://instagram.com/omkneehealth" },
+    { name: "Facebook", icon: Facebook, href: "https://facebook.com/omkneehealth" },
+    { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/company/omkneehealth" },
+  ];
+
   return (
     <footer className="bg-primary text-primary-foreground py-16">
       <div className="container px-6">
@@ -16,9 +23,23 @@ const Footer = () => {
               Knee health, considered properly. Founded by Chinmay and Cynthia Gupte — 
               clinicians bringing evidence-informed care to joint health support.
             </p>
-            <p className="font-sans text-xs text-primary-foreground/50 italic">
+            <p className="font-sans text-xs text-primary-foreground/50 italic mb-4">
               Designed by clinicians. Guided by evidence.
             </p>
+            <div className="flex gap-3">
+              {socialLinks.map(({ name, icon: Icon, href }) => (
+                <a
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={name}
+                  className="w-9 h-9 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors"
+                >
+                  <Icon className="w-4 h-4 text-primary-foreground/80" />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Shop */}
