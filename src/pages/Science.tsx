@@ -9,6 +9,9 @@ import HolisticApproach from "@/components/science/HolisticApproach";
 import ScienceFAQ from "@/components/science/ScienceFAQ";
 import ScienceCTA from "@/components/science/ScienceCTA";
 import SEO from "@/components/SEO";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 /**
  * SHOPIFY PAGE: Evidence & Science Hub
@@ -23,6 +26,8 @@ import SEO from "@/components/SEO";
  */
 
 const Science = () => {
+  const navigate = useNavigate();
+  
   return (
     <div className="min-h-screen bg-background">
       <SEO
@@ -32,6 +37,18 @@ const Science = () => {
       />
       <Header />
       <main>
+        {/* Back Button */}
+        <div className="pt-24 pb-4 container mx-auto px-6">
+          <Button 
+            variant="ghost" 
+            onClick={() => navigate(-1)}
+            className="text-muted-foreground hover:text-foreground"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back
+          </Button>
+        </div>
+        
         <ScienceHero />
         <WhyKneeHealthMatters />
         <JointBiology />

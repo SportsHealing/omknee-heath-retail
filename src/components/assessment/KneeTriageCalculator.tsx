@@ -573,7 +573,11 @@ export default function KneeTriageCalculator() {
             </div>
           )}
 
-          <div className="mt-8 flex justify-end">
+          <div className="mt-8 flex justify-between">
+            <Button variant="outline" onClick={() => window.history.back()}>
+              <ChevronLeft className="w-4 h-4 mr-2" />
+              Back
+            </Button>
             <Button onClick={handleNext} size="lg">
               Continue
               <ChevronRight className="w-4 h-4 ml-2" />

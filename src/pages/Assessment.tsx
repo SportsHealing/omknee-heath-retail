@@ -3,14 +3,17 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import KneeScoreEmbed from "@/components/home/KneeScoreEmbed";
 import KneeTriageCalculator from "@/components/assessment/KneeTriageCalculator";
-import { Zap, Stethoscope, Shield, AlertCircle } from "lucide-react";
+import { Zap, Stethoscope, Shield, AlertCircle, ArrowLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 import SEO from "@/components/SEO";
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 type AssessmentTab = "scores" | "triage";
 
 const Assessment = () => {
   const [activeTab, setActiveTab] = useState<AssessmentTab>("scores");
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-background">
@@ -23,6 +26,18 @@ const Assessment = () => {
       <main className="pt-20">
         <section className="py-8 md:py-12 bg-secondary/30">
           <div className="container mx-auto px-6">
+            {/* Back Button */}
+            <div className="mb-6">
+              <Button 
+                variant="ghost" 
+                onClick={() => navigate(-1)}
+                className="text-muted-foreground hover:text-foreground"
+              >
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back
+              </Button>
+            </div>
+
             {/* Header */}
             <div className="text-center mb-8">
               <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary mb-4">
