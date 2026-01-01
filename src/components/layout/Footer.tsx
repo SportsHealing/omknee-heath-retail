@@ -81,6 +81,11 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
+                <a href="/contact" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  Contact Us
+                </a>
+              </li>
+              <li>
                 <a href="mailto:hello@omkneehealth.com" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   hello@omkneehealth.com
                 </a>
