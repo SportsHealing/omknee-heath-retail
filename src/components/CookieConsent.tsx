@@ -1,0 +1,275 @@
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
+import { Cookie, X, Settings, Shield } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+interface CookiePreferences {
+  essential: boolean;
+  analytics: boolean;
+  preferences: boolean;
+  marketing: boolean;
+}
+
+const defaultPreferences: CookiePreferences = {
+  essential: true, // Always required
+  analytics: false,
+  preferences: false,
+  marketing: false,
+};
+
+const COOKIE_CONSENT_KEY = "omkneehealth_cookie_consent";
+const COOKIE_PREFERENCES_KEY = "omkneehealth_cookie_preferences";
+
+const CookieConsent = () => {
+  const [showBanner, setShowBanner] = useState(false);
+  const [showCustomise, setShowCustomise] = useState(false);
+  const [preferences, setPreferences] = useState<CookiePreferences>(defaultPreferences);
+
+  useEffect(() => {
+    // Check if user has already consented
+    const hasConsented = localStorage.getItem(COOKIE_CONSENT_KEY);
+    if (!hasConsented) {
+      // Small delay to prevent flash on page load
+      const timer = setTimeout(() => setShowBanner(true), 500);
+      return () => clearTimeout(timer);
+    } else {
+      // Load saved preferences
+      const savedPreferences = localStorage.getItem(COOKIE_PREFERENCES_KEY);
+      if (savedPreferences) {
+        setPreferences(JSON.parse(savedPreferences));
+      }
+    }
+  }, []);
+
+  const saveConsent = (prefs: CookiePreferences) => {
+    localStorage.setItem(COOKIE_CONSENT_KEY, "true");
+    localStorage.setItem(COOKIE_PREFERENCES_KEY, JSON.stringify(prefs));
+    setPreferences(prefs);
+    setShowBanner(false);
+    setShowCustomise(false);
+  };
+
+  const handleAcceptAll = () => {
+    saveConsent({
+      essential: true,
+      analytics: true,
+      preferences: true,
+      marketing: true,
+    });
+  };
+
+  const handleAcceptEssential = () => {
+    saveConsent(defaultPreferences);
+  };
+
+  const handleSavePreferences = () => {
+    saveConsent(preferences);
+  };
+
+  const updatePreference = (key: keyof CookiePreferences, value: boolean) => {
+    if (key === "essential") return; // Essential cookies cannot be disabled
+    setPreferences(prev => ({ ...prev, [key]: value }));
+  };
+
+  if (!showBanner) return null;
+
+  return (
+    <div className="fixed inset-0 z-[100] pointer-events-none">
+      {/* Backdrop for customise modal */}
+      {showCustomise && (
+        <div 
+          className="absolute inset-0 bg-black/40 backdrop-blur-sm pointer-events-auto"
+          onClick={() => setShowCustomise(false)}
+        />
+      )}
+
+      {/* Banner */}
+      <div 
+        className={cn(
+          "absolute bottom-0 left-0 right-0 pointer-events-auto transition-transform duration-300",
+          showCustomise ? "translate-y-full" : "translate-y-0"
+        )}
+      >
+        <div className="bg-background border-t border-border shadow-lg">
+          <div className="container mx-auto px-6 py-6">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6">
+              {/* Icon and Text */}
+              <div className="flex items-start gap-4 flex-1">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Cookie className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">We value your privacy</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    We use cookies to enhance your browsing experience, analyse site traffic, and personalise content. 
+                    By clicking "Accept All", you consent to our use of cookies.{" "}
+                    <a href="/privacy-policy#cookies" className="text-primary hover:underline">
+                      Learn more
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+                <Button
+                  variant="outline"
+                  onClick={() => setShowCustomise(true)}
+                  className="order-3 sm:order-1"
+                >
+                  <Settings className="w-4 h-4 mr-2" />
+                  Customise
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={handleAcceptEssential}
+                  className="order-2"
+                >
+                  Essential Only
+                </Button>
+                <Button
+                  onClick={handleAcceptAll}
+                  className="order-1 sm:order-3"
+                >
+                  Accept All
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Customise Modal */}
+      {showCustomise && (
+        <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-auto">
+          <div className="bg-background rounded-2xl border border-border shadow-xl max-w-lg w-full max-h-[90vh] overflow-y-auto animate-fade-up">
+            {/* Header */}
+            <div className="flex items-center justify-between p-6 border-b border-border">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Shield className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h2 className="font-semibold text-foreground">Cookie Preferences</h2>
+                  <p className="text-xs text-muted-foreground">Manage your cookie settings</p>
+                </div>
+              </div>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setShowCustomise(false)}
+                className="text-muted-foreground"
+              >
+                <X className="w-5 h-5" />
+              </Button>
+            </div>
+
+            {/* Content */}
+            <div className="p-6 space-y-6">
+              <p className="text-sm text-muted-foreground">
+                We use different types of cookies to optimise your experience on our website. 
+                Click on the categories below to learn more and change your preferences. 
+                Essential cookies cannot be disabled as they are necessary for the website to function.
+              </p>
+
+              {/* Cookie Categories */}
+              <div className="space-y-4">
+                {/* Essential Cookies */}
+                <div className="p-4 rounded-xl border border-border bg-muted/30">
+                  <div className="flex items-center justify-between mb-2">
+                    <Label className="font-medium text-foreground">Essential Cookies</Label>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs text-muted-foreground">Always active</span>
+                      <Switch checked={true} disabled className="opacity-50" />
+                    </div>
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    These cookies are necessary for the website to function and cannot be switched off. 
+                    They are usually set in response to actions you take, such as setting your privacy preferences, 
+                    logging in, or filling in forms.
+                  </p>
+                </div>
+
+                {/* Analytics Cookies */}
+                <div className="p-4 rounded-xl border border-border">
+                  <div className="flex items-center justify-between mb-2">
+                    <Label htmlFor="analytics" className="font-medium text-foreground cursor-pointer">
+                      Analytics Cookies
+                    </Label>
+                    <Switch
+                      id="analytics"
+                      checked={preferences.analytics}
+                      onCheckedChange={(checked) => updatePreference("analytics", checked)}
+                    />
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    These cookies allow us to count visits and traffic sources so we can measure and improve 
+                    the performance of our site. They help us understand which pages are the most and least 
+                    popular and see how visitors move around the site.
+                  </p>
+                </div>
+
+                {/* Preference Cookies */}
+                <div className="p-4 rounded-xl border border-border">
+                  <div className="flex items-center justify-between mb-2">
+                    <Label htmlFor="preferences" className="font-medium text-foreground cursor-pointer">
+                      Preference Cookies
+                    </Label>
+                    <Switch
+                      id="preferences"
+                      checked={preferences.preferences}
+                      onCheckedChange={(checked) => updatePreference("preferences", checked)}
+                    />
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    These cookies enable the website to remember choices you make (such as your preferred 
+                    language or region) and provide enhanced, more personal features.
+                  </p>
+                </div>
+
+                {/* Marketing Cookies */}
+                <div className="p-4 rounded-xl border border-border">
+                  <div className="flex items-center justify-between mb-2">
+                    <Label htmlFor="marketing" className="font-medium text-foreground cursor-pointer">
+                      Marketing Cookies
+                    </Label>
+                    <Switch
+                      id="marketing"
+                      checked={preferences.marketing}
+                      onCheckedChange={(checked) => updatePreference("marketing", checked)}
+                    />
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    These cookies may be set through our site by our advertising partners. They may be used 
+                    to build a profile of your interests and show you relevant advertisements on other sites.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Footer */}
+            <div className="p-6 border-t border-border bg-muted/30 flex flex-col sm:flex-row gap-3">
+              <Button
+                variant="outline"
+                onClick={handleAcceptEssential}
+                className="flex-1"
+              >
+                Essential Only
+              </Button>
+              <Button
+                onClick={handleSavePreferences}
+                className="flex-1"
+              >
+                Save Preferences
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default CookieConsent;
