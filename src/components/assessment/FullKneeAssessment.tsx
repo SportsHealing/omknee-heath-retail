@@ -538,7 +538,17 @@ const FullKneeAssessment = ({ onBack }: FullKneeAssessmentProps) => {
             </Button>
           </div>
 
-          <div className="flex justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button 
+              variant="outline" 
+              onClick={() => {
+                setShowResults(false);
+                setCurrentStep(STEPS.length);
+              }}
+            >
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Review
+            </Button>
             <Button variant="ghost" onClick={resetAssessment}>
               Start Over
             </Button>

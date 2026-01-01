@@ -10,6 +10,9 @@ import ProductFAQ from "@/components/product/ProductFAQ";
 import ProductCTA from "@/components/product/ProductCTA";
 import SEO from "@/components/SEO";
 import ProductSchema from "@/components/ProductSchema";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 /**
  * PRODUCT PAGE: Joint + Movement Support Capsules
@@ -26,6 +29,8 @@ import ProductSchema from "@/components/ProductSchema";
  */
 
 const Product = () => {
+  const navigate = useNavigate();
+  
   return (
     <div className="min-h-screen bg-background">
       <SEO
@@ -47,6 +52,18 @@ const Product = () => {
       />
       <Header />
       <main>
+        {/* Back Button */}
+        <div className="pt-24 pb-4 container mx-auto px-6">
+          <Button 
+            variant="ghost" 
+            onClick={() => navigate(-1)}
+            className="text-muted-foreground hover:text-foreground"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back
+          </Button>
+        </div>
+        
         {/* Section 1: Product Hero - Clinical positioning */}
         <ProductHero />
         
