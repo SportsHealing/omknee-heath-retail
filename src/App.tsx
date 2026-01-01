@@ -11,6 +11,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import NotFound from "./pages/NotFound";
 import ScrollToHash from "./components/ScrollToHash";
+import CookieConsent from "./components/CookieConsent";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToHash />
+        <CookieConsent />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/product" element={<Product />} />
