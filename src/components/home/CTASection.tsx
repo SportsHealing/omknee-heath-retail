@@ -11,7 +11,7 @@ const CTASection = () => {
       <div className="container px-6">
         <div className="max-w-xl mx-auto text-center">
           <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-16">
-            Ready to Begin?
+            When You're Ready
           </h2>
           
           <Button 
@@ -20,7 +20,7 @@ const CTASection = () => {
             asChild
           >
             <a href="/assessment">
-              Begin Assessment
+              Take Assessment
             </a>
           </Button>
 

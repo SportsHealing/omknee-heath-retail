@@ -64,7 +64,7 @@ const AssessmentSection = () => {
               className="px-12 py-6 text-sm font-sans font-medium tracking-wide"
               asChild
             >
-              <Link to="/assessment">Begin</Link>
+              <Link to="/assessment">Start</Link>
             </Button>
             <p className="mt-8 font-sans text-xs text-muted-foreground">
               5 minutes

@@ -46,10 +46,10 @@ const ProductHero = () => {
               
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button size="lg" className="px-8 text-sm font-sans font-medium">
-                  Add to Cart
+                  Add to Basket
                 </Button>
                 <Button variant="outline" size="lg" className="px-8 text-sm font-sans font-medium border-primary/20">
-                  Subscribe & Save 15%
+                  Subscribe & Save
                 </Button>
               </div>
             </div>
