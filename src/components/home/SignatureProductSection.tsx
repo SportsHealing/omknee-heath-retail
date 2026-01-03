@@ -20,11 +20,19 @@ const SignatureProductSection = () => {
     <section className="py-40 lg:py-48 bg-primary text-primary-foreground">
       <div className="container px-6">
         <div className="max-w-5xl mx-auto">
-          {/* Section label */}
+          {/* Section header */}
           <div className="text-center mb-20">
-            <h2 className="font-serif text-3xl md:text-4xl leading-tight">
-              Joint + Movement Support
+            <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-8">
+              Targeted nutritional support for knee joints
             </h2>
+            <div className="space-y-4 text-primary-foreground/80 font-sans leading-relaxed max-w-xl mx-auto">
+              <p>
+                Our joint supplement is designed to support cartilage health, connective tissue integrity, and joint comfort as part of a broader knee-care approach.
+              </p>
+              <p>
+                It combines carefully selected ingredients that are widely studied in joint health research, formulated for consistent, everyday use.
+              </p>
+            </div>
           </div>
 
           {/* Product card */}
@@ -60,7 +68,7 @@ const SignatureProductSection = () => {
                 asChild
               >
                 <a href="/product">
-                  View Details
+                  View the joint supplement
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </a>
               </Button>
