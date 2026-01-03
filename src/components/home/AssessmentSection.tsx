@@ -11,46 +11,43 @@ const features = [
   {
     icon: ClipboardList,
     title: "Clinician-Developed",
-    description: "Structured and informed by clinical experience"
+    description: "Informed by clinical experience"
   },
   {
     icon: Activity,
     title: "Clarity",
-    description: "Understand what may be affecting your knees"
+    description: "Understand what may be affecting you"
   },
   {
     icon: FileText,
     title: "Honest Guidance",
-    description: "Including when to seek professional help"
+    description: "Know when to seek professional help"
   }
 ];
 
 const AssessmentSection = () => {
   return (
-    <section id="assessment" className="py-32 lg:py-40 bg-background">
+    <section id="assessment" className="py-40 lg:py-48 bg-background">
       <div className="container px-6">
         <div className="max-w-3xl mx-auto">
           {/* Section header */}
-          <div className="text-center mb-20">
-            <p className="font-sans text-xs tracking-[0.25em] uppercase text-primary/70 mb-6">
-              Free Tool
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
+          <div className="text-center mb-24">
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-8">
               Understand Your Knee Health
             </h2>
-            <p className="font-sans text-muted-foreground leading-relaxed max-w-lg mx-auto">
-              No purchase required. No sales pitch. Just clarity.
+            <p className="font-sans text-muted-foreground">
+              Free. No sales pitch.
             </p>
           </div>
 
           {/* Features */}
-          <div className="grid md:grid-cols-3 gap-10 mb-16">
+          <div className="grid md:grid-cols-3 gap-12 mb-20">
             {features.map((feature, index) => (
               <div key={index} className="text-center">
-                <div className="w-10 h-10 mx-auto mb-5 rounded-full bg-secondary flex items-center justify-center">
+                <div className="w-10 h-10 mx-auto mb-6 rounded-full bg-secondary flex items-center justify-center">
                   <feature.icon className="w-4 h-4 text-primary" />
                 </div>
-                <h3 className="font-sans text-sm font-medium text-foreground mb-2">
+                <h3 className="font-sans text-sm font-medium text-foreground mb-3">
                   {feature.title}
                 </h3>
                 <p className="font-sans text-xs text-muted-foreground">
@@ -67,10 +64,10 @@ const AssessmentSection = () => {
               className="px-12 py-6 text-sm font-sans font-medium tracking-wide"
               asChild
             >
-              <Link to="/assessment">Begin Assessment</Link>
+              <Link to="/assessment">Begin</Link>
             </Button>
-            <p className="mt-6 font-sans text-xs text-muted-foreground">
-              5 minutes • Confidential
+            <p className="mt-8 font-sans text-xs text-muted-foreground">
+              5 minutes
             </p>
           </div>
         </div>

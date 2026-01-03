@@ -4,7 +4,7 @@
  */
 
 import { Button } from "@/components/ui/button";
-import { Shield, Award, Microscope } from "lucide-react";
+import { Shield, Award } from "lucide-react";
 import heroIngredients from "@/assets/hero-ingredients.jpg";
 
 const HeroSection = () => {
@@ -21,8 +21,8 @@ const HeroSection = () => {
 
       <div className="container relative z-10 px-6 py-24 lg:py-32">
         <div className="max-w-3xl mx-auto text-center">
-          {/* Trust badges - immediately establish authority */}
-          <div className="animate-fade-up flex flex-wrap justify-center gap-3 mb-10">
+          {/* Trust badges - restrained */}
+          <div className="animate-fade-up flex flex-wrap justify-center gap-4 mb-12">
             <span className="trust-badge">
               <Shield className="w-3.5 h-3.5" />
               Clinician-Founded
@@ -31,21 +31,12 @@ const HeroSection = () => {
               <Award className="w-3.5 h-3.5" />
               Evidence-Based
             </span>
-            <span className="trust-badge">
-              <Microscope className="w-3.5 h-3.5" />
-              Research-Led
-            </span>
           </div>
 
-          {/* Main headline - authority positioning */}
-          <h1 className="animate-fade-up-delay-1 font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] mb-8">
+          {/* Main headline */}
+          <h1 className="animate-fade-up-delay-1 font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] mb-16">
             Knee Health, Considered.
           </h1>
-
-          {/* Subheadline - calm, minimal */}
-          <p className="animate-fade-up-delay-2 font-sans text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto mb-12">
-            Clinical insight meets evidence-informed care.
-          </p>
 
           {/* CTA buttons - simplified */}
           <div className="animate-fade-up-delay-3 flex flex-col sm:flex-row gap-4 justify-center items-center">
