@@ -3,140 +3,62 @@
  * Founders' background and OmKneeHealth philosophy
  */
 
-import { Shield, FlaskConical, Building2, Award, Heart, BookOpen, Stethoscope, Leaf } from "lucide-react";
-
-const principles = [
-  {
-    icon: FlaskConical,
-    text: "Ingredients selected for biological plausibility, not trends"
-  },
-  {
-    icon: BookOpen,
-    text: "Formulations informed by research and clinical reasoning"
-  },
-  {
-    icon: Heart,
-    text: "Honest communication about what supplements can — and cannot — do"
-  },
-  {
-    icon: Leaf,
-    text: "Responsible sourcing and quality standards"
-  }
-];
-
-const philosophyPoints = [
-  "Knee health is complex and individual",
-  "There are no shortcuts or universal solutions",
-  "Evidence should guide decisions, not marketing",
-  "Supplements should support normal physiology, not promise outcomes"
-];
+import { Shield, FlaskConical, Building2, Award } from "lucide-react";
 
 const credentials = [
   {
     icon: Shield,
-    label: "Clinician-Founded",
-    detail: "Created by practising surgeons"
+    label: "Clinician-Founded"
   },
   {
     icon: FlaskConical,
-    label: "Third-Party Tested",
-    detail: "Independent quality verification"
+    label: "Third-Party Tested"
   },
   {
     icon: Building2,
-    label: "GMP Certified",
-    detail: "UK manufacturing standards"
+    label: "GMP Certified"
   },
   {
     icon: Award,
-    label: "Evidence-Based",
-    detail: "Research-informed formulations"
+    label: "Evidence-Based"
   }
 ];
 
 const OurStorySection = () => {
   return (
-    <section id="our-story" className="py-32 lg:py-40 bg-background">
+    <section id="our-story" className="py-40 lg:py-48 bg-background">
       <div className="container px-6">
         <div className="max-w-3xl mx-auto">
           
           {/* Header */}
-          <div className="text-center mb-20">
-            <p className="font-sans text-xs tracking-[0.25em] uppercase text-primary/70 mb-6">
-              Our Story
-            </p>
+          <div className="text-center mb-24">
             <h2 className="font-serif text-3xl md:text-4xl text-foreground">
-              Clinical Experience Meets Lived Understanding
+              Founded by Clinicians
             </h2>
           </div>
 
-          {/* Founders Introduction - condensed */}
-          <div className="mb-20">
-            <div className="space-y-6 font-sans text-muted-foreground leading-relaxed">
-              <p>
-                <span className="font-medium text-foreground">Chinmay Gupte</span> — surgeon, researcher, 
-                educator — has spent decades at the forefront of knee health.
-              </p>
-              
-              <p>
-                His wife and collaborator, <span className="font-medium text-foreground">Cynthia Gupte</span> — 
-                surgeon and radiologist — brings both scientific rigour and lived experience of musculoskeletal issues.
-              </p>
+          {/* Founders Introduction - minimal */}
+          <div className="text-center mb-24">
+            <p className="font-sans text-muted-foreground leading-relaxed max-w-xl mx-auto mb-12">
+              <span className="font-medium text-foreground">Chinmay Gupte</span> — surgeon, researcher — 
+              and <span className="font-medium text-foreground">Cynthia Gupte</span> — surgeon, radiologist — 
+              recognised a gap.
+            </p>
 
-              <p className="font-serif text-xl text-foreground text-center py-8 italic">
-                Together, they recognised a gap.
-              </p>
-
-              <p>
-                Not for another supplement — but for a knee-specific, evidence-informed formulation 
-                created with clinical care and restraint.
-              </p>
-            </div>
+            <p className="font-serif text-xl text-foreground italic">
+              Not for another supplement. For considered care.
+            </p>
           </div>
 
-          {/* Principles - simplified */}
-          <div className="grid sm:grid-cols-2 gap-6 mb-20">
-            {principles.map((principle, index) => (
-              <div 
-                key={index}
-                className="flex items-start gap-4"
-              >
-                <div className="w-8 h-8 flex-shrink-0 rounded-full bg-secondary flex items-center justify-center">
-                  <principle.icon className="w-3.5 h-3.5 text-primary" />
-                </div>
-                <p className="font-sans text-sm text-muted-foreground pt-1.5">
-                  {principle.text}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* Philosophy points - minimal */}
-          <div className="border-t border-b border-border py-12 mb-20">
-            <div className="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto">
-              {philosophyPoints.map((point, index) => (
-                <div 
-                  key={index}
-                  className="flex items-center gap-3"
-                >
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                  <p className="font-sans text-sm text-foreground">
-                    {point}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Credentials grid - simplified */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {/* Credentials grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
             {credentials.map((credential, index) => (
               <div 
                 key={index}
                 className="text-center"
               >
-                <div className="w-10 h-10 mx-auto mb-4 rounded-full bg-secondary flex items-center justify-center">
-                  <credential.icon className="w-4 h-4 text-primary" />
+                <div className="w-12 h-12 mx-auto mb-5 rounded-full bg-secondary flex items-center justify-center">
+                  <credential.icon className="w-5 h-5 text-primary" />
                 </div>
                 <p className="font-sans text-xs font-medium text-foreground">
                   {credential.label}

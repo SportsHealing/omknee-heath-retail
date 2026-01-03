@@ -9,29 +9,26 @@ const pillars = [
   {
     icon: Stethoscope,
     title: "Clinical Thinking",
-    description: "Careful assessment. Individualised consideration. No shortcuts."
+    description: "Careful assessment. No shortcuts."
   },
   {
     icon: FlaskConical,
     title: "Evidence First",
-    description: "What the research shows — including what remains uncertain."
+    description: "What research shows — and what remains uncertain."
   },
   {
     icon: Activity,
     title: "The Whole Picture",
-    description: "Movement, nutrition, recovery. Supplements support — never lead."
+    description: "Supplements support. They never lead."
   }
 ];
 
 const PhilosophySection = () => {
   return (
-    <section id="philosophy" className="py-32 lg:py-40 bg-background">
+    <section id="philosophy" className="py-40 lg:py-48 bg-background">
       <div className="container px-6">
         {/* Section header */}
-        <div className="max-w-xl mx-auto text-center mb-20">
-          <p className="font-sans text-xs tracking-[0.25em] uppercase text-primary/70 mb-6">
-            Philosophy
-          </p>
+        <div className="max-w-xl mx-auto text-center mb-24">
           <h2 className="font-serif text-3xl md:text-4xl text-foreground">
             A Different Approach
           </h2>

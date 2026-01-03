@@ -8,59 +8,41 @@ import { ArrowRight } from "lucide-react";
 
 const EducationSection = () => {
   return (
-    <section className="py-32 lg:py-40 bg-secondary">
+    <section className="py-40 lg:py-48 bg-secondary">
       <div className="container px-6">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-20 lg:gap-32 items-center max-w-5xl mx-auto">
           {/* Content */}
           <div>
-            <p className="font-sans text-xs tracking-[0.25em] uppercase text-primary/70 mb-6">
-              Understanding
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-8 leading-tight">
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-10 leading-tight">
               The Knee Deserves Attention
             </h2>
             
-            <div className="space-y-6 font-sans text-muted-foreground leading-relaxed">
-              <p>
-                One of the body's most complex joints — bearing tremendous loads 
-                while enabling the movement that defines daily life.
-              </p>
-              <p>
-                Often overlooked until discomfort appears. We believe in 
-                understanding first.
-              </p>
-            </div>
+            <p className="font-sans text-muted-foreground leading-relaxed mb-12">
+              Complex. Load-bearing. Often overlooked until discomfort appears.
+            </p>
 
-            <div className="mt-10">
-              <Button variant="ghost" className="font-sans text-sm px-0 hover:bg-transparent hover:text-foreground" asChild>
-                <a href="/science">
-                  Explore the Science
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </a>
-              </Button>
-            </div>
+            <Button variant="ghost" className="font-sans text-sm px-0 hover:bg-transparent hover:text-foreground" asChild>
+              <a href="/science">
+                Explore the Science
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
+            </Button>
           </div>
 
-          {/* Visual/Stats - simplified */}
-          <div className="bg-background rounded-lg p-10 lg:p-14">
-            <div className="space-y-10">
+          {/* Stats */}
+          <div className="bg-background rounded-lg p-12 lg:p-16">
+            <div className="space-y-12">
               <div>
-                <p className="font-serif text-4xl text-foreground mb-2">1 in 4</p>
+                <p className="font-serif text-5xl text-foreground mb-3">1 in 4</p>
                 <p className="font-sans text-sm text-muted-foreground">
-                  Adults over 45 experience joint discomfort
+                  Adults over 45 experience discomfort
                 </p>
               </div>
               
               <div>
-                <p className="font-serif text-4xl text-foreground mb-2">8.75m</p>
+                <p className="font-serif text-5xl text-foreground mb-3">8.75m</p>
                 <p className="font-sans text-sm text-muted-foreground">
-                  UK adults seek help for knee concerns annually
-                </p>
-              </div>
-              
-              <div className="pt-6 border-t border-border">
-                <p className="font-sans text-sm text-muted-foreground italic">
-                  Many factors. No simple solutions.
+                  UK adults seek help annually
                 </p>
               </div>
             </div>

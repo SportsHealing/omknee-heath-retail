@@ -9,22 +9,19 @@ import { Check, ArrowRight } from "lucide-react";
 import productPouches from "@/assets/product-pouches.png";
 
 const productFeatures = [
-  "Research-informed ingredient selection",
-  "Third-party tested for purity",
+  "Research-informed ingredients",
+  "Third-party tested",
   "UK manufactured, GMP-certified",
-  "Transparent dosing — no proprietary blends"
+  "Transparent dosing"
 ];
 
 const SignatureProductSection = () => {
   return (
-    <section className="py-32 lg:py-40 bg-primary text-primary-foreground">
+    <section className="py-40 lg:py-48 bg-primary text-primary-foreground">
       <div className="container px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section label */}
-          <div className="text-center mb-16">
-            <p className="font-sans text-xs tracking-[0.25em] uppercase text-primary-foreground/50 mb-6">
-              Our Formula
-            </p>
+          <div className="text-center mb-20">
             <h2 className="font-serif text-3xl md:text-4xl leading-tight">
               Joint + Movement Support
             </h2>
@@ -56,29 +53,17 @@ const SignatureProductSection = () => {
                 ))}
               </ul>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  variant="secondary"
-                  size="lg"
-                  className="px-10 py-6 text-sm font-sans font-medium tracking-wide"
-                  asChild
-                >
-                  <a href="/product">
-                    View Details
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </a>
-                </Button>
-                <Button 
-                  variant="ghost"
-                  size="lg"
-                  className="px-10 py-6 text-sm font-sans font-medium tracking-wide text-primary-foreground/70 hover:text-primary-foreground hover:bg-primary-foreground/5"
-                  asChild
-                >
-                  <a href="/science#evidence-science">
-                    See Evidence
-                  </a>
-                </Button>
-              </div>
+              <Button 
+                variant="secondary"
+                size="lg"
+                className="px-10 py-6 text-sm font-sans font-medium tracking-wide"
+                asChild
+              >
+                <a href="/product">
+                  View Details
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </a>
+              </Button>
             </div>
           </div>
         </div>
