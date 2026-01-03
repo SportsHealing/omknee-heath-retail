@@ -8,52 +8,46 @@ import { Stethoscope, FlaskConical, Activity } from "lucide-react";
 const pillars = [
   {
     icon: Stethoscope,
-    title: "Clinical Thinking First",
-    description: "Our approach starts where clinical practice starts — with careful assessment, individualised consideration, and respect for complexity. No shortcuts, no one-size-fits-all."
+    title: "Clinical Thinking",
+    description: "Careful assessment. Individualised consideration. No shortcuts."
   },
   {
     icon: FlaskConical,
-    title: "Evidence, Not Promises",
-    description: "We share what the research shows and acknowledge what remains uncertain. Honest communication matters more than compelling marketing."
+    title: "Evidence First",
+    description: "What the research shows — including what remains uncertain."
   },
   {
     icon: Activity,
     title: "The Whole Picture",
-    description: "Knee health involves movement, load management, recovery, and nutrition. Supplements play a supporting role — never the lead."
+    description: "Movement, nutrition, recovery. Supplements support — never lead."
   }
 ];
 
 const PhilosophySection = () => {
   return (
-    <section id="philosophy" className="py-24 lg:py-32 bg-background">
+    <section id="philosophy" className="py-32 lg:py-40 bg-background">
       <div className="container px-6">
         {/* Section header */}
-        <div className="max-w-2xl mx-auto text-center mb-16">
-          <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary mb-4">
-            Our Philosophy
+        <div className="max-w-xl mx-auto text-center mb-20">
+          <p className="font-sans text-xs tracking-[0.25em] uppercase text-primary/70 mb-6">
+            Philosophy
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
-            Knee Health, Considered Differently
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground">
+            A Different Approach
           </h2>
-          <div className="clinical-divider mb-6" />
-          <p className="font-sans text-muted-foreground leading-relaxed">
-            OmKneeHealth was founded by clinicians who saw a gap — not for another 
-            supplement, but for a more thoughtful, restrained, and evidence-informed 
-            approach to supporting long-term knee health.
-          </p>
         </div>
 
         {/* Pillars grid */}
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-12 lg:gap-16 max-w-4xl mx-auto">
           {pillars.map((pillar, index) => (
             <div 
               key={index}
-              className="text-center group"
+              className="text-center"
             >
-              <div className="w-14 h-14 mx-auto mb-6 rounded-full bg-trust-badge flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-                <pillar.icon className="w-6 h-6 text-primary" />
+              <div className="w-12 h-12 mx-auto mb-8 rounded-full bg-secondary flex items-center justify-center">
+                <pillar.icon className="w-5 h-5 text-primary" />
               </div>
-              <h3 className="font-serif text-xl text-foreground mb-3">
+              <h3 className="font-serif text-lg text-foreground mb-4">
                 {pillar.title}
               </h3>
               <p className="font-sans text-sm text-muted-foreground leading-relaxed">

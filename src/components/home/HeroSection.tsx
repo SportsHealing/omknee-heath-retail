@@ -38,45 +38,31 @@ const HeroSection = () => {
           </div>
 
           {/* Main headline - authority positioning */}
-          <h1 className="animate-fade-up-delay-1 font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.15] mb-6">
-            Knee Health, Considered Properly.
+          <h1 className="animate-fade-up-delay-1 font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] mb-8">
+            Knee Health, Considered.
           </h1>
 
-          {/* Clinical divider */}
-          <div className="animate-fade-up-delay-2 clinical-divider mb-6" />
-
-          {/* Subheadline - calm, reassuring */}
-          <p className="animate-fade-up-delay-2 font-sans text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-6">
-            Founded by experienced healthcare professionals, OmKneeHealth brings 
-            clinical insight and evidence-informed care together to support long-term 
-            knee health — with clarity, restraint, and respect for how the knee truly works.
+          {/* Subheadline - calm, minimal */}
+          <p className="animate-fade-up-delay-2 font-sans text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto mb-12">
+            Clinical insight meets evidence-informed care.
           </p>
 
-          {/* Strapline */}
-          <div className="animate-fade-up-delay-2 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm md:text-base tracking-wide text-primary font-medium italic mb-10">
-            <span>Designed by clinicians</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-primary/40 not-italic" aria-hidden="true" />
-            <span>Guided by evidence</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-primary/40 not-italic" aria-hidden="true" />
-            <span>Built for long-term knee health</span>
-          </div>
-
-          {/* CTA buttons */}
+          {/* CTA buttons - simplified */}
           <div className="animate-fade-up-delay-3 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
-              className="px-8 py-6 text-sm font-sans font-medium tracking-wide"
+              className="px-10 py-6 text-sm font-sans font-medium tracking-wide"
               asChild
             >
-              <a href="/assessment">Take the Knee Assessment</a>
+              <a href="/assessment">Begin Assessment</a>
             </Button>
             <Button 
-              variant="outline"
+              variant="ghost"
               size="lg" 
-              className="px-8 py-6 text-sm font-sans font-medium tracking-wide border-primary/30 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
+              className="px-10 py-6 text-sm font-sans font-medium tracking-wide text-muted-foreground hover:text-foreground"
               asChild
             >
-              <a href="#philosophy">Discover Our Approach</a>
+              <a href="#philosophy">Our Approach</a>
             </Button>
           </div>
         </div>
