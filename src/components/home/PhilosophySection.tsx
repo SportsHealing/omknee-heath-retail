@@ -29,9 +29,20 @@ const PhilosophySection = () => {
       <div className="container px-6">
         {/* Section header */}
         <div className="max-w-xl mx-auto text-center mb-24">
-          <h2 className="font-serif text-3xl md:text-4xl text-foreground">
-            A Different Approach
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-8">
+            A considered approach to joint wellbeing
           </h2>
+          <div className="space-y-4 text-muted-foreground font-sans leading-relaxed">
+            <p>
+              Knee health is shaped by movement, load, recovery, and time.
+            </p>
+            <p>
+              At OmKneeHealth, we focus on supporting this balance through carefully designed nutritional formulations, grounded in clinical understanding and current evidence.
+            </p>
+            <p>
+              Our approach is not about quick fixes. It is about supporting knees thoughtfully, over the long term.
+            </p>
+          </div>
         </div>
 
         {/* Pillars grid */}
