@@ -4,7 +4,7 @@
  */
 
 import { Button } from "@/components/ui/button";
-import { Shield, Award } from "lucide-react";
+
 import heroIngredients from "@/assets/hero-ingredients.jpg";
 
 const HeroSection = () => {
@@ -21,39 +21,25 @@ const HeroSection = () => {
 
       <div className="container relative z-10 px-6 py-24 lg:py-32">
         <div className="max-w-3xl mx-auto text-center">
-          {/* Trust badges - restrained */}
-          <div className="animate-fade-up flex flex-wrap justify-center gap-4 mb-12">
-            <span className="trust-badge">
-              <Shield className="w-3.5 h-3.5" />
-              Clinician-Founded
-            </span>
-            <span className="trust-badge">
-              <Award className="w-3.5 h-3.5" />
-              Evidence-Based
-            </span>
-          </div>
+          {/* Single trust line */}
+          <p className="animate-fade-up font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground mb-12">
+            Founded by clinicians. Informed by evidence.
+          </p>
 
           {/* Main headline */}
-          <h1 className="animate-fade-up-delay-1 font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] mb-16">
+          <h1 className="animate-fade-up-delay-1 font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] mb-20">
             Knee Health, Considered.
           </h1>
 
-          {/* CTA buttons - simplified */}
-          <div className="animate-fade-up-delay-3 flex flex-col sm:flex-row gap-4 justify-center items-center">
+          {/* Single soft CTA */}
+          <div className="animate-fade-up-delay-2">
             <Button 
+              variant="outline"
               size="lg" 
-              className="px-10 py-6 text-sm font-sans font-medium tracking-wide"
+              className="px-12 py-6 text-sm font-sans font-medium tracking-wide border-foreground/20 hover:bg-foreground/5"
               asChild
             >
-              <a href="/assessment">Begin Assessment</a>
-            </Button>
-            <Button 
-              variant="ghost"
-              size="lg" 
-              className="px-10 py-6 text-sm font-sans font-medium tracking-wide text-muted-foreground hover:text-foreground"
-              asChild
-            >
-              <a href="#philosophy">Our Approach</a>
+              <a href="/assessment">Explore</a>
             </Button>
           </div>
         </div>
