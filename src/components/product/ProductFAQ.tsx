@@ -48,22 +48,15 @@ const faqs = [
 
 const ProductFAQ = () => {
   return (
-    <section id="product-faq" className="py-20 md:py-28 bg-secondary scroll-mt-20">
+    <section id="product-faq" className="py-32 md:py-40 bg-secondary scroll-mt-20">
       <FAQSchema faqs={faqs} />
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
           {/* Section header */}
-          <div className="text-center mb-12">
-            <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary mb-4">
-              Questions & Answers
-            </p>
-            <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-4">
-              Honest Answers to Common Questions
+          <div className="text-center mb-16">
+            <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-6">
+              Common Questions
             </h2>
-            <div className="w-12 h-px bg-primary/30 mx-auto mb-6" />
-            <p className="font-sans text-muted-foreground">
-              We believe you deserve straightforward information, not marketing spin.
-            </p>
           </div>
 
           {/* FAQ accordion */}
