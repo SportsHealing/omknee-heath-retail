@@ -122,7 +122,7 @@ export default function TriageRecommendations({ band, className }: TriageRecomme
             <Button asChild className="w-full">
               <a href="https://sportshealing.com" target="_blank" rel="noopener noreferrer">
                 <User className="w-4 h-4 mr-2" />
-                Book Clinician Review
+                Find a Clinician
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </Button>
@@ -131,7 +131,7 @@ export default function TriageRecommendations({ band, className }: TriageRecomme
             <Button asChild variant="outline" className="w-full">
               <a href="https://mykneescan.com" target="_blank" rel="noopener noreferrer">
                 <ImageIcon className="w-4 h-4 mr-2" />
-                Book Scan
+                Explore Imaging
               </a>
             </Button>
           )}
@@ -139,7 +139,7 @@ export default function TriageRecommendations({ band, className }: TriageRecomme
             <Button asChild variant="outline" className="w-full">
               <a href="https://sportshealing.com/bloods" target="_blank" rel="noopener noreferrer">
                 <FlaskConical className="w-4 h-4 mr-2" />
-                Book Blood Tests
+                View Blood Tests
               </a>
             </Button>
           )}

@@ -947,7 +947,7 @@ export default function KneeTriageCalculator() {
               Email Report
             </Button>
             <Button onClick={handleReset}>
-              Start New Assessment
+              New Assessment
             </Button>
           </div>
 

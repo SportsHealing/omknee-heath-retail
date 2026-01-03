@@ -596,21 +596,21 @@ export const KneeRecommendations = ({ kneeScore, sleepScore, useIndexScore = tru
       {/* CTAs */}
       <div className="grid md:grid-cols-3 gap-3">
         <Button asChild className="w-full">
-          <a href="/product#shop-supplements">
+          <a href="/product">
             <ShoppingCart className="w-4 h-4 mr-2" />
-            Shop Joint Support
+            View Formula
           </a>
         </Button>
         <Button asChild variant="outline" className="w-full">
           <a href="https://mykneescan.com" target="_blank" rel="noopener noreferrer" id="book-imaging-cta">
             <ImageIcon className="w-4 h-4 mr-2" />
-            Book Imaging
+            Explore Imaging
           </a>
         </Button>
         <Button asChild variant="outline" className="w-full">
           <a href="https://sportshealing.com" target="_blank" rel="noopener noreferrer">
             <User className="w-4 h-4 mr-2" />
-            Book Clinician
+            Find a Clinician
           </a>
         </Button>
       </div>

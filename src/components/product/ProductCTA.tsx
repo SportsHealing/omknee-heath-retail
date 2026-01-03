@@ -26,7 +26,7 @@ const ProductCTA = () => {
               £49.99
             </p>
             <Button size="lg" className="px-10 text-sm font-sans font-medium">
-              Add to Cart
+              Add to Basket
             </Button>
           </div>
 
