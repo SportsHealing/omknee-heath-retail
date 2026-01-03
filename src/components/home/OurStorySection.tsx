@@ -32,22 +32,20 @@ const OurStorySection = () => {
           
           {/* Header */}
           <div className="text-center mb-24">
-            <h2 className="font-serif text-3xl md:text-4xl text-foreground">
-              Founded by Clinicians
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-8">
+              Designed with clinical insight
             </h2>
-          </div>
-
-          {/* Founders Introduction */}
-          <div className="text-center mb-24 space-y-6">
-            <p className="font-sans text-muted-foreground leading-relaxed max-w-xl mx-auto">
-              <span className="font-medium text-foreground">Chinmay Gupte</span> is an orthopaedic surgeon and researcher 
-              with over 20 years of experience treating knee conditions. <span className="font-medium text-foreground">Cynthia Gupte</span> is 
-              a surgeon and musculoskeletal radiologist who understands joint health from both clinical and imaging perspectives.
-            </p>
-            <p className="font-sans text-muted-foreground leading-relaxed max-w-xl mx-auto">
-              Together, they created OmKneeHealth to offer evidence-informed guidance and carefully formulated supplements — 
-              built on the same principles they apply in clinical practice.
-            </p>
+            <div className="space-y-4 text-muted-foreground font-sans leading-relaxed max-w-xl mx-auto">
+              <p>
+                OmKneeHealth is shaped by senior medical professionals with experience in knee biomechanics, injury, and rehabilitation.
+              </p>
+              <p>
+                Every formulation is developed with care — informed by research, clinical practice, and an understanding of how people actually move and live.
+              </p>
+              <p>
+                We prioritise clarity over claims, and evidence over exaggeration.
+              </p>
+            </div>
           </div>
 
           {/* Credentials grid */}
