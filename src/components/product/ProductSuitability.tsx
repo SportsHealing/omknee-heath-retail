@@ -6,57 +6,21 @@
 import { Check, X } from "lucide-react";
 
 const suitableFor = [
-  {
-    title: "Adults seeking nutritional joint support",
-    description: "Those looking to supplement their diet with nutrients that support cartilage, connective tissue, and bone health."
-  },
-  {
-    title: "Active individuals maintaining joint health",
-    description: "People who exercise regularly and want to support their joints as part of overall musculoskeletal care."
-  },
-  {
-    title: "Those with suboptimal vitamin D levels",
-    description: "Adults who may not get adequate vitamin D from sun exposure and diet—common in the UK, particularly during winter."
-  },
-  {
-    title: "People committed to a comprehensive approach",
-    description: "Those who understand supplements work best alongside movement, nutrition, and appropriate rest."
-  },
-  {
-    title: "Adults open to long-term, consistent use",
-    description: "Research typically assesses these ingredients over 8-12 weeks. This is not a quick-fix solution."
-  }
+  "Adults seeking nutritional joint support",
+  "Active individuals maintaining joint health",
+  "Those with suboptimal vitamin D levels",
+  "People committed to a comprehensive approach",
+  "Adults open to long-term, consistent use"
 ];
 
 const notSuitableFor = [
-  {
-    title: "Those expecting a cure for joint conditions",
-    description: "This is a food supplement, not a medicine. It cannot treat, cure, or prevent any disease."
-  },
-  {
-    title: "People with fish, shellfish, or collagen allergies",
-    description: "Contains collagen from marine or bovine sources and may contain shellfish-derived glucosamine depending on variant. Check label for specific allergens."
-  },
-  {
-    title: "Those seeking a replacement for medical care",
-    description: "If you have significant joint pain or a diagnosed condition, please consult a healthcare professional."
-  },
-  {
-    title: "Those taking warfarin or vitamin K antagonists without medical advice",
-    description: "This product contains Vitamin K2. Consult your doctor before use if you are on anticoagulant therapy."
-  },
-  {
-    title: "Anyone on blood-thinning or diabetes medication without medical advice",
-    description: "Some ingredients may interact with medications. Consult your doctor before use."
-  },
-  {
-    title: "Pregnant or breastfeeding women without medical guidance",
-    description: "Insufficient data exists for these populations. Please consult your healthcare provider."
-  },
-  {
-    title: "Children under 18 years",
-    description: "This product is formulated for adults only."
-  }
+  "Those expecting a cure for joint conditions",
+  "People with fish, shellfish, or collagen allergies",
+  "Those seeking a replacement for medical care",
+  "Those taking warfarin without medical advice",
+  "Anyone on blood-thinning medication without medical advice",
+  "Pregnant or breastfeeding women without guidance",
+  "Children under 18 years"
 ];
 
 const ProductSuitability = () => {
@@ -66,15 +30,9 @@ const ProductSuitability = () => {
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
           <div className="text-center mb-16">
-            <p className="font-sans text-xs tracking-[0.25em] uppercase text-primary/70 mb-6">
-              Suitability
-            </p>
-            <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-6">
+            <h2 className="text-2xl md:text-3xl font-serif text-foreground">
               Is This Right for You?
             </h2>
-            <p className="font-sans text-muted-foreground max-w-md mx-auto">
-              An honest look at who may benefit.
-            </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
@@ -88,20 +46,13 @@ const ProductSuitability = () => {
                   This may be suitable for
                 </h3>
               </div>
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 {suitableFor.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
                       <Check className="w-3 h-3 text-primary" />
                     </div>
-                    <div>
-                      <p className="font-sans text-sm font-medium text-foreground">
-                        {item.title}
-                      </p>
-                      <p className="font-sans text-sm text-muted-foreground mt-0.5">
-                        {item.description}
-                      </p>
-                    </div>
+                    <span className="font-sans text-sm text-foreground">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -117,34 +68,17 @@ const ProductSuitability = () => {
                   This is not suitable for
                 </h3>
               </div>
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 {notSuitableFor.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-destructive/10 flex items-center justify-center shrink-0 mt-0.5">
                       <X className="w-3 h-3 text-destructive" />
                     </div>
-                    <div>
-                      <p className="font-sans text-sm font-medium text-foreground">
-                        {item.title}
-                      </p>
-                      <p className="font-sans text-sm text-muted-foreground mt-0.5">
-                        {item.description}
-                      </p>
-                    </div>
+                    <span className="font-sans text-sm text-foreground">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-          </div>
-
-          {/* Decision guidance */}
-          <div className="mt-10 bg-background rounded-lg p-6 border border-border text-center">
-            <p className="font-sans text-sm text-muted-foreground">
-              <span className="font-medium text-foreground">Still unsure?</span>{" "}
-              We encourage you to discuss with your healthcare provider. They can assess 
-              your individual situation and advise whether nutritional supplementation 
-              is appropriate for your needs.
-            </p>
           </div>
         </div>
       </div>

@@ -39,14 +39,9 @@ const OurStorySection = () => {
 
           {/* Founders Introduction - minimal */}
           <div className="text-center mb-24">
-            <p className="font-sans text-muted-foreground leading-relaxed max-w-xl mx-auto mb-12">
+            <p className="font-sans text-muted-foreground leading-relaxed max-w-xl mx-auto">
               <span className="font-medium text-foreground">Chinmay Gupte</span> — surgeon, researcher — 
-              and <span className="font-medium text-foreground">Cynthia Gupte</span> — surgeon, radiologist — 
-              recognised a gap.
-            </p>
-
-            <p className="font-serif text-xl text-foreground italic">
-              Not for another supplement. For considered care.
+              and <span className="font-medium text-foreground">Cynthia Gupte</span> — surgeon, radiologist.
             </p>
           </div>
 

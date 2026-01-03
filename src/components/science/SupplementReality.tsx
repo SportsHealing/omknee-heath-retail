@@ -29,10 +29,7 @@ const SupplementReality = () => {
             <h2 className="text-2xl md:text-3xl font-serif mb-4">
               Realistic Expectations
             </h2>
-            <div className="w-12 h-px bg-primary-foreground/30 mx-auto mb-6" />
-            <p className="text-primary-foreground/80 leading-relaxed max-w-xl mx-auto font-sans">
-              Supplements are tools, not solutions.
-            </p>
+            <div className="w-12 h-px bg-primary-foreground/30 mx-auto" />
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
