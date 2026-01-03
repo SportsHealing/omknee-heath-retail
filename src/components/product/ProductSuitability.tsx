@@ -66,16 +66,14 @@ const ProductSuitability = () => {
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
           <div className="text-center mb-16">
-            <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary mb-4">
-              Honest Positioning
+            <p className="font-sans text-xs tracking-[0.25em] uppercase text-primary/70 mb-6">
+              Suitability
             </p>
-            <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-4">
-              Is This Supplement Right for You?
+            <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-6">
+              Is This Right for You?
             </h2>
-            <div className="w-12 h-px bg-primary/30 mx-auto mb-6" />
-            <p className="font-sans text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              We believe in transparency. Before you consider this product, 
-              here's an honest assessment of who may benefit—and who should look elsewhere.
+            <p className="font-sans text-muted-foreground max-w-md mx-auto">
+              An honest look at who may benefit.
             </p>
           </div>
 

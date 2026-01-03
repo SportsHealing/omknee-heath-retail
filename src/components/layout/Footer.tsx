@@ -56,11 +56,7 @@ const Footer = () => {
               className="h-16 w-auto mb-4"
             />
             <p className="font-sans text-sm text-primary-foreground/70 leading-relaxed mb-4">
-              Knee health, considered properly. Founded by Chinmay and Cynthia Gupte — 
-              clinicians bringing evidence-informed care to joint health support.
-            </p>
-            <p className="font-sans text-xs text-primary-foreground/50 italic mb-4">
-              Designed by clinicians. Guided by evidence.
+              Clinician-founded. Evidence-informed.
             </p>
             <div className="flex gap-3">
               {socialLinks.map(({ name, icon: Icon, href }) => (
@@ -171,15 +167,11 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Newsletter */}
-        <div className="py-8 border-t border-primary-foreground/10">
-          <div className="max-w-md mx-auto text-center">
-            <h4 className="font-serif text-lg text-primary-foreground mb-2">
+        <div className="py-10 border-t border-primary-foreground/10">
+          <div className="max-w-sm mx-auto text-center">
+            <h4 className="font-serif text-lg text-primary-foreground mb-4">
               Stay informed
             </h4>
-            <p className="font-sans text-sm text-primary-foreground/60 mb-4">
-              Get evidence-based insights on joint health delivered to your inbox.
-            </p>
             
             {isSubscribed ? (
               <div className="flex items-center justify-center gap-2 text-primary-foreground/80">

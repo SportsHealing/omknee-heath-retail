@@ -39,17 +39,15 @@ const Assessment = () => {
             </div>
 
             {/* Header */}
-            <div className="text-center mb-8">
-              <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary mb-4">
-                Free Assessment Tools
+            <div className="text-center mb-10">
+              <p className="font-sans text-xs tracking-[0.25em] uppercase text-primary/70 mb-6">
+                Free Tools
               </p>
-              <h1 className="text-3xl md:text-4xl font-serif text-foreground mb-4">
-                Understand Your Knee Health
+              <h1 className="text-3xl md:text-4xl font-serif text-foreground mb-6">
+                Knee Assessment
               </h1>
-              <div className="w-12 h-px bg-primary/30 mx-auto mb-6" />
-              <p className="font-sans text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                Clinician-developed tools to help you gain clarity — not sales pitches. 
-                Choose the assessment that fits your needs.
+              <p className="font-sans text-muted-foreground max-w-md mx-auto">
+                Clinician-developed. Choose your assessment.
               </p>
             </div>
 
@@ -100,48 +98,28 @@ const Assessment = () => {
               </div>
             </div>
 
-            {/* Tab Descriptions */}
-            <div className="max-w-3xl mx-auto mb-8">
+            {/* Tab Descriptions - simplified */}
+            <div className="max-w-2xl mx-auto mb-8">
               {activeTab === "scores" && (
-                <div className="bg-background rounded-xl border border-border p-6 animate-fade-up">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Zap className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h2 className="font-semibold text-foreground mb-1">Quick Knee & Sleep Scores</h2>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        Get your Pro Knee Score in 2 minutes, or take the full assessment including sleep quality for a combined health index. 
-                        Perfect for tracking progress over time.
-                      </p>
-                      <div className="flex flex-wrap gap-3 text-xs">
-                        <span className="px-3 py-1 bg-muted rounded-full text-muted-foreground">7–14 questions</span>
-                        <span className="px-3 py-1 bg-muted rounded-full text-muted-foreground">2–4 minutes</span>
-                        <span className="px-3 py-1 bg-muted rounded-full text-muted-foreground">Instant RAG score</span>
-                      </div>
-                    </div>
+                <div className="bg-background rounded-xl border border-border p-5 animate-fade-up text-center">
+                  <p className="text-sm text-muted-foreground mb-3">
+                    2-4 minutes. Instant score. Track progress over time.
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-3 text-xs">
+                    <span className="px-3 py-1 bg-muted rounded-full text-muted-foreground">7–14 questions</span>
+                    <span className="px-3 py-1 bg-muted rounded-full text-muted-foreground">Instant RAG score</span>
                   </div>
                 </div>
               )}
               
               {activeTab === "triage" && (
-                <div className="bg-background rounded-xl border border-border p-6 animate-fade-up">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Stethoscope className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h2 className="font-semibold text-foreground mb-1">Knee Assessment Triage Calculator</h2>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        A comprehensive clinical-grade triage tool that assesses your knee symptoms, function, and health risk factors 
-                        to provide personalised guidance on next steps and care pathway.
-                      </p>
-                      <div className="flex flex-wrap gap-3 text-xs">
-                        <span className="px-3 py-1 bg-muted rounded-full text-muted-foreground">13 symptom questions</span>
-                        <span className="px-3 py-1 bg-muted rounded-full text-muted-foreground">4–6 minutes</span>
-                        <span className="px-3 py-1 bg-muted rounded-full text-muted-foreground">Risk-stratified recommendations</span>
-                      </div>
-                    </div>
+                <div className="bg-background rounded-xl border border-border p-5 animate-fade-up text-center">
+                  <p className="text-sm text-muted-foreground mb-3">
+                    4-6 minutes. Comprehensive symptom assessment. Risk-stratified guidance.
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-3 text-xs">
+                    <span className="px-3 py-1 bg-muted rounded-full text-muted-foreground">13 questions</span>
+                    <span className="px-3 py-1 bg-muted rounded-full text-muted-foreground">Clinical triage</span>
                   </div>
                 </div>
               )}

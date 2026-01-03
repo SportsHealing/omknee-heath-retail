@@ -64,13 +64,12 @@ const Contact = () => {
       <main className="pt-24 pb-16">
         <div className="container px-6 max-w-6xl mx-auto">
           {/* Hero Section */}
-          <div className="text-center mb-16">
-            <h1 className="font-serif text-4xl md:text-5xl text-foreground mb-4">
+          <div className="text-center mb-20">
+            <h1 className="font-serif text-4xl md:text-5xl text-foreground mb-6">
               Contact Us
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Have a question about our products or need assistance? We're here to help. 
-              Reach out and we'll respond within 1-2 business days.
+            <p className="text-muted-foreground max-w-md mx-auto">
+              Questions? We respond within 1-2 business days.
             </p>
           </div>
 
@@ -240,30 +239,24 @@ const Contact = () => {
 
               {/* FAQ Link */}
               <div className="mt-10 p-6 bg-muted/50 rounded-xl border border-border">
-                <h3 className="font-semibold text-foreground mb-2">
-                  Looking for quick answers?
+                <h3 className="font-semibold text-foreground mb-3">
+                  Quick answers
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  Check our frequently asked questions for instant help with common queries 
-                  about our products, shipping, and returns.
-                </p>
                 <a
                   href="/product#product-faq"
-                  className="inline-flex items-center text-primary hover:underline font-medium"
+                  className="inline-flex items-center text-primary hover:underline font-medium text-sm"
                 >
                   View FAQs →
                 </a>
               </div>
 
-              {/* Founders Note */}
+              {/* Founders Note - simplified */}
               <div className="mt-8 p-6 bg-primary/5 rounded-xl border border-primary/10">
-                <p className="text-foreground/80 italic leading-relaxed">
-                  "We founded OmKneeHealth to bring clinician-designed, evidence-informed 
-                  joint health support to those who need it most. Your questions and feedback 
-                  help us continue to improve."
+                <p className="text-foreground/80 italic text-sm leading-relaxed">
+                  "Your questions help us improve."
                 </p>
-                <p className="text-sm text-muted-foreground mt-4">
-                  — Chinmay & Cynthia Gupte, Founders
+                <p className="text-xs text-muted-foreground mt-3">
+                  — The Founders
                 </p>
               </div>
             </div>

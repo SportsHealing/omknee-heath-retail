@@ -43,17 +43,15 @@ const ProductHero = () => {
           {/* Product Info */}
           <div className="space-y-6 order-1 lg:order-2">
             <div>
-              <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary mb-4">
+              <p className="font-sans text-xs tracking-[0.25em] uppercase text-primary/70 mb-6">
                 Our Formula
               </p>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-foreground leading-tight mb-4">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-foreground leading-tight mb-6">
                 Joint + Movement Support
               </h1>
-              <div className="w-12 h-px bg-primary/30 mb-6" />
               <p className="font-sans text-muted-foreground leading-relaxed">
-                A carefully formulated powder combining hydrolysed collagen peptides, 
-                glucosamine, chondroitin, hyaluronic acid, curcumin, boswellia, and essential 
-                vitamins and minerals — each at research-informed doses with transparent rationale.
+                Hydrolysed collagen, glucosamine, chondroitin, and essential vitamins. 
+                Research-informed doses.
               </p>
             </div>
 
