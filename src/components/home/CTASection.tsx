@@ -4,57 +4,45 @@
  */
 
 import { Button } from "@/components/ui/button";
-import { ClipboardList, BookOpen } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <section className="py-24 lg:py-32 bg-secondary/50">
+    <section className="py-32 lg:py-40 bg-secondary/30">
       <div className="container px-6">
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary mb-4">
-            Take the Next Step
-          </p>
+        <div className="max-w-xl mx-auto text-center">
           <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
-            Ready to Understand Your Knee Health?
+            Ready to Begin?
           </h2>
-          <div className="w-12 h-px bg-primary/30 mx-auto mb-6" />
-          <p className="font-sans text-muted-foreground leading-relaxed mb-10">
-            Start with our free, clinician-developed assessment. No commitment. 
-            No sales pitch. Just clarity about where you are — and honest guidance 
-            on what might help.
+          <p className="font-sans text-muted-foreground mb-12">
+            Start with clarity. No commitment required.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg"
-              className="px-10 py-6 text-sm font-sans font-medium tracking-wide"
+              className="px-12 py-6 text-sm font-sans font-medium tracking-wide"
               asChild
             >
               <a href="/assessment">
-                <ClipboardList className="w-4 h-4 mr-2" />
-                Take the Free Assessment
+                Begin Assessment
               </a>
             </Button>
             <Button 
-              variant="outline"
+              variant="ghost"
               size="lg"
-              className="px-10 py-6 text-sm font-sans font-medium tracking-wide border-primary/20"
+              className="px-12 py-6 text-sm font-sans font-medium tracking-wide text-muted-foreground hover:text-foreground"
               asChild
             >
               <a href="/science">
-                <BookOpen className="w-4 h-4 mr-2" />
-                Explore the Science
+                Explore Science
               </a>
             </Button>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-border">
-            <p className="font-sans text-sm text-muted-foreground mb-2">
-              Have questions about our approach?
-            </p>
+          <div className="mt-16">
             <a 
               href="mailto:hello@omkneehealth.com" 
-              className="font-sans text-sm text-primary hover:underline font-medium"
+              className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               hello@omkneehealth.com
             </a>
