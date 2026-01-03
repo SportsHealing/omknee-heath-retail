@@ -14,12 +14,14 @@ const EducationSection = () => {
           {/* Content */}
           <div>
             <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-10 leading-tight">
-              The Knee Deserves Attention
+              The knee reflects how we move through life
             </h2>
             
-            <p className="font-sans text-muted-foreground leading-relaxed mb-12">
-              Complex. Load-bearing. Often overlooked until discomfort appears.
-            </p>
+            <div className="font-sans text-muted-foreground leading-relaxed mb-12 space-y-4">
+              <p>The knee is central to everyday movement — walking, climbing, training, and balance.</p>
+              <p>Over time, changes in load, activity, and recovery can influence how knees feel and function.</p>
+              <p>Looking after knee health early, and consistently, can support confidence in movement across decades.</p>
+            </div>
 
             <Button variant="ghost" className="font-sans text-sm px-0 hover:bg-transparent hover:text-foreground" asChild>
               <a href="/science">
