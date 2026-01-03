@@ -3,75 +3,57 @@
  * Manufacturing, testing, transparency
  */
 
-import { Shield, FlaskConical, Building2, FileCheck, Eye, Leaf } from "lucide-react";
+import { FlaskConical, Building2, FileCheck, Eye } from "lucide-react";
 
 const qualityPoints = [
   {
     icon: Building2,
     title: "UK Manufactured",
-    description: "Produced in a GMP-certified facility in the United Kingdom, meeting strict quality and safety standards."
+    description: "GMP-certified facility"
   },
   {
     icon: FlaskConical,
     title: "Third-Party Tested",
-    description: "Every batch is independently tested for purity, potency, and contaminants by accredited laboratories."
+    description: "Every batch verified"
   },
   {
     icon: FileCheck,
-    title: "Certificate of Analysis",
-    description: "Full testing documentation available upon request. We stand behind every batch we produce."
+    title: "Certificate Available",
+    description: "Documentation on request"
   },
   {
     icon: Eye,
-    title: "Full Transparency",
-    description: "No proprietary blends. Every ingredient and its exact amount is clearly stated on the label."
-  },
-  {
-    icon: Shield,
-    title: "Allergen Awareness",
-    description: "Contains collagen (marine or bovine), may contain shellfish-derived glucosamine. All allergens clearly declared on each variant's label."
-  },
-  {
-    icon: Leaf,
-    title: "Responsible Sourcing",
-    description: "Ingredients sourced from reputable suppliers with documented quality control procedures."
+    title: "No Proprietary Blends",
+    description: "Full transparency"
   }
 ];
 
 const ProductSafety = () => {
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section className="py-32 md:py-40 bg-background">
       <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {/* Section header */}
-          <div className="text-center mb-16">
-            <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary mb-4">
-              Quality & Safety
-            </p>
-            <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-4">
-              What Goes Into Every Pouch
+          <div className="text-center mb-20">
+            <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-6">
+              Quality Standards
             </h2>
-            <div className="w-12 h-px bg-primary/30 mx-auto mb-6" />
-            <p className="font-sans text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Quality isn't a marketing claim—it's a manufacturing commitment. 
-              Here's how we ensure every pouch meets our standards.
-            </p>
           </div>
 
           {/* Quality grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-4 gap-10 mb-20">
             {qualityPoints.map((point, index) => (
               <div 
                 key={index}
-                className="bg-secondary/50 rounded-lg p-6 border border-border"
+                className="text-center"
               >
-                <div className="w-10 h-10 rounded-full bg-trust-badge flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center mx-auto mb-5">
                   <point.icon className="w-5 h-5 text-primary" />
                 </div>
                 <h3 className="font-sans text-sm font-medium text-foreground mb-2">
                   {point.title}
                 </h3>
-                <p className="font-sans text-sm text-muted-foreground leading-relaxed">
+                <p className="font-sans text-xs text-muted-foreground">
                   {point.description}
                 </p>
               </div>

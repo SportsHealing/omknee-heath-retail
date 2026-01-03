@@ -6,20 +6,16 @@ import { Clock, Utensils, CalendarDays, AlertCircle, Droplets } from "lucide-rea
 
 const ProductHowToUse = () => {
   return (
-    <section id="how-to-use" className="py-20 md:py-28 bg-primary text-primary-foreground scroll-mt-20">
+    <section id="how-to-use" className="py-32 md:py-40 bg-primary text-primary-foreground scroll-mt-20">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section header */}
-          <div className="text-center mb-12">
-            <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary-foreground/70 mb-4">
-              Usage Guidelines
-            </p>
-            <h2 className="text-2xl md:text-3xl font-serif mb-4">
-              How to Take This Supplement
+          <div className="text-center mb-16">
+            <h2 className="text-2xl md:text-3xl font-serif mb-6">
+              How to Use
             </h2>
-            <div className="w-12 h-px bg-primary-foreground/30 mx-auto mb-6" />
-            <p className="font-sans text-primary-foreground/80 leading-relaxed">
-              Simple, straightforward guidance based on how these ingredients are typically used.
+            <p className="font-sans text-primary-foreground/70">
+              One pouch daily. Mix with water. Take with food.
             </p>
           </div>
 

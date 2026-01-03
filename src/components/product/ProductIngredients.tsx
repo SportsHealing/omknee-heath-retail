@@ -133,21 +133,16 @@ const vitaminsAndMinerals = [
 
 const ProductIngredients = () => {
   return (
-    <section id="ingredients" className="py-20 md:py-28 bg-background">
+    <section id="ingredients" className="py-32 md:py-40 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section header */}
-          <div className="text-center mb-16">
-            <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary mb-4">
-              Evidence-Based Formulation
-            </p>
-            <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-4">
-              What's Inside—And Why
+          <div className="text-center mb-20">
+            <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-6">
+              Ingredients
             </h2>
-            <div className="w-12 h-px bg-primary/30 mx-auto mb-6" />
-            <p className="font-sans text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Every ingredient is included for a specific, defensible reason. 
-              Here's the complete breakdown—mechanism, evidence, and our rationale.
+            <p className="font-sans text-muted-foreground max-w-lg mx-auto">
+              Each included for a specific, defensible reason.
             </p>
           </div>
 
