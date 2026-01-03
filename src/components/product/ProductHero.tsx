@@ -44,14 +44,9 @@ const ProductHero = () => {
                 <span className="text-sm text-muted-foreground font-sans">/ 30 days</span>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button size="lg" className="px-8 text-sm font-sans font-medium">
-                  Add to Basket
-                </Button>
-                <Button variant="outline" size="lg" className="px-8 text-sm font-sans font-medium border-primary/20">
-                  Subscribe & Save
-                </Button>
-              </div>
+              <Button size="lg" className="px-10 text-sm font-sans font-medium">
+                Add to Basket
+              </Button>
             </div>
 
             {/* Regulatory note */}
