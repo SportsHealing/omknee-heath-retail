@@ -6,19 +6,17 @@
 import { Check, X } from "lucide-react";
 
 const canDo = [
-  "Provide nutritional building blocks that support cartilage and joint tissue",
-  "Complement a balanced diet with specific nutrients relevant to joint health",
-  "Form part of a broader approach to maintaining mobility and function",
-  "Offer convenience for those who may not obtain these nutrients from diet alone",
-  "Provide consistent, quality-controlled doses of studied ingredients"
+  "Provide nutritional building blocks for cartilage and joint tissue",
+  "Complement diet with nutrients relevant to joint health",
+  "Form part of a broader approach to mobility",
+  "Deliver consistent, quality-controlled doses"
 ];
 
 const cannotDo = [
-  "Cure, treat, or reverse any disease or medical condition",
-  "Replace medical advice, diagnosis, or treatment from healthcare professionals",
-  "Guarantee specific outcomes — individual responses vary significantly",
-  "Compensate for poor lifestyle choices or lack of appropriate movement",
-  "Work overnight — joint support is typically a gradual, long-term process"
+  "Cure, treat, or reverse any condition",
+  "Replace professional medical advice",
+  "Guarantee specific outcomes",
+  "Compensate for lifestyle factors"
 ];
 
 const SupplementReality = () => {
@@ -28,17 +26,12 @@ const SupplementReality = () => {
         <div className="max-w-4xl mx-auto">
           {/* Section header */}
           <div className="text-center mb-12">
-            <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary-foreground/70 mb-4">
-              Setting Expectations
-            </p>
             <h2 className="text-2xl md:text-3xl font-serif mb-4">
-              What Supplements Can — and Cannot — Do
+              Realistic Expectations
             </h2>
             <div className="w-12 h-px bg-primary-foreground/30 mx-auto mb-6" />
-            <p className="text-primary-foreground/80 leading-relaxed max-w-2xl mx-auto font-sans">
-              We believe in honest communication. Supplements are tools that may support 
-              joint health as part of a broader strategy — not miracle solutions. 
-              Here's a realistic assessment.
+            <p className="text-primary-foreground/80 leading-relaxed max-w-xl mx-auto font-sans">
+              Supplements are tools, not solutions.
             </p>
           </div>
 
@@ -81,10 +74,8 @@ const SupplementReality = () => {
           </div>
 
           <div className="mt-10 text-center">
-            <p className="text-primary-foreground/60 text-sm max-w-2xl mx-auto font-sans">
-              If you're experiencing significant joint problems, please consult a healthcare 
-              professional. Supplements are intended to complement — not replace — appropriate 
-              medical care and professional guidance.
+            <p className="text-primary-foreground/60 text-sm max-w-lg mx-auto font-sans">
+              For significant joint concerns, consult a healthcare professional.
             </p>
           </div>
         </div>
