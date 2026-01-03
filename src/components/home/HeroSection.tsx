@@ -4,12 +4,13 @@
  */
 
 import { Button } from "@/components/ui/button";
-
+import { ArrowRight } from "lucide-react";
 import heroIngredients from "@/assets/hero-ingredients.jpg";
+import productPouches from "@/assets/product-pouches.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[85vh] flex flex-col justify-center overflow-hidden">
       {/* Background image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -45,8 +46,35 @@ const HeroSection = () => {
         </div>
       </div>
 
+      {/* Product teaser - compact, non-intrusive */}
+      <div className="relative z-10 pb-12 animate-fade-up-delay-2">
+        <div className="container px-6">
+          <a 
+            href="/product" 
+            className="max-w-md mx-auto flex items-center gap-6 p-4 bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 hover:border-border hover:bg-background/90 transition-all group"
+          >
+            <div className="w-20 h-20 flex-shrink-0 bg-secondary/50 rounded-lg flex items-center justify-center">
+              <img 
+                src={productPouches} 
+                alt="Joint + Movement Support"
+                className="w-16 h-16 object-contain"
+              />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="font-serif text-foreground text-sm mb-1">
+                Joint + Movement Support
+              </p>
+              <p className="font-sans text-xs text-muted-foreground">
+                30 daily pouches · £49.99
+              </p>
+            </div>
+            <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors flex-shrink-0" />
+          </a>
+        </div>
+      </div>
+
       {/* Subtle bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
     </section>
   );
 };
