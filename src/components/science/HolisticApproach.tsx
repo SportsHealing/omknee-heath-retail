@@ -38,7 +38,11 @@ const HolisticApproach = () => {
             <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-4">
               The Broader Picture
             </h2>
-            <div className="w-12 h-px bg-primary/30 mx-auto" />
+            <div className="w-12 h-px bg-primary/30 mx-auto mb-6" />
+            <p className="font-sans text-muted-foreground leading-relaxed max-w-xl mx-auto">
+              No single intervention can maintain joint health on its own. The most effective approach 
+              combines multiple strategies that work together over time.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">

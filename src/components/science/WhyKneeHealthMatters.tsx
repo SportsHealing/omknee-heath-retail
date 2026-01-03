@@ -15,9 +15,13 @@ const WhyKneeHealthMatters = () => {
             </h2>
           </div>
           
+          <p className="font-sans text-muted-foreground leading-relaxed text-center mb-8 max-w-xl mx-auto">
+            The knee is one of the most complex joints in the human body. It bears weight, absorbs impact, 
+            and enables the movements we often take for granted — walking, climbing, kneeling, running.
+          </p>
           <p className="font-sans text-muted-foreground leading-relaxed text-center mb-20 max-w-xl mx-auto">
-            The knee bears weight, absorbs impact, enables movement. 
-            As we age, cartilage thins and tissues become less resilient.
+            As we age, the cartilage that cushions our joints can thin, and the tissues that support them 
+            become less resilient. Understanding this complexity is the first step toward caring for your knees.
           </p>
 
           <div className="grid md:grid-cols-3 gap-12">
