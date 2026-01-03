@@ -9,17 +9,17 @@ const pillars = [
   {
     icon: Stethoscope,
     title: "Clinical Thinking",
-    description: "Careful assessment. No shortcuts."
+    description: "We approach knee health the way clinicians do — with careful assessment, honest communication, and respect for complexity. No shortcuts, no exaggerated promises."
   },
   {
     icon: FlaskConical,
     title: "Evidence First",
-    description: "What research shows — and what remains uncertain."
+    description: "Every ingredient we include has a reason rooted in research. We're transparent about what the science shows — and what remains uncertain."
   },
   {
     icon: Activity,
     title: "The Whole Picture",
-    description: "Supplements support. They never lead."
+    description: "A supplement is one piece of a larger puzzle. Movement, nutrition, rest, and professional guidance all play essential roles in joint health."
   }
 ];
 
