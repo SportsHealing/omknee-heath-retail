@@ -36,15 +36,29 @@ const SignatureProductSection = () => {
           </div>
 
           {/* Product card */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Product image */}
-            <div className="aspect-square bg-primary-foreground/5 rounded-lg flex items-center justify-center order-2 lg:order-1 p-10">
+            <a 
+              href="/product"
+              className="block bg-primary-foreground/5 rounded-lg p-6 order-2 lg:order-1 hover:bg-primary-foreground/10 transition-colors cursor-pointer group"
+            >
               <img 
                 src={productPouches} 
-                alt="OmKneeHealth Joint + Movement Support"
-                className="w-full h-full object-contain"
+                alt="OmKneeHealth Supplement for Joint Health"
+                className="w-full max-w-md mx-auto object-contain group-hover:scale-105 transition-transform duration-300"
               />
-            </div>
+              <div className="text-center mt-6 space-y-2">
+                <p className="font-serif text-lg text-primary-foreground">
+                  OmKneeHealth Supplement for Joint Health
+                </p>
+                <p className="font-sans text-sm text-primary-foreground/70">
+                  300mg pouch · One month's supply
+                </p>
+                <p className="font-sans text-xs text-primary-foreground/60 uppercase tracking-wider">
+                  Clinician Formulated
+                </p>
+              </div>
+            </a>
 
             {/* Product details */}
             <div className="order-1 lg:order-2">
