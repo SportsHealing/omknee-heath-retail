@@ -190,11 +190,11 @@ const IngredientsGallery = () => {
 
       {/* Lightbox Modal */}
       <Dialog open={isOpen} onOpenChange={handleOpenChange}>
-        <DialogContent className="max-w-3xl p-0 overflow-hidden bg-background border border-border">
+        <DialogContent className="max-w-3xl p-0 bg-background border border-border max-h-[90vh] md:max-h-[85vh] overflow-hidden flex flex-col">
           {selectedIngredient && (
-            <div className="grid md:grid-cols-2">
-              {/* Image Section */}
-              <div className="relative aspect-square md:aspect-auto">
+            <div className="flex flex-col md:grid md:grid-cols-2 h-full max-h-[90vh] md:max-h-[85vh]">
+              {/* Image Section - Fixed height on mobile */}
+              <div className="relative h-48 md:h-auto md:min-h-full flex-shrink-0">
                 <img 
                   src={selectedIngredient.image}
                   alt={selectedIngredient.name}
@@ -240,13 +240,13 @@ const IngredientsGallery = () => {
                 </div>
               </div>
 
-              {/* Content Section */}
-              <div className="p-6 md:p-8 flex flex-col">
-                <DialogHeader className="text-left mb-4">
+              {/* Content Section - Scrollable */}
+              <div className="p-5 md:p-8 flex flex-col flex-1 overflow-y-auto">
+                <DialogHeader className="text-left mb-4 flex-shrink-0">
                   <p className="text-xs tracking-[0.1em] uppercase text-primary mb-1">
                     {selectedIngredient.source}
                   </p>
-                  <DialogTitle className="font-serif text-2xl md:text-3xl text-foreground">
+                  <DialogTitle className="font-serif text-xl md:text-3xl text-foreground">
                     {selectedIngredient.name}
                   </DialogTitle>
                   <DialogDescription className="sr-only">
@@ -254,7 +254,7 @@ const IngredientsGallery = () => {
                   </DialogDescription>
                 </DialogHeader>
 
-                <div className="flex-1 space-y-5">
+                <div className="flex-1 space-y-4 md:space-y-5">
                   {/* Description */}
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {selectedIngredient.detailedInfo}
@@ -285,7 +285,7 @@ const IngredientsGallery = () => {
                 </div>
 
                 {/* Navigation hint */}
-                <p className="text-xs text-muted-foreground mt-4 text-center md:text-left">
+                <p className="text-xs text-muted-foreground mt-4 pt-3 border-t border-border/50 text-center md:text-left flex-shrink-0">
                   {selectedIndex !== null && `${selectedIndex + 1} of ${ingredients.length}`} • Use arrows to navigate
                 </p>
               </div>
