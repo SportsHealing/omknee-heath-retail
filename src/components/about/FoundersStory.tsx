@@ -16,15 +16,15 @@ const FoundersStory = () => {
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
           <p>
             OmKneeHealth was founded by clinicians who spent years working directly 
-            with patients experiencing knee pain and joint challenges. In clinic after 
+            with patients seeking guidance on knee concerns. In clinic after 
             clinic, we saw the same pattern: people arriving overwhelmed by conflicting 
             information, confused by aggressive supplement marketing, and unsure what 
             actually mattered for their knee health.
           </p>
 
           <p>
-            We saw patients who had spent hundreds of pounds on products that promised 
-            miracles but delivered little. We met people who avoided seeking help because 
+            We saw patients who had spent hundreds of pounds on products that made 
+            exaggerated claims. We met people who avoided seeking help because 
             they'd been burned before. And we worked with individuals who simply wanted 
             straight answers—not sales pitches disguised as advice.
           </p>
@@ -62,7 +62,7 @@ const FoundersStory = () => {
             <p className="text-muted-foreground text-sm">
               Our founding team includes physiotherapists, orthopaedic specialists, 
               and sports medicine practitioners with decades of combined experience 
-              specifically in knee health and rehabilitation.
+              in musculoskeletal health and education.
             </p>
           </div>
 

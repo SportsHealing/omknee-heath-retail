@@ -51,9 +51,9 @@ const guidanceAreas = [
     title: "Nutrition",
     guidance: [
       "A balanced diet provides nutrients needed for tissue maintenance",
-      "Anti-inflammatory dietary patterns may support joint health",
+      "Varied dietary patterns may contribute to overall joint health",
       "Adequate protein supports muscle maintenance",
-      "Hydration is important for all bodily functions, including joint lubrication"
+      "Hydration is important for all bodily functions"
     ],
     caution: "Supplements should complement, not replace, a balanced diet. Consult a healthcare provider about supplementation."
   },

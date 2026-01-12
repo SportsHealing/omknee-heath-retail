@@ -27,10 +27,10 @@ const SignatureProductSection = () => {
             </h2>
             <div className="space-y-4 text-primary-foreground/80 font-sans leading-relaxed max-w-xl mx-auto">
               <p>
-                Our joint supplement is designed to support cartilage health, connective tissue integrity, and joint comfort as part of a broader knee-care approach.
+                Our joint supplement provides nutritional building blocks that contribute to normal cartilage, connective tissue, and bone maintenance as part of a broader knee-care approach.
               </p>
               <p>
-                It combines carefully selected ingredients that are widely studied in joint health research, formulated for consistent, everyday use.
+                It combines carefully selected ingredients that are commonly studied in joint health research, formulated for consistent, everyday use.
               </p>
             </div>
           </div>

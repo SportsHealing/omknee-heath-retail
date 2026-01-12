@@ -9,22 +9,22 @@ const pillars = [
   {
     icon: Activity,
     title: "Movement",
-    description: "Maintains flexibility, strengthens supporting muscles, circulates synovial fluid."
+    description: "Helps maintain flexibility, supports muscle strength, and circulates synovial fluid."
   },
   {
     icon: Apple,
     title: "Nutrition",
-    description: "Anti-inflammatory foods, adequate protein, essential vitamins and minerals."
+    description: "A balanced diet with adequate protein and essential vitamins and minerals."
   },
   {
     icon: Scale,
     title: "Load Management",
-    description: "Healthy weight reduces mechanical stress on weight-bearing joints."
+    description: "Healthy weight helps reduce mechanical stress on weight-bearing joints."
   },
   {
     icon: Pill,
     title: "Supplementation",
-    description: "Targeted nutrients that may be difficult to obtain from diet alone."
+    description: "Targeted nutrients that complement diet and may be difficult to obtain from food alone."
   }
 ];
 

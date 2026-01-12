@@ -47,7 +47,7 @@ const EducationSection = () => {
                 providing thoughtful, consistent support that respects how joints naturally work.
               </p>
               <p className="text-foreground font-medium">
-                Because when your knees feel supported, life feels more possible.
+                Because understanding your knees helps you make informed choices about your wellbeing.
               </p>
             </div>
 

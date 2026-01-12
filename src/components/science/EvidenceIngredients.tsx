@@ -29,7 +29,7 @@ const activeIngredients = [
     name: "Curcumin Extract (≥95% Curcuminoids)",
     amount: "500mg",
     category: "Botanical Extract",
-    rationale: "Standardised extract with documented antioxidant properties. Paired with piperine for absorption."
+    rationale: "Standardised extract with documented antioxidant properties. Paired with piperine to enhance absorption."
   },
   {
     name: "Black Pepper Extract (Piperine)",
