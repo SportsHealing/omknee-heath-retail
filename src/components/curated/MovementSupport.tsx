@@ -34,6 +34,7 @@ const products = [
 const MovementSupport = () => {
   return (
     <CuratedCategory
+      id="movement-support"
       title="Movement Support"
       subtitle="Braces & Sleeves"
       introduction="Supportive devices have a place in knee care, but context matters. We recommend products that serve genuine therapeutic purposes rather than creating unnecessary dependency."

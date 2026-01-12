@@ -16,6 +16,7 @@ interface Product {
 }
 
 interface CuratedCategoryProps {
+  id: string;
   title: string;
   subtitle: string;
   introduction: string;
@@ -24,6 +25,7 @@ interface CuratedCategoryProps {
 }
 
 const CuratedCategory = ({ 
+  id,
   title, 
   subtitle, 
   introduction, 
@@ -31,7 +33,7 @@ const CuratedCategory = ({
   disclaimer 
 }: CuratedCategoryProps) => {
   return (
-    <section className="py-20 md:py-28 border-t border-border">
+    <section id={id} className="py-20 md:py-28 border-t border-border scroll-mt-32">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Category header */}

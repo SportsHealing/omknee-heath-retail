@@ -34,6 +34,7 @@ const products = [
 const FootwearGuidance = () => {
   return (
     <CuratedCategory
+      id="footwear-guidance"
       title="Footwear & Orthotic Support"
       subtitle="Foundation Matters"
       introduction="What you wear on your feet influences how forces travel through your knees. Appropriate footwear is a simple intervention that can meaningfully affect knee comfort."

@@ -8,6 +8,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEO from "@/components/SEO";
 import CuratedHero from "@/components/curated/CuratedHero";
+import CuratedNav from "@/components/curated/CuratedNav";
 import MovementSupport from "@/components/curated/MovementSupport";
 import RecoveryTools from "@/components/curated/RecoveryTools";
 import StrengthEquipment from "@/components/curated/StrengthEquipment";
@@ -26,6 +27,7 @@ const Curated = () => {
       <Header />
       <main>
         <CuratedHero />
+        <CuratedNav />
         <MovementSupport />
         <RecoveryTools />
         <StrengthEquipment />

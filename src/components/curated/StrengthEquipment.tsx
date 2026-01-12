@@ -42,6 +42,7 @@ const products = [
 const StrengthEquipment = () => {
   return (
     <CuratedCategory
+      id="strength-equipment"
       title="Home Strengthening Equipment"
       subtitle="Rehabilitation Essentials"
       introduction="Strength is the single most modifiable factor in knee health. These tools enable effective home-based strengthening that complements professional rehabilitation or serves as ongoing maintenance."
