@@ -3,6 +3,7 @@ import Footer from "@/components/layout/Footer";
 import ProductHero from "@/components/product/ProductHero";
 import ProductSuitability from "@/components/product/ProductSuitability";
 import ProductPhilosophy from "@/components/product/ProductPhilosophy";
+import IngredientsGallery from "@/components/product/IngredientsGallery";
 import ProductIngredients from "@/components/product/ProductIngredients";
 import ProductSafety from "@/components/product/ProductSafety";
 import ProductHowToUse from "@/components/product/ProductHowToUse";
@@ -77,7 +78,10 @@ const Product = () => {
           {/* Section 3: Philosophy - Part of broader strategy */}
           <ProductPhilosophy />
           
-          {/* Section 4: Ingredients - Evidence-based breakdown */}
+          {/* Section 4: Ingredients Gallery - Visual showcase */}
+          <IngredientsGallery />
+          
+          {/* Section 5: Ingredients - Evidence-based breakdown */}
           <ProductIngredients />
           
           {/* Section 5: Safety & Quality */}
