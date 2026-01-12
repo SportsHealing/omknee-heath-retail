@@ -9,6 +9,7 @@ import HolisticApproach from "@/components/science/HolisticApproach";
 import ScienceFAQ from "@/components/science/ScienceFAQ";
 import ScienceCTA from "@/components/science/ScienceCTA";
 import SEO from "@/components/SEO";
+import BackToTop from "@/components/ui/BackToTop";
 
 /**
  * SHOPIFY PAGE: Evidence & Science Hub
@@ -41,6 +42,7 @@ const Science = () => {
         <ScienceFAQ />
         <ScienceCTA />
       </main>
+      <BackToTop />
       <Footer />
     </div>
   );
