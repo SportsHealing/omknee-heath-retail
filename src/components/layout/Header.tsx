@@ -77,39 +77,39 @@ const Header = () => {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-6 border-t border-border/50 animate-fade-up">
-            <nav className="flex flex-col gap-4">
+          <div className="lg:hidden py-6 border-t border-border/50 animate-fade-up bg-background absolute left-0 right-0 top-full shadow-lg">
+            <nav className="flex flex-col gap-4 container px-6">
               <Link 
                 to="/product" 
-                className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="font-sans text-sm text-foreground hover:text-primary transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Joint Health Supplement
               </Link>
               <Link 
                 to="/science" 
-                className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="font-sans text-sm text-foreground hover:text-primary transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Evidence & Science
               </Link>
               <Link 
                 to="/curated" 
-                className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="font-sans text-sm text-foreground hover:text-primary transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Curated Knee Essentials
               </Link>
               <Link 
                 to="/learn" 
-                className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="font-sans text-sm text-foreground hover:text-primary transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Learn About Your Knee
               </Link>
               <Link 
                 to="/about" 
-                className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="font-sans text-sm text-foreground hover:text-primary transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About OmKneeHealth
