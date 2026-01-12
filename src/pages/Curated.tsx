@@ -16,7 +16,7 @@ import ComfortSolutions from "@/components/curated/ComfortSolutions";
 import FootwearGuidance from "@/components/curated/FootwearGuidance";
 import BooksResources from "@/components/curated/BooksResources";
 import CuratedCTA from "@/components/curated/CuratedCTA";
-import BackToTop from "@/components/curated/BackToTop";
+import BackToTop from "@/components/ui/BackToTop";
 
 const Curated = () => {
   return (

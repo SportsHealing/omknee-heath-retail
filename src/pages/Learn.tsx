@@ -5,6 +5,7 @@ import LearnHero from "@/components/learn/LearnHero";
 import KneeAnatomy from "@/components/learn/KneeAnatomy";
 import CommonConditions from "@/components/learn/CommonConditions";
 import SelfCareGuidance from "@/components/learn/SelfCareGuidance";
+import BackToTop from "@/components/ui/BackToTop";
 
 const Learn = () => {
   return (
@@ -21,6 +22,7 @@ const Learn = () => {
         <CommonConditions />
         <SelfCareGuidance />
       </main>
+      <BackToTop />
       <Footer />
     </div>
   );
