@@ -53,7 +53,7 @@ const Product = () => {
       <Header />
       <main>
         {/* Back Button */}
-        <div className="pt-24 pb-4 container mx-auto px-6">
+        <div className="pt-24 pb-2 container mx-auto px-6">
           <Button 
             variant="ghost" 
             onClick={() => navigate(-1)}
@@ -64,7 +64,7 @@ const Product = () => {
           </Button>
         </div>
         
-        {/* Section 1: Product Hero - Clinical positioning */}
+        {/* Section 1: Product Hero - Image first, then info with easy buy access */}
         <ProductHero />
         
         {/* Section 2: Who This Is For / Not For */}
