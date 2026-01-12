@@ -5,6 +5,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ShieldCheck, RotateCcw, Truck } from "lucide-react";
+import ingredientsBg from "@/assets/ingredients-turmeric-bg.jpg";
 
 const reassurances = [
   { icon: Truck, text: "Free UK delivery over £30" },
@@ -14,8 +15,18 @@ const reassurances = [
 
 const ProductCTA = () => {
   return (
-    <section id="shop-supplements" className="py-24 md:py-32 bg-primary/5 scroll-mt-20">
-      <div className="container mx-auto px-6">
+    <section id="shop-supplements" className="py-24 md:py-32 bg-primary/5 scroll-mt-20 relative overflow-hidden">
+      {/* Soft ingredient background */}
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
+        <img 
+          src={ingredientsBg} 
+          alt="" 
+          className="w-full h-full object-cover"
+          aria-hidden="true"
+        />
+      </div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-6">
             Ready to Support Your Joint Health?
