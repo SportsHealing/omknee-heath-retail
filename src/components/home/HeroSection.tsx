@@ -27,7 +27,7 @@ const HeroSection = () => {
 
           {/* Subheading */}
           <p className="animate-fade-up-delay-1 font-sans text-muted-foreground leading-relaxed max-w-xl mx-auto mb-12">
-            Clinician-led, evidence-informed support for movement, comfort, and joint resilience — at every stage of life.
+            Clinician-led, evidence-informed nutritional support designed to complement your approach to joint wellness — at every stage of life.
           </p>
 
           {/* CTAs */}
