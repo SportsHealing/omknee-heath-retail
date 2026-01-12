@@ -5,6 +5,7 @@ import AboutHero from "@/components/about/AboutHero";
 import FoundersStory from "@/components/about/FoundersStory";
 import KneeExpertise from "@/components/about/KneeExpertise";
 import ClinicalMission from "@/components/about/ClinicalMission";
+import BackToTop from "@/components/ui/BackToTop";
 
 const About = () => {
   return (
@@ -21,6 +22,7 @@ const About = () => {
         <KneeExpertise />
         <ClinicalMission />
       </main>
+      <BackToTop />
       <Footer />
     </div>
   );
