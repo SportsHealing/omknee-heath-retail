@@ -212,9 +212,10 @@ type AssessmentMode = "quick" | "full" | null;
 interface KneeScoreEmbedProps {
   mode?: "quick" | "full";
   onComplete?: () => void;
+  onSwitchAssessment?: (type: "quick" | "full" | "triage") => void;
 }
 
-const KneeScoreEmbed = ({ mode: initialMode, onComplete }: KneeScoreEmbedProps = {}) => {
+const KneeScoreEmbed = ({ mode: initialMode, onComplete, onSwitchAssessment }: KneeScoreEmbedProps = {}) => {
   const [assessmentMode, setAssessmentMode] = useState<AssessmentMode>(initialMode || null);
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});
@@ -515,7 +516,7 @@ const KneeScoreEmbed = ({ mode: initialMode, onComplete }: KneeScoreEmbedProps =
               </div>
 
               {/* Actions */}
-              <div className="flex flex-col sm:flex-row justify-center gap-3">
+              <div className="flex flex-col sm:flex-row justify-center gap-3 mb-8">
                 <Button 
                   variant="outline"
                   onClick={() => {
@@ -545,9 +546,64 @@ const KneeScoreEmbed = ({ mode: initialMode, onComplete }: KneeScoreEmbedProps =
                 </Button>
                 <Button variant="outline" onClick={resetAssessment}>
                   <RotateCcw className="w-4 h-4 mr-2" />
-                  Start Over
+                  Retake Assessment
                 </Button>
               </div>
+
+              {/* Try Another Assessment */}
+              {onSwitchAssessment && (
+                <div className="border-t border-border pt-6">
+                  <p className="text-sm text-muted-foreground text-center mb-4">
+                    Explore other assessments for deeper insight
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-3">
+                    {assessmentMode === "quick" && (
+                      <>
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => onSwitchAssessment("full")}
+                          className="gap-2"
+                        >
+                          <Clock className="w-4 h-4" />
+                          Knee + Sleep Score
+                        </Button>
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => onSwitchAssessment("triage")}
+                          className="gap-2"
+                        >
+                          <Stethoscope className="w-4 h-4" />
+                          Clinical Triage
+                        </Button>
+                      </>
+                    )}
+                    {assessmentMode === "full" && (
+                      <>
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => onSwitchAssessment("quick")}
+                          className="gap-2"
+                        >
+                          <Zap className="w-4 h-4" />
+                          Quick Knee Score
+                        </Button>
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => onSwitchAssessment("triage")}
+                          className="gap-2"
+                        >
+                          <Stethoscope className="w-4 h-4" />
+                          Clinical Triage
+                        </Button>
+                      </>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Personalised Test Recommendations */}
