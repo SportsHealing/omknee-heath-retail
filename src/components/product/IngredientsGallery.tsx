@@ -1,12 +1,12 @@
 /**
  * Ingredients Gallery - Visual showcase of key natural ingredients
  * Builds trust through transparency and natural ingredient imagery
- * Includes lightbox modal for detailed ingredient view
+ * Includes lightbox modal for detailed ingredient view with navigation
  */
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { X } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import turmericImg from "@/assets/ingredient-turmeric.jpg";
 import boswelliaImg from "@/assets/ingredient-boswellia.jpg";
 import collagenImg from "@/assets/ingredient-collagen.jpg";
@@ -89,18 +89,37 @@ const ingredients: Ingredient[] = [
 ];
 
 const IngredientsGallery = () => {
-  const [selectedIngredient, setSelectedIngredient] = useState<Ingredient | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleIngredientClick = (ingredient: Ingredient) => {
-    setSelectedIngredient(ingredient);
-    setIsOpen(true);
-  };
+  const selectedIngredient = selectedIndex !== null ? ingredients[selectedIndex] : null;
 
-  const handleClose = () => {
-    setIsOpen(false);
-    setTimeout(() => setSelectedIngredient(null), 200);
-  };
+  const handleIngredientClick = useCallback((index: number) => {
+    setSelectedIndex(index);
+    setIsOpen(true);
+  }, []);
+
+  const handleOpenChange = useCallback((open: boolean) => {
+    setIsOpen(open);
+    if (!open) {
+      // Clear selection after dialog animation completes
+      setTimeout(() => setSelectedIndex(null), 200);
+    }
+  }, []);
+
+  const handlePrevious = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedIndex !== null) {
+      setSelectedIndex(selectedIndex === 0 ? ingredients.length - 1 : selectedIndex - 1);
+    }
+  }, [selectedIndex]);
+
+  const handleNext = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedIndex !== null) {
+      setSelectedIndex(selectedIndex === ingredients.length - 1 ? 0 : selectedIndex + 1);
+    }
+  }, [selectedIndex]);
 
   return (
     <section className="py-20 md:py-28 bg-secondary/30">
@@ -123,7 +142,7 @@ const IngredientsGallery = () => {
           {ingredients.map((ingredient, index) => (
             <button 
               key={index}
-              onClick={() => handleIngredientClick(ingredient)}
+              onClick={() => handleIngredientClick(index)}
               className="group relative overflow-hidden rounded-xl bg-background border border-border hover:border-primary/30 transition-all duration-300 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             >
               {/* Image */}
@@ -170,7 +189,7 @@ const IngredientsGallery = () => {
       </div>
 
       {/* Lightbox Modal */}
-      <Dialog open={isOpen} onOpenChange={handleClose}>
+      <Dialog open={isOpen} onOpenChange={handleOpenChange}>
         <DialogContent className="max-w-3xl p-0 overflow-hidden bg-background border border-border">
           {selectedIngredient && (
             <div className="grid md:grid-cols-2">
@@ -183,6 +202,41 @@ const IngredientsGallery = () => {
                 />
                 <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-full">
                   <span className="text-sm font-medium">{selectedIngredient.amount}</span>
+                </div>
+                
+                {/* Navigation Arrows */}
+                <button
+                  onClick={handlePrevious}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background backdrop-blur-sm rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary"
+                  aria-label="Previous ingredient"
+                >
+                  <ChevronLeft className="w-5 h-5 text-foreground" />
+                </button>
+                <button
+                  onClick={handleNext}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background backdrop-blur-sm rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary"
+                  aria-label="Next ingredient"
+                >
+                  <ChevronRight className="w-5 h-5 text-foreground" />
+                </button>
+
+                {/* Dot indicators */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+                  {ingredients.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedIndex(idx);
+                      }}
+                      className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                        idx === selectedIndex 
+                          ? 'bg-primary w-4' 
+                          : 'bg-background/60 hover:bg-background/80'
+                      }`}
+                      aria-label={`Go to ${ingredients[idx].name}`}
+                    />
+                  ))}
                 </div>
               </div>
 
@@ -229,6 +283,11 @@ const IngredientsGallery = () => {
                     </p>
                   </div>
                 </div>
+
+                {/* Navigation hint */}
+                <p className="text-xs text-muted-foreground mt-4 text-center md:text-left">
+                  {selectedIndex !== null && `${selectedIndex + 1} of ${ingredients.length}`} • Use arrows to navigate
+                </p>
               </div>
             </div>
           )}
