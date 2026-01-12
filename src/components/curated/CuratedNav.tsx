@@ -12,6 +12,7 @@ const categories = [
   { id: "strength-equipment", label: "Strengthening" },
   { id: "comfort-solutions", label: "Pain Relief" },
   { id: "footwear-guidance", label: "Footwear" },
+  { id: "books-resources", label: "Books" },
 ];
 
 const CuratedNav = () => {
