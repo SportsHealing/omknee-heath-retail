@@ -16,6 +16,7 @@ import ComfortSolutions from "@/components/curated/ComfortSolutions";
 import FootwearGuidance from "@/components/curated/FootwearGuidance";
 import BooksResources from "@/components/curated/BooksResources";
 import CuratedCTA from "@/components/curated/CuratedCTA";
+import BackToTop from "@/components/curated/BackToTop";
 
 const Curated = () => {
   return (
@@ -37,6 +38,7 @@ const Curated = () => {
         <BooksResources />
         <CuratedCTA />
       </main>
+      <BackToTop />
       <Footer />
     </>
   );
