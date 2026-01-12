@@ -36,21 +36,21 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <Link to="/#philosophy" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Our Philosophy
-            </Link>
-            <Link to="/#our-story" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Our Story
+          <nav className="hidden lg:flex items-center gap-6">
+            <Link to="/product" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Joint Health Supplement
             </Link>
             <Link to="/science" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
-              The Science
+              Evidence & Science
             </Link>
-            <Link to="/assessment" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Knee Assessment
+            <Link to="/curated" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Curated Knee Essentials
             </Link>
-            <Link to="/product" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Our Formula
+            <Link to="/learn" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Learn About Your Knee
+            </Link>
+            <Link to="/about" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
+              About
             </Link>
           </nav>
 
@@ -59,15 +59,15 @@ const Header = () => {
             <Button 
               variant="outline" 
               size="sm"
-              className="hidden md:inline-flex text-sm font-medium border-primary/20 hover:bg-primary hover:text-primary-foreground hover:border-primary"
+              className="hidden lg:inline-flex text-sm font-medium border-primary/20 hover:bg-primary hover:text-primary-foreground hover:border-primary"
               asChild
             >
-              <Link to="/assessment">Take Full Assessment</Link>
+              <Link to="/assessment">Free Knee Assessment</Link>
             </Button>
             <Button 
               variant="ghost" 
               size="icon" 
-              className="md:hidden h-10 w-10"
+              className="lg:hidden h-10 w-10"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -77,49 +77,49 @@ const Header = () => {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-6 border-t border-border/50 animate-fade-up">
+          <div className="lg:hidden py-6 border-t border-border/50 animate-fade-up">
             <nav className="flex flex-col gap-4">
               <Link 
-                to="/#philosophy" 
+                to="/product" 
                 className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Our Philosophy
-              </Link>
-              <Link 
-                to="/#our-story" 
-                className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Our Story
+                Joint Health Supplement
               </Link>
               <Link 
                 to="/science" 
                 className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                The Science
+                Evidence & Science
               </Link>
               <Link 
-                to="/assessment" 
+                to="/curated" 
                 className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Knee Assessment
+                Curated Knee Essentials
               </Link>
               <Link 
-                to="/product" 
+                to="/learn" 
                 className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Our Formula
+                Learn About Your Knee
+              </Link>
+              <Link 
+                to="/about" 
+                className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                About OmKneeHealth
               </Link>
               <Button 
                 className="w-full mt-4" 
                 size="sm"
                 asChild
               >
-                <Link to="/assessment">Take Full Assessment</Link>
+                <Link to="/assessment">Free Knee Assessment</Link>
               </Button>
             </nav>
           </div>
