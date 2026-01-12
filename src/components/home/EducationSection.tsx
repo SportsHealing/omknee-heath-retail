@@ -6,14 +6,28 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import lifestyleImage from "@/assets/education-lifestyle.jpg";
 
 const EducationSection = () => {
   return (
     <section className="py-24 lg:py-32 bg-secondary">
       <div className="container px-6">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center max-w-6xl mx-auto">
+          {/* Lifestyle Image */}
+          <div className="relative order-2 lg:order-1">
+            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
+              <img 
+                src={lifestyleImage} 
+                alt="Active adult walking confidently on a nature trail in morning light" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {/* Decorative element */}
+            <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-accent/10 blur-2xl -z-10" />
+          </div>
+
           {/* Content */}
-          <div>
+          <div className="order-1 lg:order-2">
             <p className="font-sans text-sm tracking-[0.15em] uppercase text-accent mb-4">
               Understanding Joint Wellness
             </p>
@@ -43,34 +57,19 @@ const EducationSection = () => {
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
-          </div>
 
-          {/* Stats Card */}
-          <div className="bg-background rounded-xl p-10 lg:p-14 shadow-sm border border-border">
-            <p className="font-sans text-sm tracking-[0.1em] uppercase text-muted-foreground mb-10">
-              The Reality of Knee Health
-            </p>
-            <div className="space-y-10">
+            {/* Stats highlight */}
+            <div className="mt-12 pt-8 border-t border-border grid grid-cols-2 gap-6">
               <div>
-                <p className="font-serif text-5xl lg:text-6xl text-foreground mb-2">1 in 4</p>
-                <p className="font-sans text-muted-foreground">
-                  Adults over 45 experience knee discomfort
-                </p>
-              </div>
-              
-              <div className="border-t border-border pt-10">
-                <p className="font-serif text-5xl lg:text-6xl text-foreground mb-2">8.75m</p>
-                <p className="font-sans text-muted-foreground">
-                  UK adults seek help for joint issues annually
-                </p>
-              </div>
-              
-              <div className="border-t border-border pt-10">
-                <p className="font-serif text-2xl text-primary mb-1">
-                  Movement Matters
-                </p>
+                <p className="font-serif text-3xl lg:text-4xl text-foreground mb-1">1 in 4</p>
                 <p className="font-sans text-sm text-muted-foreground">
-                  Supporting healthy, active lifestyles at every stage
+                  Adults 45+ experience discomfort
+                </p>
+              </div>
+              <div>
+                <p className="font-serif text-3xl lg:text-4xl text-foreground mb-1">8.75m</p>
+                <p className="font-sans text-sm text-muted-foreground">
+                  UK adults seek help annually
                 </p>
               </div>
             </div>
