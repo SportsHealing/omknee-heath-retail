@@ -1,12 +1,13 @@
 /**
  * Product Hero - Joint + Movement Support Powder
  * Clinical positioning with clear value proposition
- * Image-first layout with sticky buy CTA
+ * Image-first layout with variant selector
  */
 
 import { Button } from "@/components/ui/button";
-import { ShieldCheck, Leaf, FlaskConical } from "lucide-react";
+import { ShieldCheck, Leaf, FlaskConical, Fish, Sprout, Check } from "lucide-react";
 import productImage from "@/assets/product-pouches.png";
+import { useProductVariant, variants, ProductVariant } from "./ProductVariantContext";
 
 const trustBadges = [
   { icon: ShieldCheck, label: "UK Manufactured" },
@@ -14,16 +15,29 @@ const trustBadges = [
   { icon: Leaf, label: "Research-Informed" }
 ];
 
+const variantOptions: { id: ProductVariant; icon: typeof Fish; label: string }[] = [
+  { id: "marine", icon: Fish, label: "Marine" },
+  { id: "vegetarian", icon: Sprout, label: "Vegetarian" }
+];
+
 const ProductHero = () => {
+  const { selectedVariant, setSelectedVariant, variantInfo } = useProductVariant();
+
   return (
     <section className="pb-20 md:pb-32 bg-background">
       <div className="container mx-auto px-6">
         {/* Image First - Full Width on Mobile */}
-        <div className="max-w-2xl mx-auto mb-12">
+        <div className="max-w-2xl mx-auto mb-12 relative">
+          {/* Badge */}
+          <div className="absolute top-4 left-4 z-10">
+            <span className="bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">
+              {variantInfo.badge}
+            </span>
+          </div>
           <div className="aspect-square bg-secondary rounded-lg flex items-center justify-center overflow-hidden">
             <img 
               src={productImage} 
-              alt="OmKneeHealth Joint + Movement Support - 300g pouch, one month supply" 
+              alt={`OmKneeHealth Joint + Movement Support ${variantInfo.name} - 300g pouch, one month supply`}
               className="w-full h-full object-contain p-6"
             />
           </div>
@@ -31,14 +45,46 @@ const ProductHero = () => {
 
         {/* Product Info - Centered Below Image */}
         <div className="max-w-2xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-foreground leading-tight mb-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-foreground leading-tight mb-2">
             Joint + Movement Support
           </h1>
           
-          <p className="font-sans text-muted-foreground leading-relaxed mb-6 max-w-lg mx-auto">
-            A clinician-formulated powder combining hydrolysed collagen, glucosamine, chondroitin, 
-            and essential vitamins — each at research-informed doses.
+          <p className="font-serif text-lg text-primary mb-4">
+            {variantInfo.tagline}
           </p>
+          
+          <p className="font-sans text-muted-foreground leading-relaxed mb-8 max-w-lg mx-auto">
+            {variantInfo.description}
+          </p>
+
+          {/* Variant Selector */}
+          <div className="mb-8">
+            <p className="text-sm font-medium text-foreground mb-3">Choose your formula</p>
+            <div className="flex justify-center gap-3">
+              {variantOptions.map((option) => {
+                const isSelected = selectedVariant === option.id;
+                const Icon = option.icon;
+                return (
+                  <button
+                    key={option.id}
+                    onClick={() => setSelectedVariant(option.id)}
+                    className={`flex items-center gap-2 px-5 py-3 rounded-lg border-2 transition-all ${
+                      isSelected 
+                        ? "border-primary bg-primary/5 text-foreground" 
+                        : "border-border bg-background text-muted-foreground hover:border-primary/50"
+                    }`}
+                  >
+                    <Icon className={`w-5 h-5 ${isSelected ? "text-primary" : ""}`} />
+                    <span className="font-medium">{option.label}</span>
+                    {isSelected && <Check className="w-4 h-4 text-primary ml-1" />}
+                  </button>
+                );
+              })}
+            </div>
+            <p className="text-xs text-muted-foreground mt-3">
+              {variantInfo.keyIngredient}
+            </p>
+          </div>
 
           {/* Product Details */}
           <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground mb-8">
@@ -60,7 +106,7 @@ const ProductHero = () => {
           {/* Price & Primary CTA */}
           <div className="bg-secondary/50 rounded-lg p-6 md:p-8 border border-border mb-6">
             <div className="flex items-baseline justify-center gap-3 mb-6">
-              <span className="text-3xl font-serif text-foreground">£49.99</span>
+              <span className="text-3xl font-serif text-foreground">£{variantInfo.price}</span>
               <span className="text-sm text-muted-foreground font-sans">/ one month supply</span>
             </div>
             
