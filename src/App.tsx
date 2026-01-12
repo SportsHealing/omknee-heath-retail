@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Product from "./pages/Product";
 import Science from "./pages/Science";
 import Assessment from "./pages/Assessment";
+import Learn from "./pages/Learn";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import ReturnsPolicy from "./pages/ReturnsPolicy";
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/product" element={<Product />} />
           <Route path="/science" element={<Science />} />
           <Route path="/assessment" element={<Assessment />} />
+          <Route path="/learn" element={<Learn />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/returns-policy" element={<ReturnsPolicy />} />
