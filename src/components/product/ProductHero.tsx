@@ -7,6 +7,7 @@
 import { Button } from "@/components/ui/button";
 import { ShieldCheck, Leaf, FlaskConical, Fish, Sprout, Check } from "lucide-react";
 import productImage from "@/assets/product-pouches.png";
+import ingredientsBg from "@/assets/ingredients-turmeric-bg.jpg";
 import { useProductVariant, variants, ProductVariant } from "./ProductVariantContext";
 
 const trustBadges = [
@@ -24,8 +25,19 @@ const ProductHero = () => {
   const { selectedVariant, setSelectedVariant, variantInfo } = useProductVariant();
 
   return (
-    <section className="pb-20 md:pb-32 bg-background">
-      <div className="container mx-auto px-6">
+    <section className="pb-20 md:pb-32 bg-background relative overflow-hidden">
+      {/* Soft ingredient background */}
+      <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
+        <img 
+          src={ingredientsBg} 
+          alt="" 
+          className="w-full h-full object-cover"
+          aria-hidden="true"
+        />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background pointer-events-none" />
+      
+      <div className="container mx-auto px-6 relative z-10">
         {/* Image First - Full Width on Mobile */}
         <div className="max-w-2xl mx-auto mb-12 relative">
           {/* Badge */}

@@ -4,6 +4,7 @@
  */
 
 import { AlertTriangle } from 'lucide-react';
+import ingredientsCollagenBg from "@/assets/ingredients-collagen-bg.jpg";
 
 const activeIngredients = [
   {
@@ -133,8 +134,19 @@ const vitaminsAndMinerals = [
 
 const ProductIngredients = () => {
   return (
-    <section id="ingredients" className="py-32 md:py-40 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="ingredients" className="py-32 md:py-40 bg-background relative overflow-hidden">
+      {/* Soft ingredient background */}
+      <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
+        <img 
+          src={ingredientsCollagenBg} 
+          alt="" 
+          className="w-full h-full object-cover"
+          aria-hidden="true"
+        />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background pointer-events-none" />
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Section header */}
           <div className="text-center mb-20">

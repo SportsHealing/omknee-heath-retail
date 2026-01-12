@@ -4,6 +4,7 @@
  */
 
 import { Activity, Apple, Moon, Pill } from "lucide-react";
+import ingredientsBg from "@/assets/ingredients-turmeric-bg.jpg";
 
 const pillars = [
   { icon: Activity, title: "Movement", description: "Strengthens supporting muscles." },
@@ -14,8 +15,18 @@ const pillars = [
 
 const ProductPhilosophy = () => {
   return (
-    <section className="py-32 md:py-40 bg-secondary/50">
-      <div className="container mx-auto px-6">
+    <section className="py-32 md:py-40 bg-secondary/50 relative overflow-hidden">
+      {/* Soft ingredient background */}
+      <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
+        <img 
+          src={ingredientsBg} 
+          alt="" 
+          className="w-full h-full object-cover"
+          aria-hidden="true"
+        />
+      </div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
           <div className="text-center mb-20">
