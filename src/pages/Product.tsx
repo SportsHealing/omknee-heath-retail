@@ -8,6 +8,7 @@ import ProductSafety from "@/components/product/ProductSafety";
 import ProductHowToUse from "@/components/product/ProductHowToUse";
 import ProductFAQ from "@/components/product/ProductFAQ";
 import ProductCTA from "@/components/product/ProductCTA";
+import StickyBuyBar from "@/components/product/StickyBuyBar";
 import SEO from "@/components/SEO";
 import ProductSchema from "@/components/ProductSchema";
 import { Button } from "@/components/ui/button";
@@ -89,6 +90,7 @@ const Product = () => {
         <ProductCTA />
       </main>
       <Footer />
+      <StickyBuyBar />
     </div>
   );
 };
