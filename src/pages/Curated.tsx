@@ -14,6 +14,7 @@ import RecoveryTools from "@/components/curated/RecoveryTools";
 import StrengthEquipment from "@/components/curated/StrengthEquipment";
 import ComfortSolutions from "@/components/curated/ComfortSolutions";
 import FootwearGuidance from "@/components/curated/FootwearGuidance";
+import BooksResources from "@/components/curated/BooksResources";
 import CuratedCTA from "@/components/curated/CuratedCTA";
 
 const Curated = () => {
@@ -33,6 +34,7 @@ const Curated = () => {
         <StrengthEquipment />
         <ComfortSolutions />
         <FootwearGuidance />
+        <BooksResources />
         <CuratedCTA />
       </main>
       <Footer />
