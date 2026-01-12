@@ -197,7 +197,11 @@ const Assessment = () => {
               ← Back to Assessments
             </Button>
           </div>
-          <KneeScoreEmbed mode="quick" onComplete={resetToMenu} />
+          <KneeScoreEmbed 
+            mode="quick" 
+            onComplete={resetToMenu} 
+            onSwitchAssessment={(type) => setCurrentView(type === "triage" ? "triage" : type)}
+          />
         </main>
         <BackToTop />
         <Footer />
@@ -225,7 +229,11 @@ const Assessment = () => {
               ← Back to Assessments
             </Button>
           </div>
-          <KneeScoreEmbed mode="full" onComplete={resetToMenu} />
+          <KneeScoreEmbed 
+            mode="full" 
+            onComplete={resetToMenu} 
+            onSwitchAssessment={(type) => setCurrentView(type === "triage" ? "triage" : type)}
+          />
         </main>
         <BackToTop />
         <Footer />
