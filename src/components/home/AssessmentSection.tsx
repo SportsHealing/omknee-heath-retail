@@ -1,73 +1,55 @@
 /**
- * Assessment Section - Knee Score Tool
- * Non-commercial value-add positioning
+ * Assessment Section - Simplified, single CTA
+ * Funnels users to the short questionnaire first
  */
 
 import { Button } from "@/components/ui/button";
-import { ClipboardList, Activity, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
-
-const features = [
-  {
-    icon: ClipboardList,
-    title: "Clinician-Developed",
-    description: "Informed by clinical experience"
-  },
-  {
-    icon: Activity,
-    title: "Clarity",
-    description: "Understand what may be affecting you"
-  },
-  {
-    icon: FileText,
-    title: "Honest Guidance",
-    description: "Know when to seek professional help"
-  }
-];
 
 const AssessmentSection = () => {
   return (
-    <section id="assessment" className="py-40 lg:py-48 bg-background">
+    <section id="assessment" className="py-32 lg:py-40 bg-secondary/30">
       <div className="container px-6">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-2xl mx-auto text-center">
           {/* Section header */}
-          <div className="text-center mb-24">
-            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-8">
-              Understand Your Knee Health
-            </h2>
-            <p className="font-sans text-muted-foreground">
-              Free. No sales pitch.
-            </p>
-          </div>
+          <p className="font-sans text-xs tracking-[0.25em] uppercase text-primary/70 mb-6">
+            Clinician-Developed Tools
+          </p>
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-8">
+            Assess Your Knee Health
+          </h2>
+          
+          {/* Description */}
+          <p className="font-serif text-lg text-muted-foreground leading-relaxed mb-6">
+            The team at OmKneeHealth have developed knee health questionnaires 
+            based on our clinical experience and validated assessment tools, 
+            designed to give you unique insight into your knee health.
+          </p>
+          
+          <p className="font-sans text-sm text-muted-foreground mb-10">
+            Start with our quick assessment, then explore more comprehensive 
+            options if you'd like deeper insight.
+          </p>
 
-          {/* Features */}
-          <div className="grid md:grid-cols-3 gap-12 mb-20">
-            {features.map((feature, index) => (
-              <div key={index} className="text-center">
-                <div className="w-10 h-10 mx-auto mb-6 rounded-full bg-secondary flex items-center justify-center">
-                  <feature.icon className="w-4 h-4 text-primary" />
-                </div>
-                <h3 className="font-sans text-sm font-medium text-foreground mb-3">
-                  {feature.title}
-                </h3>
-                <p className="font-sans text-xs text-muted-foreground">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          {/* Single CTA */}
+          <Button 
+            size="lg"
+            className="px-12 py-6 text-sm font-sans font-medium tracking-wide"
+            asChild
+          >
+            <Link to="/assessment">Take the Free Assessment</Link>
+          </Button>
+          
+          <p className="mt-6 font-sans text-xs text-muted-foreground">
+            2–5 minutes • Free • No account required
+          </p>
 
-          {/* CTA */}
-          <div className="text-center">
-            <Button 
-              size="lg"
-              className="px-12 py-6 text-sm font-sans font-medium tracking-wide"
-              asChild
-            >
-              <Link to="/assessment">Start</Link>
-            </Button>
-            <p className="mt-8 font-sans text-xs text-muted-foreground">
-              5 minutes
+          {/* Disclaimer */}
+          <div className="mt-12 pt-8 border-t border-border">
+            <p className="font-sans text-xs text-muted-foreground max-w-lg mx-auto">
+              <span className="font-medium">Important:</span> These assessments are 
+              for guidance purposes only and do not constitute medical diagnosis. 
+              Always consult a healthcare professional for medical advice.
             </p>
           </div>
         </div>

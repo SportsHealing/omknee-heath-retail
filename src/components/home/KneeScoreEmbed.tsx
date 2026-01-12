@@ -209,12 +209,17 @@ const sleepQuestions: QuestionWithOptions[] = [
 
 type AssessmentMode = "quick" | "full" | null;
 
-const KneeScoreEmbed = () => {
-  const [assessmentMode, setAssessmentMode] = useState<AssessmentMode>(null);
+interface KneeScoreEmbedProps {
+  mode?: "quick" | "full";
+  onComplete?: () => void;
+}
+
+const KneeScoreEmbed = ({ mode: initialMode, onComplete }: KneeScoreEmbedProps = {}) => {
+  const [assessmentMode, setAssessmentMode] = useState<AssessmentMode>(initialMode || null);
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [showResults, setShowResults] = useState(false);
-  const [activeTab, setActiveTab] = useState<"knee" | "sleep" | "index">("knee");
+  const [activeTab, setActiveTab] = useState<"knee" | "sleep" | "index">(initialMode === "quick" ? "knee" : "index");
 
   const activeQuestionSet = assessmentMode === "quick" ? kneeQuestions : [...kneeQuestions, ...sleepQuestions];
 
@@ -251,11 +256,15 @@ const KneeScoreEmbed = () => {
   };
 
   const resetAssessment = () => {
-    setAssessmentMode(null);
-    setCurrentStep(0);
-    setAnswers({});
-    setShowResults(false);
-    setActiveTab("knee");
+    if (onComplete) {
+      onComplete();
+    } else {
+      setAssessmentMode(null);
+      setCurrentStep(0);
+      setAnswers({});
+      setShowResults(false);
+      setActiveTab("knee");
+    }
   };
 
   const startAssessment = (mode: AssessmentMode) => {

@@ -31,11 +31,11 @@ const Index = () => {
         {/* Section 3: Signature Product - ONE formula, clearly labeled */}
         <SignatureProductSection />
         
-        {/* Section 4: Education - Why knee health matters */}
-        <EducationSection />
-        
-        {/* Section 5: Assessment Tool - Free value-add, non-commercial */}
+        {/* Section 4: Assessment Tool - Free value-add, non-commercial */}
         <AssessmentSection />
+        
+        {/* Section 5: Education - Why knee health matters */}
+        <EducationSection />
         
         {/* Section 6: Curated Resources - Beyond our own products */}
         <CuratedSection />
