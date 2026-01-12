@@ -28,14 +28,14 @@ const Index = () => {
         {/* Section 2: Philosophy - Positions as authority, not brand */}
         <PhilosophySection />
         
-        {/* Section 3: Education - Why knee health matters */}
+        {/* Section 3: Signature Product - ONE formula, clearly labeled */}
+        <SignatureProductSection />
+        
+        {/* Section 4: Education - Why knee health matters */}
         <EducationSection />
         
-        {/* Section 4: Assessment Tool - Free value-add, non-commercial */}
+        {/* Section 5: Assessment Tool - Free value-add, non-commercial */}
         <AssessmentSection />
-        
-        {/* Section 5: Signature Product - ONE formula, clearly labeled "Our Formula" */}
-        <SignatureProductSection />
         
         {/* Section 6: Curated Resources - Beyond our own products */}
         <CuratedSection />
