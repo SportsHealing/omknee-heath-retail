@@ -34,6 +34,7 @@ const products = [
 const RecoveryTools = () => {
   return (
     <CuratedCategory
+      id="recovery-tools"
       title="Recovery & Mobility Tools"
       subtitle="Self-Care Equipment"
       introduction="Self-myofascial release tools can be valuable additions to your knee care routine when used appropriately. They address the muscular environment around the knee, not the joint itself."

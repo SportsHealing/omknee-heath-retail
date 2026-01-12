@@ -34,6 +34,7 @@ const products = [
 const ComfortSolutions = () => {
   return (
     <CuratedCategory
+      id="comfort-solutions"
       title="Comfort & Pain Management"
       subtitle="Symptomatic Relief"
       introduction="Managing discomfort is part of living well with knee conditions. These products offer evidence-based approaches to symptom relief while you address underlying causes."
