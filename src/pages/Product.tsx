@@ -8,6 +8,7 @@ import ProductSafety from "@/components/product/ProductSafety";
 import ProductHowToUse from "@/components/product/ProductHowToUse";
 import ProductFAQ from "@/components/product/ProductFAQ";
 import ProductCTA from "@/components/product/ProductCTA";
+import ProductTestimonials from "@/components/product/ProductTestimonials";
 import StickyBuyBar from "@/components/product/StickyBuyBar";
 import { ProductVariantProvider } from "@/components/product/ProductVariantContext";
 import SEO from "@/components/SEO";
@@ -85,10 +86,13 @@ const Product = () => {
           {/* Section 6: How to Use */}
           <ProductHowToUse />
           
-          {/* Section 7: FAQ - Honest answers */}
+          {/* Section 7: Customer Testimonials */}
+          <ProductTestimonials />
+          
+          {/* Section 8: FAQ - Honest answers */}
           <ProductFAQ />
           
-          {/* Section 8: Final CTA */}
+          {/* Section 9: Final CTA */}
           <ProductCTA />
         </main>
         <Footer />
