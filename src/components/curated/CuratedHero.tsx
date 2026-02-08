@@ -4,7 +4,7 @@
 
 const CuratedHero = () => {
   return (
-    <section className="py-24 md:py-32 bg-background">
+    <section className="pt-52 pb-24 md:pt-64 md:pb-32 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
           <p className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6">
