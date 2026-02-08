@@ -16,7 +16,7 @@ const TermsConditions = () => {
         canonicalPath="/terms-conditions"
       />
       <Header />
-      <main className="pt-48 pb-16">
+      <main className="pt-28 lg:pt-48 pb-16">
         <div className="container mx-auto px-6">
           {/* Back Button */}
           <div className="mb-8">
