@@ -11,9 +11,9 @@ import ingredientsBg from "@/assets/ingredients-turmeric-bg.jpg";
 import { useProductVariant, variants, ProductVariant } from "./ProductVariantContext";
 
 const trustBadges = [
-  { icon: ShieldCheck, label: "UK Manufactured" },
-  { icon: FlaskConical, label: "Third-Party Tested" },
-  { icon: Leaf, label: "Research-Informed" }
+  { icon: ShieldCheck, label: "UK GMP Manufactured" },
+  { icon: FlaskConical, label: "Third-Party Batch Tested" },
+  { icon: Leaf, label: "Evidence-Informed Doses" }
 ];
 
 const variantOptions: { id: ProductVariant; icon: typeof Fish; label: string }[] = [
@@ -57,16 +57,27 @@ const ProductHero = () => {
 
         {/* Product Info - Centered Below Image */}
         <div className="max-w-2xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-foreground leading-tight mb-2">
-            Joint + Movement Support
+          {/* UK trust signal */}
+          <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary/80 mb-4">
+            UK Clinician-Formulated • Third-Party Tested
+          </p>
+
+          {/* H1 optimized for "knee cartilage supplement" and "collagen supplement for knees" */}
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-foreground leading-tight mb-3">
+            Knee Cartilage & Collagen Support
           </h1>
           
           <p className="font-serif text-lg text-primary mb-4">
             {variantInfo.tagline}
           </p>
           
-          <p className="font-sans text-muted-foreground leading-relaxed mb-8 max-w-lg mx-auto">
-            {variantInfo.description}
+          {/* Value proposition with target keywords */}
+          <p className="font-sans text-muted-foreground leading-relaxed mb-3 max-w-lg mx-auto">
+            A comprehensive collagen supplement for knees, combining hydrolysed peptides with vitamin C for normal cartilage function, plus vitamin D & K2 for bone maintenance.
+          </p>
+
+          <p className="font-sans text-sm text-muted-foreground/80 mb-8 max-w-md mx-auto">
+            Developed by UK clinicians for those seeking nutritional joint support at every stage of life.
           </p>
 
           {/* Variant Selector */}

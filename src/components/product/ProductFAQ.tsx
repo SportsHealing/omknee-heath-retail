@@ -1,6 +1,6 @@
 /**
  * Product FAQ - Evidence-Based Answers
- * Honest, clinical responses
+ * Optimized for featured snippets with high-intent purchase keywords
  */
 
 import {
@@ -10,39 +10,48 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import FAQSchema from "@/components/FAQSchema";
+import { Link } from "react-router-dom";
 
 const faqs = [
   {
-    question: "What can I realistically expect from this supplement?",
-    answer: "We want to set honest expectations. This formula provides nutritional support for joint health—it supplies nutrients that contribute to the maintenance of normal cartilage, connective tissue, bones, and muscle function (EFSA-authorised claims). It is not a treatment for any medical condition. Individual responses vary, and supplements work best as part of a comprehensive approach including movement, nutrition, and appropriate rest. Many people choose to assess after 8-12 weeks of consistent use."
+    question: "What is the best collagen supplement for knee cartilage?",
+    answer: "The best collagen supplement for knee cartilage contains hydrolysed collagen peptides (for absorption) paired with vitamin C, which contributes to normal collagen formation for the normal function of cartilage (EFSA-authorised claim). OmKneeHealth provides 10g hydrolysed collagen peptides—the upper range used in clinical research—plus 125% NRV vitamin C to support the body's natural collagen synthesis processes. We also include glucosamine, chondroitin, and hyaluronic acid, which are natural components of cartilage tissue."
   },
   {
-    question: "Why did you choose these specific ingredients and doses?",
-    answer: "Each ingredient was selected based on scientific literature and clinical reasoning. We include 10g hydrolysed collagen peptides, glucosamine and chondroitin at research-informed doses, hyaluronic acid (a component naturally found in joint fluid), and curcumin paired with piperine to address its naturally poor absorption. Vitamin C contributes to normal collagen formation (EFSA claim). Vitamin D and K2 contribute to the maintenance of normal bones. Magnesium contributes to normal muscle function. Copper and manganese contribute to normal connective tissue formation. We focused on ingredients with clear, evidence-based rationales."
+    question: "Does collagen help with knee joint pain?",
+    answer: "Collagen supplements cannot treat, cure, or relieve knee pain—they are food supplements, not medicines. However, collagen peptides provide amino acids that the body uses in its natural collagen synthesis processes. When paired with vitamin C (which contributes to normal cartilage function), collagen may support the nutritional foundations of joint health. If you're experiencing knee pain, please consult a healthcare professional for proper evaluation and treatment."
   },
   {
-    question: "What health claims are authorised for these ingredients?",
-    answer: "We only make claims authorised by EFSA (European Food Safety Authority). These include: Vitamin C contributes to normal collagen formation for the normal function of cartilage and bones. Vitamin D contributes to the maintenance of normal bones and muscle function. Vitamin K contributes to the maintenance of normal bones. Manganese and copper contribute to normal connective tissue formation. Magnesium contributes to normal muscle function. Zinc contributes to normal protein synthesis. Glucosamine, chondroitin, collagen, hyaluronic acid, curcumin, and boswellia do not have authorised EFSA health claims."
+    question: "How long does it take for knee supplements to work?",
+    answer: "Nutritional supplements support gradual, cumulative processes rather than providing immediate effects. Many people choose to assess their experience after 8-12 weeks of consistent daily use, though individual timelines vary significantly. It's important to understand that supplements provide nutritional support over time—they don't work like medicines. Results depend on many factors including diet, activity levels, and individual physiology."
   },
   {
-    question: "Will this cure my joint pain?",
-    answer: "No. This is a food supplement, not a medicine. It cannot diagnose, treat, cure, or prevent any disease. If you're experiencing joint pain, we strongly recommend consulting a healthcare professional for proper evaluation. Pain is a symptom that deserves clinical attention. This supplement may be used alongside—not instead of—appropriate medical care."
+    question: "What is the difference between glucosamine and collagen for knees?",
+    answer: "Glucosamine is an amino sugar naturally found in cartilage, serving as a building block for the cartilage matrix. Collagen is the main structural protein in cartilage, tendons, and ligaments. Our formula includes both: 1,500mg glucosamine sulphate and 10g hydrolysed collagen peptides, reflecting the doses most commonly used in research. Neither has EFSA-authorised health claims, but we include vitamin C which contributes to normal collagen formation for cartilage function."
   },
   {
-    question: "Can I take this with my current medications?",
-    answer: "We recommend consulting your healthcare provider or pharmacist before combining this supplement with any medication. This is particularly important if you take warfarin or other vitamin K antagonists (this product contains Vitamin K2), blood-thinning medications, diabetes medications, or if you're on multiple medications. The black pepper extract (piperine) may affect the metabolism of certain medicines. Your healthcare provider can advise based on your specific situation."
+    question: "Is this supplement suitable for osteoarthritis?",
+    answer: "This is a food supplement providing nutritional support—it cannot diagnose, treat, cure, or prevent osteoarthritis or any other medical condition. If you have been diagnosed with osteoarthritis, we recommend consulting your GP or specialist before starting any supplement. Nutritional supplements may complement but never replace appropriate medical care, prescribed treatments, or clinical guidance for managing health conditions."
   },
   {
-    question: "What allergens does this product contain?",
-    answer: "Depending on the variant, this product contains collagen from marine (fish) or bovine sources. Glucosamine may be derived from shellfish or vegan fermentation—check the label for your specific variant. We clearly declare all allergens on the packaging. If you have allergies to fish, shellfish, or any other ingredients, please check the label carefully before use."
+    question: "Why is vitamin C important in a knee cartilage supplement?",
+    answer: "Vitamin C is essential because it contributes to normal collagen formation for the normal function of cartilage (EFSA-authorised claim). Collagen is the primary structural protein in cartilage, and vitamin C acts as a cofactor for the enzymes that stabilise collagen molecules. Without adequate vitamin C, the body cannot properly synthesise and maintain collagen. Our formula provides 125% NRV vitamin C specifically to support normal cartilage function."
   },
   {
-    question: "How is this different from cheaper supplements?",
-    answer: "We can't speak to every product, but we can explain our approach: clinician-led formulation, doses informed by research, third-party testing for every batch, no proprietary blends, UK GMP-certified manufacturing, and transparent communication about what supplements can and cannot do. We only make EFSA-authorised health claims. Whether that's worth the price difference is a decision we leave to you."
+    question: "Can I take this knee supplement with other medications?",
+    answer: "We recommend consulting your healthcare provider or pharmacist before combining this supplement with any medication. This is particularly important if you take: warfarin or vitamin K antagonists (this product contains vitamin K2), blood-thinning medications, diabetes medications, or multiple medications. The piperine (black pepper extract) may affect medication metabolism. Your healthcare provider can advise based on your specific situation."
   },
   {
-    question: "What if it doesn't work for me?",
-    answer: "That's a real possibility. Individual responses to supplements vary, and we don't promise specific results. If you try our product and don't feel it's right for you, we offer returns on unopened products within 30 days. We'd rather have an honest relationship than a dissatisfied customer. If you're experiencing significant joint issues, a supplement is unlikely to be the solution—please seek appropriate clinical evaluation."
+    question: "What allergens does this knee supplement contain?",
+    answer: "Depending on the variant: Marine Formula contains collagen from fish and glucosamine from shellfish. Vegetarian Formula uses bovine collagen and vegan-fermented glucosamine. All allergens are clearly declared on packaging. If you have allergies to fish, shellfish, or any ingredients, check the label carefully. Both variants are free from gluten, soy, and artificial colours."
+  },
+  {
+    question: "How is OmKneeHealth different from other knee supplements?",
+    answer: "Our approach: UK clinician-formulated by healthcare professionals with knee expertise, evidence-informed doses matching research literature, third-party batch testing for purity, UK GMP-certified manufacturing, no proprietary blends (full transparency), and honest communication about what supplements can and cannot do. We only make EFSA-authorised health claims and clearly disclose when ingredients lack authorised claims."
+  },
+  {
+    question: "What if this knee supplement doesn't work for me?",
+    answer: "Individual responses to supplements vary—we cannot promise specific results. If you try our product and don't feel it's right for you, we offer returns on unopened products within 30 days. We'd rather have honest relationships than dissatisfied customers. If you're experiencing significant knee issues, please seek clinical evaluation—a supplement is unlikely to address underlying medical conditions."
   }
 ];
 
@@ -52,12 +61,18 @@ const ProductFAQ = () => {
       <FAQSchema faqs={faqs} />
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
-          {/* Section header */}
-          <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-6">
-              Common Questions
+          {/* Section header - SEO optimized */}
+          <header className="text-center mb-16">
+            <p className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">
+              Frequently Asked Questions
+            </p>
+            <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-4">
+              Knee Cartilage Supplement Questions
             </h2>
-          </div>
+            <p className="font-sans text-sm text-muted-foreground max-w-lg mx-auto">
+              Evidence-based answers about collagen for knees, cartilage support, and what to expect from nutritional joint supplements.
+            </p>
+          </header>
 
           {/* FAQ accordion */}
           <Accordion type="single" collapsible className="space-y-3">
@@ -77,13 +92,25 @@ const ProductFAQ = () => {
             ))}
           </Accordion>
 
-          {/* Contact */}
-          <div className="mt-10 text-center">
+          {/* Internal links for SEO */}
+          <div className="mt-12 text-center space-y-3">
             <p className="font-sans text-sm text-muted-foreground">
-              Have a question we haven't answered?{" "}
-              <a href="/contact" className="text-primary hover:underline font-medium">
+              Want to understand the science?{" "}
+              <Link to="/science" className="text-primary hover:underline font-medium">
+                Explore our ingredient research
+              </Link>
+            </p>
+            <p className="font-sans text-sm text-muted-foreground">
+              Not sure if supplements are right for you?{" "}
+              <Link to="/assessment" className="text-primary hover:underline font-medium">
+                Take our free knee assessment
+              </Link>
+            </p>
+            <p className="font-sans text-sm text-muted-foreground">
+              Have a specific question?{" "}
+              <Link to="/contact" className="text-primary hover:underline font-medium">
                 Contact our team
-              </a>
+              </Link>
             </p>
           </div>
         </div>
