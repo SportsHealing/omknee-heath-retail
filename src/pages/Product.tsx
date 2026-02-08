@@ -58,7 +58,7 @@ const Product = () => {
         <Header />
         <main>
           {/* Back Button */}
-          <div className="pt-24 pb-2 container mx-auto px-6">
+          <div className="pt-48 pb-2 container mx-auto px-6">
             <Button 
               variant="ghost" 
               onClick={() => navigate(-1)}

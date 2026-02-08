@@ -16,7 +16,7 @@ const ReturnsPolicy = () => {
       />
       <Header />
       
-      <main className="pt-24 pb-16">
+      <main className="pt-48 pb-16">
         <div className="container px-6 max-w-4xl mx-auto">
           <Button
             variant="ghost"

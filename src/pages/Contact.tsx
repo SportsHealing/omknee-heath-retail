@@ -61,7 +61,7 @@ const Contact = () => {
       />
       <Header />
 
-      <main className="pt-24 pb-16">
+      <main className="pt-48 pb-16">
         <div className="container px-6 max-w-6xl mx-auto">
           {/* Hero Section */}
           <div className="text-center mb-20">
