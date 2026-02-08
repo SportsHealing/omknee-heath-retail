@@ -123,8 +123,8 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="/#philosophy" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Our Philosophy
+                <a href="/blog" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  Knee Health Blog
                 </a>
               </li>
               <li>
@@ -139,7 +139,12 @@ const Footer = () => {
               </li>
               <li>
                 <a href="/assessment" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Knee Assessment
+                  Free Knee Assessment
+                </a>
+              </li>
+              <li>
+                <a href="/curated" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  Curated Resources
                 </a>
               </li>
               <li>
