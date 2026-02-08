@@ -31,7 +31,7 @@ const Header = () => {
             <img 
               src={logoDarkGreen} 
               alt="OmKneeHealth" 
-              className="h-28 md:h-36 w-auto"
+              className="h-32 md:h-44 w-auto"
             />
           </Link>
 
