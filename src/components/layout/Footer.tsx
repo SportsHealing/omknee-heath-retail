@@ -47,16 +47,34 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground py-16">
       <div className="container px-6">
+        {/* UK Trust Banner */}
+        <div className="mb-12 pb-10 border-b border-primary-foreground/10">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary-foreground/60 mb-3">
+              Designed for UK Lifestyles
+            </p>
+            <p className="font-sans text-sm text-primary-foreground/80 mb-6 max-w-2xl mx-auto">
+              Formulated in the United Kingdom by UK-based clinicians, manufactured to UK GMP standards, and designed specifically for British joint health needs.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 text-xs font-sans text-primary-foreground/60">
+              <span className="bg-primary-foreground/10 px-3 py-1.5 rounded-full">UK GMP Certified</span>
+              <span className="bg-primary-foreground/10 px-3 py-1.5 rounded-full">Third-Party UK Lab Tested</span>
+              <span className="bg-primary-foreground/10 px-3 py-1.5 rounded-full">EFSA-Compliant Claims</span>
+              <span className="bg-primary-foreground/10 px-3 py-1.5 rounded-full">Free UK Delivery</span>
+            </div>
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
             <img 
               src={logoWhite} 
-              alt="OmKneeHealth" 
+              alt="OmKneeHealth - UK Knee Joint Supplement" 
               className="h-16 w-auto mb-4"
             />
             <p className="font-sans text-sm text-primary-foreground/70 leading-relaxed mb-4">
-              Clinician-founded. Evidence-informed.
+              UK clinician-founded. Evidence-informed joint health.
             </p>
             <div className="flex gap-3">
               {socialLinks.map(({ name, icon: Icon, href }) => (
@@ -112,6 +130,11 @@ const Footer = () => {
               <li>
                 <a href="/science" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   The Science
+                </a>
+              </li>
+              <li>
+                <a href="/ingredients/collagen" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  Ingredient Science
                 </a>
               </li>
               <li>

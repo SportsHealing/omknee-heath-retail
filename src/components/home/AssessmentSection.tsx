@@ -13,7 +13,7 @@ const AssessmentSection = () => {
         <div className="max-w-2xl mx-auto text-center">
           {/* Section header */}
           <p className="font-sans text-xs tracking-[0.25em] uppercase text-primary/70 mb-6">
-            Clinician-Developed Tools
+            UK Clinician-Developed Tools
           </p>
           <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-8">
             Assess Your Knee Health
@@ -22,13 +22,13 @@ const AssessmentSection = () => {
           {/* Description */}
           <p className="font-serif text-lg text-muted-foreground leading-relaxed mb-6">
             The team at OmKneeHealth have developed knee health questionnaires 
-            based on our clinical experience and validated assessment tools, 
-            designed to give you unique insight into your knee health.
+            based on UK clinical experience and validated assessment tools, 
+            designed to give you insight into your knee health before speaking with your GP.
           </p>
           
           <p className="font-sans text-sm text-muted-foreground mb-10">
             Start with our quick assessment, then explore more comprehensive 
-            options if you'd like deeper insight.
+            options if you'd like deeper insight. Completely free for UK residents.
           </p>
 
           {/* Single CTA */}
