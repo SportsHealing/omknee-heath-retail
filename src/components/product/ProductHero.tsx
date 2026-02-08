@@ -54,6 +54,7 @@ const ProductHero = () => {
               alt={`OmKneeHealth Joint + Movement Support ${variantInfo.name} - 300g pouch, one month supply`}
               width={600}
               height={600}
+              sizes="(max-width: 768px) 100vw, 600px"
               className="w-full h-full object-contain p-6"
             />
           </div>
