@@ -86,7 +86,38 @@
     <priority>0.8</priority>
   </url>
   
-  <!-- Ingredient pages - long-tail SEO -->
+  <!-- New SEO pages -->
+  <url>
+    <loc>https://omkneehealth.com/ingredients</loc>
+    <lastmod>2025-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://omkneehealth.com/how-it-works</loc>
+    <lastmod>2025-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://omkneehealth.com/who-its-for</loc>
+    <lastmod>2025-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://omkneehealth.com/faq</loc>
+    <lastmod>2025-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://omkneehealth.com/legal</loc>
+    <lastmod>2025-02-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  
   <url>
     <loc>https://omkneehealth.com/ingredients/collagen</loc>
     <lastmod>2025-02-08</lastmod>

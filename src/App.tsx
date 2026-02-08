@@ -21,6 +21,13 @@ import NotFound from "./pages/NotFound";
 import ScrollToHash from "./components/ScrollToHash";
 import CookieConsent from "./components/CookieConsent";
 
+// New SEO pages
+import Ingredients from "./pages/Ingredients";
+import HowItWorks from "./pages/HowItWorks";
+import WhoItsFor from "./pages/WhoItsFor";
+import FAQ from "./pages/FAQ";
+import Legal from "./pages/Legal";
+
 // Ingredient pages
 import Collagen from "./pages/ingredients/Collagen";
 import Curcumin from "./pages/ingredients/Curcumin";
@@ -63,6 +70,13 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/compliance-playbook" element={<CompliancePlaybook />} />
           <Route path="/team-resources" element={<TeamResources />} />
+          
+          {/* New SEO pages */}
+          <Route path="/ingredients" element={<Ingredients />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/who-its-for" element={<WhoItsFor />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/legal" element={<Legal />} />
           
           {/* Ingredient pages - SEO optimised */}
           <Route path="/ingredients/collagen" element={<Collagen />} />
