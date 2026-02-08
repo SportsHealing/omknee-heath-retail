@@ -42,14 +42,15 @@ const Product = () => {
     <ProductVariantProvider>
       <div className="min-h-screen bg-background">
         <SEO
-          title="Knee Joint Supplement UK | Collagen & Vitamin C Formula | OmKneeHealth"
-          description="Clinician-formulated knee joint supplement with hydrolysed collagen, vitamin C for cartilage, vitamin D & K2 for bones. UK manufactured, third-party tested. 300g pouch, 30-day supply."
+          title="Knee Cartilage Supplement UK | Collagen for Knee Joints | OmKneeHealth"
+          description="UK's best collagen supplement for knee joints. Clinician-formulated with 10g hydrolysed collagen, vitamin C for cartilage function, vitamin D & K2 for bones. Evidence-informed doses. Third-party tested, UK GMP manufactured."
           canonicalPath="/product"
           ogType="product"
+          keywords="knee cartilage supplement, collagen supplement for knees, joint supplement for knee pain, knee collagen UK, best supplement for knee joints, knee joint support supplement"
         />
         <ProductSchema
-          name="OmKneeHealth Joint + Movement Support - Knee Joint Supplement"
-          description="Clinician-formulated UK knee joint supplement powder. Contains hydrolysed collagen peptides (10g), vitamin C for normal cartilage function, vitamin D & K2 for bone maintenance, glucosamine, chondroitin, turmeric with enhanced absorption. Third-party tested, UK GMP manufactured. 300g pouch provides 30-day supply."
+          name="OmKneeHealth Knee Cartilage & Collagen Support Supplement"
+          description="UK's clinician-formulated knee cartilage supplement. Contains hydrolysed collagen peptides (10g), vitamin C contributing to normal cartilage function (EFSA claim), vitamin D & K2 for bone maintenance, glucosamine (1500mg), chondroitin (800mg), and curcumin with piperine for enhanced absorption. Third-party batch tested, UK GMP manufactured. 300g pouch provides 30-day supply. Suitable for adults seeking nutritional support for knee joint health."
           image="https://omkneehealth.com/og-image.png"
           price="49.99"
           currency="GBP"
@@ -58,20 +59,20 @@ const Product = () => {
           availability="InStock"
           url="https://omkneehealth.com/product"
           weight="300g"
-          category="Health Supplements > Joint Supplements > Knee Supplements"
+          category="Health Supplements > Joint Supplements > Knee Cartilage Supplements"
           countryOfOrigin="GB"
         />
         <BreadcrumbSchema
           items={[
             { name: "Home", url: "https://omkneehealth.com" },
-            { name: "Knee Joint Supplement", url: "https://omkneehealth.com/product" },
+            { name: "Knee Cartilage Supplement", url: "https://omkneehealth.com/product" },
           ]}
         />
         <WebPageSchema
-          name="Knee Joint Supplement - OmKneeHealth"
-          description="Clinician-formulated knee joint supplement with collagen, vitamins, and botanicals for cartilage and joint support."
+          name="Knee Cartilage & Collagen Supplement UK - OmKneeHealth"
+          description="Evidence-informed knee cartilage supplement with hydrolysed collagen, vitamin C for normal cartilage function, and comprehensive joint support nutrients. UK clinician-formulated."
           url="https://omkneehealth.com/product"
-          type="WebPage"
+          type="ItemPage"
         />
         <Header />
         <main>

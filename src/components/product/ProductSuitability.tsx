@@ -6,21 +6,20 @@
 import { Check, X } from "lucide-react";
 
 const suitableFor = [
-  "Adults seeking nutritional joint support",
-  "Active individuals maintaining joint health",
-  "Those with suboptimal vitamin D levels",
-  "People committed to a comprehensive approach",
-  "Adults open to long-term, consistent use"
+  "Adults seeking nutritional support for knee cartilage health",
+  "Active individuals maintaining knee joint function",
+  "Those with suboptimal vitamin D levels (common in UK)",
+  "People committed to a holistic approach alongside movement and nutrition",
+  "Adults open to consistent, long-term supplementation (8-12+ weeks)"
 ];
 
 const notSuitableFor = [
-  "Those expecting a cure for joint conditions",
-  "People with fish, shellfish, or collagen allergies",
-  "Those seeking a replacement for medical care",
-  "Those taking warfarin without medical advice",
-  "Anyone on blood-thinning medication without medical advice",
-  "Pregnant or breastfeeding women without guidance",
-  "Children under 18 years"
+  "Those expecting a cure or treatment for knee pain or osteoarthritis",
+  "People with fish, shellfish, or collagen allergies (check variant)",
+  "Those seeking a replacement for medical diagnosis or care",
+  "Those taking warfarin or blood-thinning medication (contains vitamin K2)",
+  "Pregnant or breastfeeding women without healthcare guidance",
+  "Children under 18 years of age"
 ];
 
 const ProductSuitability = () => {
@@ -28,11 +27,17 @@ const ProductSuitability = () => {
     <section className="py-20 md:py-28 bg-secondary">
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
-          {/* Section header */}
+          {/* Section header with SEO keyword */}
           <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-serif text-foreground">
-              Is This Right for You?
+            <p className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">
+              Honest Positioning
+            </p>
+            <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-4">
+              Is This Knee Cartilage Supplement Right for You?
             </h2>
+            <p className="font-sans text-sm text-muted-foreground max-w-lg mx-auto">
+              We believe in transparency. This supplement provides nutritional support—it is not a treatment for any medical condition.
+            </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">

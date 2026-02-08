@@ -4,7 +4,7 @@ interface WebPageSchemaProps {
   name: string;
   description: string;
   url: string;
-  type?: "WebPage" | "AboutPage" | "ContactPage" | "FAQPage" | "CollectionPage";
+  type?: "WebPage" | "AboutPage" | "ContactPage" | "FAQPage" | "CollectionPage" | "ItemPage";
   datePublished?: string;
   dateModified?: string;
 }
