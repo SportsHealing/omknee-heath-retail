@@ -171,8 +171,8 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="/compliance-playbook" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Compliance Playbook
+                <a href="/team-resources" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  Internal Resources
                 </a>
               </li>
             </ul>
