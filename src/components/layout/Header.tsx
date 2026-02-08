@@ -25,13 +25,13 @@ const Header = () => {
       }`}
     >
       <div className="container px-6">
-        <div className="flex items-center justify-between h-44 lg:h-56">
+        <div className="flex items-center justify-between h-24 lg:h-56">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
               src={logoDarkGreen} 
               alt="OmKneeHealth" 
-              className="h-40 md:h-52 w-auto"
+              className="h-20 md:h-52 w-auto"
             />
           </Link>
 
