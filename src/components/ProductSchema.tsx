@@ -17,7 +17,8 @@ interface ProductSchemaProps {
 
 /**
  * ProductSchema - Enhanced JSON-LD structured data for product pages
- * Optimized for UK supplement market with rich snippets support
+ * Globally accessible with UK manufacturing origin
+ * Optimised for international search visibility
  */
 const ProductSchema = ({
   name,
@@ -67,33 +68,35 @@ const ProductSchema = ({
         ).toISOString().split("T")[0],
         availability: `https://schema.org/${availability}`,
         itemCondition: "https://schema.org/NewCondition",
-        shippingDetails: {
-          "@type": "OfferShippingDetails",
-          shippingRate: {
-            "@type": "MonetaryAmount",
-            value: "0",
-            currency: "GBP",
-          },
-          shippingDestination: {
-            "@type": "DefinedRegion",
-            addressCountry: "GB",
-          },
-          deliveryTime: {
-            "@type": "ShippingDeliveryTime",
-            handlingTime: {
-              "@type": "QuantitativeValue",
-              minValue: 1,
-              maxValue: 2,
-              unitCode: "DAY",
+        shippingDetails: [
+          {
+            "@type": "OfferShippingDetails",
+            shippingRate: {
+              "@type": "MonetaryAmount",
+              value: "0",
+              currency: "GBP",
             },
-            transitTime: {
-              "@type": "QuantitativeValue",
-              minValue: 2,
-              maxValue: 5,
-              unitCode: "DAY",
+            shippingDestination: {
+              "@type": "DefinedRegion",
+              addressCountry: "GB",
+            },
+            deliveryTime: {
+              "@type": "ShippingDeliveryTime",
+              handlingTime: {
+                "@type": "QuantitativeValue",
+                minValue: 1,
+                maxValue: 2,
+                unitCode: "DAY",
+              },
+              transitTime: {
+                "@type": "QuantitativeValue",
+                minValue: 2,
+                maxValue: 5,
+                unitCode: "DAY",
+              },
             },
           },
-        },
+        ],
         seller: {
           "@type": "Organization",
           name: brand,
@@ -113,7 +116,7 @@ const ProductSchema = ({
         {
           "@type": "PropertyValue",
           name: "Manufacturing Standard",
-          value: "UK GMP Certified",
+          value: "GMP Certified",
         },
         {
           "@type": "PropertyValue",
@@ -124,6 +127,11 @@ const ProductSchema = ({
           "@type": "PropertyValue",
           name: "Supply Duration",
           value: "30 days",
+        },
+        {
+          "@type": "PropertyValue",
+          name: "Formulated By",
+          value: "Healthcare Professionals",
         },
       ],
     };

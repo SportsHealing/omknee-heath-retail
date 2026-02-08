@@ -13,11 +13,12 @@ interface SEOProps {
 const SITE_NAME = "OmKneeHealth";
 const BASE_URL = "https://omkneehealth.com";
 const DEFAULT_OG_IMAGE = "/og-image.png";
-const DEFAULT_KEYWORDS = "knee joint supplement, knee health UK, joint support supplement, collagen for knees, knee cartilage support, UK joint supplements";
+const DEFAULT_KEYWORDS = "knee joint supplement, knee health, joint support supplement, collagen for knees, knee cartilage support, joint supplements, knee wellness";
 
 /**
  * SEO Component - Manages document head for each page
- * Enhanced for UK SEO with geo-targeting and comprehensive meta tags
+ * Globally optimised with UK as primary market
+ * Uses neutral international English with UK spelling conventions
  */
 const SEO = ({
   title,
@@ -71,13 +72,13 @@ const SEO = ({
       setMetaTag("name", "robots", "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1");
     }
 
-    // UK Geo-targeting
+    // Geographic targeting - UK primary with global reach
     setMetaTag("name", "geo.region", "GB");
     setMetaTag("name", "geo.placename", "United Kingdom");
     setMetaTag("name", "language", "en-GB");
     setMetaTag("name", "content-language", "en-GB");
 
-    // Open Graph tags
+    // Open Graph tags - International with UK primary
     setMetaTag("property", "og:title", fullTitle);
     setMetaTag("property", "og:description", description);
     setMetaTag("property", "og:type", ogType);
@@ -87,6 +88,8 @@ const SEO = ({
     setMetaTag("property", "og:image:height", "630");
     setMetaTag("property", "og:site_name", SITE_NAME);
     setMetaTag("property", "og:locale", "en_GB");
+    // Alternate locales for international reach
+    setMetaTag("property", "og:locale:alternate", "en_US");
 
     // Twitter Card tags
     setMetaTag("name", "twitter:card", "summary_large_image");
@@ -97,8 +100,9 @@ const SEO = ({
     // Canonical URL
     setLinkTag("canonical", canonicalUrl);
     
-    // Hreflang for UK primary
+    // Hreflang for international SEO - UK primary with global English fallback
     setLinkTag("alternate", canonicalUrl, "en-GB");
+    setLinkTag("alternate", canonicalUrl, "en");
     setLinkTag("alternate", canonicalUrl, "x-default");
 
     // Cleanup function to reset title on unmount

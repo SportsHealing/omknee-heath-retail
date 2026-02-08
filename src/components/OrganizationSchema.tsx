@@ -2,7 +2,8 @@ import { useEffect } from "react";
 
 /**
  * OrganizationSchema - Adds JSON-LD structured data for the organization
- * Enhanced with UK trust signals and health/wellness categorization
+ * Globally accessible with UK as primary market
+ * Enhanced with international trust signals
  */
 const OrganizationSchema = () => {
   useEffect(() => {
@@ -20,10 +21,11 @@ const OrganizationSchema = () => {
         height: 630,
       },
       description:
-        "Clinician-founded UK knee health specialists. Evidence-informed knee joint supplements and free assessment tools designed by healthcare professionals for long-term joint health and mobility.",
+        "Clinician-founded knee health specialists. Evidence-informed knee joint supplements and free assessment tools designed by healthcare professionals for long-term joint health and mobility.",
       foundingDate: "2024",
       foundingLocation: {
         "@type": "Place",
+        name: "United Kingdom",
         address: {
           "@type": "PostalAddress",
           addressCountry: "GB",
@@ -46,12 +48,18 @@ const OrganizationSchema = () => {
         email: "hello@omkneehealth.com",
         contactType: "customer service",
         availableLanguage: ["English"],
-        areaServed: "GB",
+        areaServed: ["GB", "US", "CA", "AU", "NZ", "IE"],
       },
-      areaServed: {
-        "@type": "Country",
-        name: "United Kingdom",
-      },
+      areaServed: [
+        {
+          "@type": "Country",
+          name: "United Kingdom",
+        },
+        {
+          "@type": "GeoShape",
+          name: "Worldwide",
+        },
+      ],
       knowsAbout: [
         "Knee joint health",
         "Joint supplements",
@@ -59,8 +67,14 @@ const OrganizationSchema = () => {
         "Collagen supplements",
         "Joint mobility",
         "Cartilage health",
+        "Evidence-based joint care",
       ],
-      slogan: "Holistic knee care, personalised",
+      slogan: "Holistic knee care, informed by evidence",
+      brand: {
+        "@type": "Brand",
+        name: "OmKneeHealth",
+        logo: "https://omkneehealth.com/og-image.png",
+      },
       sameAs: [],
     };
 
