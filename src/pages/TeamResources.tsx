@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { generateCompliancePlaybook } from "@/lib/generateCompliancePlaybook";
 import { generateBrandGuidelines } from "@/lib/generateBrandGuidelines";
+import { generateProductKnowledgeBase } from "@/lib/generateProductKnowledgeBase";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
@@ -93,9 +94,9 @@ const TeamResources = () => {
       title: "Product Knowledge Base",
       description: "Detailed ingredient information, sourcing, and formulation documentation.",
       icon: BookOpen,
-      action: "link",
-      href: "#",
-      available: false,
+      action: "download",
+      onClick: generateProductKnowledgeBase,
+      available: true,
     },
     {
       title: "Customer Response Scripts",
