@@ -29,6 +29,14 @@ import Chondroitin from "./pages/ingredients/Chondroitin";
 import VitaminD from "./pages/ingredients/VitaminD";
 import TraceMinerals from "./pages/ingredients/TraceMinerals";
 
+// Blog pages
+import BlogIndex from "./pages/blog/Index";
+import BestSupplementKneeCartilage from "./pages/blog/BestSupplementKneeCartilage";
+import CollagenSupplementsKneeJoints from "./pages/blog/CollagenSupplementsKneeJoints";
+import SupplementsOsteoarthritisEvidence from "./pages/blog/SupplementsOsteoarthritisEvidence";
+import KneePainSupplementsVsPainkillers from "./pages/blog/KneePainSupplementsVsPainkillers";
+import SupportKneeJointsAsYouAge from "./pages/blog/SupportKneeJointsAsYouAge";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -62,6 +70,14 @@ const App = () => (
           <Route path="/ingredients/chondroitin" element={<Chondroitin />} />
           <Route path="/ingredients/vitamin-d" element={<VitaminD />} />
           <Route path="/ingredients/trace-minerals" element={<TraceMinerals />} />
+          
+          {/* Blog content cluster - SEO optimised */}
+          <Route path="/blog" element={<BlogIndex />} />
+          <Route path="/blog/best-supplement-for-knee-cartilage" element={<BestSupplementKneeCartilage />} />
+          <Route path="/blog/do-collagen-supplements-help-knee-joints" element={<CollagenSupplementsKneeJoints />} />
+          <Route path="/blog/supplements-for-knee-osteoarthritis-evidence" element={<SupplementsOsteoarthritisEvidence />} />
+          <Route path="/blog/knee-pain-supplements-vs-painkillers" element={<KneePainSupplementsVsPainkillers />} />
+          <Route path="/blog/support-knee-joints-as-you-age" element={<SupportKneeJointsAsYouAge />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
