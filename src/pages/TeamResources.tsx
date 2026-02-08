@@ -20,6 +20,7 @@ import {
 import { generateCompliancePlaybook } from "@/lib/generateCompliancePlaybook";
 import { generateBrandGuidelines } from "@/lib/generateBrandGuidelines";
 import { generateProductKnowledgeBase } from "@/lib/generateProductKnowledgeBase";
+import { generateContentTemplates } from "@/lib/generateContentTemplates";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
@@ -86,9 +87,9 @@ const TeamResources = () => {
       title: "Content Templates",
       description: "Pre-approved templates for social media, email campaigns, and product descriptions.",
       icon: FileText,
-      action: "link",
-      href: "#",
-      available: false,
+      action: "download",
+      onClick: generateContentTemplates,
+      available: true,
     },
     {
       title: "Product Knowledge Base",
