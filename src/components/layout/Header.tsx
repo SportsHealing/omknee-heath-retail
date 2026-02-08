@@ -82,53 +82,53 @@ const Header = () => {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-6 border-t border-border/50 animate-fade-up bg-background absolute left-0 right-0 top-full shadow-lg">
-            <nav className="flex flex-col gap-4 container px-6">
+          <div className="lg:hidden py-4 border-t border-border/50 animate-fade-up bg-background absolute left-0 right-0 top-full shadow-lg">
+            <nav className="flex flex-col container px-6" role="navigation" aria-label="Mobile navigation">
               <Link 
                 to="/product" 
-                className="font-sans text-sm text-foreground hover:text-primary transition-colors"
+                className="font-sans text-sm text-foreground hover:text-primary transition-colors min-h-[44px] flex items-center py-3"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Joint Health Supplement
               </Link>
               <Link 
                 to="/ingredients" 
-                className="font-sans text-sm text-foreground hover:text-primary transition-colors"
+                className="font-sans text-sm text-foreground hover:text-primary transition-colors min-h-[44px] flex items-center py-3"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Ingredients
               </Link>
               <Link 
                 to="/science" 
-                className="font-sans text-sm text-foreground hover:text-primary transition-colors"
+                className="font-sans text-sm text-foreground hover:text-primary transition-colors min-h-[44px] flex items-center py-3"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Evidence & Science
               </Link>
               <Link 
                 to="/curated" 
-                className="font-sans text-sm text-foreground hover:text-primary transition-colors"
+                className="font-sans text-sm text-foreground hover:text-primary transition-colors min-h-[44px] flex items-center py-3"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Curated Knee Essentials
               </Link>
               <Link 
                 to="/faq" 
-                className="font-sans text-sm text-foreground hover:text-primary transition-colors"
+                className="font-sans text-sm text-foreground hover:text-primary transition-colors min-h-[44px] flex items-center py-3"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 FAQ
               </Link>
               <Link 
                 to="/about" 
-                className="font-sans text-sm text-foreground hover:text-primary transition-colors"
+                className="font-sans text-sm text-foreground hover:text-primary transition-colors min-h-[44px] flex items-center py-3"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About OmKneeHealth
               </Link>
               <Button 
-                className="w-full mt-4" 
-                size="sm"
+                className="w-full mt-4 min-h-[44px]" 
+                size="default"
                 asChild
               >
                 <Link to="/assessment">Free Knee Assessment</Link>
