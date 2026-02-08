@@ -21,6 +21,7 @@ import { generateCompliancePlaybook } from "@/lib/generateCompliancePlaybook";
 import { generateBrandGuidelines } from "@/lib/generateBrandGuidelines";
 import { generateProductKnowledgeBase } from "@/lib/generateProductKnowledgeBase";
 import { generateContentTemplates } from "@/lib/generateContentTemplates";
+import { generateCustomerResponseScripts } from "@/lib/generateCustomerResponseScripts";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
@@ -103,9 +104,9 @@ const TeamResources = () => {
       title: "Customer Response Scripts",
       description: "Approved responses for common customer inquiries and complaints.",
       icon: MessageSquare,
-      action: "link",
-      href: "#",
-      available: false,
+      action: "download",
+      onClick: generateCustomerResponseScripts,
+      available: true,
     },
   ];
 
