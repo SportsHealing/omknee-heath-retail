@@ -3,24 +3,28 @@
  * Founders' background and OmKneeHealth philosophy
  */
 
-import { Shield, FlaskConical, Building2, Award } from "lucide-react";
+import { Shield, FlaskConical, Building2, Award, MapPin } from "lucide-react";
 
 const credentials = [
   {
     icon: Shield,
-    label: "Clinician-Founded"
+    label: "UK Clinician-Founded"
+  },
+  {
+    icon: MapPin,
+    label: "Formulated in Britain"
   },
   {
     icon: FlaskConical,
-    label: "Third-Party Tested"
+    label: "UK Lab Tested"
   },
   {
     icon: Building2,
-    label: "GMP Certified"
+    label: "UK GMP Certified"
   },
   {
     icon: Award,
-    label: "Evidence-Based"
+    label: "EFSA-Compliant"
   }
 ];
 
@@ -32,24 +36,27 @@ const OurStorySection = () => {
           
           {/* Header */}
           <div className="text-center mb-24">
+            <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary/80 mb-4">
+              Made in the UK, For the UK
+            </p>
             <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-8">
-              Designed with clinical insight
+              Designed with British clinical insight
             </h2>
             <div className="space-y-4 text-muted-foreground font-sans leading-relaxed max-w-xl mx-auto">
               <p>
-                OmKneeHealth is shaped by senior medical professionals with experience in knee biomechanics, injury, and rehabilitation.
+                OmKneeHealth is shaped by UK-based senior medical professionals with experience in knee biomechanics, injury, and rehabilitation within the British healthcare system.
               </p>
               <p>
-                Every formulation is developed with care — informed by research, clinical practice, and an understanding of how people actually move and live.
+                Every formulation is developed in the United Kingdom with care — informed by research, clinical practice, and an understanding of how British people actually move and live.
               </p>
               <p>
-                We prioritise clarity over claims, and evidence over exaggeration.
+                We prioritise clarity over claims, evidence over exaggeration, and transparency in everything we do.
               </p>
             </div>
           </div>
 
           {/* Credentials grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
             {credentials.map((credential, index) => (
               <div 
                 key={index}
