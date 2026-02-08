@@ -164,6 +164,18 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
+
+            {/* Team Resources */}
+            <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 mt-6 text-primary-foreground/50">
+              Team Resources
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <a href="/compliance-playbook" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  Compliance Playbook
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
