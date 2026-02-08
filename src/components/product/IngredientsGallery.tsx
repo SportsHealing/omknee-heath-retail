@@ -152,6 +152,7 @@ const IngredientsGallery = () => {
                   alt={`${ingredient.name} - ${ingredient.source}`}
                   width={400}
                   height={400}
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 200px"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -202,6 +203,7 @@ const IngredientsGallery = () => {
                   alt={selectedIngredient.name}
                   width={600}
                   height={600}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-full">

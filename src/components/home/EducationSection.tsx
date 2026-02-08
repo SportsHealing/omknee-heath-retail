@@ -21,6 +21,7 @@ const EducationSection = () => {
                 alt="Active adult walking confidently on a nature trail in morning light" 
                 width={600}
                 height={800}
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="w-full h-full object-cover"
               />
             </div>
