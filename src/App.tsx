@@ -20,6 +20,15 @@ import NotFound from "./pages/NotFound";
 import ScrollToHash from "./components/ScrollToHash";
 import CookieConsent from "./components/CookieConsent";
 
+// Ingredient pages
+import Collagen from "./pages/ingredients/Collagen";
+import Curcumin from "./pages/ingredients/Curcumin";
+import Boswellia from "./pages/ingredients/Boswellia";
+import Glucosamine from "./pages/ingredients/Glucosamine";
+import Chondroitin from "./pages/ingredients/Chondroitin";
+import VitaminD from "./pages/ingredients/VitaminD";
+import TraceMinerals from "./pages/ingredients/TraceMinerals";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -44,6 +53,16 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/compliance-playbook" element={<CompliancePlaybook />} />
           <Route path="/team-resources" element={<TeamResources />} />
+          
+          {/* Ingredient pages - SEO optimised */}
+          <Route path="/ingredients/collagen" element={<Collagen />} />
+          <Route path="/ingredients/curcumin" element={<Curcumin />} />
+          <Route path="/ingredients/boswellia" element={<Boswellia />} />
+          <Route path="/ingredients/glucosamine" element={<Glucosamine />} />
+          <Route path="/ingredients/chondroitin" element={<Chondroitin />} />
+          <Route path="/ingredients/vitamin-d" element={<VitaminD />} />
+          <Route path="/ingredients/trace-minerals" element={<TraceMinerals />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
