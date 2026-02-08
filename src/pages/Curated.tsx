@@ -1,12 +1,12 @@
 /**
  * Curated Knee Essentials Page
- * 
- * Expert-curated product recommendations with clinical rationale
+ * SEO-optimized for knee product recommendations
  */
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEO from "@/components/SEO";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import CuratedHero from "@/components/curated/CuratedHero";
 import CuratedNav from "@/components/curated/CuratedNav";
 import MovementSupport from "@/components/curated/MovementSupport";
@@ -22,9 +22,15 @@ const Curated = () => {
   return (
     <>
       <SEO 
-        title="Curated Knee Essentials | OmKneeHealth"
-        description="Expert-curated products for knee health. Braces, recovery tools, strengthening equipment, and comfort solutions—each with clinical rationale from knee specialists."
+        title="Knee Braces, Recovery Tools & Equipment | Curated by Specialists | OmKneeHealth"
+        description="UK knee specialists' curated guide to knee braces, recovery tools, strengthening equipment, and comfort products. Each recommendation includes clinical rationale."
         canonicalPath="/curated"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://omkneehealth.com" },
+          { name: "Curated Knee Essentials", url: "https://omkneehealth.com/curated" },
+        ]}
       />
       <Header />
       <main>

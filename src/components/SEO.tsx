@@ -7,15 +7,17 @@ interface SEOProps {
   ogImage?: string;
   ogType?: "website" | "article" | "product";
   noIndex?: boolean;
+  keywords?: string;
 }
 
 const SITE_NAME = "OmKneeHealth";
 const BASE_URL = "https://omkneehealth.com";
 const DEFAULT_OG_IMAGE = "/og-image.png";
+const DEFAULT_KEYWORDS = "knee joint supplement, knee health UK, joint support supplement, collagen for knees, knee cartilage support, UK joint supplements";
 
 /**
  * SEO Component - Manages document head for each page
- * Sets title, meta description, Open Graph, and Twitter Card tags
+ * Enhanced for UK SEO with geo-targeting and comprehensive meta tags
  */
 const SEO = ({
   title,
@@ -24,8 +26,9 @@ const SEO = ({
   ogImage = DEFAULT_OG_IMAGE,
   ogType = "website",
   noIndex = false,
+  keywords = DEFAULT_KEYWORDS,
 }: SEOProps) => {
-  const fullTitle = title === SITE_NAME ? title : `${title} | ${SITE_NAME}`;
+  const fullTitle = title === SITE_NAME ? title : title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
   const canonicalUrl = `${BASE_URL}${canonicalPath}`;
   const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${BASE_URL}${ogImage}`;
 
@@ -45,11 +48,15 @@ const SEO = ({
     };
 
     // Helper to set or create link tags
-    const setLinkTag = (rel: string, href: string) => {
-      let element = document.querySelector(`link[rel="${rel}"]`);
+    const setLinkTag = (rel: string, href: string, hreflang?: string) => {
+      const selector = hreflang 
+        ? `link[rel="${rel}"][hreflang="${hreflang}"]`
+        : `link[rel="${rel}"]:not([hreflang])`;
+      let element = document.querySelector(selector);
       if (!element) {
         element = document.createElement("link");
         element.setAttribute("rel", rel);
+        if (hreflang) element.setAttribute("hreflang", hreflang);
         document.head.appendChild(element);
       }
       element.setAttribute("href", href);
@@ -57,11 +64,18 @@ const SEO = ({
 
     // Basic meta tags
     setMetaTag("name", "description", description);
+    setMetaTag("name", "keywords", keywords);
     if (noIndex) {
       setMetaTag("name", "robots", "noindex, nofollow");
     } else {
-      setMetaTag("name", "robots", "index, follow");
+      setMetaTag("name", "robots", "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1");
     }
+
+    // UK Geo-targeting
+    setMetaTag("name", "geo.region", "GB");
+    setMetaTag("name", "geo.placename", "United Kingdom");
+    setMetaTag("name", "language", "en-GB");
+    setMetaTag("name", "content-language", "en-GB");
 
     // Open Graph tags
     setMetaTag("property", "og:title", fullTitle);
@@ -69,6 +83,8 @@ const SEO = ({
     setMetaTag("property", "og:type", ogType);
     setMetaTag("property", "og:url", canonicalUrl);
     setMetaTag("property", "og:image", ogImageUrl);
+    setMetaTag("property", "og:image:width", "1200");
+    setMetaTag("property", "og:image:height", "630");
     setMetaTag("property", "og:site_name", SITE_NAME);
     setMetaTag("property", "og:locale", "en_GB");
 
@@ -80,12 +96,16 @@ const SEO = ({
 
     // Canonical URL
     setLinkTag("canonical", canonicalUrl);
+    
+    // Hreflang for UK primary
+    setLinkTag("alternate", canonicalUrl, "en-GB");
+    setLinkTag("alternate", canonicalUrl, "x-default");
 
     // Cleanup function to reset title on unmount
     return () => {
       document.title = SITE_NAME;
     };
-  }, [fullTitle, description, canonicalUrl, ogImageUrl, ogType, noIndex]);
+  }, [fullTitle, description, canonicalUrl, ogImageUrl, ogType, noIndex, keywords]);
 
   return null;
 };
