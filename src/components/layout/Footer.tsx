@@ -97,24 +97,24 @@ const Footer = () => {
             <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/50">
               Shop
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-1">
               <li>
-                <a href="/product" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="/product" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Joint + Movement Support
                 </a>
               </li>
               <li>
-                <a href="/how-it-works" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="/how-it-works" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   How It Works
                 </a>
               </li>
               <li>
-                <a href="/who-its-for" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="/who-its-for" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Who It's For
                 </a>
               </li>
               <li>
-                <a href="/ingredients" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="/ingredients" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Ingredients
                 </a>
               </li>
@@ -126,29 +126,29 @@ const Footer = () => {
             <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/50">
               Learn
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-1">
               <li>
-                <a href="/blog" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="/blog" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Knee Health Blog
                 </a>
               </li>
               <li>
-                <a href="/science" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="/science" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   The Science
                 </a>
               </li>
               <li>
-                <a href="/assessment" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="/assessment" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Free Knee Assessment
                 </a>
               </li>
               <li>
-                <a href="/curated" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="/curated" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Curated Resources
                 </a>
               </li>
               <li>
-                <a href="/faq" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="/faq" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   FAQs
                 </a>
               </li>
@@ -160,39 +160,39 @@ const Footer = () => {
             <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/50">
               Contact
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-1">
               <li>
-                <a href="/contact" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="/contact" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Contact Us
                 </a>
               </li>
               <li>
-                <a href="mailto:hello@omkneehealth.com" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="mailto:hello@omkneehealth.com" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   hello@omkneehealth.com
                 </a>
               </li>
               <li>
-                <a href="/#our-story" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="/#our-story" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Our Story
                 </a>
               </li>
               <li>
-                <a href="/privacy-policy" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="/privacy-policy" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="/terms-conditions" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="/terms-conditions" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Terms & Conditions
                 </a>
               </li>
               <li>
-                <a href="/returns-policy" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="/returns-policy" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Returns Policy
                 </a>
               </li>
               <li>
-                <a href="/legal" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="/legal" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Legal & Compliance
                 </a>
               </li>
@@ -202,9 +202,9 @@ const Footer = () => {
             <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 mt-6 text-primary-foreground/50">
               Team Resources
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-1">
               <li>
-                <a href="/team-resources" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="/team-resources" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Internal Resources
                 </a>
               </li>
