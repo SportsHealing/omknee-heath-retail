@@ -22,6 +22,7 @@ import { generateBrandGuidelines } from "@/lib/generateBrandGuidelines";
 import { generateProductKnowledgeBase } from "@/lib/generateProductKnowledgeBase";
 import { generateContentTemplates } from "@/lib/generateContentTemplates";
 import { generateCustomerResponseScripts } from "@/lib/generateCustomerResponseScripts";
+import { generateComplianceAuditPdf } from "@/lib/generateComplianceAuditPdf";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
@@ -68,6 +69,14 @@ const TeamResources = () => {
   };
 
   const resources: ResourceItem[] = [
+    {
+      title: "Compliance Audit Report",
+      description: "Full site compliance audit documenting all reviewed pages, findings, and launch-readiness certification.",
+      icon: Shield,
+      action: "download",
+      onClick: generateComplianceAuditPdf,
+      available: true,
+    },
     {
       title: "Compliance Language Playbook",
       description: "UK & EU food supplement regulatory compliance guide. Approved and prohibited language for marketing.",
