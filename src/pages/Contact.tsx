@@ -56,8 +56,9 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Contact Us | OmKneeHealth"
-        description="Get in touch with OmKneeHealth. We're here to answer your questions about our joint health supplements and provide support."
+        title="Contact OmKneeHealth | Knee Joint Support UK"
+        description="Get in touch with OmKneeHealth for questions about our knee joint supplement, ingredients or general support."
+        canonicalPath="/contact"
       />
       <Header />
 

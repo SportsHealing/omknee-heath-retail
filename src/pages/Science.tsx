@@ -21,8 +21,8 @@ const Science = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Knee Supplement Science & Evidence | Ingredient Research | OmKneeHealth"
-        description="Evidence-informed explanations of knee joint biology, cartilage health, and supplement ingredient research. Understand collagen, glucosamine, and vitamin evidence for joint support."
+        title="Science Behind Our Knee Supplement | OmKneeHealth"
+        description="Explore the scientific rationale and formulation principles behind OmKneeHealth's knee joint supplement approach."
         canonicalPath="/science"
       />
       <BreadcrumbSchema

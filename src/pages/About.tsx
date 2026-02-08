@@ -18,8 +18,8 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="About OmKneeHealth | UK Clinician-Founded Knee Health Specialists"
-        description="Founded by UK orthopaedic specialists. OmKneeHealth provides evidence-informed knee joint supplements and free assessment tools. Meet our clinical team and mission."
+        title="About OmKneeHealth | Holistic Knee Care"
+        description="OmKneeHealth is dedicated to personalised, evidence-led knee joint support combining clinical insight with holistic principles."
         canonicalPath="/about"
       />
       <BreadcrumbSchema

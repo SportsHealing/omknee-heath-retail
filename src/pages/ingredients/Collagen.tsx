@@ -46,10 +46,10 @@ const Collagen = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Collagen for Knee Joints UK | Cartilage Support | OmKneeHealth"
-        description="Evidence-based guide to collagen for knee joints. Understand how hydrolysed collagen peptides support cartilage structure, optimal dosing, and what the research shows. UK clinician perspective."
+        title="Collagen Supplement for Knees | OmKneeHealth"
+        description="Learn how collagen peptides contribute to cartilage structure and knee joint resilience as part of a balanced joint health approach."
         canonicalPath="/ingredients/collagen"
-        keywords="collagen for knee joints, collagen cartilage support, hydrolysed collagen peptides, collagen joint health UK, type 2 collagen knees"
+        keywords="collagen for knee joints, collagen cartilage support, hydrolysed collagen peptides, collagen joint health"
       />
       <BreadcrumbSchema
         items={[

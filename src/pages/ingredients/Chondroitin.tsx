@@ -46,10 +46,10 @@ const Chondroitin = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Chondroitin for Knee Joints UK | Cartilage Support | OmKneeHealth"
-        description="Evidence-based guide to chondroitin sulphate for knee joints. Understand how chondroitin supports cartilage structure, optimal dosing, and the glucosamine-chondroitin combination. UK clinician perspective."
+        title="Chondroitin for Knee Joint Support | OmKneeHealth"
+        description="Chondroitin is a structural component of cartilage. Learn how it is used in knee joint supplements to support long-term joint health."
         canonicalPath="/ingredients/chondroitin"
-        keywords="chondroitin for knee joints, chondroitin sulphate UK, chondroitin cartilage, glucosamine chondroitin, chondroitin supplement"
+        keywords="chondroitin for knee joints, chondroitin sulphate, chondroitin cartilage, glucosamine chondroitin"
       />
       <BreadcrumbSchema
         items={[

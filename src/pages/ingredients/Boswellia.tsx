@@ -46,10 +46,10 @@ const Boswellia = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Boswellia Serrata for Knee Joints UK | Frankincense Extract | OmKneeHealth"
-        description="Evidence-based guide to boswellia serrata (frankincense) for knee joints. Understand boswellic acids, AKBA, and what the research shows. UK clinician perspective."
+        title="Boswellia for Knee Joints | OmKneeHealth"
+        description="Boswellia serrata is widely used to support joint comfort and mobility. Learn how it complements knee joint supplementation."
         canonicalPath="/ingredients/boswellia"
-        keywords="boswellia for knee joints, boswellia serrata cartilage, frankincense joint health UK, boswellic acids, AKBA supplement"
+        keywords="boswellia for knee joints, boswellia serrata cartilage, frankincense joint health, boswellic acids"
       />
       <BreadcrumbSchema
         items={[

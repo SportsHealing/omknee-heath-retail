@@ -46,10 +46,10 @@ const Curcumin = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Curcumin for Knee Joints UK | Turmeric Extract | OmKneeHealth"
-        description="Evidence-based guide to curcumin (turmeric extract) for knee joints. Understand antioxidant mechanisms, bioavailability challenges, and why we pair curcumin with piperine. UK clinician perspective."
+        title="Turmeric for Knee Joint Health | OmKneeHealth"
+        description="Discover how concentrated turmeric extract supports joint comfort and movement as part of an evidence-led knee supplement."
         canonicalPath="/ingredients/curcumin"
-        keywords="curcumin for knee joints, turmeric cartilage support, curcumin joint health UK, turmeric extract knees, curcumin bioavailability"
+        keywords="curcumin for knee joints, turmeric cartilage support, curcumin joint health, turmeric extract knees"
       />
       <BreadcrumbSchema
         items={[

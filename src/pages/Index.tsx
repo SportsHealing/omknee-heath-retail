@@ -18,10 +18,10 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Knee Joint Supplement | Clinician-Formulated | OmKneeHealth"
-        description="Clinician-founded knee joint supplement. Evidence-informed formula with collagen, vitamin C & D for cartilage health. Free knee assessment. Third-party tested, manufactured in Britain."
+        title="Knee Joint Supplement | OmKneeHealth UK"
+        description="Premium knee joint supplement designed to support cartilage, mobility and long-term knee health. Evidence-led, holistic knee care. UK focused."
         canonicalPath="/"
-        keywords="knee joint supplement, joint support supplement, collagen for knees, knee cartilage support, evidence-based joint care, clinician-formulated supplements"
+        keywords="knee joint supplement UK, joint support supplement, collagen for knees, knee cartilage support, evidence-based joint care"
       />
       <OrganizationSchema />
       <WebPageSchema

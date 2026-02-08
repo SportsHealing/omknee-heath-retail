@@ -50,10 +50,10 @@ const Glucosamine = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Glucosamine for Knee Joints UK | Cartilage Support | OmKneeHealth"
-        description="Evidence-based guide to glucosamine for knee joints. Understand glucosamine sulphate vs HCl, optimal dosing (1,500mg), and what research shows. UK clinician perspective."
+        title="Glucosamine for Knee Cartilage | OmKneeHealth"
+        description="An overview of glucosamine and its role in cartilage structure and knee joint support within comprehensive joint formulations."
         canonicalPath="/ingredients/glucosamine"
-        keywords="glucosamine for knee joints, glucosamine cartilage, glucosamine sulphate UK, glucosamine 1500mg, best glucosamine supplement"
+        keywords="glucosamine for knee joints, glucosamine cartilage, glucosamine sulphate, glucosamine 1500mg"
       />
       <BreadcrumbSchema
         items={[

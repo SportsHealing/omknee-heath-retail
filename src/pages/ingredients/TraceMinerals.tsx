@@ -46,10 +46,10 @@ const TraceMinerals = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Zinc, Copper & Boron for Joints UK | Trace Minerals | OmKneeHealth"
-        description="Evidence-based guide to trace minerals (zinc, copper, boron) for joint health. Understand their roles in connective tissue, protein synthesis, and bone maintenance. EFSA-authorised claims."
+        title="Joint Health Minerals | OmKneeHealth"
+        description="Essential minerals including zinc, copper and boron play key roles in connective tissue and joint health. Learn how they support knees."
         canonicalPath="/ingredients/trace-minerals"
-        keywords="zinc for joints, copper connective tissue, boron joint health, trace minerals UK, zinc copper supplement"
+        keywords="zinc for joints, copper connective tissue, boron joint health, trace minerals, zinc copper supplement"
       />
       <BreadcrumbSchema
         items={[
