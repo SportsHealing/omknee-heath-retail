@@ -1,6 +1,6 @@
 const LearnHero = () => {
   return (
-    <section className="pt-60 pb-16 md:pt-72 md:pb-20 bg-gradient-to-b from-muted/50 to-background">
+    <section className="pt-32 pb-16 lg:pt-60 lg:pb-20 bg-gradient-to-b from-muted/50 to-background">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-foreground mb-6">

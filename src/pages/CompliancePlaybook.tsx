@@ -17,7 +17,7 @@ const CompliancePlaybook = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-56 pb-20">
+      <main className="pt-28 lg:pt-56 pb-20">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
             {/* Header */}
