@@ -226,22 +226,25 @@ const Footer = () => {
             ) : (
               <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
                 <Input
+                  id="newsletter-email"
                   type="email"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-primary-foreground/40"
+                  aria-label="Email address for newsletter"
                 />
                 <Button
                   type="submit"
                   disabled={isSubmitting}
                   variant="secondary"
                   className="px-4"
+                  aria-label="Subscribe to newsletter"
                 >
                   {isSubmitting ? (
                     "..."
                   ) : (
-                    <Send className="w-4 h-4" />
+                    <Send className="w-4 h-4" aria-hidden="true" />
                   )}
                 </Button>
               </form>

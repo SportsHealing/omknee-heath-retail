@@ -94,7 +94,7 @@ const CookieConsent = () => {
               className="fixed bottom-4 left-4 z-50 w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 border border-border shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-105"
               aria-label="Cookie Settings"
             >
-              <Cookie className="w-5 h-5 text-primary" />
+              <Cookie className="w-5 h-5 text-primary" aria-hidden="true" />
             </button>
           </TooltipTrigger>
           <TooltipContent side="right">
@@ -135,10 +135,10 @@ const CookieConsent = () => {
               {/* Icon and Text */}
               <div className="flex items-start gap-4 flex-1">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Cookie className="w-5 h-5 text-primary" />
+                  <Cookie className="w-5 h-5 text-primary" aria-hidden="true" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-1">We value your privacy</h3>
+                  <p className="font-semibold text-foreground mb-1">We value your privacy</p>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     We use cookies to enhance your browsing experience, analyse site traffic, and personalise content. 
                     By clicking "Accept All", you consent to our use of cookies.{" "}
@@ -156,7 +156,7 @@ const CookieConsent = () => {
                   onClick={() => setShowCustomise(true)}
                   className="order-3 sm:order-1"
                 >
-                  <Settings className="w-4 h-4 mr-2" />
+                  <Settings className="w-4 h-4 mr-2" aria-hidden="true" />
                   Customise
                 </Button>
                 <Button
@@ -181,15 +181,20 @@ const CookieConsent = () => {
       {/* Customise Modal */}
       {showCustomise && (
         <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-auto">
-          <div className="bg-background rounded-2xl border border-border shadow-xl max-w-lg w-full max-h-[90vh] overflow-y-auto animate-fade-up">
+          <div 
+            className="bg-background rounded-2xl border border-border shadow-xl max-w-lg w-full max-h-[90vh] overflow-y-auto animate-fade-up"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="cookie-preferences-title"
+          >
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-border">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Shield className="w-5 h-5 text-primary" />
+                  <Shield className="w-5 h-5 text-primary" aria-hidden="true" />
                 </div>
                 <div>
-                  <h2 className="font-semibold text-foreground">Cookie Preferences</h2>
+                  <h2 id="cookie-preferences-title" className="font-semibold text-foreground">Cookie Preferences</h2>
                   <p className="text-xs text-muted-foreground">Manage your cookie settings</p>
                 </div>
               </div>
@@ -198,8 +203,9 @@ const CookieConsent = () => {
                 size="icon"
                 onClick={() => setShowCustomise(false)}
                 className="text-muted-foreground"
+                aria-label="Close cookie preferences"
               >
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5" aria-hidden="true" />
               </Button>
             </div>
 

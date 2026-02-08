@@ -72,8 +72,10 @@ const Header = () => {
               size="icon" 
               className="lg:hidden h-10 w-10"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
             </Button>
           </div>
         </div>
