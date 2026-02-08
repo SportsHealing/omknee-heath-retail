@@ -58,10 +58,10 @@ const BlogIndex = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Knee Health Blog UK | Evidence-Based Joint Health Articles | OmKneeHealth"
-        description="UK clinician-written articles on knee health, joint supplements, and cartilage support. Evidence-based guidance on collagen, glucosamine, and maintaining healthy knees."
+        title="Knee Health Advice & Supplements | OmKneeHealth"
+        description="Expert-led articles on knee joint health, cartilage support and supplements, written with a calm, evidence-based approach."
         canonicalPath="/blog"
-        keywords="knee health blog UK, joint supplement articles, knee cartilage advice, collagen for knees UK, glucosamine evidence"
+        keywords="knee health blog, joint supplement articles, knee cartilage advice, collagen for knees, glucosamine evidence"
       />
       <BreadcrumbSchema
         items={[

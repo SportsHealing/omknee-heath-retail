@@ -42,11 +42,11 @@ const Product = () => {
     <ProductVariantProvider>
       <div className="min-h-screen bg-background">
         <SEO
-          title="Knee Cartilage Supplement | Collagen for Knee Joints | OmKneeHealth"
-          description="Clinician-formulated collagen supplement for knee joints. 10g hydrolysed collagen, vitamin C for cartilage function, vitamin D & K2 for bones. Evidence-informed doses. Third-party tested, GMP manufactured."
+          title="Knee Joint Supplement for Cartilage Support | OmKneeHealth"
+          description="A clinically informed knee joint supplement formulated to support cartilage, comfort and movement. Designed for long-term knee health."
           canonicalPath="/product"
           ogType="product"
-          keywords="knee cartilage supplement, collagen supplement for knees, joint supplement, knee collagen, best supplement for knee joints, knee joint support supplement"
+          keywords="knee cartilage supplement, collagen supplement for knees, joint supplement, knee collagen, best supplement for knee joints"
         />
         <ProductSchema
           name="OmKneeHealth Knee Cartilage & Collagen Support Supplement"

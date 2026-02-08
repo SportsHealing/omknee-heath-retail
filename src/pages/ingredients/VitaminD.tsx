@@ -46,10 +46,10 @@ const VitaminD = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Vitamin D for Knee Joints UK | Bone & Muscle Health | OmKneeHealth"
-        description="Evidence-based guide to vitamin D for knee joint support. Understand vitamin D's role in bone and muscle health, UK deficiency concerns, and optimal dosing. EFSA-authorised claims."
+        title="Vitamin D and Knee Joint Health | OmKneeHealth"
+        description="Vitamin D supports musculoskeletal health and normal bone function. Learn its relevance in knee joint support formulations."
         canonicalPath="/ingredients/vitamin-d"
-        keywords="vitamin D for knee joints, vitamin D bone health UK, vitamin D muscle function, vitamin D deficiency UK, vitamin D3 supplement"
+        keywords="vitamin D for knee joints, vitamin D bone health, vitamin D muscle function, vitamin D3 supplement"
       />
       <BreadcrumbSchema
         items={[
