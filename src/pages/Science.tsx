@@ -9,27 +9,27 @@ import HolisticApproach from "@/components/science/HolisticApproach";
 import ScienceFAQ from "@/components/science/ScienceFAQ";
 import ScienceCTA from "@/components/science/ScienceCTA";
 import SEO from "@/components/SEO";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import BackToTop from "@/components/ui/BackToTop";
 
 /**
- * SHOPIFY PAGE: Evidence & Science Hub
- * 
- * TYPE: Shopify Page (Pages > Add page)
- * 
- * This educational content hub builds trust and positions
- * OmKneeHealth as a clinician-led, evidence-based brand.
- * 
- * SEO Focus: knee health, joint supplements, glucosamine evidence,
- * cartilage support, evidence-based supplements
+ * SCIENCE PAGE: Evidence & Science Hub
+ * SEO-optimized for knee supplement research and ingredient evidence queries
  */
 
 const Science = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="The Science"
-        description="Understand the science behind knee health. Evidence-informed explanations of joint biology, ingredient research, and our honest approach to supplementation."
+        title="Knee Supplement Science & Evidence | Ingredient Research | OmKneeHealth"
+        description="Evidence-informed explanations of knee joint biology, cartilage health, and supplement ingredient research. Understand collagen, glucosamine, and vitamin evidence for joint support."
         canonicalPath="/science"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://omkneehealth.com" },
+          { name: "Science & Evidence", url: "https://omkneehealth.com/science" },
+        ]}
       />
       <Header />
       <main>

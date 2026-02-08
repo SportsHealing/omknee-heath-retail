@@ -3,12 +3,18 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Zap, Clock, Shield, ArrowRight, Stethoscope, Moon, AlertCircle } from "lucide-react";
 import SEO from "@/components/SEO";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { Button } from "@/components/ui/button";
 import BackToTop from "@/components/ui/BackToTop";
 import KneeScoreEmbed from "@/components/home/KneeScoreEmbed";
 import KneeTriageCalculator from "@/components/assessment/KneeTriageCalculator";
 
 type AssessmentView = "menu" | "quick" | "full" | "triage";
+
+/**
+ * ASSESSMENT PAGE: Free knee health assessment tools
+ * SEO-optimized for knee assessment and pain evaluation queries
+ */
 
 const Assessment = () => {
   const [currentView, setCurrentView] = useState<AssessmentView>("menu");
@@ -20,9 +26,16 @@ const Assessment = () => {
     return (
       <div className="min-h-screen bg-background">
         <SEO
-          title="Free Knee Assessment | OmKneeHealth"
-          description="Take our free clinician-developed knee health assessments. Start with a quick score, then explore comprehensive options for deeper insight."
+          title="Free Knee Assessment UK | Knee Pain Evaluation Tool | OmKneeHealth"
+          description="Free clinician-developed knee health assessment. Evaluate knee pain, stiffness, mobility and get personalised guidance. Quick 2-minute test or comprehensive options."
           canonicalPath="/assessment"
+          keywords="knee assessment, knee pain test, knee health quiz, knee evaluation UK, free knee test, knee symptoms checker"
+        />
+        <BreadcrumbSchema
+          items={[
+            { name: "Home", url: "https://omkneehealth.com" },
+            { name: "Free Knee Assessment", url: "https://omkneehealth.com/assessment" },
+          ]}
         />
         <Header />
         <main className="pt-20">
