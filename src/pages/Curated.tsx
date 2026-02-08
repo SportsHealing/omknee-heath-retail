@@ -7,6 +7,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEO from "@/components/SEO";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import WebPageSchema from "@/components/WebPageSchema";
 import CuratedHero from "@/components/curated/CuratedHero";
 import CuratedNav from "@/components/curated/CuratedNav";
 import MovementSupport from "@/components/curated/MovementSupport";
@@ -31,6 +32,12 @@ const Curated = () => {
           { name: "Home", url: "https://omkneehealth.com" },
           { name: "Curated Knee Essentials", url: "https://omkneehealth.com/curated" },
         ]}
+      />
+      <WebPageSchema
+        name="Curated Knee Essentials - OmKneeHealth"
+        description="UK knee specialists' curated guide to knee braces, recovery tools, strengthening equipment, and comfort products."
+        url="https://omkneehealth.com/curated"
+        type="CollectionPage"
       />
       <Header />
       <main>

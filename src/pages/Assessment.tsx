@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import { Zap, Clock, Shield, ArrowRight, Stethoscope, Moon, AlertCircle } from "lucide-react";
 import SEO from "@/components/SEO";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import WebPageSchema from "@/components/WebPageSchema";
 import { Button } from "@/components/ui/button";
 import BackToTop from "@/components/ui/BackToTop";
 import KneeScoreEmbed from "@/components/home/KneeScoreEmbed";
@@ -36,6 +37,12 @@ const Assessment = () => {
             { name: "Home", url: "https://omkneehealth.com" },
             { name: "Free Knee Assessment", url: "https://omkneehealth.com/assessment" },
           ]}
+        />
+        <WebPageSchema
+          name="Free Knee Assessment UK - OmKneeHealth"
+          description="Free clinician-developed knee health assessment. Evaluate knee pain, stiffness, mobility and get personalised guidance."
+          url="https://omkneehealth.com/assessment"
+          type="WebPage"
         />
         <Header />
         <main className="pt-20">

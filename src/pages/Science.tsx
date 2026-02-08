@@ -10,6 +10,7 @@ import ScienceFAQ from "@/components/science/ScienceFAQ";
 import ScienceCTA from "@/components/science/ScienceCTA";
 import SEO from "@/components/SEO";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import WebPageSchema from "@/components/WebPageSchema";
 import BackToTop from "@/components/ui/BackToTop";
 
 /**
@@ -30,6 +31,12 @@ const Science = () => {
           { name: "Home", url: "https://omkneehealth.com" },
           { name: "Science & Evidence", url: "https://omkneehealth.com/science" },
         ]}
+      />
+      <WebPageSchema
+        name="Science Behind Our Knee Supplement - OmKneeHealth"
+        description="Explore the scientific rationale and formulation principles behind OmKneeHealth's knee joint supplement approach."
+        url="https://omkneehealth.com/science"
+        type="WebPage"
       />
       <Header />
       <main>

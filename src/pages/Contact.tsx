@@ -10,6 +10,8 @@ import { Label } from "@/components/ui/label";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEO from "@/components/SEO";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import WebPageSchema from "@/components/WebPageSchema";
 import { useToast } from "@/hooks/use-toast";
 
 const contactSchema = z.object({
@@ -59,6 +61,18 @@ const Contact = () => {
         title="Contact OmKneeHealth | Knee Joint Support UK"
         description="Get in touch with OmKneeHealth for questions about our knee joint supplement, ingredients or general support."
         canonicalPath="/contact"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://omkneehealth.com" },
+          { name: "Contact Us", url: "https://omkneehealth.com/contact" },
+        ]}
+      />
+      <WebPageSchema
+        name="Contact OmKneeHealth - Knee Joint Support UK"
+        description="Get in touch with OmKneeHealth for questions about our knee joint supplement, ingredients or general support."
+        url="https://omkneehealth.com/contact"
+        type="ContactPage"
       />
       <Header />
 

@@ -2,6 +2,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEO from "@/components/SEO";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import WebPageSchema from "@/components/WebPageSchema";
 import LearnHero from "@/components/learn/LearnHero";
 import KneeAnatomy from "@/components/learn/KneeAnatomy";
 import CommonConditions from "@/components/learn/CommonConditions";
@@ -26,6 +27,12 @@ const Learn = () => {
           { name: "Home", url: "https://omkneehealth.com" },
           { name: "Learn About Your Knee", url: "https://omkneehealth.com/learn" },
         ]}
+      />
+      <WebPageSchema
+        name="Knee Anatomy & Conditions Guide - OmKneeHealth"
+        description="Understand your knee joint anatomy, common knee conditions like osteoarthritis, and evidence-based self-care guidance."
+        url="https://omkneehealth.com/learn"
+        type="WebPage"
       />
       <Header />
       <main>
