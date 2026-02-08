@@ -45,6 +45,8 @@ const SignatureProductSection = () => {
               <img 
                 src={productPouches} 
                 alt="OmKneeHealth Supplement for Joint Health"
+                width={448}
+                height={448}
                 className="w-full max-w-md mx-auto object-contain group-hover:scale-105 transition-transform duration-300"
               />
               <div className="text-center mt-6 space-y-2">

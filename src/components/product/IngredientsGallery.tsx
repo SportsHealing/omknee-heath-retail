@@ -150,6 +150,8 @@ const IngredientsGallery = () => {
                 <img 
                   src={ingredient.image}
                   alt={`${ingredient.name} - ${ingredient.source}`}
+                  width={400}
+                  height={400}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -198,6 +200,8 @@ const IngredientsGallery = () => {
                 <img 
                   src={selectedIngredient.image}
                   alt={selectedIngredient.name}
+                  width={600}
+                  height={600}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-full">

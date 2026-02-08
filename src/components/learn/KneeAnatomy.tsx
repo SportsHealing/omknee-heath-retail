@@ -91,6 +91,8 @@ const KneeAnatomy = () => {
               <img 
                 src={kneeAnatomyDiagram}
                 alt="Anatomical diagram of the knee joint showing femur, tibia, menisci, cruciate and collateral ligaments, and hyaline cartilage"
+                width={448}
+                height={600}
                 className="w-full max-w-md mx-auto rounded-lg"
               />
               <p className="text-center text-sm text-muted-foreground mt-4">
@@ -132,6 +134,8 @@ const KneeAnatomy = () => {
             <img 
               src={osteoarthritisProgression}
               alt="Diagram showing the three stages of knee osteoarthritis progression from healthy cartilage to advanced wear"
+              width={1200}
+              height={400}
               className="w-full rounded-lg"
             />
             <p className="text-center text-sm text-muted-foreground mt-4">

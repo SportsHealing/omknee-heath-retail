@@ -71,6 +71,8 @@ const Footer = () => {
             <img 
               src={logoWhite} 
               alt="OmKneeHealth - UK Knee Joint Supplement" 
+              width={160}
+              height={64}
               className="h-16 w-auto mb-4"
             />
             <p className="font-sans text-sm text-primary-foreground/70 leading-relaxed mb-4">
