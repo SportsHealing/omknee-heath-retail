@@ -15,6 +15,7 @@ import TermsConditions from "./pages/TermsConditions";
 import ReturnsPolicy from "./pages/ReturnsPolicy";
 import Contact from "./pages/Contact";
 import CompliancePlaybook from "./pages/CompliancePlaybook";
+import TeamResources from "./pages/TeamResources";
 import NotFound from "./pages/NotFound";
 import ScrollToHash from "./components/ScrollToHash";
 import CookieConsent from "./components/CookieConsent";
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/returns-policy" element={<ReturnsPolicy />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/compliance-playbook" element={<CompliancePlaybook />} />
+          <Route path="/team-resources" element={<TeamResources />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
