@@ -18,6 +18,7 @@ import {
   ExternalLink
 } from "lucide-react";
 import { generateCompliancePlaybook } from "@/lib/generateCompliancePlaybook";
+import { generateBrandGuidelines } from "@/lib/generateBrandGuidelines";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
@@ -76,9 +77,9 @@ const TeamResources = () => {
       title: "Brand Guidelines",
       description: "Logo usage, color palette, typography, and visual identity standards.",
       icon: Palette,
-      action: "link",
-      href: "#",
-      available: false,
+      action: "download",
+      onClick: generateBrandGuidelines,
+      available: true,
     },
     {
       title: "Content Templates",
