@@ -42,15 +42,15 @@ const Product = () => {
     <ProductVariantProvider>
       <div className="min-h-screen bg-background">
         <SEO
-          title="Knee Cartilage Supplement UK | Collagen for Knee Joints | OmKneeHealth"
-          description="UK's best collagen supplement for knee joints. Clinician-formulated with 10g hydrolysed collagen, vitamin C for cartilage function, vitamin D & K2 for bones. Evidence-informed doses. Third-party tested, UK GMP manufactured."
+          title="Knee Cartilage Supplement | Collagen for Knee Joints | OmKneeHealth"
+          description="Clinician-formulated collagen supplement for knee joints. 10g hydrolysed collagen, vitamin C for cartilage function, vitamin D & K2 for bones. Evidence-informed doses. Third-party tested, GMP manufactured."
           canonicalPath="/product"
           ogType="product"
-          keywords="knee cartilage supplement, collagen supplement for knees, joint supplement for knee pain, knee collagen UK, best supplement for knee joints, knee joint support supplement"
+          keywords="knee cartilage supplement, collagen supplement for knees, joint supplement, knee collagen, best supplement for knee joints, knee joint support supplement"
         />
         <ProductSchema
           name="OmKneeHealth Knee Cartilage & Collagen Support Supplement"
-          description="UK's clinician-formulated knee cartilage supplement. Contains hydrolysed collagen peptides (10g), vitamin C contributing to normal cartilage function (EFSA claim), vitamin D & K2 for bone maintenance, glucosamine (1500mg), chondroitin (800mg), and curcumin with piperine for enhanced absorption. Third-party batch tested, UK GMP manufactured. 300g pouch provides 30-day supply. Suitable for adults seeking nutritional support for knee joint health."
+          description="Clinician-formulated knee cartilage supplement. Contains hydrolysed collagen peptides (10g), vitamin C contributing to normal cartilage function, vitamin D & K2 for bone maintenance, glucosamine (1500mg), chondroitin (800mg), and curcumin with piperine for enhanced absorption. Third-party batch tested, GMP manufactured in Britain. 300g pouch provides 30-day supply. Suitable for adults seeking nutritional support for knee joint health."
           image="https://omkneehealth.com/og-image.png"
           price="49.99"
           currency="GBP"
@@ -69,8 +69,8 @@ const Product = () => {
           ]}
         />
         <WebPageSchema
-          name="Knee Cartilage & Collagen Supplement UK - OmKneeHealth"
-          description="Evidence-informed knee cartilage supplement with hydrolysed collagen, vitamin C for normal cartilage function, and comprehensive joint support nutrients. UK clinician-formulated."
+          name="Knee Cartilage & Collagen Supplement - OmKneeHealth"
+          description="Evidence-informed knee cartilage supplement with hydrolysed collagen, vitamin C for normal cartilage function, and comprehensive joint support nutrients. Clinician-formulated."
           url="https://omkneehealth.com/product"
           type="ItemPage"
         />

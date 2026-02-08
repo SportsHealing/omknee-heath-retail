@@ -11,6 +11,7 @@ interface WebPageSchemaProps {
 
 /**
  * WebPageSchema - Adds JSON-LD structured data for web pages
+ * Globally optimised with UK primary language
  * Helps search engines understand page type and metadata
  */
 const WebPageSchema = ({
@@ -39,11 +40,16 @@ const WebPageSchema = ({
           url: "https://omkneehealth.com/og-image.png",
         },
       },
-      inLanguage: "en-GB",
+      inLanguage: ["en-GB", "en"],
       isPartOf: {
         "@type": "WebSite",
         name: "OmKneeHealth",
         url: "https://omkneehealth.com",
+        inLanguage: ["en-GB", "en"],
+      },
+      potentialAction: {
+        "@type": "ReadAction",
+        target: url,
       },
     };
 
