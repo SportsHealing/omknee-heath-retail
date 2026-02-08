@@ -104,12 +104,17 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/product#how-to-use" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  How to Use
+                <a href="/how-it-works" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  How It Works
                 </a>
               </li>
               <li>
-                <a href="/product#ingredients" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="/who-its-for" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  Who It's For
+                </a>
+              </li>
+              <li>
+                <a href="/ingredients" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   Ingredients
                 </a>
               </li>
@@ -133,11 +138,6 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/ingredients/collagen" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Ingredient Science
-                </a>
-              </li>
-              <li>
                 <a href="/assessment" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   Free Knee Assessment
                 </a>
@@ -148,7 +148,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/product#product-faq" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="/faq" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   FAQs
                 </a>
               </li>
@@ -189,6 +189,11 @@ const Footer = () => {
               <li>
                 <a href="/returns-policy" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   Returns Policy
+                </a>
+              </li>
+              <li>
+                <a href="/legal" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  Legal & Compliance
                 </a>
               </li>
             </ul>
