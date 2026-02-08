@@ -17,7 +17,7 @@ const testimonials: Testimonial[] = [
     name: "Margaret T.",
     location: "Edinburgh",
     rating: 5,
-    text: "After three months of consistent use alongside my physio exercises, I've noticed a genuine improvement in my morning stiffness. The powder dissolves easily and the taste is pleasant enough.",
+    text: "After three months of consistent use alongside my physio exercises, I've found the supplement fits well into my daily routine. The powder dissolves easily and the taste is pleasant enough.",
     verified: true,
     variant: "Marine",
     duration: "Using for 3 months"
@@ -27,7 +27,7 @@ const testimonials: Testimonial[] = [
     name: "David R.",
     location: "Bristol",
     rating: 5,
-    text: "As someone who was sceptical about supplements, I appreciate the honest approach here. No miracle claims, just good quality ingredients. Combined with walking and strength work, my knees feel more comfortable.",
+    text: "As someone who was sceptical about supplements, I appreciate the honest approach here. No miracle claims, just good quality ingredients. Combined with walking and strength work, I feel confident I'm supporting my joint health properly.",
     verified: true,
     variant: "Marine",
     duration: "Using for 4 months"
