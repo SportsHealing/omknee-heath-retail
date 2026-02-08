@@ -31,6 +31,8 @@ const Header = () => {
             <img 
               src={logoDarkGreen} 
               alt="OmKneeHealth" 
+              width={208}
+              height={208}
               className="h-20 md:h-52 w-auto"
             />
           </Link>

@@ -19,6 +19,8 @@ const EducationSection = () => {
               <img 
                 src={lifestyleImage} 
                 alt="Active adult walking confidently on a nature trail in morning light" 
+                width={600}
+                height={800}
                 className="w-full h-full object-cover"
               />
             </div>

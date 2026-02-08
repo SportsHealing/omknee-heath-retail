@@ -31,6 +31,8 @@ const ProductHero = () => {
         <img 
           src={ingredientsBg} 
           alt="" 
+          width={1920}
+          height={1080}
           className="w-full h-full object-cover"
           aria-hidden="true"
         />
@@ -50,6 +52,8 @@ const ProductHero = () => {
             <img 
               src={productImage} 
               alt={`OmKneeHealth Joint + Movement Support ${variantInfo.name} - 300g pouch, one month supply`}
+              width={600}
+              height={600}
               className="w-full h-full object-contain p-6"
             />
           </div>
