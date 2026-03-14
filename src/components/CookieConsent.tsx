@@ -30,6 +30,10 @@ const CookieConsent = () => {
   const [preferences, setPreferences] = useState<CookiePreferences>(defaultPreferences);
 
   useEffect(() => {
+    // TEMPORARILY SUSPENDED: Cookie banner disabled during landing
+    // To re-enable, remove the return statement below
+    return;
+    
     // Check if user has already consented
     const consentGiven = localStorage.getItem(COOKIE_CONSENT_KEY);
     if (!consentGiven) {
