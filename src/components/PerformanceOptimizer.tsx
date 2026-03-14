@@ -22,9 +22,9 @@ const PerformanceOptimizer = () => {
     ]);
 
     // Report Web Vitals if available
-    if ("web-vital" in window || process.env.NODE_ENV === "development") {
+    if ("web-vital" in window || import.meta.env.DEV) {
       // Log performance entries in development
-      if (process.env.NODE_ENV === "development") {
+      if (import.meta.env.DEV) {
         const observer = new PerformanceObserver((list) => {
           list.getEntries().forEach((entry) => {
             if (entry.entryType === "largest-contentful-paint") {
