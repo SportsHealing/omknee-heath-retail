@@ -36,12 +36,12 @@ const KneeIntroSection = () => {
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="px-8 font-sans text-sm tracking-wide" asChild>
               <a
-                href="https://www.sportshealing.com"
+                href="https://www.sportshealing.com/know-your-knee/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Explore detailed knee anatomy at SportsHealing"
               >
-                Detailed knee anatomy at SportsHealing
+                Knee anatomy: Know Your Knee
                 <ArrowUpRight className="w-4 h-4 ml-2" />
               </a>
             </Button>
@@ -49,6 +49,22 @@ const KneeIntroSection = () => {
               <a href="/learn">Knee basics guide</a>
             </Button>
           </div>
+
+          <p className="mt-8 font-sans text-sm text-muted-foreground">
+            Also from our clinical partners:{" "}
+            <a href="https://www.sportshealing.com/collagen-joint-health/" target="_blank" rel="noopener" className="text-primary underline underline-offset-4">
+              collagen and joint health
+            </a>
+            ,{" "}
+            <a href="https://mykneescan.com/assessment" target="_blank" rel="noopener" className="text-primary underline underline-offset-4">
+              a 60-second knee triage test
+            </a>{" "}
+            and{" "}
+            <a href="https://www.chinmaygupte.com/knee-conditions/" target="_blank" rel="noopener" className="text-primary underline underline-offset-4">
+              a knee surgeon's guide to knee conditions
+            </a>
+            .
+          </p>
 
           <p className="mt-6 font-sans text-xs text-muted-foreground">
             For in-depth clinical detail, assessment and treatment pathways, we redirect you to{" "}
