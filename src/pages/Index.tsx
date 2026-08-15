@@ -2,6 +2,9 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/home/HeroSection";
 import PhilosophySection from "@/components/home/PhilosophySection";
+import KneeIntroSection from "@/components/home/KneeIntroSection";
+import KneeComponentsSection from "@/components/home/KneeComponentsSection";
+import KneeHealthPillars from "@/components/home/KneeHealthPillars";
 import EducationSection from "@/components/home/EducationSection";
 import AssessmentSection from "@/components/home/AssessmentSection";
 import SignatureProductSection from "@/components/home/SignatureProductSection";
@@ -18,15 +21,15 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Knee Joint Supplement | OmKneeHealth UK"
-        description="Premium knee joint supplement designed to support cartilage, mobility and long-term knee health. Evidence-led, holistic knee care. UK focused."
+        title="Knee Health & Wellness | Everything About Your Knee | OmKneeHealth"
+        description="Understand your knee joint, the collagen-rich structures inside it, and how to maintain knee health through wellness, nutrition, biomechanics, load and injury prevention."
         canonicalPath="/"
-        keywords="knee joint supplement UK, joint support supplement, collagen for knees, knee cartilage support, evidence-based joint care"
+        keywords="knee health, knee anatomy, knee joint supplement UK, collagen for knees, synovial fluid, knee biomechanics, knee injury prevention"
       />
       <OrganizationSchema />
       <WebPageSchema
-        name="OmKneeHealth - Clinician-Founded Knee Joint Supplements"
-        description="Clinician-founded knee health specialists. Evidence-informed knee joint supplements and free assessment tools designed by healthcare professionals for long-term joint health and mobility."
+        name="OmKneeHealth - Knee Health & Wellness"
+        description="A clinician-founded knee health and wellness resource: understand the knee joint, its collagen-rich components, and how to maintain knee health day to day."
         url="https://omkneehealth.com"
         type="WebPage"
       />
@@ -37,31 +40,40 @@ const Index = () => {
       />
       <Header />
       <main>
-        {/* Section 1: Authority Hero - Establishes medical credibility within 5 seconds */}
+        {/* Section 1: Hero */}
         <HeroSection />
-        
-        {/* Section 2: Philosophy - Positions as authority, not brand */}
+
+        {/* Section 2: Brief introduction to the knee as a joint */}
+        <KneeIntroSection />
+
+        {/* Section 3: The components of the knee - collagen & synovial fluid */}
+        <KneeComponentsSection />
+
+        {/* Section 4: Maintaining knee health - five pillars */}
+        <KneeHealthPillars />
+
+        {/* Section 5: Philosophy */}
         <PhilosophySection />
-        
-        {/* Section 3: Signature Product - ONE formula, clearly labeled */}
+
+        {/* Section 6: Signature Product */}
         <SignatureProductSection />
-        
-        {/* Section 4: Assessment Tool - Free value-add, non-commercial */}
+
+        {/* Section 7: Assessment Tool */}
         <AssessmentSection />
-        
-        {/* Section 5: Education - Why knee health matters */}
+
+        {/* Section 8: Education */}
         <EducationSection />
-        
-        {/* Section 6: Curated Resources - Beyond our own products */}
+
+        {/* Section 9: Curated Resources */}
         <CuratedSection />
-        
-        {/* Section 7: Our Story - Founders & philosophy */}
+
+        {/* Section 10: Our Story */}
         <OurStorySection />
-        
-        {/* Section 8: FAQ - Optimized for featured snippets */}
+
+        {/* Section 11: FAQ */}
         <HomeFAQ />
-        
-        {/* Section 9: Gentle CTA - Assessment-focused, not purchase */}
+
+        {/* Section 12: Gentle CTA */}
         <CTASection />
       </main>
       <Footer />

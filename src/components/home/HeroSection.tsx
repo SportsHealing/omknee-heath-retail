@@ -35,22 +35,22 @@ const HeroSection = () => {
         <div className="max-w-3xl mx-auto text-center">
           {/* Trust signal */}
           <p className="animate-fade-up font-sans text-xs tracking-[0.2em] uppercase text-primary/80 mb-6">
-            Clinician-Founded • Evidence-Informed
+            Clinician-Founded • Knee Health & Wellness
           </p>
 
           {/* Main headline - SEO optimised H1 */}
           <h1 className="animate-fade-up font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] mb-6">
-            The Knee Joint Supplement Designed for Lasting Health
+            Everything to Do With Your Knee, in One Place
           </h1>
 
           {/* Subheading with internal keywords */}
           <p className="animate-fade-up-delay-1 font-sans text-muted-foreground leading-relaxed max-w-xl mx-auto mb-4">
-            A clinician-formulated approach to <strong>cartilage support</strong>, mobility, and long-term joint resilience — developed for every stage of life.
+            Understand the knee as a joint, the <strong>collagen-rich structures</strong> inside it, and the everyday habits that help maintain knee health.
           </p>
 
           {/* Secondary benefit line */}
           <p className="animate-fade-up-delay-1 font-sans text-sm text-muted-foreground/80 max-w-lg mx-auto mb-12">
-            Holistic knee health combining nutritional science with personalised assessment tools.
+            Wellness, nutrition, biomechanics, load management and injury prevention — explained clearly.
           </p>
 
           {/* CTAs with proper internal links */}
@@ -60,8 +60,8 @@ const HeroSection = () => {
               className="px-8 py-6 text-sm font-sans font-medium tracking-wide"
               asChild
             >
-              <a href="/product" aria-label="View our knee joint supplement">
-                View Our Supplement
+              <a href="#the-knee" aria-label="Start with an introduction to the knee">
+                Start With Your Knee
               </a>
             </Button>
             <Button 
@@ -70,8 +70,8 @@ const HeroSection = () => {
               className="px-8 py-6 text-sm font-sans font-medium tracking-wide border-foreground/20 hover:bg-foreground/5"
               asChild
             >
-              <a href="/science" aria-label="Explore the science behind our formula">
-                Explore the Science
+              <a href="#maintaining-knee-health" aria-label="How to maintain knee health">
+                Maintaining Knee Health
               </a>
             </Button>
           </div>
