@@ -21,7 +21,9 @@ const PartnerLinks = ({
   title = "Go deeper with our clinical partners",
   intro = "OmKneeHealth covers everyday knee health and wellness. For clinical detail, imaging and specialist opinion, these partner resources pick up where this page stops.",
 }: PartnerLinksProps) => {
-  const links = topics.flatMap((topic) => PARTNER_LINKS[topic]);
+  const links = topics
+    .flatMap((topic) => PARTNER_LINKS[topic])
+    .filter((link, i, arr) => arr.findIndex((l) => l.href === link.href) === i);
 
   return (
     <section className="container mx-auto px-6 pb-16">

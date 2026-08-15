@@ -14,7 +14,9 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowUpRight, Stethoscope, ScanLine, HeartPulse } from "lucide-react";
 import { PARTNERS, PARTNER_LINKS, type PartnerKey } from "@/lib/partners";
 
-const allLinks = Object.values(PARTNER_LINKS).flat();
+const allLinks = Object.values(PARTNER_LINKS)
+  .flat()
+  .filter((link, i, arr) => arr.findIndex((l) => l.href === link.href) === i);
 
 const partnerOrder: { key: PartnerKey; icon: typeof Stethoscope }[] = [
   { key: "sportshealing", icon: HeartPulse },
