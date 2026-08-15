@@ -40,6 +40,7 @@ const pillars: { id: string; href?: string; icon: typeof HeartPulse; title: stri
   },
   {
     id: "knee-biomechanics",
+    href: "/knee-biomechanics",
     icon: Activity,
     title: "Improving Knee Biomechanics",
     summary:
@@ -54,6 +55,7 @@ const pillars: { id: string; href?: string; icon: typeof HeartPulse; title: stri
   },
   {
     id: "managing-load",
+    href: "/knee-managing-load",
     icon: Gauge,
     title: "Managing Load",
     summary:
@@ -68,6 +70,7 @@ const pillars: { id: string; href?: string; icon: typeof HeartPulse; title: stri
   },
   {
     id: "injury-prevention",
+    href: "/knee-injury-prevention",
     icon: ShieldCheck,
     title: "Injury Prevention",
     summary:
