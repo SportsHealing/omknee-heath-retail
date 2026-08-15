@@ -8,6 +8,7 @@ import { HeartPulse, Salad, Activity, Gauge, ShieldCheck } from "lucide-react";
 
 const pillars = [
   {
+    id: "general-health-wellness",
     icon: HeartPulse,
     title: "General Health & Wellness",
     summary:
@@ -21,6 +22,7 @@ const pillars = [
     ],
   },
   {
+    id: "nutrition-diet",
     icon: Salad,
     title: "Nutrition & Diet",
     summary:
@@ -34,6 +36,7 @@ const pillars = [
     ],
   },
   {
+    id: "knee-biomechanics",
     icon: Activity,
     title: "Improving Knee Biomechanics",
     summary:
@@ -47,6 +50,7 @@ const pillars = [
     ],
   },
   {
+    id: "managing-load",
     icon: Gauge,
     title: "Managing Load",
     summary:
@@ -60,6 +64,7 @@ const pillars = [
     ],
   },
   {
+    id: "injury-prevention",
     icon: ShieldCheck,
     title: "Injury Prevention",
     summary:
@@ -104,7 +109,8 @@ const KneeHealthPillars = () => {
           {pillars.map((pillar, index) => (
             <article
               key={pillar.title}
-              className={`rounded-xl border border-border bg-secondary/40 p-7 md:p-8 ${
+              id={pillar.id}
+              className={`scroll-mt-32 rounded-xl border border-border bg-secondary/40 p-7 md:p-8 ${
                 index === pillars.length - 1 ? "md:col-span-2" : ""
               }`}
             >
