@@ -157,8 +157,8 @@ const references: Reference[] = [
   },
   {
     n: 4,
-    text: "Rynne R, Le Tong G, Cheung RTH, Constantinou M. Effectiveness of gait retraining interventions in individuals with hip or knee osteoarthritis: a systematic review and meta-analysis. Gait & Posture. 2022;95:164–175.",
-    url: "https://doi.org/10.1016/j.gaitpost.2022.04.013",
+    text: "Núñez-Martínez P, Hernández-Guillen D. Management of patellar tendinopathy through monitoring, load control, and therapeutic exercise: a systematic review. Journal of Sport Rehabilitation. 2022;31(3):337–350.",
+    url: "https://doi.org/10.1123/jsr.2021-0117",
   },
   {
     n: 5,

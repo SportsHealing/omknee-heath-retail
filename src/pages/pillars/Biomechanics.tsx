@@ -79,7 +79,7 @@ const topics = [
     plain:
       "Cartilage has no blood supply. It is fed by synovial fluid squeezed in and out as the knee bends and straightens under load. A knee that never reaches full bend or full straight is a poorly fed knee.",
     evidence:
-      "Loss of full extension and flexion is consistently associated with poorer function scores, and restoring range is a standard early goal in rehabilitation protocols following knee injury and surgery [6].",
+      "Restoring full knee extension is a standard early goal after knee injury and surgery, and extension deficits are recognised as a marker of poorer outcome in the rehabilitation literature [6].",
     actions: [
       "Every day: gently reach full straight and full comfortable bend, several times",
       "Heel slides, seated knee bends and standing hamstring stretches take five minutes",
@@ -139,8 +139,8 @@ const references: Reference[] = [
   },
   {
     n: 6,
-    text: "Lauersen JB, Bertelsen DM, Andersen LB. The effectiveness of exercise interventions to prevent sports injuries: a systematic review and meta-analysis of randomised controlled trials. British Journal of Sports Medicine. 2014;48(11):871–877.",
-    url: "https://doi.org/10.1136/bjsports-2013-092538",
+    text: "Ektas N, Scholes C, Kulaga S, Kirwan G, Lee B, Bell C. Recovery of knee extension and incidence of extension deficits following anterior cruciate ligament injury and treatment: a systematic review protocol. Journal of Orthopaedic Surgery and Research. 2019;14:88.",
+    url: "https://doi.org/10.1186/s13018-019-1127-8",
   },
 ];
 
