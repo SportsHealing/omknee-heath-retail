@@ -7,6 +7,7 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEO from "@/components/SEO";
+import PartnerLinks from "@/components/PartnerLinks";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import WebPageSchema from "@/components/WebPageSchema";
 import FAQSchema from "@/components/FAQSchema";
@@ -366,6 +367,8 @@ const HealthAndWellness = () => {
             </p>
           </div>
         </section>
+        <PartnerLinks topics={["wellness", "imaging"]} />
+
       </main>
 
       <Footer />

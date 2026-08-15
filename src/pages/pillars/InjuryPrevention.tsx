@@ -6,6 +6,7 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEO from "@/components/SEO";
+import PartnerLinks from "@/components/PartnerLinks";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import WebPageSchema from "@/components/WebPageSchema";
 import FAQSchema from "@/components/FAQSchema";
@@ -331,6 +332,8 @@ const InjuryPrevention = () => {
             </Accordion>
           </div>
         </section>
+
+        <PartnerLinks topics={["prevention", "clinical"]} />
 
         <ReferenceList references={references} />
 
