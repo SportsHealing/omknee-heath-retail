@@ -319,7 +319,10 @@ const NutritionAndDiet = () => {
               There is no single food that fixes a knee, and no diet that rebuilds a worn joint
               surface. What food does is supply the raw material for your body's ordinary,
               continuous maintenance work — and keep your body weight in a range that asks less of
-              the joint every time you take a step.
+              the joint every time you take a step. It works in every dietary pattern: everything
+              below can be met on a vegetarian, vegan or omnivorous diet. And whichever you choose,
+              the foundation underneath it is a healthy gut, because absorption — not just intake —
+              decides what your knee actually receives.
             </p>
             <p className="font-sans text-muted-foreground leading-relaxed">
               For clinical detail on knee conditions and diagnosis, visit{" "}
