@@ -177,8 +177,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="https://mykneescan.com/" target="_blank" rel="noopener" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  MyKneeScan: same-day knee MRI
+                <a href="https://mykneescore.com/" target="_blank" rel="noopener" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  MyKneeScore: knee assessment
                 </a>
               </li>
             </ul>

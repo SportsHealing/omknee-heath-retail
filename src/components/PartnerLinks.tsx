@@ -1,6 +1,6 @@
 /**
  * PartnerLinks - contextual signposting to the clinical partner network
- * (SportsHealing, Mr Chinmay Gupte, MyKneeScan).
+ * (SportsHealing, Mr Chinmay Gupte, MyKneeScore).
  *
  * Links are descriptive, followed, and open in a new tab so the reader keeps
  * their place on this page.

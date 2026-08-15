@@ -56,7 +56,7 @@ const KneeIntroSection = () => {
               collagen and joint health
             </a>
             ,{" "}
-            <a href="https://mykneescan.com/assessment" target="_blank" rel="noopener" className="text-primary underline underline-offset-4">
+            <a href="https://mykneescore.com/" target="_blank" rel="noopener" className="text-primary underline underline-offset-4">
               a 60-second knee triage test
             </a>{" "}
             and{" "}

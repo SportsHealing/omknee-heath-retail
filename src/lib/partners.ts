@@ -18,7 +18,7 @@ export interface PartnerLink {
   partner: PartnerKey;
 }
 
-export type PartnerKey = "sportshealing" | "chinmaygupte" | "mykneescan";
+export type PartnerKey = "sportshealing" | "chinmaygupte" | "mykneescore";
 
 export interface Partner {
   key: PartnerKey;
@@ -48,14 +48,14 @@ export const PARTNERS: Record<PartnerKey, Partner> = {
     description:
       "Complex knee specialist with a PhD in knee ligament research, covering ACL and meniscus injury, patellofemoral instability, osteoarthritis and knee replacement, plus rehabilitation protocols.",
   },
-  mykneescan: {
-    key: "mykneescan",
-    name: "MyKneeScan",
-    domain: "mykneescan.com",
-    url: "https://mykneescan.com/",
-    role: "Same-day knee MRI, Harley Street",
+  mykneescore: {
+    key: "mykneescore",
+    name: "MyKneeScore",
+    domain: "mykneescore.com",
+    url: "https://mykneescore.com/",
+    role: "Knee health assessment",
     description:
-      "Same-day knee MRI scanning in London with an expert orthopaedic report, plus a 60-second knee triage questionnaire that returns a red–amber–green urgency score.",
+      "Evidence-based knee assessment and triage tools that help you understand your symptoms and urgency, with onward pathways to clinical care and imaging when needed.",
   },
 };
 
@@ -101,9 +101,9 @@ export const PARTNER_LINKS = {
       blurb: "Personalised, evidence-based care that protects long-term joint health.",
     },
     {
-      partner: "mykneescan",
+      partner: "mykneescore",
       label: "60-second knee triage test",
-      href: "https://mykneescan.com/assessment",
+      href: "https://mykneescore.com/",
       blurb: "Ten questions, an instant red–amber–green urgency score. Not a diagnosis.",
     },
   ],
@@ -195,15 +195,15 @@ export const PARTNER_LINKS = {
   ],
   imaging: [
     {
-      partner: "mykneescan",
+      partner: "mykneescore",
       label: "Book a same-day knee MRI in London",
-      href: "https://mykneescan.com/booking",
+      href: "https://mykneescore.com/booking",
       blurb: "Harley Street scanning with an expert orthopaedic report.",
     },
     {
-      partner: "mykneescan",
+      partner: "mykneescore",
       label: "Expert MRI report review",
-      href: "https://mykneescan.com/expert-review",
+      href: "https://mykneescore.com/expert-review",
       blurb: "A specialist reads your scan and explains what it shows.",
     },
     {

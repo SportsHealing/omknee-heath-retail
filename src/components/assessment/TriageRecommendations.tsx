@@ -128,12 +128,12 @@ export default function TriageRecommendations({ band, className }: TriageRecomme
             </Button>
           )}
           {showImagingCTA && (
-            <Button asChild variant="outline" className="w-full">
-              <a href="https://mykneescan.com" target="_blank" rel="noopener noreferrer">
-                <ImageIcon className="w-4 h-4 mr-2" />
-                Explore Imaging
-              </a>
-            </Button>
+              <Button asChild variant="outline" className="w-full">
+                <a href="https://mykneescore.com" target="_blank" rel="noopener noreferrer">
+                  <ImageIcon className="w-4 h-4 mr-2" />
+                  Explore Imaging
+                </a>
+              </Button>
           )}
           {showBloodsCTA && (
             <Button asChild variant="outline" className="w-full">
