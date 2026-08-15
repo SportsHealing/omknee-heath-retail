@@ -172,10 +172,10 @@ const Biomechanics = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Knee Biomechanics: Move Better, Load Better | OmKneeHealth"
-        description="Evidence-informed, plain-English guidance on knee biomechanics: quadriceps and hip strength, movement control, gait, range of movement and flexibility."
+        title="Knee Strengthening Exercises & Biomechanics Guide"
+        description="How to strengthen knees: evidence-informed knee strengthening exercises, quadriceps and hip strength, movement control, gait and range of movement, in plain English."
         canonicalPath="/knee-biomechanics"
-        keywords="knee biomechanics, quadriceps strength knee, knee valgus, gait retraining knee, knee range of movement"
+        keywords="knee strengthening exercises, how to strengthen knees, knee exercises, exercises for knee pain, knee biomechanics, quadriceps strength knee, knee valgus, gait retraining knee, knee range of movement, runner's knee"
       />
       <BreadcrumbSchema
         items={[
@@ -208,7 +208,7 @@ const Biomechanics = () => {
               Pillar Three of Five
             </p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-foreground leading-tight mb-6">
-              Improving Knee Biomechanics
+              Knee Strengthening Exercises &amp; Biomechanics
             </h1>
             <p className="font-sans text-lg text-muted-foreground leading-relaxed">
               Your knee does not choose how much force passes through it — your muscles, your hips

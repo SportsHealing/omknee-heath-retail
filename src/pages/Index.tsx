@@ -21,10 +21,10 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Knee Health & Wellness | Everything About Your Knee | OmKneeHealth"
-        description="Understand your knee joint, the collagen-rich structures inside it, and how to maintain knee health through wellness, nutrition, biomechanics, load and injury prevention."
+        title="Knee Health: Knee Pain Causes & Exercises Explained"
+        description="Understand your knee joint, common causes of knee pain, and how to keep knees healthy with exercises, nutrition, biomechanics, load management and injury prevention."
         canonicalPath="/"
-        keywords="knee health, knee anatomy, knee joint supplement UK, collagen for knees, synovial fluid, knee biomechanics, knee injury prevention"
+        keywords="knee pain, knee pain causes, knee health, knee joint, knee anatomy, knee exercises, knee strengthening exercises, exercises for knee pain, how to strengthen knees, how to improve knee health, knee osteoarthritis, arthritis in knee, swollen knee, inner knee pain, outer knee pain, pain behind the knee, runner's knee, knee pain in women, collagen for knees, knee biomechanics"
       />
       <OrganizationSchema />
       <WebPageSchema
