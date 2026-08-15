@@ -79,7 +79,7 @@ const topics = [
     plain:
       "Grip is a trade-off: more grip means better performance and more rotational force through the knee when the foot sticks.",
     evidence:
-      "Studies of shoe–surface interaction report higher rotational traction is associated with increased non-contact knee injury risk in some sports and surfaces, although evidence quality varies and findings are not uniform [4].",
+      "Studies of shoe–surface interaction and a systematic review with meta-analysis found that higher shoe–surface interaction is associated with roughly double the risk of lower-limb injury in football codes [4].",
     actions: [
       "Match studs and soles to the surface you are actually playing on",
       "Replace worn footwear — cushioning and grip degrade before shoes look finished",
@@ -131,8 +131,8 @@ const references: Reference[] = [
   },
   {
     n: 4,
-    text: "Cook JL, Purdam CR. Is tendon pathology a continuum? A pathology model to explain the clinical presentation of load-induced tendinopathy. British Journal of Sports Medicine. 2009;43(6):409–416.",
-    url: "https://doi.org/10.1136/bjsm.2008.051193",
+    text: "Thomson A, Whiteley R, Bleakley C. Higher shoe-surface interaction is associated with doubling of lower extremity injury risk in football codes: a systematic review and meta-analysis. British Journal of Sports Medicine. 2015;49(19):1245–1252.",
+    url: "https://doi.org/10.1136/bjsports-2014-094478",
   },
   {
     n: 5,
