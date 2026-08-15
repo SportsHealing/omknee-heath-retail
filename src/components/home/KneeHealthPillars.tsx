@@ -7,7 +7,7 @@
 import { Link } from "react-router-dom";
 import { HeartPulse, Salad, Activity, Gauge, ShieldCheck, ArrowRight } from "lucide-react";
 
-const pillars = [
+const pillars: { id: string; href?: string; icon: typeof HeartPulse; title: string; summary: string; points: string[] }[] = [
   {
     id: "general-health-wellness",
     href: "/knee-health-wellness",
