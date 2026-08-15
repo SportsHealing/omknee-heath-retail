@@ -354,7 +354,7 @@ const HealthAndWellness = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Button asChild>
-                <Link to="/#nutrition-diet">Nutrition &amp; Diet</Link>
+                <Link to="/knee-nutrition-diet">Nutrition &amp; Diet</Link>
               </Button>
               <Button variant="outline" asChild>
                 <Link to="/assessment">Take the free knee assessment</Link>

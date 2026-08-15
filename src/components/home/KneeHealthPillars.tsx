@@ -25,6 +25,7 @@ const pillars: { id: string; href?: string; icon: typeof HeartPulse; title: stri
   },
   {
     id: "nutrition-diet",
+    href: "/knee-nutrition-diet",
     icon: Salad,
     title: "Nutrition & Diet",
     summary:

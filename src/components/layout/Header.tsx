@@ -10,7 +10,7 @@ const Header = () => {
 
   const navItems = [
     { to: "/knee-health-wellness", label: "Health & Wellness" },
-    { to: "/#nutrition-diet", label: "Nutrition & Diet" },
+    { to: "/knee-nutrition-diet", label: "Nutrition & Diet" },
     { to: "/#knee-biomechanics", label: "Biomechanics" },
     { to: "/#managing-load", label: "Managing Load" },
     { to: "/#injury-prevention", label: "Injury Prevention" },
