@@ -10,6 +10,7 @@ import Science from "./pages/Science";
 import Assessment from "./pages/Assessment";
 import Learn from "./pages/Learn";
 import About from "./pages/About";
+import HealthAndWellness from "./pages/pillars/HealthAndWellness";
 import Curated from "./pages/Curated";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
@@ -63,6 +64,7 @@ const App = () => (
           <Route path="/assessment" element={<Assessment />} />
           <Route path="/learn" element={<Learn />} />
           <Route path="/about" element={<About />} />
+          <Route path="/knee-health-wellness" element={<HealthAndWellness />} />
           <Route path="/curated" element={<Curated />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
