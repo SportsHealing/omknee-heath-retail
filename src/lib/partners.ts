@@ -18,7 +18,7 @@ export interface PartnerLink {
   partner: PartnerKey;
 }
 
-export type PartnerKey = "sportshealing" | "chinmaygupte" | "mykneescan";
+export type PartnerKey = "sportshealing" | "chinmaygupte" | "mykneescore";
 
 export interface Partner {
   key: PartnerKey;
@@ -48,14 +48,14 @@ export const PARTNERS: Record<PartnerKey, Partner> = {
     description:
       "Complex knee specialist with a PhD in knee ligament research, covering ACL and meniscus injury, patellofemoral instability, osteoarthritis and knee replacement, plus rehabilitation protocols.",
   },
-  mykneescan: {
-    key: "mykneescan",
-    name: "MyKneeScan",
-    domain: "mykneescan.com",
-    url: "https://mykneescan.com/",
-    role: "Same-day knee MRI, Harley Street",
+  mykneescore: {
+    key: "mykneescore",
+    name: "MyKneeScore",
+    domain: "mykneescore.com",
+    url: "https://mykneescore.com/",
+    role: "Knee health assessment",
     description:
-      "Same-day knee MRI scanning in London with an expert orthopaedic report, plus a 60-second knee triage questionnaire that returns a red–amber–green urgency score.",
+      "Evidence-based knee assessment and triage tools that help you understand your symptoms and urgency, with onward pathways to clinical care and imaging when needed.",
   },
 };
 
