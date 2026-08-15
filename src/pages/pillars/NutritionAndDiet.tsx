@@ -237,6 +237,8 @@ const dayPlate = [
   "Through the day: water, and tea or coffee within sensible limits",
 ];
 
+const linkClass = "text-primary underline underline-offset-4";
+
 const faqs = [
   {
     question: "Is there a diet that reverses knee wear?",
@@ -245,18 +247,77 @@ const faqs = [
   },
   {
     question: "Does added sugar affect collagen and knee health?",
-    answer:
-      "Sugar does not directly damage cartilage, but diets high in added sugar are associated with a process called glycation, in which sugar molecules attach to proteins including collagen. Over time this can make collagen fibres stiffer and more fragile, which may affect the quality of connective tissue. High-sugar diets are also associated with higher inflammatory markers and weight gain, both of which can increase the load on a knee. Reducing added sugar supports normal collagen maintenance and overall metabolic balance.",
+    answer: (
+      <>
+        <p>
+          Sugar does not directly damage cartilage, but diets high in added sugar are associated with a process called glycation, in which sugar molecules attach to proteins including collagen. Over time this can make collagen fibres stiffer and more fragile, which may affect the quality of connective tissue. High-sugar diets are also associated with higher inflammatory markers and weight gain, both of which can increase the load on a knee. Reducing added sugar supports normal collagen maintenance and overall metabolic balance.
+        </p>
+        <p className="mt-3 text-sm">
+          <strong>Related guidance:</strong>{" "}
+          <a href="#gut-foundation" className={linkClass}>
+            Your gut is the foundation
+          </a>
+          ,{" "}
+          <Link to="/knee-health-wellness" className={linkClass}>
+            Health &amp; Wellness
+          </Link>
+        </p>
+      </>
+    ),
+    textAnswer:
+      "Sugar does not directly damage cartilage, but diets high in added sugar are associated with a process called glycation, in which sugar molecules attach to proteins including collagen. Over time this can make collagen fibres stiffer and more fragile, which may affect the quality of connective tissue. High-sugar diets are also associated with higher inflammatory markers and weight gain, both of which can increase the load on a knee. Reducing added sugar supports normal collagen maintenance and overall metabolic balance. Related guidance: Your gut is the foundation and Health & Wellness.",
   },
   {
     question: "How do ultra-processed foods affect gut health and nutrient absorption?",
-    answer:
-      "Ultra-processed foods tend to be low in fibre and plant polyphenols while being high in refined fats, salt and additives. This pattern is associated with a less diverse gut microbiome and poorer markers of gut function. Because gut health determines how well you absorb calcium, vitamin D, zinc and other nutrients used in joint tissue maintenance, a diet high in UPFs may undermine an otherwise healthy diet. Choosing whole foods, a wide variety of fibres and fermented foods supports normal gut function and nutrient absorption.",
+    answer: (
+      <>
+        <p>
+          Ultra-processed foods tend to be low in fibre and plant polyphenols while being high in refined fats, salt and additives. This pattern is associated with a less diverse gut microbiome and poorer markers of gut function. Because gut health determines how well you absorb calcium, vitamin D, zinc and other nutrients used in joint tissue maintenance, a diet high in UPFs may undermine an otherwise healthy diet. Choosing whole foods, a wide variety of fibres and fermented foods supports normal gut function and nutrient absorption.
+        </p>
+        <p className="mt-3 text-sm">
+          <strong>Related guidance:</strong>{" "}
+          <a href="#gut-foundation" className={linkClass}>
+            Your gut is the foundation
+          </a>
+          ,{" "}
+          <a href="#plant-based-eating" className={linkClass}>
+            Plant-based eating guide
+          </a>
+        </p>
+      </>
+    ),
+    textAnswer:
+      "Ultra-processed foods tend to be low in fibre and plant polyphenols while being high in refined fats, salt and additives. This pattern is associated with a less diverse gut microbiome and poorer markers of gut function. Because gut health determines how well you absorb calcium, vitamin D, zinc and other nutrients used in joint tissue maintenance, a diet high in UPFs may undermine an otherwise healthy diet. Choosing whole foods, a wide variety of fibres and fermented foods supports normal gut function and nutrient absorption. Related guidance: Your gut is the foundation and Plant-based eating guide.",
   },
   {
     question: "Can cutting out sugar and UPFs fix my knee?",
-    answer:
-      "No single dietary change can fix or cure a knee problem. However, reducing added sugar and ultra-processed foods can support normal collagen maintenance, a healthy gut microbiome, a healthy body weight and a lower inflammatory background — all of which create a more supportive environment for your knee. This works best as part of a broader approach that includes movement, load management, sleep and, when needed, clinical care.",
+    answer: (
+      <>
+        <p>
+          No single dietary change can fix or cure a knee problem. However, reducing added sugar and ultra-processed foods can support normal collagen maintenance, a healthy gut microbiome, a healthy body weight and a lower inflammatory background — all of which create a more supportive environment for your knee. This works best as part of a broader approach that includes movement, load management, sleep and, when needed, clinical care.
+        </p>
+        <p className="mt-3 text-sm">
+          <strong>Related guidance:</strong>{" "}
+          <Link to="/knee-health-wellness" className={linkClass}>
+            Health &amp; Wellness
+          </Link>
+          ,{" "}
+          <Link to="/knee-biomechanics" className={linkClass}>
+            Biomechanics
+          </Link>
+          ,{" "}
+          <Link to="/knee-managing-load" className={linkClass}>
+            Managing Load
+          </Link>
+          ,{" "}
+          <Link to="/knee-injury-prevention" className={linkClass}>
+            Injury Prevention
+          </Link>
+        </p>
+      </>
+    ),
+    textAnswer:
+      "No single dietary change can fix or cure a knee problem. However, reducing added sugar and ultra-processed foods can support normal collagen maintenance, a healthy gut microbiome, a healthy body weight and a lower inflammatory background — all of which create a more supportive environment for your knee. This works best as part of a broader approach that includes movement, load management, sleep and, when needed, clinical care. Related guidance: Health & Wellness, Biomechanics, Managing Load, Injury Prevention.",
   },
   {
     question: "Should I avoid nightshades, gluten or dairy for my knees?",
@@ -280,13 +341,43 @@ const faqs = [
   },
   {
     question: "Can a vegetarian or vegan diet support knee health as well as an omnivorous one?",
-    answer:
-      "Yes. Every nutrient your knee relies on — protein and its amino acids, vitamin C, calcium, vitamin D, zinc, copper, manganese and omega-3 — is available from plant or fortified sources. A well-planned vegetarian or vegan diet needs a little more attention to vitamin B12, iodine, iron and EPA/DHA, all of which are covered by fortified foods or a supplement. The foods differ; the building blocks do not.",
+    answer: (
+      <>
+        <p>
+          Yes. Every nutrient your knee relies on — protein and its amino acids, vitamin C, calcium, vitamin D, zinc, copper, manganese and omega-3 — is available from plant or fortified sources. A well-planned vegetarian or vegan diet needs a little more attention to vitamin B12, iodine, iron and EPA/DHA, all of which are covered by fortified foods or a supplement. The foods differ; the building blocks do not.
+        </p>
+        <p className="mt-3 text-sm">
+          <strong>Related guidance:</strong>{" "}
+          <a href="#plant-based-eating" className={linkClass}>
+            Vegetarian &amp; plant-based nutrient guide
+          </a>
+        </p>
+      </>
+    ),
+    textAnswer:
+      "Yes. Every nutrient your knee relies on — protein and its amino acids, vitamin C, calcium, vitamin D, zinc, copper, manganese and omega-3 — is available from plant or fortified sources. A well-planned vegetarian or vegan diet needs a little more attention to vitamin B12, iodine, iron and EPA/DHA, all of which are covered by fortified foods or a supplement. The foods differ; the building blocks do not. Related guidance: Vegetarian and plant-based nutrient guide.",
   },
   {
     question: "Why does gut health matter if I already eat well?",
-    answer:
-      "What you eat is not the same as what you absorb. Digestion and absorption happen in the gut, so a poorly functioning gut can leave you short of nutrients despite a good diet. Fibre variety, fermented foods, sleep, movement and stress all influence gut function. If you have persistent bloating, altered bowel habit, unexplained weight loss or suspected malabsorption, see your GP rather than self-treating.",
+    answer: (
+      <>
+        <p>
+          What you eat is not the same as what you absorb. Digestion and absorption happen in the gut, so a poorly functioning gut can leave you short of nutrients despite a good diet. Fibre variety, fermented foods, sleep, movement and stress all influence gut function. If you have persistent bloating, altered bowel habit, unexplained weight loss or suspected malabsorption, see your GP rather than self-treating.
+        </p>
+        <p className="mt-3 text-sm">
+          <strong>Related guidance:</strong>{" "}
+          <a href="#gut-foundation" className={linkClass}>
+            Your gut is the foundation
+          </a>
+          ,{" "}
+          <Link to="/knee-health-wellness" className={linkClass}>
+            Health &amp; Wellness
+          </Link>
+        </p>
+      </>
+    ),
+    textAnswer:
+      "What you eat is not the same as what you absorb. Digestion and absorption happen in the gut, so a poorly functioning gut can leave you short of nutrients despite a good diet. Fibre variety, fermented foods, sleep, movement and stress all influence gut function. If you have persistent bloating, altered bowel habit, unexplained weight loss or suspected malabsorption, see your GP rather than self-treating. Related guidance: Your gut is the foundation and Health & Wellness.",
   },
 ];
 
