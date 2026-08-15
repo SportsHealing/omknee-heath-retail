@@ -336,6 +336,101 @@ const NutritionAndDiet = () => {
           </div>
         </section>
 
+        {/* Gut health foundation */}
+        <section className="container mx-auto px-6 pb-16">
+          <div className="max-w-4xl mx-auto rounded-xl border border-border bg-background p-7 md:p-8">
+            <div className="flex items-start gap-4 mb-4">
+              <div className="w-11 h-11 shrink-0 rounded-full bg-primary/10 flex items-center justify-center">
+                <Sprout className="w-5 h-5 text-primary" />
+              </div>
+              <h2 className="font-serif text-xl md:text-2xl text-foreground pt-1">
+                Your gut is the foundation
+              </h2>
+            </div>
+            <p className="font-sans text-foreground leading-relaxed mb-4">
+              However organic your food or well-chosen your supplements, none of it reaches your
+              knee until your gut has broken it down and absorbed it. What you eat and what you
+              actually take up are two different things, and that gap is individual — it depends on
+              your digestion, your gut lining, your microbiome, your medicines and your age.
+            </p>
+            <p className="font-sans text-sm text-muted-foreground leading-relaxed border-l-2 border-accent pl-4 mb-5">
+              <span className="uppercase tracking-[0.15em] text-[0.65rem] text-primary/80 block mb-1">
+                What the evidence suggests
+              </span>
+              A diverse, fibre-rich diet is consistently associated with a more diverse gut
+              microbiome and better markers of gut function. Dietary fibre contributes to normal
+              bowel function. Absorption of several nutrients relevant to joint tissue — including
+              calcium, iron, zinc and the fat-soluble vitamins — is reduced when digestion is
+              impaired, which is why two people on the same diet can end up in very different
+              places.
+            </p>
+            <h3 className="font-sans text-sm font-medium text-foreground mb-2">
+              Everyday habits that support a healthy gut
+            </h3>
+            <ul className="space-y-2">
+              {gutHabits.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-2 font-sans text-sm text-foreground"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Vegetarian / omnivore equivalence */}
+        <section className="container mx-auto px-6 pb-16">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-start gap-4 mb-3">
+              <div className="w-11 h-11 shrink-0 rounded-full bg-primary/10 flex items-center justify-center">
+                <Leaf className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <h2 className="font-serif text-2xl md:text-3xl text-foreground">
+                  Vegetarian, vegan or omnivorous — all of it works
+                </h2>
+                <p className="font-sans text-sm text-muted-foreground mt-2 max-w-2xl">
+                  Many of the examples on this page happen to be animal foods because they are
+                  concentrated and familiar, but nothing here requires them. Every nutrient your
+                  knee depends on can be supplied by a plant-based or fortified alternative. Choose
+                  the pattern you will actually keep to.
+                </p>
+              </div>
+            </div>
+            <div className="rounded-xl border border-border overflow-hidden mt-6">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className="font-sans">Nutrient</TableHead>
+                    <TableHead className="font-sans">Omnivorous sources</TableHead>
+                    <TableHead className="font-sans">Vegetarian &amp; plant-based sources</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {plantSwaps.map((row) => (
+                    <TableRow key={row.nutrient}>
+                      <TableCell className="font-sans font-medium text-foreground">
+                        {row.nutrient}
+                      </TableCell>
+                      <TableCell className="font-sans text-muted-foreground">
+                        {row.omnivore}
+                      </TableCell>
+                      <TableCell className="font-sans text-muted-foreground">{row.plant}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+            <p className="font-sans text-xs text-muted-foreground mt-4">
+              Vitamin B12 and iodine need a fortified food or supplement on a fully plant-based
+              diet. Our own supplement is available in both marine and vegetarian formulations.
+            </p>
+          </div>
+        </section>
+
         {/* Topics */}
         <section className="container mx-auto px-6 pb-16">
           <div className="max-w-4xl mx-auto space-y-6">
