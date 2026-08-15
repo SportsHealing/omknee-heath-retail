@@ -12,6 +12,9 @@ import Learn from "./pages/Learn";
 import About from "./pages/About";
 import HealthAndWellness from "./pages/pillars/HealthAndWellness";
 import NutritionAndDiet from "./pages/pillars/NutritionAndDiet";
+import Biomechanics from "./pages/pillars/Biomechanics";
+import ManagingLoad from "./pages/pillars/ManagingLoad";
+import InjuryPrevention from "./pages/pillars/InjuryPrevention";
 import Curated from "./pages/Curated";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
@@ -67,6 +70,9 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/knee-health-wellness" element={<HealthAndWellness />} />
           <Route path="/knee-nutrition-diet" element={<NutritionAndDiet />} />
+          <Route path="/knee-biomechanics" element={<Biomechanics />} />
+          <Route path="/knee-managing-load" element={<ManagingLoad />} />
+          <Route path="/knee-injury-prevention" element={<InjuryPrevention />} />
           <Route path="/curated" element={<Curated />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />

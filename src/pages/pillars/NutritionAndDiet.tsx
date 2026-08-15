@@ -429,7 +429,7 @@ const NutritionAndDiet = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Button asChild>
-                <Link to="/#knee-biomechanics">
+                <Link to="/knee-biomechanics">
                   Biomechanics
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>

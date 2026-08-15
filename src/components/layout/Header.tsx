@@ -11,9 +11,9 @@ const Header = () => {
   const navItems = [
     { to: "/knee-health-wellness", label: "Health & Wellness" },
     { to: "/knee-nutrition-diet", label: "Nutrition & Diet" },
-    { to: "/#knee-biomechanics", label: "Biomechanics" },
-    { to: "/#managing-load", label: "Managing Load" },
-    { to: "/#injury-prevention", label: "Injury Prevention" },
+    { to: "/knee-biomechanics", label: "Biomechanics" },
+    { to: "/knee-managing-load", label: "Managing Load" },
+    { to: "/knee-injury-prevention", label: "Injury Prevention" },
     { to: "/product", label: "Supplements" },
     { to: "/curated", label: "Curated Knee Products" },
   ];
