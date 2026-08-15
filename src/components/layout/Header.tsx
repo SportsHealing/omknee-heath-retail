@@ -9,7 +9,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const navItems = [
-    { to: "/#general-health-wellness", label: "Health & Wellness" },
+    { to: "/knee-health-wellness", label: "Health & Wellness" },
     { to: "/#nutrition-diet", label: "Nutrition & Diet" },
     { to: "/#knee-biomechanics", label: "Biomechanics" },
     { to: "/#managing-load", label: "Managing Load" },

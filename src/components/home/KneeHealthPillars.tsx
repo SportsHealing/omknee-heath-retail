@@ -4,11 +4,13 @@
  * biomechanics, load management, injury prevention.
  */
 
-import { HeartPulse, Salad, Activity, Gauge, ShieldCheck } from "lucide-react";
+import { Link } from "react-router-dom";
+import { HeartPulse, Salad, Activity, Gauge, ShieldCheck, ArrowRight } from "lucide-react";
 
-const pillars = [
+const pillars: { id: string; href?: string; icon: typeof HeartPulse; title: string; summary: string; points: string[] }[] = [
   {
     id: "general-health-wellness",
+    href: "/knee-health-wellness",
     icon: HeartPulse,
     title: "General Health & Wellness",
     summary:
@@ -138,6 +140,15 @@ const KneeHealthPillars = () => {
                   </li>
                 ))}
               </ul>
+              {pillar.href && (
+                <Link
+                  to={pillar.href}
+                  className="mt-5 inline-flex items-center gap-2 font-sans text-sm text-primary hover:underline underline-offset-4 min-h-[44px]"
+                >
+                  Read the full guide
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              )}
             </article>
           ))}
         </div>
