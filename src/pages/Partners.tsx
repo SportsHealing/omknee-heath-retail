@@ -21,7 +21,7 @@ const allLinks = Object.values(PARTNER_LINKS)
 const partnerOrder: { key: PartnerKey; icon: typeof Stethoscope }[] = [
   { key: "sportshealing", icon: HeartPulse },
   { key: "chinmaygupte", icon: Stethoscope },
-  { key: "mykneescan", icon: ScanLine },
+  { key: "mykneescore", icon: ScanLine },
 ];
 
 const Partners = () => {
@@ -29,9 +29,9 @@ const Partners = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title="Clinical Partners: Knee Specialists, Surgery and MRI"
-        description="Our clinical partner network for the knee: SportsHealing musculoskeletal care, consultant knee surgeon Mr Chinmay Gupte, and same-day knee MRI at MyKneeScan in London."
+        description="Our clinical partner network for the knee: SportsHealing musculoskeletal care, consultant knee surgeon Mr Chinmay Gupte, and knee assessment and imaging at MyKneeScore."
         canonicalPath="/partners"
-        keywords="knee specialist london, knee surgeon london, same day knee MRI, sportshealing, chinmay gupte, mykneescan"
+        keywords="knee specialist london, knee surgeon london, same day knee MRI, sportshealing, chinmay gupte, mykneescore"
       />
       <BreadcrumbSchema
         items={[
@@ -149,7 +149,7 @@ const Partners = () => {
               <li>
                 <strong className="text-foreground">Symptoms you cannot place</strong> — the{" "}
                 <a
-                  href="https://mykneescan.com/assessment"
+                  href="https://mykneescore.com/"
                   target="_blank"
                   rel="noopener"
                   className="text-primary underline underline-offset-4"
@@ -165,7 +165,7 @@ const Partners = () => {
               <li>
                 <strong className="text-foreground">A scan has been suggested</strong> —{" "}
                 <a
-                  href="https://mykneescan.com/booking"
+                  href="https://mykneescore.com/booking"
                   target="_blank"
                   rel="noopener"
                   className="text-primary underline underline-offset-4"

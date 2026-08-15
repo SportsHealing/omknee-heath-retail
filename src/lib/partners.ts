@@ -101,9 +101,9 @@ export const PARTNER_LINKS = {
       blurb: "Personalised, evidence-based care that protects long-term joint health.",
     },
     {
-      partner: "mykneescan",
+      partner: "mykneescore",
       label: "60-second knee triage test",
-      href: "https://mykneescan.com/assessment",
+      href: "https://mykneescore.com/",
       blurb: "Ten questions, an instant red–amber–green urgency score. Not a diagnosis.",
     },
   ],
@@ -195,15 +195,15 @@ export const PARTNER_LINKS = {
   ],
   imaging: [
     {
-      partner: "mykneescan",
+      partner: "mykneescore",
       label: "Book a same-day knee MRI in London",
-      href: "https://mykneescan.com/booking",
+      href: "https://mykneescore.com/booking",
       blurb: "Harley Street scanning with an expert orthopaedic report.",
     },
     {
-      partner: "mykneescan",
+      partner: "mykneescore",
       label: "Expert MRI report review",
-      href: "https://mykneescan.com/expert-review",
+      href: "https://mykneescore.com/expert-review",
       blurb: "A specialist reads your scan and explains what it shows.",
     },
     {

@@ -78,7 +78,7 @@ const OrganizationSchema = () => {
       sameAs: [
         "https://www.sportshealing.com/",
         "https://www.chinmaygupte.com/",
-        "https://mykneescan.com/",
+        "https://mykneescore.com/",
       ],
     };
 

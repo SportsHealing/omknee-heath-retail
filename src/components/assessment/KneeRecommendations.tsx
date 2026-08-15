@@ -602,7 +602,7 @@ export const KneeRecommendations = ({ kneeScore, sleepScore, useIndexScore = tru
           </a>
         </Button>
         <Button asChild variant="outline" className="w-full">
-          <a href="https://mykneescan.com" target="_blank" rel="noopener noreferrer" id="book-imaging-cta">
+          <a href="https://mykneescore.com" target="_blank" rel="noopener noreferrer" id="book-imaging-cta">
             <ImageIcon className="w-4 h-4 mr-2" />
             Explore Imaging
           </a>
