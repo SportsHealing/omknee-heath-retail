@@ -248,6 +248,16 @@ const faqs = [
     answer:
       "Food first is the right order. The common UK exception is vitamin D in autumn and winter, which NHS guidance recommends for adults generally. Beyond that, supplements are intended to complement a balanced diet, not replace it.",
   },
+  {
+    question: "Can a vegetarian or vegan diet support knee health as well as an omnivorous one?",
+    answer:
+      "Yes. Every nutrient your knee relies on — protein and its amino acids, vitamin C, calcium, vitamin D, zinc, copper, manganese and omega-3 — is available from plant or fortified sources. A well-planned vegetarian or vegan diet needs a little more attention to vitamin B12, iodine, iron and EPA/DHA, all of which are covered by fortified foods or a supplement. The foods differ; the building blocks do not.",
+  },
+  {
+    question: "Why does gut health matter if I already eat well?",
+    answer:
+      "What you eat is not the same as what you absorb. Digestion and absorption happen in the gut, so a poorly functioning gut can leave you short of nutrients despite a good diet. Fibre variety, fermented foods, sleep, movement and stress all influence gut function. If you have persistent bloating, altered bowel habit, unexplained weight loss or suspected malabsorption, see your GP rather than self-treating.",
+  },
 ];
 
 const NutritionAndDiet = () => {
