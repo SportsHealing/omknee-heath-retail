@@ -8,6 +8,16 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const navItems = [
+    { to: "/#general-health-wellness", label: "Health & Wellness" },
+    { to: "/#nutrition-diet", label: "Nutrition & Diet" },
+    { to: "/#knee-biomechanics", label: "Biomechanics" },
+    { to: "/#managing-load", label: "Managing Load" },
+    { to: "/#injury-prevention", label: "Injury Prevention" },
+    { to: "/product", label: "Supplements" },
+    { to: "/curated", label: "Curated Knee Products" },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -38,25 +48,16 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
-            <Link to="/product" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Joint Health Supplement
-            </Link>
-            <Link to="/ingredients" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Ingredients
-            </Link>
-            <Link to="/science" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Evidence & Science
-            </Link>
-            <Link to="/curated" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Curated Knee Essentials
-            </Link>
-            <Link to="/faq" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
-              FAQ
-            </Link>
-            <Link to="/about" className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors">
-              About
-            </Link>
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-5">
+            {navItems.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className="font-sans text-xs xl:text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
 
           {/* Right side */}
@@ -86,48 +87,16 @@ const Header = () => {
         {mobileMenuOpen && (
           <div className="lg:hidden py-4 border-t border-border/50 animate-fade-up bg-background absolute left-0 right-0 top-full shadow-lg">
             <nav className="flex flex-col container px-6" role="navigation" aria-label="Mobile navigation">
-              <Link 
-                to="/product" 
-                className="font-sans text-sm text-foreground hover:text-primary transition-colors min-h-[44px] flex items-center py-3"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Joint Health Supplement
-              </Link>
-              <Link 
-                to="/ingredients" 
-                className="font-sans text-sm text-foreground hover:text-primary transition-colors min-h-[44px] flex items-center py-3"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Ingredients
-              </Link>
-              <Link 
-                to="/science" 
-                className="font-sans text-sm text-foreground hover:text-primary transition-colors min-h-[44px] flex items-center py-3"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Evidence & Science
-              </Link>
-              <Link 
-                to="/curated" 
-                className="font-sans text-sm text-foreground hover:text-primary transition-colors min-h-[44px] flex items-center py-3"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Curated Knee Essentials
-              </Link>
-              <Link 
-                to="/faq" 
-                className="font-sans text-sm text-foreground hover:text-primary transition-colors min-h-[44px] flex items-center py-3"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                FAQ
-              </Link>
-              <Link 
-                to="/about" 
-                className="font-sans text-sm text-foreground hover:text-primary transition-colors min-h-[44px] flex items-center py-3"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                About OmKneeHealth
-              </Link>
+              {navItems.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className="font-sans text-sm text-foreground hover:text-primary transition-colors min-h-[44px] flex items-center py-3"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
               <Button 
                 className="w-full mt-4 min-h-[44px]" 
                 size="default"
