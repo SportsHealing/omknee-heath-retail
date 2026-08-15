@@ -127,6 +127,20 @@ const topics = [
       "Drink before, during and after exercise rather than only afterwards",
     ],
   },
+  {
+    icon: CandyOff,
+    title: "Minimise ultra-processed foods and added sugar",
+    plain:
+      "Ultra-processed foods and added sugar do not only affect body weight. Diets high in sugar are associated with collagen glycation — a process in which sugar molecules attach to collagen fibres, making them stiffer and more prone to structural damage over time. UPFs also tend to crowd out the nutrient-dense foods your knee needs.",
+    evidence:
+      "High intakes of ultra-processed foods and added sugars are associated with higher inflammatory markers and poorer metabolic health. Glycation, especially the formation of advanced glycation end-products (AGEs), is linked to changes in collagen structure and connective-tissue ageing.",
+    actions: [
+      "Read labels: if sugar is in the first three ingredients, treat it as occasional",
+      "Swap sugary drinks for water, sparkling water or unsweetened tea and coffee",
+      "Choose whole foods over packaged snacks most of the time",
+      "Cook more meals from scratch — even simple home cooking reduces UPF intake",
+    ],
+  },
 ];
 
 const nutrientTable = [
