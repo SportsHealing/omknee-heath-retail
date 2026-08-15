@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, type ReactNode } from "react";
 
 interface FAQItem {
   question: string;
-  answer: string;
+  answer: string | ReactNode;
+  textAnswer?: string;
 }
 
 interface FAQSchemaProps {
@@ -23,7 +24,7 @@ const FAQSchema = ({ faqs }: FAQSchemaProps) => {
         name: faq.question,
         acceptedAnswer: {
           "@type": "Answer",
-          text: faq.answer,
+          text: faq.textAnswer || (typeof faq.answer === "string" ? faq.answer : ""),
         },
       })),
     };
