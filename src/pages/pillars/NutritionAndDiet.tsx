@@ -37,6 +37,8 @@ import {
   Droplets,
   Wheat,
   AlertTriangle,
+  Leaf,
+  Sprout,
 } from "lucide-react";
 
 const topics = [
