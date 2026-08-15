@@ -171,6 +171,49 @@ const nutrientTable = [
   },
 ];
 
+const plantSwaps = [
+  {
+    nutrient: "Protein",
+    omnivore: "Fish, poultry, eggs, dairy",
+    plant: "Lentils, chickpeas, beans, tofu, tempeh, seitan, soya yoghurt, nuts and seeds",
+  },
+  {
+    nutrient: "Collagen amino acids (glycine, proline)",
+    omnivore: "Bone broth, skin-on fish, slow-cooked cuts",
+    plant: "Soya, pulses, seeds and wholegrains supply the same amino acids, plus vitamin C to use them",
+  },
+  {
+    nutrient: "Calcium",
+    omnivore: "Dairy, tinned fish with bones",
+    plant: "Fortified plant milks and yoghurts, calcium-set tofu, kale, pak choi, almonds, tahini",
+  },
+  {
+    nutrient: "Omega-3 (EPA/DHA)",
+    omnivore: "Salmon, mackerel, sardines",
+    plant: "Algae oil for EPA/DHA, with walnuts, flaxseed, chia and rapeseed oil for ALA",
+  },
+  {
+    nutrient: "Vitamin D",
+    omnivore: "Oily fish, egg yolk, fortified foods",
+    plant: "Fortified foods and a vitamin D2 or lichen-derived D3 supplement",
+  },
+  {
+    nutrient: "Zinc, iron and B12",
+    omnivore: "Shellfish, meat, dairy",
+    plant: "Pulses, seeds, wholegrains and fortified foods; B12 needs a supplement or fortified source",
+  },
+];
+
+const gutHabits = [
+  "Aim for 30 different plants a week — variety feeds a wider range of gut bacteria",
+  "Around 30 g of fibre a day from wholegrains, pulses, vegetables, fruit, nuts and seeds",
+  "Include fermented foods most days: live yoghurt, kefir, sauerkraut, kimchi, miso",
+  "Increase fibre gradually and with plenty of fluid to avoid bloating",
+  "Chew properly and eat unhurried — digestion starts before food reaches the gut",
+  "Sleep, daily movement and stress management all measurably affect gut function",
+  "Only use antibiotics when genuinely needed, exactly as prescribed",
+];
+
 const dayPlate = [
   "Breakfast: Greek yoghurt or fortified soya yoghurt, berries, seeds and oats",
   "Lunch: large mixed salad with peppers and tomatoes, oily fish or pulses, olive oil dressing",
