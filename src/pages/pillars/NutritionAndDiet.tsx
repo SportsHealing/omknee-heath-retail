@@ -39,6 +39,7 @@ import {
   AlertTriangle,
   Leaf,
   Sprout,
+  CandyOff,
 } from "lucide-react";
 
 const topics = [
