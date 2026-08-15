@@ -7,7 +7,7 @@
  */
 
 import { ArrowUpRight } from "lucide-react";
-import { PARTNERS, PARTNER_LINKS, type PartnerTopic } from "@/lib/partners";
+import { PARTNERS, PARTNER_LINKS, type PartnerLink, type PartnerTopic } from "@/lib/partners";
 
 interface PartnerLinksProps {
   /** Which curated set of deep links to show. */
@@ -22,7 +22,7 @@ const PartnerLinks = ({
   intro = "OmKneeHealth covers everyday knee health and wellness. For clinical detail, imaging and specialist opinion, these partner resources pick up where this page stops.",
 }: PartnerLinksProps) => {
   const links = topics
-    .flatMap((topic) => PARTNER_LINKS[topic])
+    .flatMap((topic) => PARTNER_LINKS[topic] as PartnerLink[])
     .filter((link, i, arr) => arr.findIndex((l) => l.href === link.href) === i);
 
   return (

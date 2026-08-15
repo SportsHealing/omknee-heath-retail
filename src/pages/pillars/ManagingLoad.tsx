@@ -200,10 +200,10 @@ const ManagingLoad = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Managing Load for Knee Health | OmKneeHealth"
-        description="How much is too much? Evidence-informed, plain-English guidance on progressing activity, loading tendons, the 24-hour rule and recovery for healthier knees."
+        title="Runner's Knee & Managing Load: How Much Is Too Much?"
+        description="Why knees ache after activity: evidence-informed guidance on runner's knee, training load, tendon loading, the 24-hour rule and recovery, in plain English."
         canonicalPath="/knee-managing-load"
-        keywords="knee load management, training load knee, tendon loading, 24 hour rule knee pain, progressive overload knees"
+        keywords="runner's knee, knee pain running, knee load management, training load knee, tendon loading, 24 hour rule knee pain, progressive overload knees, is running bad for knees, swollen knee after exercise"
       />
       <BreadcrumbSchema
         items={[

@@ -169,10 +169,10 @@ const InjuryPrevention = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Knee Injury Prevention: What Works | OmKneeHealth"
-        description="Evidence-informed, plain-English knee injury prevention: structured warm-ups, strength and neuromuscular training, fatigue, footwear and full rehabilitation."
+        title="Knee Injury Prevention Exercises: What Actually Works"
+        description="Evidence-informed knee injury prevention: structured warm-ups, strength and neuromuscular exercises, fatigue, footwear and full rehabilitation, in plain English."
         canonicalPath="/knee-injury-prevention"
-        keywords="knee injury prevention, ACL prevention programme, FIFA 11+, neuromuscular training knee, landing technique"
+        keywords="knee injury prevention, knee injury prevention exercises, ACL prevention programme, FIFA 11+, neuromuscular training knee, landing technique, how to prevent knee pain when running, runner's knee prevention"
       />
       <BreadcrumbSchema
         items={[
@@ -205,7 +205,7 @@ const InjuryPrevention = () => {
               Pillar Five of Five
             </p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-foreground leading-tight mb-6">
-              Injury Prevention
+              Knee Injury Prevention
             </h1>
             <p className="font-sans text-lg text-muted-foreground leading-relaxed">
               Most serious knee injuries happen at the edges of control — tired, twisting, landing

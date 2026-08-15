@@ -201,7 +201,7 @@ const HealthAndWellness = () => {
               Pillar One of Five
             </p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-foreground leading-tight mb-6">
-              Knee Health &amp; Wellness
+              How to Improve Knee Health &amp; Wellness
             </h1>
             <p className="font-sans text-lg text-muted-foreground leading-relaxed">
               A healthy knee sits inside a healthy body. Long before exercises and supplements, how
