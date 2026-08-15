@@ -244,6 +244,21 @@ const faqs = [
       "No diet can reverse structural joint changes, and you should be sceptical of anything claiming otherwise. What nutrition can do is supply the raw material your body uses for its normal maintenance of cartilage, bone and muscle, and support a healthy weight — both of which matter for how a knee feels and functions.",
   },
   {
+    question: "Does added sugar affect collagen and knee health?",
+    answer:
+      "Sugar does not directly damage cartilage, but diets high in added sugar are associated with a process called glycation, in which sugar molecules attach to proteins including collagen. Over time this can make collagen fibres stiffer and more fragile, which may affect the quality of connective tissue. High-sugar diets are also associated with higher inflammatory markers and weight gain, both of which can increase the load on a knee. Reducing added sugar supports normal collagen maintenance and overall metabolic balance.",
+  },
+  {
+    question: "How do ultra-processed foods affect gut health and nutrient absorption?",
+    answer:
+      "Ultra-processed foods tend to be low in fibre and plant polyphenols while being high in refined fats, salt and additives. This pattern is associated with a less diverse gut microbiome and poorer markers of gut function. Because gut health determines how well you absorb calcium, vitamin D, zinc and other nutrients used in joint tissue maintenance, a diet high in UPFs may undermine an otherwise healthy diet. Choosing whole foods, a wide variety of fibres and fermented foods supports normal gut function and nutrient absorption.",
+  },
+  {
+    question: "Can cutting out sugar and UPFs fix my knee?",
+    answer:
+      "No single dietary change can fix or cure a knee problem. However, reducing added sugar and ultra-processed foods can support normal collagen maintenance, a healthy gut microbiome, a healthy body weight and a lower inflammatory background — all of which create a more supportive environment for your knee. This works best as part of a broader approach that includes movement, load management, sleep and, when needed, clinical care.",
+  },
+  {
     question: "Should I avoid nightshades, gluten or dairy for my knees?",
     answer:
       "For most people there is no good evidence that cutting out nightshades, gluten or dairy improves knee comfort, and dairy is a useful calcium source. Unless you have a diagnosed intolerance or coeliac disease, elimination diets tend to cost nutrients without benefit. If you suspect a food affects you, discuss a structured trial with a GP or registered dietitian.",
