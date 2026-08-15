@@ -38,7 +38,7 @@ const Partners = () => {
         ]}
       />
       <WebPageSchema
-        title="Clinical Partners"
+        name="Clinical Partners"
         description="The clinical partner network behind OmKneeHealth: musculoskeletal care, consultant knee surgery and same-day knee MRI."
         url="/partners"
       />

@@ -75,7 +75,11 @@ const OrganizationSchema = () => {
         name: "OmKneeHealth",
         logo: "https://omkneehealth.com/og-image.png",
       },
-      sameAs: [],
+      sameAs: [
+        "https://www.sportshealing.com/",
+        "https://www.chinmaygupte.com/",
+        "https://mykneescan.com/",
+      ],
     };
 
     let scriptElement = document.querySelector(
