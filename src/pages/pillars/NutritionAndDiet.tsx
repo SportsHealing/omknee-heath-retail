@@ -37,6 +37,8 @@ import {
   Droplets,
   Wheat,
   AlertTriangle,
+  Leaf,
+  Sprout,
 } from "lucide-react";
 
 const topics = [
@@ -169,6 +171,49 @@ const nutrientTable = [
   },
 ];
 
+const plantSwaps = [
+  {
+    nutrient: "Protein",
+    omnivore: "Fish, poultry, eggs, dairy",
+    plant: "Lentils, chickpeas, beans, tofu, tempeh, seitan, soya yoghurt, nuts and seeds",
+  },
+  {
+    nutrient: "Collagen amino acids (glycine, proline)",
+    omnivore: "Bone broth, skin-on fish, slow-cooked cuts",
+    plant: "Soya, pulses, seeds and wholegrains supply the same amino acids, plus vitamin C to use them",
+  },
+  {
+    nutrient: "Calcium",
+    omnivore: "Dairy, tinned fish with bones",
+    plant: "Fortified plant milks and yoghurts, calcium-set tofu, kale, pak choi, almonds, tahini",
+  },
+  {
+    nutrient: "Omega-3 (EPA/DHA)",
+    omnivore: "Salmon, mackerel, sardines",
+    plant: "Algae oil for EPA/DHA, with walnuts, flaxseed, chia and rapeseed oil for ALA",
+  },
+  {
+    nutrient: "Vitamin D",
+    omnivore: "Oily fish, egg yolk, fortified foods",
+    plant: "Fortified foods and a vitamin D2 or lichen-derived D3 supplement",
+  },
+  {
+    nutrient: "Zinc, iron and B12",
+    omnivore: "Shellfish, meat, dairy",
+    plant: "Pulses, seeds, wholegrains and fortified foods; B12 needs a supplement or fortified source",
+  },
+];
+
+const gutHabits = [
+  "Aim for 30 different plants a week — variety feeds a wider range of gut bacteria",
+  "Around 30 g of fibre a day from wholegrains, pulses, vegetables, fruit, nuts and seeds",
+  "Include fermented foods most days: live yoghurt, kefir, sauerkraut, kimchi, miso",
+  "Increase fibre gradually and with plenty of fluid to avoid bloating",
+  "Chew properly and eat unhurried — digestion starts before food reaches the gut",
+  "Sleep, daily movement and stress management all measurably affect gut function",
+  "Only use antibiotics when genuinely needed, exactly as prescribed",
+];
+
 const dayPlate = [
   "Breakfast: Greek yoghurt or fortified soya yoghurt, berries, seeds and oats",
   "Lunch: large mixed salad with peppers and tomatoes, oily fish or pulses, olive oil dressing",
@@ -202,6 +247,16 @@ const faqs = [
     question: "Are supplements necessary if I eat well?",
     answer:
       "Food first is the right order. The common UK exception is vitamin D in autumn and winter, which NHS guidance recommends for adults generally. Beyond that, supplements are intended to complement a balanced diet, not replace it.",
+  },
+  {
+    question: "Can a vegetarian or vegan diet support knee health as well as an omnivorous one?",
+    answer:
+      "Yes. Every nutrient your knee relies on — protein and its amino acids, vitamin C, calcium, vitamin D, zinc, copper, manganese and omega-3 — is available from plant or fortified sources. A well-planned vegetarian or vegan diet needs a little more attention to vitamin B12, iodine, iron and EPA/DHA, all of which are covered by fortified foods or a supplement. The foods differ; the building blocks do not.",
+  },
+  {
+    question: "Why does gut health matter if I already eat well?",
+    answer:
+      "What you eat is not the same as what you absorb. Digestion and absorption happen in the gut, so a poorly functioning gut can leave you short of nutrients despite a good diet. Fibre variety, fermented foods, sleep, movement and stress all influence gut function. If you have persistent bloating, altered bowel habit, unexplained weight loss or suspected malabsorption, see your GP rather than self-treating.",
   },
 ];
 
@@ -264,7 +319,10 @@ const NutritionAndDiet = () => {
               There is no single food that fixes a knee, and no diet that rebuilds a worn joint
               surface. What food does is supply the raw material for your body's ordinary,
               continuous maintenance work — and keep your body weight in a range that asks less of
-              the joint every time you take a step.
+              the joint every time you take a step. It works in every dietary pattern: everything
+              below can be met on a vegetarian, vegan or omnivorous diet. And whichever you choose,
+              the foundation underneath it is a healthy gut, because absorption — not just intake —
+              decides what your knee actually receives.
             </p>
             <p className="font-sans text-muted-foreground leading-relaxed">
               For clinical detail on knee conditions and diagnosis, visit{" "}
@@ -277,6 +335,101 @@ const NutritionAndDiet = () => {
                 sportshealing.com
               </a>
               .
+            </p>
+          </div>
+        </section>
+
+        {/* Gut health foundation */}
+        <section className="container mx-auto px-6 pb-16">
+          <div className="max-w-4xl mx-auto rounded-xl border border-border bg-background p-7 md:p-8">
+            <div className="flex items-start gap-4 mb-4">
+              <div className="w-11 h-11 shrink-0 rounded-full bg-primary/10 flex items-center justify-center">
+                <Sprout className="w-5 h-5 text-primary" />
+              </div>
+              <h2 className="font-serif text-xl md:text-2xl text-foreground pt-1">
+                Your gut is the foundation
+              </h2>
+            </div>
+            <p className="font-sans text-foreground leading-relaxed mb-4">
+              However organic your food or well-chosen your supplements, none of it reaches your
+              knee until your gut has broken it down and absorbed it. What you eat and what you
+              actually take up are two different things, and that gap is individual — it depends on
+              your digestion, your gut lining, your microbiome, your medicines and your age.
+            </p>
+            <p className="font-sans text-sm text-muted-foreground leading-relaxed border-l-2 border-accent pl-4 mb-5">
+              <span className="uppercase tracking-[0.15em] text-[0.65rem] text-primary/80 block mb-1">
+                What the evidence suggests
+              </span>
+              A diverse, fibre-rich diet is consistently associated with a more diverse gut
+              microbiome and better markers of gut function. Dietary fibre contributes to normal
+              bowel function. Absorption of several nutrients relevant to joint tissue — including
+              calcium, iron, zinc and the fat-soluble vitamins — is reduced when digestion is
+              impaired, which is why two people on the same diet can end up in very different
+              places.
+            </p>
+            <h3 className="font-sans text-sm font-medium text-foreground mb-2">
+              Everyday habits that support a healthy gut
+            </h3>
+            <ul className="space-y-2">
+              {gutHabits.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-2 font-sans text-sm text-foreground"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Vegetarian / omnivore equivalence */}
+        <section className="container mx-auto px-6 pb-16">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-start gap-4 mb-3">
+              <div className="w-11 h-11 shrink-0 rounded-full bg-primary/10 flex items-center justify-center">
+                <Leaf className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <h2 className="font-serif text-2xl md:text-3xl text-foreground">
+                  Vegetarian, vegan or omnivorous — all of it works
+                </h2>
+                <p className="font-sans text-sm text-muted-foreground mt-2 max-w-2xl">
+                  Many of the examples on this page happen to be animal foods because they are
+                  concentrated and familiar, but nothing here requires them. Every nutrient your
+                  knee depends on can be supplied by a plant-based or fortified alternative. Choose
+                  the pattern you will actually keep to.
+                </p>
+              </div>
+            </div>
+            <div className="rounded-xl border border-border overflow-hidden mt-6">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className="font-sans">Nutrient</TableHead>
+                    <TableHead className="font-sans">Omnivorous sources</TableHead>
+                    <TableHead className="font-sans">Vegetarian &amp; plant-based sources</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {plantSwaps.map((row) => (
+                    <TableRow key={row.nutrient}>
+                      <TableCell className="font-sans font-medium text-foreground">
+                        {row.nutrient}
+                      </TableCell>
+                      <TableCell className="font-sans text-muted-foreground">
+                        {row.omnivore}
+                      </TableCell>
+                      <TableCell className="font-sans text-muted-foreground">{row.plant}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+            <p className="font-sans text-xs text-muted-foreground mt-4">
+              Vitamin B12 and iodine need a fortified food or supplement on a fully plant-based
+              diet. Our own supplement is available in both marine and vegetarian formulations.
             </p>
           </div>
         </section>
