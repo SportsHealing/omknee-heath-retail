@@ -155,6 +155,33 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
+
+            {/* Clinical partners */}
+            <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 mt-6 text-primary-foreground/50">
+              Clinical Partners
+            </h4>
+            <ul className="space-y-1">
+              <li>
+                <a href="/partners" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  Our Partner Network
+                </a>
+              </li>
+              <li>
+                <a href="https://www.sportshealing.com/" target="_blank" rel="noopener" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  SportsHealing: musculoskeletal care
+                </a>
+              </li>
+              <li>
+                <a href="https://www.chinmaygupte.com/" target="_blank" rel="noopener" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  Mr Chinmay Gupte: knee surgeon, London
+                </a>
+              </li>
+              <li>
+                <a href="https://mykneescan.com/" target="_blank" rel="noopener" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  MyKneeScan: same-day knee MRI
+                </a>
+              </li>
+            </ul>
           </div>
 
           {/* Contact */}

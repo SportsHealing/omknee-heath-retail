@@ -114,6 +114,30 @@ const KneeComponentsSection = () => {
             </p>
           </div>
         </div>
+
+        <p className="mt-10 text-center font-sans text-sm text-muted-foreground max-w-2xl mx-auto">
+          Want the structure-by-structure detail? Our clinical partner SportsHealing covers{" "}
+          <a href="https://www.sportshealing.com/the-meniscus/" target="_blank" rel="noopener" className="text-primary underline underline-offset-4">
+            the meniscus
+          </a>
+          ,{" "}
+          <a href="https://www.sportshealing.com/chondral-surfaces-osteochondral-health/" target="_blank" rel="noopener" className="text-primary underline underline-offset-4">
+            chondral surfaces
+          </a>
+          ,{" "}
+          <a href="https://www.sportshealing.com/anterior-cruciate-ligament-acl/" target="_blank" rel="noopener" className="text-primary underline underline-offset-4">
+            the ACL
+          </a>
+          ,{" "}
+          <a href="https://www.sportshealing.com/quadriceps-patellar-tendons/" target="_blank" rel="noopener" className="text-primary underline underline-offset-4">
+            the quadriceps and patellar tendons
+          </a>{" "}
+          and{" "}
+          <a href="https://www.sportshealing.com/collagen-joint-health/" target="_blank" rel="noopener" className="text-primary underline underline-offset-4">
+            collagen and joint health
+          </a>
+          .
+        </p>
       </div>
     </section>
   );
