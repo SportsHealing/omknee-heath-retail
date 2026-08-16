@@ -60,7 +60,7 @@ const BlogIndex = () => {
       <SEO
         title="Knee Health Advice & Supplements | OmKneeHealth"
         description="Expert-led articles on knee joint health, cartilage support and supplements, written with a calm, evidence-based approach."
-        canonicalPath="/blog"
+        canonicalPath="/journal"
         keywords="knee health blog, joint supplement articles, knee cartilage advice, collagen for knees, glucosamine evidence"
       />
       <BreadcrumbSchema
