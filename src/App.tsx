@@ -60,6 +60,7 @@ import Contact from "./pages/Contact";
 import Legal from "./pages/Legal";
 import CompliancePlaybook from "./pages/CompliancePlaybook";
 import TeamResources from "./pages/TeamResources";
+import ContentReview from "./pages/ContentReview";
 import NotFound from "./pages/NotFound";
 
 import ScrollToHash from "./components/ScrollToHash";
@@ -134,6 +135,7 @@ const App = () => (
           <Route path="/legal" element={<Legal />} />
           <Route path="/compliance-playbook" element={<CompliancePlaybook />} />
           <Route path="/team-resources" element={<TeamResources />} />
+          <Route path="/content-review" element={<ContentReview />} />
 
           {/* Moved routes */}
           <Route path="/blog" element={<Redirect to="/journal" />} />
