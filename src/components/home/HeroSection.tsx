@@ -40,7 +40,7 @@ const HeroSection = () => {
       <div className="container relative z-10 px-6 py-24 lg:py-32">
         <div className="max-w-3xl mx-auto text-center">
           {/* Trust signal */}
-          <p className="animate-fade-up font-sans text-sm tracking-[0.2em] uppercase text-primary/80 mb-6">
+          <p className="animate-fade-up font-sans text-sm tracking-[0.2em] uppercase text-primary mb-6">
             The Home of Knee Health & Wellness
           </p>
 
@@ -50,15 +50,15 @@ const HeroSection = () => {
           </h1>
 
           {/* Approved supporting lines */}
-          <p className="animate-fade-up-delay-1 font-sans text-xl md:text-2xl text-foreground/80 leading-relaxed max-w-2xl mx-auto mb-6">
+          <p className="animate-fade-up-delay-1 font-sans text-xl md:text-2xl text-foreground leading-relaxed max-w-2xl mx-auto mb-6">
             Understand them. Look after them. Keep moving.
           </p>
 
-          <p className="animate-fade-up-delay-1 font-sans text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-3">
+          <p className="animate-fade-up-delay-1 font-sans text-lg text-foreground/75 leading-relaxed max-w-2xl mx-auto mb-3">
             Your knees are part of almost everything you do.
           </p>
 
-          <p className="animate-fade-up-delay-1 font-sans text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-12">
+          <p className="animate-fade-up-delay-1 font-sans text-lg text-foreground/75 leading-relaxed max-w-2xl mx-auto mb-12">
             OmKneeHealth brings together clear knee health information, practical tools and
             carefully selected products to help you make informed choices about looking after your
             knees throughout life.
