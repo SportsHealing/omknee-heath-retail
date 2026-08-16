@@ -50,7 +50,7 @@ const HeroSection = () => {
 
           {/* Secondary benefit line */}
           <p className="animate-fade-up-delay-1 font-sans text-sm text-muted-foreground/80 max-w-lg mx-auto mb-12">
-            Five principles for lifelong knee health, a short check on how your knees are today, and a small, carefully chosen shop.
+            The OmKnee Seven: a complete approach to lifelong knee health, a short check on how your knees are today, and a small, carefully chosen shop.
           </p>
 
           {/* CTAs with proper internal links */}
