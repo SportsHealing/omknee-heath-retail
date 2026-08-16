@@ -66,13 +66,13 @@ const BlogIndex = () => {
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://omkneehealth.com" },
-          { name: "Blog", url: "https://omkneehealth.com/blog" },
+          { name: "Journal", url: "https://omkneehealth.com/journal" },
         ]}
       />
       <WebPageSchema
         name="Knee Health Blog - OmKneeHealth"
         description="Evidence-based articles on knee health, joint supplements, and cartilage support from UK clinicians."
-        url="https://omkneehealth.com/blog"
+        url="https://omkneehealth.com/journal"
         type="CollectionPage"
       />
       <Header />

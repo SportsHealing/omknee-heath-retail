@@ -54,7 +54,7 @@ const CollagenSupplementsKneeJoints = () => {
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://omkneehealth.com" },
-          { name: "Blog", url: "https://omkneehealth.com/blog" },
+          { name: "Journal", url: "https://omkneehealth.com/journal" },
           { name: "Do Collagen Supplements Help Knee Joints?", url: "https://omkneehealth.com/journal/do-collagen-supplements-help-knee-joints" },
         ]}
       />

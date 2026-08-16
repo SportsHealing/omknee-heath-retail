@@ -54,7 +54,7 @@ const KneePainSupplementsVsPainkillers = () => {
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://omkneehealth.com" },
-          { name: "Blog", url: "https://omkneehealth.com/blog" },
+          { name: "Journal", url: "https://omkneehealth.com/journal" },
           { name: "Knee Pain Supplements vs Painkillers", url: "https://omkneehealth.com/journal/knee-pain-supplements-vs-painkillers" },
         ]}
       />

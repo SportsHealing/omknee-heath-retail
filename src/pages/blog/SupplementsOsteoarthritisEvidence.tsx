@@ -54,7 +54,7 @@ const SupplementsOsteoarthritisEvidence = () => {
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://omkneehealth.com" },
-          { name: "Blog", url: "https://omkneehealth.com/blog" },
+          { name: "Journal", url: "https://omkneehealth.com/journal" },
           { name: "Supplements for Knee Osteoarthritis", url: "https://omkneehealth.com/journal/supplements-for-knee-osteoarthritis-evidence" },
         ]}
       />

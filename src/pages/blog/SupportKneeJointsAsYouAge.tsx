@@ -54,7 +54,7 @@ const SupportKneeJointsAsYouAge = () => {
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://omkneehealth.com" },
-          { name: "Blog", url: "https://omkneehealth.com/blog" },
+          { name: "Journal", url: "https://omkneehealth.com/journal" },
           { name: "Support Knee Joints as You Age", url: "https://omkneehealth.com/journal/support-knee-joints-as-you-age" },
         ]}
       />
