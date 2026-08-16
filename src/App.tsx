@@ -24,6 +24,8 @@ import NutritionAndDiet from "./pages/pillars/NutritionAndDiet";
 import Biomechanics from "./pages/pillars/Biomechanics";
 import ManagingLoad from "./pages/pillars/ManagingLoad";
 import InjuryPrevention from "./pages/pillars/InjuryPrevention";
+import Diagnose from "./pages/pillars/Diagnose";
+import Treat from "./pages/pillars/Treat";
 
 // Shop depth
 import Product from "./pages/Product";
@@ -90,13 +92,15 @@ const App = () => (
           <Route path="/cartilage-collagen-synovial-fluid" element={<CartilageCollagen />} />
           <Route path="/healthy-knees-through-life" element={<ThroughLife />} />
 
-          {/* The OmKnee Five */}
-          <Route path="/knee-health/wellness" element={<HealthAndWellness />} />
-          <Route path="/knee-health/nourish" element={<NutritionAndDiet />} />
-          <Route path="/knee-health/understand" element={<Understand />} />
-          <Route path="/knee-health/load" element={<ManagingLoad />} />
-          <Route path="/knee-health/prepare" element={<InjuryPrevention />} />
-          <Route path="/knee-health/strength-mobility" element={<Biomechanics />} />
+          {/* The OmKnee Seven */}
+          <Route path="/wellness" element={<HealthAndWellness />} />
+          <Route path="/nourish" element={<NutritionAndDiet />} />
+          <Route path="/understand" element={<Understand />} />
+          <Route path="/load" element={<ManagingLoad />} />
+          <Route path="/prepare" element={<InjuryPrevention />} />
+          <Route path="/diagnose" element={<Diagnose />} />
+          <Route path="/treat" element={<Treat />} />
+          <Route path="/movement-biomechanics" element={<Biomechanics />} />
 
           {/* Shop depth */}
           <Route path="/product" element={<Product />} />
@@ -136,11 +140,17 @@ const App = () => (
           <Route path="/blog/supplements-for-knee-osteoarthritis-evidence" element={<Redirect to="/journal/supplements-for-knee-osteoarthritis-evidence" />} />
           <Route path="/blog/knee-pain-supplements-vs-painkillers" element={<Redirect to="/journal/knee-pain-supplements-vs-painkillers" />} />
           <Route path="/blog/support-knee-joints-as-you-age" element={<Redirect to="/journal/support-knee-joints-as-you-age" />} />
-          <Route path="/knee-health-wellness" element={<Redirect to="/knee-health/wellness" />} />
-          <Route path="/knee-nutrition-diet" element={<Redirect to="/knee-health/nourish" />} />
-          <Route path="/knee-biomechanics" element={<Redirect to="/knee-health/strength-mobility" />} />
-          <Route path="/knee-managing-load" element={<Redirect to="/knee-health/load" />} />
-          <Route path="/knee-injury-prevention" element={<Redirect to="/knee-health/prepare" />} />
+          <Route path="/knee-health-wellness" element={<Redirect to="/wellness" />} />
+          <Route path="/knee-nutrition-diet" element={<Redirect to="/nourish" />} />
+          <Route path="/knee-biomechanics" element={<Redirect to="/movement-biomechanics" />} />
+          <Route path="/knee-managing-load" element={<Redirect to="/load" />} />
+          <Route path="/knee-injury-prevention" element={<Redirect to="/prepare" />} />
+          <Route path="/knee-health/wellness" element={<Redirect to="/wellness" />} />
+          <Route path="/knee-health/nourish" element={<Redirect to="/nourish" />} />
+          <Route path="/knee-health/understand" element={<Redirect to="/understand" />} />
+          <Route path="/knee-health/load" element={<Redirect to="/load" />} />
+          <Route path="/knee-health/prepare" element={<Redirect to="/prepare" />} />
+          <Route path="/knee-health/strength-mobility" element={<Redirect to="/movement-biomechanics" />} />
           <Route path="/shop/knee-nutrition" element={<Redirect to="/product" />} />
           <Route path="/shop/braces-supports" element={<Redirect to="/shop#braces-supports" />} />
           <Route path="/shop/cooling-recovery" element={<Redirect to="/shop#cooling-recovery" />} />

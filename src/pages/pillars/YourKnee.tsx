@@ -68,7 +68,7 @@ const YourKnee = () => (
             <div className="flex flex-wrap gap-4 font-sans text-sm">
               <Link to="/cartilage-collagen-synovial-fluid" className="text-primary hover:underline underline-offset-4">Cartilage, collagen & synovial fluid</Link>
               <Link to="/knee-movement" className="text-primary hover:underline underline-offset-4">Movement</Link>
-              <Link to="/knee-health/nourish" className="text-primary hover:underline underline-offset-4">Nutrition</Link>
+              <Link to="/nourish" className="text-primary hover:underline underline-offset-4">Nutrition</Link>
             </div>
           </div>
         </div>

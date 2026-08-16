@@ -69,8 +69,8 @@ const Movement = () => (
               ))}
             </ul>
             <div className="flex flex-wrap gap-4 font-sans text-sm">
-              <Link to="/knee-health/strength-mobility" className="text-primary hover:underline underline-offset-4">Strength & mobility</Link>
-              <Link to="/knee-health/load" className="text-primary hover:underline underline-offset-4">Managing load</Link>
+              <Link to="/movement-biomechanics" className="text-primary hover:underline underline-offset-4">Strength & mobility</Link>
+              <Link to="/load" className="text-primary hover:underline underline-offset-4">Managing load</Link>
             </div>
           </div>
         </div>

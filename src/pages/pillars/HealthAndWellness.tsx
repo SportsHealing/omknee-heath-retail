@@ -166,19 +166,19 @@ const HealthAndWellness = () => {
       <SEO
         title="Knee Health & Wellness: Everyday Habits | OmKneeHealth"
         description="Plain-English, evidence-informed guidance on sleep, weight, stress, daylight and daily movement — the whole-body habits that shape how your knees feel."
-        canonicalPath="/knee-health/wellness"
+        canonicalPath="/wellness"
         keywords="knee health, knee wellness, sleep and joint health, weight and knee pain, vitamin D knees, daily movement knees"
       />
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://omkneehealth.com" },
-          { name: "Knee Health & Wellness", url: "https://omkneehealth.com/knee-health/wellness" },
+          { name: "Knee Health & Wellness", url: "https://omkneehealth.com/wellness" },
         ]}
       />
       <WebPageSchema
         name="Knee Health & Wellness"
         description="Evidence-informed lifestyle guidance for maintaining healthy knees: sleep, body weight, stress, smoking and alcohol, vitamin D, and daily movement."
-        url="https://omkneehealth.com/knee-health/wellness"
+        url="https://omkneehealth.com/wellness"
         type="WebPage"
       />
       <FAQSchema faqs={faqs} />
@@ -355,7 +355,7 @@ const HealthAndWellness = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Button asChild>
-                <Link to="/knee-health/nourish">Nutrition &amp; Diet</Link>
+                <Link to="/nourish">Nutrition &amp; Diet</Link>
               </Button>
               <Button variant="outline" asChild>
                 <Link to="/knee-score">Take the free knee assessment</Link>
