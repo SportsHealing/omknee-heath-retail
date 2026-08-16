@@ -104,6 +104,15 @@ const PillarPage = ({ id, children }: PillarPageProps) => {
                 ))}
               </div>
             </div>
+
+            <figure className="max-w-2xl mx-auto mt-14">
+              <img
+                src={pillar.image}
+                alt={pillar.imageAlt}
+                loading="lazy"
+                className="w-full rounded-2xl bg-secondary/40 object-cover max-h-[420px]"
+              />
+            </figure>
           </div>
         </section>
 

@@ -9,7 +9,7 @@
  */
 
 import { Button } from "@/components/ui/button";
-import heroKneeRunners from "@/assets/hero-knee-runners.jpg";
+import heroKneePassport from "@/assets/hero-knee-passport.jpg";
 
 const HeroSection = () => {
   return (
@@ -21,15 +21,15 @@ const HeroSection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ 
-          backgroundImage: `url(${heroKneeRunners})`,
+          backgroundImage: `url(${heroKneePassport})`,
           willChange: "transform", // GPU acceleration hint
         }}
         role="img"
-        aria-label="Line illustration of a woman and a man running either side of a cross-section sketch of the knee joint"
+        aria-label="Pencil sketch of the knee joint, front view flanked by two side views, from the OmKneeHealth Knee Passport"
       />
       
       {/* Overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/55 to-background/92" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/95" />
 
       <div className="container relative z-10 px-6 py-24 lg:py-32">
         <div className="max-w-3xl mx-auto text-center">
