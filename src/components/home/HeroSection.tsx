@@ -17,24 +17,30 @@ const HeroSection = () => {
       className="relative min-h-[85vh] flex flex-col justify-center overflow-hidden"
       aria-label="Hero section"
     >
-      {/* Background image with aspect ratio hint for CLS */}
-      <div 
-        className="absolute inset-0 bg-secondary bg-contain md:bg-cover bg-center bg-no-repeat"
-        style={{ 
+      {/* Soft cream base so the sketch never competes with the copy */}
+      <div className="absolute inset-0 bg-secondary" aria-hidden="true" />
+
+      {/* Background sketch, heavily faded to a watermark */}
+      <div
+        className="absolute inset-0 bg-contain md:bg-cover bg-center bg-no-repeat opacity-[0.14] md:opacity-[0.18]"
+        style={{
           backgroundImage: `url(${heroKneePassport})`,
           backgroundSize: "min(100%, 1400px) auto",
         }}
         role="img"
         aria-label="Pencil sketch of the knee joint, front view flanked by two side views, from the OmKneeHealth Knee Passport"
       />
-      
-      {/* Overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/45 via-background/35 to-background/90" />
+
+      {/* Wash that lifts contrast behind the copy and fades into the next section */}
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-secondary/70 via-secondary/60 to-background"
+        aria-hidden="true"
+      />
 
       <div className="container relative z-10 px-6 py-24 lg:py-32">
         <div className="max-w-3xl mx-auto text-center">
           {/* Trust signal */}
-          <p className="animate-fade-up font-sans text-sm tracking-[0.2em] uppercase text-primary/80 mb-6">
+          <p className="animate-fade-up font-sans text-sm tracking-[0.2em] uppercase text-primary mb-6">
             The Home of Knee Health & Wellness
           </p>
 
@@ -44,15 +50,15 @@ const HeroSection = () => {
           </h1>
 
           {/* Approved supporting lines */}
-          <p className="animate-fade-up-delay-1 font-sans text-xl md:text-2xl text-foreground/80 leading-relaxed max-w-2xl mx-auto mb-6">
+          <p className="animate-fade-up-delay-1 font-sans text-xl md:text-2xl text-foreground leading-relaxed max-w-2xl mx-auto mb-6">
             Understand them. Look after them. Keep moving.
           </p>
 
-          <p className="animate-fade-up-delay-1 font-sans text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-3">
+          <p className="animate-fade-up-delay-1 font-sans text-lg text-foreground/75 leading-relaxed max-w-2xl mx-auto mb-3">
             Your knees are part of almost everything you do.
           </p>
 
-          <p className="animate-fade-up-delay-1 font-sans text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-12">
+          <p className="animate-fade-up-delay-1 font-sans text-lg text-foreground/75 leading-relaxed max-w-2xl mx-auto mb-12">
             OmKneeHealth brings together clear knee health information, practical tools and
             carefully selected products to help you make informed choices about looking after your
             knees throughout life.
