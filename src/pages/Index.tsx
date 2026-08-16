@@ -8,7 +8,7 @@ import ShopDestination from "@/components/home/ShopDestination";
 import EducationSection from "@/components/home/EducationSection";
 import ThroughLifeBand from "@/components/home/ThroughLifeBand";
 import SignatureProductSection from "@/components/home/SignatureProductSection";
-import ExpertKnowledge from "@/components/home/ExpertKnowledge";
+import KneeEcosystem from "@/components/KneeEcosystem";
 import JournalTeaser from "@/components/home/JournalTeaser";
 import NewsletterSection from "@/components/home/NewsletterSection";
 import SEO from "@/components/SEO";
@@ -59,8 +59,8 @@ const Index = () => {
         {/* 8 Signature formulation */}
         <SignatureProductSection />
 
-        {/* 9 Expert knowledge */}
-        <ExpertKnowledge />
+        {/* 9 Go deeper: the wider knee ecosystem */}
+        <KneeEcosystem />
 
         {/* 10 Journal */}
         <JournalTeaser />
