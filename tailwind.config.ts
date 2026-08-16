@@ -22,6 +22,20 @@ export default {
         serif: ["Bodoni Moda", "Georgia", "serif"],
         sans: ["Jost", "system-ui", "sans-serif"],
       },
+      fontSize: {
+        // Type scale nudged up ~8-10% for readability (Jost has a small x-height)
+        xs: ["0.8125rem", { lineHeight: "1.5" }],
+        sm: ["0.9375rem", { lineHeight: "1.6" }],
+        base: ["1.0625rem", { lineHeight: "1.75" }],
+        lg: ["1.1875rem", { lineHeight: "1.7" }],
+        xl: ["1.3125rem", { lineHeight: "1.6" }],
+        "2xl": ["1.5625rem", { lineHeight: "1.4" }],
+        "3xl": ["1.9375rem", { lineHeight: "1.3" }],
+        "4xl": ["2.375rem", { lineHeight: "1.2" }],
+        "5xl": ["3rem", { lineHeight: "1.1" }],
+        "6xl": ["3.75rem", { lineHeight: "1.05" }],
+        "7xl": ["4.5rem", { lineHeight: "1" }],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
