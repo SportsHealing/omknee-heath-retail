@@ -65,7 +65,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-10 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
             <img 
@@ -94,15 +94,71 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Shop */}
+          <div>
+            <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/50">
+              Knee Health
+            </h4>
+            <ul className="space-y-1">
+              <li>
+                <a href="/knee-health" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  Knee Health hub
+                </a>
+              </li>
+              <li>
+                <a href="/your-knee" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  Your Knee
+                </a>
+              </li>
+              <li>
+                <a href="/knee-movement" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  Movement
+                </a>
+              </li>
+              <li>
+                <a href="/cartilage-collagen-synovial-fluid" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  Cartilage, Collagen & Synovial Fluid
+                </a>
+              </li>
+              <li>
+                <a href="/knee-biomechanics" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  Strength & Mobility
+                </a>
+              </li>
+              <li>
+                <a href="/knee-nutrition-diet" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  Nutrition
+                </a>
+              </li>
+              <li>
+                <a href="/healthy-knees-through-life" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  Healthy Knees Through Life
+                </a>
+              </li>
+              <li>
+                <a href="/journal" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  Journal
+                </a>
+              </li>
+            </ul>
+          </div>
           <div>
             <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/50">
               Shop
             </h4>
             <ul className="space-y-1">
               <li>
+                <a href="/shop" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  All knee health products
+                </a>
+              </li>
+              <li>
                 <a href="/product" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Joint + Movement Support
+                </a>
+              </li>
+              <li>
+                <a href="/ingredients" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  Ingredients
                 </a>
               </li>
               <li>
@@ -116,37 +172,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/ingredients" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  Ingredients
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Learn */}
-          <div>
-            <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/50">
-              Learn
-            </h4>
-            <ul className="space-y-1">
-              <li>
-                <a href="/blog" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  Knee Health Blog
-                </a>
-              </li>
-              <li>
-                <a href="/science" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  The Science
-                </a>
-              </li>
-              <li>
                 <a href="/knee-score" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Get Your Knee Score
-                </a>
-              </li>
-              <li>
-                <a href="/shop" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  Curated Resources
                 </a>
               </li>
               <li>
@@ -155,10 +182,10 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-
-            {/* Clinical partners */}
-            <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 mt-6 text-primary-foreground/50">
-              Clinical Partners
+          </div>
+          <div>
+            <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/50">
+              Ecosystem
             </h4>
             <ul className="space-y-1">
               <li>
@@ -167,8 +194,18 @@ const Footer = () => {
                 </a>
               </li>
               <li>
+                <a href="https://mykneescore.com/" target="_blank" rel="noopener" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  MyKneeScore: assessment & monitoring
+                </a>
+              </li>
+              <li>
                 <a href="https://www.sportshealing.com/" target="_blank" rel="noopener" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  SportsHealing: musculoskeletal care
+                  SportsHealing: education & rehabilitation
+                </a>
+              </li>
+              <li>
+                <a href="https://mykneescan.com/" target="_blank" rel="noopener" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  MyKneeScan: knee imaging
                 </a>
               </li>
               <li>
@@ -176,20 +213,18 @@ const Footer = () => {
                   Mr Chinmay Gupte: knee surgeon, London
                 </a>
               </li>
-              <li>
-                <a href="https://mykneescore.com/" target="_blank" rel="noopener" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  MyKneeScore: knee assessment
-                </a>
-              </li>
             </ul>
           </div>
-
-          {/* Contact */}
           <div>
             <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/50">
-              Contact
+              Company
             </h4>
             <ul className="space-y-1">
+              <li>
+                <a href="/about" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  About Us
+                </a>
+              </li>
               <li>
                 <a href="/contact" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Contact Us
@@ -198,11 +233,6 @@ const Footer = () => {
               <li>
                 <a href="mailto:hello@omkneehealth.com" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   hello@omkneehealth.com
-                </a>
-              </li>
-              <li>
-                <a href="/#our-story" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  Our Story
                 </a>
               </li>
               <li>
@@ -225,16 +255,9 @@ const Footer = () => {
                   Legal & Compliance
                 </a>
               </li>
-            </ul>
-
-            {/* Team Resources */}
-            <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 mt-6 text-primary-foreground/50">
-              Team Resources
-            </h4>
-            <ul className="space-y-1">
               <li>
                 <a href="/team-resources" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  Internal Resources
+                  Team Resources
                 </a>
               </li>
             </ul>
