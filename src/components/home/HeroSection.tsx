@@ -40,17 +40,22 @@ const HeroSection = () => {
 
           {/* Main headline - SEO optimised H1 */}
           <h1 className="animate-fade-up font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] mb-6">
-            Your knees carry you through life
+            Your knees carry you through life.
           </h1>
 
-          {/* Subheading with internal keywords */}
-          <p className="animate-fade-up-delay-1 font-sans text-muted-foreground leading-relaxed max-w-xl mx-auto mb-4">
+          {/* Approved supporting lines */}
+          <p className="animate-fade-up-delay-1 font-sans text-lg text-foreground/80 leading-relaxed max-w-xl mx-auto mb-6">
             Understand them. Look after them. Keep moving.
           </p>
 
-          {/* Secondary benefit line */}
-          <p className="animate-fade-up-delay-1 font-sans text-sm text-muted-foreground/80 max-w-lg mx-auto mb-12">
-            The OmKnee Seven: a complete approach to lifelong knee health, a short check on how your knees are today, and a small, carefully chosen shop.
+          <p className="animate-fade-up-delay-1 font-sans text-muted-foreground leading-relaxed max-w-xl mx-auto mb-3">
+            Your knees are part of almost everything you do.
+          </p>
+
+          <p className="animate-fade-up-delay-1 font-sans text-muted-foreground leading-relaxed max-w-xl mx-auto mb-12">
+            OmKneeHealth brings together clear knee health information, practical tools and
+            carefully selected products to help you make informed choices about looking after your
+            knees throughout life.
           </p>
 
           {/* CTAs with proper internal links */}
