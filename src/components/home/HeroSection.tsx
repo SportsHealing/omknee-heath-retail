@@ -77,15 +77,6 @@ const HeroSection = () => {
           </div>
 
           {/* Internal link anchor for SEO */}
-          <p className="animate-fade-up-delay-2 mt-8 font-sans text-xs text-muted-foreground">
-            <a 
-              href="#faq" 
-              className="hover:text-foreground transition-colors underline underline-offset-4"
-              aria-label="Common questions about knee supplements"
-            >
-              Common questions about knee supplements
-            </a>
-          </p>
         </div>
       </div>
 
