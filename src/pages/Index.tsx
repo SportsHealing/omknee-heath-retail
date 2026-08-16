@@ -2,14 +2,15 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/home/HeroSection";
 import KneeIntroSection from "@/components/home/KneeIntroSection";
-import CornerstonesSection from "@/components/home/CornerstonesSection";
+import OmKneeFive from "@/components/home/OmKneeFive";
 import KneeScorePanel from "@/components/home/KneeScorePanel";
 import ShopDestination from "@/components/home/ShopDestination";
 import EducationSection from "@/components/home/EducationSection";
-import PhilosophySection from "@/components/home/PhilosophySection";
-import OurStorySection from "@/components/home/OurStorySection";
-import HomeFAQ from "@/components/home/HomeFAQ";
-import CTASection from "@/components/home/CTASection";
+import ThroughLifeBand from "@/components/home/ThroughLifeBand";
+import SignatureProductSection from "@/components/home/SignatureProductSection";
+import ExpertKnowledge from "@/components/home/ExpertKnowledge";
+import JournalTeaser from "@/components/home/JournalTeaser";
+import NewsletterSection from "@/components/home/NewsletterSection";
 import SEO from "@/components/SEO";
 import OrganizationSchema from "@/components/OrganizationSchema";
 import WebPageSchema from "@/components/WebPageSchema";
@@ -34,23 +35,38 @@ const Index = () => {
       <BreadcrumbSchema items={[{ name: "Home", url: "https://omkneehealth.com" }]} />
       <Header />
       <main>
-        {/* Understand */}
+        {/* 1 Hero */}
         <HeroSection />
-        <KneeIntroSection />
-        <CornerstonesSection />
 
-        {/* Measure */}
+        {/* 2 Knee Score */}
         <KneeScorePanel />
 
-        {/* Look after */}
-        <ShopDestination />
+        {/* 3 Why look after your knees */}
         <EducationSection />
 
-        {/* Who we are */}
-        <PhilosophySection />
-        <OurStorySection />
-        <HomeFAQ />
-        <CTASection />
+        {/* 4 The OmKnee Five */}
+        <OmKneeFive />
+
+        {/* 5 Understand your knee */}
+        <KneeIntroSection />
+
+        {/* 6 Healthy knees through life */}
+        <ThroughLifeBand />
+
+        {/* 7 The Knee Shop */}
+        <ShopDestination />
+
+        {/* 8 Signature formulation */}
+        <SignatureProductSection />
+
+        {/* 9 Expert knowledge */}
+        <ExpertKnowledge />
+
+        {/* 10 Journal */}
+        <JournalTeaser />
+
+        {/* 11 Newsletter */}
+        <NewsletterSection />
       </main>
       <Footer />
     </div>
