@@ -120,12 +120,12 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/knee-biomechanics" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                <a href="/knee-health/strength-mobility" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Strength & Mobility
                 </a>
               </li>
               <li>
-                <a href="/knee-nutrition-diet" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                <a href="/knee-health/nourish" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Nutrition
                 </a>
               </li>

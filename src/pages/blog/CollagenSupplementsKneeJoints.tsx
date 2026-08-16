@@ -48,20 +48,20 @@ const CollagenSupplementsKneeJoints = () => {
       <SEO
         title="Do Collagen Supplements Help Knee Joints? | UK Evidence | OmKneeHealth"
         description="Do collagen supplements help knee joints? UK clinician's evidence-based guide to collagen peptides, absorption, dosing, and why vitamin C matters for cartilage."
-        canonicalPath="/blog/do-collagen-supplements-help-knee-joints"
+        canonicalPath="/journal/do-collagen-supplements-help-knee-joints"
         keywords="collagen supplements knee joints, does collagen help knees, collagen for knee pain UK, hydrolysed collagen joints"
       />
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://omkneehealth.com" },
           { name: "Blog", url: "https://omkneehealth.com/blog" },
-          { name: "Do Collagen Supplements Help Knee Joints?", url: "https://omkneehealth.com/blog/do-collagen-supplements-help-knee-joints" },
+          { name: "Do Collagen Supplements Help Knee Joints?", url: "https://omkneehealth.com/journal/do-collagen-supplements-help-knee-joints" },
         ]}
       />
       <WebPageSchema
         name="Do Collagen Supplements Help Knee Joints?"
         description="Evidence-based examination of collagen supplements for knee joints. What the research shows and what to realistically expect."
-        url="https://omkneehealth.com/blog/do-collagen-supplements-help-knee-joints"
+        url="https://omkneehealth.com/journal/do-collagen-supplements-help-knee-joints"
         type="WebPage"
       />
       <FAQSchema faqs={faqs} />

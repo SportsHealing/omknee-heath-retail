@@ -100,7 +100,7 @@ const BlogIndex = () => {
               {articles.map((article) => (
                 <Link 
                   key={article.slug}
-                  to={`/blog/${article.slug}`}
+                  to={`/journal/${article.slug}`}
                   className="block group"
                 >
                   <article className="bg-secondary/30 hover:bg-secondary/50 rounded-lg p-6 md:p-8 border border-border transition-colors">

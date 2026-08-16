@@ -48,20 +48,20 @@ const SupplementsOsteoarthritisEvidence = () => {
       <SEO
         title="Supplements for Knee Osteoarthritis: What the Evidence Says | UK | OmKneeHealth"
         description="Honest examination of joint supplements for knee osteoarthritis. What research shows about glucosamine, collagen, and why supplements are not a replacement for medical care."
-        canonicalPath="/blog/supplements-for-knee-osteoarthritis-evidence"
+        canonicalPath="/journal/supplements-for-knee-osteoarthritis-evidence"
         keywords="supplements for knee osteoarthritis, osteoarthritis supplements UK, glucosamine osteoarthritis, joint supplements arthritis"
       />
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://omkneehealth.com" },
           { name: "Blog", url: "https://omkneehealth.com/blog" },
-          { name: "Supplements for Knee Osteoarthritis", url: "https://omkneehealth.com/blog/supplements-for-knee-osteoarthritis-evidence" },
+          { name: "Supplements for Knee Osteoarthritis", url: "https://omkneehealth.com/journal/supplements-for-knee-osteoarthritis-evidence" },
         ]}
       />
       <WebPageSchema
         name="Supplements for Knee Osteoarthritis: What the Evidence Says"
         description="Evidence-based examination of supplements for osteoarthritis. An honest look at what works, what doesn't, and the limits of nutritional support."
-        url="https://omkneehealth.com/blog/supplements-for-knee-osteoarthritis-evidence"
+        url="https://omkneehealth.com/journal/supplements-for-knee-osteoarthritis-evidence"
         type="WebPage"
       />
       <FAQSchema faqs={faqs} />

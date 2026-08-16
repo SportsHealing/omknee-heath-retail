@@ -202,19 +202,19 @@ const ManagingLoad = () => {
       <SEO
         title="Runner's Knee & Managing Load: How Much Is Too Much?"
         description="Why knees ache after activity: evidence-informed guidance on runner's knee, training load, tendon loading, the 24-hour rule and recovery, in plain English."
-        canonicalPath="/knee-managing-load"
+        canonicalPath="/knee-health/load"
         keywords="runner's knee, knee pain running, knee load management, training load knee, tendon loading, 24 hour rule knee pain, progressive overload knees, is running bad for knees, swollen knee after exercise"
       />
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://omkneehealth.com" },
-          { name: "Managing Load", url: "https://omkneehealth.com/knee-managing-load" },
+          { name: "Managing Load", url: "https://omkneehealth.com/knee-health/load" },
         ]}
       />
       <WebPageSchema
         name="Managing Load for Knee Health"
         description="Evidence-informed load management for knees: gradual progression, tendon loading, symptom monitoring and recovery, with peer-reviewed references."
-        url="https://omkneehealth.com/knee-managing-load"
+        url="https://omkneehealth.com/knee-health/load"
         type="WebPage"
       />
       <FAQSchema faqs={faqs} />
@@ -393,13 +393,13 @@ const ManagingLoad = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Button asChild>
-                <Link to="/knee-injury-prevention">
+                <Link to="/knee-health/prepare">
                   Injury Prevention
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link to="/knee-biomechanics">Back to Biomechanics</Link>
+                <Link to="/knee-health/strength-mobility">Back to Biomechanics</Link>
               </Button>
             </div>
             <p className="font-sans text-xs text-muted-foreground mt-8">

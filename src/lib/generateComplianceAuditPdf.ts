@@ -120,7 +120,7 @@ export const generateComplianceAuditPdf = (): void => {
       },
       {
         page: "Blog: Collagen Supplements",
-        path: "/blog/do-collagen-supplements-help-knee-joints",
+        path: "/journal/do-collagen-supplements-help-knee-joints",
         status: "Compliant",
         findings: [
           "Correctly states collagen has no EFSA joint claims",
@@ -130,7 +130,7 @@ export const generateComplianceAuditPdf = (): void => {
       },
       {
         page: "Blog: Supplements vs Painkillers",
-        path: "/blog/knee-pain-supplements-vs-painkillers",
+        path: "/journal/knee-pain-supplements-vs-painkillers",
         status: "Compliant",
         findings: [
           "Explicitly states supplements are not medicines",
@@ -140,7 +140,7 @@ export const generateComplianceAuditPdf = (): void => {
       },
       {
         page: "Blog: Support Joints as You Age",
-        path: "/blog/support-knee-joints-as-you-age",
+        path: "/journal/support-knee-joints-as-you-age",
         status: "Compliant",
         findings: [
           "Uses only EFSA-authorised claims",
@@ -150,7 +150,7 @@ export const generateComplianceAuditPdf = (): void => {
       },
       {
         page: "Blog: Best Supplement for Cartilage",
-        path: "/blog/best-supplement-knee-cartilage",
+        path: "/journal/best-supplement-knee-cartilage",
         status: "Compliant",
         findings: [
           "Evidence-based positioning",
@@ -160,7 +160,7 @@ export const generateComplianceAuditPdf = (): void => {
       },
       {
         page: "Blog: Supplements for Osteoarthritis",
-        path: "/blog/supplements-osteoarthritis-evidence",
+        path: "/journal/supplements-osteoarthritis-evidence",
         status: "Compliant",
         findings: [
           "Clear distinction between support and treatment",
