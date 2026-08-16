@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { preconnectToOrigins, preloadCriticalImages } from "@/lib/performance";
-import heroKneeRunner from "@/assets/hero-knee-runner.jpg";
+import heroKneeRunners from "@/assets/hero-knee-runners.jpg";
 
 /**
  * PerformanceOptimizer - Initializes performance optimizations
@@ -13,7 +13,7 @@ import heroKneeRunner from "@/assets/hero-knee-runner.jpg";
 const PerformanceOptimizer = () => {
   useEffect(() => {
     // Preload critical above-the-fold images for LCP
-    preloadCriticalImages([heroKneeRunner]);
+    preloadCriticalImages([heroKneeRunners]);
 
     // Preconnect to external origins we'll use
     preconnectToOrigins([

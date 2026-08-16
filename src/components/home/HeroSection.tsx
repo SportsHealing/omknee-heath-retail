@@ -9,7 +9,7 @@
  */
 
 import { Button } from "@/components/ui/button";
-import heroKneeRunner from "@/assets/hero-knee-runner.jpg";
+import heroKneeRunners from "@/assets/hero-knee-runners.jpg";
 
 const HeroSection = () => {
   return (
@@ -21,11 +21,11 @@ const HeroSection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ 
-          backgroundImage: `url(${heroKneeRunner})`,
+          backgroundImage: `url(${heroKneeRunners})`,
           willChange: "transform", // GPU acceleration hint
         }}
         role="img"
-        aria-label="Line illustration of a runner alongside a cross-section sketch of the knee joint"
+        aria-label="Line illustration of a woman and a man running either side of a cross-section sketch of the knee joint"
       />
       
       {/* Overlay for text readability */}
