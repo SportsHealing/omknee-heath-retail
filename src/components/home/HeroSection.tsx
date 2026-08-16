@@ -20,9 +20,9 @@ const HeroSection = () => {
       {/* Soft cream base so the sketch never competes with the copy */}
       <div className="absolute inset-0 bg-secondary" aria-hidden="true" />
 
-      {/* Background sketch, heavily faded to a watermark */}
+      {/* Background sketch — visible but not competing with the copy */}
       <div
-        className="absolute inset-0 bg-contain md:bg-cover bg-center bg-no-repeat opacity-[0.14] md:opacity-[0.18]"
+        className="absolute inset-0 bg-contain md:bg-cover bg-center bg-no-repeat opacity-40 md:opacity-45"
         style={{
           backgroundImage: `url(${heroKneePassport})`,
           backgroundSize: "min(100%, 1400px) auto",
@@ -31,9 +31,12 @@ const HeroSection = () => {
         aria-label="Pencil sketch of the knee joint, front view flanked by two side views, from the OmKneeHealth Knee Passport"
       />
 
-      {/* Wash that lifts contrast behind the copy and fades into the next section */}
+      {/* Radial wash that lifts the centre of the image (where the text sits) while keeping the sketch visible at the edges */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-secondary/70 via-secondary/60 to-background"
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(circle at 50% 45%, rgba(247,244,236,0.82) 0%, rgba(247,244,236,0.55) 45%, rgba(247,244,236,0.70) 100%)",
+        }}
         aria-hidden="true"
       />
 
