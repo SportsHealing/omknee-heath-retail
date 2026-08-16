@@ -49,9 +49,8 @@ export const OMKNEE_SEVEN: OmKneePillar[] = [
     name: "Wellness",
     strapline: "Look after the whole person.",
     shortDescription:
-      
       "Healthy movement starts with more than the knee itself. Regular activity, strength, recovery, sleep, mobility and your wider health all contribute to your ability to stay active.",
-    ctaLabel: "Explore Wellness"
+    ctaLabel: "Explore Wellness",
     icon: HeartPulse,
     group: "foundation",
   },
@@ -62,9 +61,8 @@ export const OMKNEE_SEVEN: OmKneePillar[] = [
     name: "Nourish",
     strapline: "Nourish the body that moves you.",
     shortDescription:
-      
       "Good nutrition provides the energy and nutrients your body needs for everyday life, physical activity and the maintenance of normal tissues. Understand food, protein, bone health, connective tissue and the role that supplements may play alongside a balanced diet.",
-    ctaLabel: "Explore Nutrition"
+    ctaLabel: "Explore Nutrition",
     icon: Salad,
     group: "foundation",
   },
@@ -75,9 +73,8 @@ export const OMKNEE_SEVEN: OmKneePillar[] = [
     name: "Understand",
     strapline: "Know your knee.",
     shortDescription:
-      
       "Your knee is more than a simple hinge. Bones, cartilage, menisci, ligaments, tendons, muscles and synovial fluid work together to create movement while responding to the demands of everyday life. Understanding the joint is the first step towards understanding how to look after it.",
-    ctaLabel: "Meet Your Knee"
+    ctaLabel: "Meet Your Knee",
     icon: Brain,
     group: "foundation",
   },
@@ -88,9 +85,8 @@ export const OMKNEE_SEVEN: OmKneePillar[] = [
     name: "Load",
     strapline: "Understand what you ask it to do.",
     shortDescription:
-      
       "Every step, squat, run and jump places demands on your knees. That is normal. The important question is not how to avoid load, but how activity relates to your current strength, conditioning and capacity.",
-    ctaLabel: "Understand Knee Load"
+    ctaLabel: "Understand Knee Load",
     icon: Gauge,
     group: "foundation",
   },
@@ -101,9 +97,8 @@ export const OMKNEE_SEVEN: OmKneePillar[] = [
     name: "Prepare",
     strapline: "Prepare for what you want to do.",
     shortDescription:
-      
       "Whether you are walking further, returning to the gym, running, skiing or playing sport, preparation matters. Strength, balance, movement control and sensible progression can help prepare your body for the demands ahead.",
-    ctaLabel: "Prepare Your Knees"
+    ctaLabel: "Prepare Your Knees",
     icon: ShieldCheck,
     group: "foundation",
   },
@@ -114,9 +109,8 @@ export const OMKNEE_SEVEN: OmKneePillar[] = [
     name: "Diagnose",
     strapline: "Understand what is happening.",
     shortDescription:
-      
       "Sometimes a knee changes. There may be pain, swelling, instability, stiffness, an injury or simply a loss of confidence in what the knee can do. Understanding what is happening may involve assessment and, when appropriate, further investigation.",
-    ctaLabel: "Understand Diagnosis"
+    ctaLabel: "Understand Diagnosis",
     icon: Stethoscope,
     group: "pathway",
   },
@@ -127,9 +121,8 @@ export const OMKNEE_SEVEN: OmKneePillar[] = [
     name: "Treat",
     strapline: "Find the right care at the right time.",
     shortDescription:
-      
       "Treatment does not necessarily mean surgery. Depending on the problem, care may involve advice, rehabilitation, changes in activity, physiotherapy, support, selected procedures or surgery. The right approach starts with understanding the individual and the knee.",
-    ctaLabel: "Understand Treatment"
+    ctaLabel: "Understand Treatment",
     icon: Handshake,
     group: "pathway",
   },
