@@ -25,7 +25,7 @@ const categories = [
 const Shop = () => (
   <div className="min-h-screen bg-background">
     <SEO
-      title="Knee Health Shop | Supplements, Braces & Recovery"
+      title="The Knee Shop | Supplements, Braces & Recovery"
       description="A carefully curated knee health shop: nutrition, braces and supports, cooling and recovery, after surgery essentials, movement and rehabilitation aids, and footwear guidance."
       canonicalPath="/shop"
       keywords="knee supplements UK, knee brace, knee support, knee recovery products, knee rehabilitation equipment"
@@ -47,7 +47,7 @@ const Shop = () => (
       <section className="pt-32 pb-16 lg:pt-56 lg:pb-20">
         <div className="container px-6">
           <div className="max-w-2xl mx-auto text-center">
-            <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary/80 mb-6">The Shop</p>
+            <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary/80 mb-6">The Knee Shop</p>
             <h1 className="font-serif text-4xl md:text-5xl text-foreground leading-tight mb-6">
               Chosen carefully, not endlessly
             </h1>

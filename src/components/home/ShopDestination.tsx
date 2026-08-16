@@ -18,7 +18,7 @@ const ShopDestination = () => (
   <section className="py-24 lg:py-32 bg-secondary/30">
     <div className="container px-6">
       <div className="max-w-2xl mx-auto text-center mb-14">
-        <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary/80 mb-4">The Shop</p>
+        <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary/80 mb-4">The Knee Shop</p>
         <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
           Curated, not catalogued
         </h2>
@@ -44,7 +44,7 @@ const ShopDestination = () => (
           to="/shop"
           className="inline-flex items-center gap-2 font-sans text-sm text-primary hover:underline underline-offset-4 min-h-[44px]"
         >
-          Browse the shop
+          Browse the Knee Shop
           <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
