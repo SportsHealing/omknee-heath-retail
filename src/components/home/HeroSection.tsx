@@ -34,7 +34,7 @@ const HeroSection = () => {
       <div className="container relative z-10 px-6 py-24 lg:py-32">
         <div className="max-w-3xl mx-auto text-center">
           {/* Trust signal */}
-          <p className="animate-fade-up font-sans text-xs tracking-[0.2em] uppercase text-primary/80 mb-6">
+          <p className="animate-fade-up font-sans text-sm tracking-[0.2em] uppercase text-primary/80 mb-6">
             The Home of Knee Health & Wellness
           </p>
 
@@ -44,15 +44,15 @@ const HeroSection = () => {
           </h1>
 
           {/* Approved supporting lines */}
-          <p className="animate-fade-up-delay-1 font-sans text-lg text-foreground/80 leading-relaxed max-w-xl mx-auto mb-6">
+          <p className="animate-fade-up-delay-1 font-sans text-xl md:text-2xl text-foreground/80 leading-relaxed max-w-2xl mx-auto mb-6">
             Understand them. Look after them. Keep moving.
           </p>
 
-          <p className="animate-fade-up-delay-1 font-sans text-muted-foreground leading-relaxed max-w-xl mx-auto mb-3">
+          <p className="animate-fade-up-delay-1 font-sans text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-3">
             Your knees are part of almost everything you do.
           </p>
 
-          <p className="animate-fade-up-delay-1 font-sans text-muted-foreground leading-relaxed max-w-xl mx-auto mb-12">
+          <p className="animate-fade-up-delay-1 font-sans text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-12">
             OmKneeHealth brings together clear knee health information, practical tools and
             carefully selected products to help you make informed choices about looking after your
             knees throughout life.
@@ -62,7 +62,7 @@ const HeroSection = () => {
           <div className="animate-fade-up-delay-2 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button 
               size="lg" 
-              className="px-8 py-6 text-sm font-sans font-medium tracking-wide"
+              className="px-8 py-6 text-base font-sans font-medium tracking-wide"
               asChild
             >
               <a href="/knee-score" aria-label="Check your knee with the Knee Score">
@@ -72,7 +72,7 @@ const HeroSection = () => {
             <Button 
               variant="outline"
               size="lg" 
-              className="px-8 py-6 text-sm font-sans font-medium tracking-wide border-foreground/20 hover:bg-foreground/5"
+              className="px-8 py-6 text-base font-sans font-medium tracking-wide border-foreground/20 hover:bg-foreground/5"
               asChild
             >
               <a href="/knee-health" aria-label="Look after your knees">
