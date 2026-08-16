@@ -19,8 +19,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ["EB Garamond", "Georgia", "serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        serif: ["Bodoni Moda", "Georgia", "serif"],
+        sans: ["Jost", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
