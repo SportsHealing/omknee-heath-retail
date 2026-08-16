@@ -44,18 +44,43 @@ const KneeHealth = () => (
               Look After Your Knees
             </p>
             <h1 className="font-serif text-4xl md:text-5xl text-foreground leading-tight mb-6">
-              Looking after your knees starts before something goes wrong
+              A complete approach to lifelong knee health.
             </h1>
-            <p className="font-sans text-lg text-muted-foreground leading-relaxed">
-              Understand them. Look after them. Keep moving.
-            </p>
+            <div className="space-y-5 font-sans text-lg text-muted-foreground leading-relaxed">
+              <p>Nobody's knee exists on its own.</p>
+              <p>
+                How you sleep, what you eat, how strong your legs are, what you did last weekend and
+                what you are planning to do next month all show up in the joint eventually. So does
+                what happens when something goes wrong and how quickly you get the right answer.
+              </p>
+              <p>
+                We put all of that under seven headings. Not because knees are complicated, but
+                because knee advice usually only covers one of them at a time.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mt-10">
+              <Link
+                to="/wellness"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-8 py-4 font-sans text-sm text-primary-foreground transition-colors hover:bg-primary/90 min-h-[44px]"
+              >
+                Start with Wellness
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                to="/knee-score"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-border px-8 py-4 font-sans text-sm text-foreground transition-colors hover:bg-secondary/60 min-h-[44px]"
+              >
+                Check your knee
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
       <OmKneeSeven
         eyebrow="The OmKnee Seven"
-        heading="A complete approach to lifelong knee health"
+        heading="One journey, not seven steps."
+        intro="Stay active, eat properly, understand the joint, do not ask more of it than it is ready for, and prepare for the things you want to do."
       />
 
       <section className="pb-24 bg-secondary/20 pt-24">
