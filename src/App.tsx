@@ -11,6 +11,7 @@ import KneeHealth from "./pages/KneeHealth";
 import KneeScore from "./pages/KneeScore";
 import Shop from "./pages/Shop";
 import About from "./pages/About";
+import Account from "./pages/Account";
 
 // Knee Health cornerstones
 import YourKnee from "./pages/pillars/YourKnee";
@@ -81,6 +82,7 @@ const App = () => (
           <Route path="/shop" element={<Shop />} />
           <Route path="/journal" element={<BlogIndex />} />
           <Route path="/about" element={<About />} />
+          <Route path="/account" element={<Account />} />
 
           {/* Knee Health cornerstones */}
           <Route path="/your-knee" element={<YourKnee />} />
