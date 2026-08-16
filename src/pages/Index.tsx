@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { track } from "@/lib/analytics";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/home/HeroSection";
@@ -17,6 +19,10 @@ import WebPageSchema from "@/components/WebPageSchema";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const Index = () => {
+  useEffect(() => {
+    track("homepage_view");
+  }, []);
+
   return (
     <div className="min-h-screen">
       <SEO
