@@ -41,7 +41,12 @@ const HeroSection = () => {
       />
 
       <div className="container relative z-10 px-6 py-24 lg:py-32">
-        <div className="max-w-3xl mx-auto text-center">
+        <div
+          className="max-w-3xl mx-auto text-center"
+          style={{
+            textShadow: "0 1px 2px rgba(247,244,236,0.85), 0 2px 12px rgba(247,244,236,0.7)",
+          }}
+        >
           {/* Trust signal */}
           <p className="animate-fade-up font-sans text-sm tracking-[0.2em] uppercase text-primary mb-6">
             The Home of Knee Health & Wellness
