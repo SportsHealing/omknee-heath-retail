@@ -23,6 +23,8 @@ export const SEARCH_INDEX: { group: string; label: string; to: string; keywords?
   { group: "Knee Health", label: "Wellness Foundations", to: "/wellness", keywords: "sleep stress weight vitamin d" },
   { group: "Knee Health", label: "Managing Load", to: "/load", keywords: "running training load tendon" },
   { group: "Knee Health", label: "Injury Prevention", to: "/prepare", keywords: "acl warm up prevention" },
+  { group: "Knee Health", label: "Diagnose", to: "/diagnose", keywords: "assessment scan mri x-ray when to seek help" },
+  { group: "Knee Health", label: "Treat", to: "/treat", keywords: "treatment rehabilitation injections surgery recovery" },
   { group: "Knee Score", label: "Knee Score", to: "/knee-score", keywords: "assessment measure track mykneescore" },
   { group: "Shop", label: "Shop", to: "/shop", keywords: "buy products braces recovery" },
   { group: "Shop", label: "Nutrition & Supplements", to: "/product", keywords: "supplement collagen powder" },
