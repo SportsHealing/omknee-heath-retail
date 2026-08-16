@@ -258,7 +258,7 @@ const faqs = [
             Your gut is the foundation
           </a>
           ,{" "}
-          <Link to="/knee-health/wellness" className={linkClass}>
+          <Link to="/wellness" className={linkClass}>
             Health &amp; Wellness
           </Link>
         </p>
@@ -298,19 +298,19 @@ const faqs = [
         </p>
         <p className="mt-3 text-sm">
           <strong>Related guidance:</strong>{" "}
-          <Link to="/knee-health/wellness" className={linkClass}>
+          <Link to="/wellness" className={linkClass}>
             Health &amp; Wellness
           </Link>
           ,{" "}
-          <Link to="/knee-health/strength-mobility" className={linkClass}>
+          <Link to="/movement-biomechanics" className={linkClass}>
             Biomechanics
           </Link>
           ,{" "}
-          <Link to="/knee-health/load" className={linkClass}>
+          <Link to="/load" className={linkClass}>
             Managing Load
           </Link>
           ,{" "}
-          <Link to="/knee-health/prepare" className={linkClass}>
+          <Link to="/prepare" className={linkClass}>
             Injury Prevention
           </Link>
         </p>
@@ -370,7 +370,7 @@ const faqs = [
             Your gut is the foundation
           </a>
           ,{" "}
-          <Link to="/knee-health/wellness" className={linkClass}>
+          <Link to="/wellness" className={linkClass}>
             Health &amp; Wellness
           </Link>
         </p>
@@ -387,19 +387,19 @@ const NutritionAndDiet = () => {
       <SEO
         title="Nutrition & Diet for Knee Health | OmKneeHealth"
         description="Plain-English, evidence-informed nutrition for your knees: protein, vitamin C and collagen, vitamin D and calcium, omega-3, hydration and everyday food choices."
-        canonicalPath="/knee-health/nourish"
+        canonicalPath="/nourish"
         keywords="nutrition for knee health, diet for joints, protein collagen knees, vitamin C collagen, vitamin D bones, anti-inflammatory diet UK"
       />
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://omkneehealth.com" },
-          { name: "Nutrition & Diet", url: "https://omkneehealth.com/knee-health/nourish" },
+          { name: "Nutrition & Diet", url: "https://omkneehealth.com/nourish" },
         ]}
       />
       <WebPageSchema
         name="Nutrition & Diet for Knee Health"
         description="Evidence-informed guidance on the nutrients and dietary patterns that support normal cartilage, bone and muscle maintenance."
-        url="https://omkneehealth.com/knee-health/nourish"
+        url="https://omkneehealth.com/nourish"
         type="WebPage"
       />
       <FAQSchema faqs={faqs} />
@@ -710,13 +710,13 @@ const NutritionAndDiet = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Button asChild>
-                <Link to="/knee-health/strength-mobility">
+                <Link to="/movement-biomechanics">
                   Biomechanics
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link to="/knee-health/wellness">Back to Health &amp; Wellness</Link>
+                <Link to="/wellness">Back to Health &amp; Wellness</Link>
               </Button>
             </div>
             <p className="font-sans text-xs text-muted-foreground mt-8">

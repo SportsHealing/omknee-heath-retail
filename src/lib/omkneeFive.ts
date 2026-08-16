@@ -17,7 +17,7 @@ export interface OmKneePrinciple {
 export const OMKNEE_FIVE: OmKneePrinciple[] = [
   {
     id: "wellness",
-    to: "/knee-health/wellness",
+    to: "/wellness",
     label: "Wellness",
     proposition: "Look after the whole person.",
     intro: "Sleep, recovery, body composition and everyday activity shape how well your knees keep working.",
@@ -25,7 +25,7 @@ export const OMKNEE_FIVE: OmKneePrinciple[] = [
   },
   {
     id: "nourish",
-    to: "/knee-health/nourish",
+    to: "/nourish",
     label: "Nourish",
     proposition: "Nourish the body that moves you.",
     intro: "Balanced eating, protein, bone health and what supplements can and cannot do.",
@@ -33,7 +33,7 @@ export const OMKNEE_FIVE: OmKneePrinciple[] = [
   },
   {
     id: "understand",
-    to: "/knee-health/understand",
+    to: "/understand",
     label: "Understand",
     proposition: "Know your knee.",
     intro: "An accessible introduction to the joint, its materials and how it moves.",
@@ -41,7 +41,7 @@ export const OMKNEE_FIVE: OmKneePrinciple[] = [
   },
   {
     id: "load",
-    to: "/knee-health/load",
+    to: "/load",
     label: "Load",
     proposition: "Understand what you ask it to do.",
     intro: "Knees need appropriate load. Capacity grows when activity is introduced thoughtfully.",
@@ -49,7 +49,7 @@ export const OMKNEE_FIVE: OmKneePrinciple[] = [
   },
   {
     id: "prepare",
-    to: "/knee-health/prepare",
+    to: "/prepare",
     label: "Prepare",
     proposition: "Prepare for what you want to do.",
     intro: "Strength, control, warm-up and progression to help reduce injury risk.",

@@ -171,19 +171,19 @@ const InjuryPrevention = () => {
       <SEO
         title="Knee Injury Prevention Exercises: What Actually Works"
         description="Evidence-informed knee injury prevention: structured warm-ups, strength and neuromuscular exercises, fatigue, footwear and full rehabilitation, in plain English."
-        canonicalPath="/knee-health/prepare"
+        canonicalPath="/prepare"
         keywords="knee injury prevention, knee injury prevention exercises, ACL prevention programme, FIFA 11+, neuromuscular training knee, landing technique, how to prevent knee pain when running, runner's knee prevention"
       />
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://omkneehealth.com" },
-          { name: "Injury Prevention", url: "https://omkneehealth.com/knee-health/prepare" },
+          { name: "Injury Prevention", url: "https://omkneehealth.com/prepare" },
         ]}
       />
       <WebPageSchema
         name="Knee Injury Prevention"
         description="What the peer-reviewed evidence shows about preventing knee injuries: warm-ups, neuromuscular training, fatigue management and return to sport."
-        url="https://omkneehealth.com/knee-health/prepare"
+        url="https://omkneehealth.com/prepare"
         type="WebPage"
       />
       <FAQSchema faqs={faqs} />
@@ -351,7 +351,7 @@ const InjuryPrevention = () => {
                 </Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link to="/knee-health/load">Back to Managing Load</Link>
+                <Link to="/load">Back to Managing Load</Link>
               </Button>
             </div>
             <p className="font-sans text-xs text-muted-foreground mt-8">

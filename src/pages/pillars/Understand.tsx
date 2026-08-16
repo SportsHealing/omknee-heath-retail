@@ -28,7 +28,7 @@ const movements = [
 const deeper = [
   { to: "/cartilage-collagen-synovial-fluid", title: "Cartilage, Collagen & Synovial Fluid" },
   { to: "/knee-movement", title: "Movement & Biomechanics" },
-  { to: "/knee-health/strength-mobility", title: "Strength & Mobility" },
+  { to: "/movement-biomechanics", title: "Strength & Mobility" },
   { to: "/your-knee", title: "Your Knee, in Plain English" },
 ];
 
@@ -37,20 +37,20 @@ const Understand = () => (
     <SEO
       title="Understand Your Knee | Know Your Knee"
       description="An accessible introduction to the knee: bones, cartilage, menisci, ligaments, tendons, muscles, synovial fluid and collagen — plus how the knee behaves when you walk, climb stairs, squat and run."
-      canonicalPath="/knee-health/understand"
+      canonicalPath="/understand"
       keywords="knee anatomy simple, knee joint explained, how the knee works, knee biomechanics basics"
     />
     <BreadcrumbSchema
       items={[
         { name: "Home", url: "https://omkneehealth.com" },
         { name: "Look After Your Knees", url: "https://omkneehealth.com/knee-health" },
-        { name: "Understand", url: "https://omkneehealth.com/knee-health/understand" },
+        { name: "Understand", url: "https://omkneehealth.com/understand" },
       ]}
     />
     <WebPageSchema
       name="Understand Your Knee"
       description="Consumer-level introduction to knee structure and everyday movement."
-      url="https://omkneehealth.com/knee-health/understand"
+      url="https://omkneehealth.com/understand"
       type="WebPage"
     />
     <Header />

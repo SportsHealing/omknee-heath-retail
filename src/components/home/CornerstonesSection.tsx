@@ -9,8 +9,8 @@ const cornerstones = [
   { to: "/your-knee", title: "Your Knee", copy: "A plain-English tour of the joint you rely on every day." },
   { to: "/knee-movement", title: "Movement", copy: "Why knees like being used, and how to move well most days." },
   { to: "/cartilage-collagen-synovial-fluid", title: "Cartilage, Collagen & Synovial Fluid", copy: "The living materials inside the joint, and what keeps them healthy." },
-  { to: "/knee-health/strength-mobility", title: "Strength & Mobility", copy: "Where force lands, and the strength that spreads it evenly." },
-  { to: "/knee-health/nourish", title: "Nutrition", copy: "Eating for connective tissue, with gut health as the foundation." },
+  { to: "/movement-biomechanics", title: "Strength & Mobility", copy: "Where force lands, and the strength that spreads it evenly." },
+  { to: "/nourish", title: "Nutrition", copy: "Eating for connective tissue, with gut health as the foundation." },
   { to: "/healthy-knees-through-life", title: "Healthy Knees Through Life", copy: "What to prioritise in your 30s, 40s, 50s, 60s and beyond." },
 ];
 

@@ -10,7 +10,7 @@ import { HeartPulse, Salad, Activity, Gauge, ShieldCheck, ArrowRight } from "luc
 const pillars: { id: string; href?: string; icon: typeof HeartPulse; title: string; summary: string; points: string[] }[] = [
   {
     id: "general-health-wellness",
-    href: "/knee-health/wellness",
+    href: "/wellness",
     icon: HeartPulse,
     title: "General Health & Wellness",
     summary:
@@ -25,7 +25,7 @@ const pillars: { id: string; href?: string; icon: typeof HeartPulse; title: stri
   },
   {
     id: "nutrition-diet",
-    href: "/knee-health/nourish",
+    href: "/nourish",
     icon: Salad,
     title: "Nutrition & Diet",
     summary:
@@ -40,7 +40,7 @@ const pillars: { id: string; href?: string; icon: typeof HeartPulse; title: stri
   },
   {
     id: "knee-biomechanics",
-    href: "/knee-health/strength-mobility",
+    href: "/movement-biomechanics",
     icon: Activity,
     title: "Improving Knee Biomechanics",
     summary:
@@ -55,7 +55,7 @@ const pillars: { id: string; href?: string; icon: typeof HeartPulse; title: stri
   },
   {
     id: "managing-load",
-    href: "/knee-health/load",
+    href: "/load",
     icon: Gauge,
     title: "Managing Load",
     summary:
@@ -70,7 +70,7 @@ const pillars: { id: string; href?: string; icon: typeof HeartPulse; title: stri
   },
   {
     id: "injury-prevention",
-    href: "/knee-health/prepare",
+    href: "/prepare",
     icon: ShieldCheck,
     title: "Injury Prevention",
     summary:
