@@ -28,6 +28,15 @@ const PillarRow = ({ pillar }: { pillar: OmKneePillar }) => (
       onClick={() => trackPillarSelect(pillar.id)}
       className="group flex gap-5 md:gap-8 rounded-2xl border border-transparent px-4 py-6 md:px-8 md:py-8 transition-colors hover:border-border hover:bg-secondary/40"
     >
+      <span className="hidden sm:block shrink-0 w-24 md:w-28">
+        <img
+          src={pillar.image}
+          alt={pillar.imageAlt}
+          loading="lazy"
+          className="w-full aspect-square object-cover rounded-xl bg-secondary/50"
+        />
+      </span>
+
       <span className="shrink-0 flex flex-col items-center">
         <span className="font-serif text-2xl md:text-3xl text-primary/70 tabular-nums leading-none">
           {pillar.number}
