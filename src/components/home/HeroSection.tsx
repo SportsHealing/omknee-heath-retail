@@ -9,7 +9,7 @@
  */
 
 import { Button } from "@/components/ui/button";
-import heroIngredients from "@/assets/hero-ingredients.jpg";
+import heroKneeRunner from "@/assets/hero-knee-runner.jpg";
 
 const HeroSection = () => {
   return (
@@ -21,15 +21,15 @@ const HeroSection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ 
-          backgroundImage: `url(${heroIngredients})`,
+          backgroundImage: `url(${heroKneeRunner})`,
           willChange: "transform", // GPU acceleration hint
         }}
         role="img"
-        aria-label="Natural ingredients for knee health"
+        aria-label="Line illustration of a runner alongside a cross-section sketch of the knee joint"
       />
       
       {/* Overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/80 to-background/95" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/55 to-background/92" />
 
       <div className="container relative z-10 px-6 py-24 lg:py-32">
         <div className="max-w-3xl mx-auto text-center">
