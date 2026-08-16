@@ -9,6 +9,7 @@ import ProductSafety from "@/components/product/ProductSafety";
 import ProductHowToUse from "@/components/product/ProductHowToUse";
 import ProductFAQ from "@/components/product/ProductFAQ";
 import ProductCTA from "@/components/product/ProductCTA";
+import LearnBeforeYouBuy from "@/components/product/LearnBeforeYouBuy";
 import ProductTestimonials from "@/components/product/ProductTestimonials";
 import StickyBuyBar from "@/components/product/StickyBuyBar";
 import { ProductVariantProvider } from "@/components/product/ProductVariantContext";
@@ -115,7 +116,10 @@ const Product = () => {
           {/* Section 8: FAQ - Honest answers */}
           <ProductFAQ />
           
-          {/* Section 9: Final CTA */}
+          {/* Section 9: Learn before you buy */}
+          <LearnBeforeYouBuy />
+
+          {/* Section 10: Final CTA */}
           <ProductCTA />
         </main>
         <Footer />
