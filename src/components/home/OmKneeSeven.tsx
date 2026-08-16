@@ -49,7 +49,7 @@ const PillarRow = ({ pillar }: { pillar: OmKneePillar }) => (
           {pillar.shortDescription}
         </span>
         <span className="inline-flex items-center gap-2 font-sans text-sm text-primary min-h-[44px]">
-          Explore {pillar.name}
+          {pillar.ctaLabel}
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
         </span>
       </span>
@@ -60,8 +60,8 @@ const PillarRow = ({ pillar }: { pillar: OmKneePillar }) => (
 const OmKneeSeven = ({
   as = "h2",
   eyebrow = "The OmKnee Seven",
-  heading = "A complete approach to lifelong knee health",
-  intro = "Seven ideas that follow the way knees are actually looked after over a lifetime. The first five are everyday foundations. The last two are there for the moments when something changes.",
+  heading = "A complete approach to lifelong knee health.",
+  intro = "One journey, not seven isolated steps. You will not always need every part of the Seven.",
 }: OmKneeSevenProps) => {
   const Heading = as;
   const sectionRef = useRef<HTMLElement>(null);

@@ -18,14 +18,16 @@ import YourKnee from "./pages/pillars/YourKnee";
 import Movement from "./pages/pillars/Movement";
 import CartilageCollagen from "./pages/pillars/CartilageCollagen";
 import ThroughLife from "./pages/pillars/ThroughLife";
-import Understand from "./pages/pillars/Understand";
-import HealthAndWellness from "./pages/pillars/HealthAndWellness";
-import NutritionAndDiet from "./pages/pillars/NutritionAndDiet";
 import Biomechanics from "./pages/pillars/Biomechanics";
-import ManagingLoad from "./pages/pillars/ManagingLoad";
-import InjuryPrevention from "./pages/pillars/InjuryPrevention";
-import Diagnose from "./pages/pillars/Diagnose";
-import Treat from "./pages/pillars/Treat";
+
+// The OmKnee Seven
+import Wellness from "./pages/pillars/Wellness";
+import Nourish from "./pages/pillars/Nourish";
+import UnderstandPillar from "./pages/pillars/UnderstandPillar";
+import Load from "./pages/pillars/Load";
+import Prepare from "./pages/pillars/Prepare";
+import DiagnosePillar from "./pages/pillars/DiagnosePillar";
+import TreatPillar from "./pages/pillars/TreatPillar";
 
 // Shop depth
 import Product from "./pages/Product";
@@ -93,13 +95,13 @@ const App = () => (
           <Route path="/healthy-knees-through-life" element={<ThroughLife />} />
 
           {/* The OmKnee Seven */}
-          <Route path="/wellness" element={<HealthAndWellness />} />
-          <Route path="/nourish" element={<NutritionAndDiet />} />
-          <Route path="/understand" element={<Understand />} />
-          <Route path="/load" element={<ManagingLoad />} />
-          <Route path="/prepare" element={<InjuryPrevention />} />
-          <Route path="/diagnose" element={<Diagnose />} />
-          <Route path="/treat" element={<Treat />} />
+          <Route path="/wellness" element={<Wellness />} />
+          <Route path="/nourish" element={<Nourish />} />
+          <Route path="/understand" element={<UnderstandPillar />} />
+          <Route path="/load" element={<Load />} />
+          <Route path="/prepare" element={<Prepare />} />
+          <Route path="/diagnose" element={<DiagnosePillar />} />
+          <Route path="/treat" element={<TreatPillar />} />
           <Route path="/movement-biomechanics" element={<Biomechanics />} />
 
           {/* Shop depth */}

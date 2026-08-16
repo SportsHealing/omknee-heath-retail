@@ -1,10 +1,11 @@
 /**
- * Knee Intro Section - brief introduction to the knee as a joint
- * Deeper clinical detail is signposted to SportsHealing.
+ * Understand Your Knee - homepage introduction to the joint.
+ * Deeper anatomy and biomechanics route to the SportsHealing Knee Passport.
  */
 
-import { Button } from "@/components/ui/button";
-import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { trackEcosystemTransfer, trackPillarSelect } from "@/lib/analytics";
 
 const KneeIntroSection = () => {
   return (
@@ -12,72 +13,47 @@ const KneeIntroSection = () => {
       <div className="container px-6">
         <div className="max-w-3xl mx-auto text-center">
           <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary/80 mb-4">
-            Start Here
+            Understand your knee
           </p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-8 leading-tight">
-            Your knee is not just a hinge
+            One remarkable joint.
           </h2>
-          <div className="space-y-5 font-sans text-muted-foreground leading-relaxed">
+          <div className="space-y-5 font-sans text-muted-foreground leading-relaxed text-left sm:text-center">
             <p>
-              The knee is a living, adaptive system. It is the largest joint in the body, where
-              the thigh bone (femur), shin bone (tibia) and kneecap (patella) meet, wrapped in a
-              capsule of tissue that produces lubricating synovial fluid.
+              Your knee has to combine movement with stability while repeatedly responding to the
+              demands of your body and the world around you.
             </p>
             <p>
-              Bone, cartilage, meniscus, ligaments, tendons, muscles and nerves all work together
-              in concert every time you move — bending, straightening, rolling, gliding and
-              rotating through a remarkable range of motion.
+              Cartilage provides smooth joint surfaces. Menisci help distribute forces. Ligaments
+              contribute to stability. Muscles and tendons generate and control movement. Synovial
+              fluid forms part of the environment within the joint.
             </p>
-            <p className="text-foreground font-medium">
-              Understanding your knee comes first. Everything else follows from that.
+            <p>
+              Together, these structures allow us to walk, climb, squat, run, jump and change
+              direction.
             </p>
           </div>
 
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="px-8 font-sans text-sm tracking-wide" asChild>
-              <a
-                href="https://www.sportshealing.com/know-your-knee/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Explore detailed knee anatomy at SportsHealing"
-              >
-                Knee anatomy: Know Your Knee
-                <ArrowUpRight className="w-4 h-4 ml-2" />
-              </a>
-            </Button>
-            <Button variant="outline" size="lg" className="px-8 font-sans text-sm tracking-wide" asChild>
-              <a href="/learn">Knee basics guide</a>
-            </Button>
-          </div>
-
-          <p className="mt-8 font-sans text-sm text-muted-foreground">
-            Also from our clinical partners:{" "}
-            <a href="https://www.sportshealing.com/collagen-joint-health/" target="_blank" rel="noopener" className="text-primary underline underline-offset-4">
-              collagen and joint health
-            </a>
-            ,{" "}
-            <a href="https://mykneescore.com/" target="_blank" rel="noopener" className="text-primary underline underline-offset-4">
-              a 60-second knee triage test
-            </a>{" "}
-            and{" "}
-            <a href="https://www.chinmaygupte.com/knee-conditions/" target="_blank" rel="noopener" className="text-primary underline underline-offset-4">
-              a knee surgeon's guide to knee conditions
-            </a>
-            .
-          </p>
-
-          <p className="mt-6 font-sans text-xs text-muted-foreground">
-            For in-depth clinical detail, assessment and treatment pathways, we redirect you to{" "}
-            <a
-              href="https://www.sportshealing.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:text-foreground"
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Link
+              to="/understand"
+              onClick={() => trackPillarSelect("understand")}
+              className="inline-flex items-center gap-2 font-sans text-sm text-primary hover:underline underline-offset-4 min-h-[44px]"
             >
-              www.sportshealing.com
+              Meet Your Knee
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <a
+              href="https://www.sportshealing.com/"
+              target="_blank"
+              rel="noopener"
+              onClick={() => trackEcosystemTransfer("sportshealing")}
+              className="inline-flex items-center gap-2 font-sans text-sm text-muted-foreground hover:text-foreground min-h-[44px]"
+            >
+              Explore the Knee Passport
+              <ArrowUpRight className="w-4 h-4" />
             </a>
-            .
-          </p>
+          </div>
         </div>
       </div>
     </section>

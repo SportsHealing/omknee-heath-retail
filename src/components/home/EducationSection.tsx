@@ -32,25 +32,23 @@ const EducationSection = () => {
           {/* Content */}
           <div className="order-1 lg:order-2">
             <p className="font-sans text-sm tracking-[0.15em] uppercase text-accent mb-4">
-              Why look after your knees
+              Why knee health matters
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-8 leading-tight">
-              Your Knees Carry You Through Life
+              Looking after your knees starts before something goes wrong.
             </h2>
-            
+
             <div className="font-sans text-muted-foreground leading-relaxed mb-10 space-y-5">
+              <p>Knee health is not about one product, one exercise or one treatment.</p>
               <p>
-                Our knees are remarkable—engineered to support movement, absorb impact, 
-                and adapt to the demands of daily life. Over time, factors like activity level, 
-                age, and lifestyle can influence how our joints feel and function.
+                It is influenced by your general health, nutrition, strength, movement, activity,
+                the demands you place on your knees and how you prepare for them.
               </p>
               <p>
-                Looking after knee health early, and consistently, can support confidence 
-                in movement across decades. Our approach isn't about quick fixes—it's about 
-                providing thoughtful, consistent support that respects how joints naturally work.
+                And when something changes, knowing when to seek further assessment matters too.
               </p>
               <p className="text-foreground font-medium">
-                Because understanding your knees helps you make informed choices about your wellbeing.
+                We bring these ideas together in one simple framework.
               </p>
             </div>
 
@@ -60,22 +58,6 @@ const EducationSection = () => {
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
-
-            {/* Stats highlight */}
-            <div className="mt-12 pt-8 border-t border-border grid grid-cols-2 gap-6">
-              <div>
-                <p className="font-serif text-3xl lg:text-4xl text-foreground mb-1">1 in 4</p>
-                <p className="font-sans text-sm text-muted-foreground">
-                  Adults 45+ experience discomfort
-                </p>
-              </div>
-              <div>
-                <p className="font-serif text-3xl lg:text-4xl text-foreground mb-1">8.75m</p>
-                <p className="font-sans text-sm text-muted-foreground">
-                  UK adults seek help annually
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
