@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* OmKneeHealth Clinical Authority Design System
-   Inspired by Healf - Calm, Clinical, Premium
+/* OmKneeHealth Design System
+   Derived from the OmKneeHealth Knee Passport: deep teal, gold, cream.
    All colors MUST be HSL.
 */
 
@@ -15,49 +15,49 @@
 
 @layer base {
   :root {
-    /* Clinical Authority Palette */
+    /* Knee Passport palette */
     --background: 0 0% 100%;
-    --foreground: 220 20% 15%;
+    --foreground: 191 25% 12%;
     
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 15%;
+    --card-foreground: 191 25% 12%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 15%;
+    --popover-foreground: 191 25% 12%;
     
-    /* Deep forest green - medical authority */
-    --primary: 171 25% 20%;
+    /* Deep passport teal */
+    --primary: 191 70% 18%;
     --primary-foreground: 0 0% 100%;
     
-    /* Soft clinical off-white */
-    --secondary: 60 20% 97%;
-    --secondary-foreground: 220 20% 20%;
+    /* Passport cream */
+    --secondary: 44 41% 95%;
+    --secondary-foreground: 191 25% 16%;
     
-    /* Muted gold - subtle premium accent */
-    --accent: 38 35% 55%;
-    --accent-foreground: 0 0% 100%;
+    /* Passport gold */
+    --accent: 45 55% 64%;
+    --accent-foreground: 191 45% 14%;
     
-    --muted: 60 10% 96%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 44 24% 96%;
+    --muted-foreground: 191 12% 40%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 60 10% 90%;
-    --input: 60 10% 90%;
-    --ring: 171 25% 20%;
+    --border: 44 20% 89%;
+    --input: 44 20% 89%;
+    --ring: 191 70% 18%;
     
     --radius: 0.5rem;
     
-    /* Custom clinical tokens */
-    --cream: 60 25% 98%;
-    --sage: 171 25% 20%;
-    --sage-light: 171 18% 95%;
-    --warm-gray: 30 5% 45%;
-    --terracotta: 25 30% 50%;
-    --clinical-green: 171 25% 20%;
-    --clinical-light: 171 14% 97%;
-    --trust-badge: 171 22% 90%;
+    /* Custom passport tokens */
+    --cream: 44 41% 95%;
+    --sage: 191 70% 18%;
+    --sage-light: 191 30% 94%;
+    --warm-gray: 40 6% 45%;
+    --terracotta: 45 55% 64%;
+    --clinical-green: 191 70% 18%;
+    --clinical-light: 191 30% 97%;
+    --trust-badge: 45 45% 88%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -79,14 +79,14 @@
     --popover: 220 12% 12%;
     --popover-foreground: 60 15% 95%;
     
-    --primary: 171 32% 46%;
-    --primary-foreground: 220 15% 8%;
+    --primary: 191 45% 55%;
+    --primary-foreground: 191 40% 8%;
     
     --secondary: 220 10% 18%;
     --secondary-foreground: 60 15% 90%;
     
-    --accent: 38 35% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 50% 58%;
+    --accent-foreground: 191 45% 10%;
     
     --muted: 220 10% 16%;
     --muted-foreground: 60 10% 60%;
@@ -96,16 +96,16 @@
     
     --border: 220 10% 20%;
     --input: 220 10% 20%;
-    --ring: 171 32% 46%;
+    --ring: 191 45% 55%;
 
-    --cream: 220 10% 12%;
-    --sage: 171 32% 46%;
-    --sage-light: 171 14% 18%;
-    --warm-gray: 30 5% 60%;
-    --terracotta: 25 30% 50%;
-    --clinical-green: 171 32% 46%;
-    --clinical-light: 220 10% 14%;
-    --trust-badge: 171 18% 20%;
+    --cream: 191 18% 12%;
+    --sage: 191 45% 55%;
+    --sage-light: 191 20% 18%;
+    --warm-gray: 40 6% 60%;
+    --terracotta: 45 50% 58%;
+    --clinical-green: 191 45% 55%;
+    --clinical-light: 191 18% 14%;
+    --trust-badge: 45 25% 22%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -125,12 +125,12 @@
   
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Jost', system-ui, sans-serif;
     letter-spacing: -0.01em;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'EB Garamond', Georgia, serif;
+    font-family: 'Bodoni Moda', Georgia, serif;
     @apply font-normal tracking-tight;
   }
 }

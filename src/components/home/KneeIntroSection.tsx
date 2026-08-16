@@ -6,12 +6,19 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { trackEcosystemTransfer, trackPillarSelect } from "@/lib/analytics";
+import kneeAnterior from "@/assets/sketch-knee-anterior.png";
 
 const KneeIntroSection = () => {
   return (
     <section id="the-knee" className="py-24 lg:py-32 bg-background">
       <div className="container px-6">
         <div className="max-w-3xl mx-auto text-center">
+          <img
+            src={kneeAnterior}
+            alt="Pencil sketch of the knee joint from the front"
+            loading="lazy"
+            className="w-40 md:w-52 mx-auto mb-10"
+          />
           <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary/80 mb-4">
             Understand your knee
           </p>
