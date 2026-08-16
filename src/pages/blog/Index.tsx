@@ -13,13 +13,14 @@ import { useState } from "react";
 import { ArrowRight, Calendar } from "lucide-react";
 
 export const JOURNAL_CATEGORIES = [
-  "Health & Wellness",
-  "Nutrition",
-  "Movement & Biomechanics",
-  "Managing Load",
-  "Injury Risk",
+  "Wellness",
+  "Nourish",
+  "Understand",
+  "Load",
+  "Prepare",
+  "Diagnose",
+  "Treat",
   "Sport",
-  "Recovery",
   "Healthy Ageing",
 ] as const;
 
@@ -28,7 +29,7 @@ export const ARTICLES = [
     slug: "best-supplement-for-knee-cartilage",
     title: "What Is the Best Supplement for Knee Cartilage?",
     excerpt: "A UK clinician's evidence-based guide to choosing a knee cartilage supplement. We examine collagen, glucosamine, chondroitin, and which ingredients have authorised health claims.",
-    category: "Nutrition",
+    category: "Nourish",
     readTime: "8 min read",
     date: "2024-01-15"
   },
@@ -36,7 +37,7 @@ export const ARTICLES = [
     slug: "do-collagen-supplements-help-knee-joints",
     title: "Do Collagen Supplements Help Knee Joints?",
     excerpt: "Understanding what collagen supplements can and cannot do for knee joints. We look at absorption, dosing, and why vitamin C matters for cartilage function.",
-    category: "Nutrition",
+    category: "Nourish",
     readTime: "7 min read",
     date: "2024-01-10"
   },
@@ -44,7 +45,7 @@ export const ARTICLES = [
     slug: "supplements-for-knee-osteoarthritis-evidence",
     title: "Supplements for Knee Osteoarthritis: What the Evidence Says",
     excerpt: "An honest examination of joint supplement research for osteoarthritis. What works, what doesn't, and why supplements are not a replacement for medical care.",
-    category: "Nutrition",
+    category: "Nourish",
     readTime: "10 min read",
     date: "2024-01-05"
   },
@@ -52,7 +53,7 @@ export const ARTICLES = [
     slug: "knee-pain-supplements-vs-painkillers",
     title: "Knee Pain Supplements vs Painkillers: Understanding Your Options",
     excerpt: "Comparing nutritional supplements and pain medications for knee discomfort. Why they serve different purposes and when to speak with your GP.",
-    category: "Recovery",
+    category: "Treat",
     readTime: "6 min read",
     date: "2024-01-01"
   },
@@ -97,19 +98,33 @@ const BlogIndex = () => {
         <section className="container mx-auto px-6 pb-16 md:pb-24">
           <div className="max-w-3xl mx-auto text-center">
             <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary/80 mb-4">
-              UK Clinician Perspectives
+              The Journal
             </p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-foreground leading-tight mb-6">
-              Knee Health Insights
+              The OmKnee Journal
             </h1>
-            <p className="font-sans text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Evidence-based articles on joint health, supplements, and maintaining healthy knees—written by UK healthcare professionals with honest, balanced perspectives.
+            <p className="font-serif text-xl text-foreground mb-6">
+              Better information for better knee health.
             </p>
+            <div className="space-y-4 font-sans text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto text-left sm:text-center">
+              <p>
+                Explore practical, evidence informed articles about movement, nutrition, knee anatomy,
+                loading, preparation, diagnosis, treatment, sport and healthy ageing.
+              </p>
+              <p>Our aim is simple.</p>
+              <p>
+                Explain the subject clearly, distinguish evidence from opinion and help you make
+                better informed decisions about your knees.
+              </p>
+            </div>
           </div>
         </section>
 
         {/* Categories */}
         <section className="container mx-auto px-6 pb-12">
+          <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary/80 text-center mb-5">
+            Explore by topic
+          </p>
           <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-2">
             {["All", ...JOURNAL_CATEGORIES].map((cat) => (
               <button
