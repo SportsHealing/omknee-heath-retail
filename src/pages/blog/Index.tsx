@@ -150,7 +150,7 @@ const BlogIndex = () => {
             <div className="space-y-8">
               {visible.length === 0 && (
                 <p className="font-sans text-sm text-muted-foreground text-center py-12">
-                  Nothing in this category yet — more writing is on the way.
+                  Nothing in this category yet. More writing is on the way.
                 </p>
               )}
               {visible.map((article) => (
