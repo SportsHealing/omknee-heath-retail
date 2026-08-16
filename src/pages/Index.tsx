@@ -1,17 +1,15 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/home/HeroSection";
-import PhilosophySection from "@/components/home/PhilosophySection";
 import KneeIntroSection from "@/components/home/KneeIntroSection";
-import KneeComponentsSection from "@/components/home/KneeComponentsSection";
-import KneeHealthPillars from "@/components/home/KneeHealthPillars";
+import CornerstonesSection from "@/components/home/CornerstonesSection";
+import KneeScorePanel from "@/components/home/KneeScorePanel";
+import ShopDestination from "@/components/home/ShopDestination";
 import EducationSection from "@/components/home/EducationSection";
-import AssessmentSection from "@/components/home/AssessmentSection";
-import SignatureProductSection from "@/components/home/SignatureProductSection";
-import CuratedSection from "@/components/home/CuratedSection";
+import PhilosophySection from "@/components/home/PhilosophySection";
 import OurStorySection from "@/components/home/OurStorySection";
-import CTASection from "@/components/home/CTASection";
 import HomeFAQ from "@/components/home/HomeFAQ";
+import CTASection from "@/components/home/CTASection";
 import SEO from "@/components/SEO";
 import OrganizationSchema from "@/components/OrganizationSchema";
 import WebPageSchema from "@/components/WebPageSchema";
@@ -21,59 +19,37 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Knee Health: Knee Pain Causes & Exercises Explained"
-        description="Understand your knee joint, common causes of knee pain, and how to keep knees healthy with exercises, nutrition, biomechanics, load management and injury prevention."
+        title="Knee Health & Wellness: Understand, Score, Look After"
+        description="Understand your knees, measure them with a Knee Score, and look after them with curated nutrition, supports and recovery products. Evidence-informed UK knee health."
         canonicalPath="/"
-        keywords="knee pain, knee pain causes, knee health, knee joint, knee anatomy, knee exercises, knee strengthening exercises, exercises for knee pain, how to strengthen knees, how to improve knee health, knee osteoarthritis, arthritis in knee, swollen knee, inner knee pain, outer knee pain, pain behind the knee, runner's knee, knee pain in women, collagen for knees, knee biomechanics"
+        keywords="knee health, knee pain, knee joint, knee exercises, knee strengthening exercises, how to improve knee health, collagen for knees, knee supplements UK, knee brace, knee score"
       />
       <OrganizationSchema />
       <WebPageSchema
         name="OmKneeHealth - Knee Health & Wellness"
-        description="A clinician-founded knee health and wellness resource: understand the knee joint, its collagen-rich components, and how to maintain knee health day to day."
+        description="Consumer knee health and wellness: understand your knees, track a Knee Score, and shop curated nutrition, supports and recovery products."
         url="https://omkneehealth.com"
         type="WebPage"
       />
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", url: "https://omkneehealth.com" },
-        ]}
-      />
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://omkneehealth.com" }]} />
       <Header />
       <main>
-        {/* Section 1: Hero */}
+        {/* Understand */}
         <HeroSection />
-
-        {/* Section 2: Brief introduction to the knee as a joint */}
         <KneeIntroSection />
+        <CornerstonesSection />
 
-        {/* Section 3: The components of the knee - collagen & synovial fluid */}
-        <KneeComponentsSection />
+        {/* Measure */}
+        <KneeScorePanel />
 
-        {/* Section 4: Maintaining knee health - five pillars */}
-        <KneeHealthPillars />
-
-        {/* Section 5: Philosophy */}
-        <PhilosophySection />
-
-        {/* Section 6: Signature Product */}
-        <SignatureProductSection />
-
-        {/* Section 7: Assessment Tool */}
-        <AssessmentSection />
-
-        {/* Section 8: Education */}
+        {/* Look after */}
+        <ShopDestination />
         <EducationSection />
 
-        {/* Section 9: Curated Resources */}
-        <CuratedSection />
-
-        {/* Section 10: Our Story */}
+        {/* Who we are */}
+        <PhilosophySection />
         <OurStorySection />
-
-        {/* Section 11: FAQ */}
         <HomeFAQ />
-
-        {/* Section 12: Gentle CTA */}
         <CTASection />
       </main>
       <Footer />
