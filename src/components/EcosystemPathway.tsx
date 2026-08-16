@@ -5,6 +5,7 @@
  */
 
 import { ArrowUpRight } from "lucide-react";
+import { trackEcosystemTransfer } from "@/lib/analytics";
 
 export type EcosystemSite = "sportshealing" | "mykneescore" | "mykneescan" | "chinmaygupte";
 
@@ -50,6 +51,7 @@ const EcosystemPathway = ({ site, eyebrow, title, description, cta, href }: Ecos
           href={href ?? target.url}
           target="_blank"
           rel="noopener"
+          onClick={() => trackEcosystemTransfer(site)}
           className="group block max-w-3xl mx-auto rounded-2xl border border-border bg-secondary/40 p-8 md:p-10 transition-colors hover:border-primary/40 hover:bg-secondary/60 min-h-[44px]"
         >
           <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary/80 mb-4">
