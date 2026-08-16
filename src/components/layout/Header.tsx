@@ -1,27 +1,41 @@
 import { Button } from "@/components/ui/button";
-import { Menu, X, Search, ShoppingBag, User } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Menu, X, Search, ShoppingBag, User, ChevronDown } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import SiteSearch from "./SiteSearch";
+import { OMKNEE_SEVEN } from "@/lib/omkneeSeven";
+import { trackPillarSelect } from "@/lib/analytics";
 import logoDarkGreen from "@/assets/logo-dark-green.png";
 
 const navItems = [
-  { to: "/knee-health", label: "Look After Your Knees" },
   { to: "/knee-score", label: "Knee Score" },
   { to: "/shop", label: "Shop" },
   { to: "/journal", label: "Journal" },
   { to: "/about", label: "About" },
 ];
 
+const foundations = OMKNEE_SEVEN.filter((p) => p.group === "foundation");
+const pathway = OMKNEE_SEVEN.filter((p) => p.group === "pathway");
+
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [megaOpen, setMegaOpen] = useState(false);
+  const megaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMegaOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, []);
 
   return (
@@ -47,6 +61,93 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+            <div
+              ref={megaRef}
+              className="relative"
+              onMouseEnter={() => setMegaOpen(true)}
+              onMouseLeave={() => setMegaOpen(false)}
+            >
+              <Link
+                to="/knee-health"
+                onClick={() => setMegaOpen(false)}
+                onFocus={() => setMegaOpen(true)}
+                aria-expanded={megaOpen}
+                aria-haspopup="true"
+                className="inline-flex items-center gap-1.5 font-sans text-xs xl:text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap min-h-[44px]"
+              >
+                Look After Your Knees
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform ${megaOpen ? "rotate-180" : ""}`}
+                  aria-hidden="true"
+                />
+              </Link>
+
+              {megaOpen && (
+                <div className="absolute left-0 top-full pt-4 w-[36rem] animate-fade-up">
+                  <div className="rounded-2xl border border-border bg-background shadow-xl p-8">
+                    <p className="font-sans text-[0.65rem] tracking-[0.22em] uppercase text-primary/70 mb-5">
+                      The OmKnee Seven
+                    </p>
+                    <ul className="grid grid-cols-2 gap-x-8 gap-y-1">
+                      {foundations.map((pillar) => (
+                        <li key={pillar.id}>
+                          <Link
+                            to={pillar.to}
+                            onClick={() => {
+                              trackPillarSelect(pillar.id);
+                              setMegaOpen(false);
+                            }}
+                            className="group flex gap-3 rounded-lg px-3 py-2.5 -mx-3 transition-colors hover:bg-secondary/60"
+                          >
+                            <span className="font-serif text-sm text-primary/60 tabular-nums pt-0.5">
+                              {pillar.number}
+                            </span>
+                            <span>
+                              <span className="block font-sans text-sm text-foreground">
+                                {pillar.name}
+                              </span>
+                              <span className="block font-sans text-xs text-muted-foreground">
+                                {pillar.strapline}
+                              </span>
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="my-5 h-px bg-border" aria-hidden="true" />
+
+                    <ul className="grid grid-cols-2 gap-x-8 gap-y-1">
+                      {pathway.map((pillar) => (
+                        <li key={pillar.id}>
+                          <Link
+                            to={pillar.to}
+                            onClick={() => {
+                              trackPillarSelect(pillar.id);
+                              setMegaOpen(false);
+                            }}
+                            className="group flex gap-3 rounded-lg px-3 py-2.5 -mx-3 transition-colors hover:bg-secondary/60"
+                          >
+                            <span className="font-serif text-sm text-primary/60 tabular-nums pt-0.5">
+                              {pillar.number}
+                            </span>
+                            <span>
+                              <span className="block font-sans text-sm text-foreground">
+                                {pillar.name}
+                              </span>
+                              <span className="block font-sans text-xs text-muted-foreground">
+                                {pillar.strapline}
+                              </span>
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
+            </div>
+
             {navItems.map((item) => (
               <Link
                 key={item.to}
