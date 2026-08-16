@@ -1,8 +1,8 @@
 /**
- * Approved pillar copy from the OmKneeHealth Master Website Copy Deck.
- * Structured so that the Seven are defined once and rendered by PillarPage.
- * Wording is reproduced from the approved deck and should not be rewritten
- * without an approved copy update.
+ * Pillar copy for the OmKnee Seven.
+ * Source: OmKnee_Seven_Pillars_Rewrite (approved rewrite of the master deck).
+ * Compliance rules from the master deck still apply: no supplement claims,
+ * no symptom to product routing, no promise of injury prevention.
  */
 
 import type { PillarId } from "@/lib/omkneeSeven";
@@ -44,54 +44,51 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
     eyebrow: "The OmKnee Seven \u00b7 01 Wellness",
     h1: "Look after the whole person.",
     intro: [
-      "Your knee does not exist in isolation.",
-      "The way you move is influenced by your strength, general health, sleep, recovery, confidence, activity levels and the physical demands of everyday life.",
-      "Looking after your knees therefore begins with looking after yourself.",
+      "The knee is where the problem shows up. It is rarely where it starts.",
+      "The knees that do well long term tend to belong to people who are strong, active, sleep reasonably and have not stopped moving out of fear. The knees that struggle are often attached to someone who has been told to rest, has lost strength, and now finds everything harder. The joint is the same. The body around it is not.",
+      "So this pillar is not really about knees. It is about the person carrying them.",
     ],
     sections: [
       {
         title: "Keep moving",
         paragraphs: [
-          "Regular physical activity matters throughout life.",
-          "Walking, cycling, swimming, strength training, sport and other forms of movement place different demands on the body, but all can contribute to maintaining physical capacity.",
-          "The best activity is often one that is appropriate for you and sustainable enough to become part of life.",
+          "Walking, cycling, swimming, lifting, sport, gardening. It matters less which one and more that it happens and keeps happening. The best exercise is the one you will still be doing in five years.",
+          "If your knee has put you off moving, that is worth taking seriously, but the answer is almost never to move less for good.",
         ],
       },
       {
-        title: "Build strength",
+        title: "Get strong",
         paragraphs: [
-          "Muscles generate and control movement around the knee.",
-          "Strengthening the legs and the wider movement chain can improve physical capacity and help prepare the body for everyday and sporting demands.",
-          "Strength is relevant at every age.",
+          "Muscle is the knee's suspension. Quads, hamstrings, glutes, calves. They absorb load, control movement and protect the joint from surprises.",
+          "Strength is not a young person's project. Start where you are.",
         ],
       },
       {
-        title: "Make recovery part of activity",
+        title: "Recover on purpose",
         paragraphs: [
-          "Activity and recovery belong together.",
-          "Training, work and everyday life all create physical demands. Recovery gives the body time to adapt before those demands are repeated.",
-          "Good recovery does not necessarily mean doing nothing. It may mean varying activity, adjusting intensity or allowing sufficient time between harder sessions.",
+          "Training breaks the body down a little. Recovery is when it adapts. Skip the second half and you just accumulate the first.",
+          "Recovery does not have to mean the sofa. Easier days, different activities, sensible spacing between hard sessions. Look at your week, not just today.",
         ],
       },
       {
-        title: "Sleep well",
+        title: "Sleep",
         paragraphs: [
-          "Sleep is an important part of general health and recovery.",
-          "Rather than treating sleep as a separate knee treatment, we consider it one part of the wider health picture.",
+          "We will not pretend sleep is a knee treatment. It is a whole body one, and knees live in bodies.",
+          "If you are chronically short of sleep, that sits upstream of a lot of things, including how well you tolerate load and how much pain you notice.",
         ],
       },
       {
-        title: "Maintain a healthy body composition",
+        title: "Body composition",
         paragraphs: [
-          "Body composition can influence general health, physical capacity and the demands associated with movement.",
-          "The aim should not be to pursue an arbitrary number, but to support health, strength, mobility and sustainable habits.",
+          "Carrying more weight increases the demand on your knees with every step. That is physics, not judgement.",
+          "But the goal is not a number on a scale. It is the strength, mobility and habits that let you keep going. Chasing weight loss without building strength usually leaves people weaker.",
         ],
       },
       {
-        title: "Keep moving through life",
+        title: "Movement through life",
         paragraphs: [
-          "The activities we value change with age, work, family, sport and health.",
-          "Maintaining movement and physical capacity can help preserve the freedom to continue doing the things that matter.",
+          "What you want from your knees at 25, 45 and 70 is different.",
+          "The thread that runs through all of it is capacity: keeping enough strength and confidence to do the next thing you want to do.",
         ],
         cta: { label: "Explore Healthy Knees Through Life", to: "/healthy-knees-through-life" },
       },
@@ -108,54 +105,52 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
     eyebrow: "The OmKnee Seven \u00b7 02 Nourish",
     h1: "Nourish the body that moves you.",
     intro: [
-      "Nutrition is part of overall health.",
-      "Food provides energy, protein, fats, carbohydrates, vitamins, minerals and other nutrients used throughout the body.",
-      "Our approach starts with food and considers supplementation within that wider context.",
+      "We sell supplements. So let us be clear about the order of things.",
+      "Food first. Then enough of it, and enough protein, if you are training. Then bone health, which most people ignore until it matters. Then, and only then, whether a supplement earns its place.",
+      "If you skip to the end of that list, you are doing what the supplement industry hopes you will do.",
     ],
     sections: [
       {
         title: "Start with the whole diet",
         paragraphs: [
-          "No single nutrient defines a healthy diet.",
-          "Variety, balance and sufficient overall nutrition matter more than focusing on one fashionable ingredient.",
+          "There is no magic ingredient. Variety, enough energy, enough protein and not too much of anything does more than any single nutrient.",
+          "Fashionable ingredients come and go. That advice has not changed in decades.",
         ],
       },
       {
         title: "Protein and muscle",
         paragraphs: [
-          "Muscle is central to movement.",
-          "Dietary protein provides amino acids used by the body to build and maintain proteins, alongside adequate energy intake and physical activity.",
-          "For people who exercise, strength training and nutrition should be considered together.",
+          "Muscle is what moves the knee and protects it. Muscle needs protein to build and maintain, plus enough overall food and something to work against.",
+          "If you strength train, think of the two together. Training without adequate protein and food is a slow way to get results.",
         ],
       },
       {
-        title: "Bone health",
+        title: "Bone",
         paragraphs: [
-          "Healthy bones form the structural foundations of the knee.",
-          "Nutrition, physical activity and other lifestyle factors contribute to maintaining normal bone health throughout life.",
+          "Bones are the frame the knee hangs on.",
+          "Bone health is built through life, mostly through load, adequate nutrition and general health, and it declines quietly if it is neglected. Worth thinking about well before it becomes a problem.",
         ],
       },
       {
-        title: "Collagen and connective tissue",
+        title: "Collagen",
         paragraphs: [
-          "Collagen is an important structural protein found throughout the body, including connective tissues.",
-          "It is also one of the most discussed ingredients in joint supplements.",
-          "Understanding the different forms of collagen, how supplements are produced and what research has actually investigated is more useful than assuming all collagen products are equivalent.",
+          "Collagen is everywhere in the body and everywhere in the joint supplement aisle. Those two facts are not the same thing.",
+          "Different products use different forms, made in different ways, and the research behind them varies enormously. Before buying any collagen product, it is worth understanding what was actually studied and what was not. We have written that up.",
         ],
         cta: { label: "Understand Collagen", to: "/ingredients/collagen" },
       },
       {
-        title: "Where do supplements fit?",
+        title: "Where supplements fit",
         paragraphs: [
-          "A food supplement is intended to supplement the normal diet. It should not be regarded as a substitute for a varied diet or as a treatment for a knee condition.",
-          "Our aim is to provide clear information about ingredients, formulation and use so that you can make an informed choice.",
+          "A food supplement supplements the diet. That is the legal definition and it is also, honestly, the right way to think about it. It is not a substitute for a varied diet and it is not a treatment for a knee condition.",
+          "What we can do is tell you exactly what is in ours, at what dose, and what the evidence does and does not say. Then it is your call.",
         ],
       },
       {
         title: "What supplements cannot do",
         paragraphs: [
-          "A supplement should not be presented as a shortcut around movement, strength, appropriate healthcare or a balanced diet.",
-          "If you have a persistent knee problem, injury or significant change in function, buying a supplement is not a substitute for appropriate assessment.",
+          "They will not replace strength work. They will not replace food.",
+          "And if your knee is painful, swollen or not working properly, a supplement is not the answer to that question. Getting it looked at is.",
         ],
       },
     ],
@@ -172,9 +167,9 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
     eyebrow: "The OmKnee Seven \u00b7 03 Understand",
     h1: "Know your knee.",
     intro: [
-      "The knee looks simple from the outside.",
-      "Inside, it is a sophisticated interaction between bones, cartilage, menisci, ligaments, tendons, muscles and the tissues that surround the joint.",
-      "Understanding these structures makes it easier to understand movement, loading, injury and recovery.",
+      "From outside it looks like a hinge. It is not.",
+      "The knee bends and straightens, yes, but it also rotates, glides and shifts slightly as it moves. It has to be stable enough to land on and mobile enough to squat with.",
+      "That is a hard brief, and understanding how it is met makes everything else on this site make more sense.",
     ],
     sections: [
       {
@@ -183,42 +178,42 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
         items: [
           {
             title: "Bones",
-            copy: "The knee brings together the femur and tibia, with the patella at the front of the joint. Their shape contributes to how the knee moves.",
+            copy: "Femur above, tibia below, patella at the front. Their shapes are not accidental. The curves of the femur and the shallow surface of the tibia are why the knee can roll and glide rather than just fold.",
           },
           {
             title: "Cartilage",
-            copy: "Articular cartilage covers the joint surfaces and provides a smooth, low friction interface for movement.",
+            copy: "Articular cartilage covers the ends of the bones. It is smoother than ice on ice, and it lets the joint move thousands of times a day with almost no friction. It has poor blood supply, which is part of why cartilage problems are taken seriously.",
           },
           {
             title: "Menisci",
-            copy: "The medial and lateral menisci sit between the femur and tibia. They contribute to load distribution and the mechanics of the knee.",
+            copy: "Two C shaped pads of fibrocartilage between femur and tibia. They spread load across the joint and contribute to stability.",
           },
           {
             title: "Ligaments",
-            copy: "Ligaments help guide and stabilise movement. The cruciate and collateral ligaments have different roles in controlling movement between the bones.",
+            copy: "The ACL and PCL cross in the middle of the joint and control front to back movement and rotation. The MCL and LCL sit at the sides and resist side to side stress. Different ligaments, different jobs, different injuries.",
           },
           {
             title: "Muscles and tendons",
-            copy: "Muscles create movement. Tendons connect muscle to bone and transmit the forces that allow the knee to bend, straighten and respond to activity.",
+            copy: "Muscles create the movement. Tendons transmit it to bone. The quadriceps and patellar tendons at the front, the hamstrings behind, the calves below. Strong, well controlled muscles are the knee's best protection.",
           },
           {
             title: "Synovial fluid",
-            copy: "The knee is a synovial joint. Synovial fluid forms part of the internal joint environment and contributes to lubrication of the articulating surfaces.",
+            copy: "The knee is a synovial joint, sealed in a capsule containing fluid that lubricates the surfaces and helps nourish the cartilage. When a knee swells, it is usually this environment reacting to something.",
           },
         ],
       },
       {
-        title: "Your knee moves in more than one direction",
+        title: "More than one direction",
         paragraphs: [
-          "The knee bends and straightens, but movement also includes rotation and smaller translations between the joint surfaces.",
-          "Walking, running, squatting and changing direction therefore require coordination across the knee and the rest of the lower limb.",
+          "Because the knee rotates and glides as well as bends, walking, running, squatting and changing direction all need coordination between the knee, the hip and the ankle.",
+          "That is why so much of knee rehabilitation is actually about the rest of the leg.",
         ],
       },
       {
-        title: "Want to understand more?",
+        title: "Want to go deeper?",
         paragraphs: [
-          "OmKneeHealth provides the essentials.",
-          "For a deeper exploration of knee anatomy, biomechanics and individual structures, continue to the Knee Passport.",
+          "This page covers the essentials.",
+          "For proper anatomy and biomechanics, structure by structure, the Knee Passport lives at SportsHealing.",
         ],
         cta: {
           label: "Explore the Knee Passport",
@@ -241,54 +236,51 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
     eyebrow: "The OmKnee Seven \u00b7 04 Load",
     h1: "Understand what you ask your knee to do.",
     intro: [
-      "Load is part of life.",
-      "Walking loads the knee. Stairs load the knee. Strength training loads the knee. Running and sport increase and change those demands.",
-      "The aim is not to remove load from healthy movement.",
-      "It is to understand the relationship between what you ask your body to do and what it is currently prepared to do.",
+      "Every step loads your knee. So does every stair, squat and run. The joint is built for it.",
+      "One of the most common beliefs worth undoing is that load is bad for knees and that the safest thing is to do less. It is not. Joints that are not loaded lose strength around them, and weak knees hurt more, not less.",
+      "The question is never how do I avoid load. It is how does what I am asking match what I have prepared for.",
     ],
     sections: [
       {
         title: "Load and capacity",
         paragraphs: [
-          "Think of load as the demand placed on the body.",
-          "Capacity is the ability to respond to that demand.",
-          "Both can change.",
-          "A regular runner may tolerate demands that feel difficult after several months away from running. Someone accustomed to strength training may respond differently to the same exercise as someone beginning for the first time.",
+          "Load is the demand. Capacity is what you can handle. Both move.",
+          "A regular runner has capacity for running. Take three months off and the capacity drops, even though the memory of running 10k is still there. Go straight back to 10k and the knee finds out first.",
         ],
       },
       {
-        title: "Change matters",
+        title: "It is the change that gets you",
         paragraphs: [
-          "Sometimes it is not the activity itself that is important, but how quickly it changes.",
-          "Distance, speed, frequency, resistance, terrain and duration can all alter the demands of an activity.",
-          "Progression gives the body an opportunity to adapt.",
+          "Very often the problem is not the activity. It is how fast it changed.",
+          "Distance, pace, hills, frequency, resistance, a new sport, a new pair of shoes. Any of them can shift the demand faster than the body adapts. Progress gradually and the body keeps up. Jump and it cannot.",
         ],
       },
       {
         title: "Load is not the enemy",
         paragraphs: [
-          "Avoiding movement altogether is not the goal of knee health.",
-          "Appropriate activity and exercise are central to maintaining physical function, and therapeutic exercise is also a core part of established osteoarthritis management when clinically relevant.",
+          "For a healthy knee, and for most knees with a problem, staying active is part of the answer. Therapeutic exercise is a core part of established osteoarthritis management, not an alternative to it.",
+          "Rest has its place in the short term. As a long term strategy it usually makes things worse.",
         ],
       },
       {
-        title: "Recovery matters",
+        title: "Think in weeks",
         paragraphs: [
-          "Harder activity creates different demands from easier activity.",
-          "Consider the pattern across a week rather than viewing every session in isolation.",
+          "A hard session is not a problem. Three hard sessions in a row might be.",
+          "Look at your pattern across a week rather than judging each day on its own.",
         ],
       },
       {
-        title: "Returning after a break",
+        title: "Coming back after a break",
         paragraphs: [
-          "Your previous ability does not always represent your current capacity.",
-          "After illness, injury, travel, work pressures or simply time away from activity, build back progressively rather than immediately returning to previous volumes.",
+          "Illness, injury, holiday, work, life. Whatever paused you, your last level is not your current level.",
+          "Build back rather than resuming. It feels slower but you will get there sooner.",
         ],
       },
       {
         title: "Listen to change",
         paragraphs: [
-          "Persistent swelling, instability, locking, significant pain or a meaningful loss of function deserves more attention than ordinary exertion or short lived muscular fatigue.",
+          "Ordinary tiredness after effort is normal.",
+          "Persistent swelling, giving way, locking, significant pain or a knee that is clearly not doing what it used to are not. Those deserve attention.",
         ],
       },
     ],
@@ -304,76 +296,76 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
     eyebrow: "The OmKnee Seven \u00b7 05 Prepare",
     h1: "Prepare for what you want to do.",
     intro: [
-      "Different activities ask different things of your knees.",
-      "A long walk, a heavy squat, a ski turn and a change of direction on a football pitch are not the same movement challenge.",
-      "Preparation should reflect what you want your body to do.",
+      "A long walk, a heavy squat, a ski turn and a sharp change of direction on a pitch are four different questions for your knee.",
+      "Preparation should answer the one you are actually asking.",
     ],
     sections: [
       {
         title: "Strength",
         paragraphs: [
-          "Strength provides physical capacity.",
-          "For the knee, this includes more than the quadriceps.",
-          "The hips, hamstrings, calves and wider lower limb all contribute to movement.",
+          "Strength is capacity, and for the knee it is more than quads. Hips, hamstrings, calves and the trunk all decide how force arrives at the joint.",
+          "A strong quad on a weak hip is a common combination and a common problem.",
         ],
       },
       {
-        title: "Movement control",
+        title: "Control",
         paragraphs: [
-          "Strength must be expressed through movement.",
-          "Control, coordination and technique influence how we perform tasks such as landing, changing direction, squatting and stepping.",
+          "Strength you cannot control is only half useful.",
+          "How you land, decelerate, cut and squat matters as much as how much you can lift. This is where technique and coordination work earns its place.",
         ],
       },
       {
         title: "Balance and proprioception",
         paragraphs: [
-          "Movement depends partly on our ability to sense and respond to body position.",
-          "Balance and proprioceptive training can therefore form part of preparation for many activities.",
+          "Your knee is constantly getting information about where it is and reacting before you have thought about it.",
+          "That system can be trained, and for anything involving uneven ground or fast changes of direction, it should be.",
         ],
       },
       {
-        title: "Warm up with purpose",
+        title: "Warm up for the thing you are about to do",
         paragraphs: [
-          "A useful warm up prepares you for the activity that follows.",
-          "That may involve increasing body temperature, moving through relevant ranges of motion and progressively introducing movements similar to those required during the session.",
+          "Raise your temperature, move through the ranges you will need, then rehearse the movements you are about to do at lower intensity.",
+          "Ten minutes that match the session beat twenty that do not.",
         ],
       },
       {
-        title: "Progress gradually",
+        title: "The real preparation is the weeks before",
         paragraphs: [
-          "Preparation is not only what happens in the ten minutes before activity.",
-          "It is also the work done over the preceding days, weeks and months.",
+          "What you do in the ten minutes before matters less than what you did in the ten weeks before.",
+          "Preparation is mostly cumulative.",
         ],
       },
       {
-        title: "Prepare for your activity",
+        title: "By activity",
         paragraphs: [],
         items: [
-          { title: "Running", copy: "Build distance and intensity progressively." },
+          {
+            title: "Running",
+            copy: "Build distance and intensity gradually. Most running knee problems are dose problems.",
+          },
           {
             title: "Skiing",
-            copy: "Consider strength, endurance, balance and repeated turning demands before the trip.",
+            copy: "Legs, endurance and balance, in that order, and start well before the trip.",
           },
           {
             title: "Football",
-            copy: "Running alone does not fully prepare the body for acceleration, deceleration and changes of direction.",
+            copy: "Running fitness does not prepare you for sprinting, stopping and cutting. Train those specifically.",
           },
           {
             title: "Tennis and padel",
-            copy: "Prepare for repeated lateral movement, acceleration and rotation.",
+            copy: "Repeated lateral movement, acceleration and rotation. Prepare the hips and the change of direction, not just the swing.",
           },
           {
             title: "Gym",
-            copy: "Technique, appropriate resistance and progression matter more than chasing load for its own sake.",
+            copy: "Technique and progression first. Load for its own sake is how people get hurt.",
           },
         ],
       },
       {
         title: "Can every injury be prevented?",
         paragraphs: [
-          "No.",
-          "Sport and physical activity always involve some risk.",
-          "The objective is to prepare well and reduce modifiable risks where possible, not to promise that injury will never happen.",
+          "No. Anyone who says otherwise is selling something.",
+          "Sport carries risk. Good preparation reduces the risks you can influence. It does not remove the ones you cannot, and it is honest to say so.",
         ],
       },
     ],
@@ -389,18 +381,15 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
     eyebrow: "The OmKnee Seven \u00b7 06 Diagnose",
     h1: "Understand what is happening.",
     intro: [
-      "Sometimes something changes.",
-      "Your knee may become painful, swollen, stiff or unstable. There may have been an injury. Movement may feel different, or activities that were previously straightforward may become difficult.",
-      "Diagnosis is about understanding the problem, not simply naming an abnormality.",
+      "Sometimes a knee changes. Pain, swelling, stiffness, giving way, an injury, or just a quiet loss of trust in what it will do.",
+      "Diagnosis means working out what is actually going on, which is different from finding something on a scan and giving it a name.",
     ],
     sections: [
       {
         title: "Check",
         paragraphs: [
-          "Start with how your knee is functioning.",
-          "Your experience matters.",
-          "Pain, function, confidence, activity and changes over time all provide useful information.",
-          "The Knee Score provides a structured way to reflect on some of these factors.",
+          "Start with how the knee is behaving. Pain, function, confidence, what it stops you doing and how that has changed. Your account matters more than most people expect.",
+          "The Knee Score gives that a structure and a number you can track.",
         ],
         cta: {
           label: "Take the Knee Score",
@@ -412,9 +401,8 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
       {
         title: "Assess",
         paragraphs: [
-          "The story and examination matter.",
-          "A clinical assessment usually starts by understanding what happened, where symptoms are felt, how they have changed and what the knee is preventing you from doing.",
-          "Examination can then provide further information about movement, swelling, stability, strength and function.",
+          "A good clinical assessment starts with the story: what happened, where it hurts, what has changed, what you cannot do.",
+          "Then the examination: movement, swelling, stability, strength, how the knee behaves under a hand.",
         ],
         cta: {
           label: "Explore Specialist Knee Assessment",
@@ -427,13 +415,9 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
       {
         title: "Scan",
         paragraphs: [
-          "Imaging can add information when it is needed.",
-          "Different investigations show different things.",
-          "An X ray provides information about bones, alignment and joint spaces.",
-          "MRI provides detailed information about many of the soft tissues and structures within the knee.",
-          "Ultrasound can assess selected superficial structures dynamically and can also be used to guide some procedures.",
-          "Not every knee problem requires imaging.",
-          "The appropriate investigation depends on the clinical situation.",
+          "Imaging adds information when it is needed. Different scans answer different questions.",
+          "X ray shows bone, alignment and joint space. MRI shows the soft tissues in detail. Ultrasound can look at some structures while they move, and can guide procedures.",
+          "Not every knee problem needs a scan, and a scan without a good assessment can create more questions than it answers.",
         ],
         cta: {
           label: "Understand Knee Imaging",
@@ -444,11 +428,10 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
         },
       },
       {
-        title: "Understand",
+        title: "Put it together",
         paragraphs: [
-          "A scan is not the whole diagnosis.",
-          "Imaging findings need context.",
-          "Symptoms, history, examination, activity and investigation findings are considered together to understand what may be relevant to the individual.",
+          "Plenty of pain free knees look untidy on MRI.",
+          "Findings only mean something alongside symptoms, history and examination. That is the difference between an image and a diagnosis.",
         ],
         cta: {
           label: "Explore Specialist Knee Care",
@@ -459,10 +442,10 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
         },
       },
       {
-        title: "When should you seek help?",
+        title: "When to seek help",
         paragraphs: [
-          "Consider appropriate professional assessment when there has been a significant injury or when symptoms are persistent, worsening or meaningfully affecting movement and everyday function.",
-          "Urgent assessment may be required for some acute or severe symptoms.",
+          "After a significant injury. When symptoms persist, worsen or start affecting what you can do. Some acute or severe symptoms need urgent assessment.",
+          "If in doubt, get it looked at. A knee that is checked and fine costs an appointment. A knee that is not checked and is not fine costs more.",
         ],
       },
     ],
@@ -479,26 +462,24 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
     eyebrow: "The OmKnee Seven \u00b7 07 Treat",
     h1: "Find the right care at the right time.",
     intro: [
-      "There is no single treatment for a knee problem.",
-      "The appropriate approach depends on what is happening, how much it matters to the individual and what they want to return to doing.",
-      "Treatment does not necessarily mean surgery.",
+      "There is no single treatment for a knee problem, because there is no single knee problem.",
+      "The right approach depends on what is happening, how much it matters to you and what you want to get back to.",
+      "And, said plainly: treatment does not usually mean surgery.",
     ],
     sections: [
       {
         title: "Manage",
         paragraphs: [
-          "Start with the problem and the person.",
-          "Some knee problems can be managed through education, appropriate activity, load management and time.",
-          "The aim is not simply to make the knee do less. It is to find an approach appropriate to the individual situation.",
+          "A lot of knee problems settle with understanding what is going on, adjusting activity, managing load and giving it time.",
+          "That means doing the right things while it settles rather than doing less forever.",
         ],
         cta: { label: "Understand Knee Load", to: "/load", treatPathway: "manage" },
       },
       {
         title: "Rehabilitate",
         paragraphs: [
-          "Build movement and capacity.",
-          "Rehabilitation may involve mobility, strength, balance, movement control and progressive return to activity.",
-          "The programme should reflect both the problem and the activities the individual wants to regain.",
+          "Rehab is where most knee recovery actually happens. Mobility, strength, balance, control, and a progressive return to what you want to do.",
+          "A good programme is built around the problem and the person, not downloaded from a template.",
         ],
         cta: {
           label: "Explore Knee Rehabilitation",
@@ -511,18 +492,16 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
       {
         title: "Support",
         paragraphs: [
-          "Sometimes practical support is useful.",
-          "Depending on the circumstances, braces, cooling products or other practical aids may form part of a wider management or recovery plan.",
-          "They should be considered in context rather than as replacements for appropriate assessment or rehabilitation.",
+          "Sometimes a brace, cooling or a practical aid helps as part of a wider plan.",
+          "It should sit alongside an assessment and rehab, never replace them.",
         ],
         cta: { label: "Explore Knee Support", to: "/shop#braces-supports", treatPathway: "support" },
       },
       {
         title: "Intervene",
         paragraphs: [
-          "Some problems may be considered for additional procedures.",
-          "Injections and other interventions have specific indications, limitations and potential risks.",
-          "The decision to proceed should follow appropriate assessment and discussion.",
+          "Injections and other procedures have specific uses, specific limits and real risks.",
+          "They are a decision made after assessment and a proper conversation, not a first stop.",
         ],
         cta: {
           label: "Understand Knee Procedures",
@@ -535,9 +514,8 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
       {
         title: "Surgery",
         paragraphs: [
-          "Surgery is one part of knee care.",
-          "For some conditions, surgery may be considered when appropriate to the diagnosis, symptoms, function, individual circumstances and treatment goals.",
-          "Different procedures address different problems.",
+          "Surgery is one tool among several. For some problems it is the right one, when it fits the diagnosis, the symptoms, the person and what they want back.",
+          "Different operations do different jobs.",
         ],
         cta: {
           label: "Explore Knee Surgery",
@@ -550,16 +528,14 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
       {
         title: "Recover",
         paragraphs: [
-          "Treatment is not the destination.",
-          "The objective is to return to movement, activity and life.",
-          "Recovery may involve rebuilding strength, confidence, movement and capacity over time.",
-          "And that brings the journey back to where it began.",
+          "The point of treatment is getting back to movement, activity and life.",
+          "Rebuilding strength and confidence takes time, and it brings the whole journey back to where it started.",
         ],
         cta: { label: "Keep Moving", to: "/wellness", treatPathway: "recover" },
       },
     ],
     principle:
-      "The right treatment is the treatment that is appropriate for the problem and the person.",
+      "The right treatment is the treatment that fits the problem and the person.",
     seoTitle: "Treat | Find The Right Care At The Right Time",
     seoDescription:
       "Treatment does not necessarily mean surgery. Manage, rehabilitate, support, intervene, surgery and recover, explained as an educational pathway.",

@@ -61,7 +61,7 @@ const OmKneeSeven = ({
   as = "h2",
   eyebrow = "The OmKnee Seven",
   heading = "A complete approach to lifelong knee health.",
-  intro = "One journey, not seven isolated steps. You will not always need every part of the Seven.",
+  intro = "One journey, not seven steps. Most people, most of the time, only need the first five.",
 }: OmKneeSevenProps) => {
   const Heading = as;
   const sectionRef = useRef<HTMLElement>(null);
@@ -117,13 +117,13 @@ const OmKneeSeven = ({
             <div className="flex items-center gap-4">
               <span className="h-px flex-1 bg-border" aria-hidden="true" />
               <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase text-muted-foreground/70 text-center">
-                Sometimes something changes
+                When a knee changes
               </span>
               <span className="h-px flex-1 bg-border" aria-hidden="true" />
             </div>
             <p className="font-sans text-sm text-muted-foreground leading-relaxed text-center mt-5 max-w-xl mx-auto">
-              Knowing how to find the right assessment, and the right care, is part of looking
-              after your knees too.
+              Diagnose and Treat are not the destination. Knowing how to find the right assessment,
+              and the right care, is part of looking after your knees too.
             </p>
           </div>
 
@@ -149,7 +149,7 @@ const OmKneeSeven = ({
                   07 &rarr; 01 &nbsp;Keep moving
                 </span>
                 <span className="font-sans text-sm text-muted-foreground">
-                  Recovery leads back to wellness. The journey begins again.
+                  When treatment is done, the route goes back to the start: movement, strength, life.
                 </span>
               </span>
             </Link>
