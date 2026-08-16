@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import { Mail, MapPin, Clock, Send, CheckCircle, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -81,11 +82,39 @@ const Contact = () => {
           {/* Hero Section */}
           <div className="text-center mb-20">
             <h1 className="font-serif text-4xl md:text-5xl text-foreground mb-6">
-              Contact Us
+              How can we help?
             </h1>
-            <p className="text-muted-foreground max-w-md mx-auto">
-              Questions? We respond within 1-2 business days.
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              For questions about an OmKneeHealth order, product information, delivery or returns,
+              please contact the OmKneeHealth team.
             </p>
+            <ul className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-2 font-sans text-xs tracking-[0.18em] uppercase text-primary/80">
+              <li>Order &amp; Delivery</li>
+              <li>Product Questions</li>
+              <li>Returns</li>
+              <li>General Enquiries</li>
+            </ul>
+          </div>
+
+          <div className="max-w-3xl mx-auto mb-16 rounded-2xl border border-border bg-secondary/30 p-8">
+            <h2 className="font-serif text-2xl text-foreground mb-4">Looking for medical advice?</h2>
+            <div className="space-y-4 font-sans text-sm text-muted-foreground leading-relaxed">
+              <p>
+                OmKneeHealth customer services cannot diagnose knee problems or provide individual
+                medical advice.
+              </p>
+              <p>
+                For specialist clinical assessment, please use the appropriate clinical pathway
+                within our wider knee ecosystem.
+              </p>
+            </div>
+            <Link
+              to="/diagnose"
+              className="mt-6 inline-flex items-center gap-2 font-sans text-sm text-primary hover:underline underline-offset-4 min-h-[44px]"
+            >
+              Explore Diagnose
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </Link>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
