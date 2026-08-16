@@ -32,7 +32,7 @@ const EducationSection = () => {
           {/* Content */}
           <div className="order-1 lg:order-2">
             <p className="font-sans text-sm tracking-[0.15em] uppercase text-accent mb-4">
-              Understanding Joint Wellness
+              Why look after your knees
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-8 leading-tight">
               Your Knees Carry You Through Life
@@ -55,8 +55,8 @@ const EducationSection = () => {
             </div>
 
             <Button variant="ghost" className="font-sans text-sm px-0 hover:bg-transparent hover:text-foreground group" asChild>
-              <a href="/science">
-                Explore the Science
+              <a href="/knee-health">
+                Look After Your Knees
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
