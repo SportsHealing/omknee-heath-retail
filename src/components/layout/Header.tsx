@@ -209,6 +209,30 @@ const Header = () => {
         {mobileMenuOpen && (
           <div className="lg:hidden py-4 border-t border-border/50 animate-fade-up bg-background absolute left-0 right-0 top-full shadow-lg">
             <nav className="flex flex-col container px-6" aria-label="Mobile navigation">
+              <Link
+                to="/knee-health"
+                className="font-sans text-base text-foreground hover:text-primary transition-colors min-h-[44px] flex items-center py-3"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Look After Your Knees
+              </Link>
+              <ul className="border-l border-border ml-1 pl-4 mb-2">
+                {OMKNEE_SEVEN.map((pillar) => (
+                  <li key={pillar.id} className={pillar.id === "diagnose" ? "mt-2 pt-2 border-t border-border" : ""}>
+                    <Link
+                      to={pillar.to}
+                      onClick={() => {
+                        trackPillarSelect(pillar.id);
+                        setMobileMenuOpen(false);
+                      }}
+                      className="flex items-center gap-3 min-h-[44px] font-sans text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <span className="font-serif text-xs text-primary/60 tabular-nums">{pillar.number}</span>
+                      {pillar.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
               {navItems.map((item) => (
                 <Link
                   key={item.to}
