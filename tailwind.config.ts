@@ -98,12 +98,12 @@ export default {
           "0%, 100%": { 
             opacity: "1",
             transform: "scale(1)",
-            boxShadow: "0 4px 14px -4px hsl(165 35% 22% / 0.2)"
+            boxShadow: "0 4px 14px -4px hsl(171 25% 20% / 0.2)"
           },
           "50%": { 
             opacity: "0.95",
             transform: "scale(1.01)",
-            boxShadow: "0 6px 20px -4px hsl(165 35% 22% / 0.35)"
+            boxShadow: "0 6px 20px -4px hsl(171 25% 20% / 0.35)"
           },
         },
       },

@@ -26,7 +26,7 @@
     --popover-foreground: 220 20% 15%;
     
     /* Deep forest green - medical authority */
-    --primary: 165 35% 22%;
+    --primary: 171 25% 20%;
     --primary-foreground: 0 0% 100%;
     
     /* Soft clinical off-white */
@@ -45,19 +45,19 @@
     
     --border: 60 10% 90%;
     --input: 60 10% 90%;
-    --ring: 165 35% 22%;
+    --ring: 171 25% 20%;
     
     --radius: 0.5rem;
     
     /* Custom clinical tokens */
     --cream: 60 25% 98%;
-    --sage: 165 35% 22%;
-    --sage-light: 165 20% 95%;
+    --sage: 171 25% 20%;
+    --sage-light: 171 18% 95%;
     --warm-gray: 30 5% 45%;
     --terracotta: 25 30% 50%;
-    --clinical-green: 165 35% 22%;
-    --clinical-light: 165 15% 97%;
-    --trust-badge: 165 25% 90%;
+    --clinical-green: 171 25% 20%;
+    --clinical-light: 171 14% 97%;
+    --trust-badge: 171 22% 90%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
