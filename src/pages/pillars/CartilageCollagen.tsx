@@ -50,7 +50,7 @@ const CartilageCollagen = () => (
               is when much of the renewal happens.
             </p>
             <div className="flex flex-wrap gap-4 font-sans text-sm">
-              <Link to="/knee-nutrition-diet" className="text-primary hover:underline underline-offset-4">Nutrition for connective tissue</Link>
+              <Link to="/knee-health/nourish" className="text-primary hover:underline underline-offset-4">Nutrition for connective tissue</Link>
               <Link to="/knee-movement" className="text-primary hover:underline underline-offset-4">Movement</Link>
               <Link to="/shop/nutrition" className="text-primary hover:underline underline-offset-4">Nutrition in the shop</Link>
             </div>

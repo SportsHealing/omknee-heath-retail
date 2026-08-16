@@ -47,6 +47,35 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground py-16">
       <div className="container px-6">
+        {/* Your Knee Journey */}
+        <div className="mb-12 pb-10 border-b border-primary-foreground/10">
+          <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary-foreground/50 mb-6 text-center">
+            Your Knee Journey
+          </p>
+          <ol className="grid sm:grid-cols-3 lg:grid-cols-5 gap-3 max-w-5xl mx-auto">
+            {[
+              { step: "Understand", name: "OmKneeHealth", href: "/knee-health", external: false },
+              { step: "Check", name: "MyKneeScore", href: "https://mykneescore.com/", external: true },
+              { step: "Scan", name: "MyKneeScan", href: "https://mykneescan.com/", external: true },
+              { step: "Specialist care", name: "SportsHealing", href: "https://www.sportshealing.com/", external: true },
+              { step: "Clinical lead", name: "Mr Chinmay Gupte", href: "https://www.chinmaygupte.com/", external: true },
+            ].map((item, i) => (
+              <li key={item.name}>
+                <a
+                  href={item.href}
+                  {...(item.external ? { target: "_blank", rel: "noopener" } : {})}
+                  className="block h-full rounded-lg border border-primary-foreground/15 px-5 py-4 transition-colors hover:border-primary-foreground/40"
+                >
+                  <span className="block font-sans text-[0.7rem] tracking-[0.15em] uppercase text-primary-foreground/50 mb-1">
+                    {`0${i + 1} · ${item.step}`}
+                  </span>
+                  <span className="font-sans text-sm text-primary-foreground/90">{item.name}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </div>
+
         {/* UK Trust Banner */}
         <div className="mb-12 pb-10 border-b border-primary-foreground/10">
           <div className="max-w-4xl mx-auto text-center">
@@ -120,12 +149,12 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/knee-biomechanics" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                <a href="/knee-health/strength-mobility" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Strength & Mobility
                 </a>
               </li>
               <li>
-                <a href="/knee-nutrition-diet" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                <a href="/knee-health/nourish" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Nutrition
                 </a>
               </li>

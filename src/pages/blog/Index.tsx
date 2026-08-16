@@ -9,14 +9,26 @@ import SEO from "@/components/SEO";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import WebPageSchema from "@/components/WebPageSchema";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { ArrowRight, Calendar } from "lucide-react";
 
-const articles = [
+export const JOURNAL_CATEGORIES = [
+  "Health & Wellness",
+  "Nutrition",
+  "Movement & Biomechanics",
+  "Managing Load",
+  "Injury Risk",
+  "Sport",
+  "Recovery",
+  "Healthy Ageing",
+] as const;
+
+export const ARTICLES = [
   {
     slug: "best-supplement-for-knee-cartilage",
     title: "What Is the Best Supplement for Knee Cartilage?",
     excerpt: "A UK clinician's evidence-based guide to choosing a knee cartilage supplement. We examine collagen, glucosamine, chondroitin, and which ingredients have authorised health claims.",
-    category: "Ingredient Science",
+    category: "Nutrition",
     readTime: "8 min read",
     date: "2024-01-15"
   },
@@ -24,7 +36,7 @@ const articles = [
     slug: "do-collagen-supplements-help-knee-joints",
     title: "Do Collagen Supplements Help Knee Joints?",
     excerpt: "Understanding what collagen supplements can and cannot do for knee joints. We look at absorption, dosing, and why vitamin C matters for cartilage function.",
-    category: "Evidence Review",
+    category: "Nutrition",
     readTime: "7 min read",
     date: "2024-01-10"
   },
@@ -32,7 +44,7 @@ const articles = [
     slug: "supplements-for-knee-osteoarthritis-evidence",
     title: "Supplements for Knee Osteoarthritis: What the Evidence Says",
     excerpt: "An honest examination of joint supplement research for osteoarthritis. What works, what doesn't, and why supplements are not a replacement for medical care.",
-    category: "Evidence Review",
+    category: "Nutrition",
     readTime: "10 min read",
     date: "2024-01-05"
   },
@@ -40,7 +52,7 @@ const articles = [
     slug: "knee-pain-supplements-vs-painkillers",
     title: "Knee Pain Supplements vs Painkillers: Understanding Your Options",
     excerpt: "Comparing nutritional supplements and pain medications for knee discomfort. Why they serve different purposes and when to speak with your GP.",
-    category: "Guidance",
+    category: "Recovery",
     readTime: "6 min read",
     date: "2024-01-01"
   },
@@ -48,31 +60,34 @@ const articles = [
     slug: "support-knee-joints-as-you-age",
     title: "How to Support Knee Joints as You Age",
     excerpt: "A comprehensive guide to maintaining knee health through your 40s, 50s, 60s and beyond. Movement, nutrition, and the role of targeted supplementation.",
-    category: "Lifestyle",
+    category: "Healthy Ageing",
     readTime: "9 min read",
     date: "2023-12-20"
   }
 ];
 
 const BlogIndex = () => {
+  const [active, setActive] = useState<string>("All");
+  const visible = active === "All" ? ARTICLES : ARTICLES.filter((a) => a.category === active);
+
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Knee Health Advice & Supplements | OmKneeHealth"
+        title="The Journal | Knee Health, Nutrition & Movement"
         description="Expert-led articles on knee joint health, cartilage support and supplements, written with a calm, evidence-based approach."
-        canonicalPath="/blog"
+        canonicalPath="/journal"
         keywords="knee health blog, joint supplement articles, knee cartilage advice, collagen for knees, glucosamine evidence"
       />
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://omkneehealth.com" },
-          { name: "Blog", url: "https://omkneehealth.com/blog" },
+          { name: "Journal", url: "https://omkneehealth.com/journal" },
         ]}
       />
       <WebPageSchema
         name="Knee Health Blog - OmKneeHealth"
         description="Evidence-based articles on knee health, joint supplements, and cartilage support from UK clinicians."
-        url="https://omkneehealth.com/blog"
+        url="https://omkneehealth.com/journal"
         type="CollectionPage"
       />
       <Header />
@@ -93,14 +108,40 @@ const BlogIndex = () => {
           </div>
         </section>
 
+        {/* Categories */}
+        <section className="container mx-auto px-6 pb-12">
+          <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-2">
+            {["All", ...JOURNAL_CATEGORIES].map((cat) => (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setActive(cat)}
+                aria-pressed={active === cat}
+                className={`font-sans text-xs tracking-wide px-4 min-h-[44px] rounded-full border transition-colors ${
+                  active === cat
+                    ? "border-primary bg-primary text-primary-foreground"
+                    : "border-border text-muted-foreground hover:text-foreground hover:border-primary/40"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </section>
+
         {/* Articles Grid */}
         <section className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="space-y-8">
-              {articles.map((article) => (
+              {visible.length === 0 && (
+                <p className="font-sans text-sm text-muted-foreground text-center py-12">
+                  Nothing in this category yet — more writing is on the way.
+                </p>
+              )}
+              {visible.map((article) => (
                 <Link 
                   key={article.slug}
-                  to={`/blog/${article.slug}`}
+                  to={`/journal/${article.slug}`}
                   className="block group"
                 >
                   <article className="bg-secondary/30 hover:bg-secondary/50 rounded-lg p-6 md:p-8 border border-border transition-colors">
@@ -144,16 +185,16 @@ const BlogIndex = () => {
         <section className="container mx-auto px-6 mt-20">
           <div className="max-w-2xl mx-auto text-center bg-secondary/30 rounded-lg p-8 md:p-12 border border-border">
             <h2 className="font-serif text-2xl text-foreground mb-4">
-              Explore Our Knee Joint Supplement
+              Start with the principles
             </h2>
             <p className="font-sans text-muted-foreground mb-6">
-              UK-manufactured, clinician-formulated nutritional support for knee health.
+              The OmKnee Five sets out five ideas worth understanding before anything else.
             </p>
             <Link 
-              to="/product" 
+              to="/knee-health" 
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-md font-medium text-sm hover:bg-primary/90 transition-colors"
             >
-              View supplement
+              Look after your knees
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

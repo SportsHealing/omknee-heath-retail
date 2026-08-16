@@ -174,19 +174,19 @@ const Biomechanics = () => {
       <SEO
         title="Knee Strengthening Exercises & Biomechanics Guide"
         description="How to strengthen knees: evidence-informed knee strengthening exercises, quadriceps and hip strength, movement control, gait and range of movement, in plain English."
-        canonicalPath="/knee-biomechanics"
+        canonicalPath="/knee-health/strength-mobility"
         keywords="knee strengthening exercises, how to strengthen knees, knee exercises, exercises for knee pain, knee biomechanics, quadriceps strength knee, knee valgus, gait retraining knee, knee range of movement, runner's knee"
       />
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://omkneehealth.com" },
-          { name: "Knee Biomechanics", url: "https://omkneehealth.com/knee-biomechanics" },
+          { name: "Knee Biomechanics", url: "https://omkneehealth.com/knee-health/strength-mobility" },
         ]}
       />
       <WebPageSchema
         name="Improving Knee Biomechanics"
         description="How strength, control and movement quality change the forces travelling through the knee, with peer-reviewed references."
-        url="https://omkneehealth.com/knee-biomechanics"
+        url="https://omkneehealth.com/knee-health/strength-mobility"
         type="WebPage"
       />
       <FAQSchema faqs={faqs} />
@@ -347,13 +347,13 @@ const Biomechanics = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Button asChild>
-                <Link to="/knee-managing-load">
+                <Link to="/knee-health/load">
                   Managing Load
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link to="/knee-nutrition-diet">Back to Nutrition &amp; Diet</Link>
+                <Link to="/knee-health/nourish">Back to Nutrition &amp; Diet</Link>
               </Button>
             </div>
             <p className="font-sans text-xs text-muted-foreground mt-8">

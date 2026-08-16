@@ -80,7 +80,7 @@ const CuratedCategory = ({
 
                 <div className="bg-background/50 rounded p-5 mb-6">
                   <p className="font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">
-                    Clinical Rationale
+                    Why We Selected It
                   </p>
                   <p className="font-serif text-sm text-foreground/90 leading-relaxed">
                     {product.clinicalRationale}

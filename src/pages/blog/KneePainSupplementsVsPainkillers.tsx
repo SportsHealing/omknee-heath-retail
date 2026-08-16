@@ -48,20 +48,20 @@ const KneePainSupplementsVsPainkillers = () => {
       <SEO
         title="Knee Pain Supplements vs Painkillers: Understanding Your Options | UK | OmKneeHealth"
         description="Comparing nutritional supplements and pain medications for knee pain. Understanding their different purposes and when to speak with your GP. UK clinician perspective."
-        canonicalPath="/blog/knee-pain-supplements-vs-painkillers"
+        canonicalPath="/journal/knee-pain-supplements-vs-painkillers"
         keywords="knee pain supplements vs painkillers, natural alternatives knee pain, supplements instead of painkillers, joint pain management UK"
       />
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://omkneehealth.com" },
-          { name: "Blog", url: "https://omkneehealth.com/blog" },
-          { name: "Knee Pain Supplements vs Painkillers", url: "https://omkneehealth.com/blog/knee-pain-supplements-vs-painkillers" },
+          { name: "Journal", url: "https://omkneehealth.com/journal" },
+          { name: "Knee Pain Supplements vs Painkillers", url: "https://omkneehealth.com/journal/knee-pain-supplements-vs-painkillers" },
         ]}
       />
       <WebPageSchema
         name="Knee Pain Supplements vs Painkillers: Understanding Your Options"
         description="Comparing supplements and painkillers for knee pain—why they serve different purposes and the importance of appropriate medical care."
-        url="https://omkneehealth.com/blog/knee-pain-supplements-vs-painkillers"
+        url="https://omkneehealth.com/journal/knee-pain-supplements-vs-painkillers"
         type="WebPage"
       />
       <FAQSchema faqs={faqs} />

@@ -48,20 +48,20 @@ const BestSupplementKneeCartilage = () => {
       <SEO
         title="Best Supplement for Knee Cartilage UK | Evidence Guide | OmKneeHealth"
         description="What is the best supplement for knee cartilage? UK clinician's guide to collagen, glucosamine, chondroitin, and vitamin C for cartilage support. Evidence-based advice."
-        canonicalPath="/blog/best-supplement-for-knee-cartilage"
+        canonicalPath="/journal/best-supplement-for-knee-cartilage"
         keywords="best supplement for knee cartilage, knee cartilage supplements UK, collagen for cartilage, glucosamine cartilage"
       />
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://omkneehealth.com" },
-          { name: "Blog", url: "https://omkneehealth.com/blog" },
-          { name: "Best Supplement for Knee Cartilage", url: "https://omkneehealth.com/blog/best-supplement-for-knee-cartilage" },
+          { name: "Journal", url: "https://omkneehealth.com/journal" },
+          { name: "Best Supplement for Knee Cartilage", url: "https://omkneehealth.com/journal/best-supplement-for-knee-cartilage" },
         ]}
       />
       <WebPageSchema
         name="What Is the Best Supplement for Knee Cartilage?"
         description="Evidence-based guide to choosing a knee cartilage supplement. UK clinician perspective on collagen, glucosamine, and vitamin C."
-        url="https://omkneehealth.com/blog/best-supplement-for-knee-cartilage"
+        url="https://omkneehealth.com/journal/best-supplement-for-knee-cartilage"
         type="WebPage"
       />
       <FAQSchema faqs={faqs} />

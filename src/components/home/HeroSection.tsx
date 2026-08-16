@@ -35,22 +35,22 @@ const HeroSection = () => {
         <div className="max-w-3xl mx-auto text-center">
           {/* Trust signal */}
           <p className="animate-fade-up font-sans text-xs tracking-[0.2em] uppercase text-primary/80 mb-6">
-            Clinician-Founded • Knee Health & Wellness
+            The Home of Knee Health & Wellness
           </p>
 
           {/* Main headline - SEO optimised H1 */}
           <h1 className="animate-fade-up font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] mb-6">
-            Everything to Do With Your Knee, in One Place
+            Your knees carry you through life
           </h1>
 
           {/* Subheading with internal keywords */}
           <p className="animate-fade-up-delay-1 font-sans text-muted-foreground leading-relaxed max-w-xl mx-auto mb-4">
-            Understand the knee as a joint, the <strong>collagen-rich structures</strong> inside it, and the everyday habits that help maintain knee health.
+            Understand them. Look after them. Keep moving.
           </p>
 
           {/* Secondary benefit line */}
           <p className="animate-fade-up-delay-1 font-sans text-sm text-muted-foreground/80 max-w-lg mx-auto mb-12">
-            Wellness, nutrition, biomechanics, load management and injury prevention — explained clearly.
+            Five principles for lifelong knee health, a short check on how your knees are today, and a small, carefully chosen shop.
           </p>
 
           {/* CTAs with proper internal links */}
@@ -60,8 +60,8 @@ const HeroSection = () => {
               className="px-8 py-6 text-sm font-sans font-medium tracking-wide"
               asChild
             >
-              <a href="#the-knee" aria-label="Start with an introduction to the knee">
-                Start With Your Knee
+              <a href="/knee-score" aria-label="Check your knee with the Knee Score">
+                Check Your Knee
               </a>
             </Button>
             <Button 
@@ -70,22 +70,13 @@ const HeroSection = () => {
               className="px-8 py-6 text-sm font-sans font-medium tracking-wide border-foreground/20 hover:bg-foreground/5"
               asChild
             >
-              <a href="#maintaining-knee-health" aria-label="How to maintain knee health">
-                Maintaining Knee Health
+              <a href="/knee-health" aria-label="Look after your knees">
+                Look After Your Knees
               </a>
             </Button>
           </div>
 
           {/* Internal link anchor for SEO */}
-          <p className="animate-fade-up-delay-2 mt-8 font-sans text-xs text-muted-foreground">
-            <a 
-              href="#faq" 
-              className="hover:text-foreground transition-colors underline underline-offset-4"
-              aria-label="Common questions about knee supplements"
-            >
-              Common questions about knee supplements
-            </a>
-          </p>
         </div>
       </div>
 

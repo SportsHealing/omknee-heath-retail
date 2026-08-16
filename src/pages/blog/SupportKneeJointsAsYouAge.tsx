@@ -48,20 +48,20 @@ const SupportKneeJointsAsYouAge = () => {
       <SEO
         title="How to Support Knee Joints as You Age | UK Guide | OmKneeHealth"
         description="Comprehensive guide to maintaining knee health through your 40s, 50s, 60s and beyond. Movement, nutrition, vitamin D, and the role of supplements. UK clinician perspective."
-        canonicalPath="/blog/support-knee-joints-as-you-age"
+        canonicalPath="/journal/support-knee-joints-as-you-age"
         keywords="support knee joints as you age, knee health over 50, joint supplements ageing, knee care older adults UK"
       />
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://omkneehealth.com" },
-          { name: "Blog", url: "https://omkneehealth.com/blog" },
-          { name: "Support Knee Joints as You Age", url: "https://omkneehealth.com/blog/support-knee-joints-as-you-age" },
+          { name: "Journal", url: "https://omkneehealth.com/journal" },
+          { name: "Support Knee Joints as You Age", url: "https://omkneehealth.com/journal/support-knee-joints-as-you-age" },
         ]}
       />
       <WebPageSchema
         name="How to Support Knee Joints as You Age"
         description="Evidence-based guide to maintaining knee health as you age. Movement, nutrition, and the role of targeted supplementation."
-        url="https://omkneehealth.com/blog/support-knee-joints-as-you-age"
+        url="https://omkneehealth.com/journal/support-knee-joints-as-you-age"
         type="WebPage"
       />
       <FAQSchema faqs={faqs} />

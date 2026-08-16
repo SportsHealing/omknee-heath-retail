@@ -107,11 +107,11 @@ export const ingredientLinks: RelatedLink[] = [
 ];
 
 export const blogLinks: RelatedLink[] = [
-  { title: "Best Supplement for Knee Cartilage", href: "/blog/best-supplement-for-knee-cartilage" },
-  { title: "Do Collagen Supplements Help Knee Joints?", href: "/blog/do-collagen-supplements-help-knee-joints" },
-  { title: "Supplements for Osteoarthritis: The Evidence", href: "/blog/supplements-for-knee-osteoarthritis-evidence" },
-  { title: "Knee Supplements vs Painkillers", href: "/blog/knee-pain-supplements-vs-painkillers" },
-  { title: "Supporting Knee Joints as You Age", href: "/blog/support-knee-joints-as-you-age" },
+  { title: "Best Supplement for Knee Cartilage", href: "/journal/best-supplement-for-knee-cartilage" },
+  { title: "Do Collagen Supplements Help Knee Joints?", href: "/journal/do-collagen-supplements-help-knee-joints" },
+  { title: "Supplements for Osteoarthritis: The Evidence", href: "/journal/supplements-for-knee-osteoarthritis-evidence" },
+  { title: "Knee Supplements vs Painkillers", href: "/journal/knee-pain-supplements-vs-painkillers" },
+  { title: "Supporting Knee Joints as You Age", href: "/journal/support-knee-joints-as-you-age" },
 ];
 
 export const corePageLinks: RelatedLink[] = [

@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Menu, X, Search, ShoppingBag } from "lucide-react";
+import { Menu, X, Search, ShoppingBag, User } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SiteSearch from "./SiteSearch";
 import logoDarkGreen from "@/assets/logo-dark-green.png";
 
 const navItems = [
-  { to: "/knee-health", label: "Knee Health" },
+  { to: "/knee-health", label: "Look After Your Knees" },
   { to: "/knee-score", label: "Knee Score" },
   { to: "/shop", label: "Shop" },
   { to: "/journal", label: "Journal" },
@@ -46,12 +46,12 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navItems.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
-                className="font-sans text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
+                className="font-sans text-xs xl:text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
               >
                 {item.label}
               </Link>
@@ -68,6 +68,17 @@ const Header = () => {
               aria-label="Search the site"
             >
               <Search className="w-5 h-5" aria-hidden="true" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="hidden sm:inline-flex h-11 w-11"
+              aria-label="Account"
+              asChild
+            >
+              <Link to="/account">
+                <User className="w-5 h-5" aria-hidden="true" />
+              </Link>
             </Button>
             <Button
               variant="ghost"
