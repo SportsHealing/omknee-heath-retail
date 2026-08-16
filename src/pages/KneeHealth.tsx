@@ -4,7 +4,7 @@ import SEO from "@/components/SEO";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import WebPageSchema from "@/components/WebPageSchema";
 import EcosystemPathway from "@/components/EcosystemPathway";
-import OmKneeFive from "@/components/home/OmKneeFive";
+import OmKneeSeven from "@/components/home/OmKneeSeven";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
@@ -19,7 +19,7 @@ const KneeHealth = () => (
   <div className="min-h-screen bg-background">
     <SEO
       title="Look After Your Knees | Knee Health & Wellness"
-      description="Looking after your knees starts before something goes wrong. The OmKnee Five: wellness, nourish, understand, load and prepare — five principles for lifelong knee health."
+      description="Looking after your knees starts before something goes wrong. The OmKnee Seven: wellness, nourish, understand, load, prepare, diagnose and treat — a complete approach to lifelong knee health."
       canonicalPath="/knee-health"
       keywords="knee health, how to improve knee health, healthy knees, knee wellness"
     />
@@ -53,7 +53,10 @@ const KneeHealth = () => (
         </div>
       </section>
 
-      <OmKneeFive />
+      <OmKneeSeven
+        eyebrow="The OmKnee Seven"
+        heading="A complete approach to lifelong knee health"
+      />
 
       <section className="pb-24 bg-secondary/20 pt-24">
         <div className="container px-6">
