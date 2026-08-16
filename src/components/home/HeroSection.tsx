@@ -19,17 +19,17 @@ const HeroSection = () => {
     >
       {/* Background image with aspect ratio hint for CLS */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-secondary bg-contain md:bg-cover bg-center bg-no-repeat"
         style={{ 
           backgroundImage: `url(${heroKneePassport})`,
-          willChange: "transform", // GPU acceleration hint
+          backgroundSize: "min(100%, 1400px) auto",
         }}
         role="img"
         aria-label="Pencil sketch of the knee joint, front view flanked by two side views, from the OmKneeHealth Knee Passport"
       />
       
       {/* Overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/95" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/45 via-background/35 to-background/90" />
 
       <div className="container relative z-10 px-6 py-24 lg:py-32">
         <div className="max-w-3xl mx-auto text-center">
