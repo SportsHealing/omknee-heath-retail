@@ -116,7 +116,7 @@ export const blogLinks: RelatedLink[] = [
 
 export const corePageLinks: RelatedLink[] = [
   { title: "Our Knee Supplement", href: "/product", description: "Clinician-formulated formula" },
-  { title: "Free Knee Assessment", href: "/assessment", description: "Understand your knee health" },
+  { title: "Get Your Knee Score", href: "/knee-score", description: "Understand your knee health" },
   { title: "The Science", href: "/science", description: "Evidence behind our approach" },
   { title: "Learn About Knee Health", href: "/learn", description: "Educational resources" },
 ];

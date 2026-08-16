@@ -358,7 +358,7 @@ const HealthAndWellness = () => {
                 <Link to="/knee-nutrition-diet">Nutrition &amp; Diet</Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link to="/assessment">Take the free knee assessment</Link>
+                <Link to="/knee-score">Take the free knee assessment</Link>
               </Button>
             </div>
             <p className="font-sans text-xs text-muted-foreground mt-8">

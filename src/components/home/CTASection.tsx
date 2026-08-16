@@ -17,7 +17,7 @@ const CTASection = () => {
             When You're Ready
           </h2>
           <p className="font-sans text-muted-foreground mb-12 max-w-md mx-auto">
-            Take our free knee assessment first, or explore our UK-manufactured formula whenever suits you.
+            Start with your Knee Score, or browse the shop when you are ready.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
@@ -26,8 +26,8 @@ const CTASection = () => {
               className="px-10 py-6 text-sm font-sans font-medium tracking-wide"
               asChild
             >
-              <a href="/assessment">
-                Take Assessment
+              <a href="/knee-score">
+                Get Your Knee Score
               </a>
             </Button>
             <Button 
@@ -36,8 +36,8 @@ const CTASection = () => {
               className="px-10 py-6 text-sm font-sans font-medium tracking-wide border-foreground/20"
               asChild
             >
-              <a href="/product">
-                View Supplement
+              <a href="/shop">
+                Browse the Shop
               </a>
             </Button>
           </div>
