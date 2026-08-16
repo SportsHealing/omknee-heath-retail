@@ -66,7 +66,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/product" element={<Product />} />
           <Route path="/science" element={<Science />} />
-          <Route path="/assessment" element={<Assessment />} />
+          <Route path="/knee-score" element={<Assessment />} />
           <Route path="/learn" element={<Learn />} />
           <Route path="/about" element={<About />} />
           <Route path="/knee-health-wellness" element={<HealthAndWellness />} />
@@ -75,7 +75,7 @@ const App = () => (
           <Route path="/knee-managing-load" element={<ManagingLoad />} />
           <Route path="/knee-injury-prevention" element={<InjuryPrevention />} />
           <Route path="/partners" element={<Partners />} />
-          <Route path="/curated" element={<Curated />} />
+          <Route path="/shop" element={<Curated />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/returns-policy" element={<ReturnsPolicy />} />

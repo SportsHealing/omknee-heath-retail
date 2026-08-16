@@ -277,7 +277,7 @@ const SupportKneeJointsAsYouAge = () => {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <p className="font-sans text-xs text-muted-foreground mt-4">
-                Or <Link to="/assessment" className="text-primary hover:underline">assess your knee health</Link> with our free tool
+                Or <Link to="/knee-score" className="text-primary hover:underline">assess your knee health</Link> with our free tool
               </p>
             </div>
           </section>

@@ -140,12 +140,12 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/assessment" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  Free Knee Assessment
+                <a href="/knee-score" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  Get Your Knee Score
                 </a>
               </li>
               <li>
-                <a href="/curated" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                <a href="/shop" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Curated Resources
                 </a>
               </li>

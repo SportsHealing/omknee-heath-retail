@@ -19,7 +19,7 @@ const CuratedCTA = () => {
           </p>
           
           <Button size="lg" className="px-10 text-sm font-sans font-medium" asChild>
-            <a href="/assessment">
+            <a href="/knee-score">
               Take the Free Assessment
             </a>
           </Button>

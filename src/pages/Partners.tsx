@@ -157,7 +157,7 @@ const Partners = () => {
                   60-second knee triage test
                 </a>{" "}
                 gives a red–amber–green urgency score, or use our own{" "}
-                <Link to="/assessment" className="text-primary underline underline-offset-4">
+                <Link to="/knee-score" className="text-primary underline underline-offset-4">
                   knee assessment
                 </Link>
                 .

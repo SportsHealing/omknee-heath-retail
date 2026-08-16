@@ -3,7 +3,7 @@
  * Practical and consumer-level only; rehabilitation protocols live with SportsHealing.
  */
 
-import CuratedCategory from "@/components/curated/CuratedCategory";
+import CuratedCategory from "@/components/shop/CuratedCategory";
 
 const products = [
   {

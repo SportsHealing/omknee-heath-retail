@@ -23,9 +23,9 @@ const ScienceCTA = () => {
               </a>
             </Button>
             <Button variant="outline" size="lg" className="px-8" asChild>
-              <a href="/assessment">
+              <a href="/knee-score">
                 <ClipboardList className="w-4 h-4 mr-2" />
-                Take Assessment
+                Get Your Knee Score
               </a>
             </Button>
           </div>

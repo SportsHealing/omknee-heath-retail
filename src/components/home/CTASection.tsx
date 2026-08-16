@@ -26,8 +26,8 @@ const CTASection = () => {
               className="px-10 py-6 text-sm font-sans font-medium tracking-wide"
               asChild
             >
-              <a href="/assessment">
-                Take Assessment
+              <a href="/knee-score">
+                Get Your Knee Score
               </a>
             </Button>
             <Button 

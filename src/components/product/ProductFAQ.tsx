@@ -102,7 +102,7 @@ const ProductFAQ = () => {
             </p>
             <p className="font-sans text-sm text-muted-foreground">
               Not sure if supplements are right for you?{" "}
-              <Link to="/assessment" className="text-primary hover:underline font-medium">
+              <Link to="/knee-score" className="text-primary hover:underline font-medium">
                 Take our free knee assessment
               </Link>
             </p>

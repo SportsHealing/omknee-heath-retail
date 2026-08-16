@@ -345,7 +345,7 @@ const InjuryPrevention = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Button asChild>
-                <Link to="/assessment">
+                <Link to="/knee-score">
                   Take the free knee assessment
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>

@@ -256,7 +256,7 @@ const BestSupplementKneeCartilage = () => {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <p className="font-sans text-xs text-muted-foreground mt-4">
-                Or <Link to="/assessment" className="text-primary hover:underline">take our free knee assessment</Link> first
+                Or <Link to="/knee-score" className="text-primary hover:underline">take our free knee assessment</Link> first
               </p>
             </div>
           </section>
