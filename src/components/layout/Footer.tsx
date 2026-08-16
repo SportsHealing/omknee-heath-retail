@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import logoWhite from "@/assets/logo-white.png";
+import { OMKNEE_SEVEN } from "@/lib/omkneeSeven";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -125,44 +126,25 @@ const Footer = () => {
 
           <div>
             <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/50">
-              Knee Health
+              The OmKnee Seven
             </h4>
             <ul className="space-y-1">
               <li>
                 <a href="/knee-health" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  Knee Health hub
+                  Look After Your Knees
                 </a>
               </li>
-              <li>
-                <a href="/your-knee" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  Your Knee
-                </a>
-              </li>
-              <li>
-                <a href="/knee-movement" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  Movement
-                </a>
-              </li>
-              <li>
-                <a href="/cartilage-collagen-synovial-fluid" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  Cartilage, Collagen & Synovial Fluid
-                </a>
-              </li>
-              <li>
-                <a href="/movement-biomechanics" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  Strength & Mobility
-                </a>
-              </li>
-              <li>
-                <a href="/nourish" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  Nutrition
-                </a>
-              </li>
-              <li>
-                <a href="/healthy-knees-through-life" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  Healthy Knees Through Life
-                </a>
-              </li>
+              {OMKNEE_SEVEN.map((pillar) => (
+                <li key={pillar.id}>
+                  <a
+                    href={pillar.to}
+                    className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 flex items-center gap-2"
+                  >
+                    <span className="text-primary-foreground/40 tabular-nums text-xs">{pillar.number}</span>
+                    {pillar.name}
+                  </a>
+                </li>
+              ))}
               <li>
                 <a href="/journal" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Journal
