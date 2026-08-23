@@ -19,7 +19,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ["Bodoni Moda", "Georgia", "serif"],
+        serif: ["Cormorant Garamond", "Georgia", "serif"],
         sans: ["Jost", "system-ui", "sans-serif"],
       },
       fontSize: {
