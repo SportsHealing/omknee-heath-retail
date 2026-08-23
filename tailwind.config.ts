@@ -20,7 +20,7 @@ export default {
     extend: {
       fontFamily: {
         serif: ["Cormorant Garamond", "Georgia", "serif"],
-        sans: ["Jost", "system-ui", "sans-serif"],
+        sans: ["Source Serif 4", "Georgia", "serif"],
       },
       fontSize: {
         // Type scale nudged up ~8-10% for readability (Jost has a small x-height)
