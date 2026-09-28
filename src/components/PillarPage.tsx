@@ -1,5 +1,5 @@
 /**
- * PillarPage - the shared editorial template for the OmKnee Seven.
+ * PillarPage - the shared editorial template for the OmKnee Five.
  * Content comes from the approved master copy deck via src/content/pillarContent.ts.
  */
 
@@ -11,7 +11,7 @@ import SEO from "@/components/SEO";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import WebPageSchema from "@/components/WebPageSchema";
 import { PILLAR_CONTENT, type PillarSection } from "@/content/pillarContent";
-import { getPillar, type PillarId } from "@/lib/omkneeSeven";
+import { getPillar, type PillarId } from "@/lib/omkneeFive";
 import {
   trackDiagnosePathway,
   trackEcosystemTransfer,
@@ -69,6 +69,7 @@ interface PillarPageProps {
 const PillarPage = ({ id, children }: PillarPageProps) => {
   const content = PILLAR_CONTENT[id];
   const pillar = getPillar(id);
+  if (!pillar) return null;
   const url = `https://omkneehealth.com${pillar.to}`;
 
   return (

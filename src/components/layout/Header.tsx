@@ -3,7 +3,7 @@ import { Menu, X, Search, ShoppingBag, User, ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import SiteSearch from "./SiteSearch";
-import { OMKNEE_SEVEN } from "@/lib/omkneeSeven";
+import { OMKNEE_FIVE } from "@/lib/omkneeFive";
 import { trackPillarSelect } from "@/lib/analytics";
 import logoDarkGreen from "@/assets/logo-dark-green.png";
 
@@ -14,8 +14,6 @@ const navItems = [
   { to: "/about", label: "About" },
 ];
 
-const foundations = OMKNEE_SEVEN.filter((p) => p.group === "foundation");
-const pathway = OMKNEE_SEVEN.filter((p) => p.group === "pathway");
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -86,10 +84,10 @@ const Header = () => {
                 <div className="absolute left-0 top-full pt-4 w-[36rem] animate-fade-up">
                   <div className="rounded-2xl border border-border bg-background shadow-xl p-8">
                     <p className="font-sans text-[0.65rem] tracking-[0.22em] uppercase text-primary/70 mb-5">
-                      The OmKnee Seven
+                      The OmKnee Five
                     </p>
                     <ul className="grid grid-cols-2 gap-x-8 gap-y-1">
-                      {foundations.map((pillar) => (
+                      {OMKNEE_FIVE.map((pillar) => (
                         <li key={pillar.id}>
                           <Link
                             to={pillar.to}
@@ -115,34 +113,6 @@ const Header = () => {
                       ))}
                     </ul>
 
-                    <div className="my-5 h-px bg-border" aria-hidden="true" />
-
-                    <ul className="grid grid-cols-2 gap-x-8 gap-y-1">
-                      {pathway.map((pillar) => (
-                        <li key={pillar.id}>
-                          <Link
-                            to={pillar.to}
-                            onClick={() => {
-                              trackPillarSelect(pillar.id);
-                              setMegaOpen(false);
-                            }}
-                            className="group flex gap-3 rounded-lg px-3 py-2.5 -mx-3 transition-colors hover:bg-secondary/60"
-                          >
-                            <span className="font-serif text-sm text-primary/60 tabular-nums pt-0.5">
-                              {pillar.number}
-                            </span>
-                            <span>
-                              <span className="block font-sans text-sm text-foreground">
-                                {pillar.name}
-                              </span>
-                              <span className="block font-sans text-xs text-muted-foreground">
-                                {pillar.strapline}
-                              </span>
-                            </span>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
                 </div>
               )}
@@ -217,8 +187,8 @@ const Header = () => {
                 Look After Your Knees
               </Link>
               <ul className="border-l border-border ml-1 pl-4 mb-2">
-                {OMKNEE_SEVEN.map((pillar) => (
-                  <li key={pillar.id} className={pillar.id === "diagnose" ? "mt-2 pt-2 border-t border-border" : ""}>
+                {OMKNEE_FIVE.map((pillar) => (
+                  <li key={pillar.id}>
                     <Link
                       to={pillar.to}
                       onClick={() => {

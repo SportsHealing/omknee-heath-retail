@@ -102,7 +102,7 @@ const ContentReview = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title="Content Review | Pending Pillar Claims"
-        description="Internal review of placeholder-bracketed claims across the OmKnee Seven pillars and the Look After Your Knees hub."
+        description="Internal review of placeholder-bracketed claims across the OmKnee Five and the Look After Your Knees hub."
         canonicalPath="/content-review"
         noIndex
       />
@@ -119,7 +119,7 @@ const ContentReview = () => {
                 Placeholder claims awaiting sign-off.
               </h1>
               <p className="font-sans text-lg text-muted-foreground leading-relaxed">
-                Every bracketed line from the Seven Pillars rewrite that was held back from the live
+                Every bracketed line from the original pillar rewrite that was held back from the live
                 pages. Approve, revise or reject each one, then copy the summary for Chinmay and
                 Cynthia. Decisions are saved in this browser only — nothing is published from here.
               </p>

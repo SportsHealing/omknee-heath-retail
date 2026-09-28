@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import logoWhite from "@/assets/logo-white.png";
-import { OMKNEE_SEVEN } from "@/lib/omkneeSeven";
+import { OMKNEE_FIVE } from "@/lib/omkneeFive";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -126,7 +126,7 @@ const Footer = () => {
 
           <div>
             <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/50">
-              The OmKnee Seven
+              The OmKnee Five
             </h4>
             <ul className="space-y-1">
               <li>
@@ -134,7 +134,7 @@ const Footer = () => {
                   Look After Your Knees
                 </a>
               </li>
-              {OMKNEE_SEVEN.map((pillar) => (
+              {OMKNEE_FIVE.map((pillar) => (
                 <li key={pillar.id}>
                   <a
                     href={pillar.to}

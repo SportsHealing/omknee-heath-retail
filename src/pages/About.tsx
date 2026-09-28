@@ -5,7 +5,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import WebPageSchema from "@/components/WebPageSchema";
 import KneeEcosystem from "@/components/KneeEcosystem";
 import BackToTop from "@/components/ui/BackToTop";
-import { OMKNEE_SEVEN } from "@/lib/omkneeSeven";
+import { OMKNEE_FIVE } from "@/lib/omkneeFive";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
@@ -15,7 +15,7 @@ const sections = [
     heading: "Our purpose",
     paragraphs: [
       "We want people to understand their knees before they are asked to buy something.",
-      "That means starting with movement, general health, nutrition, anatomy, loading and preparation.",
+      "That means understanding the joint, looking after the whole person, nourishing the body and building capacity for activity.",
       "When a knee problem requires more, we explain how assessment and treatment fit into the journey and direct people towards appropriate specialist resources.",
     ],
   },
@@ -47,7 +47,7 @@ const About = () => (
   <div className="min-h-screen bg-background">
     <SEO
       title="Why OmKneeHealth | Knee Health Deserves Specialist Thinking"
-      description="OmKneeHealth brings knee education, nutrition, curated products and the wider knee ecosystem together, organised around The OmKnee Seven."
+      description="OmKneeHealth brings knee education, nutrition, curated products and the wider knee ecosystem together, organised around The OmKnee Five."
       canonicalPath="/about"
     />
     <BreadcrumbSchema
@@ -97,13 +97,13 @@ const About = () => (
               </div>
             </article>
 
-            <article id="the-omknee-seven">
-              <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-6">The OmKnee Seven</h2>
+            <article id="the-omknee-five">
+              <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-6">The OmKnee Five</h2>
               <p className="font-sans text-muted-foreground leading-relaxed mb-8">
-                Our approach is organised around seven areas:
+                Our approach is organised around five connected areas:
               </p>
               <ol className="border-t border-border">
-                {OMKNEE_SEVEN.map((pillar) => (
+                {OMKNEE_FIVE.map((pillar) => (
                   <li key={pillar.id} className="border-b border-border">
                     <Link
                       to={pillar.to}

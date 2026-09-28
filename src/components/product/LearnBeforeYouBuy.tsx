@@ -1,11 +1,11 @@
 /**
  * Standard product page block: Learn Before You Buy.
- * Routes to the relevant OmKnee Seven pillars rather than to further product promotion.
+ * Routes to the relevant OmKnee Five pillars rather than to further product promotion.
  */
 
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { OMKNEE_SEVEN, PillarId } from "@/lib/omkneeSeven";
+import { OMKNEE_FIVE, PillarId } from "@/lib/omkneeFive";
 
 interface Props {
   /** Pillars most relevant to this product. */
@@ -13,7 +13,7 @@ interface Props {
 }
 
 const LearnBeforeYouBuy = ({ pillars = ["nourish", "understand", "load"] }: Props) => {
-  const items = OMKNEE_SEVEN.filter((p) => pillars.includes(p.id));
+  const items = OMKNEE_FIVE.filter((p) => pillars.includes(p.id));
 
   return (
     <section className="py-20 bg-secondary/20">

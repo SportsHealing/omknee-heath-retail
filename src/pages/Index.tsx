@@ -4,7 +4,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/home/HeroSection";
 import KneeIntroSection from "@/components/home/KneeIntroSection";
-import OmKneeSeven from "@/components/home/OmKneeSeven";
+import OmKneeFive from "@/components/home/OmKneeFive";
 import KneeScorePanel from "@/components/home/KneeScorePanel";
 import ShopDestination from "@/components/home/ShopDestination";
 import EducationSection from "@/components/home/EducationSection";
@@ -50,8 +50,8 @@ const Index = () => {
         {/* 3 Why look after your knees */}
         <EducationSection />
 
-        {/* 4 The OmKnee Seven */}
-        <OmKneeSeven />
+        {/* 4 The OmKnee Five */}
+        <OmKneeFive />
 
         {/* 5 Understand your knee */}
         <KneeIntroSection />
