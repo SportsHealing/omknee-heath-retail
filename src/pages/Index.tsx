@@ -4,7 +4,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/home/HeroSection";
 import KneeIntroSection from "@/components/home/KneeIntroSection";
-import OmKneeSeven from "@/components/home/OmKneeSeven";
+import OmKneeFive from "@/components/home/OmKneeFive";
 import KneeScorePanel from "@/components/home/KneeScorePanel";
 import ShopDestination from "@/components/home/ShopDestination";
 import EducationSection from "@/components/home/EducationSection";
@@ -26,15 +26,15 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Knee Health & Wellness: Understand, Score, Look After"
-        description="Understand your knees, measure them with a Knee Score, and look after them with curated nutrition, supports and recovery products. Evidence-informed UK knee health."
+        title="The OmKnee Five | A Clear Path Through Knee Health"
+        description="Understand, Nourish, Load, Diagnose and Treat: five connected areas of evidence-informed UK knee health, with a Knee Score and carefully curated support."
         canonicalPath="/"
         keywords="knee health, knee pain, knee joint, knee exercises, knee strengthening exercises, how to improve knee health, collagen for knees, knee supplements UK, knee brace, knee score"
       />
       <OrganizationSchema />
       <WebPageSchema
-        name="OmKneeHealth - Knee Health & Wellness"
-        description="Consumer knee health and wellness: understand your knees, track a Knee Score, and shop curated nutrition, supports and recovery products."
+        name="OmKneeHealth - The OmKnee Five"
+        description="A connected knee-health journey through Understand, Nourish, Load, Diagnose and Treat."
         url="https://omkneehealth.com"
         type="WebPage"
       />
@@ -50,8 +50,8 @@ const Index = () => {
         {/* 3 Why look after your knees */}
         <EducationSection />
 
-        {/* 4 The OmKnee Seven */}
-        <OmKneeSeven />
+        {/* 4 The OmKnee Five */}
+        <OmKneeFive />
 
         {/* 5 Understand your knee */}
         <KneeIntroSection />

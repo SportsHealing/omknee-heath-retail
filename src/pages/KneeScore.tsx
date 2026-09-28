@@ -13,20 +13,18 @@ const results = [
   {
     band: "Green",
     copy: "Continue looking after your knees.",
-    detail: "Explore Wellness, Nourish, Understand, Load and Prepare.",
+    detail: "Explore Understand, Nourish and Load.",
     links: [
-      { label: "Wellness", to: "/wellness" },
-      { label: "Nourish", to: "/nourish" },
       { label: "Understand", to: "/understand" },
+      { label: "Nourish", to: "/nourish" },
       { label: "Load", to: "/load" },
-      { label: "Prepare", to: "/prepare" },
     ],
   },
   {
     band: "Amber",
     copy: "There may be areas worth paying closer attention to.",
     detail:
-      "Review the relevant OmKnee Seven pillars and consider whether further assessment may be useful if symptoms persist or are affecting function.",
+      "Review the relevant OmKnee Five areas and consider whether further assessment may be useful if symptoms persist or are affecting function.",
     links: [
       { label: "Look After Your Knees", to: "/knee-health" },
       { label: "Diagnose", to: "/diagnose" },
@@ -132,7 +130,7 @@ const KneeScore = () => (
               What happens afterwards?
             </h2>
             <p className="font-sans text-muted-foreground leading-relaxed mb-10">
-              Your result can help direct you towards relevant information within the OmKnee Seven.
+              Your result can help direct you towards relevant information within the OmKnee Five.
             </p>
 
             <div className="space-y-5">

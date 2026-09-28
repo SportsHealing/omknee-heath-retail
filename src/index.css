@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,48 +14,48 @@
 @layer base {
   :root {
     /* Knee Passport palette */
-    --background: 0 0% 100%;
-    --foreground: 191 25% 12%;
+    --background: 45 29% 95%;
+    --foreground: 171 47% 17%;
     
     --card: 0 0% 100%;
-    --card-foreground: 191 25% 12%;
+    --card-foreground: 171 47% 17%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 191 25% 12%;
+    --popover-foreground: 171 47% 17%;
     
     /* Deep passport teal */
-    --primary: 191 70% 18%;
+    --primary: 174 46% 17%;
     --primary-foreground: 0 0% 100%;
     
     /* Passport cream */
-    --secondary: 44 41% 95%;
-    --secondary-foreground: 191 25% 16%;
+    --secondary: 42 35% 95%;
+    --secondary-foreground: 174 46% 17%;
     
     /* Passport gold */
-    --accent: 45 55% 64%;
-    --accent-foreground: 191 45% 14%;
+    --accent: 139 12% 51%;
+    --accent-foreground: 174 46% 13%;
     
-    --muted: 44 24% 96%;
-    --muted-foreground: 191 12% 40%;
+    --muted: 42 24% 92%;
+    --muted-foreground: 170 12% 37%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 44 20% 89%;
-    --input: 44 20% 89%;
-    --ring: 191 70% 18%;
+    --border: 44 20% 83%;
+    --input: 44 20% 83%;
+    --ring: 174 46% 17%;
     
     --radius: 0.5rem;
     
     /* Custom passport tokens */
-    --cream: 44 41% 95%;
-    --sage: 191 70% 18%;
-    --sage-light: 191 30% 94%;
+    --cream: 42 35% 95%;
+    --sage: 139 12% 51%;
+    --sage-light: 139 18% 91%;
     --warm-gray: 40 6% 45%;
-    --terracotta: 45 55% 64%;
-    --clinical-green: 191 70% 18%;
-    --clinical-light: 191 30% 97%;
-    --trust-badge: 45 45% 88%;
+    --terracotta: 51 47% 60%;
+    --clinical-green: 174 46% 17%;
+    --clinical-light: 139 18% 94%;
+    --trust-badge: 51 47% 82%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;

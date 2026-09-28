@@ -4,7 +4,7 @@
  * site behaves identically with or without a tag manager installed.
  */
 
-import type { PillarId } from "./omkneeSeven";
+import type { PillarId } from "./omkneeFive";
 
 type DataLayerWindow = Window & { dataLayer?: Record<string, unknown>[] };
 
@@ -29,7 +29,7 @@ export const track = (event: string, payload: Record<string, unknown> = {}) => {
   w.dataLayer.push({ event, ...payload });
 };
 
-export const trackOmKneeSevenView = () => track("omknee_seven_view");
+export const trackOmKneeFiveView = () => track("omknee_five_view");
 export const trackPillarSelect = (pillar: PillarId) => track("pillar_select", { pillar });
 export const trackDiagnosePathway = (pathway: DiagnosePathway) =>
   track("diagnose_pathway_select", { pathway });

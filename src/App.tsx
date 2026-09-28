@@ -20,12 +20,10 @@ import CartilageCollagen from "./pages/pillars/CartilageCollagen";
 import ThroughLife from "./pages/pillars/ThroughLife";
 import Biomechanics from "./pages/pillars/Biomechanics";
 
-// The OmKnee Seven
-import Wellness from "./pages/pillars/Wellness";
+// The OmKnee Five
 import Nourish from "./pages/pillars/Nourish";
 import UnderstandPillar from "./pages/pillars/UnderstandPillar";
 import Load from "./pages/pillars/Load";
-import Prepare from "./pages/pillars/Prepare";
 import DiagnosePillar from "./pages/pillars/DiagnosePillar";
 import TreatPillar from "./pages/pillars/TreatPillar";
 
@@ -95,14 +93,14 @@ const App = () => (
           <Route path="/cartilage-collagen-synovial-fluid" element={<CartilageCollagen />} />
           <Route path="/healthy-knees-through-life" element={<ThroughLife />} />
 
-          {/* The OmKnee Seven */}
-          <Route path="/wellness" element={<Wellness />} />
+          {/* The OmKnee Five */}
           <Route path="/nourish" element={<Nourish />} />
           <Route path="/understand" element={<UnderstandPillar />} />
           <Route path="/load" element={<Load />} />
-          <Route path="/prepare" element={<Prepare />} />
           <Route path="/diagnose" element={<DiagnosePillar />} />
           <Route path="/treat" element={<TreatPillar />} />
+          <Route path="/wellness" element={<Redirect to="/nourish" />} />
+          <Route path="/prepare" element={<Redirect to="/load" />} />
           <Route path="/movement-biomechanics" element={<Biomechanics />} />
 
           {/* Shop depth */}

@@ -14,7 +14,7 @@ import heroKneePassport from "@/assets/hero-knee-passport.jpg";
 const HeroSection = () => {
   return (
     <section 
-      className="relative min-h-[85vh] flex flex-col justify-center overflow-hidden"
+      className="relative min-h-[82vh] flex flex-col justify-center overflow-hidden"
       aria-label="Hero section"
     >
       {/* Soft cream base so the sketch never competes with the copy */}
@@ -22,7 +22,7 @@ const HeroSection = () => {
 
       {/* Background sketch — visible but not competing with the copy */}
       <div
-        className="absolute inset-0 bg-contain md:bg-cover bg-center bg-no-repeat opacity-40 md:opacity-45"
+        className="absolute inset-0 bg-contain md:bg-cover bg-center bg-no-repeat opacity-35 md:opacity-40"
         style={{
           backgroundImage: `url(${heroKneePassport})`,
           backgroundSize: "min(100%, 1400px) auto",
@@ -31,14 +31,7 @@ const HeroSection = () => {
         aria-label="Pencil sketch of the knee joint, front view flanked by two side views, from the OmKneeHealth Knee Passport"
       />
 
-      {/* Radial wash that lifts the centre of the image (where the text sits) while keeping the sketch visible at the edges */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: "radial-gradient(circle at 50% 45%, rgba(247,244,236,0.82) 0%, rgba(247,244,236,0.55) 45%, rgba(247,244,236,0.70) 100%)",
-        }}
-        aria-hidden="true"
-      />
+      <div className="absolute inset-0 bg-secondary/60" aria-hidden="true" />
 
       <div className="container relative z-10 px-6 py-24 lg:py-32">
         <div
@@ -49,17 +42,17 @@ const HeroSection = () => {
         >
           {/* Trust signal */}
           <p className="animate-fade-up font-sans text-sm tracking-[0.2em] uppercase text-primary mb-6">
-            The Home of Knee Health & Wellness
+            The OmKnee Five
           </p>
 
           {/* Main headline - SEO optimised H1 */}
           <h1 className="animate-fade-up font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] mb-6">
-            Your knees carry you through life.
+            A clear path through knee health.
           </h1>
 
           {/* Approved supporting lines */}
           <p className="animate-fade-up-delay-1 font-sans text-xl md:text-2xl text-foreground leading-relaxed max-w-2xl mx-auto mb-6">
-            Understand them. Look after them. Keep moving.
+            Understand. Nourish. Load. Diagnose. Treat.
           </p>
 
           <p className="animate-fade-up-delay-1 font-sans text-lg text-foreground/75 leading-relaxed max-w-2xl mx-auto mb-3">
@@ -67,9 +60,8 @@ const HeroSection = () => {
           </p>
 
           <p className="animate-fade-up-delay-1 font-sans text-lg text-foreground/75 leading-relaxed max-w-2xl mx-auto mb-12">
-            OmKneeHealth brings together clear knee health information, practical tools and
-            carefully selected products to help you make informed choices about looking after your
-            knees throughout life.
+            OmKneeHealth brings education, practical tools and carefully selected products into one
+            connected journey, helping you make informed choices throughout life.
           </p>
 
           {/* CTAs with proper internal links */}
@@ -90,7 +82,7 @@ const HeroSection = () => {
               asChild
             >
               <a href="/knee-health" aria-label="Look after your knees">
-                Look After Your Knees
+                Explore the OmKnee Five
               </a>
             </Button>
           </div>

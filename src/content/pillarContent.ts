@@ -1,11 +1,11 @@
 /**
- * Pillar copy for the OmKnee Seven.
+ * Pillar copy for the OmKnee Five.
  * Source: OmKnee_Seven_Pillars_Rewrite (approved rewrite of the master deck).
  * Compliance rules from the master deck still apply: no supplement claims,
  * no symptom to product routing, no promise of injury prevention.
  */
 
-import type { PillarId } from "@/lib/omkneeSeven";
+import type { PillarId } from "@/lib/omkneeFive";
 import type { DiagnosePathway, TreatPathway, EcosystemDestination } from "@/lib/analytics";
 
 export interface PillarSection {
@@ -39,77 +39,26 @@ export interface PillarContent {
 }
 
 export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
-  wellness: {
-    id: "wellness",
-    eyebrow: "The OmKnee Seven \u00b7 01 Wellness",
-    h1: "Look after the whole person.",
-    intro: [
-      "The knee is where the problem shows up. It is rarely where it starts.",
-      "The knees that do well long term tend to belong to people who are strong, active, sleep reasonably and have not stopped moving out of fear. The knees that struggle are often attached to someone who has been told to rest, has lost strength, and now finds everything harder. The joint is the same. The body around it is not.",
-      "So this pillar is not really about knees. It is about the person carrying them.",
-    ],
-    sections: [
-      {
-        title: "Keep moving",
-        paragraphs: [
-          "Walking, cycling, swimming, lifting, sport, gardening. It matters less which one and more that it happens and keeps happening. The best exercise is the one you will still be doing in five years.",
-          "If your knee has put you off moving, that is worth taking seriously, but the answer is almost never to move less for good.",
-        ],
-      },
-      {
-        title: "Get strong",
-        paragraphs: [
-          "Muscle is the knee's suspension. Quads, hamstrings, glutes, calves. They absorb load, control movement and protect the joint from surprises.",
-          "Strength is not a young person's project. Start where you are.",
-        ],
-      },
-      {
-        title: "Recover on purpose",
-        paragraphs: [
-          "Training breaks the body down a little. Recovery is when it adapts. Skip the second half and you just accumulate the first.",
-          "Recovery does not have to mean the sofa. Easier days, different activities, sensible spacing between hard sessions. Look at your week, not just today.",
-        ],
-      },
-      {
-        title: "Sleep",
-        paragraphs: [
-          "We will not pretend sleep is a knee treatment. It is a whole body one, and knees live in bodies.",
-          "If you are chronically short of sleep, that sits upstream of a lot of things, including how well you tolerate load and how much pain you notice.",
-        ],
-      },
-      {
-        title: "Body composition",
-        paragraphs: [
-          "Carrying more weight increases the demand on your knees with every step. That is physics, not judgement.",
-          "But the goal is not a number on a scale. It is the strength, mobility and habits that let you keep going. Chasing weight loss without building strength usually leaves people weaker.",
-        ],
-      },
-      {
-        title: "Movement through life",
-        paragraphs: [
-          "What you want from your knees at 25, 45 and 70 is different.",
-          "The thread that runs through all of it is capacity: keeping enough strength and confidence to do the next thing you want to do.",
-        ],
-        cta: { label: "Explore Healthy Knees Through Life", to: "/healthy-knees-through-life" },
-      },
-    ],
-    principle: "Look after the body that carries your knees.",
-    next: { label: "Next: Nourish", to: "/nourish" },
-    seoTitle: "Wellness | Look After the Whole Person",
-    seoDescription:
-      "Movement, strength, recovery, sleep, body composition and healthy ageing. The first pillar of the OmKnee Seven approach to lifelong knee health.",
-  },
-
   nourish: {
     id: "nourish",
-    eyebrow: "The OmKnee Seven \u00b7 02 Nourish",
-    h1: "Nourish the body that moves you.",
+    eyebrow: "The OmKnee Five \u00b7 02 Nourish",
+    h1: "Nourish the whole person.",
     intro: [
+      "The knee is where a problem may show up, but knee health belongs to the whole person.",
+      "Movement, strength, recovery, sleep, gut health and nutrition all shape the body that carries your knees.",
       "We sell supplements. So let us be clear about the order of things.",
       "Food first. Then enough of it, and enough protein, if you are training. Then bone health, which most people ignore until it matters. Then, and only then, whether a supplement earns its place.",
       "If you skip to the end of that list, you are doing what the supplement industry hopes you will do.",
     ],
     sections: [
+      {
+        title: "Look after the whole person",
+        paragraphs: [
+          "Keep moving in ways you can sustain. Build strength around the knee. Make room for recovery and sleep, and consider general health alongside the joint itself.",
+          "What you want from your knees changes through life. The aim is to maintain enough strength, mobility and confidence for what matters to you.",
+        ],
+        cta: { label: "Explore Healthy Knees Through Life", to: "/healthy-knees-through-life" },
+      },
       {
         title: "Start with the whole diet",
         paragraphs: [
@@ -154,17 +103,17 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
         ],
       },
     ],
-    principle: "Food first. Understand supplements. Make informed choices.",
+    principle: "Look after the person. Food first. Understand supplements. Make informed choices.",
     secondary: { label: "Explore Knee Nutrition", to: "/shop#knee-nutrition" },
-    next: { label: "Next: Understand", to: "/understand" },
-    seoTitle: "Nourish | Nutrition for Knee Health",
+    next: { label: "Next: Load", to: "/load" },
+    seoTitle: "Nourish | Whole-Person Health & Nutrition",
     seoDescription:
-      "Food first. Whole diet, protein, bone health, collagen and connective tissue, and where food supplements do and do not fit within knee health.",
+      "Whole-person knee health: movement, recovery, sleep, gut health, balanced nutrition, protein, bone health and informed supplement choices.",
   },
 
   understand: {
     id: "understand",
-    eyebrow: "The OmKnee Seven \u00b7 03 Understand",
+    eyebrow: "The OmKnee Five \u00b7 01 Understand",
     h1: "Know your knee.",
     intro: [
       "From outside it looks like a hinge. It is not.",
@@ -225,7 +174,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
     ],
     principle:
       "The better you understand your knee, the easier it is to understand what you ask it to do.",
-    next: { label: "Next: Load", to: "/load" },
+    next: { label: "Next: Nourish", to: "/nourish" },
     seoTitle: "Understand | Know Your Knee",
     seoDescription:
       "An accessible introduction to knee anatomy: bones, cartilage, menisci, ligaments, muscles, tendons and synovial fluid, and how the knee actually moves.",
@@ -233,7 +182,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
 
   load: {
     id: "load",
-    eyebrow: "The OmKnee Seven \u00b7 04 Load",
+    eyebrow: "The OmKnee Five \u00b7 03 Load",
     h1: "Understand what you ask your knee to do.",
     intro: [
       "Every step loads your knee. So does every stair, squat and run. The joint is built for it.",
@@ -277,6 +226,13 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
         ],
       },
       {
+        title: "Prepare for the activity",
+        paragraphs: [
+          "A long walk, a heavy squat, a ski turn and a sharp change of direction are different questions for your knee. Preparation should answer the one you are actually asking.",
+          "Strength, control, balance and gradual progression all help build the capacity an activity demands. What you do in the weeks before matters more than a last-minute warm-up.",
+        ],
+      },
+      {
         title: "Listen to change",
         paragraphs: [
           "Ordinary tiredness after effort is normal.",
@@ -285,100 +241,15 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
       },
     ],
     principle: "Build capacity rather than fearing load.",
-    next: { label: "Next: Prepare", to: "/prepare" },
+    next: { label: "Next: Diagnose", to: "/diagnose" },
     seoTitle: "Load | Understand What You Ask Your Knee To Do",
     seoDescription:
       "Load and capacity explained without fear. How activity, progression, recovery and returning after a break shape what your knees are prepared to do.",
   },
 
-  prepare: {
-    id: "prepare",
-    eyebrow: "The OmKnee Seven \u00b7 05 Prepare",
-    h1: "Prepare for what you want to do.",
-    intro: [
-      "A long walk, a heavy squat, a ski turn and a sharp change of direction on a pitch are four different questions for your knee.",
-      "Preparation should answer the one you are actually asking.",
-    ],
-    sections: [
-      {
-        title: "Strength",
-        paragraphs: [
-          "Strength is capacity, and for the knee it is more than quads. Hips, hamstrings, calves and the trunk all decide how force arrives at the joint.",
-          "A strong quad on a weak hip is a common combination and a common problem.",
-        ],
-      },
-      {
-        title: "Control",
-        paragraphs: [
-          "Strength you cannot control is only half useful.",
-          "How you land, decelerate, cut and squat matters as much as how much you can lift. This is where technique and coordination work earns its place.",
-        ],
-      },
-      {
-        title: "Balance and proprioception",
-        paragraphs: [
-          "Your knee is constantly getting information about where it is and reacting before you have thought about it.",
-          "That system can be trained, and for anything involving uneven ground or fast changes of direction, it should be.",
-        ],
-      },
-      {
-        title: "Warm up for the thing you are about to do",
-        paragraphs: [
-          "Raise your temperature, move through the ranges you will need, then rehearse the movements you are about to do at lower intensity.",
-          "Ten minutes that match the session beat twenty that do not.",
-        ],
-      },
-      {
-        title: "The real preparation is the weeks before",
-        paragraphs: [
-          "What you do in the ten minutes before matters less than what you did in the ten weeks before.",
-          "Preparation is mostly cumulative.",
-        ],
-      },
-      {
-        title: "By activity",
-        paragraphs: [],
-        items: [
-          {
-            title: "Running",
-            copy: "Build distance and intensity gradually. Most running knee problems are dose problems.",
-          },
-          {
-            title: "Skiing",
-            copy: "Legs, endurance and balance, in that order, and start well before the trip.",
-          },
-          {
-            title: "Football",
-            copy: "Running fitness does not prepare you for sprinting, stopping and cutting. Train those specifically.",
-          },
-          {
-            title: "Tennis and padel",
-            copy: "Repeated lateral movement, acceleration and rotation. Prepare the hips and the change of direction, not just the swing.",
-          },
-          {
-            title: "Gym",
-            copy: "Technique and progression first. Load for its own sake is how people get hurt.",
-          },
-        ],
-      },
-      {
-        title: "Can every injury be prevented?",
-        paragraphs: [
-          "No. Anyone who says otherwise is selling something.",
-          "Sport carries risk. Good preparation reduces the risks you can influence. It does not remove the ones you cannot, and it is honest to say so.",
-        ],
-      },
-    ],
-    principle: "Prepare for the activity you want to enjoy.",
-    next: { label: "Next: Diagnose", to: "/diagnose" },
-    seoTitle: "Prepare | Prepare For What You Want To Do",
-    seoDescription:
-      "Strength, movement control, balance, warm up and gradual progression. How to prepare your knees for running, skiing, football, racket sport and the gym.",
-  },
-
   diagnose: {
     id: "diagnose",
-    eyebrow: "The OmKnee Seven \u00b7 06 Diagnose",
+    eyebrow: "The OmKnee Five \u00b7 04 Diagnose",
     h1: "Understand what is happening.",
     intro: [
       "Sometimes a knee changes. Pain, swelling, stiffness, giving way, an injury, or just a quiet loss of trust in what it will do.",
@@ -459,7 +330,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
 
   treat: {
     id: "treat",
-    eyebrow: "The OmKnee Seven \u00b7 07 Treat",
+    eyebrow: "The OmKnee Five \u00b7 05 Treat",
     h1: "Find the right care at the right time.",
     intro: [
       "There is no single treatment for a knee problem, because there is no single knee problem.",
@@ -531,7 +402,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
           "The point of treatment is getting back to movement, activity and life.",
           "Rebuilding strength and confidence takes time, and it brings the whole journey back to where it started.",
         ],
-        cta: { label: "Keep Moving", to: "/wellness", treatPathway: "recover" },
+        cta: { label: "Nourish the Whole Person", to: "/nourish", treatPathway: "recover" },
       },
     ],
     principle:
