@@ -66,7 +66,7 @@ const ThroughLife = () => (
               Keep weight in a healthy range. Get persistent symptoms looked at rather than waiting.
             </p>
             <div className="flex flex-wrap gap-4 font-sans text-sm">
-              <Link to="/wellness" className="text-primary hover:underline underline-offset-4">Wellness foundations</Link>
+              <Link to="/nourish" className="text-primary hover:underline underline-offset-4">Whole-person health</Link>
               <Link to="/movement-biomechanics" className="text-primary hover:underline underline-offset-4">Strength & mobility</Link>
               <Link to="/nourish" className="text-primary hover:underline underline-offset-4">Nutrition</Link>
             </div>

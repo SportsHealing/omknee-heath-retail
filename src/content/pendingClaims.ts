@@ -1,7 +1,7 @@
 /**
  * Placeholder-bracketed claims from the master rewrite deck that were held back
  * from the live pillar copy pending sign-off from Chinmay and Cynthia.
- * Source: OmKnee_Seven_Pillars_Rewrite.md
+ * Source: the original pillar rewrite, now mapped to the OmKnee Five.
  */
 
 export type ClaimStatus = "pending" | "approved" | "rejected";
@@ -23,9 +23,9 @@ export interface PendingClaim {
 export const PENDING_CLAIMS: PendingClaim[] = [
   {
     id: "wellness-clinic-observation",
-    pillar: "01 Wellness",
-    page: "Wellness",
-    path: "/wellness",
+    pillar: "02 Nourish",
+    page: "Nourish",
+    path: "/nourish",
     section: "Look after the whole person (intro)",
     original:
       "[In clinic] the knees that do well long term belong to people who are strong, active, sleep reasonably and haven't stopped moving out of fear.",
@@ -34,9 +34,9 @@ export const PENDING_CLAIMS: PendingClaim[] = [
   },
   {
     id: "wellness-strength-evidence",
-    pillar: "01 Wellness",
-    page: "Wellness",
-    path: "/wellness",
+    pillar: "02 Nourish",
+    page: "Nourish",
+    path: "/nourish",
     section: "Get strong",
     original:
       "[The evidence for strength training in later life is some of the most convincing in the field.]",
@@ -56,7 +56,7 @@ export const PENDING_CLAIMS: PendingClaim[] = [
   },
   {
     id: "understand-meniscus-anecdote",
-    pillar: "03 Understand",
+    pillar: "01 Understand",
     page: "Understand",
     path: "/understand",
     section: "Meniscus",
@@ -67,7 +67,7 @@ export const PENDING_CLAIMS: PendingClaim[] = [
   },
   {
     id: "load-clinic-belief",
-    pillar: "04 Load",
+    pillar: "03 Load",
     page: "Load",
     path: "/load",
     section: "Load is not the enemy",
@@ -78,17 +78,17 @@ export const PENDING_CLAIMS: PendingClaim[] = [
   },
   {
     id: "prepare-ski-timeline",
-    pillar: "05 Prepare",
-    page: "Prepare",
-    path: "/prepare",
-    section: "Skiing",
+    pillar: "03 Load",
+    page: "Load",
+    path: "/load",
+    section: "Prepare for the activity · Skiing",
     original: "[Six weeks is a reasonable minimum, if the team wants a figure.]",
     note: "Specific preparation timeline. Low risk, but confirm the figure before it becomes a quoted number.",
     owner: "Chinmay",
   },
   {
     id: "diagnose-before-scan",
-    pillar: "06 Diagnose",
+    pillar: "04 Diagnose",
     page: "Diagnose",
     path: "/diagnose",
     section: "What a good assessment looks like",
@@ -98,7 +98,7 @@ export const PENDING_CLAIMS: PendingClaim[] = [
   },
   {
     id: "treat-surgeon-attribution",
-    pillar: "07 Treat",
+    pillar: "05 Treat",
     page: "Treat",
     path: "/treat",
     section: "Treatment does not usually mean surgery",
@@ -112,9 +112,9 @@ export const PENDING_CLAIMS: PendingClaim[] = [
     pillar: "Hub",
     page: "Look After Your Knees",
     path: "/knee-health",
-    section: "One journey, not seven steps",
+    section: "One connected journey",
     original:
-      "Hub intro currently summarises the Seven without any clinician attribution \u2014 confirm whether the ecosystem framing should credit SportsHealing explicitly here.",
+      "Hub intro currently summarises the Five without any clinician attribution \u2014 confirm whether the ecosystem framing should credit SportsHealing explicitly here.",
     note: "Open editorial question raised during the rewrite, not a bracketed line in the deck.",
     owner: "Cynthia",
   },
