@@ -20,7 +20,7 @@ import CartilageCollagen from "./pages/pillars/CartilageCollagen";
 import ThroughLife from "./pages/pillars/ThroughLife";
 import Biomechanics from "./pages/pillars/Biomechanics";
 
-// The OmKnee Seven
+// The OmKnee Five
 import Nourish from "./pages/pillars/Nourish";
 import UnderstandPillar from "./pages/pillars/UnderstandPillar";
 import Load from "./pages/pillars/Load";

@@ -4,7 +4,7 @@ import SEO from "@/components/SEO";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import WebPageSchema from "@/components/WebPageSchema";
 import EcosystemPathway from "@/components/EcosystemPathway";
-import OmKneeSeven from "@/components/home/OmKneeSeven";
+import OmKneeFive from "@/components/home/OmKneeFive";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
@@ -19,7 +19,7 @@ const KneeHealth = () => (
   <div className="min-h-screen bg-background">
     <SEO
       title="Look After Your Knees | Knee Health & Wellness"
-      description="Looking after your knees starts before something goes wrong. The OmKnee Seven: wellness, nourish, understand, load, prepare, diagnose and treat — a complete approach to lifelong knee health."
+      description="The OmKnee Five brings together Understand, Nourish, Load, Diagnose and Treat in one clear approach to knee health."
       canonicalPath="/knee-health"
       keywords="knee health, how to improve knee health, healthy knees, knee wellness"
     />
@@ -49,21 +49,20 @@ const KneeHealth = () => (
             <div className="space-y-5 font-sans text-lg text-muted-foreground leading-relaxed">
               <p>Nobody's knee exists on its own.</p>
               <p>
-                How you sleep, what you eat, how strong your legs are, what you did last weekend and
-                what you are planning to do next month all show up in the joint eventually. So does
-                what happens when something goes wrong and how quickly you get the right answer.
+                How the joint works, how you look after the whole person, what you ask the knee to do
+                and what happens when something changes are all connected.
               </p>
               <p>
-                We put all of that under seven headings. Not because knees are complicated, but
-                because knee advice usually only covers one of them at a time.
+                We put all of that under five headings. Not because knees need to feel complicated,
+                but because knee advice often covers only one part of the journey.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mt-10">
               <Link
-                to="/wellness"
+                to="/understand"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-8 py-4 font-sans text-sm text-primary-foreground transition-colors hover:bg-primary/90 min-h-[44px]"
               >
-                Start with Wellness
+                Start with Understand
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
@@ -77,10 +76,10 @@ const KneeHealth = () => (
         </div>
       </section>
 
-      <OmKneeSeven
-        eyebrow="The OmKnee Seven"
-        heading="One journey, not seven steps."
-        intro="Stay active, eat properly, understand the joint, do not ask more of it than it is ready for, and prepare for the things you want to do."
+      <OmKneeFive
+        eyebrow="The OmKnee Five"
+        heading="One connected journey."
+        intro="Understand the joint. Nourish the whole person. Build capacity for load. Know how diagnosis and treatment fit when something changes."
       />
 
       <section className="pb-24 bg-secondary/20 pt-24">
