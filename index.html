@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Security policy. Static hosting cannot send headers, so this is set here. -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>OmKneeHealth | Clinician-Founded Knee Health Support</title>
     <meta name="description" content="Explore the OmKnee Five: Understand, Nourish, Load, Diagnose and Treat. Clear UK knee-health guidance, a Knee Score and carefully curated support." />
     <meta name="author" content="OmKneeHealth" />

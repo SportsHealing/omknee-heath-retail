@@ -40,19 +40,21 @@ const Contact = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    console.log("Form submitted:", { name: data.name, subject: data.subject });
-    
+
+    // There is no form backend, so hand the message to the visitor's email app.
+    // Nothing is stored or logged by the site.
+    const body = `${data.message}\n\nFrom: ${data.name} <${data.email}>`;
+    window.location.href =
+      `mailto:hello@omkneehealth.com?subject=${encodeURIComponent(data.subject)}` +
+      `&body=${encodeURIComponent(body)}`;
+
     setIsSubmitting(false);
     setIsSubmitted(true);
     reset();
-    
+
     toast({
-      title: "Message sent!",
-      description: "Thank you for contacting us. We'll respond within 1-2 business days.",
+      title: "Your email app should now open",
+      description: "Press send in your email app to reach us. We respond within 1-2 business days.",
     });
   };
 
@@ -129,10 +131,12 @@ const Contact = () => {
                   <div className="text-center py-12">
                     <CheckCircle className="w-16 h-16 text-primary mx-auto mb-4" />
                     <h3 className="font-serif text-xl text-foreground mb-2">
-                      Thank you for your message!
+                      Almost there
                     </h3>
                     <p className="text-muted-foreground mb-6">
-                      We've received your enquiry and will get back to you within 1-2 business days.
+                      Your email app should have opened with your message. Press send there and we
+                      will reply within 1-2 business days. If nothing opened, email
+                      hello@omkneehealth.com directly.
                     </p>
                     <Button
                       variant="outline"

@@ -266,11 +266,6 @@ const Footer = () => {
                   Legal & Compliance
                 </a>
               </li>
-              <li>
-                <a href="/team-resources" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  Team Resources
-                </a>
-              </li>
             </ul>
           </div>
         </div>

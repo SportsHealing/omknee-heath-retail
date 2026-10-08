@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PerformanceOptimizer from "@/components/PerformanceOptimizer";
 import Index from "./pages/Index";
@@ -56,14 +57,20 @@ import TermsConditions from "./pages/TermsConditions";
 import ReturnsPolicy from "./pages/ReturnsPolicy";
 import Contact from "./pages/Contact";
 import Legal from "./pages/Legal";
-import CompliancePlaybook from "./pages/CompliancePlaybook";
-import TeamResources from "./pages/TeamResources";
-import ContentReview from "./pages/ContentReview";
 import NotFound from "./pages/NotFound";
 
 import ScrollToHash from "./components/ScrollToHash";
 import CookieConsent from "./components/CookieConsent";
 import Redirect from "./components/Redirect";
+
+// Internal team tools. A static site cannot protect pages with a password,
+// so these are left out of public builds entirely. They load in `npm run dev`,
+// or in a private build made with VITE_ENABLE_INTERNAL_TOOLS=true.
+const INTERNAL_TOOLS_ENABLED =
+  import.meta.env.DEV || import.meta.env.VITE_ENABLE_INTERNAL_TOOLS === "true";
+const CompliancePlaybook = INTERNAL_TOOLS_ENABLED ? lazy(() => import("./pages/CompliancePlaybook")) : null;
+const TeamResources = INTERNAL_TOOLS_ENABLED ? lazy(() => import("./pages/TeamResources")) : null;
+const ContentReview = INTERNAL_TOOLS_ENABLED ? lazy(() => import("./pages/ContentReview")) : null;
 
 const queryClient = new QueryClient();
 
@@ -131,9 +138,13 @@ const App = () => (
           <Route path="/returns-policy" element={<ReturnsPolicy />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/legal" element={<Legal />} />
-          <Route path="/compliance-playbook" element={<CompliancePlaybook />} />
-          <Route path="/team-resources" element={<TeamResources />} />
-          <Route path="/content-review" element={<ContentReview />} />
+          {CompliancePlaybook && TeamResources && ContentReview && (
+            <>
+              <Route path="/compliance-playbook" element={<Suspense fallback={null}><CompliancePlaybook /></Suspense>} />
+              <Route path="/team-resources" element={<Suspense fallback={null}><TeamResources /></Suspense>} />
+              <Route path="/content-review" element={<Suspense fallback={null}><ContentReview /></Suspense>} />
+            </>
+          )}
 
           {/* Moved routes */}
           <Route path="/blog" element={<Redirect to="/journal" />} />

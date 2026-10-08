@@ -40,10 +40,6 @@ User-agent: *
 Allow: /
 Crawl-delay: 3
 
-# Block internal/team pages from indexing
-Disallow: /team-resources
-Disallow: /compliance-playbook
-
 # Block search result pages if they exist
 Disallow: /*?*
 
