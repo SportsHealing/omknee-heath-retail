@@ -31,29 +31,37 @@ const CookieConsent = () => {
   const [preferences, setPreferences] = useState<CookiePreferences>(defaultPreferences);
 
   useEffect(() => {
-    // TEMPORARILY SUSPENDED: Cookie banner disabled during landing
-    // To re-enable, remove the return statement below
-    return;
-    
-    // Check if user has already consented
-    const consentGiven = localStorage.getItem(COOKIE_CONSENT_KEY);
+    // Check if user has already consented. Storage can be blocked, so treat errors as "not yet".
+    let consentGiven: string | null = null;
+    let savedPreferences: string | null = null;
+    try {
+      consentGiven = localStorage.getItem(COOKIE_CONSENT_KEY);
+      savedPreferences = localStorage.getItem(COOKIE_PREFERENCES_KEY);
+    } catch {
+      // Fall through and show the banner.
+    }
     if (!consentGiven) {
       // Small delay to prevent flash on page load
       const timer = setTimeout(() => setShowBanner(true), 500);
       return () => clearTimeout(timer);
-    } else {
-      setHasConsented(true);
-      // Load saved preferences
-      const savedPreferences = localStorage.getItem(COOKIE_PREFERENCES_KEY);
-      if (savedPreferences) {
+    }
+    setHasConsented(true);
+    if (savedPreferences) {
+      try {
         setPreferences(JSON.parse(savedPreferences));
+      } catch {
+        // Corrupt value: keep the defaults.
       }
     }
   }, []);
 
   const saveConsent = (prefs: CookiePreferences) => {
-    localStorage.setItem(COOKIE_CONSENT_KEY, "true");
-    localStorage.setItem(COOKIE_PREFERENCES_KEY, JSON.stringify(prefs));
+    try {
+      localStorage.setItem(COOKIE_CONSENT_KEY, "true");
+      localStorage.setItem(COOKIE_PREFERENCES_KEY, JSON.stringify(prefs));
+    } catch {
+      // Storage blocked: the choice applies to this visit only.
+    }
     setPreferences(prefs);
     setShowBanner(false);
     setShowCustomise(false);
