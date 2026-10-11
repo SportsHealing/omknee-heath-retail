@@ -687,7 +687,15 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
         title: "The team you will see.",
         blocks: [
           { type: "figure", id: "clinicTeam" },
-          { type: "cards", items: TEAM.map((member) => ({ title: member.name, copy: member.details })) },
+          {
+            type: "cards",
+            items: TEAM.map((member) => ({
+              title: member.name,
+              copy: member.details,
+              // The name sits beside the portrait, so the image needs no alt text.
+              image: member.photo ? { src: member.photo, alt: "" } : undefined,
+            })),
+          },
           {
             type: "list",
             items: TEAM.filter((member) => member.profile?.href || member.profile?.to).map((member) => ({

@@ -75,9 +75,21 @@ export const HomeTeam = () => (
       <ul className="max-w-5xl mx-auto grid sm:grid-cols-3 gap-5">
         {TEAM.map((member) => (
           <li key={member.name} className="rounded-2xl border border-border bg-secondary/30 p-6 text-center">
-            <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full border border-dashed border-primary/40 font-sans text-xs text-muted-foreground">
-              [photo]
-            </div>
+            {member.photo ? (
+              <img
+                src={member.photo}
+                alt=""
+                width={96}
+                height={96}
+                loading="lazy"
+                decoding="async"
+                className="mx-auto mb-4 h-24 w-24 rounded-full object-cover"
+              />
+            ) : (
+              <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full border border-dashed border-primary/40 font-sans text-xs text-muted-foreground">
+                [photo]
+              </div>
+            )}
             <p className="font-serif text-xl text-foreground"><PlaceholderText text={member.name} /></p>
             <p className="mt-2 font-sans text-sm text-muted-foreground"><PlaceholderText text={member.details} /></p>
           </li>
