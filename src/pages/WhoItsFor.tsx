@@ -37,7 +37,7 @@ const suitableFor = [
 const notSuitableFor = [
   "Anyone seeking treatment for diagnosed conditions—this is a food supplement, not a medicine",
   "Those expecting immediate results—nutritional support is gradual",
-  "People with shellfish allergies (unless choosing vegetarian formula)",
+  "People with fish or shellfish allergies",
   "Pregnant or breastfeeding women (without healthcare provider approval)",
   "Anyone taking blood-thinning medication (without healthcare provider approval)",
   "Children under 18 years",

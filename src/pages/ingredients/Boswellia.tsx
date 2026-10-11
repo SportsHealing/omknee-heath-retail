@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: "How much boswellia should I take for joint health?",
-    answer: "Clinical studies have used boswellia doses ranging from 100mg to 1000mg daily, typically as standardised extracts containing 30-65% boswellic acids. Our formula provides 200mg boswellia extract standardised to ≥65% boswellic acids—a moderate dose designed for daily, consistent use alongside other joint-supporting ingredients."
+    answer: "Clinical studies have used a range of doses, typically as standardised extracts of boswellic acids."
   },
   {
     question: "Can I take boswellia with other supplements?",
@@ -178,7 +178,7 @@ const Boswellia = () => {
                   </li>
                 </ul>
                 <p className="font-sans text-muted-foreground leading-relaxed">
-                  Our formula provides 200mg boswellia extract standardised to ≥65% boswellic acids. This ensures consistent potency and represents a moderate dose suitable for daily, long-term use.
+                  Full amounts are listed on the product page.
                 </p>
               </div>
             </div>
@@ -260,7 +260,7 @@ const Boswellia = () => {
                 Explore Our Boswellia Formula
               </h2>
               <p className="font-sans text-muted-foreground mb-8">
-                Our knee joint supplement contains 200mg boswellia extract standardised to ≥65% boswellic acids.
+                Our knee joint supplement contains boswellia extract.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button size="lg" asChild>

@@ -16,25 +16,25 @@ const pillars = [
     icon: Layers,
     title: "Cartilage Structure",
     description: "Collagen peptides, glucosamine, and chondroitin provide the building blocks found naturally in cartilage tissue.",
-    ingredients: ["Collagen (10g)", "Glucosamine (1,500mg)", "Chondroitin (800mg)"],
+    ingredients: ["Collagen", "Glucosamine", "Chondroitin"],
   },
   {
     icon: Shield,
     title: "Bone & Muscle Support",
     description: "Vitamin D and K2 contribute to the maintenance of normal bones, while vitamin D supports muscle function.",
-    ingredients: ["Vitamin D3 (2,000 IU)", "Vitamin K2 (75mcg)", "Calcium"],
+    ingredients: ["Vitamin D3", "Vitamin K2", "Magnesium"],
   },
   {
     icon: Leaf,
     title: "Botanical Extracts",
     description: "Curcumin and boswellia are traditional botanicals with antioxidant properties and long histories of use.",
-    ingredients: ["Curcumin (500mg)", "Boswellia (200mg)", "Piperine (5mg)"],
+    ingredients: ["Turmeric", "Boswellia", "Black pepper extract"],
   },
   {
     icon: Target,
     title: "Essential Cofactors",
     description: "Vitamin C contributes to normal collagen formation. Trace minerals support connective tissue maintenance.",
-    ingredients: ["Vitamin C (80mg)", "Zinc (10mg)", "Copper (0.5mg)"],
+    ingredients: ["Vitamin C", "Zinc", "Copper"],
   },
 ];
 
@@ -125,7 +125,7 @@ const HowItWorks = () => {
                 <div>
                   <h3 className="font-serif text-lg text-foreground mb-2">Consistent Daily Use</h3>
                   <p className="font-sans text-sm text-muted-foreground">
-                    Mix one scoop (10g) with water or a smoothie daily. Consistency is more important than timing—find what works for your routine.
+                    Mix one level scoop with water once a day. Consistency is more important than timing. Find what works for your routine.
                   </p>
                 </div>
               </div>

@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: "Is glucosamine good for knee osteoarthritis?",
-    answer: "The evidence is mixed. Some clinical trials show modest benefits for joint comfort; others show no significant difference from placebo. Glucosamine does not have EFSA-authorised health claims. Major trials like GAIT produced mixed results. If you try glucosamine, use the sulphate form at 1,500mg daily—the dose most commonly studied—and assess after 8-12 weeks."
+    answer: "The evidence is mixed. Some clinical trials show modest benefits for joint comfort; others show no significant difference from placebo. Glucosamine does not have EFSA-authorised health claims. Major trials like GAIT produced mixed results. If you try glucosamine, the sulphate form is the most commonly studied. Assess after 8-12 weeks."
   },
   {
     question: "Should I take supplements instead of pain medication for osteoarthritis?",

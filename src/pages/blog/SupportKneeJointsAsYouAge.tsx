@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     question: "Should everyone over 60 take joint supplements?",
-    answer: "No. There's no universal recommendation for joint supplements at any age. Whether supplements make sense depends on individual circumstances, diet, health conditions, medications, and personal preferences. What IS universally recommended for over-60s in the UK is considering vitamin D supplementation (10-25μg daily), given high rates of deficiency. Discuss other supplements with your GP or pharmacist."
+    answer: "No. There's no universal recommendation for joint supplements at any age. Whether supplements make sense depends on individual circumstances, diet, health conditions, medications, and personal preferences. What IS universally recommended for over-60s in the UK is considering a daily vitamin D supplement, given high rates of deficiency. Discuss other supplements with your GP or pharmacist."
   }
 ];
 
@@ -181,7 +181,7 @@ const SupportKneeJointsAsYouAge = () => {
                 Supplements can complement—but not replace—the foundations above. Key considerations for ageing joints:
               </p>
               <ul className="space-y-3 font-sans text-muted-foreground">
-                <li>• <strong className="text-foreground"><Link to="/ingredients/vitamin-d" className="text-primary hover:underline">Vitamin D3</Link>:</strong> Has EFSA claims for bone and muscle health. Consider 10-25μg (400-1000 IU) or higher if deficient.</li>
+                <li>• <strong className="text-foreground"><Link to="/ingredients/vitamin-d" className="text-primary hover:underline">Vitamin D3</Link>:</strong> Has EFSA claims for bone and muscle health. UK advice is to consider a daily supplement from October to March.</li>
                 <li>• <strong className="text-foreground">Vitamin C:</strong> Contributes to normal collagen formation for cartilage function (EFSA claim).</li>
                 <li>• <strong className="text-foreground"><Link to="/ingredients/collagen" className="text-primary hover:underline">Collagen peptides</Link>:</strong> Provide amino acids for collagen synthesis. No EFSA claims but commonly used.</li>
                 <li>• <strong className="text-foreground"><Link to="/ingredients/glucosamine" className="text-primary hover:underline">Glucosamine</Link> & <Link to="/ingredients/chondroitin" className="text-primary hover:underline">chondroitin</Link>:</strong> Cartilage components. Mixed evidence, no EFSA claims.</li>

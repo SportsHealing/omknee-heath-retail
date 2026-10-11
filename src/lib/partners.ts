@@ -18,7 +18,18 @@ export interface PartnerLink {
   partner: PartnerKey;
 }
 
-export type PartnerKey = "sportshealing" | "chinmaygupte" | "mykneescore";
+export type PartnerKey = "sportshealing" | "chinmaygupte" | "mykneescore" | "mykneescan";
+
+/**
+ * SportsHealing booking page. Placeholder: [SportsHealing booking URL] is still
+ * to be confirmed, so this uses the current appointment page until then.
+ */
+export const SPORTSHEALING_BOOKING_URL = "https://www.sportshealing.com/appointment/";
+
+export type ClinicId = "online" | "harley-street" | "chiswick" | "pmc";
+
+/** Booking link for one clinic, e.g. clinicBookingUrl("chiswick"). */
+export const clinicBookingUrl = (clinic: ClinicId) => `${SPORTSHEALING_BOOKING_URL}?clinic=${clinic}`;
 
 export interface Partner {
   key: PartnerKey;
@@ -56,6 +67,15 @@ export const PARTNERS: Record<PartnerKey, Partner> = {
     role: "Knee health assessment",
     description:
       "Evidence-based knee assessment and triage tools that help you understand your symptoms and urgency, with onward pathways to clinical care and imaging when needed.",
+  },
+  mykneescan: {
+    key: "mykneescan",
+    name: "MyKneeScan",
+    domain: "mykneescan.com",
+    url: "https://www.mykneescan.com/",
+    role: "Direct-access knee imaging",
+    description:
+      "Same-day knee MRI and ultrasound at a Harley Street partner clinic, with an expert report and optional specialist review.",
   },
 };
 
@@ -195,16 +215,22 @@ export const PARTNER_LINKS = {
   ],
   imaging: [
     {
-      partner: "mykneescore",
+      partner: "mykneescan",
       label: "Book a same-day knee MRI in London",
-      href: "https://mykneescore.com/booking",
+      href: "https://www.mykneescan.com/booking",
       blurb: "Harley Street scanning with an expert orthopaedic report.",
     },
     {
-      partner: "mykneescore",
+      partner: "mykneescan",
       label: "Expert MRI report review",
-      href: "https://mykneescore.com/expert-review",
+      href: "https://www.mykneescan.com/expert-review",
       blurb: "A specialist reads your scan and explains what it shows.",
+    },
+    {
+      partner: "mykneescan",
+      label: "MyKneeScan 60-second knee test",
+      href: "https://www.mykneescan.com/assessment",
+      blurb: "A short set of questions about your knee. Not a diagnosis.",
     },
     {
       partner: "sportshealing",
@@ -246,9 +272,21 @@ export const PARTNER_LINKS = {
     },
     {
       partner: "sportshealing",
-      label: "Book a clinic visit",
-      href: "https://www.sportshealing.com/appointment/",
-      blurb: "Arrange an appointment at the Wellington Knee Unit, London.",
+      label: "Book at SportsHealing Harley Street",
+      href: clinicBookingUrl("harley-street"),
+      blurb: "SportsHealing Harley Street, London.",
+    },
+    {
+      partner: "sportshealing",
+      label: "Book at SportsHealing at HCA Chiswick",
+      href: clinicBookingUrl("chiswick"),
+      blurb: "SportsHealing at HCA Chiswick, London.",
+    },
+    {
+      partner: "sportshealing",
+      label: "Book at HCA Platinum Medical Centre",
+      href: clinicBookingUrl("pmc"),
+      blurb: "HCA Platinum Medical Centre, at The Wellington Hospital, London.",
     },
   ],
 } satisfies Record<string, PartnerLink[]>;

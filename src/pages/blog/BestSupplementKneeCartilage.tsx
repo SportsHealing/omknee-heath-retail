@@ -144,17 +144,17 @@ const BestSupplementKneeCartilage = () => {
               
               <h3 className="text-xl font-serif text-foreground mb-4">Hydrolysed Collagen Peptides</h3>
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                <Link to="/ingredients/collagen" className="text-primary hover:underline">Collagen</Link> is the primary structural protein in cartilage. Hydrolysed peptides are broken down for absorption. While collagen lacks EFSA claims, it provides amino acids (glycine, proline, hydroxyproline) the body uses in collagen synthesis. Research uses doses of 5-10g daily.
+                <Link to="/ingredients/collagen" className="text-primary hover:underline">Collagen</Link> is the primary structural protein in cartilage. Hydrolysed peptides are broken down for absorption. While collagen lacks EFSA claims, it provides amino acids (glycine, proline, hydroxyproline) the body uses in collagen synthesis.
               </p>
 
               <h3 className="text-xl font-serif text-foreground mb-4">Glucosamine Sulphate</h3>
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                <Link to="/ingredients/glucosamine" className="text-primary hover:underline">Glucosamine</Link> is a building block for proteoglycans—the cushioning molecules in cartilage. It's extensively studied but lacks EFSA claims. Research uses 1,500mg daily of the sulphate form.
+                <Link to="/ingredients/glucosamine" className="text-primary hover:underline">Glucosamine</Link> is a building block for proteoglycans—the cushioning molecules in cartilage. It's extensively studied but lacks EFSA claims. Most research uses the sulphate form.
               </p>
 
               <h3 className="text-xl font-serif text-foreground mb-4">Chondroitin Sulphate</h3>
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                <Link to="/ingredients/chondroitin" className="text-primary hover:underline">Chondroitin</Link> is a component of cartilage that attracts water for cushioning. Often paired with glucosamine, it also lacks EFSA claims. Research uses 800-1200mg daily.
+                <Link to="/ingredients/chondroitin" className="text-primary hover:underline">Chondroitin</Link> is a component of cartilage that attracts water for cushioning. Often paired with glucosamine, it also lacks EFSA claims.
               </p>
 
               <h3 className="text-xl font-serif text-foreground mb-4">Supporting Nutrients</h3>

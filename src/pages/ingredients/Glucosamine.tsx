@@ -22,7 +22,7 @@ import {
 const faqs = [
   {
     question: "Does glucosamine help knee cartilage?",
-    answer: "Glucosamine is a natural compound found in cartilage tissue, serving as a building block for glycosaminoglycans and proteoglycans—key components of the cartilage matrix. Numerous studies have examined glucosamine supplementation, with mixed results across different populations. However, glucosamine does not have EFSA-authorised health claims. We include it at the research dose (1,500mg) while being transparent that evidence is mixed."
+    answer: "Glucosamine is a natural compound found in cartilage tissue, serving as a building block for glycosaminoglycans and proteoglycans—key components of the cartilage matrix. Numerous studies have examined glucosamine supplementation, with mixed results across different populations. However, glucosamine does not have EFSA-authorised health claims. We include it while being transparent that evidence is mixed."
   },
   {
     question: "What is the difference between glucosamine sulphate and glucosamine HCl?",
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: "How much glucosamine should I take for knee joints?",
-    answer: "The most commonly studied dose is 1,500mg glucosamine sulphate daily, typically taken as a single dose or split into three 500mg doses. This is the dose used in major clinical trials. Lower doses have less research support. Our formula provides 1,500mg glucosamine sulphate 2KCl per daily serving, matching the research dose."
+    answer: "Major clinical trials have used glucosamine sulphate once daily or split across the day. Full amounts in our formula are listed on the product page."
   },
   {
     question: "How long does glucosamine take to work?",
@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     question: "Can I take glucosamine if I'm allergic to shellfish?",
-    answer: "Traditional glucosamine is derived from the shells of shellfish (shrimp, crab, lobster). If you have a shellfish allergy, you should avoid shellfish-derived glucosamine or choose a vegetarian/vegan alternative derived from fermentation. Our Vegetarian Formula uses vegan-fermented glucosamine for those with shellfish allergies. Always check product labels carefully."
+    answer: "Traditional glucosamine is derived from the shells of shellfish (shrimp, crab, lobster). If you have a shellfish allergy, you should avoid shellfish-derived glucosamine or choose a vegetarian/vegan alternative derived from fermentation. Always check product labels carefully."
   }
 ];
 
@@ -53,7 +53,7 @@ const Glucosamine = () => {
         title="Glucosamine for Knee Cartilage | OmKneeHealth"
         description="An overview of glucosamine and its role in cartilage structure and knee joint support within comprehensive joint formulations."
         canonicalPath="/ingredients/glucosamine"
-        keywords="glucosamine for knee joints, glucosamine cartilage, glucosamine sulphate, glucosamine 1500mg"
+        keywords="glucosamine for knee joints, glucosamine cartilage, glucosamine sulphate"
       />
       <BreadcrumbSchema
         items={[
@@ -145,7 +145,7 @@ const Glucosamine = () => {
                 <div className="bg-secondary/50 rounded-lg p-6 border border-border mt-6">
                   <p className="font-sans text-sm text-foreground font-medium mb-2">Important Note on Claims</p>
                   <p className="font-sans text-sm text-muted-foreground">
-                    Glucosamine does not have EFSA-authorised health claims. Despite extensive research, European regulators have not approved specific health claims. We include glucosamine at the research dose (1,500mg) based on its role as a cartilage component, while being honest about the mixed evidence.
+                    Glucosamine does not have EFSA-authorised health claims. Despite extensive research, European regulators have not approved specific health claims. We include glucosamine based on its role as a cartilage component, while being honest about the mixed evidence.
                   </p>
                 </div>
               </div>
@@ -172,7 +172,7 @@ const Glucosamine = () => {
                     <strong className="text-foreground">Absorption:</strong> Oral glucosamine is absorbed in the gastrointestinal tract. Studies using radiolabelled glucosamine have detected it in cartilage tissue after oral administration.
                   </li>
                   <li className="font-sans text-muted-foreground">
-                    <strong className="text-foreground">Dose matters:</strong> Most positive studies used 1,500mg daily of glucosamine sulphate. Lower doses have less evidence supporting their use.
+                    <strong className="text-foreground">Dose matters:</strong> Most positive studies used the sulphate form. Lower doses have less evidence supporting their use.
                   </li>
                   <li className="font-sans text-muted-foreground">
                     <strong className="text-foreground">Form matters:</strong> The crystalline glucosamine sulphate form used in European trials may differ from glucosamine HCl or non-crystalline forms used in other studies.
@@ -182,7 +182,7 @@ const Glucosamine = () => {
                   </li>
                 </ul>
                 <p className="font-sans text-muted-foreground leading-relaxed">
-                  Our formula uses glucosamine sulphate 2KCl at 1,500mg—the specific form and dose used in the most influential clinical trials. We pair it with chondroitin, reflecting how these compounds naturally occur together in cartilage.
+                  Our formula uses glucosamine sulphate, paired with chondroitin, reflecting how these compounds naturally occur together in cartilage. Full amounts are listed on the product page.
                 </p>
               </div>
             </div>
@@ -264,7 +264,7 @@ const Glucosamine = () => {
                 Explore Our Glucosamine Formula
               </h2>
               <p className="font-sans text-muted-foreground mb-8">
-                Our knee joint supplement contains 1,500mg glucosamine sulphate 2KCl paired with 800mg chondroitin.
+                Our knee joint supplement contains glucosamine sulphate paired with chondroitin.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button size="lg" asChild>
