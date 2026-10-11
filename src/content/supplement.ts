@@ -11,6 +11,8 @@
 
 /** Product page route. The old /product URL redirects here. */
 export const SUPPLEMENT_PATH = "/shop/omkneehealth-supplement";
+/** Shopify product handle (handover E2). */
+export const SUPPLEMENT_HANDLE = "omkneehealth-supplement";
 
 export const SUPPLEMENT = {
   name: "OmKneeHealth Supplement",
