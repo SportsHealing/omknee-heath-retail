@@ -20,6 +20,11 @@ export const SUPPLEMENT = {
   flavour: "Vanilla cherry",
 } as const;
 
+/** Disclosure level 1: one line and the four ingredient groups, no amounts. */
+export const SUPPLEMENT_SUMMARY =
+  "A daily powder bringing together collagen, joint-matrix ingredients, botanicals and bone nutrients.";
+export const SUPPLEMENT_GROUPS = ["Collagen complex", "Joint matrix", "Botanicals", "Bone nutrients"] as const;
+
 export interface FormulaRow {
   name: string;
   amount: string;

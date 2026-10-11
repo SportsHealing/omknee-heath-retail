@@ -1,22 +1,23 @@
 /**
- * Wellness hub (/wellness). Copy: handover A3.
- * Phase 1 adds the route and hero; the full hub content arrives in Phase 2.
+ * Wellness hub (/wellness). Copy: handover A3 (src/content/wellnessContent.ts).
+ * Order: hero, sticky in-page menu, Body clock, Sleep, Recovery, Make it stick,
+ * The Wellness Edit (always last), closing.
  */
-import { Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEO from "@/components/SEO";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import DiagramPlaceholder from "@/components/DiagramPlaceholder";
-import PlaceholderText from "@/components/PlaceholderText";
-import { Button } from "@/components/ui/button";
+import ContentSections, { ClosingBand } from "@/components/content/ContentSections";
+import WellnessEdit from "@/components/wellness/WellnessEdit";
 import { DIAGRAMS } from "@/content/diagrams";
-import { OMKNEE_FIVE, WELLNESS_HUB } from "@/lib/omkneeFive";
+import { WELLNESS_CLOSING, WELLNESS_INTRO, WELLNESS_SECTIONS, WELLNESS_SUBNAV } from "@/content/wellnessContent";
+import { WELLNESS_HUB } from "@/lib/omkneeFive";
 
 const Wellness = () => (
   <div className="min-h-screen bg-background">
     <SEO
-      title="Wellness: look after the whole person"
+      title="Wellness: Look After the Whole Person"
       description="Sleep, stress, daily rhythm and lifestyle shape how every tissue in the knee repairs and adapts. Wellness is the foundation the OmKnee Five stand on."
       canonicalPath={WELLNESS_HUB.to}
     />
@@ -27,33 +28,42 @@ const Wellness = () => (
       ]}
     />
     <Header />
-    <main className="pt-32 lg:pt-48 pb-24">
+    {/* Anchor targets clear the fixed header plus the sticky in-page menu. */}
+    <main className="pt-32 lg:pt-48 [&_[id]]:scroll-mt-36 lg:[&_[id]]:scroll-mt-48">
       <section className="container px-6">
         <div className="max-w-2xl mx-auto text-center">
           <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary/80 mb-6">Wellness</p>
-          <h1 className="font-serif text-4xl md:text-5xl text-foreground leading-tight mb-8">
-            {WELLNESS_HUB.strapline}
-          </h1>
-          <p className="font-sans text-lg text-muted-foreground leading-relaxed">
-            Your knee does not live in isolation. Sleep, stress, daily rhythm and lifestyle shape how every tissue in
-            the joint repairs and adapts. Wellness is the foundation the OmKnee Five stand on.
-          </p>
+          <h1 className="font-serif text-4xl md:text-5xl text-foreground leading-tight mb-8">{WELLNESS_HUB.strapline}</h1>
+          <p className="font-sans text-lg text-muted-foreground leading-relaxed">{WELLNESS_INTRO}</p>
         </div>
         <div className="max-w-3xl mx-auto">
           <DiagramPlaceholder {...DIAGRAMS.D1} />
-          <p className="text-center font-sans text-sm text-muted-foreground">
-            <PlaceholderText text="[Body clock, Sleep, Recovery, Make it stick and The Wellness Edit: built in Phase 2]" />
-          </p>
         </div>
       </section>
 
-      <section className="container px-6 mt-16">
-        <div className="max-w-3xl mx-auto rounded-2xl bg-secondary/40 border border-border px-8 py-12 text-center">
-          <Button size="lg" asChild>
-            <Link to={OMKNEE_FIVE[0].to}>Start the OmKnee Five</Link>
-          </Button>
-        </div>
-      </section>
+      <nav
+        aria-label="On this page"
+        className="sticky top-20 lg:top-28 z-30 border-y border-border bg-background/95 backdrop-blur-sm"
+      >
+        <ul className="container px-6 flex gap-1 overflow-x-auto whitespace-nowrap py-2 justify-start md:justify-center">
+          {WELLNESS_SUBNAV.map((item) => (
+            <li key={item.id}>
+              <a
+                href={`#${item.id}`}
+                className="inline-flex items-center min-h-[44px] rounded-full px-4 font-sans text-sm text-muted-foreground hover:bg-secondary hover:text-foreground"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <ContentSections sections={WELLNESS_SECTIONS} />
+
+      <WellnessEdit />
+
+      <ClosingBand closing={WELLNESS_CLOSING} />
     </main>
     <Footer />
   </div>
