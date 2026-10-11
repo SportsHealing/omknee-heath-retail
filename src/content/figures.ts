@@ -14,14 +14,19 @@ import kneeMovementAxes from "@/assets/figures/knee-movement-axes.webp";
 import collagenStructure from "@/assets/figures/collagen-structure.webp";
 import healthyKneePhilosophy from "@/assets/figures/healthy-knee-philosophy.webp";
 import clinicTeam from "@/assets/team-clinic.webp";
+import hamstringStretch from "@/assets/photos/hamstring-stretch.webp";
+import controlledSquat from "@/assets/photos/controlled-squat.webp";
+import runningPath from "@/assets/photos/running-path.webp";
+import bentKnee from "@/assets/photos/bent-knee.webp";
+import kneeSketches from "@/assets/photos/knee-sketches.webp";
 
 export interface Figure {
   src: string;
   alt: string;
   width: number;
   height: number;
-  /** Photographs show wider than infographics. */
-  wide?: boolean;
+  /** Display width: wide for group photos, narrow for portrait-shaped photos. */
+  size?: "wide" | "narrow";
 }
 
 export const FIGURES = {
@@ -96,8 +101,41 @@ export const FIGURES = {
     src: clinicTeam,
     width: 1410,
     height: 855,
-    wide: true,
+    size: "wide",
     alt: "The OmKneeHealth team together at the clinic.",
+  },
+  hamstringStretch: {
+    src: hamstringStretch,
+    width: 960,
+    height: 640,
+    alt: "A hamstring stretch: lying on a mat with one leg raised straight, a strap around the foot, and the other leg flat on the ground.",
+  },
+  controlledSquat: {
+    src: controlledSquat,
+    width: 720,
+    height: 900,
+    size: "narrow",
+    alt: "A controlled squat: knees bent over the feet, back upright, hands together in front of the chest.",
+  },
+  runningPath: {
+    src: runningPath,
+    width: 720,
+    height: 900,
+    size: "narrow",
+    alt: "A runner on a woodland path beside a lake.",
+  },
+  bentKnee: {
+    src: bentKnee,
+    width: 900,
+    height: 1125,
+    size: "narrow",
+    alt: "Close-up of a bent knee.",
+  },
+  kneeSketches: {
+    src: kneeSketches,
+    width: 1024,
+    height: 1024,
+    alt: "Pencil sketches of a knee from the front, the side and at an angle, showing the kneecap and the contours around it.",
   },
 } satisfies Record<string, Figure>;
 

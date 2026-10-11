@@ -40,7 +40,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
     intro: [
       "Every part of your knee is alive. Each tissue responds to how you load it, feed it and rest it. Knowing how they adapt makes the rest of the OmKnee Five make sense.",
     ],
-    heroDiagram: "D7",
+    heroFigure: "bentKnee",
     sections: [
       {
         title: "The structures of the knee",
@@ -93,6 +93,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
             ],
           },
           { type: "p", text: "Remove any one and adaptation slows." },
+          { type: "diagram", id: "D7" },
         ],
       },
       {
@@ -300,6 +301,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
         blocks: [
           { type: "p", text: "Based on World Health Organization guidance, with a knee focus added." },
           { type: "diagram", id: "D2" },
+          { type: "figure", id: "runningPath" },
           {
             type: "table",
             columns: ["Age", "Aerobic activity", "Strength", "Knee focus"],
@@ -324,6 +326,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
               { title: "Balance", copy: "Single-leg work trains the control that protects ligaments." },
             ],
           },
+          { type: "figure", id: "controlledSquat" },
         ],
       },
       {
@@ -416,6 +419,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
             ],
           },
           { type: "h3", text: "A knee-friendly week" },
+          { type: "figure", id: "hamstringStretch" },
           { type: "diagram", id: "D9" },
           {
             type: "list",
@@ -515,6 +519,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
             type: "p",
             text: "Then the examination: movement, swelling, stability, strength, how the knee behaves under a hand.",
           },
+          { type: "figure", id: "kneeSketches" },
           {
             type: "cta",
             cta: {

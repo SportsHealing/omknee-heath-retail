@@ -1,5 +1,7 @@
 import type { Figure } from "@/content/figures";
 
+const WIDTH = { wide: "max-w-3xl", default: "max-w-xl", narrow: "max-w-sm" } as const;
+
 /** Final artwork or photography, centred at a readable size. */
 interface FigureImageProps {
   figure: Figure;
@@ -17,7 +19,7 @@ const FigureImage = ({ figure, className = "my-10", eager = false }: FigureImage
       height={figure.height}
       loading={eager ? "eager" : "lazy"}
       decoding="async"
-      className={`mx-auto h-auto w-full ${figure.wide ? "max-w-3xl" : "max-w-xl"} rounded-2xl border border-border bg-background`}
+      className={`mx-auto h-auto w-full ${WIDTH[figure.size ?? "default"]} rounded-2xl border border-border bg-background`}
     />
   </figure>
 );
