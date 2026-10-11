@@ -14,6 +14,8 @@ import DiagramPlaceholder from "@/components/DiagramPlaceholder";
 import ContentSections, { ClosingBand } from "@/components/content/ContentSections";
 import { PILLAR_CONTENT } from "@/content/pillarContent";
 import { DIAGRAMS } from "@/content/diagrams";
+import { FIGURES } from "@/content/figures";
+import FigureImage from "@/components/FigureImage";
 import { getPillar, type PillarId } from "@/lib/omkneeFive";
 
 interface PillarPageProps {
@@ -55,7 +57,9 @@ const PillarPage = ({ id, children }: PillarPageProps) => {
             </div>
 
             <div className="max-w-3xl mx-auto mt-10">
-              {content.heroDiagram ? (
+              {content.heroFigure ? (
+                <FigureImage figure={FIGURES[content.heroFigure]} className="" eager />
+              ) : content.heroDiagram ? (
                 <DiagramPlaceholder {...DIAGRAMS[content.heroDiagram]} />
               ) : (
                 <figure className="max-w-2xl mx-auto">

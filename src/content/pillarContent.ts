@@ -9,6 +9,7 @@
 import type { PillarId } from "@/lib/omkneeFive";
 import type { ContentClosing, ContentSection } from "./contentBlocks";
 import type { DiagramId } from "./diagrams";
+import type { FigureId } from "./figures";
 import { SUPPLEMENT_PATH } from "./supplement";
 import { CLINICS, ONLINE_CONSULTATION } from "./clinics";
 import { TEAM } from "./team";
@@ -21,6 +22,8 @@ export interface PillarContent {
   intro: string[];
   /** Diagram shown under the intro instead of the pillar image. */
   heroDiagram?: DiagramId;
+  /** Final artwork shown under the intro instead of the pillar image. */
+  heroFigure?: FigureId;
   sections: ContentSection[];
   closing: ContentClosing;
   seoTitle: string;
@@ -136,6 +139,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
     intro: [
       "Your knee sits on two of the longest bones in your body. Bone is living tissue, broken down and rebuilt throughout life. What you eat gives it the raw materials. Our approach is simple: food first, bone first.",
     ],
+    heroFigure: "nourishYourKnees",
     sections: [
       {
         id: "bone",
@@ -205,6 +209,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
             type: "p",
             text: "Protein supports muscle as well as bone. Spreading it across meals, and pairing it with strength training, is more useful than one large serving.",
           },
+          { type: "figure", id: "fuelYourKnees" },
         ],
       },
       {
