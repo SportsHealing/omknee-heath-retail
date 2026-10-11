@@ -35,12 +35,12 @@ const OrganizationSchema = () => {
         {
           "@type": "Person",
           name: "Chinmay Gupté",
-          jobTitle: "Co-Founder & Orthopaedic Consultant",
+          jobTitle: "Co-Founder, Consultant Knee Surgeon and President of the British Knee Society",
         },
         {
           "@type": "Person",
           name: "Cynthia Gupté",
-          jobTitle: "Co-Founder",
+          jobTitle: "Co-Founder and Consultant Radiologist",
         },
       ],
       contactPoint: {

@@ -1,7 +1,6 @@
 /**
- * The clinical team. Credentials are from the Knee Passport cover. Titles
- * and specialisms are placeholders until confirmed (Q5). Never show
- * these next to the supplement (Appendix D1.7).
+ * The clinical team. Credentials are from the Knee Passport cover; titles
+ * confirmed by the client. Never show these next to the supplement (D1.7).
  */
 import type { ContentLink } from "./contentBlocks";
 import chinmayPhoto from "@/assets/team/chinmay-gupte.webp";
@@ -18,13 +17,13 @@ export interface TeamMember {
 export const TEAM: TeamMember[] = [
   {
     name: "Chinmay Gupté",
-    details: "PhD, FRCS (Tr&Orth), MA, BM BCh (Oxon). [title, specialisms]",
+    details: "Consultant knee surgeon and President of the British Knee Society. PhD, FRCS (Tr&Orth), MA, BM BCh (Oxon).",
     photo: chinmayPhoto,
     profile: { label: "Profile at ChinmayGupte.com", href: "https://www.chinmaygupte.com/" },
   },
   {
     name: "Cynthia Gupté",
-    details: "FRCR, MRCS, BSc, BMBCh (Oxon). [title, specialisms, profile link]",
+    details: "Consultant radiologist and mother of two boys. FRCR, MRCS, BSc, BMBCh (Oxon).",
     photo: cynthiaPhoto,
   },
   {
