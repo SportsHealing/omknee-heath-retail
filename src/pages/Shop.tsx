@@ -1,35 +1,66 @@
+/**
+ * The Knee Shop (/shop). Copy: handover A10; categories in src/content/shopCatalogue.ts.
+ * Each category shows its education link before its product grid. Every product
+ * card shows the member price next to the full price.
+ */
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEO from "@/components/SEO";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import WebPageSchema from "@/components/WebPageSchema";
-import MovementSupport from "@/components/curated/MovementSupport";
-import RecoveryTools from "@/components/curated/RecoveryTools";
-import StrengthEquipment from "@/components/curated/StrengthEquipment";
-import FootwearGuidance from "@/components/curated/FootwearGuidance";
-import AfterSurgery from "@/components/shop/AfterSurgery";
 import EcosystemPathway from "@/components/EcosystemPathway";
 import BackToTop from "@/components/ui/BackToTop";
-import KneeNutritionIntro from "@/components/shop/KneeNutritionIntro";
-import { Link } from "react-router-dom";
-import { ArrowRight, Leaf, Shield, Snowflake, HeartHandshake, Dumbbell, Footprints } from "lucide-react";
+import SupplementCard from "@/components/product/SupplementCard";
+import ShopProductCard from "@/components/shop/ShopProductCard";
+import { InlineLink } from "@/components/content/ContentSections";
+import { SHOP_CATEGORIES, type ShopCategory } from "@/content/shopCatalogue";
+import { NAV } from "@/lib/navigation";
 
-const categories = [
-  { icon: Leaf, title: "Knee Nutrition", copy: "Selected nutrition and supplements.", cta: "Shop Nutrition", to: "#knee-nutrition" },
-  { icon: Shield, title: "Braces & Supports", copy: "Practical support for different needs and activities.", cta: "Shop Supports", to: "#braces-supports" },
-  { icon: Snowflake, title: "Cooling & Recovery", copy: "Selected products for recovery and comfort.", cta: "Shop Recovery", to: "#cooling-recovery" },
-  { icon: HeartHandshake, title: "After Surgery", copy: "Practical products for everyday recovery following knee surgery.", cta: "Shop After Surgery", to: "#after-surgery" },
-  { icon: Dumbbell, title: "Movement & Rehabilitation", copy: "Equipment for strength, mobility and rehabilitation.", cta: "Shop Movement", to: "#movement-rehabilitation" },
-  { icon: Footprints, title: "Foot & Lower Limb", copy: "Selected products for the wider lower limb.", cta: "Shop Foot & Lower Limb", to: "#foot-lower-limb" },
-];
+const CategorySection = ({ category }: { category: ShopCategory }) => (
+  <section id={category.id} className="scroll-mt-28 lg:scroll-mt-36 py-16 md:py-20 border-t border-border">
+    <div className="container px-6">
+      <div className="max-w-6xl mx-auto">
+        <div className="max-w-3xl mb-8">
+          <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary/80 mb-3">{category.subtitle}</p>
+          <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-5">{category.title}</h2>
+          <div className="space-y-3 font-sans text-muted-foreground leading-relaxed">
+            {category.intro.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
+          </div>
+          {/* A10: the education link comes before the product grid. */}
+          <p className="mt-5">
+            <InlineLink
+              link={category.education}
+              className="inline-flex items-center gap-2 font-sans text-sm text-primary hover:underline underline-offset-4 min-h-[44px]"
+            />
+          </p>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {category.id === "omkneehealth-supplement" ? (
+            <SupplementCard />
+          ) : (
+            Array.from({ length: category.placeholderCount }, (_, i) => (
+              <ShopProductCard key={i} note={category.productNote} />
+            ))
+          )}
+        </div>
+        {category.disclaimer ? (
+          <p className="mt-8 font-sans text-xs text-muted-foreground">{category.disclaimer}</p>
+        ) : null}
+      </div>
+    </div>
+  </section>
+);
 
 const Shop = () => (
   <div className="min-h-screen bg-background">
     <SEO
-      title="The Knee Shop | Supplements, Braces & Recovery"
-      description="A carefully curated knee health shop: nutrition, braces and supports, cooling and recovery, after surgery essentials, movement and rehabilitation aids, and footwear guidance."
+      title="The Knee Shop"
+      description="Selected by our team. Clear information. Better choices. The OmKneeHealth Supplement, braces and supports, after surgery essentials, cooling and recovery, movement and rehabilitation, foot and lower limb."
       canonicalPath="/shop"
-      keywords="knee supplements UK, knee brace, knee support, knee recovery products, knee rehabilitation equipment"
     />
     <BreadcrumbSchema
       items={[
@@ -38,88 +69,54 @@ const Shop = () => (
       ]}
     />
     <WebPageSchema
-      name="Knee Health Shop - OmKneeHealth"
-      description="Curated knee health products across nutrition, supports, recovery, after surgery, rehabilitation and footwear."
+      name="The Knee Shop - OmKneeHealth"
+      description="Products selected by our team, with clear information."
       url="https://omkneehealth.com/shop"
       type="CollectionPage"
     />
     <Header />
     <main>
-      <section className="pt-32 pb-16 lg:pt-56 lg:pb-20">
+      <section className="pt-32 pb-12 lg:pt-48 lg:pb-16">
         <div className="container px-6">
           <div className="max-w-2xl mx-auto text-center">
-            <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary/80 mb-6">The Knee Shop</p>
-            <h1 className="font-serif text-4xl md:text-5xl text-foreground leading-tight mb-8">
-              The Knee Shop
-            </h1>
-            <p className="font-serif text-xl text-foreground mb-6">
-              Thoughtful products. Clear information. Better choices.
-            </p>
-            <div className="space-y-4 font-sans text-lg text-muted-foreground leading-relaxed text-left sm:text-center">
-              <p>Looking after your knees starts with understanding them.</p>
-              <p>
-                When a product may have a useful role, we believe you should know what it is, why it
-                has been selected and how it fits into the wider picture.
-              </p>
-              <p>
-                Explore products chosen specifically around knee health, movement and recovery.
-              </p>
-            </div>
+            <h1 className="font-serif text-4xl md:text-5xl text-foreground leading-tight mb-6">The Knee Shop.</h1>
+            <p className="font-serif text-xl text-foreground">Selected by our team. Clear information. Better choices.</p>
           </div>
+          <Link
+            to={NAV.club.to}
+            className="mt-10 mx-auto flex max-w-2xl items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 font-sans text-sm text-primary-foreground hover:bg-primary/90 min-h-[44px]"
+          >
+            Club members save 15%. Join free.
+            <ArrowRight className="w-4 h-4" aria-hidden="true" />
+          </Link>
         </div>
       </section>
 
-      <section className="pb-24">
+      <nav aria-label="Shop categories" className="pb-16">
         <div className="container px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {categories.map((cat) => {
-              const inner = (
-                <>
-                  <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center mb-5">
-                    <cat.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <h2 className="font-serif text-xl text-foreground mb-2">{cat.title}</h2>
-                  <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-6">{cat.copy}</p>
-                  <span className="inline-flex items-center gap-2 font-sans text-sm text-primary">
-                    {cat.cta}
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+            {SHOP_CATEGORIES.map((category) => (
+              <li key={category.id}>
+                <a
+                  href={`#${category.id}`}
+                  className="group flex h-full flex-col rounded-xl border border-border bg-secondary/40 p-7 transition-colors hover:border-primary/40 hover:bg-secondary/60"
+                >
+                  <span className="font-serif text-xl text-foreground mb-2">{category.title}</span>
+                  <span className="font-sans text-sm text-muted-foreground leading-relaxed mb-5">{category.tileCopy}</span>
+                  <span className="mt-auto inline-flex items-center gap-2 font-sans text-sm text-primary">
+                    {category.tileCta}
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                   </span>
-                </>
-              );
-              const className =
-                "group rounded-xl border border-border bg-secondary/40 p-8 transition-colors hover:border-primary/40 hover:bg-secondary/60";
-              return cat.to.startsWith("#") ? (
-                <a key={cat.title} href={cat.to} className={className}>
-                  {inner}
                 </a>
-              ) : (
-                <Link key={cat.title} to={cat.to} className={className}>
-                  {inner}
-                </Link>
-              );
-            })}
-          </div>
+              </li>
+            ))}
+          </ul>
         </div>
-      </section>
+      </nav>
 
-      <div id="knee-nutrition" className="scroll-mt-28">
-        <KneeNutritionIntro />
-      </div>
-      <div id="braces-supports" className="scroll-mt-28">
-        <MovementSupport />
-      </div>
-      <div id="cooling-recovery" className="scroll-mt-28">
-        <RecoveryTools />
-      </div>
-      <div id="after-surgery" className="scroll-mt-28">
-        <AfterSurgery />
-      </div>
-      <div id="movement-rehabilitation" className="scroll-mt-28">
-        <StrengthEquipment />
-      </div>
-      <div id="foot-lower-limb" className="scroll-mt-28">
-        <FootwearGuidance />
-      </div>
+      {SHOP_CATEGORIES.map((category) => (
+        <CategorySection key={category.id} category={category} />
+      ))}
 
       <EcosystemPathway
         site="sportshealing"

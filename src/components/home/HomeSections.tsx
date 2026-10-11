@@ -14,6 +14,9 @@ import { trackPillarSelect } from "@/lib/analytics";
 import { TEAM } from "@/content/team";
 import { CLINICS, ONLINE_CONSULTATION } from "@/content/clinics";
 import { SUPPLEMENT, SUPPLEMENT_PATH } from "@/content/supplement";
+import { HOME_CLAIM_ID, visibleClaims } from "@/content/productClaims";
+
+const homeClaimVisible = visibleClaims().some((claim) => claim.id === HOME_CLAIM_ID);
 
 const eyebrowClass = "font-sans text-xs tracking-[0.2em] uppercase text-primary/80 mb-4";
 const h2Class = "font-serif text-3xl md:text-4xl text-foreground leading-tight";
@@ -198,9 +201,13 @@ export const HomeSupplementBand = () => (
           why. The {SUPPLEMENT.name} brings together collagen, joint-matrix ingredients, botanicals and bone nutrients
           in one daily serving.
         </p>
+        {/* Authorised claim (A1): shown only once verified in productClaims.ts. */}
         <p className="font-sans text-foreground mb-8">
-          Contains vitamin C, which contributes to normal collagen formation for the normal function of bones and
-          cartilage.
+          {homeClaimVisible ? (
+            "Contains vitamin C, which contributes to normal collagen formation for the normal function of bones and cartilage."
+          ) : (
+            <PlaceholderText text="[Vitamin C claim line: shown once verified against the GB Nutrition and Health Claims Register]" />
+          )}
         </p>
         <Button size="lg" asChild>
           <Link to={SUPPLEMENT_PATH}>Explore the supplement</Link>
