@@ -1,6 +1,7 @@
 /**
- * The clinical team. Names, titles, credentials and photos are placeholders
- * until confirmed (Q5). Never show these next to the supplement (Appendix D1.7).
+ * The clinical team. Credentials are from the Knee Passport cover. Titles,
+ * specialisms and photos are placeholders until confirmed (Q5). Never show
+ * these next to the supplement (Appendix D1.7).
  */
 import type { ContentLink } from "./contentBlocks";
 
@@ -13,12 +14,12 @@ export interface TeamMember {
 export const TEAM: TeamMember[] = [
   {
     name: "Chinmay Gupte",
-    details: "[title, specialisms, credentials, photo]",
+    details: "PhD, FRCS (Tr&Orth), MA, BM BCh (Oxon). [title, specialisms, photo]",
     profile: { label: "Profile at ChinmayGupte.com", href: "https://www.chinmaygupte.com/" },
   },
   {
     name: "Cynthia Gupte",
-    details: "[title, specialisms, credentials, photo, profile link]",
+    details: "FRCR, MRCS, BSc, BMBCh (Oxon). [title, specialisms, photo, profile link]",
   },
   {
     name: "[clinical team]",

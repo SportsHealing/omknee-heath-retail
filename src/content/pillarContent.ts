@@ -45,6 +45,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
       {
         title: "The structures of the knee",
         blocks: [
+          { type: "figure", id: "bonesOfTheKnee" },
           {
             type: "cards",
             items: [
@@ -74,6 +75,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
               },
             ],
           },
+          { type: "figure", id: "kneeTendons" },
         ],
       },
       {
@@ -101,6 +103,8 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
             text: "Because the knee rotates and glides as well as bends, walking, running, squatting and changing direction all need coordination between the knee, the hip and the ankle.",
           },
           { type: "p", text: "That is why so much of knee rehabilitation is actually about the rest of the leg." },
+          { type: "figure", id: "kneeBendRange" },
+          { type: "figure", id: "kneeMovementAxes" },
         ],
       },
       {
@@ -197,6 +201,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
             type: "p",
             text: "Collagen is the main protein in bone, cartilage, tendon and ligament. Your body makes it from amino acids in dietary protein, and needs vitamin C to do so. Collagen supplements are widely discussed. The evidence is still developing, and we explain it honestly.",
           },
+          { type: "figure", id: "collagenStructure" },
           { type: "cta", cta: { label: "Understand collagen", to: "/ingredients/collagen" } },
         ],
       },

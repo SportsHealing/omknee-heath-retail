@@ -7,6 +7,12 @@ import kneeHealthPlate from "@/assets/figures/knee-health-plate.webp";
 import nourishYourKnees from "@/assets/figures/nourish-your-knees.webp";
 import kneeHealthPyramid from "@/assets/figures/knee-health-pyramid.webp";
 import sleepBodyClock from "@/assets/figures/sleep-body-clock.webp";
+import bonesOfTheKnee from "@/assets/figures/bones-of-the-knee.webp";
+import kneeTendons from "@/assets/figures/quadriceps-patellar-tendons.webp";
+import kneeBendRange from "@/assets/figures/knee-bend-range.webp";
+import kneeMovementAxes from "@/assets/figures/knee-movement-axes.webp";
+import collagenStructure from "@/assets/figures/collagen-structure.webp";
+import healthyKneePhilosophy from "@/assets/figures/healthy-knee-philosophy.webp";
 
 export interface Figure {
   src: string;
@@ -45,6 +51,43 @@ export const FIGURES = {
     width: 1055,
     height: 1491,
     alt: "Fuel your knees: nutrition for activity, performance and recovery. 1. Protein supports muscle maintenance and tissue repair. 2. Carbohydrates provide energy for exercise, rehabilitation and recovery. 3. Healthy fats: olive oil, nuts, seeds and omega-3 rich foods. 4. Fruit and vegetables provide fibre, vitamins and minerals. 5. Hydration: drink regularly before, during and after activity. 6. Meal timing: fuel before activity and include protein plus carbohydrate after exercise. Mindful eating cues: eat slowly, minimise distractions, choose regular meals, aim for a healthy body weight.",
+  },
+  // From the SportsHealing Knee Passport.
+  bonesOfTheKnee: {
+    src: bonesOfTheKnee,
+    width: 1266,
+    height: 1524,
+    alt: "The bones of the left knee, side view and front view: patella, femur, tibia and fibula. Beside each sketch, the femoral condyles are drawn as wheels with rubber tyres rolling on the tibia, with the patella at the front.",
+  },
+  kneeTendons: {
+    src: kneeTendons,
+    width: 1216,
+    height: 1074,
+    alt: "Left knee front view and side view showing the iliotibial band (ITB), quadriceps tendon, patella, patella tendon, fibula and tibia.",
+  },
+  kneeBendRange: {
+    src: kneeBendRange,
+    width: 944,
+    height: 488,
+    alt: "How far the knee bends for everyday activities: 0 degrees full extension, 45 degrees driving, 85 to 90 degrees safely up and down stairs, 110 to 115 degrees riding a bike and squatting, 135 degrees full flexion, 160 degrees kneeling or hyperflexion.",
+  },
+  kneeMovementAxes: {
+    src: kneeMovementAxes,
+    width: 874,
+    height: 698,
+    alt: "The knee moves in three dimensions. Translations: proximal/distal, anterior/posterior and medial/lateral. Rotations: flexion/extension, varus/valgus and internal/external.",
+  },
+  collagenStructure: {
+    src: collagenStructure,
+    width: 1074,
+    height: 472,
+    alt: "Collagen in the knee, magnified in steps: the knee joint, collagen fibres, a single fibre bundle, and the polypeptide amino acid triple helix.",
+  },
+  healthyKneePhilosophy: {
+    src: healthyKneePhilosophy,
+    width: 1244,
+    height: 1208,
+    alt: "The OmKneeHealth philosophy: a healthy knee at the centre of four areas. Manage load: practise good control squatting, build up activities slowly, maintain a healthy weight, keep a full range of movement. Healthy lifestyle: manage stress, minimise alcohol, don't smoke, less sugar, optimise sleep, sunlight, hormone support. Good nutrition: collagen support, minerals, protein, fat and carbohydrate balance, vitamins (especially D and C). Muscle and bone density: optimise balance and coordination, keep muscles strong, stretch tendons and fascia.",
   },
 } satisfies Record<string, Figure>;
 

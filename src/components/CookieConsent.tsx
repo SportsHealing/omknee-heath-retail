@@ -138,7 +138,8 @@ const CookieConsent = () => {
       )}
 
       {/* Banner */}
-      <div 
+      <section
+        aria-label="Cookie consent"
         className={cn(
           "absolute bottom-0 left-0 right-0 pointer-events-auto transition-transform duration-300",
           showCustomise ? "translate-y-full" : "translate-y-0"
@@ -191,7 +192,7 @@ const CookieConsent = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Customise Modal */}
       {showCustomise && (
