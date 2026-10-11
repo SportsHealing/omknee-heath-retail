@@ -39,17 +39,14 @@ const StickyBuyBar = () => {
 
           {/* Price & CTA */}
           <div className="flex items-center gap-4 w-full sm:w-auto">
-            <span className="font-serif text-lg text-foreground">£{SUPPLEMENT.price}</span>
-            <div className="flex gap-2 flex-1 sm:flex-none">
-              <Button size="sm" className="flex-1 sm:flex-none gap-2">
-                <ShoppingBag className="w-4 h-4" />
-                <span className="hidden xs:inline">Add to Basket</span>
-                <span className="xs:hidden">Buy</span>
-              </Button>
-              <Button variant="outline" size="sm" className="hidden md:flex border-foreground/20">
-                Subscribe & Save
-              </Button>
-            </div>
+            <span className="font-sans text-foreground">
+              <span className="font-serif text-lg">£{SUPPLEMENT.price}</span>
+              <span className="ml-2 text-xs text-muted-foreground whitespace-nowrap">Member price £{SUPPLEMENT.memberPrice}</span>
+            </span>
+            <Button size="sm" disabled className="flex-1 sm:flex-none gap-2 min-h-[44px]" title="Basket opens with Shopify in Phase 5">
+              <ShoppingBag className="w-4 h-4" aria-hidden="true" />
+              Add to basket
+            </Button>
           </div>
         </div>
       </div>
