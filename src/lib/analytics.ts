@@ -6,6 +6,7 @@
 
 import type { PillarId } from "./omkneeFive";
 import type { BookOptionId } from "./navigation";
+import type { JoinSource } from "./klaviyo";
 
 type DataLayerWindow = Window & { dataLayer?: Record<string, unknown>[] };
 
@@ -45,3 +46,5 @@ const BOOK_EVENTS: Record<BookOptionId, string> = {
   consultation: "book_consultation_click",
 };
 export const trackBookClick = (option: BookOptionId) => track(BOOK_EVENTS[option]);
+export const trackClubJoinStarted = (source: JoinSource) => track("club_join_started", { join_source: source });
+export const trackClubJoinCompleted = (source: JoinSource) => track("club_join_completed", { join_source: source });

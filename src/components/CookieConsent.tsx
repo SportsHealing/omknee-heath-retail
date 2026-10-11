@@ -4,6 +4,7 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Cookie, X, Settings, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { CONSENT_EVENT } from "@/lib/consent";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface CookiePreferences {
@@ -57,6 +58,8 @@ const CookieConsent = () => {
     setShowBanner(false);
     setShowCustomise(false);
     setHasConsented(true);
+    // Lets consent-gated scripts (Klaviyo onsite, Shopify) load straight away.
+    window.dispatchEvent(new Event(CONSENT_EVENT));
   };
 
   const handleAcceptAll = () => {

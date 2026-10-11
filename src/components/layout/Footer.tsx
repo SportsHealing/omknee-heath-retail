@@ -1,50 +1,15 @@
-import { useState } from "react";
-import { Instagram, Facebook, Linkedin, Send, CheckCircle } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { useToast } from "@/hooks/use-toast";
+import { Instagram, Facebook, Linkedin } from "lucide-react";
+import JoinForm from "@/components/club/JoinForm";
 import logoWhite from "@/assets/logo-white.png";
 import { OMKNEE_FIVE, WELLNESS_HUB } from "@/lib/omkneeFive";
 import { NAV, SUPPLEMENT_LINK } from "@/lib/navigation";
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubscribed, setIsSubscribed] = useState(false);
-  const { toast } = useToast();
-
   const socialLinks = [
     { name: "Instagram", icon: Instagram, href: "https://instagram.com/omkneehealth" },
     { name: "Facebook", icon: Facebook, href: "https://facebook.com/omkneehealth" },
     { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/company/omkneehealth" },
   ];
-
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      toast({
-        title: "Invalid email",
-        description: "Please enter a valid email address.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-    
-    // Simulate subscription
-    await new Promise((resolve) => setTimeout(resolve, 800));
-    
-    setIsSubmitting(false);
-    setIsSubscribed(true);
-    setEmail("");
-    
-    toast({
-      title: "You're subscribed!",
-      description: "Thank you for joining our newsletter.",
-    });
-  };
 
   return (
     <footer className="bg-primary text-primary-foreground py-16">
@@ -292,46 +257,9 @@ const Footer = () => {
         </div>
 
         <div className="py-10 border-t border-primary-foreground/10">
-          <div className="max-w-sm mx-auto text-center">
-            <h4 className="font-serif text-lg text-primary-foreground mb-4">
-              Stay informed
-            </h4>
-            
-            {isSubscribed ? (
-              <div className="flex items-center justify-center gap-2 text-primary-foreground/80">
-                <CheckCircle className="w-5 h-5" />
-                <span className="font-sans text-sm">Thanks for subscribing!</span>
-              </div>
-            ) : (
-              <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
-                <Input
-                  id="newsletter-email"
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-primary-foreground/40"
-                  aria-label="Email address for newsletter"
-                />
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  variant="secondary"
-                  className="px-4"
-                  aria-label="Subscribe to newsletter"
-                >
-                  {isSubmitting ? (
-                    "..."
-                  ) : (
-                    <Send className="w-4 h-4" aria-hidden="true" />
-                  )}
-                </Button>
-              </form>
-            )}
-            
-            <p className="font-sans text-xs text-primary-foreground/40 mt-3">
-              No spam. Unsubscribe anytime.
-            </p>
+          <div className="max-w-md mx-auto">
+            <h4 className="font-serif text-lg text-primary-foreground mb-4 text-center">Join the OmKnee Club, free</h4>
+            <JoinForm source="footer" tone="dark" compact confirmationHeading="h3" />
           </div>
         </div>
 
