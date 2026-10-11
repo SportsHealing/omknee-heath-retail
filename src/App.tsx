@@ -67,6 +67,8 @@ import NotFound from "./pages/NotFound";
 
 import ScrollToHash from "./components/ScrollToHash";
 import SiteServices from "./components/SiteServices";
+import { CartProvider } from "./components/cart/CartProvider";
+import CartDrawer from "./components/cart/CartDrawer";
 import CookieConsent from "./components/CookieConsent";
 import Redirect from "./components/Redirect";
 
@@ -79,6 +81,9 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        {/* Cart state wraps every route so the basket and drawer are available site-wide. */}
+        <CartProvider>
+        <CartDrawer />
         <ScrollToHash />
         <SiteServices />
         <CookieConsent />
@@ -177,6 +182,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </CartProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

@@ -48,3 +48,5 @@ const BOOK_EVENTS: Record<BookOptionId, string> = {
 export const trackBookClick = (option: BookOptionId) => track(BOOK_EVENTS[option]);
 export const trackClubJoinStarted = (source: JoinSource) => track("club_join_started", { join_source: source });
 export const trackClubJoinCompleted = (source: JoinSource) => track("club_join_completed", { join_source: source });
+export const trackAddToCart = (handle: string, quantity: number) => track("add_to_cart", { handle, quantity });
+export const trackCheckoutStarted = (totalQuantity: number) => track("checkout_started", { total_quantity: totalQuantity });

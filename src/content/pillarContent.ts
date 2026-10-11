@@ -12,6 +12,7 @@ import type { DiagramId } from "./diagrams";
 import { SUPPLEMENT_PATH } from "./supplement";
 import { CLINICS, ONLINE_CONSULTATION } from "./clinics";
 import { TEAM } from "./team";
+import { BLOOD_TEST_LINKS } from "@/lib/bookingLinks";
 
 export interface PillarContent {
   id: PillarId;
@@ -573,11 +574,17 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
           },
           {
             type: "table",
-            columns: ["Panel", "Includes", "Price"],
+            // E3: each panel's Order button uses its Square payment link (src/lib/bookingLinks.ts).
+            columns: ["Panel", "Includes", "Price", "Order"],
             rows: [
-              ["Vitamin D check", "25-OH vitamin D", "[£]"],
-              ["Bone health panel", "Vitamin D, calcium, phosphate, alkaline phosphatase, [others]", "[£]"],
-              ["Active body panel", "[tests to confirm]", "[£]"],
+              ["Vitamin D check", "25-OH vitamin D", "[£]", { label: "Order", href: BLOOD_TEST_LINKS.vitaminD }],
+              [
+                "Bone health panel",
+                "Vitamin D, calcium, phosphate, alkaline phosphatase, [others]",
+                "[£]",
+                { label: "Order", href: BLOOD_TEST_LINKS.bone },
+              ],
+              ["Active body panel", "[tests to confirm]", "[£]", { label: "Order", href: BLOOD_TEST_LINKS.active }],
             ],
           },
           {
@@ -590,7 +597,6 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
               "Results with clinician comments.",
             ],
           },
-          { type: "cta", cta: { label: "Order a blood test", href: "[Randox or Square payment link]", style: "button" } },
           {
             type: "smallPrint",
             text: "Blood tests are provided by Randox Health. [Regulator wording to be supplied by Randox.] A blood test cannot diagnose a knee condition on its own.",

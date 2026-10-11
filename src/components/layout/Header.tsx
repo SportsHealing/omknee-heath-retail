@@ -8,6 +8,7 @@ import MobileBottomBar from "./MobileBottomBar";
 import { OMKNEE_FIVE, WELLNESS_HUB } from "@/lib/omkneeFive";
 import { NAV } from "@/lib/navigation";
 import { trackPillarSelect } from "@/lib/analytics";
+import { useCart } from "@/components/cart/useCart";
 import logoDarkGreen from "@/assets/logo-dark-green.png";
 
 /** Header order (section 5.1): Shop · Scans & Tests · Consultations · Learn · Wellness · Club. */
@@ -45,6 +46,8 @@ const Header = () => {
   };
 
   const closeMobile = () => setMobileMenuOpen(false);
+  const { cart, setOpen: setCartOpen } = useCart();
+  const basketCount = cart?.totalQuantity ?? 0;
 
   return (
     <>
@@ -173,10 +176,22 @@ const Header = () => {
                   <User className="w-5 h-5" aria-hidden="true" />
                 </Link>
               </Button>
-              <Button variant="ghost" size="icon" className="h-11 w-11" aria-label="Basket, empty" asChild>
-                <Link to={NAV.shop.to}>
-                  <ShoppingBag className="w-5 h-5" aria-hidden="true" />
-                </Link>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="relative h-11 w-11"
+                aria-label={basketCount ? `Basket, ${basketCount} item${basketCount === 1 ? "" : "s"}` : "Basket, empty"}
+                onClick={() => setCartOpen(true)}
+              >
+                <ShoppingBag className="w-5 h-5" aria-hidden="true" />
+                {basketCount ? (
+                  <span
+                    className="absolute -top-0.5 -right-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-gold px-1 font-sans text-[0.65rem] font-semibold text-gold-foreground tabular-nums"
+                    aria-hidden="true"
+                  >
+                    {basketCount}
+                  </span>
+                ) : null}
               </Button>
               <div className="hidden lg:block xl:ml-2">
                 <BookMenu

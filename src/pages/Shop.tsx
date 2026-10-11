@@ -14,9 +14,32 @@ import EcosystemPathway from "@/components/EcosystemPathway";
 import BackToTop from "@/components/ui/BackToTop";
 import SupplementCard from "@/components/product/SupplementCard";
 import ShopProductCard from "@/components/shop/ShopProductCard";
+import ShopStatusNote from "@/components/shop/ShopStatusNote";
+import { useCollectionProducts, shopState } from "@/hooks/useShopProducts";
 import { InlineLink } from "@/components/content/ContentSections";
 import { SHOP_CATEGORIES, type ShopCategory } from "@/content/shopCatalogue";
 import { NAV } from "@/lib/navigation";
+
+/** Live products from the Shopify collection with the same handle; placeholders until it has any. */
+const CategoryProducts = ({ category }: { category: ShopCategory }) => {
+  const query = useCollectionProducts(category.id);
+  const state = shopState(query);
+  const products = query.data ?? [];
+  return (
+    <>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {products.length
+          ? products.map((product) => (
+              <ShopProductCard key={product.id} product={product} note={category.productNote} />
+            ))
+          : Array.from({ length: category.placeholderCount }, (_, i) => (
+              <ShopProductCard key={i} note={category.productNote} />
+            ))}
+      </div>
+      <ShopStatusNote state={state} className="mt-4" />
+    </>
+  );
+};
 
 const CategorySection = ({ category }: { category: ShopCategory }) => (
   <section id={category.id} className="scroll-mt-28 lg:scroll-mt-36 py-16 md:py-20 border-t border-border">
@@ -38,15 +61,13 @@ const CategorySection = ({ category }: { category: ShopCategory }) => (
             />
           </p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {category.id === "omkneehealth-supplement" ? (
+        {category.id === "omkneehealth-supplement" ? (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             <SupplementCard />
-          ) : (
-            Array.from({ length: category.placeholderCount }, (_, i) => (
-              <ShopProductCard key={i} note={category.productNote} />
-            ))
-          )}
-        </div>
+          </div>
+        ) : (
+          <CategoryProducts category={category} />
+        )}
         {category.disclaimer ? (
           <p className="mt-8 font-sans text-xs text-muted-foreground">{category.disclaimer}</p>
         ) : null}
@@ -80,7 +101,9 @@ const Shop = () => (
         <div className="container px-6">
           <div className="max-w-2xl mx-auto text-center">
             <h1 className="font-serif text-4xl md:text-5xl text-foreground leading-tight mb-6">The Knee Shop.</h1>
-            <p className="font-serif text-xl text-foreground">Selected by our team. Clear information. Better choices.</p>
+            <p className="font-serif text-xl text-foreground">
+              Selected by our team. Clear information. Better choices.
+            </p>
           </div>
           <Link
             to={NAV.club.to}
@@ -102,10 +125,15 @@ const Shop = () => (
                   className="group flex h-full flex-col rounded-xl border border-border bg-secondary/40 p-7 transition-colors hover:border-primary/40 hover:bg-secondary/60"
                 >
                   <span className="font-serif text-xl text-foreground mb-2">{category.title}</span>
-                  <span className="font-sans text-sm text-muted-foreground leading-relaxed mb-5">{category.tileCopy}</span>
+                  <span className="font-sans text-sm text-muted-foreground leading-relaxed mb-5">
+                    {category.tileCopy}
+                  </span>
                   <span className="mt-auto inline-flex items-center gap-2 font-sans text-sm text-primary">
                     {category.tileCta}
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                    <ArrowRight
+                      className="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                      aria-hidden="true"
+                    />
                   </span>
                 </a>
               </li>

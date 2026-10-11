@@ -4,12 +4,13 @@
  */
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { ShoppingBag } from "lucide-react";
+import AddToBasketButton from "@/components/cart/AddToBasketButton";
+import { useSupplement } from "@/hooks/useSupplement";
 import { SUPPLEMENT } from "@/content/supplement";
 
 const StickyBuyBar = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { product, price, memberPrice } = useSupplement();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,13 +41,10 @@ const StickyBuyBar = () => {
           {/* Price & CTA */}
           <div className="flex items-center gap-4 w-full sm:w-auto">
             <span className="font-sans text-foreground">
-              <span className="font-serif text-lg">£{SUPPLEMENT.price}</span>
-              <span className="ml-2 text-xs text-muted-foreground whitespace-nowrap">Member price £{SUPPLEMENT.memberPrice}</span>
+              <span className="font-serif text-lg">{price}</span>
+              <span className="ml-2 text-xs text-muted-foreground whitespace-nowrap">Member price {memberPrice}</span>
             </span>
-            <Button size="sm" disabled className="flex-1 sm:flex-none gap-2 min-h-[44px]" title="Basket opens with Shopify in Phase 5">
-              <ShoppingBag className="w-4 h-4" aria-hidden="true" />
-              Add to basket
-            </Button>
+            <AddToBasketButton product={product} size="sm" className="flex-1 sm:flex-none" />
           </div>
         </div>
       </div>
