@@ -8,10 +8,12 @@ import { Link } from "react-router-dom";
 import { ArrowRight, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PlaceholderText from "@/components/PlaceholderText";
+import FigureImage from "@/components/FigureImage";
 import { OMKNEE_FIVE, WELLNESS_HUB } from "@/lib/omkneeFive";
 import { NAV } from "@/lib/navigation";
 import { trackPillarSelect } from "@/lib/analytics";
 import { TEAM } from "@/content/team";
+import { FIGURES } from "@/content/figures";
 import { CLINICS, ONLINE_CONSULTATION } from "@/content/clinics";
 import { SUPPLEMENT, SUPPLEMENT_PATH } from "@/content/supplement";
 import { HOME_CLAIM_ID, visibleClaims } from "@/content/productClaims";
@@ -69,12 +71,25 @@ export const HomeTeam = () => (
           knees every day.
         </p>
       </div>
+      <FigureImage figure={FIGURES.clinicTeam} className="mb-12" />
       <ul className="max-w-5xl mx-auto grid sm:grid-cols-3 gap-5">
         {TEAM.map((member) => (
           <li key={member.name} className="rounded-2xl border border-border bg-secondary/30 p-6 text-center">
-            <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full border border-dashed border-primary/40 font-sans text-xs text-muted-foreground">
-              [photo]
-            </div>
+            {member.photo ? (
+              <img
+                src={member.photo}
+                alt=""
+                width={96}
+                height={96}
+                loading="lazy"
+                decoding="async"
+                className="mx-auto mb-4 h-24 w-24 rounded-full object-cover"
+              />
+            ) : (
+              <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full border border-dashed border-primary/40 font-sans text-xs text-muted-foreground">
+                [photo]
+              </div>
+            )}
             <p className="font-serif text-xl text-foreground"><PlaceholderText text={member.name} /></p>
             <p className="mt-2 font-sans text-sm text-muted-foreground"><PlaceholderText text={member.details} /></p>
           </li>

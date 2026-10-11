@@ -39,7 +39,7 @@ export type ContentBlock =
   | { type: "table"; columns: string[]; rows: TableCell[][]; note?: string }
   | { type: "diagram"; id: DiagramId }
   | { type: "figure"; id: FigureId }
-  | { type: "cards"; items: { title: string; copy: string }[] }
+  | { type: "cards"; items: { title: string; copy: string; image?: { src: string; alt: string } }[] }
   | { type: "callout"; text: string }
   | { type: "cta"; cta: ContentCta }
   | { type: "doDont"; doTitle: string; doItems: string[]; dontTitle: string; dontItems: string[]; ordered?: boolean }

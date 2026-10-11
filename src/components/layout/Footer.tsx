@@ -184,7 +184,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="https://www.chinmaygupte.com/" target="_blank" rel="noopener" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  Mr Chinmay Gupte: knee surgeon, London
+                  Mr Chinmay Gupté: knee surgeon, London
                 </a>
               </li>
             </ul>

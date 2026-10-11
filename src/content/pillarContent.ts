@@ -40,11 +40,12 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
     intro: [
       "Every part of your knee is alive. Each tissue responds to how you load it, feed it and rest it. Knowing how they adapt makes the rest of the OmKnee Five make sense.",
     ],
-    heroDiagram: "D7",
+    heroFigure: "kneeSketches",
     sections: [
       {
         title: "The structures of the knee",
         blocks: [
+          { type: "figure", id: "bonesOfTheKnee" },
           {
             type: "cards",
             items: [
@@ -74,6 +75,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
               },
             ],
           },
+          { type: "figure", id: "kneeTendons" },
         ],
       },
       {
@@ -91,6 +93,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
             ],
           },
           { type: "p", text: "Remove any one and adaptation slows." },
+          { type: "diagram", id: "D7" },
         ],
       },
       {
@@ -101,6 +104,8 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
             text: "Because the knee rotates and glides as well as bends, walking, running, squatting and changing direction all need coordination between the knee, the hip and the ankle.",
           },
           { type: "p", text: "That is why so much of knee rehabilitation is actually about the rest of the leg." },
+          { type: "figure", id: "kneeBendRange" },
+          { type: "figure", id: "kneeMovementAxes" },
         ],
       },
       {
@@ -197,6 +202,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
             type: "p",
             text: "Collagen is the main protein in bone, cartilage, tendon and ligament. Your body makes it from amino acids in dietary protein, and needs vitamin C to do so. Collagen supplements are widely discussed. The evidence is still developing, and we explain it honestly.",
           },
+          { type: "figure", id: "collagenStructure" },
           { type: "cta", cta: { label: "Understand collagen", to: "/ingredients/collagen" } },
         ],
       },
@@ -295,6 +301,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
         blocks: [
           { type: "p", text: "Based on World Health Organization guidance, with a knee focus added." },
           { type: "diagram", id: "D2" },
+          { type: "figure", id: "runningPath" },
           {
             type: "table",
             columns: ["Age", "Aerobic activity", "Strength", "Knee focus"],
@@ -319,6 +326,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
               { title: "Balance", copy: "Single-leg work trains the control that protects ligaments." },
             ],
           },
+          { type: "figure", id: "controlledSquat" },
         ],
       },
       {
@@ -411,6 +419,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
             ],
           },
           { type: "h3", text: "A knee-friendly week" },
+          { type: "figure", id: "hamstringStretch" },
           { type: "diagram", id: "D9" },
           {
             type: "list",
@@ -510,6 +519,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
             type: "p",
             text: "Then the examination: movement, swelling, stability, strength, how the knee behaves under a hand.",
           },
+          { type: "figure", id: "bentKnee" },
           {
             type: "cta",
             cta: {
@@ -681,7 +691,16 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
         eyebrow: "Your specialists",
         title: "The team you will see.",
         blocks: [
-          { type: "cards", items: TEAM.map((member) => ({ title: member.name, copy: member.details })) },
+          { type: "figure", id: "clinicTeam" },
+          {
+            type: "cards",
+            items: TEAM.map((member) => ({
+              title: member.name,
+              copy: member.details,
+              // The name sits beside the portrait, so the image needs no alt text.
+              image: member.photo ? { src: member.photo, alt: "" } : undefined,
+            })),
+          },
           {
             type: "list",
             items: TEAM.filter((member) => member.profile?.href || member.profile?.to).map((member) => ({

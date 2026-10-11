@@ -294,7 +294,20 @@ export const Block = ({ block }: { block: ContentBlock }) => {
         <dl className="grid sm:grid-cols-2 gap-5">
           {block.items.map((item) => (
             <div key={item.title} className="rounded-xl border border-border bg-secondary/30 p-6">
-              <dt className="font-serif text-lg text-foreground mb-2"><T text={item.title} /></dt>
+              <dt className="font-serif text-lg text-foreground mb-2">
+                {item.image && (
+                  <img
+                    src={item.image.src}
+                    alt={item.image.alt}
+                    width={80}
+                    height={80}
+                    loading="lazy"
+                    decoding="async"
+                    className="mb-4 block h-20 w-20 rounded-full object-cover"
+                  />
+                )}
+                <T text={item.title} />
+              </dt>
               <dd className="font-sans text-sm text-muted-foreground leading-relaxed"><T text={item.copy} /></dd>
             </div>
           ))}

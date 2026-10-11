@@ -8,8 +8,10 @@ import Footer from "@/components/layout/Footer";
 import SEO from "@/components/SEO";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import DiagramPlaceholder from "@/components/DiagramPlaceholder";
+import FigureImage from "@/components/FigureImage";
 import { Button } from "@/components/ui/button";
 import { DIAGRAMS } from "@/content/diagrams";
+import { FIGURES } from "@/content/figures";
 import { OMKNEE_FIVE, WELLNESS_HUB } from "@/lib/omkneeFive";
 import { trackPillarSelect } from "@/lib/analytics";
 
@@ -43,6 +45,7 @@ const Learn = () => (
         </div>
         <div className="max-w-3xl mx-auto">
           <DiagramPlaceholder {...DIAGRAMS.D15} />
+          <FigureImage figure={FIGURES.healthyKneePhilosophy} />
         </div>
       </section>
 

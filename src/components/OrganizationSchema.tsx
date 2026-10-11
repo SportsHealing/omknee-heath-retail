@@ -34,13 +34,13 @@ const OrganizationSchema = () => {
       founders: [
         {
           "@type": "Person",
-          name: "Chinmay Gupte",
-          jobTitle: "Co-Founder & Orthopaedic Consultant",
+          name: "Chinmay Gupté",
+          jobTitle: "Co-Founder, Consultant Knee Surgeon and President of the British Knee Society",
         },
         {
           "@type": "Person",
-          name: "Cynthia Gupte",
-          jobTitle: "Co-Founder",
+          name: "Cynthia Gupté",
+          jobTitle: "Co-Founder and Consultant Radiologist",
         },
       ],
       contactPoint: {

@@ -30,7 +30,7 @@ const Partners = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title="Clinical Partners: Knee Specialists, Surgery and MRI"
-        description="Our clinical partner network for the knee: SportsHealing musculoskeletal care, consultant knee surgeon Mr Chinmay Gupte, knee assessment at MyKneeScore and knee imaging at MyKneeScan."
+        description="Our clinical partner network for the knee: SportsHealing musculoskeletal care, consultant knee surgeon Mr Chinmay Gupté, knee assessment at MyKneeScore and knee imaging at MyKneeScan."
         canonicalPath="/partners"
         keywords="knee specialist london, knee surgeon london, same day knee MRI, sportshealing, chinmay gupte, mykneescore, mykneescan"
       />
