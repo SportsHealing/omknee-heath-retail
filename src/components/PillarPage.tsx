@@ -6,6 +6,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Header from "@/components/layout/Header";
+import PillarStepper from "@/components/PillarStepper";
 import Footer from "@/components/layout/Footer";
 import SEO from "@/components/SEO";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
@@ -82,7 +83,7 @@ const PillarPage = ({ id, children }: PillarPageProps) => {
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://omkneehealth.com" },
-          { name: "Look After Your Knees", url: "https://omkneehealth.com/knee-health" },
+          { name: "The OmKnee Five", url: "https://omkneehealth.com/learn" },
           { name: pillar.name, url },
         ]}
       />
@@ -184,6 +185,8 @@ const PillarPage = ({ id, children }: PillarPageProps) => {
             </div>
           </div>
         </section>
+
+        <PillarStepper current={id} />
       </main>
       <Footer />
     </div>

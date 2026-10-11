@@ -26,7 +26,7 @@ export const SEARCH_INDEX: { group: string; label: string; to: string; keywords?
   { group: "OmKnee Five", label: "05 Treat", to: "/treat", keywords: "treatment rehabilitation injections surgery recovery" },
   { group: "Knee Score", label: "Knee Score", to: "/knee-score", keywords: "assessment measure track mykneescore" },
   { group: "Shop", label: "Shop", to: "/shop", keywords: "buy products braces recovery" },
-  { group: "Shop", label: "Nutrition & Supplements", to: "/product", keywords: "supplement collagen powder" },
+  { group: "Shop", label: "Nutrition & Supplements", to: "/shop/omkneehealth-supplement", keywords: "supplement collagen powder" },
   { group: "Shop", label: "Ingredients", to: "/ingredients", keywords: "collagen curcumin glucosamine" },
   { group: "Journal", label: "Journal", to: "/journal", keywords: "articles blog reading" },
   { group: "About", label: "About OmKneeHealth", to: "/about", keywords: "story founders" },

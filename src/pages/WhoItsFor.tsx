@@ -172,7 +172,7 @@ const WhoItsFor = () => {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                to="/product"
+                to="/shop/omkneehealth-supplement"
                 className="inline-flex items-center justify-center gap-2 bg-secondary text-foreground px-6 py-3 rounded-md font-medium text-sm hover:bg-secondary/80 transition-colors border border-border"
               >
                 View supplement

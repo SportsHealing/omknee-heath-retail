@@ -30,7 +30,7 @@ const CuratedCTA = () => {
               recommendations based solely on clinical merit. We do not receive 
               commission from any products listed. Our only commercial product is 
               our joint health supplement, which you can learn about on our{" "}
-              <a href="/product" className="underline hover:text-foreground transition-colors">
+              <a href="/shop/omkneehealth-supplement" className="underline hover:text-foreground transition-colors">
                 product page
               </a>.
             </p>

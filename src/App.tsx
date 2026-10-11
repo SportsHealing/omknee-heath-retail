@@ -29,6 +29,10 @@ import TreatPillar from "./pages/pillars/TreatPillar";
 
 // Shop depth
 import Product from "./pages/Product";
+import Learn from "./pages/Learn";
+import Wellness from "./pages/Wellness";
+import Club from "./pages/club/Club";
+import ClubTerms from "./pages/club/ClubTerms";
 import Ingredients from "./pages/Ingredients";
 import Collagen from "./pages/ingredients/Collagen";
 import Curcumin from "./pages/ingredients/Curcumin";
@@ -99,12 +103,17 @@ const App = () => (
           <Route path="/load" element={<Load />} />
           <Route path="/diagnose" element={<DiagnosePillar />} />
           <Route path="/treat" element={<TreatPillar />} />
-          <Route path="/wellness" element={<Redirect to="/nourish" />} />
+          <Route path="/wellness" element={<Wellness />} />
+          <Route path="/learn" element={<Learn />} />
+          <Route path="/club" element={<Club />} />
+          <Route path="/club-terms" element={<ClubTerms />} />
           <Route path="/prepare" element={<Redirect to="/load" />} />
           <Route path="/movement-biomechanics" element={<Biomechanics />} />
 
           {/* Shop depth */}
-          <Route path="/product" element={<Product />} />
+          {/* Paths stay string literals: scripts/postbuild.mjs reads them to write static pages and redirects. */}
+          <Route path="/shop/omkneehealth-supplement" element={<Product />} />
+          <Route path="/product" element={<Redirect to="/shop/omkneehealth-supplement" />} />
           <Route path="/ingredients" element={<Ingredients />} />
           <Route path="/ingredients/collagen" element={<Collagen />} />
           <Route path="/ingredients/curcumin" element={<Curcumin />} />
@@ -153,7 +162,7 @@ const App = () => (
           <Route path="/knee-health/load" element={<Redirect to="/load" />} />
           <Route path="/knee-health/prepare" element={<Redirect to="/prepare" />} />
           <Route path="/knee-health/strength-mobility" element={<Redirect to="/movement-biomechanics" />} />
-          <Route path="/shop/knee-nutrition" element={<Redirect to="/product" />} />
+          <Route path="/shop/knee-nutrition" element={<Redirect to="/shop/omkneehealth-supplement" />} />
           <Route path="/shop/braces-supports" element={<Redirect to="/shop#braces-supports" />} />
           <Route path="/shop/cooling-recovery" element={<Redirect to="/shop#cooling-recovery" />} />
           <Route path="/shop/after-surgery" element={<Redirect to="/shop#after-surgery" />} />
@@ -161,7 +170,6 @@ const App = () => (
           <Route path="/shop/foot-lower-limb" element={<Redirect to="/shop#foot-lower-limb" />} />
           <Route path="/curated" element={<Redirect to="/shop" />} />
           <Route path="/assessment" element={<Redirect to="/knee-score" />} />
-          <Route path="/learn" element={<Redirect to="/your-knee" />} />
           <Route path="/science" element={<Redirect to="/knee-health" />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

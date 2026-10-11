@@ -5,6 +5,7 @@
  */
 
 import type { PillarId } from "./omkneeFive";
+import type { BookOptionId } from "./navigation";
 
 type DataLayerWindow = Window & { dataLayer?: Record<string, unknown>[] };
 
@@ -37,3 +38,10 @@ export const trackTreatPathway = (pathway: TreatPathway) =>
   track("treat_pathway_select", { pathway });
 export const trackEcosystemTransfer = (destination: EcosystemDestination) =>
   track("ecosystem_transfer", { destination });
+export const trackBookMenuOpened = () => track("book_menu_opened");
+const BOOK_EVENTS: Record<BookOptionId, string> = {
+  scan: "book_scan_click",
+  "blood-test": "book_blood_test_click",
+  consultation: "book_consultation_click",
+};
+export const trackBookClick = (option: BookOptionId) => track(BOOK_EVENTS[option]);

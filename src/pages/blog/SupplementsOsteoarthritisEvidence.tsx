@@ -249,7 +249,7 @@ const SupplementsOsteoarthritisEvidence = () => {
                 If you're looking for a quality joint supplement to complement your osteoarthritis management plan, we've formulated an evidence-informed option. UK-manufactured, transparent about what it can and cannot do.
               </p>
               <Link 
-                to="/product" 
+                to="/shop/omkneehealth-supplement" 
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-md font-medium text-sm hover:bg-primary/90 transition-colors"
               >
                 Learn about our approach

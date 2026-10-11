@@ -56,6 +56,9 @@
     --clinical-green: 174 46% 17%;
     --clinical-light: 139 18% 94%;
     --trust-badge: 51 47% 82%;
+    /* Book button gold */
+    --gold: 45 55% 60%;
+    --gold-foreground: 174 46% 13%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -293,5 +296,12 @@ html {
   
   .print\\:text-gray-900 {
     color: #111827 !important;
+  }
+}
+
+/* Keep page content clear of the fixed mobile bottom bar (MobileBottomBar). */
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: calc(3.5rem + env(safe-area-inset-bottom));
   }
 }

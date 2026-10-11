@@ -264,7 +264,7 @@ const Collagen = () => {
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button size="lg" asChild>
-                  <Link to="/product">View Supplement</Link>
+                  <Link to="/shop/omkneehealth-supplement">View Supplement</Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
                   <Link to="/science">Back to Science</Link>

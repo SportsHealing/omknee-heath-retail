@@ -4,7 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import logoWhite from "@/assets/logo-white.png";
-import { OMKNEE_FIVE } from "@/lib/omkneeFive";
+import { OMKNEE_FIVE, WELLNESS_HUB } from "@/lib/omkneeFive";
+import { NAV, SUPPLEMENT_LINK } from "@/lib/navigation";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -53,13 +54,14 @@ const Footer = () => {
           <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary-foreground/50 mb-6 text-center">
             Your Knee Journey
           </p>
-          <ol className="grid sm:grid-cols-3 lg:grid-cols-5 gap-3 max-w-5xl mx-auto">
+          <ol className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 max-w-6xl mx-auto">
             {[
-              { step: "Understand", name: "OmKneeHealth", href: "/knee-health", external: false },
+              { step: "Look after", name: "OmKneeHealth", href: "/", external: false },
               { step: "Check", name: "MyKneeScore", href: "https://mykneescore.com/", external: true },
-              { step: "Scan", name: "MyKneeScan", href: "https://mykneescan.com/", external: true },
+              { step: "Understand", name: "Knee Passport", href: "https://www.sportshealing.com/know-your-knee/", external: true },
+              { step: "Scan", name: "MyKneeScan", href: "https://www.mykneescan.com/", external: true },
               { step: "Specialist care", name: "SportsHealing", href: "https://www.sportshealing.com/", external: true },
-              { step: "Clinical lead", name: "Mr Chinmay Gupte", href: "https://www.chinmaygupte.com/", external: true },
+              { step: "Clinical expertise", name: "ChinmayGupte.com", href: "https://www.chinmaygupte.com/", external: true },
             ].map((item, i) => (
               <li key={item.name}>
                 <a
@@ -95,9 +97,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-10 mb-12">
           {/* Brand */}
-          <div className="md:col-span-1">
+          <div>
             <img 
               src={logoWhite} 
               alt="OmKneeHealth - UK Knee Joint Supplement" 
@@ -126,12 +128,26 @@ const Footer = () => {
 
           <div>
             <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/50">
+              Get started
+            </h4>
+            <ul className="space-y-1">
+              {[NAV.club, NAV.scansTests, NAV.consultations, { to: "/knee-score", label: "Get Your Knee Score" }].map((item) => (
+                <li key={item.to}>
+                  <a href={item.to} className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/50">
               The OmKnee Five
             </h4>
             <ul className="space-y-1">
               <li>
-                <a href="/knee-health" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  Look After Your Knees
+                <a href={NAV.learn.to} className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  The OmKnee Five
                 </a>
               </li>
               {OMKNEE_FIVE.map((pillar) => (
@@ -145,6 +161,11 @@ const Footer = () => {
                   </a>
                 </li>
               ))}
+              <li>
+                <a href={WELLNESS_HUB.to} className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  {WELLNESS_HUB.name}
+                </a>
+              </li>
               <li>
                 <a href="/journal" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Journal
@@ -163,8 +184,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/product" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  Joint + Movement Support
+                <a href={SUPPLEMENT_LINK.to} className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
+                  {SUPPLEMENT_LINK.label}
                 </a>
               </li>
               <li>
@@ -180,11 +201,6 @@ const Footer = () => {
               <li>
                 <a href="/who-its-for" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
                   Who It's For
-                </a>
-              </li>
-              <li>
-                <a href="/knee-score" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  Get Your Knee Score
                 </a>
               </li>
               <li>
@@ -243,7 +259,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="mailto:hello@omkneehealth.com" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
-                  hello@omkneehealth.com
+                  hello@<wbr />omkneehealth.com
                 </a>
               </li>
               <li>
@@ -321,6 +337,9 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="pt-8 border-t border-primary-foreground/10">
+          <p className="font-serif text-xl text-primary-foreground/90 text-center mb-8">
+            Understand. Look after. Keep moving.
+          </p>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="font-sans text-xs text-primary-foreground/40">
               © {new Date().getFullYear()} OmKneeHealth. All rights reserved.
