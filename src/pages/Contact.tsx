@@ -287,7 +287,7 @@ const Contact = () => {
                   Quick answers
                 </h3>
                 <a
-                  href="/product#product-faq"
+                  href="/shop/omkneehealth-supplement#product-faq"
                   className="inline-flex items-center text-primary hover:underline font-medium text-sm"
                 >
                   View FAQs →

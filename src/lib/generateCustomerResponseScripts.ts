@@ -160,7 +160,7 @@ export const generateCustomerResponseScripts = () => {
 
   addScriptBox(
     "Customer asks what ingredients are in the product",
-    "Thank you for your interest in our formulation. Our [Marine/Vegetarian] Formula contains [list key ingredients]. You can find the complete ingredient list and detailed information on each component on our product page at omkneehealth.com/product.\n\nIf you have any specific questions about individual ingredients, I'm happy to help.",
+    "Thank you for your interest in our formulation. Our [Marine/Vegetarian] Formula contains [list key ingredients]. You can find the complete ingredient list and detailed information on each component on our product page at omkneehealth.com/shop/omkneehealth-supplement.\n\nIf you have any specific questions about individual ingredients, I'm happy to help.",
     "Always direct to the website for full details. Never make claims about ingredient effects."
   );
 
@@ -301,7 +301,7 @@ export const generateCustomerResponseScripts = () => {
 
   addScriptBox(
     "Customer asks if they can take product with medication",
-    "That's an important question, and I'm glad you're thinking about it carefully.\n\nBecause supplement-medication interactions can vary, I'd recommend checking with your doctor or pharmacist before adding any supplement to your routine. They can review your current medications alongside our ingredient list to ensure there are no concerns.\n\nYou can find our complete ingredient list at omkneehealth.com/product, which you're welcome to share with your healthcare provider."
+    "That's an important question, and I'm glad you're thinking about it carefully.\n\nBecause supplement-medication interactions can vary, I'd recommend checking with your doctor or pharmacist before adding any supplement to your routine. They can review your current medications alongside our ingredient list to ensure there are no concerns.\n\nYou can find our complete ingredient list at omkneehealth.com/shop/omkneehealth-supplement, which you're welcome to share with your healthcare provider."
   );
 
   // === SECTION 6: SUBSCRIPTION & ACCOUNT ===

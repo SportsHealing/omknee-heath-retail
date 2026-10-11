@@ -43,7 +43,7 @@ const Product = () => {
       <SEO
         title="Knee Joint Supplement for Cartilage Support | OmKneeHealth"
         description="A clinically informed knee joint supplement formulated to support cartilage, comfort and movement. Designed for long-term knee health."
-        canonicalPath="/product"
+        canonicalPath="/shop/omkneehealth-supplement"
         ogType="product"
         keywords="knee cartilage supplement, collagen supplement for knees, joint supplement, knee collagen, best supplement for knee joints"
       />
@@ -56,7 +56,7 @@ const Product = () => {
         sku="OMKNEE-JMS-30"
         brand="OmKneeHealth"
         availability="InStock"
-        url="https://omkneehealth.com/product"
+        url="https://omkneehealth.com/shop/omkneehealth-supplement"
         weight="300g"
         category="Health Supplements > Joint Supplements > Knee Cartilage Supplements"
         countryOfOrigin="GB"
@@ -64,13 +64,13 @@ const Product = () => {
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://omkneehealth.com" },
-          { name: "Knee Cartilage Supplement", url: "https://omkneehealth.com/product" },
+          { name: "Knee Cartilage Supplement", url: "https://omkneehealth.com/shop/omkneehealth-supplement" },
         ]}
       />
       <WebPageSchema
         name="Knee Cartilage & Collagen Supplement - OmKneeHealth"
         description="Evidence-informed knee cartilage supplement with hydrolysed collagen, vitamin C for normal cartilage function, and comprehensive joint support nutrients. Clinician-formulated."
-        url="https://omkneehealth.com/product"
+        url="https://omkneehealth.com/shop/omkneehealth-supplement"
         type="ItemPage"
       />
       <Header />

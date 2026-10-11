@@ -9,6 +9,9 @@
  * Text in [SQUARE BRACKETS] is a placeholder awaiting confirmation.
  */
 
+/** Product page route. The old /product URL redirects here. */
+export const SUPPLEMENT_PATH = "/shop/omkneehealth-supplement";
+
 export const SUPPLEMENT = {
   name: "OmKneeHealth Supplement",
   price: "62.50",

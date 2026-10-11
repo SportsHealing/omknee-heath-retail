@@ -270,7 +270,7 @@ const SupportKneeJointsAsYouAge = () => {
                 Our UK-manufactured knee joint supplement is designed for adults at every stage of life—with vitamin D for bone and muscle health, vitamin C for cartilage function, and comprehensive nutritional support.
               </p>
               <Link 
-                to="/product" 
+                to="/shop/omkneehealth-supplement" 
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-md font-medium text-sm hover:bg-primary/90 transition-colors"
               >
                 Explore our formula

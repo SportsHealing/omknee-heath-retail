@@ -23,7 +23,7 @@ const StickyBuyBar = () => {
 
   return (
     <div
-      className={`fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-t border-border shadow-lg transition-transform duration-300 ${
+      className={`fixed bottom-[calc(3.5rem+env(safe-area-inset-bottom))] lg:bottom-0 left-0 right-0 z-30 bg-background/95 backdrop-blur-sm border-t border-border shadow-lg transition-transform duration-300 ${
         isVisible ? "translate-y-0" : "translate-y-full"
       }`}
     >

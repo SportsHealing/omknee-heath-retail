@@ -81,6 +81,10 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         cream: "hsl(var(--cream))",
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          foreground: "hsl(var(--gold-foreground))",
+        },
         sage: "hsl(var(--sage))",
         "sage-light": "hsl(var(--sage-light))",
         "warm-gray": "hsl(var(--warm-gray))",

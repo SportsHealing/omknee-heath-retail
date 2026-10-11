@@ -46,7 +46,7 @@ const SignatureProductSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Product image */}
             <a 
-              href="/product"
+              href="/shop/omkneehealth-supplement"
               className="block bg-primary-foreground/5 rounded-lg p-6 order-2 lg:order-1 hover:bg-primary-foreground/10 transition-colors cursor-pointer group"
             >
               <img 
@@ -89,7 +89,7 @@ const SignatureProductSection = () => {
                   className="px-10 py-6 text-sm font-sans font-medium tracking-wide"
                   asChild
                 >
-                  <a href="/product">
+                  <a href="/shop/omkneehealth-supplement">
                     Explore the Formulation
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </a>

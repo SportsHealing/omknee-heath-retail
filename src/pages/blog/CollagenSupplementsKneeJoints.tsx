@@ -141,7 +141,7 @@ const CollagenSupplementsKneeJoints = () => {
                 Vitamin C is essential for collagen synthesis. It acts as a cofactor for the enzymes that hydroxylate proline and lysine—steps required for stable collagen structure. Without adequate vitamin C, the body cannot properly synthesise collagen, regardless of how much collagen you consume.
               </p>
               <p className="font-sans text-muted-foreground leading-relaxed">
-                This is why any quality collagen supplement should include vitamin C. Our <Link to="/product" className="text-primary hover:underline">knee joint formula</Link> includes vitamin C for this reason.
+                This is why any quality collagen supplement should include vitamin C. Our <Link to="/shop/omkneehealth-supplement" className="text-primary hover:underline">knee joint formula</Link> includes vitamin C for this reason.
               </p>
             </section>
 
@@ -220,7 +220,7 @@ const CollagenSupplementsKneeJoints = () => {
                 We've combined hydrolysed collagen peptides with vitamin C (for normal cartilage function), plus glucosamine, chondroitin, and supporting nutrients. UK-manufactured, third-party tested.
               </p>
               <Link 
-                to="/product" 
+                to="/shop/omkneehealth-supplement" 
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-md font-medium text-sm hover:bg-primary/90 transition-colors"
               >
                 View our supplement

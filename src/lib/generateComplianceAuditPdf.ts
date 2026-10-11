@@ -56,7 +56,7 @@ export const generateComplianceAuditPdf = (): void => {
       },
       {
         page: "Product Page",
-        path: "/product",
+        path: "/shop/omkneehealth-supplement",
         status: "Amended",
         findings: [
           "Product claims align with EFSA authorised claims",

@@ -90,7 +90,7 @@ const HomeFAQ = () => {
             </p>
             <p className="font-sans text-sm text-muted-foreground">
               Or{" "}
-              <Link to="/product" className="text-primary hover:underline font-medium">
+              <Link to="/shop/omkneehealth-supplement" className="text-primary hover:underline font-medium">
                 view our knee joint supplement
               </Link>
             </p>

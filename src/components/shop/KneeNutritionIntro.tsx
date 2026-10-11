@@ -30,7 +30,7 @@ const KneeNutritionIntro = () => (
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
           <Link
-            to="/product"
+            to="/shop/omkneehealth-supplement"
             className="inline-flex items-center gap-2 font-sans text-sm text-foreground hover:text-primary min-h-[44px]"
           >
             OmKneeHealth Signature Formula

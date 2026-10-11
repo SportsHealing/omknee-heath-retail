@@ -5,6 +5,7 @@ import {
   Gauge,
   Stethoscope,
   Handshake,
+  Moon,
   type LucideIcon,
 } from "lucide-react";
 
@@ -13,6 +14,7 @@ import imgNourish from "@/assets/photo-nutrition.jpg";
 import imgLoad from "@/assets/illus-knee-load-tyres.jpg";
 import imgDiagnose from "@/assets/sketch-mri-scanner.png";
 import imgTreat from "@/assets/illus-knee-anatomy-colour.jpg";
+import imgWellness from "@/assets/photo-sleep.jpg";
 
 export type PillarId = "understand" | "nourish" | "load" | "diagnose" | "treat";
 
@@ -21,6 +23,8 @@ export interface OmKneePillar {
   number: string;
   to: string;
   name: string;
+  /** Label used in the site header, footer and mobile menu when it differs from the name. */
+  navLabel?: string;
   strapline: string;
   shortDescription: string;
   ctaLabel: string;
@@ -37,7 +41,7 @@ export const OMKNEE_FIVE: OmKneePillar[] = [
     name: "Understand",
     strapline: "Know your knee.",
     shortDescription:
-      "Meet the structures that make movement possible and understand how the knee works with the rest of your body.",
+      "Every part of your knee is alive. Learn how each tissue adapts to load, food and rest.",
     ctaLabel: "Meet Your Knee",
     icon: Brain,
     image: imgUnderstand,
@@ -48,10 +52,10 @@ export const OMKNEE_FIVE: OmKneePillar[] = [
     number: "02",
     to: "/nourish",
     name: "Nourish",
-    strapline: "Look after the whole person.",
+    strapline: "Nourish the body that moves you.",
     shortDescription:
-      "Bring together movement, strength, recovery, sleep, gut health and balanced nutrition to support the body that carries your knees.",
-    ctaLabel: "Explore Whole-Person Health",
+      "Bone-first nutrition: protein, calcium, vitamin D, vitamin C and collagen, food first.",
+    ctaLabel: "Explore Nourish",
     icon: Salad,
     image: imgNourish,
     imageAlt: "Overhead pencil study of whole foods, vegetables, fish, pulses and nuts",
@@ -61,9 +65,9 @@ export const OMKNEE_FIVE: OmKneePillar[] = [
     number: "03",
     to: "/load",
     name: "Load",
-    strapline: "Build capacity for what you want to do.",
+    strapline: "Move it to keep it.",
     shortDescription:
-      "Understand demand, build strength and prepare progressively for walking, work, exercise and sport.",
+      "Build strength and capacity at the right pace, and prepare for the activities you love.",
     ctaLabel: "Understand Knee Load",
     icon: Gauge,
     image: imgLoad,
@@ -74,9 +78,10 @@ export const OMKNEE_FIVE: OmKneePillar[] = [
     number: "04",
     to: "/diagnose",
     name: "Diagnose",
+    navLabel: "Scans & Tests",
     strapline: "Understand what is happening.",
     shortDescription:
-      "Learn how symptoms, assessment and imaging fit together when a knee changes.",
+      "Start with the Knee Score, then add scans or blood tests when they are useful.",
     ctaLabel: "Understand Diagnosis",
     icon: Stethoscope,
     image: imgDiagnose,
@@ -87,9 +92,10 @@ export const OMKNEE_FIVE: OmKneePillar[] = [
     number: "05",
     to: "/treat",
     name: "Treat",
+    navLabel: "Consultations",
     strapline: "Find the right care at the right time.",
     shortDescription:
-      "Understand the range of care, from rehabilitation and support to procedures and surgery when appropriate.",
+      "See a knee specialist online or at our clinics on Harley Street, in Chiswick or at the Platinum Medical Centre.",
     ctaLabel: "Understand Treatment",
     icon: Handshake,
     image: imgTreat,
@@ -98,3 +104,21 @@ export const OMKNEE_FIVE: OmKneePillar[] = [
 ];
 
 export const getPillar = (id: PillarId) => OMKNEE_FIVE.find((pillar) => pillar.id === id);
+/**
+ * Wellness is the ring around the OmKnee Five, not a sixth step. It shares the
+ * pillar shape so cards and navigation can render it alongside the five.
+ */
+export const WELLNESS_HUB = {
+  id: "wellness",
+  to: "/wellness",
+  name: "Wellness",
+  strapline: "Look after the whole person.",
+  shortDescription: "Sleep, recovery and the habits that make it stick.",
+  ctaLabel: "Explore Wellness",
+  icon: Moon,
+  image: imgWellness,
+  imageAlt: "Pencil study of a person sleeping",
+} as const;
+
+/** The pillar's label for navigation: "Scans & Tests" for Diagnose, "Consultations" for Treat. */
+export const pillarNavLabel = (pillar: OmKneePillar) => pillar.navLabel ?? pillar.name;

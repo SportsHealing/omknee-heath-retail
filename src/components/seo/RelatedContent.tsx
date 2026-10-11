@@ -115,7 +115,7 @@ export const blogLinks: RelatedLink[] = [
 ];
 
 export const corePageLinks: RelatedLink[] = [
-  { title: "Our Knee Supplement", href: "/product", description: "Clinician-formulated formula" },
+  { title: "Our Knee Supplement", href: "/shop/omkneehealth-supplement", description: "Clinician-formulated formula" },
   { title: "Get Your Knee Score", href: "/knee-score", description: "Understand your knee health" },
   { title: "The Science", href: "/science", description: "Evidence behind our approach" },
   { title: "Learn About Knee Health", href: "/learn", description: "Educational resources" },

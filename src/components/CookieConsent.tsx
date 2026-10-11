@@ -95,7 +95,7 @@ const CookieConsent = () => {
           <TooltipTrigger asChild>
             <button
               onClick={openPreferencesModal}
-              className="fixed bottom-4 left-4 z-50 w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 border border-border shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-105"
+              className="fixed bottom-20 lg:bottom-4 left-4 z-50 w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 border border-border shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-105"
               aria-label="Cookie Settings"
             >
               <Cookie className="w-5 h-5 text-primary" aria-hidden="true" />

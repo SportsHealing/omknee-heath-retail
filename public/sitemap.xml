@@ -56,7 +56,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://omkneehealth.com/product</loc>
+    <loc>https://omkneehealth.com/shop/omkneehealth-supplement</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -121,27 +121,27 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://omkneehealth.com/blog/best-supplement-for-knee-cartilage</loc>
+    <loc>https://omkneehealth.com/journal/best-supplement-for-knee-cartilage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://omkneehealth.com/blog/do-collagen-supplements-help-knee-joints</loc>
+    <loc>https://omkneehealth.com/journal/do-collagen-supplements-help-knee-joints</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://omkneehealth.com/blog/supplements-for-knee-osteoarthritis-evidence</loc>
+    <loc>https://omkneehealth.com/journal/supplements-for-knee-osteoarthritis-evidence</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://omkneehealth.com/blog/knee-pain-supplements-vs-painkillers</loc>
+    <loc>https://omkneehealth.com/journal/knee-pain-supplements-vs-painkillers</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://omkneehealth.com/blog/support-knee-joints-as-you-age</loc>
+    <loc>https://omkneehealth.com/journal/support-knee-joints-as-you-age</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -179,6 +179,26 @@
     <loc>https://omkneehealth.com/legal</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://omkneehealth.com/learn</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkneehealth.com/wellness</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkneehealth.com/club</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkneehealth.com/club-terms</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkneehealth.com/understand</loc>
