@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: "How much collagen should I take for knee joints?",
-    answer: "Clinical studies have examined doses ranging from 5g to 15g daily. The 10g daily dose is commonly used in research and represents a reasonable middle ground. Consistency matters more than exact dosage—most studies assess outcomes after 8-24 weeks of daily use. Always pair collagen with vitamin C, which is essential for collagen synthesis."
+    answer: "Clinical studies have examined a range of daily doses. Consistency matters more than exact dosage—most studies assess outcomes after 8-24 weeks of daily use. Always pair collagen with vitamin C, which is essential for collagen synthesis."
   },
   {
     question: "How long does collagen take to work for knees?",
@@ -123,8 +123,7 @@ const CollagenSupplementsKneeJoints = () => {
               <ul className="space-y-3 font-sans text-muted-foreground">
                 <li>• <strong className="text-foreground">Absorption:</strong> Studies using labelled peptides have detected collagen fragments in blood and cartilage tissue after oral supplementation</li>
                 <li>• <strong className="text-foreground">Clinical trials:</strong> Some studies show improvements in joint comfort scores; others show no significant difference from placebo</li>
-                <li>• <strong className="text-foreground">Dose response:</strong> Most positive studies use 5-10g hydrolysed collagen daily</li>
-                <li>• <strong className="text-foreground">Timeframe:</strong> Effects, when observed, typically appear after 8-24 weeks of consistent use</li>
+                                <li>• <strong className="text-foreground">Timeframe:</strong> Effects, when observed, typically appear after 8-24 weeks of consistent use</li>
               </ul>
               <div className="bg-secondary/50 rounded-lg p-6 border border-border mt-6">
                 <p className="font-sans text-sm text-foreground font-medium mb-2">The Regulatory Reality</p>
@@ -142,7 +141,7 @@ const CollagenSupplementsKneeJoints = () => {
                 Vitamin C is essential for collagen synthesis. It acts as a cofactor for the enzymes that hydroxylate proline and lysine—steps required for stable collagen structure. Without adequate vitamin C, the body cannot properly synthesise collagen, regardless of how much collagen you consume.
               </p>
               <p className="font-sans text-muted-foreground leading-relaxed">
-                This is why any quality collagen supplement should include vitamin C. Our <Link to="/product" className="text-primary hover:underline">knee joint formula</Link> provides 125% NRV vitamin C specifically for this reason.
+                This is why any quality collagen supplement should include vitamin C. Our <Link to="/product" className="text-primary hover:underline">knee joint formula</Link> includes vitamin C for this reason.
               </p>
             </section>
 
@@ -174,8 +173,7 @@ const CollagenSupplementsKneeJoints = () => {
               </p>
               <ul className="space-y-2 font-sans text-muted-foreground">
                 <li>• <strong className="text-foreground">Hydrolysed peptides:</strong> Better absorbed than intact collagen</li>
-                <li>• <strong className="text-foreground">Adequate dose:</strong> 5-10g per serving (research range)</li>
-                <li>• <strong className="text-foreground">Vitamin C included:</strong> Essential for collagen synthesis</li>
+                                <li>• <strong className="text-foreground">Vitamin C included:</strong> Essential for collagen synthesis</li>
                 <li>• <strong className="text-foreground">UK GMP manufacturing:</strong> Quality assurance</li>
                 <li>• <strong className="text-foreground">Complementary ingredients:</strong> <Link to="/ingredients/glucosamine" className="text-primary hover:underline">Glucosamine</Link> and <Link to="/ingredients/chondroitin" className="text-primary hover:underline">chondroitin</Link> for comprehensive support</li>
               </ul>
@@ -219,7 +217,7 @@ const CollagenSupplementsKneeJoints = () => {
                 Our Collagen Formula
               </h2>
               <p className="font-sans text-muted-foreground mb-6 text-sm leading-relaxed">
-                We've combined 10g hydrolysed collagen peptides with vitamin C (for normal cartilage function), plus glucosamine, chondroitin, and supporting nutrients. UK-manufactured, third-party tested.
+                We've combined hydrolysed collagen peptides with vitamin C (for normal cartilage function), plus glucosamine, chondroitin, and supporting nutrients. UK-manufactured, third-party tested.
               </p>
               <Link 
                 to="/product" 

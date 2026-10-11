@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: "How much curcumin should I take for joint health?",
-    answer: "Clinical studies have used curcumin doses ranging from 200mg to 2000mg daily, typically as standardised extracts. Our formula provides 500mg of curcumin extract standardised to ≥95% curcuminoids, paired with 5mg piperine to enhance absorption by approximately 2000%. This represents a moderate, research-informed dose designed for daily, long-term use."
+    answer: "Clinical studies have used a range of curcumin doses, typically as standardised extracts."
   },
   {
     question: "Why does curcumin need black pepper?",
@@ -172,10 +172,10 @@ const Curcumin = () => {
                   </li>
                 </ul>
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                  This is why we pair curcumin with piperine (black pepper extract). Research published in Planta Medica demonstrated that 20mg piperine increased curcumin bioavailability by approximately 2000% in human subjects. The mechanism involves piperine's inhibition of glucuronidation enzymes.
+                  This is why we pair curcumin with piperine (black pepper extract). Research published in Planta Medica demonstrated that piperine increased curcumin bioavailability by approximately 2000% in human subjects. The mechanism involves piperine's inhibition of glucuronidation enzymes.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed">
-                  Our formula provides 500mg curcumin extract (≥95% curcuminoids) with 5mg piperine—a ratio designed to maximise absorption and ensure the curcumin actually reaches the bloodstream.
+                  Our formula contains turmeric extract with black pepper extract. Full amounts are listed on the product page.
                 </p>
               </div>
             </div>
@@ -257,7 +257,7 @@ const Curcumin = () => {
                 Explore Our Curcumin Formula
               </h2>
               <p className="font-sans text-muted-foreground mb-8">
-                Our knee joint supplement contains 500mg curcumin extract with piperine for enhanced absorption.
+                Our knee joint supplement contains turmeric extract with black pepper extract.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button size="lg" asChild>

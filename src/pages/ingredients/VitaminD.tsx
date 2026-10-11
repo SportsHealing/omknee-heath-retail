@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: "How much vitamin D should I take?",
-    answer: "Public Health England recommends 10 micrograms (400 IU) daily for general bone and muscle health. Our formula provides 50 micrograms (2000 IU)—within the safe upper limit of 100 micrograms (4000 IU) and designed to help address common insufficiency. Higher doses may be appropriate for those with documented deficiency, under medical guidance."
+    answer: "UK government advice is that everyone should consider a daily 10 microgram vitamin D supplement from October to March. Higher doses may be appropriate for those with documented deficiency, under medical guidance."
   },
   {
     question: "Should I take vitamin D3 or D2?",
@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     question: "Can I take too much vitamin D?",
-    answer: "Yes, vitamin D toxicity is possible with very high doses over extended periods, leading to hypercalcemia (excess calcium in blood). The safe upper limit established by EFSA is 100 micrograms (4000 IU) daily for adults. Our formula provides 50 micrograms (2000 IU)—half the upper limit—which is considered safe for long-term daily use without monitoring, while being sufficient to address common insufficiency."
+    answer: "Yes, vitamin D toxicity is possible with very high doses over extended periods, leading to hypercalcemia (excess calcium in blood). NHS guidance is not to take more than 100 micrograms a day from all sources. Count every supplement you take."
   }
 ];
 
@@ -183,7 +183,7 @@ const VitaminD = () => {
                   </li>
                 </ul>
                 <p className="font-sans text-muted-foreground leading-relaxed">
-                  Our formula provides 50μg (2000 IU) vitamin D3 per daily serving. This dose is within the safe upper limit (100μg/4000 IU) while being sufficient to help address common UK insufficiency. We use D3 (cholecalciferol)—the form most efficiently utilised by the body.
+                  Our formula contains vitamin D3 (cholecalciferol). Full amounts are listed on the product page.
                 </p>
               </div>
             </div>
@@ -265,7 +265,7 @@ const VitaminD = () => {
                 Explore Our Vitamin D Formula
               </h2>
               <p className="font-sans text-muted-foreground mb-8">
-                Our knee joint supplement contains 50μg (2000 IU) vitamin D3 paired with vitamin K2 for optimal bone support.
+                Our knee joint supplement contains vitamin D3 paired with vitamin K2.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button size="lg" asChild>

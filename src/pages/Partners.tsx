@@ -11,7 +11,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import WebPageSchema from "@/components/WebPageSchema";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowUpRight, Stethoscope, ScanLine, HeartPulse } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Stethoscope, ScanLine, HeartPulse, ClipboardCheck } from "lucide-react";
 import { PARTNERS, PARTNER_LINKS, type PartnerKey } from "@/lib/partners";
 
 const allLinks = Object.values(PARTNER_LINKS)
@@ -21,7 +21,8 @@ const allLinks = Object.values(PARTNER_LINKS)
 const partnerOrder: { key: PartnerKey; icon: typeof Stethoscope }[] = [
   { key: "sportshealing", icon: HeartPulse },
   { key: "chinmaygupte", icon: Stethoscope },
-  { key: "mykneescore", icon: ScanLine },
+  { key: "mykneescore", icon: ClipboardCheck },
+  { key: "mykneescan", icon: ScanLine },
 ];
 
 const Partners = () => {
@@ -29,9 +30,9 @@ const Partners = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title="Clinical Partners: Knee Specialists, Surgery and MRI"
-        description="Our clinical partner network for the knee: SportsHealing musculoskeletal care, consultant knee surgeon Mr Chinmay Gupte, and knee assessment and imaging at MyKneeScore."
+        description="Our clinical partner network for the knee: SportsHealing musculoskeletal care, consultant knee surgeon Mr Chinmay Gupte, knee assessment at MyKneeScore and knee imaging at MyKneeScan."
         canonicalPath="/partners"
-        keywords="knee specialist london, knee surgeon london, same day knee MRI, sportshealing, chinmay gupte, mykneescore"
+        keywords="knee specialist london, knee surgeon london, same day knee MRI, sportshealing, chinmay gupte, mykneescore, mykneescan"
       />
       <BreadcrumbSchema
         items={[
@@ -165,7 +166,7 @@ const Partners = () => {
               <li>
                 <strong className="text-foreground">A scan has been suggested</strong> —{" "}
                 <a
-                  href="https://mykneescore.com/booking"
+                  href="https://www.mykneescan.com/booking"
                   target="_blank"
                   rel="noopener"
                   className="text-primary underline underline-offset-4"

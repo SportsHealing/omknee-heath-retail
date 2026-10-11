@@ -1,16 +1,15 @@
 /**
  * Sticky Buy Bar - Appears when scrolling past hero section
- * Provides constant easy access to purchase with variant info
+ * Provides constant easy access to purchase
  */
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ShoppingBag } from "lucide-react";
-import { useProductVariant } from "./ProductVariantContext";
+import { SUPPLEMENT } from "@/content/supplement";
 
 const StickyBuyBar = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const { variantInfo } = useProductVariant();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,15 +32,14 @@ const StickyBuyBar = () => {
           {/* Product Info */}
           <div className="hidden sm:block">
             <p className="font-serif text-sm text-foreground">
-              Joint + Movement Support
-              <span className="text-xs text-primary ml-2">({variantInfo.name})</span>
+              {SUPPLEMENT.name}
             </p>
-            <p className="text-xs text-muted-foreground">300g · One Month Supply</p>
+            <p className="text-xs text-muted-foreground">{SUPPLEMENT.pack}</p>
           </div>
 
           {/* Price & CTA */}
           <div className="flex items-center gap-4 w-full sm:w-auto">
-            <span className="font-serif text-lg text-foreground">£{variantInfo.price}</span>
+            <span className="font-serif text-lg text-foreground">£{SUPPLEMENT.price}</span>
             <div className="flex gap-2 flex-1 sm:flex-none">
               <Button size="sm" className="flex-1 sm:flex-none gap-2">
                 <ShoppingBag className="w-4 h-4" />

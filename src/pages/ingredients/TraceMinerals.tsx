@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: "How much zinc, copper, and boron do I need?",
-    answer: "Our formula provides zinc at 100% NRV (10mg), copper at 50% NRV (0.5mg), and boron at 2mg. These moderate doses contribute to daily intake without exceeding safe levels. The zinc-to-copper ratio is important—high zinc intake can interfere with copper absorption, so we maintain appropriate balance."
+    answer: "Our formula contains zinc and copper. Full amounts are listed on the product page. The zinc-to-copper ratio is important—high zinc intake can interfere with copper absorption, so we maintain appropriate balance."
   },
   {
     question: "Can I get these minerals from food?",
@@ -117,7 +117,7 @@ const TraceMinerals = () => {
                   </ul>
                 </div>
                 <p className="font-sans text-muted-foreground leading-relaxed">
-                  Our formula provides 10mg zinc (100% NRV) as zinc citrate—a form selected for its good bioavailability. This moderate dose contributes meaningfully to daily intake without risk of excess.
+                  Full amounts are listed on the product page.
                 </p>
               </div>
             </div>
@@ -150,7 +150,7 @@ const TraceMinerals = () => {
                   </ul>
                 </div>
                 <p className="font-sans text-muted-foreground leading-relaxed">
-                  Our formula provides 0.5mg copper (50% NRV) as copper bisglycinate—a gentle, well-absorbed form. The dose is intentionally moderate to maintain appropriate zinc-copper balance.
+                  Full amounts are listed on the product page.
                 </p>
               </div>
             </div>
@@ -181,7 +181,7 @@ const TraceMinerals = () => {
                   </p>
                 </div>
                 <p className="font-sans text-muted-foreground leading-relaxed mt-4">
-                  Our formula provides 2mg boron as a chelated form for absorption. This is within the range used in research studies examining boron's effects on mineral metabolism.
+                  Boron is not part of the OmKneeHealth Supplement formula.
                 </p>
               </div>
             </div>

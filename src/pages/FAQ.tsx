@@ -24,7 +24,7 @@ const faqCategories = [
     faqs: [
       {
         question: "What is OmKneeHealth's knee joint supplement?",
-        answer: "OmKneeHealth is a multi-ingredient food supplement formulated to provide nutritional support for knee joint health. It contains hydrolysed collagen peptides (10g), glucosamine sulphate (1,500mg), chondroitin sulphate (800mg), vitamins C, D, and K2, curcumin with piperine, boswellia extract, and essential trace minerals. It's designed for adults seeking proactive, long-term joint support."
+        answer: "OmKneeHealth is a multi-ingredient food supplement formulated to provide nutritional support for knee joint health. It contains marine collagen peptides, glucosamine, chondroitin, hyaluronic acid, MSM, turmeric with black pepper extract, boswellia, sea buckthorn, vitamins C, D3, K2 and E, magnesium, zinc, copper and bamboo silica. It's designed for adults seeking proactive, long-term joint support."
       },
       {
         question: "How does it differ from other knee supplements?",
@@ -41,11 +41,11 @@ const faqCategories = [
     faqs: [
       {
         question: "What are the main ingredients?",
-        answer: "The formula contains: Hydrolysed collagen peptides (10g), Glucosamine sulphate 2KCl (1,500mg), Chondroitin sulphate (800mg), Curcumin extract with piperine (500mg + 5mg), Boswellia serrata extract (200mg), Vitamin C (80mg), Vitamin D3 (50mcg/2,000 IU), Vitamin K2 (75mcg), and trace minerals including zinc, copper, manganese, and boron."
+        answer: "Collagen complex: marine collagen peptides types I, II and III. Joint matrix: glucosamine, chondroitin, hyaluronic acid, MSM. Botanicals: turmeric with black pepper extract, boswellia, sea buckthorn. Bone nutrients: vitamins C, D3, K2 and E, magnesium, zinc, copper, bamboo silica. Full amounts are listed on the product page."
       },
       {
         question: "Is it suitable for vegetarians or vegans?",
-        answer: "Our Original Formula contains animal-derived ingredients (collagen from bovine sources, chondroitin, glucosamine from shellfish). We offer a Vegetarian Formula that uses vegan-fermented glucosamine and plant-based alternatives where possible. Neither formula is fully vegan due to vitamin D3 sourcing."
+        answer: "No. The OmKneeHealth Supplement is a marine formula. It contains marine collagen and other animal-derived ingredients, and contains fish."
       },
       {
         question: "Are there any side effects?",
@@ -62,7 +62,7 @@ const faqCategories = [
     faqs: [
       {
         question: "How do I take it?",
-        answer: "Mix one scoop (10g) with approximately 200ml of water, juice, or a smoothie. Stir or shake well until dissolved. Take once daily. There's no specific 'best time'—consistency matters more than timing. Find what fits your routine and stick with it."
+        answer: "Mix one level scoop with [250 ml] of water once a day. Do not exceed the recommended daily dose. There's no specific 'best time'. Consistency matters more than timing. Find what fits your routine and stick with it."
       },
       {
         question: "How long until I notice results?",

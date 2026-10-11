@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 const faqs = [
   {
     question: "What is the best collagen supplement for knee cartilage?",
-    answer: "The best collagen supplement for knee cartilage contains hydrolysed collagen peptides (for absorption) paired with vitamin C, which contributes to normal collagen formation for the normal function of cartilage (EFSA-authorised claim). OmKneeHealth provides 10g hydrolysed collagen peptides—the upper range used in clinical research—plus 125% NRV vitamin C to support the body's natural collagen synthesis processes. We also include glucosamine, chondroitin, and hyaluronic acid, which are natural components of cartilage tissue."
+    answer: "The best collagen supplement for knee cartilage contains hydrolysed collagen peptides (for absorption) paired with vitamin C, which contributes to normal collagen formation for the normal function of cartilage (EFSA-authorised claim). OmKneeHealth contains hydrolysed collagen peptides plus vitamin C. We also include glucosamine, chondroitin, and hyaluronic acid, which are natural components of cartilage tissue."
   },
   {
     question: "Does collagen help with knee joint pain?",
@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     question: "What is the difference between glucosamine and collagen for knees?",
-    answer: "Glucosamine is an amino sugar naturally found in cartilage, serving as a building block for the cartilage matrix. Collagen is the main structural protein in cartilage, tendons, and ligaments. Our formula includes both: 1,500mg glucosamine sulphate and 10g hydrolysed collagen peptides, reflecting the doses most commonly used in research. Neither has EFSA-authorised health claims, but we include vitamin C which contributes to normal collagen formation for cartilage function."
+    answer: "Glucosamine is an amino sugar naturally found in cartilage, serving as a building block for the cartilage matrix. Collagen is the main structural protein in cartilage, tendons, and ligaments. Our formula includes both. Neither has EFSA-authorised health claims, but we include vitamin C which contributes to normal collagen formation for cartilage function."
   },
   {
     question: "Is this supplement suitable for osteoarthritis?",
@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     question: "Why is vitamin C important in a knee cartilage supplement?",
-    answer: "Vitamin C is essential because it contributes to normal collagen formation for the normal function of cartilage (EFSA-authorised claim). Collagen is the primary structural protein in cartilage, and vitamin C acts as a cofactor for the enzymes that stabilise collagen molecules. Without adequate vitamin C, the body cannot properly synthesise and maintain collagen. Our formula provides 125% NRV vitamin C specifically to support normal cartilage function."
+    answer: "Vitamin C is essential because it contributes to normal collagen formation for the normal function of cartilage (EFSA-authorised claim). Collagen is the primary structural protein in cartilage, and vitamin C acts as a cofactor for the enzymes that stabilise collagen molecules. Without adequate vitamin C, the body cannot properly synthesise and maintain collagen."
   },
   {
     question: "Can I take this knee supplement with other medications?",
@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     question: "What allergens does this knee supplement contain?",
-    answer: "Depending on the variant: Marine Formula contains collagen from fish and glucosamine from shellfish. Vegetarian Formula uses bovine collagen and vegan-fermented glucosamine. All allergens are clearly declared on packaging. If you have allergies to fish, shellfish, or any ingredients, check the label carefully. Both variants are free from gluten, soy, and artificial colours."
+    answer: "Contains fish. [Crustaceans: confirm glucosamine source]. All allergens are declared on the packaging and in the full ingredients information on this page. If you have allergies to fish, shellfish, or any ingredients, check the label carefully."
   },
   {
     question: "How is OmKneeHealth different from other knee supplements?",

@@ -5,6 +5,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ShieldCheck, RotateCcw, Truck } from "lucide-react";
+import { SUPPLEMENT } from "@/content/supplement";
 import ingredientsBg from "@/assets/ingredients-turmeric-bg.jpg";
 
 const reassurances = [
@@ -41,13 +42,13 @@ const ProductCTA = () => {
           {/* Product summary card */}
           <div className="bg-background rounded-lg p-8 border border-border mb-8">
             <p className="font-serif text-xl text-foreground mb-2">
-              Joint + Movement Support
+              {SUPPLEMENT.name}
             </p>
             <p className="font-sans text-sm text-muted-foreground mb-2">
-              300g Pouch — One Month Supply
+              {SUPPLEMENT.pack}
             </p>
             <p className="font-serif text-3xl text-foreground mb-6">
-              £49.99
+              £{SUPPLEMENT.price}
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-3 mb-6">

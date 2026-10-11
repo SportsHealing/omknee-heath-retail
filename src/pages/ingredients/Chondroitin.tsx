@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: "How much chondroitin should I take?",
-    answer: "Clinical studies have typically used 800-1200mg chondroitin sulphate daily. Our formula provides 800mg per daily serving—within the commonly studied range. Some research suggests chondroitin can be taken as a single daily dose, while others split it into multiple doses. Consistency over time appears more important than timing."
+    answer: "Some research suggests chondroitin can be taken as a single daily dose, while others split it into multiple doses. Consistency over time appears more important than timing."
   },
   {
     question: "Where does chondroitin come from?",
@@ -175,7 +175,7 @@ const Chondroitin = () => {
                   </li>
                 </ul>
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                  Our formula provides 800mg chondroitin sulphate alongside 1,500mg glucosamine sulphate—the most commonly studied combination in joint health research.
+                  Our formula contains chondroitin sulphate alongside glucosamine sulphate, the most commonly studied combination in joint health research. Full amounts are listed on the product page.
                 </p>
               </div>
             </div>
@@ -257,7 +257,7 @@ const Chondroitin = () => {
                 Explore Our Chondroitin Formula
               </h2>
               <p className="font-sans text-muted-foreground mb-8">
-                Our knee joint supplement contains 800mg chondroitin sulphate paired with glucosamine and collagen.
+                Our knee joint supplement contains chondroitin sulphate paired with glucosamine and collagen.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button size="lg" asChild>

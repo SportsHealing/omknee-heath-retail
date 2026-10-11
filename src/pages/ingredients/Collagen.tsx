@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: "How much collagen should I take for knee health?",
-    answer: "Clinical studies have examined hydrolysed collagen at doses ranging from 5g to 15g daily. The 10g daily dose is commonly used in research and represents a reasonable middle ground. Consistency over time (typically 8-12+ weeks) appears more important than exact dosage. Our formula provides 10g hydrolysed collagen peptides per daily serving, reflecting the upper range of commonly studied doses."
+    answer: "Clinical studies have examined hydrolysed collagen across a range of daily doses. Consistency over time (typically 8-12+ weeks) appears more important than exact dosage."
   },
   {
     question: "How long does collagen take to work for joints?",
@@ -178,7 +178,7 @@ const Collagen = () => {
                   Clinical studies have examined collagen supplementation with mixed results. Some trials report improvements in joint comfort and function scores, while others show no significant difference from placebo. The variability may relate to differences in collagen sources, doses, study populations, and outcome measures.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed">
-                  We include 10g hydrolysed collagen peptides in our formula—at the upper range of doses used in clinical research—combined with vitamin C to support the body's natural collagen formation processes.
+                  Our formula contains hydrolysed collagen peptides alongside vitamin C, which contributes to normal collagen formation. Full amounts are listed on the product page.
                 </p>
               </div>
             </div>
@@ -260,7 +260,7 @@ const Collagen = () => {
                 Explore Our Collagen Formula
               </h2>
               <p className="font-sans text-muted-foreground mb-8">
-                Our knee joint supplement contains 10g hydrolysed collagen peptides paired with vitamin C for normal cartilage function.
+                Our knee joint supplement contains hydrolysed collagen peptides paired with vitamin C.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button size="lg" asChild>
