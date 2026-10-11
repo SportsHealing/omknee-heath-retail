@@ -44,30 +44,12 @@ const Footer = () => {
           </ol>
         </div>
 
-        {/* UK Trust Banner */}
-        <div className="mb-12 pb-10 border-b border-primary-foreground/10">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary-foreground/80 mb-3">
-              Designed for UK Lifestyles
-            </p>
-            <p className="font-sans text-sm text-primary-foreground/80 mb-6 max-w-2xl mx-auto">
-              Formulated in the United Kingdom by UK-based clinicians, manufactured to UK GMP standards, and designed specifically for British joint health needs.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-xs font-sans text-primary-foreground/80">
-              <span className="bg-primary-foreground/10 px-3 py-1.5 rounded-full">UK GMP Certified</span>
-              <span className="bg-primary-foreground/10 px-3 py-1.5 rounded-full">Third-Party UK Lab Tested</span>
-              <span className="bg-primary-foreground/10 px-3 py-1.5 rounded-full">EFSA-Compliant Claims</span>
-              <span className="bg-primary-foreground/10 px-3 py-1.5 rounded-full">Free UK Delivery</span>
-            </div>
-          </div>
-        </div>
-
         <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-10 mb-12">
           {/* Brand */}
           <div>
             <img 
               src={logoWhite} 
-              alt="OmKneeHealth - UK Knee Joint Supplement" 
+              alt="OmKneeHealth" 
               width={160}
               height={64}
               className="h-16 w-auto mb-4"
