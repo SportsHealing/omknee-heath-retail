@@ -1,19 +1,20 @@
 import type { DiagramId } from "@/content/diagrams";
+import { FIGURES, type FigureId } from "@/content/figures";
+import FigureImage from "./FigureImage";
 
 interface DiagramPlaceholderProps {
   id: DiagramId;
   title: string;
   brief: string;
   /** Final artwork. When set, it renders instead of the placeholder card. */
-  image?: string;
+  figure?: FigureId;
 }
 
-/** A 16:9 placeholder for diagram artwork still to come (Appendix C). */
-const DiagramPlaceholder = ({ id, title, brief, image }: DiagramPlaceholderProps) => (
-  <figure className="my-10">
-    {image ? (
-      <img src={image} alt={brief} loading="lazy" className="w-full rounded-2xl" />
-    ) : (
+/** Final artwork when supplied; otherwise a 16:9 placeholder card (Appendix C). */
+const DiagramPlaceholder = ({ id, title, brief, figure }: DiagramPlaceholderProps) => {
+  if (figure) return <FigureImage figure={FIGURES[figure]} />;
+  return (
+    <figure className="my-10">
       <div
         role="img"
         aria-label={`${title}. ${brief}`}
@@ -23,8 +24,8 @@ const DiagramPlaceholder = ({ id, title, brief, image }: DiagramPlaceholderProps
         <span className="font-serif text-lg md:text-xl text-foreground">{title}</span>
         <span className="font-sans text-xs text-muted-foreground max-w-md leading-relaxed">{brief}</span>
       </div>
-    )}
-  </figure>
-);
+    </figure>
+  );
+};
 
 export default DiagramPlaceholder;

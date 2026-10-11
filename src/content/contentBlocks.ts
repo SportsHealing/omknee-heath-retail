@@ -5,6 +5,7 @@
  */
 import type { DiagnosePathway, TreatPathway, EcosystemDestination } from "@/lib/analytics";
 import type { DiagramId } from "./diagrams";
+import type { FigureId } from "./figures";
 
 export interface ContentLink {
   label: string;
@@ -37,6 +38,7 @@ export type ContentBlock =
   | { type: "list"; items: (string | ListItem)[]; ordered?: boolean; title?: string }
   | { type: "table"; columns: string[]; rows: TableCell[][]; note?: string }
   | { type: "diagram"; id: DiagramId }
+  | { type: "figure"; id: FigureId }
   | { type: "cards"; items: { title: string; copy: string }[] }
   | { type: "callout"; text: string }
   | { type: "cta"; cta: ContentCta }

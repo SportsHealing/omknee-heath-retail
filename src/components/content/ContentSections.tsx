@@ -6,6 +6,8 @@ import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight, Check, Minus } from "lucide-react";
 import DiagramPlaceholder from "@/components/DiagramPlaceholder";
+import FigureImage from "@/components/FigureImage";
+import { FIGURES } from "@/content/figures";
 import PlaceholderText from "@/components/PlaceholderText";
 import { Button } from "@/components/ui/button";
 import { DIAGRAMS } from "@/content/diagrams";
@@ -285,6 +287,8 @@ export const Block = ({ block }: { block: ContentBlock }) => {
       return <TableBlock columns={block.columns} rows={block.rows} note={block.note} />;
     case "diagram":
       return <DiagramPlaceholder {...DIAGRAMS[block.id]} />;
+    case "figure":
+      return <FigureImage figure={FIGURES[block.id]} />;
     case "cards":
       return (
         <dl className="grid sm:grid-cols-2 gap-5">
