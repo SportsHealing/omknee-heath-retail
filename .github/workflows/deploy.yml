@@ -24,7 +24,18 @@ jobs:
           node-version: 20
       - run: npm install
       - run: npm run build
-      - run: cp dist/index.html dist/404.html
+        env:
+          # Public, browser-safe values only. Set them under
+          # Settings > Secrets and variables > Actions > Variables.
+          # Never put private API keys here: everything VITE_ ends up in the site bundle.
+          VITE_KLAVIYO_PUBLIC_KEY: ${{ vars.VITE_KLAVIYO_PUBLIC_KEY }}
+          VITE_KLAVIYO_CLUB_LIST_ID: ${{ vars.VITE_KLAVIYO_CLUB_LIST_ID }}
+          VITE_KLAVIYO_NEWS_LIST_ID: ${{ vars.VITE_KLAVIYO_NEWS_LIST_ID }}
+          VITE_SHOPIFY_STORE_DOMAIN: ${{ vars.VITE_SHOPIFY_STORE_DOMAIN }}
+          VITE_SHOPIFY_STOREFRONT_TOKEN: ${{ vars.VITE_SHOPIFY_STOREFRONT_TOKEN }}
+          VITE_SQUARE_LINK_VITD: ${{ vars.VITE_SQUARE_LINK_VITD }}
+          VITE_SQUARE_LINK_BONE: ${{ vars.VITE_SQUARE_LINK_BONE }}
+          VITE_SQUARE_LINK_ACTIVE: ${{ vars.VITE_SQUARE_LINK_ACTIVE }}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
