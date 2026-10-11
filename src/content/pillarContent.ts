@@ -40,7 +40,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
     intro: [
       "Every part of your knee is alive. Each tissue responds to how you load it, feed it and rest it. Knowing how they adapt makes the rest of the OmKnee Five make sense.",
     ],
-    heroFigure: "bentKnee",
+    heroFigure: "kneeSketches",
     sections: [
       {
         title: "The structures of the knee",
@@ -519,7 +519,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
             type: "p",
             text: "Then the examination: movement, swelling, stability, strength, how the knee behaves under a hand.",
           },
-          { type: "figure", id: "kneeSketches" },
+          { type: "figure", id: "bentKnee" },
           {
             type: "cta",
             cta: {
