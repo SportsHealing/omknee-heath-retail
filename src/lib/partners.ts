@@ -52,7 +52,7 @@ export const PARTNERS: Record<PartnerKey, Partner> = {
   },
   chinmaygupte: {
     key: "chinmaygupte",
-    name: "Mr Chinmay Gupte",
+    name: "Mr Chinmay Gupté",
     domain: "chinmaygupte.com",
     url: "https://www.chinmaygupte.com/",
     role: "Consultant knee surgeon, London",

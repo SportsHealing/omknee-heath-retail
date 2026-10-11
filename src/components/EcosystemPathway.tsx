@@ -26,7 +26,7 @@ const SITES: Record<EcosystemSite, { name: string; url: string; role: string }> 
     role: "Knee imaging and diagnostic investigation",
   },
   chinmaygupte: {
-    name: "Mr Chinmay Gupte",
+    name: "Mr Chinmay Gupté",
     url: "https://www.chinmaygupte.com/",
     role: "Specialist clinician information and consultation",
   },

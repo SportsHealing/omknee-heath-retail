@@ -13,12 +13,15 @@ import kneeBendRange from "@/assets/figures/knee-bend-range.webp";
 import kneeMovementAxes from "@/assets/figures/knee-movement-axes.webp";
 import collagenStructure from "@/assets/figures/collagen-structure.webp";
 import healthyKneePhilosophy from "@/assets/figures/healthy-knee-philosophy.webp";
+import clinicTeam from "@/assets/team-clinic.webp";
 
 export interface Figure {
   src: string;
   alt: string;
   width: number;
   height: number;
+  /** Photographs show wider than infographics. */
+  wide?: boolean;
 }
 
 export const FIGURES = {
@@ -88,6 +91,13 @@ export const FIGURES = {
     width: 1244,
     height: 1208,
     alt: "The OmKneeHealth philosophy: a healthy knee at the centre of four areas. Manage load: practise good control squatting, build up activities slowly, maintain a healthy weight, keep a full range of movement. Healthy lifestyle: manage stress, minimise alcohol, don't smoke, less sugar, optimise sleep, sunlight, hormone support. Good nutrition: collagen support, minerals, protein, fat and carbohydrate balance, vitamins (especially D and C). Muscle and bone density: optimise balance and coordination, keep muscles strong, stretch tendons and fascia.",
+  },
+  clinicTeam: {
+    src: clinicTeam,
+    width: 1410,
+    height: 855,
+    wide: true,
+    alt: "The OmKneeHealth team together at the clinic.",
   },
 } satisfies Record<string, Figure>;
 

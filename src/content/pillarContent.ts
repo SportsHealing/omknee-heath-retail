@@ -686,6 +686,7 @@ export const PILLAR_CONTENT: Record<PillarId, PillarContent> = {
         eyebrow: "Your specialists",
         title: "The team you will see.",
         blocks: [
+          { type: "figure", id: "clinicTeam" },
           { type: "cards", items: TEAM.map((member) => ({ title: member.name, copy: member.details })) },
           {
             type: "list",

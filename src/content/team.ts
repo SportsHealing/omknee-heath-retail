@@ -13,12 +13,12 @@ export interface TeamMember {
 
 export const TEAM: TeamMember[] = [
   {
-    name: "Chinmay Gupte",
+    name: "Chinmay Gupté",
     details: "PhD, FRCS (Tr&Orth), MA, BM BCh (Oxon). [title, specialisms, photo]",
     profile: { label: "Profile at ChinmayGupte.com", href: "https://www.chinmaygupte.com/" },
   },
   {
-    name: "Cynthia Gupte",
+    name: "Cynthia Gupté",
     details: "FRCR, MRCS, BSc, BMBCh (Oxon). [title, specialisms, photo, profile link]",
   },
   {

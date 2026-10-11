@@ -1,6 +1,6 @@
 import type { Figure } from "@/content/figures";
 
-/** Final infographic artwork, centred at a readable size. */
+/** Final artwork or photography, centred at a readable size. */
 interface FigureImageProps {
   figure: Figure;
   className?: string;
@@ -17,7 +17,7 @@ const FigureImage = ({ figure, className = "my-10", eager = false }: FigureImage
       height={figure.height}
       loading={eager ? "eager" : "lazy"}
       decoding="async"
-      className="mx-auto h-auto w-full max-w-xl rounded-2xl border border-border bg-background"
+      className={`mx-auto h-auto w-full ${figure.wide ? "max-w-3xl" : "max-w-xl"} rounded-2xl border border-border bg-background`}
     />
   </figure>
 );
