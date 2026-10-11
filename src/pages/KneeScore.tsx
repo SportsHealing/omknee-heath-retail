@@ -1,4 +1,6 @@
 import Header from "@/components/layout/Header";
+import JoinForm from "@/components/club/JoinForm";
+import { JOIN_PROMPTS } from "@/content/club";
 import Footer from "@/components/layout/Footer";
 import SEO from "@/components/SEO";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
@@ -159,6 +161,16 @@ const KneeScore = () => (
                 </article>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* A2: join prompt after the Knee Score result. Only email and club fields are sent, never score data. */}
+      <section className="pb-20">
+        <div className="container px-6">
+          <div className="max-w-xl mx-auto rounded-2xl border border-border bg-secondary/40 p-6 sm:p-8">
+            <h2 className="font-serif text-2xl text-foreground mb-6 text-center">{JOIN_PROMPTS.kneeScore}</h2>
+            <JoinForm source="knee-score" />
           </div>
         </div>
       </section>

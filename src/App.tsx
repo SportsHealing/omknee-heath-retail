@@ -66,6 +66,7 @@ import ContentReview from "./pages/ContentReview";
 import NotFound from "./pages/NotFound";
 
 import ScrollToHash from "./components/ScrollToHash";
+import SiteServices from "./components/SiteServices";
 import CookieConsent from "./components/CookieConsent";
 import Redirect from "./components/Redirect";
 
@@ -79,6 +80,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToHash />
+        <SiteServices />
         <CookieConsent />
         <Routes>
           <Route path="/" element={<Index />} />
