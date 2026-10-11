@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     question: "Is turmeric or curcumin better for joints?",
-    answer: "Turmeric root typically contains only 2-5% curcuminoids by weight, meaning you would need to consume large amounts of turmeric to achieve doses used in research. Curcumin extracts standardised to 95% curcuminoids provide a concentrated, consistent dose. However, both turmeric and curcumin have poor natural bioavailability—this is why pairing with piperine (black pepper extract) is important for absorption."
+    answer: "Turmeric root typically contains only 2-5% curcuminoids by weight, meaning you would need to consume large amounts of turmeric to achieve doses used in research. Curcumin extracts standardised to 95% curcuminoids provide a concentrated, consistent dose. However, both turmeric and curcumin have poor natural bioavailability, this is why pairing with piperine (black pepper extract) is important for absorption."
   },
   {
     question: "How much curcumin should I take for joint health?",
@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: "Why does curcumin need black pepper?",
-    answer: "Curcumin has notoriously poor bioavailability—it is rapidly metabolised and eliminated before it can be absorbed effectively. Piperine, the active compound in black pepper, inhibits certain enzyme processes (particularly glucuronidation in the liver and intestine) that would otherwise break down curcumin. Research published in Planta Medica demonstrated that piperine increases curcumin bioavailability by approximately 2000%."
+    answer: "Curcumin has notoriously poor bioavailability, it is rapidly metabolised and eliminated before it can be absorbed effectively. Piperine, the active compound in black pepper, inhibits certain enzyme processes (particularly glucuronidation in the liver and intestine) that would otherwise break down curcumin. Research published in Planta Medica demonstrated that piperine increases curcumin bioavailability by approximately 2000%."
   },
   {
     question: "Can I take curcumin with blood thinners?",
@@ -88,7 +88,7 @@ const Curcumin = () => {
               Curcumin for Knee Joints
             </h1>
             <p className="font-sans text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Understanding the role of curcumin (turmeric extract) in joint health—the science of bioavailability and what antioxidant support means for your knees.
+              Understanding the role of curcumin (turmeric extract) in joint health, the science of bioavailability and what antioxidant support means for your knees.
             </p>
           </div>
         </section>
@@ -111,7 +111,7 @@ const Curcumin = () => {
                   While turmeric root contains only 2-5% curcuminoids by weight, standardised extracts can concentrate this to 95% or higher. This concentration is important because the biological activity of turmeric is largely attributed to curcumin.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed">
-                  Curcumin has been extensively studied for its <strong className="text-foreground">antioxidant properties</strong>—its ability to neutralise free radicals and support the body's antioxidant enzyme systems. It is one of the most researched natural compounds in scientific literature.
+                  Curcumin has been extensively studied for its <strong className="text-foreground">antioxidant properties</strong>, its ability to neutralise free radicals and support the body's antioxidant enzyme systems. It is one of the most researched natural compounds in scientific literature.
                 </p>
               </div>
             </div>
@@ -130,7 +130,7 @@ const Curcumin = () => {
               </div>
               <div className="prose prose-neutral max-w-none">
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                  Oxidative stress—an imbalance between free radicals and the body's antioxidant defences—is a normal part of metabolism that increases with age and physical activity. Antioxidants help neutralise excess free radicals.
+                  Oxidative stress, an imbalance between free radicals and the body's antioxidant defences, is a normal part of metabolism that increases with age and physical activity. Antioxidants help neutralise excess free radicals.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
                   Curcumin's antioxidant activity has been demonstrated in numerous laboratory and clinical studies. It can directly scavenge various types of reactive oxygen species and may also enhance the activity of the body's own antioxidant enzymes such as superoxide dismutase (SOD) and catalase.
@@ -138,7 +138,7 @@ const Curcumin = () => {
                 <div className="bg-secondary/50 rounded-lg p-6 border border-border mt-6">
                   <p className="font-sans text-sm text-foreground font-medium mb-2">Important Note on Claims</p>
                   <p className="font-sans text-sm text-muted-foreground">
-                    Curcumin and turmeric do not have EFSA-authorised health claims for joints, cartilage, or inflammation. While extensively researched, we can only describe its antioxidant activity without making specific therapeutic claims.
+                    Curcumin and turmeric do not have authorised health claims. We name them as ingredients and make no joint, cartilage, inflammation, pain or recovery claims for them.
                   </p>
                 </div>
               </div>

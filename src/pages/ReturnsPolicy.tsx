@@ -115,7 +115,7 @@ const ReturnsPolicy = () => {
                 <ol className="list-decimal pl-6 space-y-4">
                   <li>
                     <strong>Contact us:</strong> Email us at{" "}
-                    <a href="mailto:hello@omkneehealth.com" className="text-primary hover:underline">
+                    <a href="mailto:hello@omkneehealth.com" className="text-primary underline underline-offset-4 hover:text-foreground">
                       hello@omkneehealth.com
                     </a>{" "}
                     with your order number and reason for return. We aim to respond within 1-2 business days.
@@ -167,7 +167,7 @@ const ReturnsPolicy = () => {
               <h2 className="font-serif text-2xl text-foreground mb-4">7. Damaged or Defective Items</h2>
               <p className="mb-4 leading-relaxed">
                 If you receive a damaged or defective product, please contact us immediately at{" "}
-                <a href="mailto:hello@omkneehealth.com" className="text-primary hover:underline">
+                <a href="mailto:hello@omkneehealth.com" className="text-primary underline underline-offset-4 hover:text-foreground">
                   hello@omkneehealth.com
                 </a>. We take quality seriously and will resolve the issue promptly.
               </p>
@@ -212,7 +212,7 @@ const ReturnsPolicy = () => {
               <ul className="list-disc pl-6 mb-4 space-y-2">
                 <li>Log into your account and manage your subscription settings, or</li>
                 <li>Email us at{" "}
-                  <a href="mailto:hello@omkneehealth.com" className="text-primary hover:underline">
+                  <a href="mailto:hello@omkneehealth.com" className="text-primary underline underline-offset-4 hover:text-foreground">
                     hello@omkneehealth.com
                   </a>{" "}
                   with your request
@@ -249,7 +249,7 @@ const ReturnsPolicy = () => {
                 <li>Check your bank account or credit card statement again</li>
                 <li>Contact your bank or credit card company, as processing times vary</li>
                 <li>If you've done the above and still haven't received your refund, please contact us at{" "}
-                  <a href="mailto:hello@omkneehealth.com" className="text-primary hover:underline">
+                  <a href="mailto:hello@omkneehealth.com" className="text-primary underline underline-offset-4 hover:text-foreground">
                     hello@omkneehealth.com
                   </a>
                 </li>
@@ -265,7 +265,7 @@ const ReturnsPolicy = () => {
               <div className="bg-muted/50 rounded-lg p-6 my-6">
                 <p className="mb-2">
                   <strong>Email:</strong>{" "}
-                  <a href="mailto:hello@omkneehealth.com" className="text-primary hover:underline">
+                  <a href="mailto:hello@omkneehealth.com" className="text-primary underline underline-offset-4 hover:text-foreground">
                     hello@omkneehealth.com
                   </a>
                 </p>

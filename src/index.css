@@ -38,7 +38,8 @@
     --muted: 42 24% 92%;
     --muted-foreground: 170 12% 37%;
     
-    --destructive: 0 84% 60%;
+    /* Errors and warnings: deep warm brown. No red anywhere on the site (Appendix D1.8). */
+    --destructive: 25 55% 30%;
     --destructive-foreground: 0 0% 100%;
     
     --border: 44 20% 83%;
@@ -92,7 +93,7 @@
     --muted: 220 10% 16%;
     --muted-foreground: 60 10% 60%;
     
-    --destructive: 0 70% 50%;
+    --destructive: 35 70% 65%;
     --destructive-foreground: 0 0% 100%;
     
     --border: 220 10% 20%;

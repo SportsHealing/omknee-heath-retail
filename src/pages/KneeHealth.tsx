@@ -11,7 +11,7 @@ import { ArrowRight } from "lucide-react";
 export const CORNERSTONES = [
   { to: "/your-knee", title: "Understand Your Knee", copy: "A plain-English tour of the joint you rely on every day." },
   { to: "/cartilage-collagen-synovial-fluid", title: "Cartilage, Collagen & Synovial Fluid", copy: "The living materials inside the joint, and what keeps them healthy." },
-  { to: "/knee-movement", title: "Movement & Biomechanics", copy: "Walking, stairs, squatting and running — where force actually lands." },
+  { to: "/knee-movement", title: "Movement & Biomechanics", copy: "Walking, stairs, squatting and running, where force actually lands." },
   { to: "/healthy-knees-through-life", title: "Healthy Knees Through Life", copy: "What matters in your 30s, 40s, 50s, 60s and beyond." },
 ];
 

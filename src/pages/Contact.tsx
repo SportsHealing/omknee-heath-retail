@@ -216,7 +216,7 @@ const Contact = () => {
 
                     <p className="text-xs text-muted-foreground text-center">
                       By submitting this form, you agree to our{" "}
-                      <a href="/privacy-policy" className="text-primary hover:underline">
+                      <a href="/privacy-policy" className="text-primary underline underline-offset-4 hover:text-foreground">
                         Privacy Policy
                       </a>
                       .
@@ -242,7 +242,7 @@ const Contact = () => {
                     <h3 className="font-semibold text-foreground mb-1">Email</h3>
                     <a
                       href="mailto:hello@omkneehealth.com"
-                      className="text-primary hover:underline"
+                      className="text-primary underline underline-offset-4 hover:text-foreground"
                     >
                       hello@omkneehealth.com
                     </a>
@@ -300,7 +300,7 @@ const Contact = () => {
                   "Your questions help us improve."
                 </p>
                 <p className="text-xs text-muted-foreground mt-3">
-                  — The Founders
+                  The Founders
                 </p>
               </div>
             </div>

@@ -22,11 +22,11 @@ import {
 const faqs = [
   {
     question: "Does vitamin D help with knee joints?",
-    answer: "Vitamin D contributes to the maintenance of normal bones and normal muscle function—both EFSA-authorised health claims. Strong bones provide the structural support for knee joints, and healthy muscles help stabilise and protect them. Vitamin D also supports normal absorption of calcium, which is essential for bone mineralisation. While vitamin D doesn't act directly on cartilage, bone and muscle health are fundamental to overall joint function."
+    answer: "Vitamin D contributes to the maintenance of normal bones and normal muscle function, both EFSA-authorised health claims. Strong bones provide the structural support for knee joints, and healthy muscles help stabilise and protect them. Vitamin D also supports normal absorption of calcium, which is essential for bone mineralisation. While vitamin D doesn't act directly on cartilage, bone and muscle health are fundamental to overall joint function."
   },
   {
     question: "Why is vitamin D important in the UK?",
-    answer: "The UK's northern latitude means limited UVB exposure for much of the year—the body can only produce vitamin D from sunlight between approximately April and September. Public Health England recommends that everyone in the UK consider a vitamin D supplement during autumn and winter. National Diet and Nutrition Surveys consistently show that a significant proportion of UK adults have suboptimal vitamin D levels."
+    answer: "The UK's northern latitude means limited UVB exposure for much of the year, the body can only produce vitamin D from sunlight between approximately April and September. Public Health England recommends that everyone in the UK consider a vitamin D supplement during autumn and winter. National Diet and Nutrition Surveys consistently show that a significant proportion of UK adults have suboptimal vitamin D levels."
   },
   {
     question: "How much vitamin D should I take?",
@@ -88,7 +88,7 @@ const VitaminD = () => {
               Vitamin D for Knee Joint Health
             </h1>
             <p className="font-sans text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Understanding vitamin D's essential role in bone and muscle health—particularly important in the UK where deficiency is common.
+              Understanding vitamin D's essential role in bone and muscle health, particularly important in the UK where deficiency is common.
             </p>
           </div>
         </section>
@@ -111,7 +111,7 @@ const VitaminD = () => {
                   There are two main forms: <strong className="text-foreground">vitamin D2 (ergocalciferol)</strong>, found in some plants and fungi, and <strong className="text-foreground">vitamin D3 (cholecalciferol)</strong>, produced in human skin and found in animal sources. D3 is generally more effective at raising blood vitamin D levels.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed">
-                  In the body, vitamin D is converted to its active form (calcitriol) in the kidneys, which then regulates calcium and phosphorus absorption and utilisation—fundamental processes for bone health.
+                  In the body, vitamin D is converted to its active form (calcitriol) in the kidneys, which then regulates calcium and phosphorus absorption and utilisation, fundamental processes for bone health.
                 </p>
               </div>
             </div>
@@ -210,7 +210,7 @@ const VitaminD = () => {
                 <div className="bg-secondary/50 rounded-lg p-6 border border-border">
                   <h3 className="font-serif text-lg text-foreground mb-2">Magnesium</h3>
                   <p className="font-sans text-sm text-muted-foreground">
-                    Magnesium is involved in vitamin D metabolism—it helps convert vitamin D to its active form. Magnesium also contributes to normal muscle function (EFSA claim), complementing vitamin D's effects on muscle.
+                    Magnesium is involved in vitamin D metabolism, it helps convert vitamin D to its active form. Magnesium also contributes to normal muscle function (EFSA claim), complementing vitamin D's effects on muscle.
                   </p>
                 </div>
                 <div className="bg-secondary/50 rounded-lg p-6 border border-border">

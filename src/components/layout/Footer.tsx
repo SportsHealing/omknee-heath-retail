@@ -16,7 +16,7 @@ const Footer = () => {
       <div className="container px-6">
         {/* Your Knee Journey */}
         <div className="mb-12 pb-10 border-b border-primary-foreground/10">
-          <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary-foreground/50 mb-6 text-center">
+          <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary-foreground/70 mb-6 text-center">
             Your Knee Journey
           </p>
           <ol className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 max-w-6xl mx-auto">
@@ -34,7 +34,7 @@ const Footer = () => {
                   {...(item.external ? { target: "_blank", rel: "noopener" } : {})}
                   className="block h-full rounded-lg border border-primary-foreground/15 px-5 py-4 transition-colors hover:border-primary-foreground/40"
                 >
-                  <span className="block font-sans text-[0.7rem] tracking-[0.15em] uppercase text-primary-foreground/50 mb-1">
+                  <span className="block font-sans text-[0.7rem] tracking-[0.15em] uppercase text-primary-foreground/70 mb-1">
                     {`0${i + 1} · ${item.step}`}
                   </span>
                   <span className="font-sans text-sm text-primary-foreground/90">{item.name}</span>
@@ -47,13 +47,13 @@ const Footer = () => {
         {/* UK Trust Banner */}
         <div className="mb-12 pb-10 border-b border-primary-foreground/10">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary-foreground/60 mb-3">
+            <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary-foreground/80 mb-3">
               Designed for UK Lifestyles
             </p>
             <p className="font-sans text-sm text-primary-foreground/80 mb-6 max-w-2xl mx-auto">
               Formulated in the United Kingdom by UK-based clinicians, manufactured to UK GMP standards, and designed specifically for British joint health needs.
             </p>
-            <div className="flex flex-wrap justify-center gap-4 text-xs font-sans text-primary-foreground/60">
+            <div className="flex flex-wrap justify-center gap-4 text-xs font-sans text-primary-foreground/80">
               <span className="bg-primary-foreground/10 px-3 py-1.5 rounded-full">UK GMP Certified</span>
               <span className="bg-primary-foreground/10 px-3 py-1.5 rounded-full">Third-Party UK Lab Tested</span>
               <span className="bg-primary-foreground/10 px-3 py-1.5 rounded-full">EFSA-Compliant Claims</span>
@@ -92,9 +92,9 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/50">
+            <h2 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/70">
               Get started
-            </h4>
+            </h2>
             <ul className="space-y-1">
               {[NAV.club, NAV.scansTests, NAV.consultations, { to: "/knee-score", label: "Get Your Knee Score" }].map((item) => (
                 <li key={item.to}>
@@ -106,9 +106,9 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/50">
+            <h2 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/70">
               The OmKnee Five
-            </h4>
+            </h2>
             <ul className="space-y-1">
               <li>
                 <a href={NAV.learn.to} className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
@@ -121,7 +121,7 @@ const Footer = () => {
                     href={pillar.to}
                     className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 flex items-center gap-2"
                   >
-                    <span className="text-primary-foreground/40 tabular-nums text-xs">{pillar.number}</span>
+                    <span className="text-primary-foreground/70 tabular-nums text-xs">{pillar.number}</span>
                     {pillar.name}
                   </a>
                 </li>
@@ -139,9 +139,9 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/50">
+            <h2 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/70">
               Shop
-            </h4>
+            </h2>
             <ul className="space-y-1">
               <li>
                 <a href="/shop" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
@@ -176,9 +176,9 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/50">
+            <h2 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/70">
               Ecosystem
-            </h4>
+            </h2>
             <ul className="space-y-1">
               <li>
                 <a href="/partners" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
@@ -208,9 +208,9 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/50">
+            <h2 className="font-sans text-xs uppercase tracking-[0.15em] mb-4 text-primary-foreground/70">
               Company
-            </h4>
+            </h2>
             <ul className="space-y-1">
               <li>
                 <a href="/about" className="font-sans text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors min-h-[44px] py-2 block">
@@ -258,7 +258,7 @@ const Footer = () => {
 
         <div className="py-10 border-t border-primary-foreground/10">
           <div className="max-w-md mx-auto">
-            <h4 className="font-serif text-lg text-primary-foreground mb-4 text-center">Join the OmKnee Club, free</h4>
+            <h2 className="font-serif text-lg text-primary-foreground mb-4 text-center">Join the OmKnee Club, free</h2>
             <JoinForm source="footer" tone="dark" compact confirmationHeading="h3" />
           </div>
         </div>
@@ -269,10 +269,10 @@ const Footer = () => {
             Understand. Look after. Keep moving.
           </p>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="font-sans text-xs text-primary-foreground/40">
+            <p className="font-sans text-xs text-primary-foreground/70">
               © {new Date().getFullYear()} OmKneeHealth. All rights reserved.
             </p>
-            <p className="font-sans text-xs text-primary-foreground/40 text-center md:text-right max-w-xl">
+            <p className="font-sans text-xs text-primary-foreground/70 text-center md:text-right max-w-xl">
               Food supplement. Not intended to diagnose, treat, cure, or prevent any disease. 
               Consult your healthcare provider before use.
             </p>

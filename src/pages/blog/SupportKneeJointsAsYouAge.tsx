@@ -26,15 +26,15 @@ const faqs = [
   },
   {
     question: "What is the best supplement for knee joints over 50?",
-    answer: "There's no single 'best' supplement—the answer depends on individual needs. Key considerations for over-50s include vitamin D (UK deficiency is common and increases with age, and it contributes to bone and muscle health), vitamin C (contributes to normal collagen formation for cartilage), and supporting nutrients like magnesium and zinc. Collagen, glucosamine, and chondroitin are also commonly used, though they lack EFSA health claims."
+    answer: "There's no single 'best' supplement, the answer depends on individual needs. Key considerations for over-50s include vitamin D (UK deficiency is common and increases with age, and it contributes to bone and muscle health), vitamin C (contributes to normal collagen formation for cartilage), and supporting nutrients like magnesium and zinc. Collagen, glucosamine, and chondroitin are also commonly used, though they lack EFSA health claims."
   },
   {
     question: "How can I strengthen my knees as I get older?",
-    answer: "Strengthening muscles around the knee—particularly quadriceps and hamstrings—is one of the most effective strategies. Strong muscles act as shock absorbers, reducing load on the joint. Low-impact activities like swimming, cycling, and walking are excellent. Consider working with a physiotherapist for a tailored strengthening programme. Strength training is safe and beneficial at any age."
+    answer: "Strengthening muscles around the knee, particularly quadriceps and hamstrings, is one of the most effective strategies. Strong muscles act as shock absorbers, reducing load on the joint. Low-impact activities like swimming, cycling, and walking are excellent. Consider working with a physiotherapist for a tailored strengthening programme. Strength training is safe and beneficial at any age."
   },
   {
     question: "Does walking help knee joints?",
-    answer: "Yes, for most people. Walking is low-impact and helps maintain knee function. It promotes circulation of synovial fluid (which nourishes cartilage), strengthens supporting muscles, and helps maintain healthy weight. Start gradually if you're not active, and choose supportive footwear. If walking causes significant pain, see your GP—pain shouldn't be ignored."
+    answer: "Yes, for most people. Walking is low-impact and helps maintain knee function. It promotes circulation of synovial fluid (which nourishes cartilage), strengthens supporting muscles, and helps maintain healthy weight. Start gradually if you're not active, and choose supportive footwear. If walking causes significant pain, see your GP, pain shouldn't be ignored."
   },
   {
     question: "Should everyone over 60 take joint supplements?",
@@ -98,7 +98,7 @@ const SupportKneeJointsAsYouAge = () => {
             </h1>
             
             <p className="font-sans text-lg text-muted-foreground leading-relaxed">
-              A comprehensive guide to maintaining knee health through your 40s, 50s, 60s and beyond—covering movement, nutrition, and the role of targeted supplementation.
+              A comprehensive guide to maintaining knee health through your 40s, 50s, 60s and beyond, covering movement, nutrition, and the role of targeted supplementation.
             </p>
           </header>
 
@@ -106,10 +106,10 @@ const SupportKneeJointsAsYouAge = () => {
             
             <section className="mb-12">
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                Knee joints carry us through life—literally. They absorb the impact of every step, squat, and stair climb. It's natural that they change over time. But age doesn't have to mean inevitable knee problems.
+                Knee joints carry us through life, literally. They absorb the impact of every step, squat, and stair climb. It's natural that they change over time. But age doesn't have to mean inevitable knee problems.
               </p>
               <p className="font-sans text-muted-foreground leading-relaxed">
-                As UK clinicians, we see many people who've maintained excellent knee health well into their 70s and 80s—and others who struggle much earlier. The difference often comes down to consistent, sensible care over time. Here's what actually matters.
+                As UK clinicians, we see many people who've maintained excellent knee health well into their 70s and 80s, and others who struggle much earlier. The difference often comes down to consistent, sensible care over time. Here's what actually matters.
               </p>
             </section>
 
@@ -128,7 +128,7 @@ const SupportKneeJointsAsYouAge = () => {
                 <li>• <strong className="text-foreground">Bone density:</strong> Decreases, especially post-menopause in women</li>
               </ul>
               <p className="font-sans text-muted-foreground leading-relaxed mt-4">
-                These changes are normal—but their impact can be minimised with proactive care.
+                These changes are normal, but their impact can be minimised with proactive care.
               </p>
             </section>
 
@@ -139,7 +139,7 @@ const SupportKneeJointsAsYouAge = () => {
               
               <h3 className="text-xl font-serif text-foreground mb-4">1. Stay Active (The Right Way)</h3>
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                The old advice to "rest your joints" has been replaced by evidence showing that appropriate movement is essential for joint health. Cartilage has no blood supply—it gets nutrients from synovial fluid, which circulates through movement.
+                The old advice to "rest your joints" has been replaced by evidence showing that appropriate movement is essential for joint health. Cartilage has no blood supply, it gets nutrients from synovial fluid, which circulates through movement.
               </p>
               <ul className="space-y-2 font-sans text-muted-foreground mb-6">
                 <li>• <strong className="text-foreground">Strength training:</strong> Builds muscle that supports and protects joints</li>
@@ -150,7 +150,7 @@ const SupportKneeJointsAsYouAge = () => {
 
               <h3 className="text-xl font-serif text-foreground mb-4">2. Maintain a Healthy Weight</h3>
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                Every extra kilogram of body weight puts approximately 4kg of pressure on knee joints. Weight management is one of the most impactful things you can do for knee health—often more effective than any supplement or treatment.
+                Every extra kilogram of body weight puts approximately 4kg of pressure on knee joints. Weight management is one of the most impactful things you can do for knee health, often more effective than any supplement or treatment.
               </p>
 
               <h3 className="text-xl font-serif text-foreground mb-4">3. Nutrition for Joint Health</h3>
@@ -166,7 +166,7 @@ const SupportKneeJointsAsYouAge = () => {
 
               <h3 className="text-xl font-serif text-foreground mb-4">4. Address Vitamin D (Especially in the UK)</h3>
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                <Link to="/ingredients/vitamin-d" className="text-primary hover:underline">Vitamin D</Link> deserves special mention. The UK's latitude means limited sun exposure October–March, and deficiency becomes more common with age. Vitamin D contributes to normal muscle function and bone maintenance (EFSA claims)—both crucial for knee health.
+                <Link to="/ingredients/vitamin-d" className="text-primary underline underline-offset-4 hover:text-foreground">Vitamin D</Link> deserves special mention. The UK's latitude means limited sun exposure October–March, and deficiency becomes more common with age. Vitamin D contributes to normal muscle function and bone maintenance (EFSA claims), both crucial for knee health.
               </p>
               <p className="font-sans text-muted-foreground leading-relaxed">
                 Public Health England recommends everyone consider vitamin D supplementation during autumn and winter.
@@ -178,13 +178,13 @@ const SupportKneeJointsAsYouAge = () => {
                 The Role of Supplements
               </h2>
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                Supplements can complement—but not replace—the foundations above. Key considerations for ageing joints:
+                Supplements can complement, but not replace, the foundations above. Key considerations for ageing joints:
               </p>
               <ul className="space-y-3 font-sans text-muted-foreground">
-                <li>• <strong className="text-foreground"><Link to="/ingredients/vitamin-d" className="text-primary hover:underline">Vitamin D3</Link>:</strong> Has EFSA claims for bone and muscle health. UK advice is to consider a daily supplement from October to March.</li>
+                <li>• <strong className="text-foreground"><Link to="/ingredients/vitamin-d" className="text-primary underline underline-offset-4 hover:text-foreground">Vitamin D3</Link>:</strong> Has EFSA claims for bone and muscle health. UK advice is to consider a daily supplement from October to March.</li>
                 <li>• <strong className="text-foreground">Vitamin C:</strong> Contributes to normal collagen formation for cartilage function (EFSA claim).</li>
-                <li>• <strong className="text-foreground"><Link to="/ingredients/collagen" className="text-primary hover:underline">Collagen peptides</Link>:</strong> Provide amino acids for collagen synthesis. No EFSA claims but commonly used.</li>
-                <li>• <strong className="text-foreground"><Link to="/ingredients/glucosamine" className="text-primary hover:underline">Glucosamine</Link> & <Link to="/ingredients/chondroitin" className="text-primary hover:underline">chondroitin</Link>:</strong> Cartilage components. Mixed evidence, no EFSA claims.</li>
+                <li>• <strong className="text-foreground"><Link to="/ingredients/collagen" className="text-primary underline underline-offset-4 hover:text-foreground">Collagen peptides</Link>:</strong> Provide amino acids for collagen synthesis. No EFSA claims but commonly used.</li>
+                <li>• <strong className="text-foreground"><Link to="/ingredients/glucosamine" className="text-primary underline underline-offset-4 hover:text-foreground">Glucosamine</Link> & <Link to="/ingredients/chondroitin" className="text-primary underline underline-offset-4 hover:text-foreground">chondroitin</Link>:</strong> Cartilage components. Mixed evidence, no EFSA claims.</li>
                 <li>• <strong className="text-foreground">Magnesium:</strong> Contributes to normal muscle function (EFSA claim).</li>
               </ul>
             </section>
@@ -201,12 +201,12 @@ const SupportKneeJointsAsYouAge = () => {
 
               <h3 className="text-xl font-serif text-foreground mb-4">In Your 50s</h3>
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                Muscle mass naturally declines—prioritise strength training. Bone density decreases, especially for women post-menopause. Vitamin D and calcium become particularly important. Listen to your body but stay active.
+                Muscle mass naturally declines, prioritise strength training. Bone density decreases, especially for women post-menopause. Vitamin D and calcium become particularly important. Listen to your body but stay active.
               </p>
 
               <h3 className="text-xl font-serif text-foreground mb-4">In Your 60s and Beyond</h3>
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                Focus on maintaining what you have. Balance work reduces fall risk. Strength training remains important and safe. Consider working with a physiotherapist for tailored guidance. Address any pain or problems early—don't assume they're "just age."
+                Focus on maintaining what you have. Balance work reduces fall risk. Strength training remains important and safe. Consider working with a physiotherapist for tailored guidance. Address any pain or problems early, don't assume they're "just age."
               </p>
             </section>
 
@@ -267,7 +267,7 @@ const SupportKneeJointsAsYouAge = () => {
                 Support for Every Stage
               </h2>
               <p className="font-sans text-muted-foreground mb-6 text-sm leading-relaxed">
-                Our UK-manufactured knee joint supplement is designed for adults at every stage of life—with vitamin D for bone and muscle health, vitamin C for cartilage function, and comprehensive nutritional support.
+                Our UK-manufactured knee joint supplement is designed for adults at every stage of life, with vitamin D for bone and muscle health, vitamin C for cartilage function, and comprehensive nutritional support.
               </p>
               <Link 
                 to="/shop/omkneehealth-supplement" 
@@ -277,7 +277,7 @@ const SupportKneeJointsAsYouAge = () => {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <p className="font-sans text-xs text-muted-foreground mt-4">
-                Or <Link to="/knee-score" className="text-primary hover:underline">assess your knee health</Link> with our free tool
+                Or <Link to="/knee-score" className="text-primary underline underline-offset-4 hover:text-foreground">assess your knee health</Link> with our free tool
               </p>
             </div>
           </section>

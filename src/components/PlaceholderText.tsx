@@ -10,7 +10,7 @@ const PlaceholderText = ({ text }: { text: string }) => (
       part.startsWith("[") && part.endsWith("]") ? (
         <span
           key={index}
-          className="rounded border border-dashed border-primary/60 bg-primary/5 px-1 text-foreground"
+          className="rounded border border-dashed border-current px-1 text-inherit"
           title="Placeholder: to be confirmed"
         >
           {part}

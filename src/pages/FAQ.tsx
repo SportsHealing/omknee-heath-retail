@@ -49,7 +49,7 @@ const faqCategories = [
       },
       {
         question: "Are there any side effects?",
-        answer: "The ingredients in our formula are generally well-tolerated. Some people may experience mild digestive discomfort when starting any new supplement. Curcumin may have antiplatelet effects, so those on blood-thinning medication should consult their doctor. Glucosamine is derived from shellfish in our Original Formula—those with allergies should choose the Vegetarian Formula."
+        answer: "The ingredients in our formula are generally well-tolerated. Some people may experience mild digestive discomfort when starting any new supplement. Curcumin may have antiplatelet effects, so those on blood-thinning medication should consult their doctor. Glucosamine is derived from shellfish in our Original Formula, those with allergies should choose the Vegetarian Formula."
       },
       {
         question: "Can I take this with other medications?",
@@ -70,7 +70,7 @@ const faqCategories = [
       },
       {
         question: "Can I take it long-term?",
-        answer: "Yes, our formula is designed for daily, long-term use. All ingredients are included at levels considered safe for ongoing consumption. Joint health is a long-term investment, not a short-term fix—consistent daily use over months and years is the intended approach."
+        answer: "Yes, our formula is designed for daily, long-term use. All ingredients are included at levels considered safe for ongoing consumption. Joint health is a long-term investment, not a short-term fix, consistent daily use over months and years is the intended approach."
       },
     ]
   },
@@ -79,7 +79,7 @@ const faqCategories = [
     faqs: [
       {
         question: "Where do you ship to?",
-        answer: "We currently ship throughout the United Kingdom. UK orders over a certain threshold qualify for free standard delivery. International shipping may be available—please contact us for details."
+        answer: "We currently ship throughout the United Kingdom. UK orders over a certain threshold qualify for free standard delivery. International shipping may be available, please contact us for details."
       },
       {
         question: "What is your returns policy?",
@@ -131,7 +131,7 @@ const FAQ = () => {
               Frequently Asked Questions
             </h1>
             <p className="font-sans text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Honest, evidence-led answers to common questions about our knee joint supplement. Can't find what you're looking for? <Link to="/contact" className="text-primary hover:underline">Contact us</Link>.
+              Honest, evidence-led answers to common questions about our knee joint supplement. Can't find what you're looking for? <Link to="/contact" className="text-primary underline underline-offset-4 hover:text-foreground">Contact us</Link>.
             </p>
           </div>
         </section>

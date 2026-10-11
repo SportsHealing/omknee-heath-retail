@@ -72,7 +72,7 @@ const HowItWorks = () => {
               How Our Supplement Works
             </h1>
             <p className="font-sans text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Rather than relying on a single ingredient, our formula combines multiple nutrients that support different aspects of joint health—from cartilage structure to bone maintenance.
+              Rather than relying on a single ingredient, our formula combines multiple nutrients that support different aspects of joint health, from cartilage structure to bone maintenance.
             </p>
           </div>
         </section>

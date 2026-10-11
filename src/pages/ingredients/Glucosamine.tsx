@@ -22,11 +22,11 @@ import {
 const faqs = [
   {
     question: "Does glucosamine help knee cartilage?",
-    answer: "Glucosamine is a natural compound found in cartilage tissue, serving as a building block for glycosaminoglycans and proteoglycans—key components of the cartilage matrix. Numerous studies have examined glucosamine supplementation, with mixed results across different populations. However, glucosamine does not have EFSA-authorised health claims. We include it while being transparent that evidence is mixed."
+    answer: "Glucosamine is a natural compound found in cartilage tissue, serving as a building block for glycosaminoglycans and proteoglycans, key components of the cartilage matrix. Numerous studies have examined glucosamine supplementation, with mixed results across different populations. However, glucosamine does not have EFSA-authorised health claims. We include it while being transparent that evidence is mixed."
   },
   {
     question: "What is the difference between glucosamine sulphate and glucosamine HCl?",
-    answer: "Glucosamine sulphate 2KCl and glucosamine hydrochloride (HCl) are different salt forms of glucosamine. Most research, particularly European studies, has used the sulphate form. The sulphate form also provides sulphur, which is used in cartilage matrix synthesis. Glucosamine HCl is more concentrated (contains more actual glucosamine per mg) but lacks the sulphate component. Our formula uses glucosamine sulphate 2KCl—the form with the most research behind it."
+    answer: "Glucosamine sulphate 2KCl and glucosamine hydrochloride (HCl) are different salt forms of glucosamine. Most research, particularly European studies, has used the sulphate form. The sulphate form also provides sulphur, which is used in cartilage matrix synthesis. Glucosamine HCl is more concentrated (contains more actual glucosamine per mg) but lacks the sulphate component. Our formula uses glucosamine sulphate 2KCl, the form with the most research behind it."
   },
   {
     question: "How much glucosamine should I take for knee joints?",
@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: "How long does glucosamine take to work?",
-    answer: "Glucosamine supplementation supports gradual processes. Clinical studies typically assess outcomes after 4-12 weeks of consistent daily use, with some longer-term studies extending to 2-3 years. Individual responses vary significantly. Don't expect immediate effects—if you decide to try glucosamine, commit to consistent use and assess your experience after 8-12 weeks."
+    answer: "Glucosamine supplementation supports gradual processes. Clinical studies typically assess outcomes after 4-12 weeks of consistent daily use, with some longer-term studies extending to 2-3 years. Individual responses vary significantly. Don't expect immediate effects, if you decide to try glucosamine, commit to consistent use and assess your experience after 8-12 weeks."
   },
   {
     question: "Is glucosamine safe for diabetics?",
@@ -92,7 +92,7 @@ const Glucosamine = () => {
               Glucosamine for Knee Joints
             </h1>
             <p className="font-sans text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Understanding glucosamine as a cartilage building block—one of the most extensively studied compounds in joint health, with honest discussion of what the evidence shows.
+              Understanding glucosamine as a cartilage building block, one of the most extensively studied compounds in joint health, with honest discussion of what the evidence shows.
             </p>
           </div>
         </section>
@@ -109,7 +109,7 @@ const Glucosamine = () => {
               </div>
               <div className="prose prose-neutral max-w-none">
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                  Glucosamine is an amino sugar naturally produced by the body and found in high concentrations in cartilage and other connective tissues. It serves as a building block for glycosaminoglycans (GAGs) and proteoglycans—key structural components of the cartilage matrix.
+                  Glucosamine is an amino sugar naturally produced by the body and found in high concentrations in cartilage and other connective tissues. It serves as a building block for glycosaminoglycans (GAGs) and proteoglycans, key structural components of the cartilage matrix.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
                   In supplements, glucosamine is typically available in two forms: <strong className="text-foreground">glucosamine sulphate 2KCl</strong> (the form used in most European research) and <strong className="text-foreground">glucosamine hydrochloride (HCl)</strong>. The sulphate form provides additional sulphur, which is incorporated into cartilage matrix molecules.
@@ -137,10 +137,10 @@ const Glucosamine = () => {
                   Cartilage is composed of chondrocytes (cartilage cells) embedded in an extracellular matrix. This matrix contains collagen fibres for structure and proteoglycans for cushioning. Glucosamine is a precursor to the glycosaminoglycans that make up these proteoglycans.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                  The rationale for glucosamine supplementation is straightforward: by providing more of the building blocks, you may support the body's ability to maintain and repair cartilage. The body does produce glucosamine naturally, but production may decline with age.
+                  Glucosamine is one of the building blocks of the cartilage matrix. The body does produce glucosamine naturally.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                  Glucosamine is one of the most extensively studied compounds in joint health, with numerous clinical trials examining its effects. Results have been mixed—some studies show benefits, others show no significant difference from placebo. This variability may relate to differences in glucosamine forms, study populations, and outcome measures.
+                  Glucosamine is one of the most extensively studied compounds in joint health, with numerous clinical trials examining its effects. Results have been mixed, some studies show benefits, others show no significant difference from placebo. This variability may relate to differences in glucosamine forms, study populations, and outcome measures.
                 </p>
                 <div className="bg-secondary/50 rounded-lg p-6 border border-border mt-6">
                   <p className="font-sans text-sm text-foreground font-medium mb-2">Important Note on Claims</p>
@@ -178,7 +178,7 @@ const Glucosamine = () => {
                     <strong className="text-foreground">Form matters:</strong> The crystalline glucosamine sulphate form used in European trials may differ from glucosamine HCl or non-crystalline forms used in other studies.
                   </li>
                   <li className="font-sans text-muted-foreground">
-                    <strong className="text-foreground">Time frame:</strong> Benefits, when observed, typically emerge after weeks to months of consistent use—not days.
+                    <strong className="text-foreground">Time frame:</strong> Benefits, when observed, typically emerge after weeks to months of consistent use, not days.
                   </li>
                 </ul>
                 <p className="font-sans text-muted-foreground leading-relaxed">

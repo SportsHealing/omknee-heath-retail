@@ -7,10 +7,10 @@ import EcosystemPathway from "@/components/EcosystemPathway";
 import { Link } from "react-router-dom";
 
 const parts = [
-  { title: "Bones and shape", copy: "Thigh bone, shin bone and kneecap meet in a joint built for bend, glide and a little rotation. Shape varies between people — and normal is a range, not a single blueprint." },
+  { title: "Bones and shape", copy: "Thigh bone, shin bone and kneecap meet in a joint built for bend, glide and a little rotation. Shape varies between people, and normal is a range, not a single blueprint." },
   { title: "Cushioning surfaces", copy: "Smooth cartilage caps the bone ends and two crescent-shaped menisci spread load. Together they turn every step into something the joint can absorb." },
   { title: "Stabilisers", copy: "Ligaments hold the joint together; tendons transmit the pull of muscle. Both are collagen structures that respond to steady, progressive use." },
-  { title: "Lubrication", copy: "Synovial fluid nourishes cartilage and lets surfaces glide. Movement is what circulates it — which is why stiffness eases once you get going." },
+  { title: "Lubrication", copy: "Synovial fluid nourishes cartilage and lets surfaces glide. Movement is what circulates it, which is why stiffness eases once you get going." },
   { title: "The engine around it", copy: "Quadriceps, hamstrings, calves and hips decide how much force reaches the joint. Strong, coordinated muscle is the knee's best protection." },
 ];
 

@@ -55,15 +55,15 @@ const KneeComponentsSection = () => {
     <section id="knee-components" className="py-24 lg:py-32 bg-secondary">
       <div className="container px-6">
         <div className="max-w-2xl mx-auto text-center mb-16">
-          <p className="font-sans text-xs tracking-[0.2em] uppercase text-accent mb-4">
+          <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary/80 mb-4">
             Inside the Joint
           </p>
           <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
             The components that make up your knee
           </h2>
           <p className="font-sans text-muted-foreground leading-relaxed">
-            Every structure in the knee is built around collagen — the scaffold that gives tissue
-            strength, shape and resistance to load — and every moving surface is nourished and
+            Every structure in the knee is built around collagen, the scaffold that gives tissue
+            strength, shape and resistance to load, and every moving surface is nourished and
             lubricated by synovial fluid.
           </p>
         </div>
@@ -78,7 +78,7 @@ const KneeComponentsSection = () => {
                 <item.icon className="w-5 h-5 text-primary" />
               </div>
               <h3 className="font-serif text-xl text-foreground mb-1">{item.name}</h3>
-              <p className="font-sans text-xs tracking-[0.12em] uppercase text-accent mb-3">
+              <p className="font-sans text-xs tracking-[0.12em] uppercase text-primary/80 mb-3">
                 {item.role}
               </p>
               <p className="font-sans text-sm text-muted-foreground leading-relaxed">
@@ -104,13 +104,13 @@ const KneeComponentsSection = () => {
           </div>
           <div className="rounded-xl border border-border bg-background p-7">
             <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-              <Droplets className="w-5 h-5 text-accent" />
+              <Droplets className="w-5 h-5 text-primary/80" />
             </div>
             <h3 className="font-serif text-xl text-foreground mb-3">Synovial fluid: the lubricant</h3>
             <p className="font-sans text-sm text-muted-foreground leading-relaxed">
               A viscous fluid inside the joint capsule that lubricates the gliding surfaces and
               carries nutrients to cartilage, which has no direct blood supply. Movement is what
-              circulates it — gentle, regular motion helps keep the joint nourished.
+              circulates it, gentle, regular motion helps keep the joint nourished.
             </p>
           </div>
         </div>

@@ -2,13 +2,13 @@
  * Clinical partner network links.
  *
  * OmKneeHealth is the health-and-wellness front door for the knee. Anything
- * clinical — diagnosis, imaging, surgical opinion — is signposted to a named
+ * clinical, diagnosis, imaging, surgical opinion, is signposted to a named
  * partner site. Deep links use descriptive anchor text so both readers and
  * search engines understand where each link goes and why.
  */
 
 export interface PartnerLink {
-  /** Descriptive anchor text — never "click here". */
+  /** Descriptive anchor text, never "click here". */
   label: string;
   /** Absolute partner URL. */
   href: string;

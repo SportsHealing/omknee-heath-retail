@@ -65,9 +65,9 @@ const CompliancePlaybook = () => {
                 </ul>
               </div>
 
-              <div className="bg-red-50 dark:bg-red-950/20 rounded-xl p-6 border border-red-200 dark:border-red-800">
+              <div className="bg-destructive/5 rounded-xl p-6 border border-destructive/30">
                 <div className="flex items-center gap-3 mb-4">
-                  <AlertTriangle className="w-5 h-5 text-red-600" />
+                  <AlertTriangle className="w-5 h-5 text-destructive" />
                   <h3 className="font-serif text-lg text-foreground">Prohibited Language</h3>
                 </div>
                 <ul className="space-y-2 text-sm text-muted-foreground">

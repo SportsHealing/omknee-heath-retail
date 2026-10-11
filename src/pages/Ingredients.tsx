@@ -14,21 +14,21 @@ import { ArrowRight, FlaskConical, Leaf, Pill, Sun, Gem } from "lucide-react";
 const ingredients = [
   {
     name: "Collagen Peptides",
-    description: "The primary structural protein in cartilage, supporting joint resilience and tissue structure.",
+    description: "The primary structural protein in cartilage, tendon, ligament and bone.",
     href: "/ingredients/collagen",
     icon: FlaskConical,
     highlight: "Collagen complex",
   },
   {
     name: "Curcumin (Turmeric)",
-    description: "Concentrated turmeric extract with antioxidant properties, paired with piperine for absorption.",
+    description: "Turmeric extract, paired with black pepper extract (piperine).",
     href: "/ingredients/curcumin",
     icon: Leaf,
     highlight: "Botanical",
   },
   {
     name: "Boswellia Serrata",
-    description: "Traditional botanical extract containing boswellic acids, widely used for joint comfort.",
+    description: "Traditional botanical extract containing boswellic acids.",
     href: "/ingredients/boswellia",
     icon: Leaf,
     highlight: "Botanical",
@@ -49,7 +49,7 @@ const ingredients = [
   },
   {
     name: "Vitamin D3",
-    description: "Supports bone health and muscle function—essential for the musculoskeletal system.",
+    description: "Contributes to the maintenance of normal bones and normal muscle function.",
     href: "/ingredients/vitamin-d",
     icon: Sun,
     highlight: "EFSA-authorised claims",
@@ -151,7 +151,7 @@ const Ingredients = () => {
                 Where EFSA-authorised health claims exist, we include them. Where they don't, we're transparent about the current state of evidence.
               </p>
               <p>
-                Our formula combines multiple ingredients that work through different mechanisms—supporting cartilage, bone, and connective tissue through a comprehensive approach.
+                Our formula combines multiple ingredients that work through different mechanisms, supporting cartilage, bone, and connective tissue through a comprehensive approach.
               </p>
             </div>
             <div className="mt-8 text-center">

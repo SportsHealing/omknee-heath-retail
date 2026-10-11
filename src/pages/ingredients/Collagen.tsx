@@ -22,7 +22,7 @@ import {
 const faqs = [
   {
     question: "Does collagen help with knee cartilage?",
-    answer: "Collagen is the primary structural protein in cartilage, making up approximately 60% of its dry weight. When you consume hydrolysed collagen peptides, they are broken down into amino acids (primarily glycine, proline, and hydroxyproline) that the body can use in its natural collagen synthesis processes. However, collagen supplements do not have EFSA-authorised health claims for cartilage—though vitamin C, often paired with collagen, contributes to normal collagen formation for the normal function of cartilage."
+    answer: "Collagen is the primary structural protein in cartilage, making up approximately 60% of its dry weight. When you consume hydrolysed collagen peptides, they are broken down into amino acids (primarily glycine, proline, and hydroxyproline) that the body can use in its natural collagen synthesis processes. However, collagen supplements do not have EFSA-authorised health claims for cartilage, though vitamin C, often paired with collagen, contributes to normal collagen formation for the normal function of cartilage."
   },
   {
     question: "What type of collagen is best for knee joints?",
@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: "How long does collagen take to work for joints?",
-    answer: "Collagen supplements support gradual, cumulative processes rather than providing immediate effects. Most studies assess outcomes after 8-24 weeks of consistent daily use. Individual responses vary significantly based on factors including age, baseline nutrition, activity levels, and overall health. It's important to have realistic expectations—collagen provides nutritional support, not therapeutic treatment."
+    answer: "Collagen supplements support gradual, cumulative processes rather than providing immediate effects. Most studies assess outcomes after 8-24 weeks of consistent daily use. Individual responses vary significantly based on factors including age, baseline nutrition, activity levels, and overall health. It's important to have realistic expectations, collagen provides nutritional support, not therapeutic treatment."
   },
   {
     question: "Can I get enough collagen from food for my knees?",
@@ -88,7 +88,7 @@ const Collagen = () => {
               Collagen for Knee Joints
             </h1>
             <p className="font-sans text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Understanding the role of collagen peptides in supporting cartilage structure and joint health—what the evidence shows and what it doesn't.
+              Understanding the role of collagen peptides in supporting cartilage structure and joint health, what the evidence shows and what it doesn't.
             </p>
           </div>
         </section>
@@ -108,7 +108,7 @@ const Collagen = () => {
                   Collagen is the most abundant protein in the human body, forming the structural framework of skin, bones, tendons, ligaments, and cartilage. It provides tensile strength and resilience to connective tissues.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                  In knee joints specifically, <strong className="text-foreground">Type II collagen</strong> is the primary component of articular cartilage—the smooth, protective tissue covering the ends of bones where they meet. This cartilage allows for low-friction movement and absorbs mechanical stress during walking, running, and jumping.
+                  In knee joints specifically, <strong className="text-foreground">Type II collagen</strong> is the primary component of articular cartilage, the smooth, protective tissue covering the ends of bones where they meet. This cartilage allows for low-friction movement and absorbs mechanical stress during walking, running, and jumping.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed">
                   <strong className="text-foreground">Hydrolysed collagen peptides</strong> are collagen proteins that have been enzymatically broken down into smaller fragments. This pre-digestion makes them more readily absorbed in the digestive tract compared to intact collagen from food sources.
@@ -130,18 +130,18 @@ const Collagen = () => {
               </div>
               <div className="prose prose-neutral max-w-none">
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                  Cartilage is a remarkable tissue with limited capacity for self-repair. Unlike bone, cartilage has no direct blood supply—nutrients must diffuse through the surrounding synovial fluid. This makes maintaining cartilage health through nutrition particularly relevant.
+                  Cartilage is a remarkable tissue with limited capacity for self-repair. Unlike bone, cartilage has no direct blood supply, nutrients must diffuse through the surrounding synovial fluid. This makes maintaining cartilage health through nutrition particularly relevant.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
                   Collagen provides the structural scaffold within cartilage, working alongside proteoglycans (including chondroitin sulphate) to create a tissue that can withstand compressive forces while remaining flexible. The collagen fibres resist tensile stress while proteoglycans attract and hold water, providing cushioning.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                  When hydrolysed collagen peptides are consumed, they break down into amino acids—primarily glycine, proline, and hydroxyproline. These amino acids are the building blocks the body uses in its natural collagen synthesis processes throughout connective tissues.
+                  When hydrolysed collagen peptides are consumed, they break down into amino acids, primarily glycine, proline, and hydroxyproline. These amino acids are the building blocks the body uses in its natural collagen synthesis processes throughout connective tissues.
                 </p>
                 <div className="bg-secondary/50 rounded-lg p-6 border border-border mt-6">
                   <p className="font-sans text-sm text-foreground font-medium mb-2">Important Note on Claims</p>
                   <p className="font-sans text-sm text-muted-foreground">
-                    Collagen peptides do not have EFSA-authorised health claims. However, <strong>vitamin C contributes to normal collagen formation for the normal function of cartilage</strong>—which is why we pair collagen with vitamin C in our formula.
+                    Collagen peptides do not have EFSA-authorised health claims. However, <strong>vitamin C contributes to normal collagen formation for the normal function of cartilage</strong>, which is why we pair collagen with vitamin C in our formula.
                   </p>
                 </div>
               </div>
@@ -168,7 +168,7 @@ const Collagen = () => {
                     <strong className="text-foreground">Absorption:</strong> Hydrolysed collagen peptides are absorbed intact through the intestinal wall. Studies using labelled peptides have detected them in blood and tissues, including cartilage.
                   </li>
                   <li className="font-sans text-muted-foreground">
-                    <strong className="text-foreground">Amino acid profile:</strong> Collagen peptides provide a concentrated source of glycine, proline, and hydroxyproline—amino acids that are less abundant in typical Western diets but essential for collagen synthesis.
+                    <strong className="text-foreground">Amino acid profile:</strong> Collagen peptides provide a concentrated source of glycine, proline, and hydroxyproline, amino acids that are less abundant in typical Western diets but essential for collagen synthesis.
                   </li>
                   <li className="font-sans text-muted-foreground">
                     <strong className="text-foreground">Chondrocyte stimulation:</strong> In laboratory studies, collagen peptides have been shown to stimulate chondrocytes (cartilage cells) to increase production of extracellular matrix components.
@@ -199,13 +199,13 @@ const Collagen = () => {
                 <div className="bg-secondary/50 rounded-lg p-6 border border-border">
                   <h3 className="font-serif text-lg text-foreground mb-2">Vitamin C</h3>
                   <p className="font-sans text-sm text-muted-foreground">
-                    Essential cofactor for collagen synthesis. Vitamin C contributes to normal collagen formation for the normal function of cartilage (EFSA-authorised claim). Without adequate vitamin C, the body cannot properly hydroxylate proline and lysine—steps required for stable collagen structure.
+                    Essential cofactor for collagen synthesis. Vitamin C contributes to normal collagen formation for the normal function of cartilage (EFSA-authorised claim). Without adequate vitamin C, the body cannot properly hydroxylate proline and lysine, steps required for stable collagen structure.
                   </p>
                 </div>
                 <div className="bg-secondary/50 rounded-lg p-6 border border-border">
                   <h3 className="font-serif text-lg text-foreground mb-2">Glucosamine & Chondroitin</h3>
                   <p className="font-sans text-sm text-muted-foreground">
-                    While collagen provides the fibrous scaffold of cartilage, glucosamine and chondroitin are components of proteoglycans—the molecules that fill the spaces between collagen fibres and attract water for cushioning. Together, they represent the major structural components of cartilage.
+                    While collagen provides the fibrous scaffold of cartilage, glucosamine and chondroitin are components of proteoglycans, the molecules that fill the spaces between collagen fibres and attract water for cushioning. Together, they represent the major structural components of cartilage.
                   </p>
                 </div>
                 <div className="bg-secondary/50 rounded-lg p-6 border border-border">

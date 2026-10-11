@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     question: "Why doesn't my joint supplement stop my knee pain?",
-    answer: "Because supplements are not painkillers. They provide nutritional support for joint health over time—they don't block pain signals or reduce acute inflammation. If you expected pain relief from a supplement, you may have been misled by marketing. For pain, speak with your GP about appropriate pain management options."
+    answer: "Because supplements are not painkillers. They provide nutritional support for joint health over time, they don't block pain signals or reduce acute inflammation. If you expected pain relief from a supplement, you may have been misled by marketing. For pain, speak with your GP about appropriate pain management options."
   }
 ];
 
@@ -60,7 +60,7 @@ const KneePainSupplementsVsPainkillers = () => {
       />
       <WebPageSchema
         name="Knee Pain Supplements vs Painkillers: Understanding Your Options"
-        description="Comparing supplements and painkillers for knee pain—why they serve different purposes and the importance of appropriate medical care."
+        description="Comparing supplements and painkillers for knee pain, why they serve different purposes and the importance of appropriate medical care."
         url="https://omkneehealth.com/journal/knee-pain-supplements-vs-painkillers"
         type="WebPage"
       />
@@ -98,7 +98,7 @@ const KneePainSupplementsVsPainkillers = () => {
             </h1>
             
             <p className="font-sans text-lg text-muted-foreground leading-relaxed">
-              Why supplements and pain medications serve completely different purposes—and when you should speak with your GP.
+              Why supplements and pain medications serve completely different purposes, and when you should speak with your GP.
             </p>
           </header>
 
@@ -151,7 +151,7 @@ const KneePainSupplementsVsPainkillers = () => {
                     <li>• <strong className="text-foreground">Mechanism:</strong> Supply nutrients for body processes</li>
                     <li>• <strong className="text-foreground">Speed:</strong> Gradual effects over weeks/months</li>
                     <li>• <strong className="text-foreground">Category:</strong> Food supplements (not medicines)</li>
-                    <li>• <strong className="text-foreground">Examples:</strong> <Link to="/ingredients/collagen" className="text-primary hover:underline">Collagen</Link>, <Link to="/ingredients/glucosamine" className="text-primary hover:underline">glucosamine</Link>, <Link to="/ingredients/vitamin-d" className="text-primary hover:underline">vitamin D</Link></li>
+                    <li>• <strong className="text-foreground">Examples:</strong> <Link to="/ingredients/collagen" className="text-primary underline underline-offset-4 hover:text-foreground">Collagen</Link>, <Link to="/ingredients/glucosamine" className="text-primary underline underline-offset-4 hover:text-foreground">glucosamine</Link>, <Link to="/ingredients/vitamin-d" className="text-primary underline underline-offset-4 hover:text-foreground">vitamin D</Link></li>
                   </ul>
                 </div>
               </div>
@@ -162,7 +162,7 @@ const KneePainSupplementsVsPainkillers = () => {
                 Why This Matters for Your Knee Pain
               </h2>
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                If you're experiencing knee pain, you need appropriate pain management—not just nutritional support. Pain is a symptom that often requires medical assessment to understand the cause.
+                If you're experiencing knee pain, you need appropriate pain management, not just nutritional support. Pain is a symptom that often requires medical assessment to understand the cause.
               </p>
               <ul className="space-y-2 font-sans text-muted-foreground mb-4">
                 <li>• <strong className="text-foreground">Acute pain</strong> (new injury, sudden onset) needs medical assessment</li>
@@ -203,7 +203,7 @@ const KneePainSupplementsVsPainkillers = () => {
                 <li>6. <strong className="text-foreground">Nutritional support:</strong> Diet and, if appropriate, supplements</li>
               </ul>
               <p className="font-sans text-muted-foreground leading-relaxed mt-4">
-                Supplements fit into category 6—they're one component of a comprehensive approach, not a standalone solution.
+                Supplements fit into category 6, they're one component of a comprehensive approach, not a standalone solution.
               </p>
             </section>
 
