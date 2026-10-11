@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { isProductionHost } from "@/lib/site";
 
 interface SEOProps {
   title: string;
@@ -66,7 +67,7 @@ const SEO = ({
     // Basic meta tags
     setMetaTag("name", "description", description);
     setMetaTag("name", "keywords", keywords);
-    if (noIndex) {
+    if (noIndex || !isProductionHost()) {
       setMetaTag("name", "robots", "noindex, nofollow");
     } else {
       setMetaTag("name", "robots", "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1");

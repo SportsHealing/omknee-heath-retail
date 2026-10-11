@@ -6,6 +6,16 @@
     <title>OmKneeHealth | Clinician-Founded Knee Health Support</title>
     <meta name="description" content="Explore the OmKnee Five: Understand, Nourish, Load, Diagnose and Treat. Clear UK knee-health guidance, a Knee Score and carefully curated support." />
     <meta name="author" content="OmKneeHealth" />
+
+    <!-- Keep staging hosts such as kneelens.com out of search results. Must match PRODUCTION_HOSTS in src/lib/site.ts -->
+    <script>
+      if (!["omkneehealth.com", "www.omkneehealth.com"].includes(location.hostname)) {
+        var robots = document.createElement("meta");
+        robots.name = "robots";
+        robots.content = "noindex, nofollow";
+        document.head.appendChild(robots);
+      }
+    </script>
     
     <!-- International targeting with UK primary -->
     <meta name="geo.region" content="GB" />
