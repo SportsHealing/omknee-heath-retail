@@ -131,7 +131,7 @@ const JoinForm = ({ source, confirmationHeading = "h2", tone = "light", compact 
   }
 
   const inputClass = dark
-    ? "bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground placeholder:text-primary-foreground/50"
+    ? "bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground placeholder:text-primary-foreground/70"
     : "bg-background";
 
   return (

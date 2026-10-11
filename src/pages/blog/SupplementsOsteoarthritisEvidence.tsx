@@ -22,7 +22,7 @@ import {
 const faqs = [
   {
     question: "Can supplements cure knee osteoarthritis?",
-    answer: "No. Supplements are food products, not medicines. They cannot cure, treat, or prevent osteoarthritis. Osteoarthritis is a complex condition involving cartilage breakdown, bone changes, and inflammation. Supplements can only provide nutritional support—they are not a substitute for medical treatment. Always work with your GP or rheumatologist for osteoarthritis management."
+    answer: "No. Supplements are food products, not medicines. They cannot cure, treat, or prevent osteoarthritis. Osteoarthritis is a complex condition involving cartilage breakdown, bone changes, and inflammation. Supplements can only provide nutritional support, they are not a substitute for medical treatment. Always work with your GP or rheumatologist for osteoarthritis management."
   },
   {
     question: "What supplements do doctors recommend for osteoarthritis?",
@@ -34,11 +34,11 @@ const faqs = [
   },
   {
     question: "Should I take supplements instead of pain medication for osteoarthritis?",
-    answer: "Supplements and pain medications serve completely different purposes. Pain medications address symptoms; supplements provide nutritional support. They are not interchangeable. Never stop or reduce prescribed medications without consulting your GP. Supplements may be used alongside—not instead of—appropriate medical treatment."
+    answer: "Supplements and pain medications serve completely different purposes. Pain medications address symptoms; supplements provide nutritional support. They are not interchangeable. Never stop or reduce prescribed medications without consulting your GP. Supplements may be used alongside, not instead of, appropriate medical treatment."
   },
   {
     question: "How long do osteoarthritis supplements take to work?",
-    answer: "Supplements don't 'work' like medications—they provide nutritional support for gradual processes. Most studies assess outcomes after 8-24 weeks of consistent daily use. Individual responses vary enormously. Some people notice changes; many don't. This is why setting realistic expectations and working with your healthcare provider is essential."
+    answer: "Supplements don't 'work' like medications, they provide nutritional support for gradual processes. Most studies assess outcomes after 8-24 weeks of consistent daily use. Individual responses vary enormously. Some people notice changes; many don't. This is why setting realistic expectations and working with your healthcare provider is essential."
   }
 ];
 
@@ -98,7 +98,7 @@ const SupplementsOsteoarthritisEvidence = () => {
             </h1>
             
             <p className="font-sans text-lg text-muted-foreground leading-relaxed">
-              An honest examination of joint supplement research for osteoarthritis—what works, what doesn't, and why supplements are not a replacement for medical care.
+              An honest examination of joint supplement research for osteoarthritis, what works, what doesn't, and why supplements are not a replacement for medical care.
             </p>
           </header>
 
@@ -124,7 +124,7 @@ const SupplementsOsteoarthritisEvidence = () => {
                 If you've been diagnosed with knee osteoarthritis, you've likely considered supplements. With claims of "joint repair" and "cartilage regeneration" everywhere, it's hard to know what's real. As UK clinicians, we want to give you an honest, evidence-based perspective.
               </p>
               <p className="font-sans text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">The uncomfortable truth:</strong> No supplement can reverse osteoarthritis. Cartilage doesn't regenerate. But that doesn't mean supplements are useless—it means understanding what they can actually do is essential.
+                <strong className="text-foreground">The uncomfortable truth:</strong> No supplement can reverse osteoarthritis. Cartilage doesn't regenerate. But that doesn't mean supplements are useless, it means understanding what they can actually do is essential.
               </p>
             </section>
 
@@ -143,7 +143,7 @@ const SupplementsOsteoarthritisEvidence = () => {
                 <li>• Surgical options when conservative treatment fails</li>
               </ul>
               <p className="font-sans text-muted-foreground leading-relaxed">
-                Supplements are not included in NICE recommendations because the evidence isn't strong enough to warrant official endorsement. This doesn't make them worthless—it means they're not proven treatments.
+                Supplements are not included in NICE recommendations because the evidence isn't strong enough to warrant official endorsement. This doesn't make them worthless, it means they're not proven treatments.
               </p>
             </section>
 
@@ -154,22 +154,22 @@ const SupplementsOsteoarthritisEvidence = () => {
               
               <h3 className="text-xl font-serif text-foreground mb-4">Glucosamine</h3>
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                <Link to="/ingredients/glucosamine" className="text-primary hover:underline">Glucosamine</Link> is the most studied supplement for osteoarthritis. The GAIT trial (2,600+ participants) found glucosamine sulphate no better than placebo overall, though a subgroup with moderate-to-severe knee osteoarthritis showed some benefit. Other studies show varied results. No EFSA health claims.
+                <Link to="/ingredients/glucosamine" className="text-primary underline underline-offset-4 hover:text-foreground">Glucosamine</Link> is the most studied supplement for osteoarthritis. The GAIT trial (2,600+ participants) found glucosamine sulphate no better than placebo overall, though a subgroup with moderate-to-severe knee osteoarthritis showed some benefit. Other studies show varied results. No EFSA health claims.
               </p>
 
               <h3 className="text-xl font-serif text-foreground mb-4">Chondroitin</h3>
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                <Link to="/ingredients/chondroitin" className="text-primary hover:underline">Chondroitin</Link> research shows similar mixed results. Some European trials suggest modest benefits; other large trials show no significant effect. Often combined with glucosamine. No EFSA health claims.
+                <Link to="/ingredients/chondroitin" className="text-primary underline underline-offset-4 hover:text-foreground">Chondroitin</Link> research shows similar mixed results. Some European trials suggest modest benefits; other large trials show no significant effect. Often combined with glucosamine. No EFSA health claims.
               </p>
 
               <h3 className="text-xl font-serif text-foreground mb-4">Collagen</h3>
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                <Link to="/ingredients/collagen" className="text-primary hover:underline">Collagen peptides</Link> research in osteoarthritis contexts is more limited. Some small studies show improvements in joint comfort scores. No EFSA health claims for collagen itself, but vitamin C contributes to normal collagen formation for cartilage function.
+                <Link to="/ingredients/collagen" className="text-primary underline underline-offset-4 hover:text-foreground">Collagen peptides</Link> research in osteoarthritis contexts is more limited. Some small studies show improvements in joint comfort scores. No EFSA health claims for collagen itself, but vitamin C contributes to normal collagen formation for cartilage function.
               </p>
 
               <h3 className="text-xl font-serif text-foreground mb-4">Vitamin D</h3>
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                <Link to="/ingredients/vitamin-d" className="text-primary hover:underline">Vitamin D</Link> has EFSA claims for bone and muscle health. Low vitamin D is common in the UK and may be associated with worse osteoarthritis outcomes in some studies. Addressing deficiency is sensible for general health.
+                <Link to="/ingredients/vitamin-d" className="text-primary underline underline-offset-4 hover:text-foreground">Vitamin D</Link> has EFSA claims for bone and muscle health. Low vitamin D is common in the UK and may be associated with worse osteoarthritis outcomes in some studies. Addressing deficiency is sensible for general health.
               </p>
             </section>
 
@@ -204,7 +204,7 @@ const SupplementsOsteoarthritisEvidence = () => {
                 <li>• <strong className="text-foreground">Pacing:</strong> Balancing activity with rest</li>
               </ul>
               <p className="font-sans text-muted-foreground leading-relaxed mt-4">
-                Supplements, if used, should complement these strategies—not replace them.
+                Supplements, if used, should complement these strategies, not replace them.
               </p>
             </section>
 

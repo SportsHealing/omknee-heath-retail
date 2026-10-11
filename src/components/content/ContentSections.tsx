@@ -89,7 +89,7 @@ const Cta = ({ cta }: { cta: ContentCta }) => {
         </Link>
       )}
       {cta.destinationLabel ? (
-        <span className="block font-sans text-xs text-muted-foreground/80">Destination: {cta.destinationLabel}</span>
+        <span className="block font-sans text-xs text-muted-foreground">Destination: {cta.destinationLabel}</span>
       ) : null}
       {isPlaceholder ? (
         <span className="block mt-2 font-sans text-xs text-muted-foreground">
@@ -107,7 +107,7 @@ const ListBlock = ({ items, ordered, title }: { items: (string | ListItem)[]; or
   return (
     <div>
       {title ? <p className="font-sans font-medium text-foreground mb-3"><T text={title} /></p> : null}
-      <Tag className={`space-y-2 pl-5 ${ordered ? "list-decimal" : "list-disc"} marker:text-primary/60`}>
+      <Tag className={`space-y-2 pl-5 ${ordered ? "list-decimal" : "list-disc"} marker:text-primary/80`}>
         {items.map((raw) => {
           const item = itemOf(raw);
           return (
@@ -248,7 +248,7 @@ const Cycle = ({ steps }: { steps: { label: string; link?: ContentLink }[] }) =>
     {steps.map((step, i) => (
       <li key={step.label} className="relative flex justify-center">
         <div className="flex aspect-square w-40 sm:w-full max-w-[11rem] flex-col items-center justify-center rounded-full border-2 border-primary/40 bg-secondary/40 p-4 text-center">
-          <span className="font-serif text-sm text-primary/60 tabular-nums">{i + 1}</span>
+          <span className="font-serif text-sm text-primary/80 tabular-nums">{i + 1}</span>
           <span className="font-sans text-sm text-foreground leading-snug"><T text={step.label} /></span>
           {step.link ? (
             <InlineLink link={step.link} className="mt-2 font-sans text-xs text-primary underline underline-offset-4" />

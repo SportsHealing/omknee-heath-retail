@@ -50,12 +50,12 @@ const topics = [
     icon: Compass,
     title: "Hips and glutes control where the knee goes",
     plain:
-      "Your knee is a hinge caught between your hip and your foot. If the hip lets the thigh roll inwards, the knee collapses inward with it — the classic 'knee cave' seen when squatting or landing.",
+      "Your knee is a hinge caught between your hip and your foot. If the hip lets the thigh roll inwards, the knee collapses inward with it, the classic 'knee cave' seen when squatting or landing.",
     evidence:
       "Neuromuscular and hip-focused training changes frontal-plane knee mechanics and is a core component of the programmes shown to reduce knee injury rates [5]. Reviews of gait and movement retraining show that how load is distributed at the knee is modifiable with training [3].",
     actions: [
       "Add side-lying leg raises, banded side-steps, bridges and single-leg work",
-      "Film yourself squatting from the front — the kneecap should track over the middle toes",
+      "Film yourself squatting from the front, the kneecap should track over the middle toes",
       "Cue 'knees out, weight through the whole foot'",
       "Balance work on one leg, 30–60 seconds, builds the control that strength alone misses",
     ],
@@ -84,7 +84,7 @@ const topics = [
     actions: [
       "Every day: gently reach full straight and full comfortable bend, several times",
       "Heel slides, seated knee bends and standing hamstring stretches take five minutes",
-      "Move within comfort — stretching should feel like tension, not pain",
+      "Move within comfort, stretching should feel like tension, not pain",
       "If you cannot fully straighten the knee, get it assessed",
     ],
   },
@@ -97,7 +97,7 @@ const topics = [
       "Tendon tissue responds to progressive mechanical loading, and the combination of strengthening through range with mobility work is the approach used in the most successful clinical programmes [4].",
     actions: [
       "Stretch calves, hamstrings, quadriceps and hip flexors after activity, 30 seconds each",
-      "Prefer loaded stretching — slow full-range squats, split squats, calf raises off a step",
+      "Prefer loaded stretching, slow full-range squats, split squats, calf raises off a step",
       "Foam roll if it helps you move more comfortably, as a warm-up rather than a treatment",
       "Consistency across the week beats a single long session",
     ],
@@ -211,7 +211,7 @@ const Biomechanics = () => {
               Knee Strengthening Exercises &amp; Biomechanics
             </h1>
             <p className="font-sans text-lg text-muted-foreground leading-relaxed">
-              Your knee does not choose how much force passes through it — your muscles, your hips
+              Your knee does not choose how much force passes through it, your muscles, your hips
               and your movement habits do. Biomechanics is simply the study of where that force
               lands, and almost all of it is trainable.
             </p>
@@ -277,7 +277,7 @@ const Biomechanics = () => {
           <div className="max-w-4xl mx-auto rounded-xl border border-border bg-muted/40 p-7 md:p-8">
             <h2 className="font-serif text-xl text-foreground mb-3">Five checks you can do at home</h2>
             <p className="font-sans text-sm text-muted-foreground mb-4">
-              Not a diagnosis — just a simple way to spot where your weak link might be. Stop if
+              Not a diagnosis, just a simple way to spot where your weak link might be. Stop if
               anything is painful.
             </p>
             <ul className="space-y-2">

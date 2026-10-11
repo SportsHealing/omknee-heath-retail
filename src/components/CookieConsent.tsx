@@ -149,7 +149,7 @@ const CookieConsent = () => {
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     We use cookies to enhance your browsing experience, analyse site traffic, and personalise content. 
                     By clicking "Accept All", you consent to our use of cookies.{" "}
-                    <a href="/privacy-policy#cookies" className="text-primary hover:underline">
+                    <a href="/privacy-policy#cookies" className="text-primary underline underline-offset-4 hover:text-foreground">
                       Learn more
                     </a>
                   </p>

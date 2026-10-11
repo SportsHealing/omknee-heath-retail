@@ -22,7 +22,7 @@ import {
 const faqs = [
   {
     question: "Can you rebuild knee cartilage with supplements?",
-    answer: "No supplement can 'rebuild' or 'regenerate' knee cartilage—cartilage has very limited capacity for self-repair. Supplements can only provide nutritional support. Vitamin C contributes to normal collagen formation for cartilage function (EFSA claim), but this supports maintenance rather than regeneration. If you have cartilage damage, consult your GP or orthopaedic specialist for appropriate treatment options."
+    answer: "No supplement can 'rebuild' or 'regenerate' knee cartilage, cartilage has very limited capacity for self-repair. Supplements can only provide nutritional support. Vitamin C contributes to normal collagen formation for cartilage function (EFSA claim), but this supports maintenance rather than regeneration. If you have cartilage damage, consult your GP or orthopaedic specialist for appropriate treatment options."
   },
   {
     question: "What is the number one supplement for cartilage?",
@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: "How long does it take for cartilage supplements to work?",
-    answer: "Cartilage supplements don't 'work' like medicines—they provide nutritional support for gradual, cumulative processes. Most people assess their experience after 8-12 weeks of consistent daily use. Results vary significantly between individuals, and some people may not notice any difference. Set realistic expectations: supplements support maintenance, not rapid repair."
+    answer: "Cartilage supplements don't 'work' like medicines, they provide nutritional support for gradual, cumulative processes. Most people assess their experience after 8-12 weeks of consistent daily use. Results vary significantly between individuals, and some people may not notice any difference. Set realistic expectations: supplements support maintenance, not rapid repair."
   },
   {
     question: "Are knee cartilage supplements safe?",
@@ -100,7 +100,7 @@ const BestSupplementKneeCartilage = () => {
             </h1>
             
             <p className="font-sans text-lg text-muted-foreground leading-relaxed">
-              A UK clinician's evidence-based guide to choosing a knee cartilage supplement—examining what really works, what the evidence shows, and what to look for.
+              A UK clinician's evidence-based guide to choosing a knee cartilage supplement, examining what really works, what the evidence shows, and what to look for.
             </p>
           </header>
 
@@ -132,7 +132,7 @@ const BestSupplementKneeCartilage = () => {
                 </p>
               </div>
               <p className="font-sans text-muted-foreground leading-relaxed">
-                This makes vitamin C essential in any cartilage support formula—not as a standalone, but as a necessary cofactor for collagen synthesis.
+                This makes vitamin C essential in any cartilage support formula, not as a standalone, but as a necessary cofactor for collagen synthesis.
               </p>
             </section>
 
@@ -144,22 +144,22 @@ const BestSupplementKneeCartilage = () => {
               
               <h3 className="text-xl font-serif text-foreground mb-4">Hydrolysed Collagen Peptides</h3>
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                <Link to="/ingredients/collagen" className="text-primary hover:underline">Collagen</Link> is the primary structural protein in cartilage. Hydrolysed peptides are broken down for absorption. While collagen lacks EFSA claims, it provides amino acids (glycine, proline, hydroxyproline) the body uses in collagen synthesis.
+                <Link to="/ingredients/collagen" className="text-primary underline underline-offset-4 hover:text-foreground">Collagen</Link> is the primary structural protein in cartilage. Hydrolysed peptides are broken down for absorption. While collagen lacks EFSA claims, it provides amino acids (glycine, proline, hydroxyproline) the body uses in collagen synthesis.
               </p>
 
               <h3 className="text-xl font-serif text-foreground mb-4">Glucosamine Sulphate</h3>
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                <Link to="/ingredients/glucosamine" className="text-primary hover:underline">Glucosamine</Link> is a building block for proteoglycans—the cushioning molecules in cartilage. It's extensively studied but lacks EFSA claims. Most research uses the sulphate form.
+                <Link to="/ingredients/glucosamine" className="text-primary underline underline-offset-4 hover:text-foreground">Glucosamine</Link> is a building block for proteoglycans, the cushioning molecules in cartilage. It's extensively studied but lacks EFSA claims. Most research uses the sulphate form.
               </p>
 
               <h3 className="text-xl font-serif text-foreground mb-4">Chondroitin Sulphate</h3>
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                <Link to="/ingredients/chondroitin" className="text-primary hover:underline">Chondroitin</Link> is a component of cartilage that attracts water for cushioning. Often paired with glucosamine, it also lacks EFSA claims.
+                <Link to="/ingredients/chondroitin" className="text-primary underline underline-offset-4 hover:text-foreground">Chondroitin</Link> is a component of cartilage that attracts water for cushioning. Often paired with glucosamine, it also lacks EFSA claims.
               </p>
 
               <h3 className="text-xl font-serif text-foreground mb-4">Supporting Nutrients</h3>
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                <Link to="/ingredients/vitamin-d" className="text-primary hover:underline">Vitamin D</Link> contributes to normal bone maintenance (the structural support for joints). <Link to="/ingredients/trace-minerals" className="text-primary hover:underline">Copper and manganese</Link> contribute to normal connective tissue formation. These have EFSA-authorised claims.
+                <Link to="/ingredients/vitamin-d" className="text-primary underline underline-offset-4 hover:text-foreground">Vitamin D</Link> contributes to normal bone maintenance (the structural support for joints). <Link to="/ingredients/trace-minerals" className="text-primary underline underline-offset-4 hover:text-foreground">Copper and manganese</Link> contribute to normal connective tissue formation. These have EFSA-authorised claims.
               </p>
             </section>
 
@@ -246,7 +246,7 @@ const BestSupplementKneeCartilage = () => {
                 Our Approach to Knee Cartilage Support
               </h2>
               <p className="font-sans text-muted-foreground mb-6 text-sm leading-relaxed">
-                We've formulated a comprehensive knee joint supplement with collagen, glucosamine, chondroitin, vitamin C, and supporting nutrients—all at research-informed doses. UK-manufactured and third-party tested.
+                We've formulated a comprehensive knee joint supplement with collagen, glucosamine, chondroitin, vitamin C, and supporting nutrients, all at research-informed doses. UK-manufactured and third-party tested.
               </p>
               <Link 
                 to="/shop/omkneehealth-supplement" 
@@ -256,7 +256,7 @@ const BestSupplementKneeCartilage = () => {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <p className="font-sans text-xs text-muted-foreground mt-4">
-                Or <Link to="/knee-score" className="text-primary hover:underline">take our free knee assessment</Link> first
+                Or <Link to="/knee-score" className="text-primary underline underline-offset-4 hover:text-foreground">take our free knee assessment</Link> first
               </p>
             </div>
           </section>

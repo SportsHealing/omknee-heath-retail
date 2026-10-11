@@ -22,11 +22,11 @@ import {
 const faqs = [
   {
     question: "Does zinc help with joint health?",
-    answer: "Zinc contributes to normal protein synthesis (EFSA-authorised claim)—including proteins in connective tissues. It also contributes to the maintenance of normal bones and protection of cells from oxidative stress. While zinc isn't specific to cartilage, these functions support the body's ability to maintain and repair connective tissues throughout the body, including in joints."
+    answer: "Zinc contributes to normal protein synthesis (EFSA-authorised claim), including proteins in connective tissues. It also contributes to the maintenance of normal bones and protection of cells from oxidative stress. Zinc isn't specific to cartilage."
   },
   {
     question: "Why is copper important for connective tissue?",
-    answer: "Copper contributes to maintenance of normal connective tissues (EFSA-authorised claim). It's a cofactor for lysyl oxidase, an enzyme involved in cross-linking collagen and elastin fibres—giving connective tissues their strength and elasticity. Without adequate copper, collagen fibres cannot form proper cross-links."
+    answer: "Copper contributes to maintenance of normal connective tissues (EFSA-authorised claim). It's a cofactor for lysyl oxidase, an enzyme involved in cross-linking collagen and elastin fibres, giving connective tissues their strength and elasticity. Without adequate copper, collagen fibres cannot form proper cross-links."
   },
   {
     question: "What does boron do for joints?",
@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: "How much zinc, copper, and boron do I need?",
-    answer: "Our formula contains zinc and copper. Full amounts are listed on the product page. The zinc-to-copper ratio is important—high zinc intake can interfere with copper absorption, so we maintain appropriate balance."
+    answer: "Our formula contains zinc and copper. Full amounts are listed on the product page. The zinc-to-copper ratio is important, high zinc intake can interfere with copper absorption, so we maintain appropriate balance."
   },
   {
     question: "Can I get these minerals from food?",
@@ -88,7 +88,7 @@ const TraceMinerals = () => {
               Zinc, Copper & Boron for Joint Health
             </h1>
             <p className="font-sans text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Understanding the essential trace minerals that support connective tissue, protein synthesis, and bone maintenance—often overlooked but fundamentally important.
+              Understanding the essential trace minerals that support connective tissue, protein synthesis, and bone maintenance, often overlooked but fundamentally important.
             </p>
           </div>
         </section>
@@ -105,7 +105,7 @@ const TraceMinerals = () => {
               </div>
               <div className="prose prose-neutral max-w-none">
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                  Zinc is an essential trace mineral involved in over 300 enzymatic reactions in the body. It's a cofactor for enzymes involved in protein synthesis, DNA repair, and cell division—fundamental processes for tissue maintenance and repair.
+                  Zinc is an essential trace mineral involved in over 300 enzymatic reactions in the body. It's a cofactor for enzymes involved in protein synthesis, DNA repair, and cell division, fundamental processes for tissue maintenance and repair.
                 </p>
                 <div className="bg-background rounded-lg p-6 border border-border mt-6 mb-4">
                   <p className="font-sans text-sm text-foreground font-medium mb-2">EFSA-Authorised Claims for Zinc:</p>
@@ -136,7 +136,7 @@ const TraceMinerals = () => {
               </div>
               <div className="prose prose-neutral max-w-none">
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                  Copper is essential for the function of lysyl oxidase—an enzyme that catalyses the cross-linking of collagen and elastin fibres. These cross-links give connective tissues their structural integrity and tensile strength.
+                  Copper is essential for the function of lysyl oxidase, an enzyme that catalyses the cross-linking of collagen and elastin fibres. These cross-links give connective tissues their structural integrity and tensile strength.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
                   Without adequate copper, collagen fibres cannot form the proper chemical bonds that hold them together. This affects not just cartilage, but tendons, ligaments, blood vessels, and skin throughout the body.
@@ -169,7 +169,7 @@ const TraceMinerals = () => {
               </div>
               <div className="prose prose-neutral max-w-none">
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                  Boron is an ultra-trace mineral that influences the metabolism of other minerals—particularly calcium, magnesium, and phosphorus. It also appears to affect vitamin D metabolism and may influence steroid hormone activity.
+                  Boron is an ultra-trace mineral that influences the metabolism of other minerals, particularly calcium, magnesium, and phosphorus. It also appears to affect vitamin D metabolism and may influence steroid hormone activity.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
                   Research has examined boron in various contexts, including bone health and joint function. While the mechanisms aren't fully understood, boron deprivation studies in humans have shown effects on calcium and magnesium balance.

@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: "Where does chondroitin come from?",
-    answer: "Chondroitin sulphate is typically derived from animal cartilage—most commonly bovine (cow) trachea, porcine (pig) cartilage, or marine sources such as shark cartilage. The source can affect purity and potency. We use bovine-sourced chondroitin sulphate, which is commonly used in research and has established quality standards."
+    answer: "Chondroitin sulphate is typically derived from animal cartilage, most commonly bovine (cow) trachea, porcine (pig) cartilage, or marine sources such as shark cartilage. The source can affect purity and potency. We use bovine-sourced chondroitin sulphate, which is commonly used in research and has established quality standards."
   },
   {
     question: "Is chondroitin safe to take long-term?",
@@ -88,7 +88,7 @@ const Chondroitin = () => {
               Chondroitin for Knee Joints
             </h1>
             <p className="font-sans text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Understanding chondroitin sulphate as a cartilage component—the classic partner to glucosamine and what research reveals about their combination.
+              Understanding chondroitin sulphate as a cartilage component, the classic partner to glucosamine and what research reveals about their combination.
             </p>
           </div>
         </section>
@@ -105,13 +105,13 @@ const Chondroitin = () => {
               </div>
               <div className="prose prose-neutral max-w-none">
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                  Chondroitin sulphate is a glycosaminoglycan (GAG)—a long chain of repeating sugar units—found naturally in cartilage and other connective tissues. It's a key structural component of the cartilage matrix, contributing to its resilience and cushioning properties.
+                  Chondroitin sulphate is a glycosaminoglycan (GAG), a long chain of repeating sugar units, found naturally in cartilage and other connective tissues. It's a key structural component of the cartilage matrix, contributing to its resilience and cushioning properties.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
                   In cartilage, chondroitin sulphate forms part of larger molecules called <strong className="text-foreground">proteoglycans</strong>. These proteoglycans have a protein core with numerous glycosaminoglycan chains attached, creating a bottle-brush-like structure that attracts and holds water.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed">
-                  Supplemental chondroitin sulphate is typically extracted from animal cartilage—bovine trachea is a common source. It's often combined with glucosamine, reflecting how these compounds naturally occur together in cartilage tissue.
+                  Supplemental chondroitin sulphate is typically extracted from animal cartilage, bovine trachea is a common source. It's often combined with glucosamine, reflecting how these compounds naturally occur together in cartilage tissue.
                 </p>
               </div>
             </div>
@@ -130,7 +130,7 @@ const Chondroitin = () => {
               </div>
               <div className="prose prose-neutral max-w-none">
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                  Cartilage's ability to cushion and protect joints depends heavily on its water content. The proteoglycans containing chondroitin sulphate are highly hydrophilic—they attract and bind water molecules, creating a gel-like matrix that resists compression.
+                  Cartilage's ability to cushion and protect joints depends heavily on its water content. The proteoglycans containing chondroitin sulphate are highly hydrophilic, they attract and bind water molecules, creating a gel-like matrix that resists compression.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
                   When you walk, run, or jump, this water-filled matrix distributes forces across the joint surface. The chondroitin-containing proteoglycans act like tiny water balloons, providing shock absorption and allowing smooth, low-friction movement.

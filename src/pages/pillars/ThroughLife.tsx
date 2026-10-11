@@ -18,7 +18,7 @@ const ThroughLife = () => (
   <div className="min-h-screen bg-background">
     <SEO
       title="Healthy Knees Through Life | Knee Health by Decade"
-      description="What to prioritise for knee health in your 20s, 30s, 40s, 50s, 60s and beyond — strength, nutrition, load and confidence in movement."
+      description="What to prioritise for knee health in your 20s, 30s, 40s, 50s, 60s and beyond, strength, nutrition, load and confidence in movement."
       canonicalPath="/healthy-knees-through-life"
       keywords="knee health ageing, healthy knees over 50, knee strength older adults"
     />
@@ -37,7 +37,7 @@ const ThroughLife = () => (
           <p className="font-sans text-xs tracking-[0.2em] uppercase text-primary/80 mb-6">Cornerstone</p>
           <h1 className="font-serif text-4xl md:text-5xl text-foreground leading-tight mb-6">Healthy knees through life</h1>
           <p className="font-sans text-lg text-muted-foreground leading-relaxed">
-            The principles barely change with age. What changes is the emphasis — and how quickly
+            The principles barely change with age. What changes is the emphasis, and how quickly
             things slip when the habit stops.
           </p>
         </div>

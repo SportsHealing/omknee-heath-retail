@@ -51,7 +51,7 @@ const Learn = () => (
           {OMKNEE_FIVE.map((pillar) => (
             <li key={pillar.id}>
               <Link to={pillar.to} onClick={() => trackPillarSelect(pillar.id)} className={cardClass}>
-                <span className="font-serif text-sm text-primary/60 tabular-nums mb-3">{pillar.number}</span>
+                <span className="font-serif text-sm text-primary/80 tabular-nums mb-3">{pillar.number}</span>
                 <span className="font-serif text-2xl text-foreground mb-1">{pillar.name}</span>
                 <span className="font-sans text-sm text-primary mb-3">{pillar.strapline}</span>
                 <span className="font-sans text-sm text-muted-foreground leading-relaxed flex-1">

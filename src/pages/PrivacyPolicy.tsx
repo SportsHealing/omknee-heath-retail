@@ -70,7 +70,7 @@ const PrivacyPolicy = () => {
                 <div className="bg-muted/30 rounded-xl p-6 border border-border">
                   <p className="text-foreground font-medium mb-2">OmKneeHealth</p>
                   <p className="text-muted-foreground">
-                    Email: <a href="mailto:hello@omkneehealth.com" className="text-primary hover:underline">hello@omkneehealth.com</a>
+                    Email: <a href="mailto:hello@omkneehealth.com" className="text-primary underline underline-offset-4 hover:text-foreground">hello@omkneehealth.com</a>
                   </p>
                 </div>
               </section>
@@ -192,7 +192,7 @@ const PrivacyPolicy = () => {
                 </ul>
                 <p className="text-muted-foreground leading-relaxed mt-4">
                   To exercise any of these rights, please contact us at{" "}
-                  <a href="mailto:hello@omkneehealth.com" className="text-primary hover:underline">hello@omkneehealth.com</a>. 
+                  <a href="mailto:hello@omkneehealth.com" className="text-primary underline underline-offset-4 hover:text-foreground">hello@omkneehealth.com</a>. 
                   We will respond within one month of your request.
                 </p>
               </section>
@@ -244,7 +244,7 @@ const PrivacyPolicy = () => {
                 <h2 className="text-xl font-serif text-foreground mb-4">14. Complaints</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   If you have concerns about how we handle your personal data, please contact us first at{" "}
-                  <a href="mailto:hello@omkneehealth.com" className="text-primary hover:underline">hello@omkneehealth.com</a>. 
+                  <a href="mailto:hello@omkneehealth.com" className="text-primary underline underline-offset-4 hover:text-foreground">hello@omkneehealth.com</a>. 
                   We will do our best to resolve any issues.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
@@ -252,7 +252,7 @@ const PrivacyPolicy = () => {
                 </p>
                 <div className="bg-muted/30 rounded-xl p-6 border border-border mt-4">
                   <p className="text-foreground font-medium mb-2">Information Commissioner's Office</p>
-                  <p className="text-muted-foreground mb-1">Website: <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">ico.org.uk</a></p>
+                  <p className="text-muted-foreground mb-1">Website: <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-4 hover:text-foreground">ico.org.uk</a></p>
                   <p className="text-muted-foreground">Helpline: 0303 123 1113</p>
                 </div>
               </section>
@@ -267,7 +267,7 @@ const PrivacyPolicy = () => {
                 <div className="bg-muted/30 rounded-xl p-6 border border-border">
                   <p className="text-foreground font-medium mb-2">OmKneeHealth</p>
                   <p className="text-muted-foreground">
-                    Email: <a href="mailto:hello@omkneehealth.com" className="text-primary hover:underline">hello@omkneehealth.com</a>
+                    Email: <a href="mailto:hello@omkneehealth.com" className="text-primary underline underline-offset-4 hover:text-foreground">hello@omkneehealth.com</a>
                   </p>
                 </div>
               </section>

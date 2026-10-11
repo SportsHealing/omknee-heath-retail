@@ -51,7 +51,7 @@ export const HomeHero = () => (
         </p>
       </div>
     </div>
-    <p className="absolute bottom-4 left-0 right-0 text-center font-sans text-xs text-primary-foreground/50">
+    <p className="absolute bottom-4 left-0 right-0 text-center font-sans text-xs text-primary-foreground/70">
       [Hero photography: calm movement, no clinical imagery]
     </p>
   </section>

@@ -22,7 +22,7 @@ import {
 const faqs = [
   {
     question: "Does collagen actually help knee joints?",
-    answer: "Collagen supplements provide amino acids (glycine, proline, hydroxyproline) that the body uses in its natural collagen synthesis processes. Collagen is the main structural protein in cartilage and connective tissue. However, collagen itself does not have EFSA-authorised health claims for joints—though vitamin C, often paired with collagen, contributes to normal collagen formation for cartilage function."
+    answer: "Collagen supplements provide amino acids (glycine, proline, hydroxyproline) that the body uses in its natural collagen synthesis processes. Collagen is the main structural protein in cartilage and connective tissue. However, collagen itself does not have EFSA-authorised health claims for joints, though vitamin C, often paired with collagen, contributes to normal collagen formation for cartilage function."
   },
   {
     question: "What type of collagen is best for knee joints?",
@@ -30,11 +30,11 @@ const faqs = [
   },
   {
     question: "How much collagen should I take for knee joints?",
-    answer: "Clinical studies have examined a range of daily doses. Consistency matters more than exact dosage—most studies assess outcomes after 8-24 weeks of daily use. Always pair collagen with vitamin C, which is essential for collagen synthesis."
+    answer: "Clinical studies have examined a range of daily doses. Consistency matters more than exact dosage, most studies assess outcomes after 8-24 weeks of daily use. Always pair collagen with vitamin C, which is essential for collagen synthesis."
   },
   {
     question: "How long does collagen take to work for knees?",
-    answer: "Collagen supplements support gradual processes rather than providing immediate effects. Most studies assess outcomes after 8-24 weeks of consistent daily use. Individual responses vary significantly based on age, baseline nutrition, activity levels, and overall health. Don't expect quick results—set realistic, long-term expectations."
+    answer: "Collagen supplements support gradual processes rather than providing immediate effects. Most studies assess outcomes after 8-24 weeks of consistent daily use. Individual responses vary significantly based on age, baseline nutrition, activity levels, and overall health. Don't expect quick results, set realistic, long-term expectations."
   },
   {
     question: "Can I get enough collagen from food for my knees?",
@@ -98,7 +98,7 @@ const CollagenSupplementsKneeJoints = () => {
             </h1>
             
             <p className="font-sans text-lg text-muted-foreground leading-relaxed">
-              Understanding what collagen supplements can and cannot do for your knees—an honest, evidence-based perspective from UK clinicians.
+              Understanding what collagen supplements can and cannot do for your knees, an honest, evidence-based perspective from UK clinicians.
             </p>
           </header>
 
@@ -106,10 +106,10 @@ const CollagenSupplementsKneeJoints = () => {
             
             <section className="mb-12">
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                Collagen supplements have become increasingly popular for joint health, but do they actually help knee joints? The answer is nuanced—and depends on what you mean by "help."
+                Collagen supplements have become increasingly popular for joint health, but do they actually help knee joints? The answer is nuanced, and depends on what you mean by "help."
               </p>
               <p className="font-sans text-muted-foreground leading-relaxed">
-                <Link to="/ingredients/collagen" className="text-primary hover:underline">Collagen</Link> is the most abundant protein in your body and the primary structural component of cartilage. When you take hydrolysed collagen peptides, they're broken down into amino acids that the body can use in its natural collagen synthesis processes. But there's a crucial distinction between providing building blocks and guaranteeing specific outcomes.
+                <Link to="/ingredients/collagen" className="text-primary underline underline-offset-4 hover:text-foreground">Collagen</Link> is the most abundant protein in your body and the primary structural component of cartilage. When you take hydrolysed collagen peptides, they're broken down into amino acids that the body can use in its natural collagen synthesis processes. But there's a crucial distinction between providing building blocks and guaranteeing specific outcomes.
               </p>
             </section>
 
@@ -128,7 +128,7 @@ const CollagenSupplementsKneeJoints = () => {
               <div className="bg-secondary/50 rounded-lg p-6 border border-border mt-6">
                 <p className="font-sans text-sm text-foreground font-medium mb-2">The Regulatory Reality</p>
                 <p className="font-sans text-sm text-muted-foreground">
-                  Collagen does not have EFSA-authorised health claims for joints or cartilage. This doesn't mean it's useless—it means the evidence wasn't sufficient for regulators to approve specific claims. However, <strong>vitamin C contributes to normal collagen formation for the normal function of cartilage</strong>—which is why pairing collagen with vitamin C makes scientific sense.
+                  Collagen does not have EFSA-authorised health claims for joints or cartilage. This doesn't mean it's useless, it means the evidence wasn't sufficient for regulators to approve specific claims. However, <strong>vitamin C contributes to normal collagen formation for the normal function of cartilage</strong>, which is why pairing collagen with vitamin C makes scientific sense.
                 </p>
               </div>
             </section>
@@ -138,10 +138,10 @@ const CollagenSupplementsKneeJoints = () => {
                 Why Vitamin C Matters
               </h2>
               <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                Vitamin C is essential for collagen synthesis. It acts as a cofactor for the enzymes that hydroxylate proline and lysine—steps required for stable collagen structure. Without adequate vitamin C, the body cannot properly synthesise collagen, regardless of how much collagen you consume.
+                Vitamin C is essential for collagen synthesis. It acts as a cofactor for the enzymes that hydroxylate proline and lysine, steps required for stable collagen structure. Without adequate vitamin C, the body cannot properly synthesise collagen, regardless of how much collagen you consume.
               </p>
               <p className="font-sans text-muted-foreground leading-relaxed">
-                This is why any quality collagen supplement should include vitamin C. Our <Link to="/shop/omkneehealth-supplement" className="text-primary hover:underline">knee joint formula</Link> includes vitamin C for this reason.
+                This is why any quality collagen supplement should include vitamin C. Our <Link to="/shop/omkneehealth-supplement" className="text-primary underline underline-offset-4 hover:text-foreground">knee joint formula</Link> includes vitamin C for this reason.
               </p>
             </section>
 
@@ -175,7 +175,7 @@ const CollagenSupplementsKneeJoints = () => {
                 <li>• <strong className="text-foreground">Hydrolysed peptides:</strong> Better absorbed than intact collagen</li>
                                 <li>• <strong className="text-foreground">Vitamin C included:</strong> Essential for collagen synthesis</li>
                 <li>• <strong className="text-foreground">UK GMP manufacturing:</strong> Quality assurance</li>
-                <li>• <strong className="text-foreground">Complementary ingredients:</strong> <Link to="/ingredients/glucosamine" className="text-primary hover:underline">Glucosamine</Link> and <Link to="/ingredients/chondroitin" className="text-primary hover:underline">chondroitin</Link> for comprehensive support</li>
+                <li>• <strong className="text-foreground">Complementary ingredients:</strong> <Link to="/ingredients/glucosamine" className="text-primary underline underline-offset-4 hover:text-foreground">Glucosamine</Link> and <Link to="/ingredients/chondroitin" className="text-primary underline underline-offset-4 hover:text-foreground">chondroitin</Link> for comprehensive support</li>
               </ul>
             </section>
 
@@ -227,7 +227,7 @@ const CollagenSupplementsKneeJoints = () => {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <p className="font-sans text-xs text-muted-foreground mt-4">
-                Or learn more about <Link to="/ingredients/collagen" className="text-primary hover:underline">collagen science</Link>
+                Or learn more about <Link to="/ingredients/collagen" className="text-primary underline underline-offset-4 hover:text-foreground">collagen science</Link>
               </p>
             </div>
           </section>

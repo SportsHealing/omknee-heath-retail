@@ -121,7 +121,7 @@ const Header = () => {
                               }}
                               className="group flex gap-3 rounded-lg px-3 py-2.5 -mx-3 transition-colors hover:bg-secondary/60"
                             >
-                              <span className="font-serif text-sm text-primary/60 tabular-nums pt-0.5">
+                              <span className="font-serif text-sm text-primary/80 tabular-nums pt-0.5">
                                 {pillar.number}
                               </span>
                               <span>
@@ -239,7 +239,7 @@ const Header = () => {
                         }}
                         className="flex items-center gap-3 min-h-[44px] font-sans text-sm text-muted-foreground hover:text-primary transition-colors"
                       >
-                        <span className="font-serif text-xs text-primary/60 tabular-nums">{pillar.number}</span>
+                        <span className="font-serif text-xs text-primary/80 tabular-nums">{pillar.number}</span>
                         {pillar.name}
                       </Link>
                     </li>

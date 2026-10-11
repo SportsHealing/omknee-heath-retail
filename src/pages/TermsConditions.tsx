@@ -69,7 +69,7 @@ const TermsConditions = () => {
                 <div className="bg-muted/30 rounded-xl p-6 border border-border">
                   <p className="text-foreground font-medium mb-2">Contact Information</p>
                   <p className="text-muted-foreground">
-                    Email: <a href="mailto:hello@omkneehealth.com" className="text-primary hover:underline">hello@omkneehealth.com</a>
+                    Email: <a href="mailto:hello@omkneehealth.com" className="text-primary underline underline-offset-4 hover:text-foreground">hello@omkneehealth.com</a>
                   </p>
                 </div>
               </section>
@@ -316,7 +316,7 @@ const TermsConditions = () => {
                 <div className="bg-muted/30 rounded-xl p-6 border border-border">
                   <p className="text-foreground font-medium mb-2">OmKneeHealth</p>
                   <p className="text-muted-foreground">
-                    Email: <a href="mailto:hello@omkneehealth.com" className="text-primary hover:underline">hello@omkneehealth.com</a>
+                    Email: <a href="mailto:hello@omkneehealth.com" className="text-primary underline underline-offset-4 hover:text-foreground">hello@omkneehealth.com</a>
                   </p>
                 </div>
               </section>

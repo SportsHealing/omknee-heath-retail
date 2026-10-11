@@ -191,7 +191,7 @@ const ContentReview = () => {
                     </p>
 
                     <label
-                      className="block font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground/80 mb-2"
+                      className="block font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2"
                       htmlFor={`claim-${claim.id}`}
                     >
                       Proposed wording

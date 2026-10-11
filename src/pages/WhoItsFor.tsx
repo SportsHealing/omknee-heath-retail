@@ -35,8 +35,8 @@ const suitableFor = [
 ];
 
 const notSuitableFor = [
-  "Anyone seeking treatment for diagnosed conditions—this is a food supplement, not a medicine",
-  "Those expecting immediate results—nutritional support is gradual",
+  "Anyone seeking treatment for diagnosed conditions, this is a food supplement, not a medicine",
+  "Those expecting immediate results, nutritional support is gradual",
   "People with fish or shellfish allergies",
   "Pregnant or breastfeeding women (without healthcare provider approval)",
   "Anyone taking blood-thinning medication (without healthcare provider approval)",
@@ -60,7 +60,7 @@ const WhoItsFor = () => {
       />
       <WebPageSchema
         name="Who Is OmKneeHealth For? - Knee Joint Support"
-        description="Understanding who our knee joint supplement is designed for—and who should consider other options."
+        description="Understanding who our knee joint supplement is designed for, and who should consider other options."
         url="https://omkneehealth.com/who-its-for"
         type="WebPage"
       />
@@ -77,7 +77,7 @@ const WhoItsFor = () => {
               Who Is OmKneeHealth For?
             </h1>
             <p className="font-sans text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Our knee joint supplement is designed for adults taking a proactive, long-term approach to joint health. We believe in being transparent about who we're designed for—and who might be better served elsewhere.
+              Our knee joint supplement is designed for adults taking a proactive, long-term approach to joint health. We believe in being transparent about who we're designed for, and who might be better served elsewhere.
             </p>
           </div>
         </section>
@@ -142,7 +142,7 @@ const WhoItsFor = () => {
             </h2>
             <div className="space-y-4 font-sans text-sm text-muted-foreground">
               <p>
-                We formulated this supplement for people who understand that joint health is a long-term investment—not a quick fix. Supplements provide nutritional support, not therapeutic treatment.
+                We formulated this supplement for people who understand that joint health is a long-term investment, not a quick fix. Supplements provide nutritional support, not therapeutic treatment.
               </p>
               <p>
                 If you're experiencing significant knee pain or have been diagnosed with a joint condition, please work with a healthcare professional. Our supplement may complement their guidance, but it's not a replacement for medical care.

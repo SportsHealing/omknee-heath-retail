@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: "Can I take boswellia with other supplements?",
-    answer: "Boswellia is commonly combined with other botanicals like curcumin in joint support formulas. There are no well-documented interactions between boswellia and other common joint supplements. However, if you take medications—particularly anti-inflammatory drugs or blood thinners—consult your healthcare provider before adding any new supplement."
+    answer: "Boswellia is commonly combined with other botanicals like curcumin in joint support formulas. There are no well-documented interactions between boswellia and other common joint supplements. However, if you take medications, particularly anti-inflammatory drugs or blood thinners, consult your healthcare provider before adding any new supplement."
   },
   {
     question: "How long does boswellia take to work?",
@@ -88,7 +88,7 @@ const Boswellia = () => {
               Boswellia for Knee Joints
             </h1>
             <p className="font-sans text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Understanding Indian frankincense (Boswellia serrata) and its active boswellic acids—traditional use meets modern research.
+              Understanding Indian frankincense (Boswellia serrata) and its active boswellic acids, traditional use meets modern research.
             </p>
           </div>
         </section>
@@ -105,10 +105,10 @@ const Boswellia = () => {
               </div>
               <div className="prose prose-neutral max-w-none">
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                  Boswellia serrata is a tree native to India, North Africa, and the Middle East. The resin extracted from its bark—commonly known as Indian frankincense—has been used in traditional Ayurvedic medicine for centuries.
+                  Boswellia serrata is a tree native to India, North Africa, and the Middle East. The resin extracted from its bark, commonly known as Indian frankincense, has been used in traditional Ayurvedic medicine for centuries.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                  The active compounds in boswellia are <strong className="text-foreground">boswellic acids</strong>—a group of pentacyclic triterpenic acids. The most studied of these is AKBA (acetyl-11-keto-β-boswellic acid), which is considered the most biologically active component.
+                  The active compounds in boswellia are <strong className="text-foreground">boswellic acids</strong>, a group of pentacyclic triterpenic acids. The most studied of these is AKBA (acetyl-11-keto-β-boswellic acid), which is considered the most biologically active component.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed">
                   Modern boswellia extracts are typically standardised to contain a specific percentage of boswellic acids (usually 30-65%) to ensure consistent potency across batches.
@@ -133,7 +133,7 @@ const Boswellia = () => {
                   Boswellic acids have been the subject of numerous laboratory and clinical studies. Research has examined their biological activity at the cellular and molecular level, identifying several mechanisms of interest.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
-                  In laboratory studies, boswellic acids have demonstrated activity against certain enzymes involved in the inflammatory cascade. However, it's important to distinguish between laboratory findings and clinical outcomes—what happens in a test tube doesn't always translate directly to human health benefits.
+                  In laboratory studies, boswellic acids have demonstrated activity against certain enzymes involved in the inflammatory cascade. However, it's important to distinguish between laboratory findings and clinical outcomes, what happens in a test tube doesn't always translate directly to human health benefits.
                 </p>
                 <p className="font-sans text-muted-foreground leading-relaxed mb-4">
                   Multiple clinical trials have examined boswellia in the context of joint health, with varying results. Some studies report improvements in joint comfort and function scores, while others show more modest effects.

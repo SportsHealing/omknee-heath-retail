@@ -66,7 +66,7 @@ const Partners = () => {
             <p className="font-sans text-lg text-muted-foreground leading-relaxed">
               OmKneeHealth is about everyday knee health and wellness: how you move, eat, train and
               recover. When a knee needs assessment, imaging or a specialist opinion, that is a
-              clinical question — and these are the partners we send people to.
+              clinical question, and these are the partners we send people to.
             </p>
           </div>
         </section>
@@ -135,7 +135,7 @@ const Partners = () => {
             <h2 className="font-serif text-xl text-foreground mb-3">Which one do I need?</h2>
             <ul className="space-y-3 font-sans text-sm text-muted-foreground">
               <li>
-                <strong className="text-foreground">Understanding your knee</strong> — start with the
+                <strong className="text-foreground">Understanding your knee</strong>, start with the
                 Knee Passport library at{" "}
                 <a
                   href="https://www.sportshealing.com/know-your-knee/"
@@ -148,7 +148,7 @@ const Partners = () => {
                 .
               </li>
               <li>
-                <strong className="text-foreground">Symptoms you cannot place</strong> — the{" "}
+                <strong className="text-foreground">Symptoms you cannot place</strong>, the{" "}
                 <a
                   href="https://mykneescore.com/"
                   target="_blank"
@@ -164,7 +164,7 @@ const Partners = () => {
                 .
               </li>
               <li>
-                <strong className="text-foreground">A scan has been suggested</strong> —{" "}
+                <strong className="text-foreground">A scan has been suggested</strong>, {" "}
                 <a
                   href="https://www.mykneescan.com/booking"
                   target="_blank"
@@ -176,7 +176,7 @@ const Partners = () => {
                 with an expert report.
               </li>
               <li>
-                <strong className="text-foreground">A specialist opinion or surgery</strong> —{" "}
+                <strong className="text-foreground">A specialist opinion or surgery</strong>, {" "}
                 <a
                   href="https://www.chinmaygupte.com/knee-treatments/knee-surgeon-london/"
                   target="_blank"
