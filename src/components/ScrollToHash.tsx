@@ -1,6 +1,16 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+/**
+ * Space to leave above an anchor target: its CSS scroll-margin-top if set
+ * (which also covers sticky in-page menus), otherwise the fixed header height.
+ */
+const anchorOffset = (element: HTMLElement) => {
+  const header = document.querySelector("header")?.getBoundingClientRect().height ?? 0;
+  const margin = parseFloat(getComputedStyle(element).scrollMarginTop) || 0;
+  return Math.max(margin, header);
+};
+
 const ScrollToHash = () => {
   const { pathname, hash } = useLocation();
 
@@ -15,8 +25,7 @@ const ScrollToHash = () => {
     const timeoutId = setTimeout(() => {
       const element = document.getElementById(hash.slice(1));
       if (element) {
-        // Account for fixed header height (80px on desktop, 64px on mobile)
-        const headerOffset = window.innerWidth >= 1024 ? 80 : 64;
+        const headerOffset = anchorOffset(element);
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -52,7 +61,7 @@ const ScrollToHash = () => {
       if (href.startsWith('#') || (href.includes('/#') && href.startsWith('/'))) {
         e.preventDefault();
         
-        const headerOffset = window.innerWidth >= 1024 ? 80 : 64;
+        const headerOffset = anchorOffset(element);
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 

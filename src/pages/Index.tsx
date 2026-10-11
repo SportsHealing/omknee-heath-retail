@@ -2,22 +2,26 @@ import { useEffect } from "react";
 import { track } from "@/lib/analytics";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import HeroSection from "@/components/home/HeroSection";
-import KneeIntroSection from "@/components/home/KneeIntroSection";
-import OmKneeFive from "@/components/home/OmKneeFive";
-import KneeScorePanel from "@/components/home/KneeScorePanel";
-import ShopDestination from "@/components/home/ShopDestination";
-import EducationSection from "@/components/home/EducationSection";
-import ThroughLifeBand from "@/components/home/ThroughLifeBand";
-import SignatureProductSection from "@/components/home/SignatureProductSection";
-import KneeEcosystem from "@/components/KneeEcosystem";
+import {
+  HomeHero,
+  HomeTeam,
+  HomeFourDoors,
+  HomeKneeScore,
+  HomeOmKneeFive,
+  HomeSupplementBand,
+  HomeClinics,
+  HomeClubBenefits,
+} from "@/components/home/HomeSections";
 import JournalTeaser from "@/components/home/JournalTeaser";
-import NewsletterSection from "@/components/home/NewsletterSection";
 import SEO from "@/components/SEO";
 import OrganizationSchema from "@/components/OrganizationSchema";
 import WebPageSchema from "@/components/WebPageSchema";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
+/**
+ * Home (handover A1). Section order is fixed: education (Four doors, Knee
+ * Score, OmKnee Five) always sits above the supplement band (Appendix D1.2).
+ */
 const Index = () => {
   useEffect(() => {
     track("homepage_view");
@@ -26,53 +30,29 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="The OmKnee Five | A Clear Path Through Knee Health"
-        description="Understand, Nourish, Load, Diagnose and Treat: five connected areas of evidence-informed UK knee health, with a Knee Score and carefully curated support."
+        title="OmKneeHealth | The OmKnee Club"
+        description="Join a free club for knee and musculoskeletal health. Founded and led by consultant knee surgeons, with expert-selected products, scans and clinics in one place."
         canonicalPath="/"
-        keywords="knee health, knee pain, knee joint, knee exercises, knee strengthening exercises, how to improve knee health, collagen for knees, knee supplements UK, knee brace, knee score"
       />
       <OrganizationSchema />
       <WebPageSchema
-        name="OmKneeHealth - The OmKnee Five"
-        description="A connected knee-health journey through Understand, Nourish, Load, Diagnose and Treat."
+        name="OmKneeHealth - The OmKnee Club"
+        description="A free members' club for knee and musculoskeletal health."
         url="https://omkneehealth.com"
         type="WebPage"
       />
       <BreadcrumbSchema items={[{ name: "Home", url: "https://omkneehealth.com" }]} />
       <Header />
       <main>
-        {/* 1 Hero */}
-        <HeroSection />
-
-        {/* 2 Knee Score */}
-        <KneeScorePanel />
-
-        {/* 3 Why look after your knees */}
-        <EducationSection />
-
-        {/* 4 The OmKnee Five */}
-        <OmKneeFive />
-
-        {/* 5 Understand your knee */}
-        <KneeIntroSection />
-
-        {/* 6 Healthy knees through life */}
-        <ThroughLifeBand />
-
-        {/* 7 The Knee Shop */}
-        <ShopDestination />
-
-        {/* 8 Signature formulation */}
-        <SignatureProductSection />
-
-        {/* 9 Go deeper: the wider knee ecosystem */}
-        <KneeEcosystem />
-
-        {/* 10 Journal */}
-        <JournalTeaser />
-
-        {/* 11 Newsletter */}
-        <NewsletterSection />
+        {/* 1 */} <HomeHero />
+        {/* 2 */} <HomeTeam />
+        {/* 3 */} <HomeFourDoors />
+        {/* 4 */} <HomeKneeScore />
+        {/* 5 */} <HomeOmKneeFive />
+        {/* 6 */} <HomeSupplementBand />
+        {/* 7 */} <HomeClinics />
+        {/* 8 */} <HomeClubBenefits />
+        {/* 9 */} <JournalTeaser />
       </main>
       <Footer />
     </div>
