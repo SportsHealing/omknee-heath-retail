@@ -16,8 +16,8 @@ export const SUPPLEMENT_HANDLE = "omkneehealth-supplement";
 
 export const SUPPLEMENT = {
   name: "OmKneeHealth Supplement",
-  price: "62.50",
-  memberPrice: "53.13",
+  price: "65.00",
+  memberPrice: "55.25",
   pack: "300 g pack",
   flavour: "Vanilla cherry",
 } as const;
